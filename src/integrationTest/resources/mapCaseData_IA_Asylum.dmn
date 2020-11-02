@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" id="Definitions_1yb2kkp" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.0.0">
+  <decision id="mapCaseData_IA_Asylum" name="Map Case Data">
+    <decisionTable id="DecisionTable_14cx079" hitPolicy="RULE ORDER">
+      <input id="InputClause_1gxyo7f" label="case">
+        <inputExpression id="LiteralExpression_0mra7c4" typeRef="string">
+          <text></text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" label="name" name="name" typeRef="string" />
+      <output id="OutputClause_021y3bb" label="value" name="value" typeRef="string" />
+      <rule id="DecisionRule_0u7yi27">
+        <inputEntry id="UnaryTests_03ky0ek">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0nkps91">
+          <text>"caseName"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_06tqng3">
+          <text>case.data.appellantGivenNames + " " + case.data.appellantFamilyName</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0oagl97">
+        <inputEntry id="UnaryTests_0mkzt2r">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0selern">
+          <text>"appealType"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0t707ev">
+          <text>case.data.appealType</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0r3u9cf">
+        <inputEntry id="UnaryTests_1bqxdqr">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0etwrk3">
+          <text>"staffLocation"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_05korws">
+          <text>case.data.staffLocation</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_06fd9qz">
+        <inputEntry id="UnaryTests_0slfog9">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0kun6mv">
+          <text>"staffLocationID"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0jj1wzo">
+          <text>case.data.staffLocationId</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>
