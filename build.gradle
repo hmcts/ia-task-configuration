@@ -1,14 +1,27 @@
+buildscript {
+  repositories {
+    jcenter()
+  }
+  dependencies {
+    classpath("net.serenity-bdd:serenity-gradle-plugin:2.3.6")
+  }
+}
+
 plugins {
   id 'application'
   id 'checkstyle'
   id 'pmd'
   id 'jacoco'
   id 'io.spring.dependency-management' version '1.0.10.RELEASE'
-  id 'org.springframework.boot' version '2.3.5.RELEASE'
+  id 'org.springframework.boot' version '2.3.4.RELEASE'
   id 'org.owasp.dependencycheck' version '6.0.2'
   id 'com.github.ben-manes.versions' version '0.33.0'
   id 'org.sonarqube' version '3.0'
+  id 'info.solidsoft.pitest' version '1.5.2'
 }
+
+apply plugin: 'net.serenity-bdd.aggregator'
+apply plugin: 'idea'
 
 group = 'uk.gov.hmcts.reform'
 version = '0.0.1'
@@ -19,10 +32,19 @@ allprojects {
 }
 
 sourceSets {
-  functionalTest {
+  testUtils {
     java {
       compileClasspath += main.output
       runtimeClasspath += main.output
+      srcDir file('src/testUtils/java')
+    }
+    resources.srcDir file('src/testUtils/resources')
+  }
+
+  functionalTest {
+    java {
+      compileClasspath += testUtils.output
+      runtimeClasspath += testUtils.output
       srcDir file('src/functionalTest/java')
     }
     resources.srcDir file('src/functionalTest/resources')
@@ -30,8 +52,8 @@ sourceSets {
 
   integrationTest {
     java {
-      compileClasspath += main.output
-      runtimeClasspath += main.output
+      compileClasspath += testUtils.output
+      runtimeClasspath += testUtils.output
       srcDir file('src/integrationTest/java')
     }
     resources.srcDir file('src/integrationTest/resources')
@@ -44,6 +66,19 @@ sourceSets {
       srcDir file('src/smokeTest/java')
     }
     resources.srcDir file('src/smokeTest/resources')
+  }
+}
+
+idea {
+  module {
+    sourceDirs += project.sourceSets.testUtils.java.srcDirs
+    resourceDirs += project.sourceSets.testUtils.resources.srcDirs
+    testSourceDirs += project.sourceSets.integrationTest.java.srcDirs
+    testResourceDirs += project.sourceSets.integrationTest.resources.srcDirs
+    testSourceDirs += project.sourceSets.functionalTest.java.srcDirs
+    testResourceDirs += project.sourceSets.functionalTest.resources.srcDirs
+    testSourceDirs += project.sourceSets.smokeTest.java.srcDirs
+    testResourceDirs += project.sourceSets.smokeTest.resources.srcDirs
   }
 }
 
@@ -92,7 +127,7 @@ checkstyle {
 
 pmd {
   toolVersion = "6.18.0"
-  sourceSets = [sourceSets.main, sourceSets.test, sourceSets.functionalTest, sourceSets.integrationTest, sourceSets.smokeTest]
+  sourceSets = [sourceSets.main]
   reportsDir = file("$project.buildDir/reports/pmd")
   // https://github.com/pmd/pmd/issues/876
   ruleSets = []
@@ -108,13 +143,28 @@ jacocoTestReport {
   }
 }
 
-project.tasks['sonarqube'].dependsOn jacocoTestReport
+pitest {
+  junit5PluginVersion = '0.12'
+  targetClasses = ['uk.gov.hmcts.reform.ia.task.configuration.*']
+  excludedClasses = [
+    'uk.gov.hmcts.reform.ia.task.configuration.Application'
+  ]
+  threads = 10
+  outputFormats = ['XML', 'HTML']
+  timestampedReports = false
+  mutationThreshold = 80
+}
+project.tasks['pitest'].group = "Verification"
+
+project.tasks['sonarqube'].dependsOn test, integration, jacocoTestReport
 
 sonarqube {
   properties {
-    property "sonar.projectName", "Reform :: spring-boot-template"
-    property "sonar.projectKey", "uk.gov.hmcts.reform:spring-boot-template"
+    property "sonar.projectName", "Reform :: wa-standalone-task-bpmn"
+    property "sonar.projectKey", "uk.gov.hmcts.reform:wa-standalone-task-bpmn"
     property "sonar.coverage.jacoco.xmlReportPaths", "${jacocoTestReport.reports.xml.destination.path}"
+    property "sonar.pitest.mode", "reuseReport"
+    property "sonar.pitest.reportsDirectory", "build/reports/pitest"
   }
 }
 
@@ -145,9 +195,9 @@ dependencyCheck {
 
 dependencyManagement {
   dependencies {
-    dependency group: 'org.bouncycastle', name: 'bcpkix-jdk15on', version: '1.67'
+    dependency group: 'org.bouncycastle', name: 'bcpkix-jdk15on', version: '1.66'
     // CVE-2018-10237 - Unbounded memory allocation
-    dependencySet(group: 'com.google.guava', version: '30.0-jre') {
+    dependencySet(group: 'com.google.guava', version: '29.0-jre') {
       entry 'guava'
     }
   }
@@ -165,8 +215,11 @@ def versions = [
   reformLogging   : '5.1.5',
   springBoot      : springBoot.class.package.implementationVersion,
   springfoxSwagger: '2.9.2',
+  serenity        : '2.2.12',
+  gradlePitest    : '1.5.1',
+  pitest          : '1.5.2',
+  sonarPitest     : '0.5',
   camunda         : '7.14.0'
-
 ]
 
 ext.libraries = [
@@ -186,6 +239,7 @@ dependencies {
   implementation group: 'org.springframework.boot', name: 'spring-boot-starter-json'
 
   implementation group: 'io.springfox', name: 'springfox-swagger2', version: versions.springfoxSwagger
+  compile group: 'io.springfox', name: 'springfox-swagger-ui', version: versions.springfoxSwagger
 
   implementation group: 'uk.gov.hmcts.reform', name: 'logging', version: versions.reformLogging
   implementation group: 'uk.gov.hmcts.reform', name: 'logging-appinsights', version: versions.reformLogging
@@ -197,7 +251,12 @@ dependencies {
 
   compile group: 'org.apache.tomcat.embed', name: 'tomcat-embed-core', version: '9.0.39'
   compile group: 'org.apache.tomcat.embed', name: 'tomcat-embed-websocket', version: '9.0.39'
+
+  compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-openfeign', version: '2.2.5.RELEASE'
+
   compile group: 'org.camunda.bpm', name: 'camunda-external-task-client', version: '1.4.0'
+  compile group: 'javax.xml', name: 'jaxb-api', version: '2.1'
+
 
   testImplementation libraries.junit5
   testImplementation group: 'org.springframework.boot', name: 'spring-boot-starter-test', {
@@ -206,28 +265,34 @@ dependencies {
   }
 
 
+  //for testing Camunda config will move out of this project
+  integrationTestImplementation group: 'org.camunda.bpm.dmn', name: 'camunda-engine-dmn', version: "${versions.camunda}"
+  integrationTestImplementation group: 'org.camunda.bpm.assert', name: 'camunda-bpm-assert', version: '8.0.0'
+  integrationTestImplementation group: 'org.camunda.bpm', name: 'camunda-engine', version: '7.13.0'
+  integrationTestImplementation group: 'com.h2database', name: 'h2', version: '1.4.200'
+  integrationTestImplementation "org.junit.vintage:junit-vintage-engine:${versions.junit}"
+
+  testCompile group: 'org.pitest', name: 'pitest', version: versions.pitest
+  testCompile group: 'info.solidsoft.gradle.pitest', name: 'gradle-pitest-plugin', version: versions.gradlePitest
+  testCompile group: 'org.codehaus.sonar-plugins', name: 'sonar-pitest-plugin', version: versions.sonarPitest
+
+
+  testCompile "org.junit.vintage:junit-vintage-engine:${versions.junit}"
+
+  testUtilsImplementation sourceSets.main.runtimeClasspath
+  testUtilsImplementation sourceSets.test.runtimeClasspath
+
   integrationTestImplementation sourceSets.main.runtimeClasspath
   integrationTestImplementation sourceSets.test.runtimeClasspath
 
   functionalTestImplementation sourceSets.main.runtimeClasspath
+  functionalTestImplementation sourceSets.test.runtimeClasspath
 
   smokeTestImplementation sourceSets.main.runtimeClasspath
-
-  integrationTestImplementation group: 'org.camunda.bpm.dmn', name: 'camunda-engine-dmn', version: "${versions.camunda}"
-  integrationTestImplementation group: 'org.camunda.bpm.assert', name: 'camunda-bpm-assert', version: '8.0.0'
-  integrationTestImplementation group: 'org.camunda.bpm', name: 'camunda-engine', version: '7.13.0'
-  integrationTestImplementation "org.junit.vintage:junit-vintage-engine:${versions.junit}"
-
-  testCompile "org.junit.vintage:junit-vintage-engine:${versions.junit}"
-
-  integrationTestImplementation sourceSets.main.runtimeClasspath
-  integrationTestImplementation sourceSets.test.runtimeClasspath
-
-
-
+  smokeTestImplementation sourceSets.test.runtimeClasspath
 }
 
-mainClassName = 'uk.gov.hmcts.reform.ia.task.configuration'
+mainClassName = 'uk.gov.hmcts.reform.ia.task.configuration.Application'
 
 bootJar {
   getArchiveFileName().set(provider {
@@ -240,5 +305,5 @@ bootJar {
 }
 
 wrapper {
-    distributionType = Wrapper.DistributionType.ALL
+  distributionType = Wrapper.DistributionType.ALL
 }
