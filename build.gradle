@@ -99,17 +99,6 @@ pmd {
   ruleSetFiles = files("config/pmd/ruleset.xml")
 }
 
-jacocoTestReport {
-  executionData(test, integration)
-  reports {
-    xml.enabled = true
-    csv.enabled = false
-    xml.destination file("${buildDir}/reports/jacoco/test/jacocoTestReport.xml")
-  }
-}
-
-project.tasks['sonarqube'].dependsOn jacocoTestReport
-
 sonarqube {
   properties {
     property "sonar.projectName", "Reform :: spring-boot-template"
@@ -216,6 +205,7 @@ dependencies {
   integrationTestImplementation group: 'org.camunda.bpm.dmn', name: 'camunda-engine-dmn', version: "${versions.camunda}"
   integrationTestImplementation group: 'org.camunda.bpm.assert', name: 'camunda-bpm-assert', version: '8.0.0'
   integrationTestImplementation group: 'org.camunda.bpm', name: 'camunda-engine', version: '7.13.0'
+  integrationTestImplementation group: 'com.h2database', name: 'h2', version: '1.4.200'
   integrationTestImplementation "org.junit.vintage:junit-vintage-engine:${versions.junit}"
 
   testCompile "org.junit.vintage:junit-vintage-engine:${versions.junit}"
@@ -227,11 +217,11 @@ dependencies {
 
 }
 
-mainClassName = 'uk.gov.hmcts.reform.ia.task.configuration'
+mainClassName = 'uk.gov.hmcts.reform.ia.task.configuration.Application'
 
 bootJar {
   getArchiveFileName().set(provider {
-    'ia.task.configuration.jar'
+    'ia-task-configuration.jar'
   })
 
   manifest {
@@ -240,5 +230,5 @@ bootJar {
 }
 
 wrapper {
-    distributionType = Wrapper.DistributionType.ALL
+  distributionType = Wrapper.DistributionType.ALL
 }
