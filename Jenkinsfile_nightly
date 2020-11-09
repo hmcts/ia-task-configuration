@@ -4,7 +4,7 @@
 
 def type = "java"
 def product = "ia"
-def component = "ia-task-configuration"
+def component = "task-configuration"
 
 withPipeline(type, product, component) {
 }

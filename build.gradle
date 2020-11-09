@@ -134,37 +134,11 @@ pmd {
   ruleSetFiles = files("config/pmd/ruleset.xml")
 }
 
-jacocoTestReport {
-  executionData(test, integration)
-  reports {
-    xml.enabled = true
-    csv.enabled = false
-    xml.destination file("${buildDir}/reports/jacoco/test/jacocoTestReport.xml")
-  }
-}
-
-pitest {
-  junit5PluginVersion = '0.12'
-  targetClasses = ['uk.gov.hmcts.reform.ia.task.configuration.*']
-  excludedClasses = [
-    'uk.gov.hmcts.reform.ia.task.configuration.Application'
-  ]
-  threads = 10
-  outputFormats = ['XML', 'HTML']
-  timestampedReports = false
-  mutationThreshold = 80
-}
-project.tasks['pitest'].group = "Verification"
-
-project.tasks['sonarqube'].dependsOn test, integration, jacocoTestReport
-
 sonarqube {
   properties {
-    property "sonar.projectName", "Reform :: wa-standalone-task-bpmn"
-    property "sonar.projectKey", "uk.gov.hmcts.reform:wa-standalone-task-bpmn"
+    property "sonar.projectName", "Reform :: spring-boot-template"
+    property "sonar.projectKey", "uk.gov.hmcts.reform:spring-boot-template"
     property "sonar.coverage.jacoco.xmlReportPaths", "${jacocoTestReport.reports.xml.destination.path}"
-    property "sonar.pitest.mode", "reuseReport"
-    property "sonar.pitest.reportsDirectory", "build/reports/pitest"
   }
 }
 
@@ -215,10 +189,7 @@ def versions = [
   reformLogging   : '5.1.5',
   springBoot      : springBoot.class.package.implementationVersion,
   springfoxSwagger: '2.9.2',
-  serenity        : '2.2.12',
   gradlePitest    : '1.5.1',
-  pitest          : '1.5.2',
-  sonarPitest     : '0.5',
   camunda         : '7.14.0'
 ]
 
@@ -272,15 +243,10 @@ dependencies {
   integrationTestImplementation group: 'com.h2database', name: 'h2', version: '1.4.200'
   integrationTestImplementation "org.junit.vintage:junit-vintage-engine:${versions.junit}"
 
-  testCompile group: 'org.pitest', name: 'pitest', version: versions.pitest
   testCompile group: 'info.solidsoft.gradle.pitest', name: 'gradle-pitest-plugin', version: versions.gradlePitest
-  testCompile group: 'org.codehaus.sonar-plugins', name: 'sonar-pitest-plugin', version: versions.sonarPitest
 
 
   testCompile "org.junit.vintage:junit-vintage-engine:${versions.junit}"
-
-  testUtilsImplementation sourceSets.main.runtimeClasspath
-  testUtilsImplementation sourceSets.test.runtimeClasspath
 
   integrationTestImplementation sourceSets.main.runtimeClasspath
   integrationTestImplementation sourceSets.test.runtimeClasspath
@@ -296,7 +262,7 @@ mainClassName = 'uk.gov.hmcts.reform.ia.task.configuration.Application'
 
 bootJar {
   getArchiveFileName().set(provider {
-    'ia.task.configuration.jar'
+    'ia-task-configuration.jar'
   })
 
   manifest {
