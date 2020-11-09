@@ -215,7 +215,7 @@ dependencies {
 
   integrationTestImplementation group: 'org.camunda.bpm.dmn', name: 'camunda-engine-dmn', version: "${versions.camunda}"
   integrationTestImplementation group: 'org.camunda.bpm.assert', name: 'camunda-bpm-assert', version: '8.0.0'
-  integrationTestImplementation group: 'org.camunda.bpm', name: 'camunda-engine', version: '7.13.0'
+  integrationTestImplementation group: 'org.camunda.bpm', name: 'camunda-engine', version: '7.14.0'
   integrationTestImplementation "org.junit.vintage:junit-vintage-engine:${versions.junit}"
 
   testCompile "org.junit.vintage:junit-vintage-engine:${versions.junit}"
