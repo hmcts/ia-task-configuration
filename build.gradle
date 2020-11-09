@@ -143,28 +143,13 @@ jacocoTestReport {
   }
 }
 
-pitest {
-  junit5PluginVersion = '0.12'
-  targetClasses = ['uk.gov.hmcts.reform.ia.task.configuration.*']
-  excludedClasses = [
-    'uk.gov.hmcts.reform.ia.task.configuration.Application'
-  ]
-  threads = 10
-  outputFormats = ['XML', 'HTML']
-  timestampedReports = false
-  mutationThreshold = 80
-}
-project.tasks['pitest'].group = "Verification"
-
 project.tasks['sonarqube'].dependsOn test, integration, jacocoTestReport
 
 sonarqube {
   properties {
-    property "sonar.projectName", "Reform :: wa-standalone-task-bpmn"
-    property "sonar.projectKey", "uk.gov.hmcts.reform:wa-standalone-task-bpmn"
+    property "sonar.projectName", "Reform :: ia-task-configuration"
+    property "sonar.projectKey", "uk.gov.hmcts.reform:ia-task-configuration"
     property "sonar.coverage.jacoco.xmlReportPaths", "${jacocoTestReport.reports.xml.destination.path}"
-    property "sonar.pitest.mode", "reuseReport"
-    property "sonar.pitest.reportsDirectory", "build/reports/pitest"
   }
 }
 
@@ -279,9 +264,6 @@ dependencies {
 
   testCompile "org.junit.vintage:junit-vintage-engine:${versions.junit}"
 
-  testUtilsImplementation sourceSets.main.runtimeClasspath
-  testUtilsImplementation sourceSets.test.runtimeClasspath
-
   integrationTestImplementation sourceSets.main.runtimeClasspath
   integrationTestImplementation sourceSets.test.runtimeClasspath
 
@@ -292,11 +274,11 @@ dependencies {
   smokeTestImplementation sourceSets.test.runtimeClasspath
 }
 
-mainClassName = 'uk.gov.hmcts.reform.ia.task.configuration.Application'
+mainClassName = 'uk.gov.hmcts.reform.iataskconfiguration.Application'
 
 bootJar {
   getArchiveFileName().set(provider {
-    'ia.task.configuration.jar'
+    'ia-task-configuration.jar'
   })
 
   manifest {

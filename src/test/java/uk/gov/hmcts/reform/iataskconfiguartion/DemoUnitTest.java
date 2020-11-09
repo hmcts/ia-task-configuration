@@ -1,4 +1,4 @@
-package uk.gov.hmcts.reform.ia.task.configuartion;
+package uk.gov.hmcts.reform.iataskconfiguartion;
 
 import org.junit.jupiter.api.Test;
 
