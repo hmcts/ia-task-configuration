@@ -13,9 +13,9 @@ plugins {
   id 'pmd'
   id 'jacoco'
   id 'io.spring.dependency-management' version '1.0.10.RELEASE'
-  id 'org.springframework.boot' version '2.3.4.RELEASE'
-  id 'org.owasp.dependencycheck' version '6.0.2'
-  id 'com.github.ben-manes.versions' version '0.33.0'
+  id 'org.springframework.boot' version '2.3.5.RELEASE'
+  id 'org.owasp.dependencycheck' version '6.0.3'
+  id 'com.github.ben-manes.versions' version '0.36.0'
   id 'org.sonarqube' version '3.0'
   id 'info.solidsoft.pitest' version '1.5.2'
 }
@@ -253,8 +253,8 @@ dependencies {
   //for testing Camunda config will move out of this project
   integrationTestImplementation group: 'org.camunda.bpm.dmn', name: 'camunda-engine-dmn', version: "${versions.camunda}"
   integrationTestImplementation group: 'org.camunda.bpm.assert', name: 'camunda-bpm-assert', version: '8.0.0'
-  integrationTestImplementation group: 'org.camunda.bpm', name: 'camunda-engine', version: '7.13.0'
   integrationTestImplementation group: 'com.h2database', name: 'h2', version: '1.4.200'
+  integrationTestImplementation group: 'org.camunda.bpm', name: 'camunda-engine', version: '7.14.0'
   integrationTestImplementation "org.junit.vintage:junit-vintage-engine:${versions.junit}"
 
   testCompile group: 'org.pitest', name: 'pitest', version: versions.pitest
