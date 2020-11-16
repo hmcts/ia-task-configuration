@@ -1,6 +1,10 @@
 package uk.gov.hmcts.reform.ia.task.configuration;
 
-import org.camunda.bpm.dmn.engine.*;
+import org.camunda.bpm.dmn.engine.DmnDecision;
+import org.camunda.bpm.dmn.engine.DmnDecisionRuleResult;
+import org.camunda.bpm.dmn.engine.DmnDecisionTableResult;
+import org.camunda.bpm.dmn.engine.DmnEngine;
+import org.camunda.bpm.dmn.engine.DmnEngineConfiguration;
 import org.camunda.bpm.engine.variable.VariableMap;
 import org.camunda.bpm.engine.variable.impl.VariableMapImpl;
 import org.junit.jupiter.api.BeforeEach;
@@ -34,7 +38,8 @@ class CamundaGetTaskTest {
         "uploadHomeOfficeBundle, awaitingRespondentEvidence, reviewRespondentEvidence, TCW, 2",
         "submitCase, caseUnderReview, reviewAppealSkeletonArgument, TCW, 2",
         "submitReasonsForAppeal, reasonsForAppealSubmitted, reviewReasonsForAppeal, TCW, 2",
-        "submitClarifyingQuestionAnswers, clarifyingQuestionsAnswersSubmitted, reviewClarifyingQuestionsAnswers, TCW, 2",
+        "submitClarifyingQuestionAnswers, "
+        + "clarifyingQuestionsAnswersSubmitted, reviewClarifyingQuestionsAnswers, TCW, 2",
         "submitCmaRequirements, cmaRequirementsSubmitted, reviewCmaRequirements, TCW, 2",
         "listCma, cmaListed, attendCma, TCW, 2",
         "uploadHomeOfficeAppealResponse, respondentReview, reviewRespondentResponse, TCW, 2",
@@ -47,9 +52,11 @@ class CamundaGetTaskTest {
         "sendDirectionWithQuestions, awaitingClarifyingQuestionsAnswers, provideClarifyingAnswers, external, -1",
         "requestCmaRequirements, awaitingCmaRequirements, provideCmaRequirements, external, -1",
         "requestRespondentReview, respondentReview, provideRespondentReview, external, -1",
-        "requestHearingRequirements, submitHearingRequirements, provideHearingRequirements, external, -1"
+        "requestHearingRequirements, submitHearingRequirements, "
+        + "provideHearingRequirements, external, -1"
     })
-    void shouldGetTaskIdTest(String eventId, String postState, String taskId, String group, Integer workingDaysAllowed) {
+    void shouldGetTaskIdTest(String eventId, String postState,
+                             String taskId, String group, Integer workingDaysAllowed) {
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmn(eventId, postState);
 
         DmnDecisionRuleResult singleResult = dmnDecisionTableResult.getSingleResult();
