@@ -1,4 +1,4 @@
-package uk.gov.hmcts.reform.ia.task.configuration;
+package uk.gov.hmcts.reform.iataskconfiguration;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

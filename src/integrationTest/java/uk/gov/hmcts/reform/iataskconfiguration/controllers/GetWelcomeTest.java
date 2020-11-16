@@ -1,4 +1,4 @@
-package uk.gov.hmcts.reform.ia.task.configuration.controllers;
+package uk.gov.hmcts.reform.iataskconfiguration.controllers;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
