@@ -7,21 +7,18 @@ def product = "ia"
 def component = "task-configuration"
 
 
-static LinkedHashMap<String, Object> secret(String secretName, String envVar) {
-  [$class     : 'AzureKeyVaultSecret',
-   secretType : 'Secret',
-   name       : secretName,
-   version    : '',
-   envVariable: envVar
-  ]
-}
-
 withPipeline(type, product, component) {
   disableLegacyDeployment()
 
   env.IDAM_URL = "https://idam-api.aat.platform.hmcts.net"
   env.S2S_URL = "http://rpe-service-auth-provider-aat.service.core-compute-aat.internal"
   env.CAMUNDA_URL = "http://camunda-api-aat.service.core-compute-aat.internal/engine-rest"
+
+  after('test') {
+    steps.archiveArtifacts allowEmptyArchive: true, artifacts: '**/reports/tests/**/*'
+    steps.archiveArtifacts allowEmptyArchive: true, artifacts: '**/reports/tests/integration/**/*'
+  }
+
 
   after('functionalTest:preview') {
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: '**/site/serenity/**/*'

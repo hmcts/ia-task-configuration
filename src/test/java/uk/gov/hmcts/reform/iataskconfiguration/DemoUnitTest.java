@@ -1,4 +1,4 @@
-package uk.gov.hmcts.reform.iataskconfiguartion.tests;
+package uk.gov.hmcts.reform.iataskconfiguration;
 
 import org.junit.jupiter.api.Test;
 
@@ -10,4 +10,7 @@ class DemoUnitTest {
     void exampleOfTest() {
         assertTrue(System.currentTimeMillis() > 0, "Example of Unit Test");
     }
+
+
+
 }
