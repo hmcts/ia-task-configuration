@@ -19,7 +19,7 @@ public class GetWelcomeTest {
 
     @DisplayName("Should welcome upon root request with 200 response code")
     @Test
-    public void welcomeRootEndpoint() throws Exception {
+    void welcomeRootEndpoint() throws Exception {
         MvcResult response = mockMvc.perform(get("/")).andExpect(status().isOk()).andReturn();
 
         assertThat(response.getResponse().getContentAsString()).startsWith("Welcome");
