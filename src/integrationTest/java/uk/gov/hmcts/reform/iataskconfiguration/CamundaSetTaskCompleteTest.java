@@ -27,15 +27,41 @@ class CamundaSetTaskCompleteTest {
             .buildEngine();
     }
 
-    @DisplayName("Set task to complete")
+    @DisplayName("Set request respondent to complete")
     @Test
-    void set_task_to_complete() {
+    void set_respondant_review_to_auto_complete() {
         VariableMap result = new VariableMapImpl();
 
-        result.putValue("task_type","List of TaskTypes");
+        result.putValue("task_type","Review the appeal");
         result.putValue("completion_mode","Auto");
 
-        DmnDecisionTableResult dmnDecisionRuleResults = evaluateDmn("ExampleID");
+        DmnDecisionTableResult dmnDecisionRuleResults = evaluateDmn("requestRespondentEvidence");
+
+        assertThat(dmnDecisionRuleResults.getFirstResult().getEntryMap(), is(result));
+    }
+
+    @DisplayName("Set request review to complete")
+    @Test
+    void set_request_review_to_auto_complete() {
+        VariableMap result = new VariableMapImpl();
+
+        result.putValue("task_type","Review respondent evidence");
+        result.putValue("completion_mode","Auto");
+
+        DmnDecisionTableResult dmnDecisionRuleResults = evaluateDmn("requestCaseBuilding");
+
+        assertThat(dmnDecisionRuleResults.getFirstResult().getEntryMap(), is(result));
+    }
+
+    @DisplayName("Set request reason to complete")
+    @Test
+    void set_request_reasons_to_auto_complete() {
+        VariableMap result = new VariableMapImpl();
+
+        result.putValue("task_type","Review respondent evidence");
+        result.putValue("completion_mode","Auto");
+
+        DmnDecisionTableResult dmnDecisionRuleResults = evaluateDmn("requestReasonsForAppeal");
 
         assertThat(dmnDecisionRuleResults.getFirstResult().getEntryMap(), is(result));
     }
