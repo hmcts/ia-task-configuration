@@ -3,7 +3,7 @@
 @Library("Infrastructure@camunda-only-pipeline")
 
 def product = 'ia'
-def s2sServiceName = 'wa_workflow_api'
+def s2sServiceName = 'wa_task_configuration_api'
 
 withCamundaOnlyPipeline(product, s2sServiceName) {
 
