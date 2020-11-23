@@ -2,10 +2,11 @@
 
 @Library("Infrastructure@camunda-only-pipeline")
 
+def type = "java"
 def product = 'ia'
 def s2sServiceName = 'wa_task_configuration_api'
 
-withCamundaOnlyPipeline(product, s2sServiceName) {
+withCamundaOnlyPipeline(type, product, s2sServiceName) {
 
   after('test') {
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: '**/reports/tests/**/*'
