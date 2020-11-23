@@ -3,9 +3,9 @@
 @Library("Infrastructure@camunda-only-pipeline")
 
 def type = "java"
-def product = 'ia'
+def product = "ia"
 def component = "task-configuration"
-def s2sServiceName = 'wa_task_configuration_api'
+def s2sServiceName = "wa_task_configuration_api"
 
 withCamundaOnlyPipeline(type, product, component, s2sServiceName) {
 
