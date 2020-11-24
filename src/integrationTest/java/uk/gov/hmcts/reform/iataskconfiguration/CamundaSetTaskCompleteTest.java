@@ -32,7 +32,7 @@ class CamundaSetTaskCompleteTest {
     void set_respondant_review_to_auto_complete() {
         VariableMap result = new VariableMapImpl();
 
-        result.putValue("task_type","Review the appeal");
+        result.putValue("task_type","ReviewTheAppeal");
         result.putValue("completion_mode","Auto");
 
         DmnDecisionTableResult dmnDecisionRuleResults = evaluateDmn("requestRespondentEvidence");
@@ -45,7 +45,7 @@ class CamundaSetTaskCompleteTest {
     void set_request_review_to_auto_complete() {
         VariableMap result = new VariableMapImpl();
 
-        result.putValue("task_type","Review respondent evidence");
+        result.putValue("task_type","ReviewRespondentEvidence");
         result.putValue("completion_mode","Auto");
 
         DmnDecisionTableResult dmnDecisionRuleResults = evaluateDmn("requestCaseBuilding");
@@ -58,7 +58,7 @@ class CamundaSetTaskCompleteTest {
     void set_request_reasons_to_auto_complete() {
         VariableMap result = new VariableMapImpl();
 
-        result.putValue("task_type","Review respondent evidence");
+        result.putValue("task_type","ReviewRespondentEvidence");
         result.putValue("completion_mode","Auto");
 
         DmnDecisionTableResult dmnDecisionRuleResults = evaluateDmn("requestReasonsForAppeal");
