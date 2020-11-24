@@ -1,32 +1,17 @@
 #!groovy
 
-@Library("Infrastructure")
+@Library("Infrastructure@camunda-only-pipeline")
 
 def type = "java"
 def product = "ia"
 def component = "task-configuration"
+def s2sServiceName = "wa_task_configuration_api"
 
-
-withPipeline(type, product, component) {
-  disableLegacyDeployment()
-
-  env.IDAM_URL = "https://idam-api.aat.platform.hmcts.net"
-  env.S2S_URL = "http://rpe-service-auth-provider-aat.service.core-compute-aat.internal"
-  env.CAMUNDA_URL = "http://camunda-api-aat.service.core-compute-aat.internal/engine-rest"
+withCamundaOnlyPipeline(type, product, component, s2sServiceName) {
 
   after('test') {
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: '**/reports/tests/**/*'
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: '**/reports/tests/integration/**/*'
   }
 
-
-  after('functionalTest:preview') {
-    steps.archiveArtifacts allowEmptyArchive: true, artifacts: '**/site/serenity/**/*'
-    steps.archiveArtifacts allowEmptyArchive: true, artifacts: '**/reports/tests/functional/**/*'
-  }
-
-  after('functionalTest:aat') {
-    steps.archiveArtifacts allowEmptyArchive: true, artifacts: '**/site/serenity/**/*'
-    steps.archiveArtifacts allowEmptyArchive: true, artifacts: '**/reports/tests/functional/**/*'
-  }
 }
