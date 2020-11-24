@@ -14,7 +14,7 @@
           <text>"requestRespondentEvidence"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1lk4wxe">
-          <text>"Review the appeal"</text>
+          <text>"ReviewTheAppeal"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0ap1s9l">
           <text>"Auto"</text>
@@ -25,7 +25,7 @@
           <text>"requestCaseBuilding","requestReasonsForAppeal","sendDirection"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1pxkm8l">
-          <text>"Review respondent evidence"</text>
+          <text>"ReviewRespondentEvidence"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_15mqpgr">
           <text>"Auto"</text>
@@ -36,7 +36,7 @@
           <text>"requestResponseReview","requestCaseEdit"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1g232ye">
-          <text>"Review appeal skeleton argument (Rep)"</text>
+          <text>"ReviewAppealSkeletonArgument"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0nx8xz4">
           <text>"Auto"</text>
@@ -47,7 +47,7 @@
           <text>"requestResponseReview","sendDirectionWithQuestions","requestCmaRequirements"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_11wnabl">
-          <text>"Review reasons for appeal (AIP)"</text>
+          <text>"ReviewReasonsForAppeal"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0um7can">
           <text>"Auto"</text>
@@ -58,7 +58,7 @@
           <text>"requestResponseReview","sendDirectionWithQuestions","requestCmaRequirements"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_03hy3xh">
-          <text>"Review clarifying questions answers (AIP)"</text>
+          <text>"ReviewClarifyingQuestionsAnswers"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0kdk8vs">
           <text>"Auto"</text>
@@ -69,7 +69,7 @@
           <text>"reviewCmaRequirements"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_18245xl">
-          <text>"Review CMA requirements"</text>
+          <text>"ReviewCmaRequirements"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0mtu3yn">
           <text>"Auto"</text>
@@ -80,7 +80,7 @@
           <text>"updateDetailsAfterCma"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0xushlk">
-          <text>"Attend CMA"</text>
+          <text>"AttendCMA"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0y7rujr">
           <text>"Auto"</text>
@@ -91,7 +91,7 @@
           <text>"requestResponseAmend","requestResponseReview"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0gfe3at">
-          <text>"Review respondent response"</text>
+          <text>"ReviewRespondentResponse"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_11q8q8f">
           <text>"Auto"</text>
@@ -102,7 +102,7 @@
           <text>"reviewHearingRequirements"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_04kx78n">
-          <text>"Review hearing requirements"</text>
+          <text>"ReviewHearingRequirements"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_14xv3h2">
           <text>"Auto"</text>
@@ -113,7 +113,7 @@
           <text>"createCaseSummary"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1j4sst9">
-          <text>"Create case summary"</text>
+          <text>"CreateCaseSummary"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1sfxkbw">
           <text>"Auto"</text>
@@ -124,7 +124,7 @@
           <text>"generateHearingBundle"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0fyq8it">
-          <text>"Create hearing bundle"</text>
+          <text>"CreateHearingBundle"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_111ql3o">
           <text>"Auto"</text>
@@ -135,7 +135,7 @@
           <text>"decisionAndReasonsStarted"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1q0zt8z">
-          <text>"Start decisions and reasons document"</text>
+          <text>"StartDecisionsAndReasonsDocument"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_16xfnyx">
           <text>"Auto"</text>
@@ -146,7 +146,7 @@
           <text>"recordAllocatedJudge"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1lpt12w">
-          <text>"Allocate FTPA to Judge"</text>
+          <text>"AllocateFtpaToJudge"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0lp2uyq">
           <text>"Auto"</text>
@@ -157,7 +157,7 @@
           <text>"changeDirectionDueDate"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1pk9d8p">
-          <text>"Decide on time extension"</text>
+          <text>"DecideOnTimeExtension"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_01skism">
           <text>"Auto"</text>
@@ -168,7 +168,7 @@
           <text>"recordApplication"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_16t2jen">
-          <text>"Process an application"</text>
+          <text>"ProcessAnApplication"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1mv1jjs">
           <text>"Auto"</text>
