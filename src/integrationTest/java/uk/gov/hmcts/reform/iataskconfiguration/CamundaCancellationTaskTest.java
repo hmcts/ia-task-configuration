@@ -28,9 +28,9 @@ class CamundaCancellationTaskTest {
     }
 
 
-    @DisplayName("Set request reason to complete")
+    @DisplayName("Set auto cancellation")
     @Test
-    void set_request_reasons_to_auto_complete() {
+    void set_auto_cancellation() {
         VariableMap result = new VariableMapImpl();
 
         result.putValue("action","Cancel");
@@ -51,13 +51,13 @@ class CamundaCancellationTaskTest {
     private DmnDecisionTableResult evaluateDmn(String fromState, String event, String state) {
         ClassLoader contextClassLoader = Thread.currentThread().getContextClassLoader();
         try (InputStream inputStream = contextClassLoader.getResourceAsStream("cancellationTasks_IA_Asylum.dmn")) {
-            DmnDecision decision = dmnEngine.parseDecision("CancellationTask_IA_Asylum", inputStream);
 
             VariableMap variables = new VariableMapImpl();
             variables.putValue("fromState", fromState);
             variables.putValue("event", event);
             variables.putValue("state", state);
 
+            DmnDecision decision = dmnEngine.parseDecision("CancellationTask_IA_Asylum", inputStream);
             return dmnEngine.evaluateDecisionTable(decision, variables);
         } catch (IOException e) {
             throw new AssertionError(e);
