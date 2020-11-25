@@ -11,10 +11,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.converter.ArgumentConversionException;
-import org.junit.jupiter.params.converter.ConvertWith;
-import org.junit.jupiter.params.converter.DefaultArgumentConverter;
-import org.junit.jupiter.params.converter.SimpleArgumentConverter;
 import org.junit.jupiter.params.provider.CsvSource;
 
 import java.io.IOException;
@@ -23,6 +19,7 @@ import java.io.InputStream;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
+@SuppressWarnings("checkstyle:LineLength")
 class CamundaGetTaskTest {
 
     private DmnEngine dmnEngine;
