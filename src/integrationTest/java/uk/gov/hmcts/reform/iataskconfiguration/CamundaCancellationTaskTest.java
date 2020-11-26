@@ -9,6 +9,8 @@ import org.camunda.bpm.engine.variable.impl.VariableMapImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -27,16 +29,13 @@ class CamundaCancellationTaskTest {
             .buildEngine();
     }
 
-
-    @DisplayName("Set auto cancellation")
-    @Test
-    void set_auto_cancellation() {
+    @DisplayName("Set auto cancellation for tasks")
+    @ParameterizedTest
+    @CsvSource({"\"\",removeAppealFromOnline,\"\"", "\"\",endAppeal,\"\""})
+    void test_response_of_cancellation_dmn_table(String fromState, String event, String state) {
         VariableMap result = new VariableMapImpl();
-
         result.putValue("action","Cancel");
-
-        DmnDecisionTableResult dmnDecisionRuleResults = evaluateDmn("","EndTheAppeal","");
-
+        DmnDecisionTableResult dmnDecisionRuleResults = evaluateDmn(fromState,event,state);
         assertThat(dmnDecisionRuleResults.getFirstResult().getEntryMap(), is(result));
     }
 
@@ -62,5 +61,6 @@ class CamundaCancellationTaskTest {
         } catch (IOException e) {
             throw new AssertionError(e);
         }
+
     }
 }
