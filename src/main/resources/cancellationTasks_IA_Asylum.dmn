@@ -24,7 +24,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0a7tgdv">
-          <text>"EndTheAppeal","MoveTheAppealOffline"</text>
+          <text>"endAppeal","removeAppealFromOnline"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1iy08tm">
           <text></text>
