@@ -19,6 +19,7 @@ import java.io.InputStream;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
+@SuppressWarnings("checkstyle:LineLength")
 class CamundaGetTaskTest {
 
     private DmnEngine dmnEngine;
@@ -33,36 +34,43 @@ class CamundaGetTaskTest {
     @DisplayName("Get task id")
     @ParameterizedTest(name = "\"{0}\" \"{1}\" should go to \"{2}\"")
     @CsvSource({
-        "submitAppeal, anything, processApplication, TCW, 2",
-        "submitTimeExtension, anything, decideOnTimeExtension, TCW, 2",
-        "uploadHomeOfficeBundle, awaitingRespondentEvidence, reviewRespondentEvidence, TCW, 2",
-        "submitCase, caseUnderReview, reviewAppealSkeletonArgument, TCW, 2",
-        "submitReasonsForAppeal, reasonsForAppealSubmitted, reviewReasonsForAppeal, TCW, 2",
-        "submitClarifyingQuestionAnswers, "
-        + "clarifyingQuestionsAnswersSubmitted, reviewClarifyingQuestionsAnswers, TCW, 2",
-        "submitCmaRequirements, cmaRequirementsSubmitted, reviewCmaRequirements, TCW, 2",
-        "listCma, cmaListed, attendCma, TCW, 2",
-        "uploadHomeOfficeAppealResponse, respondentReview, reviewRespondentResponse, TCW, 2",
-        "anything, prepareForHearing, createCaseSummary, TCW, 2",
-        "anything, finalBundling, createHearingBundle, TCW, 2",
-        "anything, preHearing, startDecisionsAndReasonsDocument, TCW, 2",
-        "requestRespondentEvidence, awaitingRespondentEvidence, provideRespondentEvidence, external, -1",
-        "requestCaseBuilding, caseBuilding, provideCaseBuilding, external, -1",
-        "requestReasonsForAppeal, awaitingReasonsForAppeal, provideReasonsForAppeal, external, -1",
-        "sendDirectionWithQuestions, awaitingClarifyingQuestionsAnswers, provideClarifyingAnswers, external, -1",
-        "requestCmaRequirements, awaitingCmaRequirements, provideCmaRequirements, external, -1",
-        "requestRespondentReview, respondentReview, provideRespondentReview, external, -1",
-        "requestHearingRequirements, submitHearingRequirements, "
-        + "provideHearingRequirements, external, -1"
+        "submitAppeal, anything, processApplication, TCW, 2, false, ",
+        "submitTimeExtension, anything, decideOnTimeExtension, TCW, 2, true, Time extension",
+        "uploadHomeOfficeBundle, awaitingRespondentEvidence, reviewRespondentEvidence, TCW, 2, true, Case progression",
+        "submitCase, caseUnderReview, reviewAppealSkeletonArgument, TCW, 2, true, Case progression",
+        "submitReasonsForAppeal, reasonsForAppealSubmitted, reviewReasonsForAppeal, TCW, 2, true, Case progression",
+        "submitClarifyingQuestionAnswers, clarifyingQuestionsAnswersSubmitted, reviewClarifyingQuestionsAnswers, TCW, 2, true, Case progression",
+        "submitCmaRequirements, cmaRequirementsSubmitted, reviewCmaRequirements, TCW, 2, true, Case progression",
+        "listCma, cmaListed, attendCma, TCW, 2, true, Case progression",
+        "uploadHomeOfficeAppealResponse, respondentReview, reviewRespondentResponse, TCW, 2, true, Case progression",
+        "anything, prepareForHearing, createCaseSummary, TCW, 2, true, Case progression",
+        "anything, finalBundling, createHearingBundle, TCW, 2, true, Case progression",
+        "anything, preHearing, startDecisionsAndReasonsDocument, TCW, 2, true, Case progression",
+        "requestRespondentEvidence, awaitingRespondentEvidence, provideRespondentEvidence, external, -1, false, ",
+        "requestCaseBuilding, caseBuilding, provideCaseBuilding, external, -1, false, ",
+        "requestReasonsForAppeal, awaitingReasonsForAppeal, provideReasonsForAppeal, external, -1, false, ",
+        "sendDirectionWithQuestions, awaitingClarifyingQuestionsAnswers, provideClarifyingAnswers, external, -1, false, ",
+        "requestCmaRequirements, awaitingCmaRequirements, provideCmaRequirements, external, -1, false, ",
+        "requestRespondentReview, respondentReview, provideRespondentReview, external, -1, false, ",
+        "requestHearingRequirements, submitHearingRequirements, provideHearingRequirements, external, -1, false, "
     })
-    void shouldGetTaskIdTest(String eventId, String postState,
-                             String taskId, String group, Integer workingDaysAllowed) {
+    void shouldGetTaskIdTest(String eventId,
+                             String postState,
+                             String taskId,
+                             String group,
+                             Integer workingDaysAllowed,
+                             boolean expectedTaskCategoryPresent,
+                             String taskCategory) {
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmn(eventId, postState);
 
         DmnDecisionRuleResult singleResult = dmnDecisionTableResult.getSingleResult();
 
         assertThat(singleResult.getEntry("taskId"), is(taskId));
         assertThat(singleResult.getEntry("group"), is(group));
+        assertThat(singleResult.containsKey("taskCategory"), is(expectedTaskCategoryPresent));
+        if (expectedTaskCategoryPresent) {
+            assertThat(singleResult.getEntry("taskCategory"), is(taskCategory));
+        }
         if (workingDaysAllowed > 0) {
             assertThat(singleResult.getEntry("workingDaysAllowed"), is(workingDaysAllowed));
         } else {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="Definitions_05eqz0r" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.0.0">
-  <decision id="getTask_IA_Asylum" name="Decision 1">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="Definitions_05eqz0r" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.2.0">
+  <decision id="getTask_IA_Asylum" name="Task initiation">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="FIRST">
       <input id="Input_1" label="Event Id" camunda:inputVariable="eventId">
         <inputExpression id="InputExpression_1" typeRef="string">
@@ -16,6 +16,7 @@
       <output id="OutputClause_0p5fhhd" label="Name" name="name" typeRef="string" />
       <output id="OutputClause_0f63m65" label="Group" name="group" typeRef="string" />
       <output id="OutputClause_0i6c6c2" label="Working Days Allowed" name="workingDaysAllowed" typeRef="integer" />
+      <output id="OutputClause_18cwtj9" label="Task category" name="taskCategory" typeRef="string" biodi:width="192" />
       <rule id="DecisionRule_1fenvxm">
         <inputEntry id="UnaryTests_09nq8bu">
           <text>"submitAppeal"</text>
@@ -34,6 +35,9 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_1td2bt7">
           <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_19p16ln">
+          <text></text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_046wm6a">
@@ -55,6 +59,9 @@
         <outputEntry id="LiteralExpression_16urfvv">
           <text>2</text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_08nyl92">
+          <text>"Time extension"</text>
+        </outputEntry>
       </rule>
       <rule id="DecisionRule_0gm0jgu">
         <inputEntry id="UnaryTests_03i96yg">
@@ -74,6 +81,9 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_057kfbi">
           <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_01hes3u">
+          <text>"Case progression"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0wvehb6">
@@ -95,6 +105,9 @@
         <outputEntry id="LiteralExpression_1qxex0h">
           <text>2</text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_0kf58n4">
+          <text>"Case progression"</text>
+        </outputEntry>
       </rule>
       <rule id="DecisionRule_12seemc">
         <inputEntry id="UnaryTests_1y0vrr4">
@@ -114,6 +127,9 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_1w4a5dv">
           <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_05ysaj9">
+          <text>"Case progression"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0oelx3m">
@@ -135,6 +151,9 @@
         <outputEntry id="LiteralExpression_1ir1zsl">
           <text>2</text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_1n68064">
+          <text>"Case progression"</text>
+        </outputEntry>
       </rule>
       <rule id="DecisionRule_1qug6sw">
         <inputEntry id="UnaryTests_1keumr9">
@@ -154,6 +173,9 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_1hxjfjs">
           <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0skhfgm">
+          <text>"Case progression"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0odg0q4">
@@ -175,6 +197,9 @@
         <outputEntry id="LiteralExpression_1umafvm">
           <text>2</text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_0nitnxt">
+          <text>"Case progression"</text>
+        </outputEntry>
       </rule>
       <rule id="DecisionRule_1tpr9e2">
         <inputEntry id="UnaryTests_0jppcim">
@@ -194,6 +219,9 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_11qiura">
           <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1km44u9">
+          <text>"Case progression"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_02svucz">
@@ -215,6 +243,9 @@
         <outputEntry id="LiteralExpression_1m82yii">
           <text>2</text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_0zshdc9">
+          <text>"Case progression"</text>
+        </outputEntry>
       </rule>
       <rule id="DecisionRule_1p1dgii">
         <inputEntry id="UnaryTests_1sl3ymc">
@@ -234,6 +265,9 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0ct7jss">
           <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1r5415l">
+          <text>"Case progression"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0rscfh8">
@@ -255,6 +289,9 @@
         <outputEntry id="LiteralExpression_0twp9o1">
           <text>2</text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_146xt5j">
+          <text>"Case progression"</text>
+        </outputEntry>
       </rule>
       <rule id="DecisionRule_1sneoct">
         <inputEntry id="UnaryTests_1ws9i8w">
@@ -273,6 +310,9 @@
           <text>"external"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1hs752d">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_15mxqtw">
           <text></text>
         </outputEntry>
       </rule>
@@ -295,6 +335,9 @@
         <outputEntry id="LiteralExpression_16pog0r">
           <text></text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_04er9yr">
+          <text></text>
+        </outputEntry>
       </rule>
       <rule id="DecisionRule_1puaqjc">
         <inputEntry id="UnaryTests_0e1x2w0">
@@ -313,6 +356,9 @@
           <text>"external"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_166xjyk">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_092ygqd">
           <text></text>
         </outputEntry>
       </rule>
@@ -335,6 +381,9 @@
         <outputEntry id="LiteralExpression_1hzaewn">
           <text></text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_0af9el7">
+          <text></text>
+        </outputEntry>
       </rule>
       <rule id="DecisionRule_0ilfnvo">
         <inputEntry id="UnaryTests_17nkudc">
@@ -353,6 +402,9 @@
           <text>"external"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0krj9ux">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0kyx74f">
           <text></text>
         </outputEntry>
       </rule>
@@ -375,6 +427,9 @@
         <outputEntry id="LiteralExpression_0gji1hv">
           <text></text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_1wyechg">
+          <text></text>
+        </outputEntry>
       </rule>
       <rule id="DecisionRule_0ft10ad">
         <inputEntry id="UnaryTests_1imhsea">
@@ -395,7 +450,17 @@
         <outputEntry id="LiteralExpression_1k8sdn1">
           <text></text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_0vwx8jg">
+          <text></text>
+        </outputEntry>
       </rule>
     </decisionTable>
   </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="DMNDiagram_0b2rkcb">
+      <dmndi:DMNShape id="DMNShape_0wc7glt" dmnElementRef="getTask_IA_Asylum">
+        <dc:Bounds height="80" width="180" x="150" y="150" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
 </definitions>
