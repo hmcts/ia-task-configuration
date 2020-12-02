@@ -5,7 +5,7 @@
 def type = "java"
 def product = "ia"
 def component = "task-configuration"
-def s2sServiceName = "wa_task_configuration_api"
+def s2sServiceName = "wa_camunda_pipeline_upload"
 
 withCamundaOnlyPipeline(type, product, component, s2sServiceName) {
 
