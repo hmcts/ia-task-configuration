@@ -77,7 +77,7 @@ class CamundaSetTaskCompleteTest {
 
     private DmnDecisionTableResult evaluateDmn(String eventId) {
         ClassLoader contextClassLoader = Thread.currentThread().getContextClassLoader();
-        try (InputStream inputStream = contextClassLoader.getResourceAsStream("completeTask_IA_Asylum.dmn")) {
+        try (InputStream inputStream = contextClassLoader.getResourceAsStream("wa-task-completion-ia-asylum.dmn")) {
             DmnDecision decision = dmnEngine.parseDecision("completeTask_IA_Asylum", inputStream);
 
             VariableMap variables = new VariableMapImpl();

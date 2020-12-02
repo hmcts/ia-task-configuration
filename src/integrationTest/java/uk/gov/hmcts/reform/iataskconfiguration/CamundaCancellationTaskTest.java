@@ -49,7 +49,7 @@ class CamundaCancellationTaskTest {
 
     private DmnDecisionTableResult evaluateDmn(String fromState, String event, String state) {
         ClassLoader contextClassLoader = Thread.currentThread().getContextClassLoader();
-        try (InputStream inputStream = contextClassLoader.getResourceAsStream("cancellationTasks_IA_Asylum.dmn")) {
+        try (InputStream inputStream = contextClassLoader.getResourceAsStream("wa-task-cancellation-ia-asylum.dmn")) {
 
             VariableMap variables = new VariableMapImpl();
             variables.putValue("fromState", fromState);
