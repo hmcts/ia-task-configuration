@@ -6,10 +6,13 @@
 
 The purpose of this repo is to hold all IA related Camunda DMN's.
 
+These DMNs can be viewed through the [Camunda Modeler](https://camunda.com/download/modeler/) which can be downloaded via the link.
+
+
 ## What's inside
 
 The repo contains:
- * IA DMN's
+ *  Common IA DMNs for the Task Workflow - [Path to DMNs](https://github.com/hmcts/ia-task-configuration/tree/master/src/main/resources)
  * DMN's tests 
 
 ## Setup
