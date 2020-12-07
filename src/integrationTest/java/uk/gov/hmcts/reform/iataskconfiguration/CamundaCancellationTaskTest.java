@@ -56,7 +56,7 @@ class CamundaCancellationTaskTest {
             variables.putValue("event", event);
             variables.putValue("state", state);
 
-            DmnDecision decision = dmnEngine.parseDecision("CancellationTask_IA_Asylum", inputStream);
+            DmnDecision decision = dmnEngine.parseDecision("wa-task-cancellation-ia-asylum", inputStream);
             return dmnEngine.evaluateDecisionTable(decision, variables);
         } catch (IOException e) {
             throw new AssertionError(e);
