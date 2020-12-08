@@ -49,14 +49,14 @@ class CamundaCancellationTaskTest {
 
     private DmnDecisionTableResult evaluateDmn(String fromState, String event, String state) {
         ClassLoader contextClassLoader = Thread.currentThread().getContextClassLoader();
-        try (InputStream inputStream = contextClassLoader.getResourceAsStream("cancellationTasks_IA_Asylum.dmn")) {
+        try (InputStream inputStream = contextClassLoader.getResourceAsStream("wa-task-cancellation-ia-asylum.dmn")) {
 
             VariableMap variables = new VariableMapImpl();
             variables.putValue("fromState", fromState);
             variables.putValue("event", event);
             variables.putValue("state", state);
 
-            DmnDecision decision = dmnEngine.parseDecision("CancellationTask_IA_Asylum", inputStream);
+            DmnDecision decision = dmnEngine.parseDecision("wa-task-cancellation-ia-asylum", inputStream);
             return dmnEngine.evaluateDecisionTable(decision, variables);
         } catch (IOException e) {
             throw new AssertionError(e);
