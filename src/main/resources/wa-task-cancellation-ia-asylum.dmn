@@ -50,7 +50,7 @@
           <text>"Cancel"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1fhqwus">
-          <text>"Time extension"</text>
+          <text>"Time extension","Followup overdue"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0hp5vha">
@@ -67,7 +67,7 @@
           <text>"Cancel"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_17relsw">
-          <text>"Time extension"</text>
+          <text>"Time extension","Followup overdue"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0t1xbh5">
@@ -84,7 +84,7 @@
           <text>"Cancel"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0mjvutv">
-          <text>"Time extension"</text>
+          <text>"Time extension","Followup overdue"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0scl4xr">
