@@ -34,5 +34,11 @@
     <cve>CVE-2007-1651</cve>
     <cve>CVE-2007-1652</cve>
   </suppress>
+  <suppress until="2020-11-01">
+    <notes><![CDATA[
+     Suppressing as it doesn't seem to have a solution yet, needs to reviewed
+   ]]></notes>
+    <cve>CVE-2020-17527</cve>
+  </suppress>
 </suppressions>
 
