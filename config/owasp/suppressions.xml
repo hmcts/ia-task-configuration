@@ -38,14 +38,11 @@
     <notes><![CDATA[
      Suppressing as it doesn't seem to have a solution yet, needs to reviewed
    ]]></notes>
-    <cve>CVE-2020-17527</cve>
+      <notes>tomcat-embed-core 9.0.33 suppression, root cause and fix needs to be carried out separately</notes>
+      <cve>CVE-2020-17527</cve>
   </suppress>
-  <suppress until="2030-01-01">
-    <notes><![CDATA[
-     Suppressing as it's a false positive (see: https://pivotal.io/security/cve-2018-1258)
-   ]]></notes>
-    <gav regex="true">^org.springframework.security:spring-security-*.*</gav>
-    <cpe>cpe:/a:pivotal_software:spring_security</cpe>
+  <suppress>
+    <notes>tomcat-embed-core 9.0.33 suppression, root cause and fix needs to be carried out separately</notes>
     <cve>CVE-2020-17527</cve>
   </suppress>
 </suppressions>
