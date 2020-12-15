@@ -71,14 +71,13 @@ class CamundaSetTaskCompleteTest {
     void transitionUnmapped() {
         DmnDecisionTableResult dmnDecisionRuleResults = evaluateDmn("null");
 
-        System.out.println(dmnDecisionRuleResults.getResultList());
         assertThat(dmnDecisionRuleResults.isEmpty(), is(true));
     }
 
     private DmnDecisionTableResult evaluateDmn(String eventId) {
         ClassLoader contextClassLoader = Thread.currentThread().getContextClassLoader();
-        try (InputStream inputStream = contextClassLoader.getResourceAsStream("completeTask_IA_Asylum.dmn")) {
-            DmnDecision decision = dmnEngine.parseDecision("completeTask_IA_Asylum", inputStream);
+        try (InputStream inputStream = contextClassLoader.getResourceAsStream("wa-task-completion-ia-asylum.dmn")) {
+            DmnDecision decision = dmnEngine.parseDecision("wa-task-completion-ia-asylum", inputStream);
 
             VariableMap variables = new VariableMapImpl();
             variables.putValue("eventId", eventId);
