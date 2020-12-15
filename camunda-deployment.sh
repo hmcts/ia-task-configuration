@@ -17,6 +17,6 @@ do
 curl --header "Content-Type: multipart/form-data" "ServiceAuthorization: ${AUTHORIZATION}"\
   --request POST \
   --form data=@$file \
-  "http://camunda-bpm/engine-rest/deployment/create"
+  "${CAMUNDA_URL}/deployment/create"
   fi
 done
