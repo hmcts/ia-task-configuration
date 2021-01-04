@@ -454,6 +454,30 @@
           <text></text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0mds5pv">
+        <inputEntry id="UnaryTests_18mycvs">
+          <text>"recordAllocatedJudge"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0t4aent">
+          <text>"ftpaSubmitted"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1kv2lb2">
+          <text>"allocateFTPAToJudge"
+</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1hrh7k5">
+          <text>"Record allocated Judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0f1tm77">
+          <text>"external"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0nhvgt2">
+          <text>5</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0u6lasd">
+          <text></text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
