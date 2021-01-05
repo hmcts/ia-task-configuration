@@ -456,7 +456,7 @@
       </rule>
       <rule id="DecisionRule_0mds5pv">
         <inputEntry id="UnaryTests_18mycvs">
-          <text>"recordAllocatedJudge"</text>
+          <text>"applyForFTPAAppellant","applyForFTPARespondent"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0t4aent">
           <text>"ftpaSubmitted"</text>
@@ -475,7 +475,7 @@
           <text>5</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0u6lasd">
-          <text></text>
+          <text>"Case progression"</text>
         </outputEntry>
       </rule>
     </decisionTable>

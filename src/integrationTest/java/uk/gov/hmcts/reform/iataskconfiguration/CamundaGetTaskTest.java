@@ -53,7 +53,8 @@ class CamundaGetTaskTest {
         "requestCmaRequirements, awaitingCmaRequirements, provideCmaRequirements, external, -1, false, ",
         "requestRespondentReview, respondentReview, provideRespondentReview, external, -1, false, ",
         "requestHearingRequirements, submitHearingRequirements, provideHearingRequirements, external, -1, false, ",
-        "recordAllocatedJudge, ftpaSubmitted, allocateFTPAToJudge, external, 5, false, "
+        "applyForFTPAAppellant, ftpaSubmitted, allocateFTPAToJudge, external, 5, true, Case progression, ",
+        "applyForFTPARespondent, ftpaSubmitted, allocateFTPAToJudge, external, 5, true, Case progression, "
     })
     void shouldGetTaskIdTest(String eventId,
                              String postState,
