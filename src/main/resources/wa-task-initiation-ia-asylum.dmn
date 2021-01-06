@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.2.0">
   <decision id="wa-task-initiation-ia-asylum" name="Task initiation DMN">
-    <decisionTable id="DecisionTable_0jtevuc" hitPolicy="FIRST">
+    <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT">
       <input id="Input_1" label="Event Id" camunda:inputVariable="eventId">
         <inputExpression id="InputExpression_1" typeRef="string">
           <text></text>
@@ -511,7 +511,7 @@
           <text>"reviewHearingRequirements"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0gdp0c7">
-          <text>Review hearing requirements</text>
+          <text>"Review hearing requirements"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_14ib57y">
           <text>"TCW"</text>
@@ -566,7 +566,7 @@
           <text>5</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1p64fgj">
-          <text>"Case progression""</text>
+          <text>"Case progression"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0i6qihx">
@@ -600,7 +600,7 @@
           <text>"caseBuilding"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0lb6c30">
-          <text>followUpOverdueCaseBuilding</text>
+          <text>"followUpOverdueCaseBuilding"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0gk868l">
           <text>"Follow-up overdue case building"</text>
@@ -623,7 +623,7 @@
           <text>"awaitingReasonsForAppeal"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_19vwnak">
-          <text>followUpOverdueReasonsForAppeal</text>
+          <text>"followUpOverdueReasonsForAppeal"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_19gui3y">
           <text>"Follow-up overdue reasons for appeal"</text>
@@ -709,10 +709,10 @@
       </rule>
       <rule id="DecisionRule_0f4ui9w">
         <inputEntry id="UnaryTests_1hx4zw6">
-          <text>""requestHearingRequirements""</text>
+          <text>"requestHearingRequirements"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1w192ot">
-          <text>""submitHearingRequirements""</text>
+          <text>"submitHearingRequirements"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1mcx73h">
           <text>"followUpOverdueHearingRequirements"</text>
