@@ -23,7 +23,7 @@ import java.util.stream.Stream;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-@SuppressWarnings("checkstyle:LineLength")
+@SuppressWarnings({"checkstyle:LineLength", "checkstyle:AbbreviationAsWordInName"})
 class CamundaTaskInitiationTest {
 
     private DmnEngine dmnEngine;
