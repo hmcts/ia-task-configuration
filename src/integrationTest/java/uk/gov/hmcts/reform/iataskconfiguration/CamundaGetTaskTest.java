@@ -35,6 +35,7 @@ class CamundaGetTaskTest {
     @ParameterizedTest(name = "\"{0}\" \"{1}\" should go to \"{2}\"")
     @CsvSource({
         "submitAppeal, anything, processApplication, TCW, 2, false, ",
+        "submitAppeal, appealSubmitted, reviewTheAppeal, TCW, 2, true, Case progression",
         "submitTimeExtension, anything, decideOnTimeExtension, TCW, 2, true, Time extension",
         "uploadHomeOfficeBundle, awaitingRespondentEvidence, reviewRespondentEvidence, TCW, 2, true, Case progression",
         "submitCase, caseUnderReview, reviewAppealSkeletonArgument, TCW, 2, true, Case progression",
@@ -54,7 +55,8 @@ class CamundaGetTaskTest {
         "requestRespondentReview, respondentReview, provideRespondentReview, external, -1, false, ",
         "requestHearingRequirements, submitHearingRequirements, provideHearingRequirements, external, -1, false, ",
         "applyForFTPAAppellant, ftpaSubmitted, allocateFTPAToJudge, external, 5, true, Case progression, ",
-        "applyForFTPARespondent, ftpaSubmitted, allocateFTPAToJudge, external, 5, true, Case progression, "
+        "applyForFTPARespondent, ftpaSubmitted, allocateFTPAToJudge, external, 5, true, Case progression, ",
+        "draftHearingRequirements, listing, reviewHearingRequirements, TCW, 2, true, Case progression, "
     })
     void shouldGetTaskIdTest(String eventId,
                              String postState,
