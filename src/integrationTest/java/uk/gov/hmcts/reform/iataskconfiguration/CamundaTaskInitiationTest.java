@@ -50,19 +50,16 @@ class CamundaTaskInitiationTest {
         "anything, prepareForHearing, createCaseSummary, TCW, 2, true, Case progression",
         "anything, finalBundling, createHearingBundle, TCW, 2, true, Case progression",
         "anything, preHearing, startDecisionsAndReasonsDocument, TCW, 2, true, Case progression",
-        "applyForFTPARespondent, ftpaSubmitted, allocateFTPAToJudge, external, 5, true, Case progression, ",
         "draftHearingRequirements, listing, reviewHearingRequirements, TCW, 2, true, Case progression, "
     })
-    void given_single_rules_match_should_evaluate(String eventId,
-                                                  String postState,
-                                                  String taskId,
-                                                  String group,
-                                                  Integer workingDaysAllowed,
-                                                  boolean expectedTaskCategoryPresent,
-                                                  String taskCategory) {
+    void given_single_rule_match_should_evaluate(String eventId,
+                                                 String postState,
+                                                 String taskId,
+                                                 String group,
+                                                 Integer workingDaysAllowed,
+                                                 boolean expectedTaskCategoryPresent,
+                                                 String taskCategory) {
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmn(eventId, postState);
-
-        System.out.println(dmnDecisionTableResult.getResultList());
 
         DmnDecisionRuleResult singleResult = dmnDecisionTableResult.getSingleResult();
 
@@ -81,7 +78,7 @@ class CamundaTaskInitiationTest {
 
     @ParameterizedTest
     @MethodSource("scenarioProvider")
-    void given_multiple_rules_match_should_evaluate(Scenario scenario) {
+    void given_multiple_rules_matches_should_evaluate(Scenario scenario) {
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmn(scenario.eventId, scenario.postState);
 
@@ -146,21 +143,44 @@ class CamundaTaskInitiationTest {
         );
 
         // applyForFTPAAppellant scenario
-        Map<String, Object> rule1 = Map.of(
+        Map<String, Object> ruleFTPAAppellant1 = Map.of(
             "name", "Record allocated Judge",
             "workingDaysAllowed", 5,
             "taskId", "allocateFTPAToJudge",
             "group", "external",
             "taskCategory", "Case progression"
         );
-        Map<String, Object> rule2 = Map.of(
+        Map<String, Object> ruleFTPAAppellant2 = Map.of(
             "name", "Allocate FTPA to Judge",
             "workingDaysAllowed", 5,
             "taskId", "allocateFtpaToJudge",
             "group", "TCW",
             "taskCategory", "Case progression"
         );
-        List<Map<String, Object>> expectedResultsApplyForFTPAAppellant = List.of(rule1, rule2);
+        List<Map<String, Object>> expectedResultsApplyForFTPAAppellant = List.of(
+            ruleFTPAAppellant1,
+            ruleFTPAAppellant2
+        );
+
+        // applyForFTPARespondent scenario
+        Map<String, Object> ruleFTPARespondent1 = Map.of(
+            "name", "Record allocated Judge",
+            "workingDaysAllowed", 5,
+            "taskId", "allocateFTPAToJudge",
+            "group", "external",
+            "taskCategory", "Case progression"
+        );
+        Map<String, Object> ruleFTPARespondent2 = Map.of(
+            "name", "Allocate FTPA to Judge",
+            "workingDaysAllowed", 5,
+            "taskId", "allocateFtpaToJudge",
+            "group", "TCW",
+            "taskCategory", "Case progression"
+        );
+        List<Map<String, Object>> expectedResultsApplyForFTPARespondent = List.of(
+            ruleFTPARespondent1,
+            ruleFTPARespondent2
+        );
 
 
         return Stream.of(
@@ -203,6 +223,11 @@ class CamundaTaskInitiationTest {
                 "applyForFTPAAppellant",
                 "ftpaSubmitted",
                 expectedResultsApplyForFTPAAppellant
+            ),
+            new Scenario(
+                "applyForFTPARespondent",
+                "ftpaSubmitted",
+                expectedResultsApplyForFTPARespondent
             )
         );
     }
