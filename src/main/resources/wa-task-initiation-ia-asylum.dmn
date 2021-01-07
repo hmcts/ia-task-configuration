@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.2.0">
   <decision id="wa-task-initiation-ia-asylum" name="Task initiation DMN">
-    <decisionTable id="DecisionTable_0jtevuc" hitPolicy="FIRST">
+    <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT">
       <input id="Input_1" label="Event Id" camunda:inputVariable="eventId">
         <inputExpression id="InputExpression_1" typeRef="string">
           <text></text>
@@ -38,6 +38,29 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_19p16ln">
           <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_16cn5ci">
+        <inputEntry id="UnaryTests_1hf1bm4">
+          <text>"submitAppeal"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hicgo1">
+          <text>"appealSubmitted"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1idu6wl">
+          <text>"reviewTheAppeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1llbt9e">
+          <text>"Review the appeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ujg79d">
+          <text>"TCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_10zmxqe">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0iaxv3f">
+          <text>"Case progression"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_046wm6a">
@@ -462,8 +485,7 @@
           <text>"ftpaSubmitted"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1kv2lb2">
-          <text>"allocateFTPAToJudge"
-</text>
+          <text>"allocateFTPAToJudge"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1hrh7k5">
           <text>"Record allocated Judge"</text>
@@ -476,6 +498,236 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0u6lasd">
           <text>"Case progression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1mdjy4l">
+        <inputEntry id="UnaryTests_0hm5cth">
+          <text>"draftHearingRequirements"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1m8j7cn">
+          <text>"listing"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1yz991s">
+          <text>"reviewHearingRequirements"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0gdp0c7">
+          <text>"Review hearing requirements"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_14ib57y">
+          <text>"TCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0g9yuhw">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0j9pe8d">
+          <text>"Case progression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1i9o6sq">
+        <inputEntry id="UnaryTests_1musj01">
+          <text>"applyForFTPAAppellant"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1smiopm">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1syzaj0">
+          <text>"allocateFtpaToJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_01ckded">
+          <text>"Allocate FTPA to Judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0er2zgp">
+          <text>"TCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0mk2103">
+          <text>5</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_06e3501">
+          <text>"Case progression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_03s34kj">
+        <inputEntry id="UnaryTests_0x6p0iq">
+          <text>"applyForFTPARespondent"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01jhn05">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1homrsi">
+          <text>"allocateFtpaToJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ck5w1d">
+          <text>"Allocate FTPA to Judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ybvr5k">
+          <text>"TCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_13mlqbd">
+          <text>5</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1p64fgj">
+          <text>"Case progression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0i6qihx">
+        <inputEntry id="UnaryTests_03alruf">
+          <text>"requestRespondentEvidence"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ce2dnf">
+          <text>"awaitingRespondentEvidence"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1j9930c">
+          <text>"followUpOverdueRespondentEvidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_00pwci6">
+          <text>"Follow-up overdue respondent evidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_11zq0r5">
+          <text>"TCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_184ro7i">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0thr6gl">
+          <text>"Followup overdue"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_10q7721">
+        <inputEntry id="UnaryTests_0ifxfwu">
+          <text>"requestCaseBuilding"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0kwb3ti">
+          <text>"caseBuilding"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0lb6c30">
+          <text>"followUpOverdueCaseBuilding"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0gk868l">
+          <text>"Follow-up overdue case building"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_13iptpi">
+          <text>"TCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_17t1pof">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0n35lpo">
+          <text>"Followup overdue"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_10eahy0">
+        <inputEntry id="UnaryTests_0w6uytr">
+          <text>"requestReasonsForAppeal"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rj1kf3">
+          <text>"awaitingReasonsForAppeal"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_19vwnak">
+          <text>"followUpOverdueReasonsForAppeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_19gui3y">
+          <text>"Follow-up overdue reasons for appeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ov6s7e">
+          <text>"TCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_19cly21">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1m406i0">
+          <text>"Followup overdue"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ass3eo">
+        <inputEntry id="UnaryTests_02uh7aj">
+          <text>"sendDirectionWithQuestions"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nya6gc">
+          <text>"awaitingClarifyingQuestionsAnswers"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0z3y2lw">
+          <text>"followUpOverdueClarifyingAnswers"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1674tdo">
+          <text>"Follow-up overdue clarifying answers"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ep4zfp">
+          <text>"TCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0kqlc9o">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1k5vp3c">
+          <text>"Followup overdue"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0rwbivl">
+        <inputEntry id="UnaryTests_1upma1i">
+          <text>"requestCmaRequirements"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_18i43t6">
+          <text>"awaitingCmaRequirements"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1r67bke">
+          <text>"followUpOverdueCmaRequirements"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_13tike8">
+          <text>"Follow-up overdue CMA requirements"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0acruk7">
+          <text>"TCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_137jbcs">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1q1xh55">
+          <text>"Followup overdue"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_169eas5">
+        <inputEntry id="UnaryTests_0n33rm4">
+          <text>"requestRespondentReview"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1lee1lp">
+          <text>"respondentReview"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_14x4lnk">
+          <text>"followUpOverdueRespondentReview"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_073g0mv">
+          <text>"Follow-up overdue respondent review"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0w06nqy">
+          <text>"TCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0a21cw2">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ici557">
+          <text>"Followup overdue"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0f4ui9w">
+        <inputEntry id="UnaryTests_1hx4zw6">
+          <text>"requestHearingRequirements"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1w192ot">
+          <text>"submitHearingRequirements"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1mcx73h">
+          <text>"followUpOverdueHearingRequirements"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1agouf6">
+          <text>"Follow-up overdue hearing requirements"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_024gb4c">
+          <text>"TCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_07ijv3r">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1eqvrbb">
+          <text>"Followup overdue"</text>
         </outputEntry>
       </rule>
     </decisionTable>
