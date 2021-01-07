@@ -246,7 +246,7 @@ class CamundaTaskInitiationTest {
             "workingDaysAllowed", 2,
             "taskId", taskId2,
             "group", "TCW",
-            "taskCategory", "Followup Overdue"
+            "taskCategory", "Followup overdue"
         );
 
         return List.of(rule1, rule2);
