@@ -6,8 +6,9 @@ def type = "java"
 def product = "ia"
 def component = "task-configuration"
 def s2sServiceName = "wa_camunda_pipeline_upload"
+def tenantId = "ia"
 
-withCamundaOnlyPipeline(type, product, component, s2sServiceName) {
+withCamundaOnlyPipeline(type, product, component, s2sServiceName, tenantId) {
 
   after('test') {
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: '**/reports/tests/**/*'
