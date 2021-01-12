@@ -38,7 +38,6 @@ class CamundaTaskInitiationTest {
     @DisplayName("Get task id")
     @ParameterizedTest(name = "\"{0}\" \"{1}\" should go to \"{2}\"")
     @CsvSource({
-        "submitAppeal, anything, processApplication, TCW, 2, false, ",
         "submitTimeExtension, anything, decideOnTimeExtension, TCW, 2, true, Time extension",
         "uploadHomeOfficeBundle, awaitingRespondentEvidence, reviewRespondentEvidence, TCW, 2, true, Case progression",
         "submitCase, caseUnderReview, reviewAppealSkeletonArgument, TCW, 2, true, Case progression",
@@ -182,6 +181,25 @@ class CamundaTaskInitiationTest {
             ruleFTPARespondent2
         );
 
+        // submitAppeal scenario
+        Map<String, Object> ruleSubmitAppeal1 = Map.of(
+            "name", "Process Application",
+            "workingDaysAllowed", 2,
+            "taskId", "processApplication",
+            "group", "TCW"
+        );
+        Map<String, Object> ruleSubmitAppeal2 = Map.of(
+            "name", "Review the appeal",
+            "workingDaysAllowed", 2,
+            "taskId", "reviewTheAppeal",
+            "group", "TCW",
+            "taskCategory", "Case progression"
+        );
+        List<Map<String, Object>> expectedResultsApplyForSubmitAppeal = List.of(
+            ruleSubmitAppeal1,
+            ruleSubmitAppeal2
+        );
+
 
         return Stream.of(
             new Scenario(
@@ -228,6 +246,11 @@ class CamundaTaskInitiationTest {
                 "applyForFTPARespondent",
                 "ftpaSubmitted",
                 expectedResultsApplyForFTPARespondent
+            ),
+            new Scenario(
+                "submitAppeal",
+                "appealSubmitted",
+                expectedResultsApplyForSubmitAppeal
             )
         );
     }
