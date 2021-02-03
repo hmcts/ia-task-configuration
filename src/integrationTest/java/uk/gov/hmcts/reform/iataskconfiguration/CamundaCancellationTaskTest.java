@@ -39,6 +39,16 @@ class CamundaCancellationTaskTest {
         assertThat(dmnDecisionRuleResults.getFirstResult().getEntryMap(), is(result));
     }
 
+    @DisplayName("Set warn for tasks")
+    @ParameterizedTest
+    @CsvSource({"\"\",makeAnApplication,\"\""})
+    void test_response_of_warn_dmn_table(String fromState, String event, String state) {
+        VariableMap result = new VariableMapImpl();
+        result.putValue("action","Warn");
+        DmnDecisionTableResult dmnDecisionRuleResults = evaluateDmn(fromState,event,state);
+        assertThat(dmnDecisionRuleResults.getFirstResult().getEntryMap(), is(result));
+    }
+
     @DisplayName("transition unmapped")
     @Test
     void transitionUnmapped() {
