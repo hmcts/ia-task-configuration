@@ -47,6 +47,8 @@ class CamundaCancellationTaskTest {
         result.putValue("action","Warn");
         DmnDecisionTableResult dmnDecisionRuleResults = evaluateDmn(fromState,event,state);
         assertThat(dmnDecisionRuleResults.getFirstResult().getEntryMap(), is(result));
+        assertThat(dmnDecisionRuleResults.getFirstResult().getEntryMap().get("action"), is("Warn"));
+
     }
 
     @DisplayName("transition unmapped")
