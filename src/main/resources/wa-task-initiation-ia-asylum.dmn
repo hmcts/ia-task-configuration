@@ -7,7 +7,7 @@
           <text></text>
         </inputExpression>
       </input>
-      <input id="InputClause_0gxli97" label="Post event state" camunda:inputVariable="postEventState">
+      <input id="InputClause_0gxli97" label="Post event state" biodi:width="268" camunda:inputVariable="postEventState">
         <inputExpression id="LiteralExpression_0dijl5x" typeRef="string">
           <text></text>
         </inputExpression>
@@ -19,7 +19,7 @@
       <output id="OutputClause_18cwtj9" label="Task category" name="taskCategory" typeRef="string" biodi:width="192" />
       <rule id="DecisionRule_1fenvxm">
         <inputEntry id="UnaryTests_09nq8bu">
-          <text>"submitAppeal"</text>
+          <text>"makeAnApplication"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0aldx9i">
           <text></text>

@@ -28,62 +28,6 @@ class CamundaTaskInitiationTest {
 
     private DmnEngine dmnEngine;
 
-    @BeforeEach
-    void setUp() {
-        dmnEngine = DmnEngineConfiguration
-            .createDefaultDmnEngineConfiguration()
-            .buildEngine();
-    }
-
-    @DisplayName("Get task id")
-    @ParameterizedTest(name = "\"{0}\" \"{1}\" should go to \"{2}\"")
-    @CsvSource({
-        "submitTimeExtension, anything, decideOnTimeExtension, TCW, 2, true, Time extension",
-        "uploadHomeOfficeBundle, awaitingRespondentEvidence, reviewRespondentEvidence, TCW, 2, true, Case progression",
-        "submitCase, caseUnderReview, reviewAppealSkeletonArgument, TCW, 2, true, Case progression",
-        "submitReasonsForAppeal, reasonsForAppealSubmitted, reviewReasonsForAppeal, TCW, 2, true, Case progression",
-        "submitClarifyingQuestionAnswers, clarifyingQuestionsAnswersSubmitted, reviewClarifyingQuestionsAnswers, TCW, 2, true, Case progression",
-        "submitCmaRequirements, cmaRequirementsSubmitted, reviewCmaRequirements, TCW, 2, true, Case progression",
-        "listCma, cmaListed, attendCma, TCW, 2, true, Case progression",
-        "uploadHomeOfficeAppealResponse, respondentReview, reviewRespondentResponse, TCW, 2, true, Case progression",
-        "anything, prepareForHearing, createCaseSummary, TCW, 2, true, Case progression",
-        "anything, finalBundling, createHearingBundle, TCW, 2, true, Case progression",
-        "anything, preHearing, startDecisionsAndReasonsDocument, TCW, 2, true, Case progression",
-        "draftHearingRequirements, listing, reviewHearingRequirements, TCW, 2, true, Case progression, "
-    })
-    void given_single_rule_match_should_evaluate(String eventId,
-                                                 String postState,
-                                                 String taskId,
-                                                 String group,
-                                                 Integer workingDaysAllowed,
-                                                 boolean expectedTaskCategoryPresent,
-                                                 String taskCategory) {
-        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmn(eventId, postState);
-
-        DmnDecisionRuleResult singleResult = dmnDecisionTableResult.getSingleResult();
-
-        assertThat(singleResult.getEntry("taskId"), is(taskId));
-        assertThat(singleResult.getEntry("group"), is(group));
-        assertThat(singleResult.containsKey("taskCategory"), is(expectedTaskCategoryPresent));
-        if (expectedTaskCategoryPresent) {
-            assertThat(singleResult.getEntry("taskCategory"), is(taskCategory));
-        }
-        if (workingDaysAllowed > 0) {
-            assertThat(singleResult.getEntry("workingDaysAllowed"), is(workingDaysAllowed));
-        } else {
-            assertThat(singleResult.containsKey("workingDaysAllowed"), is(false));
-        }
-    }
-
-    @ParameterizedTest
-    @MethodSource("scenarioProvider")
-    void given_multiple_rules_matches_should_evaluate(Scenario scenario) {
-
-        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmn(scenario.eventId, scenario.postState);
-
-        assertThat(dmnDecisionTableResult.getResultList(), is(scenario.expectedResultList));
-    }
-
     private static Stream<Scenario> scenarioProvider() {
         // requestRespondentEvidence scenario
         List<Map<String, Object>> expectedResultsRequestRespondentEvidence = getExpectedResults(
@@ -181,25 +125,28 @@ class CamundaTaskInitiationTest {
             ruleFTPARespondent2
         );
 
-        // submitAppeal scenario
-        Map<String, Object> ruleSubmitAppeal1 = Map.of(
+        Map<String, Object> ruleMakeAnApplication = Map.of(
             "name", "Process Application",
             "workingDaysAllowed", 2,
             "taskId", "processApplication",
             "group", "TCW"
         );
-        Map<String, Object> ruleSubmitAppeal2 = Map.of(
+
+        List<Map<String, Object>> expectedResultsApplyForMakeAnApplication = List.of(
+            ruleMakeAnApplication
+        );
+
+        Map<String, Object> ruleSubmitAppeal = Map.of(
             "name", "Review the appeal",
             "workingDaysAllowed", 2,
             "taskId", "reviewTheAppeal",
             "group", "TCW",
             "taskCategory", "Case progression"
         );
-        List<Map<String, Object>> expectedResultsApplyForSubmitAppeal = List.of(
-            ruleSubmitAppeal1,
-            ruleSubmitAppeal2
-        );
 
+        List<Map<String, Object>> expectedResultsApplyForSubmitAppeal = List.of(
+            ruleSubmitAppeal
+        );
 
         return Stream.of(
             new Scenario(
@@ -251,6 +198,11 @@ class CamundaTaskInitiationTest {
                 "submitAppeal",
                 "appealSubmitted",
                 expectedResultsApplyForSubmitAppeal
+            ),
+            new Scenario(
+                "makeAnApplication",
+                "anything",
+                expectedResultsApplyForMakeAnApplication
             )
         );
     }
@@ -275,19 +227,60 @@ class CamundaTaskInitiationTest {
         return List.of(rule1, rule2);
     }
 
-    private static class Scenario {
-        String eventId;
-        String postState;
-        List<Map<String, Object>> expectedResultList;
+    @BeforeEach
+    void setUp() {
+        dmnEngine = DmnEngineConfiguration
+            .createDefaultDmnEngineConfiguration()
+            .buildEngine();
+    }
 
-        public Scenario(String eventId,
-                        String postState,
-                        List<Map<String, Object>> expectedResultList
-        ) {
-            this.eventId = eventId;
-            this.postState = postState;
-            this.expectedResultList = expectedResultList;
+    @DisplayName("Get task id")
+    @ParameterizedTest(name = "\"{0}\" \"{1}\" should go to \"{2}\"")
+    @CsvSource({
+        "submitTimeExtension, anything, decideOnTimeExtension, TCW, 2, true, Time extension",
+        "uploadHomeOfficeBundle, awaitingRespondentEvidence, reviewRespondentEvidence, TCW, 2, true, Case progression",
+        "submitCase, caseUnderReview, reviewAppealSkeletonArgument, TCW, 2, true, Case progression",
+        "submitReasonsForAppeal, reasonsForAppealSubmitted, reviewReasonsForAppeal, TCW, 2, true, Case progression",
+        "submitClarifyingQuestionAnswers, clarifyingQuestionsAnswersSubmitted, reviewClarifyingQuestionsAnswers, TCW, 2, true, Case progression",
+        "submitCmaRequirements, cmaRequirementsSubmitted, reviewCmaRequirements, TCW, 2, true, Case progression",
+        "listCma, cmaListed, attendCma, TCW, 2, true, Case progression",
+        "uploadHomeOfficeAppealResponse, respondentReview, reviewRespondentResponse, TCW, 2, true, Case progression",
+        "anything, prepareForHearing, createCaseSummary, TCW, 2, true, Case progression",
+        "anything, finalBundling, createHearingBundle, TCW, 2, true, Case progression",
+        "anything, preHearing, startDecisionsAndReasonsDocument, TCW, 2, true, Case progression",
+        "draftHearingRequirements, listing, reviewHearingRequirements, TCW, 2, true, Case progression, "
+    })
+    void given_single_rule_match_should_evaluate(String eventId,
+                                                 String postState,
+                                                 String taskId,
+                                                 String group,
+                                                 Integer workingDaysAllowed,
+                                                 boolean expectedTaskCategoryPresent,
+                                                 String taskCategory) {
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmn(eventId, postState);
+
+        DmnDecisionRuleResult singleResult = dmnDecisionTableResult.getSingleResult();
+
+        assertThat(singleResult.getEntry("taskId"), is(taskId));
+        assertThat(singleResult.getEntry("group"), is(group));
+        assertThat(singleResult.containsKey("taskCategory"), is(expectedTaskCategoryPresent));
+        if (expectedTaskCategoryPresent) {
+            assertThat(singleResult.getEntry("taskCategory"), is(taskCategory));
         }
+        if (workingDaysAllowed > 0) {
+            assertThat(singleResult.getEntry("workingDaysAllowed"), is(workingDaysAllowed));
+        } else {
+            assertThat(singleResult.containsKey("workingDaysAllowed"), is(false));
+        }
+    }
+
+    @ParameterizedTest
+    @MethodSource("scenarioProvider")
+    void given_multiple_rules_matches_should_evaluate(Scenario scenario) {
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmn(scenario.eventId, scenario.postState);
+
+        assertThat(dmnDecisionTableResult.getResultList(), is(scenario.expectedResultList));
     }
 
     @DisplayName("transition unmapped")
@@ -310,6 +303,21 @@ class CamundaTaskInitiationTest {
             return dmnEngine.evaluateDecisionTable(decision, variables);
         } catch (IOException e) {
             throw new AssertionError(e);
+        }
+    }
+
+    private static class Scenario {
+        String eventId;
+        String postState;
+        List<Map<String, Object>> expectedResultList;
+
+        public Scenario(String eventId,
+                        String postState,
+                        List<Map<String, Object>> expectedResultList
+        ) {
+            this.eventId = eventId;
+            this.postState = postState;
+            this.expectedResultList = expectedResultList;
         }
     }
 
