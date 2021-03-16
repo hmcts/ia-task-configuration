@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.2.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.4.0">
   <decision id="wa-task-initiation-ia-asylum" name="Task initiation DMN">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT">
       <input id="Input_1" label="Event Id" camunda:inputVariable="eventId">
@@ -15,6 +15,7 @@
       <output id="Output_1" label="Task Id" name="taskId" typeRef="string" />
       <output id="OutputClause_0p5fhhd" label="Name" name="name" typeRef="string" />
       <output id="OutputClause_0f63m65" label="Group" name="group" typeRef="string" />
+      <output id="OutputClause_165p3r3" label="Delay Duration" name="delayDuration" typeRef="integer" />
       <output id="OutputClause_0i6c6c2" label="Working Days Allowed" name="workingDaysAllowed" typeRef="integer" />
       <output id="OutputClause_18cwtj9" label="Task category" name="taskCategory" typeRef="string" biodi:width="192" />
       <rule id="DecisionRule_1fenvxm">
@@ -32,6 +33,9 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0epp4rf">
           <text>"TCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1x6roa1">
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1td2bt7">
           <text>2</text>
@@ -56,6 +60,9 @@
         <outputEntry id="LiteralExpression_1ujg79d">
           <text>"TCW"</text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_1cj0xz3">
+          <text></text>
+        </outputEntry>
         <outputEntry id="LiteralExpression_10zmxqe">
           <text>2</text>
         </outputEntry>
@@ -78,6 +85,9 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0o3ekx3">
           <text>"TCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0tpiw26">
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_16urfvv">
           <text>2</text>
@@ -102,6 +112,9 @@
         <outputEntry id="LiteralExpression_0ezi8jw">
           <text>"TCW"</text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_1i50q27">
+          <text></text>
+        </outputEntry>
         <outputEntry id="LiteralExpression_057kfbi">
           <text>2</text>
         </outputEntry>
@@ -124,6 +137,9 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_1pbeee3">
           <text>"TCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_10nev13">
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1qxex0h">
           <text>2</text>
@@ -148,6 +164,9 @@
         <outputEntry id="LiteralExpression_1ey5yzs">
           <text>"TCW"</text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_1ym5r20">
+          <text></text>
+        </outputEntry>
         <outputEntry id="LiteralExpression_1w4a5dv">
           <text>2</text>
         </outputEntry>
@@ -170,6 +189,9 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_1vlo7cs">
           <text>"TCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_00ur2tu">
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1ir1zsl">
           <text>2</text>
@@ -194,6 +216,9 @@
         <outputEntry id="LiteralExpression_180gwcu">
           <text>"TCW"</text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_0nmzwz6">
+          <text></text>
+        </outputEntry>
         <outputEntry id="LiteralExpression_1hxjfjs">
           <text>2</text>
         </outputEntry>
@@ -216,6 +241,9 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_05ydvee">
           <text>"TCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0xnoa0r">
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1umafvm">
           <text>2</text>
@@ -240,6 +268,9 @@
         <outputEntry id="LiteralExpression_1tjk1uy">
           <text>"TCW"</text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_14a2upo">
+          <text></text>
+        </outputEntry>
         <outputEntry id="LiteralExpression_11qiura">
           <text>2</text>
         </outputEntry>
@@ -262,6 +293,9 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_02ocahm">
           <text>"TCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0wetk4k">
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1m82yii">
           <text>2</text>
@@ -286,6 +320,9 @@
         <outputEntry id="LiteralExpression_1846q2j">
           <text>"TCW"</text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_1bk7hvs">
+          <text></text>
+        </outputEntry>
         <outputEntry id="LiteralExpression_0ct7jss">
           <text>2</text>
         </outputEntry>
@@ -308,6 +345,9 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0e3nnlv">
           <text>"TCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_14mxl3i">
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0twp9o1">
           <text>2</text>
@@ -332,6 +372,9 @@
         <outputEntry id="LiteralExpression_10iwep1">
           <text>"external"</text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_1t8zc5a">
+          <text></text>
+        </outputEntry>
         <outputEntry id="LiteralExpression_1hs752d">
           <text></text>
         </outputEntry>
@@ -354,6 +397,9 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0xikhzp">
           <text>"external"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0x1pj4n">
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_16pog0r">
           <text></text>
@@ -378,6 +424,9 @@
         <outputEntry id="LiteralExpression_1l5fl2v">
           <text>"external"</text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_0styndr">
+          <text></text>
+        </outputEntry>
         <outputEntry id="LiteralExpression_166xjyk">
           <text></text>
         </outputEntry>
@@ -400,6 +449,9 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0u68a06">
           <text>"external"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1sm4e4y">
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1hzaewn">
           <text></text>
@@ -424,6 +476,9 @@
         <outputEntry id="LiteralExpression_11hjg6x">
           <text>"external"</text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_07k3soy">
+          <text></text>
+        </outputEntry>
         <outputEntry id="LiteralExpression_0krj9ux">
           <text></text>
         </outputEntry>
@@ -446,6 +501,9 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_1k5wucv">
           <text>"external"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0r46hq7">
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0gji1hv">
           <text></text>
@@ -470,6 +528,9 @@
         <outputEntry id="LiteralExpression_14xa26a">
           <text>"external"</text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_174oc56">
+          <text></text>
+        </outputEntry>
         <outputEntry id="LiteralExpression_1k8sdn1">
           <text></text>
         </outputEntry>
@@ -492,6 +553,9 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0f1tm77">
           <text>"external"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_080qb0i">
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0nhvgt2">
           <text>5</text>
@@ -516,6 +580,9 @@
         <outputEntry id="LiteralExpression_14ib57y">
           <text>"TCW"</text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_1dbwiwt">
+          <text></text>
+        </outputEntry>
         <outputEntry id="LiteralExpression_0g9yuhw">
           <text>2</text>
         </outputEntry>
@@ -538,6 +605,9 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0er2zgp">
           <text>"TCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1hsb5kf">
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0mk2103">
           <text>5</text>
@@ -562,6 +632,9 @@
         <outputEntry id="LiteralExpression_1ybvr5k">
           <text>"TCW"</text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_1xkqk32">
+          <text></text>
+        </outputEntry>
         <outputEntry id="LiteralExpression_13mlqbd">
           <text>5</text>
         </outputEntry>
@@ -584,6 +657,9 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_11zq0r5">
           <text>"TCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1u0h529">
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_184ro7i">
           <text>2</text>
@@ -608,6 +684,9 @@
         <outputEntry id="LiteralExpression_13iptpi">
           <text>"TCW"</text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_16vucs8">
+          <text></text>
+        </outputEntry>
         <outputEntry id="LiteralExpression_17t1pof">
           <text>2</text>
         </outputEntry>
@@ -630,6 +709,9 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_1ov6s7e">
           <text>"TCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1bqrry5">
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_19cly21">
           <text>2</text>
@@ -654,6 +736,9 @@
         <outputEntry id="LiteralExpression_0ep4zfp">
           <text>"TCW"</text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_1dcun57">
+          <text></text>
+        </outputEntry>
         <outputEntry id="LiteralExpression_0kqlc9o">
           <text>2</text>
         </outputEntry>
@@ -676,6 +761,9 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0acruk7">
           <text>"TCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1398afp">
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_137jbcs">
           <text>2</text>
@@ -700,6 +788,9 @@
         <outputEntry id="LiteralExpression_0w06nqy">
           <text>"TCW"</text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_1a0n0d2">
+          <text></text>
+        </outputEntry>
         <outputEntry id="LiteralExpression_0a21cw2">
           <text>2</text>
         </outputEntry>
@@ -722,6 +813,9 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_024gb4c">
           <text>"TCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_08ot9zz">
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_07ijv3r">
           <text>2</text>
