@@ -267,6 +267,7 @@ class CamundaTaskInitiationTest {
         if (expectedTaskCategoryPresent) {
             assertThat(singleResult.getEntry("taskCategory"), is(taskCategory));
         }
+        assertThat(singleResult.containsKey("delayDuration"), is(false));
         if (workingDaysAllowed > 0) {
             assertThat(singleResult.getEntry("workingDaysAllowed"), is(workingDaysAllowed));
         } else {
