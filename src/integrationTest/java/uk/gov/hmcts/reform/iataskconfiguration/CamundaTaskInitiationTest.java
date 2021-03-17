@@ -237,24 +237,23 @@ class CamundaTaskInitiationTest {
     @DisplayName("Get task id")
     @ParameterizedTest(name = "\"{0}\" \"{1}\" should go to \"{2}\"")
     @CsvSource({
-        "submitTimeExtension, anything, decideOnTimeExtension, TCW, 0, 2, true, Time extension",
-        "uploadHomeOfficeBundle, awaitingRespondentEvidence, reviewRespondentEvidence, TCW, 0, 2, true, Case progression",
-        "submitCase, caseUnderReview, reviewAppealSkeletonArgument, TCW, 0, 2, true, Case progression",
-        "submitReasonsForAppeal, reasonsForAppealSubmitted, reviewReasonsForAppeal, TCW, 0, 2, true, Case progression",
-        "submitClarifyingQuestionAnswers, clarifyingQuestionsAnswersSubmitted, reviewClarifyingQuestionsAnswers, TCW, 0, 2, true, Case progression",
-        "submitCmaRequirements, cmaRequirementsSubmitted, reviewCmaRequirements, TCW, 0, 2, true, Case progression",
-        "listCma, cmaListed, attendCma, TCW, 0, 2, true, Case progression",
-        "uploadHomeOfficeAppealResponse, respondentReview, reviewRespondentResponse, TCW, 0, 2, true, Case progression",
-        "anything, prepareForHearing, createCaseSummary, TCW, 0, 2, true, Case progression",
-        "anything, finalBundling, createHearingBundle, TCW, 0, 2, true, Case progression",
-        "anything, preHearing, startDecisionsAndReasonsDocument, TCW, 0, 2, true, Case progression",
-        "draftHearingRequirements, listing, reviewHearingRequirements, TCW, 0, 2, true, Case progression, "
+        "submitTimeExtension, anything, decideOnTimeExtension, TCW, 2, true, Time extension",
+        "uploadHomeOfficeBundle, awaitingRespondentEvidence, reviewRespondentEvidence, TCW, 2, true, Case progression",
+        "submitCase, caseUnderReview, reviewAppealSkeletonArgument, TCW, 2, true, Case progression",
+        "submitReasonsForAppeal, reasonsForAppealSubmitted, reviewReasonsForAppeal, TCW, 2, true, Case progression",
+        "submitClarifyingQuestionAnswers, clarifyingQuestionsAnswersSubmitted, reviewClarifyingQuestionsAnswers, TCW, 2, true, Case progression",
+        "submitCmaRequirements, cmaRequirementsSubmitted, reviewCmaRequirements, TCW, 2, true, Case progression",
+        "listCma, cmaListed, attendCma, TCW, 2, true, Case progression",
+        "uploadHomeOfficeAppealResponse, respondentReview, reviewRespondentResponse, TCW, 2, true, Case progression",
+        "anything, prepareForHearing, createCaseSummary, TCW, 2, true, Case progression",
+        "anything, finalBundling, createHearingBundle, TCW, 2, true, Case progression",
+        "anything, preHearing, startDecisionsAndReasonsDocument, TCW, 2, true, Case progression",
+        "draftHearingRequirements, listing, reviewHearingRequirements, TCW, 2, true, Case progression, "
     })
     void given_single_rule_match_should_evaluate(String eventId,
                                                  String postState,
                                                  String taskId,
                                                  String group,
-                                                 Integer delayDuration,
                                                  Integer workingDaysAllowed,
                                                  boolean expectedTaskCategoryPresent,
                                                  String taskCategory) {
@@ -268,11 +267,7 @@ class CamundaTaskInitiationTest {
         if (expectedTaskCategoryPresent) {
             assertThat(singleResult.getEntry("taskCategory"), is(taskCategory));
         }
-        if (delayDuration > 0) {
-            assertThat(singleResult.getEntry("delayDuration"), is(delayDuration));
-        } else {
-            assertThat(singleResult.containsKey("delayDuration"), is(false));
-        }
+        assertThat(singleResult.containsKey("delayDuration"), is(false));
         if (workingDaysAllowed > 0) {
             assertThat(singleResult.getEntry("workingDaysAllowed"), is(workingDaysAllowed));
         } else {
