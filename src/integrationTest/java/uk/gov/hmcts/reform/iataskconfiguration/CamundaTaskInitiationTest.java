@@ -29,71 +29,44 @@ class CamundaTaskInitiationTest {
     private DmnEngine dmnEngine;
 
     private static Stream<Scenario> scenarioProvider() {
-        // requestRespondentEvidence scenario
-        List<Map<String, Object>> expectedResultsRequestRespondentEvidence = getExpectedResults(
-            "Provide Respondent Evidence",
-            "provideRespondentEvidence",
-            "Follow-up overdue respondent evidence",
-            "followUpOverdueRespondentEvidence"
-        );
-
         // requestCaseBuilding scenario
         List<Map<String, Object>> expectedResultsRequestCaseBuilding = getExpectedResults(
-            "Provide Case Building",
-            "provideCaseBuilding",
             "Follow-up overdue case building",
             "followUpOverdueCaseBuilding"
         );
 
         // requestReasonsForAppeal scenario
         List<Map<String, Object>> expectedResultsRequestReasonsForAppeal = getExpectedResults(
-            "Provide Reasons For Appeal",
-            "provideReasonsForAppeal",
             "Follow-up overdue reasons for appeal",
             "followUpOverdueReasonsForAppeal"
         );
 
         // sendDirectionWithQuestions scenario
         List<Map<String, Object>> expectedResultsSendDirectionWithQuestions = getExpectedResults(
-            "Provide Clarifying Answers",
-            "provideClarifyingAnswers",
             "Follow-up overdue clarifying answers",
             "followUpOverdueClarifyingAnswers"
         );
 
         // requestCmaRequirements scenario
         List<Map<String, Object>> expectedResultsRequestCmaRequirements = getExpectedResults(
-            "Provide Cma Requirements",
-            "provideCmaRequirements",
             "Follow-up overdue CMA requirements",
             "followUpOverdueCmaRequirements"
         );
 
         // requestRespondentReview scenario
         List<Map<String, Object>> expectedResultsRequestRespondentReview = getExpectedResults(
-            "Provide Respondent Review",
-            "provideRespondentReview",
             "Follow-up overdue respondent review",
             "followUpOverdueRespondentReview"
         );
 
         // requestHearingRequirements scenario
         List<Map<String, Object>> expectedResultsRequestHearingRequirements = getExpectedResults(
-            "Provide Hearing Requirements",
-            "provideHearingRequirements",
             "Follow-up overdue hearing requirements",
             "followUpOverdueHearingRequirements"
         );
 
         // applyForFTPAAppellant scenario
         Map<String, Object> ruleFTPAAppellant1 = Map.of(
-            "name", "Record allocated Judge",
-            "workingDaysAllowed", 5,
-            "taskId", "allocateFTPAToJudge",
-            "group", "external",
-            "taskCategory", "Case progression"
-        );
-        Map<String, Object> ruleFTPAAppellant2 = Map.of(
             "name", "Allocate FTPA to Judge",
             "workingDaysAllowed", 5,
             "taskId", "allocateFtpaToJudge",
@@ -101,19 +74,11 @@ class CamundaTaskInitiationTest {
             "taskCategory", "Case progression"
         );
         List<Map<String, Object>> expectedResultsApplyForFTPAAppellant = List.of(
-            ruleFTPAAppellant1,
-            ruleFTPAAppellant2
+            ruleFTPAAppellant1
         );
 
         // applyForFTPARespondent scenario
         Map<String, Object> ruleFTPARespondent1 = Map.of(
-            "name", "Record allocated Judge",
-            "workingDaysAllowed", 5,
-            "taskId", "allocateFTPAToJudge",
-            "group", "external",
-            "taskCategory", "Case progression"
-        );
-        Map<String, Object> ruleFTPARespondent2 = Map.of(
             "name", "Allocate FTPA to Judge",
             "workingDaysAllowed", 5,
             "taskId", "allocateFtpaToJudge",
@@ -121,8 +86,7 @@ class CamundaTaskInitiationTest {
             "taskCategory", "Case progression"
         );
         List<Map<String, Object>> expectedResultsApplyForFTPARespondent = List.of(
-            ruleFTPARespondent1,
-            ruleFTPARespondent2
+            ruleFTPARespondent1
         );
 
         Map<String, Object> ruleMakeAnApplication = Map.of(
@@ -149,11 +113,6 @@ class CamundaTaskInitiationTest {
         );
 
         return Stream.of(
-            new Scenario(
-                "requestRespondentEvidence",
-                "awaitingRespondentEvidence",
-                expectedResultsRequestRespondentEvidence
-            ),
             new Scenario(
                 "requestCaseBuilding",
                 "caseBuilding",
@@ -208,23 +167,16 @@ class CamundaTaskInitiationTest {
     }
 
     private static List<Map<String, Object>> getExpectedResults(String name1,
-                                                                String taskId1,
-                                                                String name2,
-                                                                String taskId2) {
-        Map<String, Object> rule1 = Map.of(
-            "name", name1,
-            "taskId", taskId1,
-            "group", "external"
-        );
+                                                                String taskId1) {
         Map<String, Object> rule2 = Map.of(
-            "name", name2,
+            "name", name1,
             "workingDaysAllowed", 2,
-            "taskId", taskId2,
+            "taskId", taskId1,
             "group", "TCW",
             "taskCategory", "Followup overdue"
         );
 
-        return List.of(rule1, rule2);
+        return List.of(rule2);
     }
 
     @BeforeEach
@@ -237,18 +189,22 @@ class CamundaTaskInitiationTest {
     @DisplayName("Get task id")
     @ParameterizedTest(name = "\"{0}\" \"{1}\" should go to \"{2}\"")
     @CsvSource({
-        "submitTimeExtension, anything, decideOnTimeExtension, TCW, 2, true, Time extension",
-        "uploadHomeOfficeBundle, awaitingRespondentEvidence, reviewRespondentEvidence, TCW, 2, true, Case progression",
-        "submitCase, caseUnderReview, reviewAppealSkeletonArgument, TCW, 2, true, Case progression",
-        "submitReasonsForAppeal, reasonsForAppealSubmitted, reviewReasonsForAppeal, TCW, 2, true, Case progression",
-        "submitClarifyingQuestionAnswers, clarifyingQuestionsAnswersSubmitted, reviewClarifyingQuestionsAnswers, TCW, 2, true, Case progression",
-        "submitCmaRequirements, cmaRequirementsSubmitted, reviewCmaRequirements, TCW, 2, true, Case progression",
-        "listCma, cmaListed, attendCma, TCW, 2, true, Case progression",
-        "uploadHomeOfficeAppealResponse, respondentReview, reviewRespondentResponse, TCW, 2, true, Case progression",
-        "anything, prepareForHearing, createCaseSummary, TCW, 2, true, Case progression",
-        "anything, finalBundling, createHearingBundle, TCW, 2, true, Case progression",
-        "anything, preHearing, startDecisionsAndReasonsDocument, TCW, 2, true, Case progression",
-        "draftHearingRequirements, listing, reviewHearingRequirements, TCW, 2, true, Case progression, "
+        "submitTimeExtension, anything, decideOnTimeExtension, TCW, 2, true, Time extension, false, ",
+        "uploadHomeOfficeBundle, awaitingRespondentEvidence, reviewRespondentEvidence, TCW, 2, true, Case progression, false, ",
+        "submitCase, caseUnderReview, reviewAppealSkeletonArgument, TCW, 2, true, Case progression, false, ",
+        "submitReasonsForAppeal, reasonsForAppealSubmitted, reviewReasonsForAppeal, TCW, 2, true, Case progression, false, ",
+        "submitClarifyingQuestionAnswers, clarifyingQuestionsAnswersSubmitted, reviewClarifyingQuestionsAnswers, TCW, 2, true, Case progression, false, ",
+        "submitCmaRequirements, cmaRequirementsSubmitted, reviewCmaRequirements, TCW, 2, true, Case progression, false, ",
+        "listCma, cmaListed, attendCma, TCW, 2, true, Case progression, false, ",
+        "uploadHomeOfficeAppealResponse, respondentReview, reviewRespondentResponse, TCW, 2, true, Case progression, false, ",
+        "anything, prepareForHearing, createCaseSummary, TCW, 2, true, Case progression, false, ",
+        "anything, finalBundling, createHearingBundle, TCW, 2, true, Case progression, false, ",
+        "anything, preHearing, startDecisionsAndReasonsDocument, TCW, 2, true, Case progression, false, ",
+        "sendDirection, anything, followUpNonStandardDirection, TCW, 2, true, Followup overdue, false, ",
+        "removeRepresentation, anything, followUpNoticeOfChange, TCW, 2, true, Followup overdue, true, 14",
+        "removeLegalRepresentative, anything, followUpNoticeOfChange, TCW, 2, true, Followup overdue, true, 14",
+        "requestRespondentEvidence, awaitingRespondentEvidence, followUpOverdueRespondentEvidence, TCW, 2, true, Followup overdue, false, ",
+        "draftHearingRequirements, listing, reviewHearingRequirements, TCW, 2, true, Case progression, false, "
     })
     void given_single_rule_match_should_evaluate(String eventId,
                                                  String postState,
@@ -256,7 +212,9 @@ class CamundaTaskInitiationTest {
                                                  String group,
                                                  Integer workingDaysAllowed,
                                                  boolean expectedTaskCategoryPresent,
-                                                 String taskCategory) {
+                                                 String taskCategory,
+                                                 boolean expectedDelayDuration,
+                                                 Integer delayDuration) {
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmn(eventId, postState);
 
         DmnDecisionRuleResult singleResult = dmnDecisionTableResult.getSingleResult();
@@ -267,12 +225,17 @@ class CamundaTaskInitiationTest {
         if (expectedTaskCategoryPresent) {
             assertThat(singleResult.getEntry("taskCategory"), is(taskCategory));
         }
-        assertThat(singleResult.containsKey("delayDuration"), is(false));
+        if (expectedDelayDuration) {
+            assertThat(singleResult.getEntry("delayDuration"), is(delayDuration));
+        } else {
+            assertThat(singleResult.containsKey("delayDuration"), is(false));
+        }
         if (workingDaysAllowed > 0) {
             assertThat(singleResult.getEntry("workingDaysAllowed"), is(workingDaysAllowed));
         } else {
             assertThat(singleResult.containsKey("workingDaysAllowed"), is(false));
         }
+
     }
 
     @ParameterizedTest

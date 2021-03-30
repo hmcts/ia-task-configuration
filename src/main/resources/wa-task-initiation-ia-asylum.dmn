@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.4.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.2.0">
   <decision id="wa-task-initiation-ia-asylum" name="Task initiation DMN">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT">
       <input id="Input_1" label="Event Id" camunda:inputVariable="eventId">
@@ -14,7 +14,7 @@
       </input>
       <output id="Output_1" label="Task Id" name="taskId" typeRef="string" />
       <output id="OutputClause_0p5fhhd" label="Name" name="name" typeRef="string" />
-      <output id="OutputClause_0f63m65" label="Group" name="group" typeRef="string" />
+      <output id="OutputClause_0f63m65" label="Group" name="group" typeRef="string" biodi:width="192" />
       <output id="OutputClause_165p3r3" label="Delay Duration" name="delayDuration" typeRef="integer" />
       <output id="OutputClause_0i6c6c2" label="Working Days Allowed" name="workingDaysAllowed" typeRef="integer" />
       <output id="OutputClause_18cwtj9" label="Task category" name="taskCategory" typeRef="string" biodi:width="192" />
@@ -356,214 +356,6 @@
           <text>"Case progression"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1sneoct">
-        <inputEntry id="UnaryTests_1ws9i8w">
-          <text>"requestRespondentEvidence"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_08xsyi5">
-          <text>"awaitingRespondentEvidence"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1inmd5d">
-          <text>"provideRespondentEvidence"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_030klmb">
-          <text>"Provide Respondent Evidence"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_10iwep1">
-          <text>"external"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1t8zc5a">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1hs752d">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_15mxqtw">
-          <text></text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1cryksr">
-        <inputEntry id="UnaryTests_0w065lg">
-          <text>"requestCaseBuilding"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1ed3gjs">
-          <text>"caseBuilding"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1452s6m">
-          <text>"provideCaseBuilding"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0rhdu29">
-          <text>"Provide Case Building"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0xikhzp">
-          <text>"external"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0x1pj4n">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_16pog0r">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_04er9yr">
-          <text></text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1puaqjc">
-        <inputEntry id="UnaryTests_0e1x2w0">
-          <text>"requestReasonsForAppeal"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_04z2n2c">
-          <text>"awaitingReasonsForAppeal"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1bqkvmf">
-          <text>"provideReasonsForAppeal"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1axhb3j">
-          <text>"Provide Reasons For Appeal"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1l5fl2v">
-          <text>"external"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0styndr">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_166xjyk">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_092ygqd">
-          <text></text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_18csya4">
-        <inputEntry id="UnaryTests_0ozvc9e">
-          <text>"sendDirectionWithQuestions"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0d66g4c">
-          <text>"awaitingClarifyingQuestionsAnswers"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_102r1wb">
-          <text>"provideClarifyingAnswers"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0xm81fc">
-          <text>"Provide Clarifying Answers"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0u68a06">
-          <text>"external"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1sm4e4y">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1hzaewn">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0af9el7">
-          <text></text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0ilfnvo">
-        <inputEntry id="UnaryTests_17nkudc">
-          <text>"requestCmaRequirements"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0e1boej">
-          <text>"awaitingCmaRequirements"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1hzz7kp">
-          <text>"provideCmaRequirements"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0z2gxk2">
-          <text>"Provide Cma Requirements"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_11hjg6x">
-          <text>"external"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_07k3soy">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0krj9ux">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0kyx74f">
-          <text></text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_170q68k">
-        <inputEntry id="UnaryTests_0zgp0zs">
-          <text>"requestRespondentReview"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0zhnvxq">
-          <text>"respondentReview"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0tbr4e0">
-          <text>"provideRespondentReview"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0r4m5df">
-          <text>"Provide Respondent Review"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1k5wucv">
-          <text>"external"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0r46hq7">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0gji1hv">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1wyechg">
-          <text></text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0ft10ad">
-        <inputEntry id="UnaryTests_1imhsea">
-          <text>"requestHearingRequirements"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1ubf1h8">
-          <text>"submitHearingRequirements"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1enn7s8">
-          <text>"provideHearingRequirements"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0r14aah">
-          <text>"Provide Hearing Requirements"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_14xa26a">
-          <text>"external"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_174oc56">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1k8sdn1">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0vwx8jg">
-          <text></text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0mds5pv">
-        <inputEntry id="UnaryTests_18mycvs">
-          <text>"applyForFTPAAppellant","applyForFTPARespondent"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0t4aent">
-          <text>"ftpaSubmitted"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1kv2lb2">
-          <text>"allocateFTPAToJudge"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1hrh7k5">
-          <text>"Record allocated Judge"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0f1tm77">
-          <text>"external"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_080qb0i">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0nhvgt2">
-          <text>5</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0u6lasd">
-          <text>"Case progression"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_1mdjy4l">
         <inputEntry id="UnaryTests_0hm5cth">
           <text>"draftHearingRequirements"</text>
@@ -821,6 +613,58 @@
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1eqvrbb">
+          <text>"Followup overdue"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0t01ska">
+        <inputEntry id="UnaryTests_0kkn2je">
+          <text>"sendDirection"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19nn2nl">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1kquhtc">
+          <text>"followUpNonStandardDirection"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_16h7h9l">
+          <text>"Follow-up non-standard direction"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0jlzd0j">
+          <text>"TCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0qjgx5e">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_05d86le">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0f3953o">
+          <text>"Followup overdue"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1nbkbh7">
+        <inputEntry id="UnaryTests_1a1iozv">
+          <text>"removeRepresentation","removeLegalRepresentative"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07mp222">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1036bqj">
+          <text>"followUpNoticeOfChange"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_00aitap">
+          <text>"Follow-up Notice of Change"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1k6hin9">
+          <text>"TCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0fdvtci">
+          <text>14</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1d8tjl9">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_00omtpc">
           <text>"Followup overdue"</text>
         </outputEntry>
       </rule>
