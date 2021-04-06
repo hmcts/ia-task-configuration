@@ -7,18 +7,217 @@ import org.camunda.bpm.dmn.engine.DmnEngineConfiguration;
 import org.camunda.bpm.engine.variable.VariableMap;
 import org.camunda.bpm.engine.variable.impl.VariableMapImpl;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Stream;
 
+import static java.util.Arrays.asList;
+import static java.util.Collections.emptyList;
+import static java.util.Collections.singletonList;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 class CamundaSetTaskCompleteTest {
 
     private DmnEngine dmnEngine;
+
+    private static Stream<Arguments> scenarioProvider() {
+
+        return Stream.of(
+            Arguments.of(
+                "requestRespondentEvidence",
+                singletonList(
+                    Map.of(
+                        "task_type", "reviewTheAppeal",
+                        "completion_mode", "Auto"
+                    )
+                )
+            ),
+            Arguments.of(
+                "requestCaseBuilding",
+                singletonList(
+                    Map.of(
+                        "task_type", "reviewRespondentEvidence",
+                        "completion_mode", "Auto"
+                    )
+                )
+            ),
+            Arguments.of(
+                "requestReasonsForAppeal",
+                singletonList(
+                    Map.of(
+                        "task_type", "reviewRespondentEvidence",
+                        "completion_mode", "Auto"
+                    )
+                )
+            ),
+            Arguments.of(
+                "sendDirection",
+                singletonList(
+                    Map.of(
+                        "task_type", "reviewRespondentEvidence",
+                        "completion_mode", "Auto"
+                    )
+                )
+            ),
+            Arguments.of(
+                "requestResponseReview",
+                asList(
+                    Map.of(
+                        "task_type", "reviewAppealSkeletonArgument",
+                        "completion_mode", "Auto"
+                    ),
+                    Map.of(
+                        "task_type", "reviewReasonsForAppeal",
+                        "completion_mode", "Auto"
+                    ),
+                    Map.of(
+                        "task_type", "reviewClarifyingQuestionsAnswers",
+                        "completion_mode", "Auto"
+                    ),
+                    Map.of(
+                        "task_type", "reviewRespondentResponse",
+                        "completion_mode", "Auto"
+                    )
+                )
+            ),
+            Arguments.of(
+                "requestCaseEdit",
+                singletonList(
+                    Map.of(
+                        "task_type", "reviewAppealSkeletonArgument",
+                        "completion_mode", "Auto"
+                    )
+                )
+            ),
+            Arguments.of(
+                "sendDirectionWithQuestions",
+                asList(
+                    Map.of(
+                        "task_type", "reviewReasonsForAppeal",
+                        "completion_mode", "Auto"
+                    ),
+                    Map.of(
+                        "task_type", "reviewClarifyingQuestionsAnswers",
+                        "completion_mode", "Auto"
+                    )
+                )
+            ),
+            Arguments.of(
+                "requestCmaRequirements",
+                asList(
+                    Map.of(
+                        "task_type", "reviewReasonsForAppeal",
+                        "completion_mode", "Auto"
+                    ),
+                    Map.of(
+                        "task_type", "reviewClarifyingQuestionsAnswers",
+                        "completion_mode", "Auto"
+                    )
+                )
+            ),
+            Arguments.of(
+                "reviewCmaRequirements",
+                singletonList(
+                    Map.of(
+                        "task_type", "reviewCmaRequirements",
+                        "completion_mode", "Auto"
+                    )
+                )
+            ),
+            Arguments.of(
+                "updateDetailsAfterCma",
+                singletonList(
+                    Map.of(
+                        "task_type", "attendCma",
+                        "completion_mode", "Auto"
+                    )
+                )
+            ),
+            Arguments.of(
+                "requestResponseAmend",
+                singletonList(
+                    Map.of(
+                        "task_type", "reviewRespondentResponse",
+                        "completion_mode", "Auto"
+                    )
+                )
+            ),
+            Arguments.of(
+                "reviewHearingRequirements",
+                singletonList(
+                    Map.of(
+                        "task_type", "reviewHearingRequirements",
+                        "completion_mode", "Auto"
+                    )
+                )
+            ),
+            Arguments.of(
+                "createCaseSummary",
+                singletonList(
+                    Map.of(
+                        "task_type", "createCaseSummary",
+                        "completion_mode", "Auto"
+                    )
+                )
+            ),
+            Arguments.of(
+                "generateHearingBundle",
+                singletonList(
+                    Map.of(
+                        "task_type", "createHearingBundle",
+                        "completion_mode", "Auto"
+                    )
+                )
+            ),
+            Arguments.of(
+                "decisionAndReasonsStarted",
+                singletonList(
+                    Map.of(
+                        "task_type", "startDecisionsAndReasonsDocument",
+                        "completion_mode", "Auto"
+                    )
+                )
+            ),
+            Arguments.of(
+                "recordAllocatedJudge",
+                singletonList(
+                    Map.of(
+                        "task_type", "allocateFtpaToJudge",
+                        "completion_mode", "Auto"
+                    )
+                )
+            ),
+            Arguments.of(
+                "changeDirectionDueDate",
+                singletonList(
+                    Map.of(
+                        "task_type", "decideOnTimeExtension",
+                        "completion_mode", "Auto"
+                    )
+                )
+            ),
+            Arguments.of(
+                "recordApplication",
+                singletonList(
+                    Map.of(
+                        "task_type", "processAnApplication",
+                        "completion_mode", "Auto"
+                    )
+                )
+            ),
+            Arguments.of(
+                "unknownEvent",
+                emptyList()
+            )
+        );
+    }
 
     @BeforeEach
     void setUp() {
@@ -27,51 +226,12 @@ class CamundaSetTaskCompleteTest {
             .buildEngine();
     }
 
-    @DisplayName("Set request respondent to complete")
-    @Test
-    void set_respondant_review_to_auto_complete() {
-        VariableMap result = new VariableMapImpl();
+    @ParameterizedTest(name = "Scenario for event id: {0}")
+    @MethodSource("scenarioProvider")
+    void given_multiple_event_ids_should_evaluate_and_return_response(String eventId, List<Map<String, String>> expectation) {
 
-        result.putValue("task_type","ReviewTheAppeal");
-        result.putValue("completion_mode","Auto");
-
-        DmnDecisionTableResult dmnDecisionRuleResults = evaluateDmn("requestRespondentEvidence");
-
-        assertThat(dmnDecisionRuleResults.getFirstResult().getEntryMap(), is(result));
-    }
-
-    @DisplayName("Set request review to complete")
-    @Test
-    void set_request_review_to_auto_complete() {
-        VariableMap result = new VariableMapImpl();
-
-        result.putValue("task_type","ReviewRespondentEvidence");
-        result.putValue("completion_mode","Auto");
-
-        DmnDecisionTableResult dmnDecisionRuleResults = evaluateDmn("requestCaseBuilding");
-
-        assertThat(dmnDecisionRuleResults.getFirstResult().getEntryMap(), is(result));
-    }
-
-    @DisplayName("Set request reason to complete")
-    @Test
-    void set_request_reasons_to_auto_complete() {
-        VariableMap result = new VariableMapImpl();
-
-        result.putValue("task_type","ReviewRespondentEvidence");
-        result.putValue("completion_mode","Auto");
-
-        DmnDecisionTableResult dmnDecisionRuleResults = evaluateDmn("requestReasonsForAppeal");
-
-        assertThat(dmnDecisionRuleResults.getFirstResult().getEntryMap(), is(result));
-    }
-
-    @DisplayName("transition unmapped")
-    @Test
-    void transitionUnmapped() {
-        DmnDecisionTableResult dmnDecisionRuleResults = evaluateDmn("null");
-
-        assertThat(dmnDecisionRuleResults.isEmpty(), is(true));
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmn(eventId);
+        assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
     }
 
     private DmnDecisionTableResult evaluateDmn(String eventId) {
