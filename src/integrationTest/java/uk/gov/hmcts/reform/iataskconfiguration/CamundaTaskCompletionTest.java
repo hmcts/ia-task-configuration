@@ -23,7 +23,7 @@ import static java.util.Collections.singletonList;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-class CamundaSetTaskCompleteTest {
+class CamundaTaskCompletionTest {
 
     private DmnEngine dmnEngine;
 
@@ -228,7 +228,7 @@ class CamundaSetTaskCompleteTest {
 
     @ParameterizedTest(name = "Scenario for event id: {0}")
     @MethodSource("scenarioProvider")
-    void given_multiple_event_ids_should_evaluate_and_return_response(String eventId, List<Map<String, String>> expectation) {
+    void given_multiple_event_ids_should_evaluate_dmn(String eventId, List<Map<String, String>> expectation) {
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmn(eventId);
         assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
@@ -236,7 +236,8 @@ class CamundaSetTaskCompleteTest {
 
     private DmnDecisionTableResult evaluateDmn(String eventId) {
         ClassLoader contextClassLoader = Thread.currentThread().getContextClassLoader();
-        try (InputStream inputStream = contextClassLoader.getResourceAsStream("wa-task-completion-ia-asylum.dmn")) {
+        try (InputStream inputStream =
+                 contextClassLoader.getResourceAsStream("wa-task-completion-ia-asylum.dmn")) {
             DmnDecision decision = dmnEngine.parseDecision("wa-task-completion-ia-asylum", inputStream);
 
             VariableMap variables = new VariableMapImpl();
