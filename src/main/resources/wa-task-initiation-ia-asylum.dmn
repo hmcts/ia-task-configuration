@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.2.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.4.0">
   <decision id="wa-task-initiation-ia-asylum" name="Task initiation DMN">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT">
       <input id="Input_1" label="Event Id" camunda:inputVariable="eventId">
@@ -451,7 +451,7 @@
           <text>"TCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1u0h529">
-          <text></text>
+          <text>if (changedDurationDate != null and changedDurationDate != "") then (date and time(changedDurationDate) - date and time(now)).days else 0</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_184ro7i">
           <text>2</text>
@@ -477,7 +477,7 @@
           <text>"TCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_16vucs8">
-          <text></text>
+          <text>if (changedDurationDate != null and changedDurationDate != "") then (date and time(changedDurationDate) - date and time(now)).days else 0</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_17t1pof">
           <text>2</text>
@@ -503,7 +503,7 @@
           <text>"TCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1bqrry5">
-          <text></text>
+          <text>if (changedDurationDate != null and changedDurationDate != "") then (date and time(changedDurationDate) - date and time(now)).days else 0</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_19cly21">
           <text>2</text>
@@ -529,7 +529,7 @@
           <text>"TCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1dcun57">
-          <text></text>
+          <text>if (changedDurationDate != null and changedDurationDate != "") then (date and time(changedDurationDate) - date and time(now)).days else 0</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0kqlc9o">
           <text>2</text>
@@ -554,8 +554,8 @@
         <outputEntry id="LiteralExpression_0acruk7">
           <text>"TCW"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_1398afp">
-          <text></text>
+        <outputEntry id="LiteralExpression_1398afp" expressionLanguage="feel">
+          <text>if (changedDurationDate != null and changedDurationDate != "") then (date and time(changedDurationDate) - date and time(now)).days else 0</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_137jbcs">
           <text>2</text>
@@ -581,7 +581,7 @@
           <text>"TCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1a0n0d2">
-          <text></text>
+          <text>if (changedDurationDate != null and changedDurationDate != "") then (date and time(changedDurationDate) - date and time(now)).days else 0</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0a21cw2">
           <text>2</text>
@@ -607,7 +607,7 @@
           <text>"TCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_08ot9zz">
-          <text></text>
+          <text>if (changedDurationDate != null and changedDurationDate != "") then (date and time(changedDurationDate) - date and time(now)).days else 0</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_07ijv3r">
           <text>2</text>
@@ -633,7 +633,7 @@
           <text>"TCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0qjgx5e">
-          <text></text>
+          <text>if (changedDurationDate != null and changedDurationDate != "") then (date and time(changedDurationDate) - date and time(now)).days else 0</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_05d86le">
           <text>2</text>

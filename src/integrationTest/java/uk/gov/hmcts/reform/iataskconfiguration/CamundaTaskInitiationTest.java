@@ -13,6 +13,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.MethodSource;
+import org.junit.jupiter.params.provider.NullAndEmptySource;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -32,37 +33,50 @@ class CamundaTaskInitiationTest {
         // requestCaseBuilding scenario
         List<Map<String, Object>> expectedResultsRequestCaseBuilding = getExpectedResults(
             "Follow-up overdue case building",
-            "followUpOverdueCaseBuilding"
+            "followUpOverdueCaseBuilding",
+            2
         );
 
         // requestReasonsForAppeal scenario
         List<Map<String, Object>> expectedResultsRequestReasonsForAppeal = getExpectedResults(
             "Follow-up overdue reasons for appeal",
-            "followUpOverdueReasonsForAppeal"
+            "followUpOverdueReasonsForAppeal",
+            2
         );
 
         // sendDirectionWithQuestions scenario
         List<Map<String, Object>> expectedResultsSendDirectionWithQuestions = getExpectedResults(
             "Follow-up overdue clarifying answers",
-            "followUpOverdueClarifyingAnswers"
+            "followUpOverdueClarifyingAnswers",
+            2
         );
 
         // requestCmaRequirements scenario
         List<Map<String, Object>> expectedResultsRequestCmaRequirements = getExpectedResults(
             "Follow-up overdue CMA requirements",
-            "followUpOverdueCmaRequirements"
+            "followUpOverdueCmaRequirements",
+            2
         );
 
         // requestRespondentReview scenario
         List<Map<String, Object>> expectedResultsRequestRespondentReview = getExpectedResults(
             "Follow-up overdue respondent review",
-            "followUpOverdueRespondentReview"
+            "followUpOverdueRespondentReview",
+            2
         );
 
         // requestHearingRequirements scenario
         List<Map<String, Object>> expectedResultsRequestHearingRequirements = getExpectedResults(
             "Follow-up overdue hearing requirements",
-            "followUpOverdueHearingRequirements"
+            "followUpOverdueHearingRequirements",
+            2
+        );
+
+        // followUpNonStandardDirection scenario
+        List<Map<String, Object>> followUpNonStandardDirection = getExpectedResults(
+            "Follow-up non-standard direction",
+            "followUpNonStandardDirection",
+            2
         );
 
         // applyForFTPAAppellant scenario
@@ -144,6 +158,11 @@ class CamundaTaskInitiationTest {
                 expectedResultsRequestHearingRequirements
             ),
             new Scenario(
+                "sendDirection",
+                "",
+                followUpNonStandardDirection
+            ),
+            new Scenario(
                 "applyForFTPAAppellant",
                 "ftpaSubmitted",
                 expectedResultsApplyForFTPAAppellant
@@ -167,10 +186,12 @@ class CamundaTaskInitiationTest {
     }
 
     private static List<Map<String, Object>> getExpectedResults(String name1,
-                                                                String taskId1) {
+                                                                String taskId1,
+                                                                int delayDuration) {
         Map<String, Object> rule2 = Map.of(
             "name", name1,
             "workingDaysAllowed", 2,
+            "delayDuration", delayDuration,
             "taskId", taskId1,
             "group", "TCW",
             "taskCategory", "Followup overdue"
@@ -200,11 +221,17 @@ class CamundaTaskInitiationTest {
         "anything, prepareForHearing, createCaseSummary, TCW, 2, true, Case progression, false, ",
         "anything, finalBundling, createHearingBundle, TCW, 2, true, Case progression, false, ",
         "anything, preHearing, startDecisionsAndReasonsDocument, TCW, 2, true, Case progression, false, ",
-        "sendDirection, anything, followUpNonStandardDirection, TCW, 2, true, Followup overdue, false, ",
+        "sendDirection, anything, followUpNonStandardDirection, TCW, 2, true, Followup overdue, true, 2",
         "removeRepresentation, anything, followUpNoticeOfChange, TCW, 2, true, Followup overdue, true, 14",
         "removeLegalRepresentative, anything, followUpNoticeOfChange, TCW, 2, true, Followup overdue, true, 14",
-        "requestRespondentEvidence, awaitingRespondentEvidence, followUpOverdueRespondentEvidence, TCW, 2, true, Followup overdue, false, ",
-        "draftHearingRequirements, listing, reviewHearingRequirements, TCW, 2, true, Case progression, false, "
+        "requestRespondentEvidence, awaitingRespondentEvidence, followUpOverdueRespondentEvidence, TCW, 2, true, Followup overdue, true, 2",
+        "draftHearingRequirements, listing, reviewHearingRequirements, TCW, 2, true, Case progression, false, ",
+        "requestCaseBuilding, caseBuilding, followUpOverdueCaseBuilding, TCW, 2, true, Followup overdue, true, 2",
+        "requestReasonsForAppeal, awaitingReasonsForAppeal, followUpOverdueReasonsForAppeal, TCW, 2, true, Followup overdue, true, 2",
+        "sendDirectionWithQuestions, awaitingClarifyingQuestionsAnswers, followUpOverdueClarifyingAnswers, TCW, 2, true, Followup overdue, true, 2",
+        "requestCmaRequirements, awaitingCmaRequirements, followUpOverdueCmaRequirements, TCW, 2, true, Followup overdue, true, 2",
+        "requestRespondentReview, respondentReview, followUpOverdueRespondentReview, TCW, 2, true, Followup overdue, true, 2",
+        "requestHearingRequirements, submitHearingRequirements, followUpOverdueHearingRequirements, TCW, 2, true, Followup overdue, true, 2"
     })
     void given_single_rule_match_should_evaluate(String eventId,
                                                  String postState,
@@ -215,7 +242,7 @@ class CamundaTaskInitiationTest {
                                                  String taskCategory,
                                                  boolean expectedDelayDuration,
                                                  Integer delayDuration) {
-        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmn(eventId, postState);
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmn(eventId, postState, "2021-04-08T12:00:00");
 
         DmnDecisionRuleResult singleResult = dmnDecisionTableResult.getSingleResult();
 
@@ -242,27 +269,41 @@ class CamundaTaskInitiationTest {
     @MethodSource("scenarioProvider")
     void given_multiple_rules_matches_should_evaluate(Scenario scenario) {
 
-        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmn(scenario.eventId, scenario.postState);
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmn(scenario.eventId, scenario.postState, "2021-04-08T12:00:00");
 
         assertThat(dmnDecisionTableResult.getResultList(), is(scenario.expectedResultList));
+    }
+
+    @ParameterizedTest
+    @NullAndEmptySource
+    void given_without_direction_due_date_should_evaluate_dmn(String directionDueDate) {
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmn("requestHearingRequirements",
+                                                                    "submitHearingRequirements", directionDueDate);
+
+        assertThat(dmnDecisionTableResult.getResultList(),
+                   is(getExpectedResults("Follow-up overdue hearing requirements",
+                                         "followUpOverdueHearingRequirements", 0)));
     }
 
     @DisplayName("transition unmapped")
     @Test
     void transitionUnmapped() {
-        DmnDecisionTableResult dmnDecisionRuleResults = evaluateDmn("anything", "anything");
+        DmnDecisionTableResult dmnDecisionRuleResults = evaluateDmn("anything", "anything", "2021-04-08T12:00:00");
 
         assertThat(dmnDecisionRuleResults.isEmpty(), is(true));
     }
 
-    private DmnDecisionTableResult evaluateDmn(String eventId, String postState) {
+    private DmnDecisionTableResult evaluateDmn(String eventId, String postState, String changedDurationDate) {
         ClassLoader contextClassLoader = Thread.currentThread().getContextClassLoader();
         try (InputStream inputStream = contextClassLoader.getResourceAsStream("wa-task-initiation-ia-asylum.dmn")) {
-            DmnDecision decision = dmnEngine.parseDecision("wa-task-initiation-ia-asylum", inputStream);
+            final DmnDecision decision = dmnEngine.parseDecision("wa-task-initiation-ia-asylum", inputStream);
 
             VariableMap variables = new VariableMapImpl();
             variables.putValue("eventId", eventId);
             variables.putValue("postEventState", postState);
+            variables.putValue("changedDurationDate", changedDurationDate);
+            variables.putValue("now", "2021-04-06T12:00:00");
 
             return dmnEngine.evaluateDecisionTable(decision, variables);
         } catch (IOException e) {
