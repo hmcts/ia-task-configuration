@@ -5,8 +5,10 @@ import org.camunda.bpm.dmn.engine.DmnDecisionRuleResult;
 import org.camunda.bpm.dmn.engine.DmnDecisionTableResult;
 import org.camunda.bpm.dmn.engine.DmnEngine;
 import org.camunda.bpm.dmn.engine.DmnEngineConfiguration;
+import org.camunda.bpm.dmn.feel.impl.FeelException;
 import org.camunda.bpm.engine.variable.VariableMap;
 import org.camunda.bpm.engine.variable.impl.VariableMapImpl;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -14,6 +16,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.NullAndEmptySource;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -242,7 +245,7 @@ class CamundaTaskInitiationTest {
                                                  String taskCategory,
                                                  boolean expectedDelayDuration,
                                                  Integer delayDuration) {
-        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmn(eventId, postState, "2021-04-08T12:00:00");
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmn(eventId, postState, "2021-04-08");
 
         DmnDecisionRuleResult singleResult = dmnDecisionTableResult.getSingleResult();
 
@@ -269,7 +272,7 @@ class CamundaTaskInitiationTest {
     @MethodSource("scenarioProvider")
     void given_multiple_rules_matches_should_evaluate(Scenario scenario) {
 
-        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmn(scenario.eventId, scenario.postState, "2021-04-08T12:00:00");
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmn(scenario.eventId, scenario.postState, "2021-04-08");
 
         assertThat(dmnDecisionTableResult.getResultList(), is(scenario.expectedResultList));
     }
@@ -286,15 +289,35 @@ class CamundaTaskInitiationTest {
                                          "followUpOverdueHearingRequirements", 0)));
     }
 
+    @ParameterizedTest
+    @ValueSource(strings = {"2021-04-0612:00:00", "test"})
+    void given_invalid_direction_due_date_should_throw_expection(String directionDueDate) {
+
+        ClassLoader contextClassLoader = Thread.currentThread().getContextClassLoader();
+        try (InputStream inputStream = contextClassLoader.getResourceAsStream("wa-task-initiation-ia-asylum.dmn")) {
+            final DmnDecision decision = dmnEngine.parseDecision("wa-task-initiation-ia-asylum", inputStream);
+
+            VariableMap variables = new VariableMapImpl();
+            variables.putValue("eventId", "requestHearingRequirements");
+            variables.putValue("postEventState", "submitHearingRequirements");
+            variables.putValue("directionDueDate", directionDueDate);
+            variables.putValue("now", "2021-04-06");
+
+            Assertions.assertThrows(FeelException.class, () -> dmnEngine.evaluateDecisionTable(decision, variables));
+        } catch (IOException e) {
+            throw new AssertionError(e);
+        }
+    }
+
     @DisplayName("transition unmapped")
     @Test
     void transitionUnmapped() {
-        DmnDecisionTableResult dmnDecisionRuleResults = evaluateDmn("anything", "anything", "2021-04-08T12:00:00");
+        DmnDecisionTableResult dmnDecisionRuleResults = evaluateDmn("anything", "anything", "2021-04-08");
 
         assertThat(dmnDecisionRuleResults.isEmpty(), is(true));
     }
 
-    private DmnDecisionTableResult evaluateDmn(String eventId, String postState, String changedDurationDate) {
+    private DmnDecisionTableResult evaluateDmn(String eventId, String postState, String directionDueDate) {
         ClassLoader contextClassLoader = Thread.currentThread().getContextClassLoader();
         try (InputStream inputStream = contextClassLoader.getResourceAsStream("wa-task-initiation-ia-asylum.dmn")) {
             final DmnDecision decision = dmnEngine.parseDecision("wa-task-initiation-ia-asylum", inputStream);
@@ -302,8 +325,8 @@ class CamundaTaskInitiationTest {
             VariableMap variables = new VariableMapImpl();
             variables.putValue("eventId", eventId);
             variables.putValue("postEventState", postState);
-            variables.putValue("changedDurationDate", changedDurationDate);
-            variables.putValue("now", "2021-04-06T12:00:00");
+            variables.putValue("directionDueDate", directionDueDate);
+            variables.putValue("now", "2021-04-06");
 
             return dmnEngine.evaluateDecisionTable(decision, variables);
         } catch (IOException e) {

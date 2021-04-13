@@ -451,7 +451,7 @@
           <text>"TCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1u0h529">
-          <text>if (changedDurationDate != null and changedDurationDate != "") then (date and time(changedDurationDate) - date and time(now)).days else 0</text>
+          <text>if (directionDueDate != null and directionDueDate != "") then (date(directionDueDate) - date(now)).days else 0</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_184ro7i">
           <text>2</text>
@@ -477,7 +477,7 @@
           <text>"TCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_16vucs8">
-          <text>if (changedDurationDate != null and changedDurationDate != "") then (date and time(changedDurationDate) - date and time(now)).days else 0</text>
+          <text>if (directionDueDate != null and directionDueDate != "") then (date(directionDueDate) - date(now)).days else 0</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_17t1pof">
           <text>2</text>
@@ -503,7 +503,7 @@
           <text>"TCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1bqrry5">
-          <text>if (changedDurationDate != null and changedDurationDate != "") then (date and time(changedDurationDate) - date and time(now)).days else 0</text>
+          <text>if (directionDueDate != null and directionDueDate != "") then (date(directionDueDate) - date(now)).days else 0</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_19cly21">
           <text>2</text>
@@ -529,7 +529,7 @@
           <text>"TCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1dcun57">
-          <text>if (changedDurationDate != null and changedDurationDate != "") then (date and time(changedDurationDate) - date and time(now)).days else 0</text>
+          <text>if (directionDueDate != null and directionDueDate != "") then (date(directionDueDate) - date(now)).days else 0</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0kqlc9o">
           <text>2</text>
@@ -555,7 +555,7 @@
           <text>"TCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1398afp" expressionLanguage="feel">
-          <text>if (changedDurationDate != null and changedDurationDate != "") then (date and time(changedDurationDate) - date and time(now)).days else 0</text>
+          <text>if (directionDueDate != null and directionDueDate != "") then (date(directionDueDate) - date(now)).days else 0</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_137jbcs">
           <text>2</text>
@@ -581,7 +581,7 @@
           <text>"TCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1a0n0d2">
-          <text>if (changedDurationDate != null and changedDurationDate != "") then (date and time(changedDurationDate) - date and time(now)).days else 0</text>
+          <text>if (directionDueDate != null and directionDueDate != "") then (date(directionDueDate) - date(now)).days else 0</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0a21cw2">
           <text>2</text>
@@ -607,7 +607,7 @@
           <text>"TCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_08ot9zz">
-          <text>if (changedDurationDate != null and changedDurationDate != "") then (date and time(changedDurationDate) - date and time(now)).days else 0</text>
+          <text>if (directionDueDate != null and directionDueDate != "") then (date(directionDueDate) - date(now)).days else 0</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_07ijv3r">
           <text>2</text>
@@ -633,7 +633,7 @@
           <text>"TCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0qjgx5e">
-          <text>if (changedDurationDate != null and changedDurationDate != "") then (date and time(changedDurationDate) - date and time(now)).days else 0</text>
+          <text>if (directionDueDate != null and directionDueDate != "") then (date(directionDueDate) - date(now)).days else 0</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_05d86le">
           <text>2</text>
