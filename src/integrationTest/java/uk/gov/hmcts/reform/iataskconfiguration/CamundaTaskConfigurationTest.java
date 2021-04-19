@@ -101,8 +101,7 @@ class CamundaTaskConfigurationTest {
                      WA_TASK_CONFIGURATION_DMN_NAME + "-" + JURISDICTION + "-" + CASE_TYPE + ".dmn")) {
 
             VariableMap variables = new VariableMapImpl();
-            variables.putValue("case", "");
-            variables.putValue("case.data.appealType", "");
+            variables.putValue("case", caseData);
 
             DmnDecision decision = dmnEngine.parseDecision(
                 WA_TASK_CONFIGURATION_DMN_NAME + "-" + JURISDICTION + "-" + CASE_TYPE,
@@ -112,7 +111,6 @@ class CamundaTaskConfigurationTest {
         } catch (IOException e) {
             throw new AssertionError(e);
         }
-
     }
 
 }
