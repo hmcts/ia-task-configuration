@@ -6,8 +6,7 @@ import org.camunda.bpm.dmn.engine.DmnDecision;
 import org.camunda.bpm.dmn.engine.DmnDecisionTableResult;
 import org.camunda.bpm.dmn.engine.DmnEngine;
 import org.camunda.bpm.dmn.engine.DmnEngineConfiguration;
-import org.camunda.bpm.engine.variable.VariableMap;
-import org.camunda.bpm.engine.variable.impl.VariableMapImpl;
+import org.camunda.bpm.engine.variable.Variables;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -39,7 +38,7 @@ class CamundaTaskConfigurationTest {
     @Value
     @Builder
     private static class Scenario {
-        String caseData;
+        Map<String, Object> caseData;
         String caseNameValue;
         String appealTypeValue;
         String regionValue;
@@ -49,7 +48,7 @@ class CamundaTaskConfigurationTest {
 
     private static Stream<Scenario> scenarioProvider() {
         Scenario givenCasaDataIsMissedThenDefaultToTaylorHouseScenario = Scenario.builder()
-            .caseData("")
+            .caseData(Map.of("data", ""))
             .caseNameValue(null)
             .appealTypeValue("")
             .regionValue("1")
@@ -57,8 +56,29 @@ class CamundaTaskConfigurationTest {
             .locationNameValue("Taylor House")
             .build();
 
+        Scenario givenCasaDataIsPresentThenReturnValuesScenario = Scenario.builder()
+            .caseData(Map.of(
+                "data", Map.of(
+                    "appealType", "asylum",
+                    "appellantGivenNames", "some appellant given names",
+                    "appellantFamilyName", "some appellant family name",
+                    "caseManagementLocation", Map.of(
+                        "region", "some other region",
+                        "baseLocation", "some other location"
+                    ),
+                    "staffLocation", "some other location name"
+                )
+            ))
+            .caseNameValue("some appellant given names some appellant family name")
+            .appealTypeValue("asylum")
+            .regionValue("some other region")
+            .locationValue("some other location")
+            .locationNameValue("some other location name")
+            .build();
+
         return Stream.of(
-            givenCasaDataIsMissedThenDefaultToTaylorHouseScenario
+            givenCasaDataIsMissedThenDefaultToTaylorHouseScenario,
+            givenCasaDataIsPresentThenReturnValuesScenario
         );
     }
 
@@ -94,20 +114,21 @@ class CamundaTaskConfigurationTest {
     }
 
 
-    private DmnDecisionTableResult evaluateDmn(String caseData) {
+    private DmnDecisionTableResult evaluateDmn(Map<String, Object> caseData) {
         ClassLoader contextClassLoader = Thread.currentThread().getContextClassLoader();
         try (InputStream inputStream =
                  contextClassLoader.getResourceAsStream(
                      WA_TASK_CONFIGURATION_DMN_NAME + "-" + JURISDICTION + "-" + CASE_TYPE + ".dmn")) {
 
-            VariableMap variables = new VariableMapImpl();
-            variables.putValue("case", caseData);
-
             DmnDecision decision = dmnEngine.parseDecision(
                 WA_TASK_CONFIGURATION_DMN_NAME + "-" + JURISDICTION + "-" + CASE_TYPE,
                 inputStream
             );
-            return dmnEngine.evaluateDecisionTable(decision, variables);
+
+            return dmnEngine.evaluateDecisionTable(
+                decision,
+                Variables.createVariables().putValue("case", caseData)
+            );
         } catch (IOException e) {
             throw new AssertionError(e);
         }
