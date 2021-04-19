@@ -35,10 +35,19 @@ class CamundaTaskConfigurationTest {
             .buildEngine();
     }
 
+    @ParameterizedTest
+    @MethodSource("scenarioProvider")
+    void when_case_then_return_name_and_value_rows(Scenario scenario) {
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmn(scenario.getCaseData());
+
+        assertThat(dmnDecisionTableResult.getResultList(), is(getExpectedResults(scenario)));
+    }
+
     @Value
     @Builder
     private static class Scenario {
         Map<String, Object> caseData;
+
         String caseNameValue;
         String appealTypeValue;
         String regionValue;
@@ -56,7 +65,7 @@ class CamundaTaskConfigurationTest {
             .locationNameValue("Taylor House")
             .build();
 
-        Scenario givenCasaDataIsPresentThenReturnValuesScenario = Scenario.builder()
+        Scenario givenCasaDataIsPresentThenReturnNameAndValueScenario = Scenario.builder()
             .caseData(Map.of(
                 "data", Map.of(
                     "appealType", "asylum",
@@ -78,13 +87,11 @@ class CamundaTaskConfigurationTest {
 
         return Stream.of(
             givenCasaDataIsMissedThenDefaultToTaylorHouseScenario,
-            givenCasaDataIsPresentThenReturnValuesScenario
+            givenCasaDataIsPresentThenReturnNameAndValueScenario
         );
     }
 
-    @ParameterizedTest
-    @MethodSource("scenarioProvider")
-    void when_case_then_return_name_and_value_rows(Scenario scenario) {
+    private List<Map<String, Object>> getExpectedResults(Scenario scenario) {
         Map<String, Object> caseNameRule = new HashMap<>(); // allow null values
         caseNameRule.put("name", "caseName");
         caseNameRule.put("value", scenario.getCaseNameValue());
@@ -105,14 +112,10 @@ class CamundaTaskConfigurationTest {
             "name", "locationName",
             "value", scenario.getLocationNameValue()
         );
-        List<Map<String, Object>> expectedResults = List.of(
+        return List.of(
             caseNameRule, appealTypeRule, regionRule, locationRule, locationNameRule
         );
-
-        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmn(scenario.getCaseData());
-        assertThat(dmnDecisionTableResult.getResultList(), is(expectedResults));
     }
-
 
     private DmnDecisionTableResult evaluateDmn(Map<String, Object> caseData) {
         ClassLoader contextClassLoader = Thread.currentThread().getContextClassLoader();
