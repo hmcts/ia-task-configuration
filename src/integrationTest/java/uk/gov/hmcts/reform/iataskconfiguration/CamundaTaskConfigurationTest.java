@@ -36,19 +36,29 @@ class CamundaTaskConfigurationTest {
             .buildEngine();
     }
 
-    @Builder
     @Value
+    @Builder
     private static class Scenario {
         String caseData;
         String caseNameValue;
+        String appealTypeValue;
+        String regionValue;
+        String locationValue;
+        String locationNameValue;
     }
 
     private static Stream<Scenario> scenarioProvider() {
+        Scenario givenCasaDataIsMissedThenDefaultToTaylorHouseScenario = Scenario.builder()
+            .caseData("")
+            .caseNameValue(null)
+            .appealTypeValue("")
+            .regionValue("1")
+            .locationValue("765324")
+            .locationNameValue("Taylor House")
+            .build();
+
         return Stream.of(
-            Scenario.builder()
-                .caseData("{}")
-                .caseNameValue(null)
-                .build()
+            givenCasaDataIsMissedThenDefaultToTaylorHouseScenario
         );
     }
 
@@ -61,19 +71,19 @@ class CamundaTaskConfigurationTest {
 
         Map<String, Object> appealTypeRule = Map.of(
             "name", "appealType",
-            "value", ""
+            "value", scenario.getAppealTypeValue()
         );
         Map<String, Object> regionRule = Map.of(
             "name", "region",
-            "value", "1"
+            "value", scenario.getRegionValue()
         );
         Map<String, Object> locationRule = Map.of(
             "name", "location",
-            "value", "765324"
+            "value", scenario.getLocationValue()
         );
         Map<String, Object> locationNameRule = Map.of(
             "name", "locationName",
-            "value", "Taylor House"
+            "value", scenario.getLocationNameValue()
         );
         List<Map<String, Object>> expectedResults = List.of(
             caseNameRule, appealTypeRule, regionRule, locationRule, locationNameRule
@@ -92,7 +102,8 @@ class CamundaTaskConfigurationTest {
                      WA_TASK_CONFIGURATION_DMN_NAME + "-" + JURISDICTION + "-" + CASE_TYPE + ".dmn")) {
 
             VariableMap variables = new VariableMapImpl();
-            variables.putValue("case", caseData);
+            variables.putValue("case", "");
+            variables.putValue("case.data.appealType", "");
 
             DmnDecision decision = dmnEngine.parseDecision(
                 WA_TASK_CONFIGURATION_DMN_NAME + "-" + JURISDICTION + "-" + CASE_TYPE,
