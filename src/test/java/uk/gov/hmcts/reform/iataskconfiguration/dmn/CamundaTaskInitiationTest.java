@@ -331,6 +331,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Follow-up overdue respondent evidence",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
+                        "delayDuration", 0,
                         "taskCategory", "Followup overdue"
                     )
                 )
@@ -345,6 +346,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Follow-up overdue case building",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
+                        "delayDuration", 0,
                         "taskCategory", "Followup overdue"
                     )
                 )
@@ -359,6 +361,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Follow-up overdue reasons for appeal",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
+                        "delayDuration", 0,
                         "taskCategory", "Followup overdue"
                     )
                 )
@@ -373,6 +376,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Follow-up overdue clarifying answers",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
+                        "delayDuration", 0,
                         "taskCategory", "Followup overdue"
                     )
                 )
@@ -387,6 +391,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Follow-up overdue CMA requirements",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
+                        "delayDuration", 0,
                         "taskCategory", "Followup overdue"
                     )
                 )
@@ -401,6 +406,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Follow-up overdue respondent review",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
+                        "delayDuration", 0,
                         "taskCategory", "Followup overdue"
                     )
                 )
@@ -415,6 +421,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Follow-up overdue hearing requirements",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
+                        "delayDuration", 0,
                         "taskCategory", "Followup overdue"
                     )
                 )
@@ -429,6 +436,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Follow-up non-standard direction",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
+                        "delayDuration", 0,
                         "taskCategory", "Followup overdue"
                     )
                 )
