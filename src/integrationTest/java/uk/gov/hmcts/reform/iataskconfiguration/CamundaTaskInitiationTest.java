@@ -291,7 +291,7 @@ class CamundaTaskInitiationTest {
 
     @ParameterizedTest
     @ValueSource(strings = {"2021-04-0612:00:00", "test"})
-    void given_invalid_direction_due_date_should_throw_expection(String directionDueDate) {
+    void given_invalid_direction_due_date_should_throw_expectation(String directionDueDate) {
 
         ClassLoader contextClassLoader = Thread.currentThread().getContextClassLoader();
         try (InputStream inputStream = contextClassLoader.getResourceAsStream("wa-task-initiation-ia-asylum.dmn")) {
