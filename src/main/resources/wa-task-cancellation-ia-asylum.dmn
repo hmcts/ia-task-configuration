@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="wa-cancellation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.2.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="wa-cancellation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.4.0">
   <decision id="wa-task-cancellation-ia-asylum" name="Task cancellation DMN">
     <decisionTable id="DecisionTable_0z3jx1g" hitPolicy="COLLECT">
       <input id="Input_1" label="From State">
@@ -211,16 +211,16 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0jfvqqo">
-          <text>"makeAnApplication"</text>
+          <text>"markAppealPaid"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_17ypuqr">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0p0qzak">
-          <text>"Warn"</text>
+          <text>"Cancel"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_161b5g7">
-          <text></text>
+          <text>"Followup overdue"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1on215e">
@@ -228,7 +228,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1hricqn">
-          <text>"markAppealPaid"</text>
+          <text>"applyNocDecision"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1lwxm93">
           <text></text>
@@ -238,6 +238,23 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_05kjt3x">
           <text>"Followup overdue"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1f4jb32">
+        <inputEntry id="UnaryTests_1prhy5e">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09l7em8">
+          <text>"makeAnApplication"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qhx1ga">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0zhe8gj">
+          <text>"Warn"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1cbtlhv">
+          <text></text>
         </outputEntry>
       </rule>
     </decisionTable>

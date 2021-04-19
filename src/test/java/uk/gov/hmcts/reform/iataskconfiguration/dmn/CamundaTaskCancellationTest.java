@@ -164,6 +164,17 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                null,
+                "applyNocDecision",
+                null,
+                singletonList(
+                    Map.of(
+                        "action", "Cancel",
+                        "TaskCategories", "Followup overdue"
+                    )
+                )
+            ),
+            Arguments.of(
                 "unknownState",
                 null,
                 null,
@@ -192,7 +203,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
 
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(13));
+        assertThat(logic.getRules().size(), is(14));
 
     }
 }
