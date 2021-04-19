@@ -36,6 +36,23 @@
           <text></text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0m3e4d4">
+        <inputEntry id="UnaryTests_0sqoj1l">
+          <text>"awaitingReasonsForAppeal"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07779ja">
+          <text>"submitReasonsForAppeal"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jf2o4q">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1mcdfgb">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_15mt0ck">
+          <text>"Followup overdue"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0xhe2ed">
         <inputEntry id="UnaryTests_1smac6l">
           <text>"awaitingReasonsForAppeal"</text>
@@ -53,21 +70,21 @@
           <text>"Time extension"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0hp5vha">
-        <inputEntry id="UnaryTests_0208l6b">
-          <text>"awaitingClarifyingQuestionsAnswers"</text>
+      <rule id="DecisionRule_0v6o280">
+        <inputEntry id="UnaryTests_0c5otry">
+          <text>"awaitingCmaRequirements"</text>
         </inputEntry>
-        <inputEntry id="UnaryTests_0lwafpc">
-          <text>"submitClarifyingQuestionAnswers"</text>
+        <inputEntry id="UnaryTests_0xjjkcf">
+          <text>"submitCmaRequirements"</text>
         </inputEntry>
-        <inputEntry id="UnaryTests_1bkrt6j">
+        <inputEntry id="UnaryTests_0b3qntf">
           <text></text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_0z8z6xl">
+        <outputEntry id="LiteralExpression_03jbwg1">
           <text>"Cancel"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_17relsw">
-          <text>"Time extension"</text>
+        <outputEntry id="LiteralExpression_1jsnh0n">
+          <text>"Followup overdue"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0t1xbh5">
@@ -84,6 +101,40 @@
           <text>"Cancel"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0mjvutv">
+          <text>"Time extension"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1eqg9rj">
+        <inputEntry id="UnaryTests_0k7zzpi">
+          <text>"awaitingClarifyingQuestionsAnswers"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_11zba7l">
+          <text>"submitClarifyingQuestionAnswers"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07xou4e">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0tnremj">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0e9p769">
+          <text>"Followup overdue"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0hp5vha">
+        <inputEntry id="UnaryTests_0208l6b">
+          <text>"awaitingClarifyingQuestionsAnswers"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lwafpc">
+          <text>"submitClarifyingQuestionAnswers"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1bkrt6j">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0z8z6xl">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_17relsw">
           <text>"Time extension"</text>
         </outputEntry>
       </rule>
@@ -155,57 +206,6 @@
           <text>"Followup overdue"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0m3e4d4">
-        <inputEntry id="UnaryTests_0sqoj1l">
-          <text>"awaitingReasonsForAppeal"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_07779ja">
-          <text>"submitReasonsForAppeal"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1jf2o4q">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1mcdfgb">
-          <text>"Cancel"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_15mt0ck">
-          <text>"Followup overdue"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1eqg9rj">
-        <inputEntry id="UnaryTests_0k7zzpi">
-          <text>"awaitingClarifyingQuestionsAnswers"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_11zba7l">
-          <text>"submitClarifyingQuestionAnswers"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_07xou4e">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0tnremj">
-          <text>"Cancel"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0e9p769">
-          <text>"Followup overdue"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0v6o280">
-        <inputEntry id="UnaryTests_0c5otry">
-          <text>"awaitingCmaRequirements"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0xjjkcf">
-          <text>"submitCmaRequirements"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0b3qntf">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_03jbwg1">
-          <text>"Cancel"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1jsnh0n">
-          <text>"Followup overdue"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_0599dvt">
         <inputEntry id="UnaryTests_1j49miq">
           <text></text>
@@ -221,6 +221,23 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_161b5g7">
           <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1on215e">
+        <inputEntry id="UnaryTests_0gf1nxm">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1hricqn">
+          <text>"markAppealPaid"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1lwxm93">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0d0ubcr">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_05kjt3x">
+          <text>"Followup overdue"</text>
         </outputEntry>
       </rule>
     </decisionTable>
