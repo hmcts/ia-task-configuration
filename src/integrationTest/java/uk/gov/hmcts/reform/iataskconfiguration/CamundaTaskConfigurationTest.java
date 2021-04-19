@@ -90,7 +90,6 @@ class CamundaTaskConfigurationTest {
         );
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmn(scenario.getCaseData());
-        System.out.println(dmnDecisionTableResult.getResultList());
         assertThat(dmnDecisionTableResult.getResultList(), is(expectedResults));
     }
 
