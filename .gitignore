@@ -19,4 +19,7 @@ bin/main/application.yaml
 *.iml
 *.ipr
 
+### Lombok
+lombok.config
+
 .DS_Store
