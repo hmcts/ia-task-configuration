@@ -191,7 +191,7 @@ dependencyManagement {
 
 repositories {
   mavenLocal()
-  jcenter()
+  maven { url 'https://jitpack.io' }
   mavenCentral()
 }
 
@@ -226,8 +226,8 @@ dependencies {
 
   implementation group: 'io.springfox', name: 'springfox-swagger2', version: versions.springfoxSwagger
 
-  implementation group: 'uk.gov.hmcts.reform', name: 'logging', version: versions.reformLogging
-  implementation group: 'uk.gov.hmcts.reform', name: 'logging-appinsights', version: versions.reformLogging
+  implementation group: 'com.github.hmcts.java-logging', name: 'java-logging', version: versions.reformLogging
+  implementation group: 'com.github.hmcts.java-logging', name: 'java-logging-appinsights', version: versions.reformLogging
 
   compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.14.0'
   compile group: 'org.apache.logging.log4j', name: 'log4j-to-slf4j', version: '2.14.1'
