@@ -56,7 +56,7 @@ class CamundaTaskConfigurationTest {
     }
 
     private static Stream<Scenario> scenarioProvider() {
-        Scenario givenCasaDataIsMissedThenDefaultToTaylorHouseScenario = Scenario.builder()
+        Scenario givenCaseDataIsMissedThenDefaultToTaylorHouseScenario = Scenario.builder()
             .caseData(Map.of("data", ""))
             .caseNameValue(null)
             .appealTypeValue("")
@@ -65,7 +65,7 @@ class CamundaTaskConfigurationTest {
             .locationNameValue("Taylor House")
             .build();
 
-        Scenario givenCasaDataIsPresentThenReturnNameAndValueScenario = Scenario.builder()
+        Scenario givenCaseDataIsPresentThenReturnNameAndValueScenario = Scenario.builder()
             .caseData(Map.of(
                 "data", Map.of(
                     "appealType", "asylum",
@@ -86,8 +86,8 @@ class CamundaTaskConfigurationTest {
             .build();
 
         return Stream.of(
-            givenCasaDataIsMissedThenDefaultToTaylorHouseScenario,
-            givenCasaDataIsPresentThenReturnNameAndValueScenario
+            givenCaseDataIsMissedThenDefaultToTaylorHouseScenario,
+            givenCaseDataIsPresentThenReturnNameAndValueScenario
         );
     }
 
