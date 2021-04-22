@@ -85,9 +85,29 @@ class CamundaTaskConfigurationTest {
             .locationNameValue("some other location name")
             .build();
 
+        Scenario givenCaseDataBaseLocationIsMissingAndStaffLocationIsProvidedScenario = Scenario.builder()
+            .caseData(Map.of(
+                "data", Map.of(
+                    "appealType", "asylum",
+                    "appellantGivenNames", "some appellant given names",
+                    "appellantFamilyName", "some appellant family name",
+                    "caseManagementLocation", Map.of(
+                        "region", "some other region"
+                    ),
+                    "staffLocation", "some other location name"
+                )
+            ))
+            .caseNameValue("some appellant given names some appellant family name")
+            .appealTypeValue("asylum")
+            .regionValue("some other region")
+            .locationValue("765324")
+            .locationNameValue("Taylor House")
+            .build();
+
         return Stream.of(
             givenCaseDataIsMissedThenDefaultToTaylorHouseScenario,
-            givenCaseDataIsPresentThenReturnNameAndValueScenario
+            givenCaseDataIsPresentThenReturnNameAndValueScenario,
+            givenCaseDataBaseLocationIsMissingAndStaffLocationIsProvidedScenario
         );
     }
 
