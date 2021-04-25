@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.5.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.2.0">
   <decision id="wa-task-configuration-ia-asylum" name="Task configuration DMN">
     <decisionTable id="DecisionTable_14cx079" hitPolicy="RULE ORDER">
-      <input id="InputClause_1gxyo7f" label="case" camunda:inputVariable="case">
+      <input id="InputClause_1gxyo7f" label="CCD Case Data" camunda:inputVariable="case">
         <inputExpression id="LiteralExpression_0mra7c4" typeRef="string">
           <text></text>
         </inputExpression>
       </input>
-      <output id="Output_1" label="name" name="name" typeRef="string" />
-      <output id="OutputClause_021y3bb" label="value" name="value" typeRef="string" biodi:width="192" />
+      <output id="Output_1" label="Name" name="name" typeRef="string" />
+      <output id="OutputClause_021y3bb" label="Value" name="value" typeRef="string" biodi:width="192" />
       <rule id="DecisionRule_0u7yi27">
         <inputEntry id="UnaryTests_03ky0ek">
           <text></text>

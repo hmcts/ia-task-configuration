@@ -7,8 +7,8 @@
           <text>eventId</text>
         </inputExpression>
       </input>
-      <output id="Output_1" label="Task Type" name="task_type" typeRef="string" biodi:width="282" />
-      <output id="OutputClause_1mldd9e" label="Completion Mode" name="completion_mode" typeRef="string" />
+      <output id="Output_1" label="Task Type" name="taskType" typeRef="string" biodi:width="282" />
+      <output id="OutputClause_1mldd9e" label="Completion Mode" name="completionMode" typeRef="string" />
       <rule id="DecisionRule_12eenty">
         <inputEntry id="UnaryTests_17cg7de">
           <text>"requestRespondentEvidence"</text>
