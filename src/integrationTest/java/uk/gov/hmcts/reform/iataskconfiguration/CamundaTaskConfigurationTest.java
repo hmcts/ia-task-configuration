@@ -13,11 +13,13 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
 
+import static java.util.Collections.emptyMap;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
@@ -57,7 +59,7 @@ class CamundaTaskConfigurationTest {
 
     private static Stream<Scenario> scenarioProvider() {
         Scenario givenCaseDataIsMissedThenDefaultToTaylorHouseScenario = Scenario.builder()
-            .caseData(Map.of("data", ""))
+            .caseData(emptyMap())
             .caseNameValue(null)
             .appealTypeValue("")
             .regionValue("1")
@@ -67,7 +69,6 @@ class CamundaTaskConfigurationTest {
 
         Scenario givenCaseDataIsPresentThenReturnNameAndValueScenario = Scenario.builder()
             .caseData(Map.of(
-                "data", Map.of(
                     "appealType", "asylum",
                     "appellantGivenNames", "some appellant given names",
                     "appellantFamilyName", "some appellant family name",
@@ -76,7 +77,6 @@ class CamundaTaskConfigurationTest {
                         "baseLocation", "some other location"
                     ),
                     "staffLocation", "some other location name"
-                )
             ))
             .caseNameValue("some appellant given names some appellant family name")
             .appealTypeValue("asylum")
@@ -130,7 +130,7 @@ class CamundaTaskConfigurationTest {
 
             return dmnEngine.evaluateDecisionTable(
                 decision,
-                Variables.createVariables().putValue("case", caseData)
+                Variables.createVariables().putValue("caseData", caseData)
             );
         } catch (IOException e) {
             throw new AssertionError(e);

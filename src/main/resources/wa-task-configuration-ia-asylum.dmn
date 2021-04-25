@@ -2,7 +2,7 @@
 <definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.2.0">
   <decision id="wa-task-configuration-ia-asylum" name="Task configuration DMN">
     <decisionTable id="DecisionTable_14cx079" hitPolicy="RULE ORDER">
-      <input id="InputClause_1gxyo7f" label="CCD Case Data" camunda:inputVariable="case">
+      <input id="InputClause_1gxyo7f" label="CCD Case Data" camunda:inputVariable="caseData">
         <inputExpression id="LiteralExpression_0mra7c4" typeRef="string">
           <text></text>
         </inputExpression>
@@ -17,7 +17,7 @@
           <text>"caseName"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_06tqng3">
-          <text>case.data.appellantGivenNames + " " + case.data.appellantFamilyName</text>
+          <text>caseData.appellantGivenNames + " " + caseData.appellantFamilyName</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0oagl97">
@@ -28,7 +28,7 @@
           <text>"appealType"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0t707ev">
-          <text>if (case.data.appealType != null) then case.data.appealType else ""</text>
+          <text>if (caseData.appealType != null) then caseData.appealType else ""</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0r3u9cf">
@@ -39,7 +39,7 @@
           <text>"region"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_05korws">
-          <text>if (case.data.caseManagementLocation != null and case.data.caseManagementLocation.region != null) then case.data.caseManagementLocation.region else "1"</text>
+          <text>if (caseData.caseManagementLocation != null and caseData.caseManagementLocation.region != null) then caseData.caseManagementLocation.region else "1"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_06fd9qz">
@@ -50,7 +50,7 @@
           <text>"location"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0jj1wzo">
-          <text>if (case.data.caseManagementLocation != null and case.data.caseManagementLocation.baseLocation != null) then case.data.caseManagementLocation.baseLocation else "765324"</text>
+          <text>if (caseData.caseManagementLocation != null and caseData.caseManagementLocation.baseLocation != null) then caseData.caseManagementLocation.baseLocation else "765324"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1oirne1">
@@ -61,7 +61,7 @@
           <text>"locationName"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0xp4dc7">
-          <text>if (case.data.staffLocation != null) then case.data.staffLocation else "Taylor House"</text>
+          <text>if (caseData.staffLocation != null) then caseData.staffLocation else "Taylor House"</text>
         </outputEntry>
       </rule>
     </decisionTable>
