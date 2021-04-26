@@ -250,6 +250,10 @@ dependencies {
     exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
   }
 
+    testImplementation group: 'org.camunda.bpm.dmn', name: 'camunda-engine-dmn', version: "${versions.camunda}"
+    testImplementation group: 'org.camunda.bpm.assert', name: 'camunda-bpm-assert', version: '8.0.0'
+    testImplementation group: 'org.camunda.bpm', name: 'camunda-engine', version: '7.14.0'
+    testImplementation group: 'com.h2database', name: 'h2', version: '1.4.200'
 
   integrationTestImplementation sourceSets.main.runtimeClasspath
   integrationTestImplementation sourceSets.test.runtimeClasspath
@@ -258,10 +262,6 @@ dependencies {
 
   smokeTestImplementation sourceSets.main.runtimeClasspath
 
-    testImplementation group: 'org.camunda.bpm.dmn', name: 'camunda-engine-dmn', version: "${versions.camunda}"
-    testImplementation group: 'org.camunda.bpm.assert', name: 'camunda-bpm-assert', version: '8.0.0'
-    testImplementation group: 'org.camunda.bpm', name: 'camunda-engine', version: '7.14.0'
-    testImplementation group: 'com.h2database', name: 'h2', version: '1.4.200'
 
 
 }
