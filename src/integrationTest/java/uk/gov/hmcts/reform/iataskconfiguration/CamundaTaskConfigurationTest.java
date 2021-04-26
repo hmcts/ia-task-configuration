@@ -18,6 +18,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
 
+import static java.util.Collections.emptyMap;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
@@ -28,36 +29,9 @@ class CamundaTaskConfigurationTest {
     public static final String CASE_TYPE = "asylum";
     private DmnEngine dmnEngine;
 
-    @BeforeEach
-    void setUp() {
-        dmnEngine = DmnEngineConfiguration
-            .createDefaultDmnEngineConfiguration()
-            .buildEngine();
-    }
-
-    @ParameterizedTest
-    @MethodSource("scenarioProvider")
-    void when_case_then_return_name_and_value_rows(Scenario scenario) {
-        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmn(scenario.getCaseData());
-
-        assertThat(dmnDecisionTableResult.getResultList(), is(getExpectedResults(scenario)));
-    }
-
-    @Value
-    @Builder
-    private static class Scenario {
-        Map<String, Object> caseData;
-
-        String caseNameValue;
-        String appealTypeValue;
-        String regionValue;
-        String locationValue;
-        String locationNameValue;
-    }
-
     private static Stream<Scenario> scenarioProvider() {
         Scenario givenCaseDataIsMissedThenDefaultToTaylorHouseScenario = Scenario.builder()
-            .caseData(Map.of("data", ""))
+            .caseData(emptyMap())
             .caseNameValue(null)
             .appealTypeValue("")
             .regionValue("1")
@@ -67,16 +41,14 @@ class CamundaTaskConfigurationTest {
 
         Scenario givenCaseDataIsPresentThenReturnNameAndValueScenario = Scenario.builder()
             .caseData(Map.of(
-                "data", Map.of(
-                    "appealType", "asylum",
-                    "appellantGivenNames", "some appellant given names",
-                    "appellantFamilyName", "some appellant family name",
-                    "caseManagementLocation", Map.of(
-                        "region", "some other region",
-                        "baseLocation", "some other location"
-                    ),
-                    "staffLocation", "some other location name"
-                )
+                "appealType", "asylum",
+                "appellantGivenNames", "some appellant given names",
+                "appellantFamilyName", "some appellant family name",
+                "caseManagementLocation", Map.of(
+                    "region", "some other region",
+                    "baseLocation", "some other location"
+                ),
+                "staffLocation", "some other location name"
             ))
             .caseNameValue("some appellant given names some appellant family name")
             .appealTypeValue("asylum")
@@ -109,6 +81,21 @@ class CamundaTaskConfigurationTest {
             givenCaseDataIsPresentThenReturnNameAndValueScenario,
             givenCaseDataBaseLocationIsMissingAndStaffLocationIsProvidedScenario
         );
+    }
+
+    @BeforeEach
+    void setUp() {
+        dmnEngine = DmnEngineConfiguration
+            .createDefaultDmnEngineConfiguration()
+            .buildEngine();
+    }
+
+    @ParameterizedTest
+    @MethodSource("scenarioProvider")
+    void when_case_then_return_name_and_value_rows(Scenario scenario) {
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmn(scenario.getCaseData());
+
+        assertThat(dmnDecisionTableResult.getResultList(), is(getExpectedResults(scenario)));
     }
 
     private List<Map<String, Object>> getExpectedResults(Scenario scenario) {
@@ -150,11 +137,23 @@ class CamundaTaskConfigurationTest {
 
             return dmnEngine.evaluateDecisionTable(
                 decision,
-                Variables.createVariables().putValue("case", caseData)
+                Variables.createVariables().putValue("caseData", caseData)
             );
         } catch (IOException e) {
             throw new AssertionError(e);
         }
+    }
+
+    @Value
+    @Builder
+    private static class Scenario {
+        Map<String, Object> caseData;
+
+        String caseNameValue;
+        String appealTypeValue;
+        String regionValue;
+        String locationValue;
+        String locationNameValue;
     }
 
 }

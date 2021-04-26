@@ -34,8 +34,8 @@ class CamundaTaskCompletionTest {
                 "requestRespondentEvidence",
                 singletonList(
                     Map.of(
-                        "task_type", "reviewTheAppeal",
-                        "completion_mode", "Auto"
+                        "taskType", "reviewTheAppeal",
+                        "completionMode", "Auto"
                     )
                 )
             ),
@@ -43,8 +43,8 @@ class CamundaTaskCompletionTest {
                 "requestCaseBuilding",
                 singletonList(
                     Map.of(
-                        "task_type", "reviewRespondentEvidence",
-                        "completion_mode", "Auto"
+                        "taskType", "reviewRespondentEvidence",
+                        "completionMode", "Auto"
                     )
                 )
             ),
@@ -52,8 +52,8 @@ class CamundaTaskCompletionTest {
                 "requestReasonsForAppeal",
                 singletonList(
                     Map.of(
-                        "task_type", "reviewRespondentEvidence",
-                        "completion_mode", "Auto"
+                        "taskType", "reviewRespondentEvidence",
+                        "completionMode", "Auto"
                     )
                 )
             ),
@@ -61,8 +61,8 @@ class CamundaTaskCompletionTest {
                 "sendDirection",
                 singletonList(
                     Map.of(
-                        "task_type", "reviewRespondentEvidence",
-                        "completion_mode", "Auto"
+                        "taskType", "reviewRespondentEvidence",
+                        "completionMode", "Auto"
                     )
                 )
             ),
@@ -70,20 +70,20 @@ class CamundaTaskCompletionTest {
                 "requestResponseReview",
                 asList(
                     Map.of(
-                        "task_type", "reviewAppealSkeletonArgument",
-                        "completion_mode", "Auto"
+                        "taskType", "reviewAppealSkeletonArgument",
+                        "completionMode", "Auto"
                     ),
                     Map.of(
-                        "task_type", "reviewReasonsForAppeal",
-                        "completion_mode", "Auto"
+                        "taskType", "reviewReasonsForAppeal",
+                        "completionMode", "Auto"
                     ),
                     Map.of(
-                        "task_type", "reviewClarifyingQuestionsAnswers",
-                        "completion_mode", "Auto"
+                        "taskType", "reviewClarifyingQuestionsAnswers",
+                        "completionMode", "Auto"
                     ),
                     Map.of(
-                        "task_type", "reviewRespondentResponse",
-                        "completion_mode", "Auto"
+                        "taskType", "reviewRespondentResponse",
+                        "completionMode", "Auto"
                     )
                 )
             ),
@@ -91,8 +91,8 @@ class CamundaTaskCompletionTest {
                 "requestCaseEdit",
                 singletonList(
                     Map.of(
-                        "task_type", "reviewAppealSkeletonArgument",
-                        "completion_mode", "Auto"
+                        "taskType", "reviewAppealSkeletonArgument",
+                        "completionMode", "Auto"
                     )
                 )
             ),
@@ -100,12 +100,12 @@ class CamundaTaskCompletionTest {
                 "sendDirectionWithQuestions",
                 asList(
                     Map.of(
-                        "task_type", "reviewReasonsForAppeal",
-                        "completion_mode", "Auto"
+                        "taskType", "reviewReasonsForAppeal",
+                        "completionMode", "Auto"
                     ),
                     Map.of(
-                        "task_type", "reviewClarifyingQuestionsAnswers",
-                        "completion_mode", "Auto"
+                        "taskType", "reviewClarifyingQuestionsAnswers",
+                        "completionMode", "Auto"
                     )
                 )
             ),
@@ -113,12 +113,12 @@ class CamundaTaskCompletionTest {
                 "requestCmaRequirements",
                 asList(
                     Map.of(
-                        "task_type", "reviewReasonsForAppeal",
-                        "completion_mode", "Auto"
+                        "taskType", "reviewReasonsForAppeal",
+                        "completionMode", "Auto"
                     ),
                     Map.of(
-                        "task_type", "reviewClarifyingQuestionsAnswers",
-                        "completion_mode", "Auto"
+                        "taskType", "reviewClarifyingQuestionsAnswers",
+                        "completionMode", "Auto"
                     )
                 )
             ),
@@ -126,8 +126,8 @@ class CamundaTaskCompletionTest {
                 "reviewCmaRequirements",
                 singletonList(
                     Map.of(
-                        "task_type", "reviewCmaRequirements",
-                        "completion_mode", "Auto"
+                        "taskType", "reviewCmaRequirements",
+                        "completionMode", "Auto"
                     )
                 )
             ),
@@ -135,8 +135,8 @@ class CamundaTaskCompletionTest {
                 "updateDetailsAfterCma",
                 singletonList(
                     Map.of(
-                        "task_type", "attendCma",
-                        "completion_mode", "Auto"
+                        "taskType", "attendCma",
+                        "completionMode", "Auto"
                     )
                 )
             ),
@@ -144,8 +144,8 @@ class CamundaTaskCompletionTest {
                 "requestResponseAmend",
                 singletonList(
                     Map.of(
-                        "task_type", "reviewRespondentResponse",
-                        "completion_mode", "Auto"
+                        "taskType", "reviewRespondentResponse",
+                        "completionMode", "Auto"
                     )
                 )
             ),
@@ -153,8 +153,8 @@ class CamundaTaskCompletionTest {
                 "reviewHearingRequirements",
                 singletonList(
                     Map.of(
-                        "task_type", "reviewHearingRequirements",
-                        "completion_mode", "Auto"
+                        "taskType", "reviewHearingRequirements",
+                        "completionMode", "Auto"
                     )
                 )
             ),
@@ -162,8 +162,8 @@ class CamundaTaskCompletionTest {
                 "createCaseSummary",
                 singletonList(
                     Map.of(
-                        "task_type", "createCaseSummary",
-                        "completion_mode", "Auto"
+                        "taskType", "createCaseSummary",
+                        "completionMode", "Auto"
                     )
                 )
             ),
@@ -171,8 +171,8 @@ class CamundaTaskCompletionTest {
                 "generateHearingBundle",
                 singletonList(
                     Map.of(
-                        "task_type", "createHearingBundle",
-                        "completion_mode", "Auto"
+                        "taskType", "createHearingBundle",
+                        "completionMode", "Auto"
                     )
                 )
             ),
@@ -180,8 +180,8 @@ class CamundaTaskCompletionTest {
                 "decisionAndReasonsStarted",
                 singletonList(
                     Map.of(
-                        "task_type", "startDecisionsAndReasonsDocument",
-                        "completion_mode", "Auto"
+                        "taskType", "startDecisionsAndReasonsDocument",
+                        "completionMode", "Auto"
                     )
                 )
             ),
@@ -189,8 +189,8 @@ class CamundaTaskCompletionTest {
                 "recordAllocatedJudge",
                 singletonList(
                     Map.of(
-                        "task_type", "allocateFtpaToJudge",
-                        "completion_mode", "Auto"
+                        "taskType", "allocateFtpaToJudge",
+                        "completionMode", "Auto"
                     )
                 )
             ),
@@ -198,8 +198,8 @@ class CamundaTaskCompletionTest {
                 "changeDirectionDueDate",
                 singletonList(
                     Map.of(
-                        "task_type", "decideOnTimeExtension",
-                        "completion_mode", "Auto"
+                        "taskType", "decideOnTimeExtension",
+                        "completionMode", "Auto"
                     )
                 )
             ),
@@ -207,8 +207,8 @@ class CamundaTaskCompletionTest {
                 "recordApplication",
                 singletonList(
                     Map.of(
-                        "task_type", "processAnApplication",
-                        "completion_mode", "Auto"
+                        "taskType", "processAnApplication",
+                        "completionMode", "Auto"
                     )
                 )
             ),
