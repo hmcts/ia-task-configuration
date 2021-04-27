@@ -29,40 +29,6 @@ class CamundaTaskConfigurationTest {
     public static final String CASE_TYPE = "asylum";
     private DmnEngine dmnEngine;
 
-    private static Stream<Scenario> scenarioProvider() {
-        Scenario givenCaseDataIsMissedThenDefaultToTaylorHouseScenario = Scenario.builder()
-            .caseData(emptyMap())
-            .caseNameValue(null)
-            .appealTypeValue("")
-            .regionValue("1")
-            .locationValue("765324")
-            .locationNameValue("Taylor House")
-            .build();
-
-        Scenario givenCaseDataIsPresentThenReturnNameAndValueScenario = Scenario.builder()
-            .caseData(Map.of(
-                "appealType", "asylum",
-                "appellantGivenNames", "some appellant given names",
-                "appellantFamilyName", "some appellant family name",
-                "caseManagementLocation", Map.of(
-                    "region", "some other region",
-                    "baseLocation", "some other location"
-                ),
-                "staffLocation", "some other location name"
-            ))
-            .caseNameValue("some appellant given names some appellant family name")
-            .appealTypeValue("asylum")
-            .regionValue("some other region")
-            .locationValue("some other location")
-            .locationNameValue("some other location name")
-            .build();
-
-        return Stream.of(
-            givenCaseDataIsMissedThenDefaultToTaylorHouseScenario,
-            givenCaseDataIsPresentThenReturnNameAndValueScenario
-        );
-    }
-
     @BeforeEach
     void setUp() {
         dmnEngine = DmnEngineConfiguration
@@ -78,26 +44,78 @@ class CamundaTaskConfigurationTest {
         assertThat(dmnDecisionTableResult.getResultList(), is(getExpectedResults(scenario)));
     }
 
+    private static Stream<Scenario> scenarioProvider() {
+        Scenario givenCaseDataIsMissedThenDefaultToTaylorHouseScenario = Scenario.builder()
+            .caseData(emptyMap())
+            .expectedCaseNameValue(null)
+            .expectedAppealTypeValue("")
+            .expectedRegionValue("1")
+            .expectedLocationValue("765324")
+            .expectedLocationNameValue("Taylor House")
+            .build();
+
+        Scenario givenCaseDataIsPresentThenReturnNameAndValueScenario = Scenario.builder()
+            .caseData(Map.of(
+                "appealType", "asylum",
+                "appellantGivenNames", "some appellant given names",
+                "appellantFamilyName", "some appellant family name",
+                "caseManagementLocation", Map.of(
+                    "region", "some other region",
+                    "baseLocation", "some other location"
+                ),
+                "staffLocation", "some other location name"
+            ))
+            .expectedCaseNameValue("some appellant given names some appellant family name")
+            .expectedAppealTypeValue("asylum")
+            .expectedRegionValue("some other region")
+            .expectedLocationValue("some other location")
+            .expectedLocationNameValue("some other location name")
+            .build();
+
+        Scenario givenCaseDataBaseLocationIsMissingAndStaffLocationIsProvidedScenario = Scenario.builder()
+            .caseData(Map.of(
+                "appealType", "asylum",
+                "appellantGivenNames", "some appellant given names",
+                "appellantFamilyName", "some appellant family name",
+                "caseManagementLocation", Map.of(
+                    "region", "some other region"
+                ),
+                "staffLocation", "some other location name"
+            ))
+            .expectedCaseNameValue("some appellant given names some appellant family name")
+            .expectedAppealTypeValue("asylum")
+            .expectedRegionValue("some other region")
+            .expectedLocationValue("765324")
+            .expectedLocationNameValue("Taylor House")
+            .build();
+
+        return Stream.of(
+            givenCaseDataIsMissedThenDefaultToTaylorHouseScenario,
+            givenCaseDataIsPresentThenReturnNameAndValueScenario,
+            givenCaseDataBaseLocationIsMissingAndStaffLocationIsProvidedScenario
+        );
+    }
+
     private List<Map<String, Object>> getExpectedResults(Scenario scenario) {
         Map<String, Object> caseNameRule = new HashMap<>(); // allow null values
         caseNameRule.put("name", "caseName");
-        caseNameRule.put("value", scenario.getCaseNameValue());
+        caseNameRule.put("value", scenario.getExpectedCaseNameValue());
 
         Map<String, Object> appealTypeRule = Map.of(
             "name", "appealType",
-            "value", scenario.getAppealTypeValue()
+            "value", scenario.getExpectedAppealTypeValue()
         );
         Map<String, Object> regionRule = Map.of(
             "name", "region",
-            "value", scenario.getRegionValue()
+            "value", scenario.getExpectedRegionValue()
         );
         Map<String, Object> locationRule = Map.of(
             "name", "location",
-            "value", scenario.getLocationValue()
+            "value", scenario.getExpectedLocationValue()
         );
         Map<String, Object> locationNameRule = Map.of(
             "name", "locationName",
-            "value", scenario.getLocationNameValue()
+            "value", scenario.getExpectedLocationNameValue()
         );
         return List.of(
             caseNameRule, appealTypeRule, regionRule, locationRule, locationNameRule
@@ -129,11 +147,11 @@ class CamundaTaskConfigurationTest {
     private static class Scenario {
         Map<String, Object> caseData;
 
-        String caseNameValue;
-        String appealTypeValue;
-        String regionValue;
-        String locationValue;
-        String locationNameValue;
+        String expectedCaseNameValue;
+        String expectedAppealTypeValue;
+        String expectedRegionValue;
+        String expectedLocationValue;
+        String expectedLocationNameValue;
     }
 
 }
