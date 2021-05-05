@@ -412,7 +412,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "requestHearingRequirements",
+                "requestHearingRequirementsFeature",
                 "submitHearingRequirements",
                 null,
                 singletonList(
