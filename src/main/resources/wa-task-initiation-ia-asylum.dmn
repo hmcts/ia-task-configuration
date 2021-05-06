@@ -692,7 +692,7 @@
       </rule>
       <rule id="DecisionRule_0f4ui9w">
         <inputEntry id="UnaryTests_1hx4zw6">
-          <text>"requestHearingRequirements"</text>
+          <text>"requestHearingRequirementsFeature"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1w192ot">
           <text>"submitHearingRequirements"</text>
