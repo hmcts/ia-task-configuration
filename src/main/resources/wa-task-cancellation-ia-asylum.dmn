@@ -20,7 +20,7 @@
       <output id="OutputClause_18zgoaj" label="Action" name="action" typeRef="string" />
       <output id="OutputClause_0tu8bqp" label="Warning Code" name="warningCode" typeRef="string" />
       <output id="OutputClause_1kfc3jv" label="Warning Text" name="warningText" typeRef="string" />
-      <output id="OutputClause_0dqzted" label="Task Categories" name="TaskCategories" typeRef="string" biodi:width="192" />
+      <output id="OutputClause_0dqzted" label="Process Categories Identifiers" name="processCategories" typeRef="string" biodi:width="192" />
       <rule id="DecisionRule_0w82l1w">
         <inputEntry id="UnaryTests_1nfllzy">
           <text></text>
@@ -64,7 +64,7 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_15mt0ck">
-          <text>"Followup overdue"</text>
+          <text>"followUpOverdue"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0xhe2ed">
@@ -87,7 +87,7 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1fhqwus">
-          <text>"Time extension"</text>
+          <text>"timeExtension"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0v6o280">
@@ -110,7 +110,7 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1jsnh0n">
-          <text>"Followup overdue"</text>
+          <text>"followUpOverdue"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0t1xbh5">
@@ -133,7 +133,7 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0mjvutv">
-          <text>"Time extension"</text>
+          <text>"timeExtension"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1eqg9rj">
@@ -156,7 +156,7 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0e9p769">
-          <text>"Followup overdue"</text>
+          <text>"followUpOverdue"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0hp5vha">
@@ -179,7 +179,7 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_17relsw">
-          <text>"Time extension"</text>
+          <text>"timeExtension"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0scl4xr">
@@ -202,7 +202,7 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_12nxxhe">
-          <text>"Followup overdue"</text>
+          <text>"followUpOverdue"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1m50f0j">
@@ -225,7 +225,7 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0k32648">
-          <text>"Followup overdue"</text>
+          <text>"followUpOverdue"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1vxg4dz">
@@ -248,7 +248,7 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1x6xtks">
-          <text>"Followup overdue"</text>
+          <text>"followUpOverdue"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0kjcieg">
@@ -271,7 +271,7 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0d9whzb">
-          <text>"Followup overdue"</text>
+          <text>"followUpOverdue"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0599dvt">
@@ -294,7 +294,7 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_161b5g7">
-          <text>"Followup overdue"</text>
+          <text>"followUpOverdue"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1on215e">
@@ -317,7 +317,7 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_05kjt3x">
-          <text>"Followup overdue"</text>
+          <text>"followUpOverdue"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1f4jb32">
@@ -341,6 +341,40 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_1cbtlhv">
           <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1xzpx6h">
+        <inputEntry id="UnaryTests_1gy8t0m">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1npp0f9">
+          <text>"dummyEventForMultipleCategories"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0t6iai2">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0cu1r4a">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1nonhf4">
+          <text>"followUpOverdue, caseProgression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ept1r6">
+        <inputEntry id="UnaryTests_04vi3lp">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1bryv18">
+          <text>"dummyEventForMultipleCategories"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vh0tbr">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0v1257o">
+          <text>"Warn"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_00f7cvm">
+          <text>"followUpOverdue, caseProgression"</text>
         </outputEntry>
       </rule>
     </decisionTable>
