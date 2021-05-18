@@ -1,15 +1,5 @@
 package uk.gov.hmcts.reform.iataskconfiguration.dmn;
 
-import static java.util.Collections.emptyMap;
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static uk.gov.hmcts.reform.iataskconfiguration.DmnDecisionTable.WA_TASK_CONFIGURATION_IA_ASYLUM;
-
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Stream;
 import lombok.Builder;
 import lombok.Value;
 import org.camunda.bpm.dmn.engine.DmnDecisionTableResult;
@@ -22,6 +12,17 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.MethodSource;
 import uk.gov.hmcts.reform.iataskconfiguration.DmnDecisionTableBaseUnitTest;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Stream;
+
+import static java.util.Collections.emptyMap;
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static uk.gov.hmcts.reform.iataskconfiguration.DmnDecisionTable.WA_TASK_CONFIGURATION_IA_ASYLUM;
 
 class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
@@ -37,6 +38,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         assertThat(logic.getRules().size(), is(5));
     }
 
+    @SuppressWarnings("checkstyle:indentation")
     @ParameterizedTest
     @CsvSource(value = {
         "refusalOfHumanRights, Human rights",
@@ -83,7 +85,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
         Scenario givenCaseDataIsPresentThenReturnNameAndValueScenario = Scenario.builder()
             .caseData(Map.of(
-                "appealType", "asylum",
+                "appealType", "refusalOfEu",
                 "appellantGivenNames", "some appellant given names",
                 "appellantFamilyName", "some appellant family name",
                 "caseManagementLocation", Map.of(
@@ -93,7 +95,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 "staffLocation", "some other location name"
             ))
             .expectedCaseNameValue("some appellant given names some appellant family name")
-            .expectedAppealTypeValue("asylum")
+            .expectedAppealTypeValue("EEA")
             .expectedRegionValue("some other region")
             .expectedLocationValue("some other location")
             .expectedLocationNameValue("some other location name")
