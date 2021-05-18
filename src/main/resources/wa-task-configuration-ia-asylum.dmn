@@ -28,7 +28,7 @@
           <text>"appealType"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0t707ev">
-          <text>if caseData.appealType = "refusalOfEu" then "Refusal of application under the EEA regulations" else if caseData.appealType = "refusalOfHumanRights" then "Refusal of a human rights claim" else if caseData.appealType = "deprivation" then "Deprivation of citizenship" else if caseData.appealType = "protection" then "Refusal of protection claim" else if caseData.appealType = "revocationOfProtection" then "Revocation of a protection status" else ""</text>
+          <text>if caseData.appealType = "refusalOfHumanRights" then "Human rights" else if caseData.appealType = "refusalOfEu" then "EEA" else if caseData.appealType = "deprivation" then "DoC" else if caseData.appealType = "protection" then "Protection" else if caseData.appealType = "revocationOfProtection" then "Revocation" else ""</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0r3u9cf">
