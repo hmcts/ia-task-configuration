@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="wa-cancellation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.4.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="wa-cancellation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.2.0">
   <decision id="wa-task-cancellation-ia-asylum" name="Task cancellation DMN">
     <decisionTable id="DecisionTable_0z3jx1g" hitPolicy="COLLECT">
       <input id="Input_1" label="From State">
@@ -20,7 +20,7 @@
       <output id="OutputClause_18zgoaj" label="Action" name="action" typeRef="string" />
       <output id="OutputClause_0tu8bqp" label="Warning Code" name="warningCode" typeRef="string" />
       <output id="OutputClause_1kfc3jv" label="Warning Text" name="warningText" typeRef="string" />
-      <output id="OutputClause_0dqzted" label="Process Categories Identifiers" name="processCategories" typeRef="string" biodi:width="192" />
+      <output id="OutputClause_0dqzted" label="Process Categories Identifiers" name="processCategories" typeRef="string" biodi:width="277" />
       <rule id="DecisionRule_0w82l1w">
         <inputEntry id="UnaryTests_1nfllzy">
           <text></text>
@@ -348,7 +348,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1npp0f9">
-          <text>"dummyEventForMultipleCategories"</text>
+          <text>"dummyEventForMultipleCategoriesCancel"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0t6iai2">
           <text></text>
@@ -365,7 +365,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1bryv18">
-          <text>"dummyEventForMultipleCategories"</text>
+          <text>"dummyEventForMultipleCategoriesWarn"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1vh0tbr">
           <text></text>

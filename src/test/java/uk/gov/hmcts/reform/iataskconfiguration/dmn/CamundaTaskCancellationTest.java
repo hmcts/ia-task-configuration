@@ -178,13 +178,20 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 null,
-                "dummyEventForMultipleCategories",
+                "dummyEventForMultipleCategoriesCancel",
                 null,
                 asList(
                     Map.of(
                         "action", "Cancel",
                         "processCategories", "followUpOverdue, caseProgression"
-                    ),
+                    )
+                )
+            ),
+            Arguments.of(
+                null,
+                "dummyEventForMultipleCategoriesWarn",
+                null,
+                asList(
                     Map.of(
                         "action", "Warn",
                         "processCategories", "followUpOverdue, caseProgression"
