@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.2.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.8.1">
   <decision id="wa-task-initiation-ia-asylum" name="Task initiation DMN">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT">
       <input id="Input_1" label="Event Id" camunda:inputVariable="eventId">
@@ -22,9 +22,7 @@
       <output id="OutputClause_0f63m65" label="Group" name="group" typeRef="string" biodi:width="192" />
       <output id="OutputClause_165p3r3" label="Delay Duration" name="delayDuration" typeRef="integer" />
       <output id="OutputClause_0i6c6c2" label="Working Days Allowed" name="workingDaysAllowed" typeRef="integer" />
-      <output id="OutputClause_10rno4c" label="Process Category Case Progression" name="__processCategory__caseProgression" typeRef="boolean" biodi:width="300" />
-      <output id="OutputClause_18cwtj9" label="Process Category Followup Overdue" name="__processCategory__followUpOverdue" typeRef="boolean" biodi:width="300" />
-      <output id="OutputClause_1llndf7" label="Process Category Time Extension" name="__processCategory__timeExtension" typeRef="boolean" biodi:width="300" />
+      <output id="OutputClause_10rno4c" label="Process Categories Identifiers" name="processCategories" typeRef="string" biodi:width="300" />
       <rule id="DecisionRule_1fenvxm">
         <inputEntry id="UnaryTests_09nq8bu">
           <text>"makeAnApplication"</text>
@@ -51,12 +49,6 @@
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1m76a0d">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_19p16ln">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1y0gu81">
           <text></text>
         </outputEntry>
       </rule>
@@ -86,13 +78,7 @@
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1x4lczj">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0dneskv">
-          <text>true</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1wv66mr">
-          <text></text>
+          <text>"followUpOverdue"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_16cn5ci">
@@ -121,13 +107,7 @@
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1t0no71">
-          <text>true</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0iaxv3f">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0oyr3tk">
-          <text></text>
+          <text>"caseProgression"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_046wm6a">
@@ -156,13 +136,7 @@
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0zy6a6s">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_08nyl92">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1x9gudh">
-          <text>true</text>
+          <text>"timeExtension"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0gm0jgu">
@@ -191,13 +165,7 @@
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0s3kz5g">
-          <text>true</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_01hes3u">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0nf28wk">
-          <text></text>
+          <text>"caseProgression"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0wvehb6">
@@ -226,13 +194,7 @@
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_147dk2d">
-          <text>true</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0kf58n4">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0votzhu">
-          <text></text>
+          <text>"caseProgression"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_12seemc">
@@ -261,13 +223,7 @@
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0bt7ho5">
-          <text>true</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_05ysaj9">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_19e5l1x">
-          <text></text>
+          <text>"caseProgression"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0oelx3m">
@@ -296,13 +252,7 @@
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1fbcdjg">
-          <text>true</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1n68064">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0jiu84q">
-          <text></text>
+          <text>"caseProgression"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1qug6sw">
@@ -331,13 +281,7 @@
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0zph664">
-          <text>true</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0skhfgm">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0vsjnps">
-          <text></text>
+          <text>"caseProgression"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0odg0q4">
@@ -366,13 +310,7 @@
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1oy20uf">
-          <text>true</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0nitnxt">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1d2rdel">
-          <text></text>
+          <text>"caseProgression"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1tpr9e2">
@@ -401,13 +339,7 @@
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0lum3zd">
-          <text>true</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1km44u9">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0sbbfeg">
-          <text></text>
+          <text>"caseProgression"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_02svucz">
@@ -436,13 +368,7 @@
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0pumcv9">
-          <text>true</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0zshdc9">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1c8tkrf">
-          <text></text>
+          <text>"caseProgression"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1p1dgii">
@@ -471,13 +397,7 @@
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_198icli">
-          <text>true</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1r5415l">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0ma19u5">
-          <text></text>
+          <text>"caseProgression"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0rscfh8">
@@ -506,13 +426,7 @@
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1rwj0ce">
-          <text>true</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_146xt5j">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_09s3usp">
-          <text></text>
+          <text>"caseProgression"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1mdjy4l">
@@ -541,13 +455,7 @@
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0jmdde0">
-          <text>true</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0j9pe8d">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0g60anu">
-          <text></text>
+          <text>"caseProgression"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1i9o6sq">
@@ -576,13 +484,7 @@
           <text>5</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1iua13p">
-          <text>true</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_06e3501">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0lq6xm0">
-          <text></text>
+          <text>"caseProgression"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_03s34kj">
@@ -611,13 +513,7 @@
           <text>5</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_145k53n">
-          <text>true</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1p64fgj">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0lpr1ik">
-          <text></text>
+          <text>"caseProgression"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0i6qihx">
@@ -646,13 +542,7 @@
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0yoh9gf">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0thr6gl">
-          <text>true</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1tw263n">
-          <text></text>
+          <text>"followUpOverdue"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_10q7721">
@@ -681,13 +571,7 @@
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0m9jin9">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0n35lpo">
-          <text>true</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0gdq9w2">
-          <text></text>
+          <text>"followUpOverdue"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_10eahy0">
@@ -716,13 +600,7 @@
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0vyvrgx">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1m406i0">
-          <text>true</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1bp6sth">
-          <text></text>
+          <text>"followUpOverdue"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0ass3eo">
@@ -751,13 +629,7 @@
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0u38id9">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1k5vp3c">
-          <text>true</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1khj3ln">
-          <text></text>
+          <text>"followUpOverdue"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0rwbivl">
@@ -786,13 +658,7 @@
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_145ayue">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1q1xh55">
-          <text>true</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1lvd4jr">
-          <text></text>
+          <text>"followUpOverdue"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_169eas5">
@@ -821,13 +687,7 @@
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_04ubdpr">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0ici557">
-          <text>true</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1hdkl06">
-          <text></text>
+          <text>"followUpOverdue"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0f4ui9w">
@@ -856,13 +716,7 @@
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_183pz80">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1eqvrbb">
-          <text>true</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0xgshll">
-          <text></text>
+          <text>"followUpOverdue"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0t01ska">
@@ -891,13 +745,7 @@
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_12zlwly">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0f3953o">
-          <text>true</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0ociu30">
-          <text></text>
+          <text>"followUpOverdue"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1nbkbh7">
@@ -926,13 +774,7 @@
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1ydf6vl">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_00omtpc">
-          <text>true</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_11jexbz">
-          <text></text>
+          <text>"followUpOverdue"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1tjsb2a">
@@ -961,13 +803,7 @@
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_031dftw">
-          <text>true</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1v0c3f9">
-          <text>true</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0mb9mq0">
-          <text></text>
+          <text>"caseProgression, followUpOverdue"</text>
         </outputEntry>
       </rule>
     </decisionTable>
