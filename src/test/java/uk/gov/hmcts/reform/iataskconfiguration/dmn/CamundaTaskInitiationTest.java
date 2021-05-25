@@ -294,34 +294,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "applyForFTPAAppellant",
-                null,
-                null,
-                singletonList(
-                    Map.of(
-                        "taskId", "allocateFtpaToJudge",
-                        "name", "Allocate FTPA to Judge",
-                        "group", "TCW",
-                        "workingDaysAllowed", 5,
-                        "taskCategory", "Case progression"
-                    )
-                )
-            ),
-            Arguments.of(
-                "applyForFTPARespondent",
-                null,
-                null,
-                singletonList(
-                    Map.of(
-                        "taskId", "allocateFtpaToJudge",
-                        "name", "Allocate FTPA to Judge",
-                        "group", "TCW",
-                        "workingDaysAllowed", 5,
-                        "taskCategory", "Case progression"
-                    )
-                )
-            ),
-            Arguments.of(
                 "requestRespondentEvidence",
                 "awaitingRespondentEvidence",
                 null,
@@ -499,10 +471,9 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
     @Test
     void if_this_test_fails_needs_updating_with_your_changes() {
-
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(26));
+        assertThat(logic.getRules().size(), is(24));
 
     }
 }
