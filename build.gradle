@@ -92,6 +92,12 @@ task smoke(type: Test) {
   classpath = sourceSets.smokeTest.runtimeClasspath
 }
 
+task tests {
+  description = "Runs junit , integration and functional tests"
+  group = "Verification"
+  dependsOn test, integration, smoke, functional
+}
+
 checkstyle {
   maxWarnings = 0
   toolVersion = '8.29'
