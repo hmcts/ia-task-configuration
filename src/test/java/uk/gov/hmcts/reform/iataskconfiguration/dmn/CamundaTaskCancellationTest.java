@@ -148,7 +148,9 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 null,
                 singletonList(
                     Map.of(
-                        "action", "Warn"
+                        "action", "Warn",
+                        "warningCode", "TA01",
+                        "warningText", "There is an application task which might impact other active tasks"
                     )
                 )
             ),
