@@ -18,6 +18,8 @@
         </inputExpression>
       </input>
       <output id="OutputClause_18zgoaj" label="Action" name="action" typeRef="string" />
+      <output id="OutputClause_0tu8bqp" label="Warning Code" name="warningCode" typeRef="string" />
+      <output id="OutputClause_1kfc3jv" label="Warning Text" name="warningText" typeRef="string" />
       <output id="OutputClause_0dqzted" label="Task Categories" name="TaskCategories" typeRef="string" biodi:width="192" />
       <rule id="DecisionRule_0w82l1w">
         <inputEntry id="UnaryTests_1nfllzy">
@@ -31,6 +33,12 @@
         </inputEntry>
         <outputEntry id="LiteralExpression_0t8415e">
           <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0c65k96">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0fivyma">
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0zmhw8j">
           <text></text>
@@ -49,6 +57,12 @@
         <outputEntry id="LiteralExpression_1mcdfgb">
           <text>"Cancel"</text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_1o0pjik">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0z09tsr">
+          <text></text>
+        </outputEntry>
         <outputEntry id="LiteralExpression_15mt0ck">
           <text>"Followup overdue"</text>
         </outputEntry>
@@ -65,6 +79,12 @@
         </inputEntry>
         <outputEntry id="LiteralExpression_1iyn5uc">
           <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_09h0dxq">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_02ourzw">
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1fhqwus">
           <text>"Time extension"</text>
@@ -83,6 +103,12 @@
         <outputEntry id="LiteralExpression_03jbwg1">
           <text>"Cancel"</text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_1wn9h2a">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1com1ds">
+          <text></text>
+        </outputEntry>
         <outputEntry id="LiteralExpression_1jsnh0n">
           <text>"Followup overdue"</text>
         </outputEntry>
@@ -99,6 +125,12 @@
         </inputEntry>
         <outputEntry id="LiteralExpression_0pu6wb2">
           <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1vc1mxr">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1fr62ht">
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0mjvutv">
           <text>"Time extension"</text>
@@ -117,6 +149,12 @@
         <outputEntry id="LiteralExpression_0tnremj">
           <text>"Cancel"</text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_1e45hdn">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0umps79">
+          <text></text>
+        </outputEntry>
         <outputEntry id="LiteralExpression_0e9p769">
           <text>"Followup overdue"</text>
         </outputEntry>
@@ -133,6 +171,12 @@
         </inputEntry>
         <outputEntry id="LiteralExpression_0z8z6xl">
           <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0e6szkt">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_08qukks">
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_17relsw">
           <text>"Time extension"</text>
@@ -151,6 +195,12 @@
         <outputEntry id="LiteralExpression_150j4np">
           <text>"Cancel"</text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_06e85qm">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1va46dq">
+          <text></text>
+        </outputEntry>
         <outputEntry id="LiteralExpression_12nxxhe">
           <text>"Followup overdue"</text>
         </outputEntry>
@@ -167,6 +217,12 @@
         </inputEntry>
         <outputEntry id="LiteralExpression_0thgeq9">
           <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_13c40ls">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0wevx60">
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0k32648">
           <text>"Followup overdue"</text>
@@ -185,6 +241,12 @@
         <outputEntry id="LiteralExpression_037nmut">
           <text>"Cancel"</text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_1ehyjhc">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0bhakgi">
+          <text></text>
+        </outputEntry>
         <outputEntry id="LiteralExpression_1x6xtks">
           <text>"Followup overdue"</text>
         </outputEntry>
@@ -201,6 +263,12 @@
         </inputEntry>
         <outputEntry id="LiteralExpression_1l7on3b">
           <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_17xfp2x">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0a53ozk">
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0d9whzb">
           <text>"Followup overdue"</text>
@@ -219,6 +287,12 @@
         <outputEntry id="LiteralExpression_0p0qzak">
           <text>"Cancel"</text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_0cw1jd1">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_05nki3j">
+          <text></text>
+        </outputEntry>
         <outputEntry id="LiteralExpression_161b5g7">
           <text>"Followup overdue"</text>
         </outputEntry>
@@ -236,6 +310,12 @@
         <outputEntry id="LiteralExpression_0d0ubcr">
           <text>"Cancel"</text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_1qwpnm7">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1u2vx51">
+          <text></text>
+        </outputEntry>
         <outputEntry id="LiteralExpression_05kjt3x">
           <text>"Followup overdue"</text>
         </outputEntry>
@@ -252,6 +332,12 @@
         </inputEntry>
         <outputEntry id="LiteralExpression_0zhe8gj">
           <text>"Warn"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0xzosbc">
+          <text>"TA01"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_02t03hs">
+          <text>"There is an application task which might impact other active tasks"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1cbtlhv">
           <text></text>
