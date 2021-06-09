@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="wa-cancellation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.2.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="wa-cancellation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.8.1">
   <decision id="wa-task-cancellation-ia-asylum" name="Task cancellation DMN">
     <decisionTable id="DecisionTable_0z3jx1g" hitPolicy="COLLECT">
       <input id="Input_1" label="From State">
@@ -343,37 +343,49 @@
           <text></text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1xzpx6h">
-        <inputEntry id="UnaryTests_1gy8t0m">
+      <rule id="DecisionRule_0sopj8a">
+        <inputEntry id="UnaryTests_06m4nz6">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_1npp0f9">
+        <inputEntry id="UnaryTests_1r6ibjl">
           <text>"dummyEventForMultipleCategoriesCancel"</text>
         </inputEntry>
-        <inputEntry id="UnaryTests_0t6iai2">
+        <inputEntry id="UnaryTests_0d9do2z">
           <text></text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_0cu1r4a">
+        <outputEntry id="LiteralExpression_0pu32ux">
           <text>"Cancel"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_1nonhf4">
+        <outputEntry id="LiteralExpression_17wev74">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1i6k9r2">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0z5pd7l">
           <text>"followUpOverdue, caseProgression"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1ept1r6">
-        <inputEntry id="UnaryTests_04vi3lp">
+      <rule id="DecisionRule_1yumlrd">
+        <inputEntry id="UnaryTests_0jf0s0e">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_1bryv18">
+        <inputEntry id="UnaryTests_0dps9wd">
           <text>"dummyEventForMultipleCategoriesWarn"</text>
         </inputEntry>
-        <inputEntry id="UnaryTests_1vh0tbr">
+        <inputEntry id="UnaryTests_0vui1td">
           <text></text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_0v1257o">
+        <outputEntry id="LiteralExpression_0msaiw4">
           <text>"Warn"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_00f7cvm">
+        <outputEntry id="LiteralExpression_1vt94fk">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_01pglx0">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_08epid6">
           <text>"followUpOverdue, caseProgression"</text>
         </outputEntry>
       </rule>
