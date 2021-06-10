@@ -444,6 +444,34 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "uploadAdditionalEvidenceHomeOffice",
+                null,
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewAdditionalHomeOfficeEvidence",
+                        "name", "Review additional Home Office evidence",
+                        "group", "TCW",
+                        "workingDaysAllowed", 2,
+                        "taskCategory", "Case progression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "uploadAdditionalEvidence",
+                null,
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewAdditionalAppellantEvidence",
+                        "name", "Review additional appellant evidence",
+                        "group", "TCW",
+                        "workingDaysAllowed", 2,
+                        "taskCategory", "Case progression"
+                    )
+                )
+            ),
+            Arguments.of(
                 "unknownEvent",
                 null,
                 null,
@@ -454,10 +482,10 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
     @ParameterizedTest(name = "event id: {0} post event state: {1} appeal type: {2}")
     @MethodSource("scenarioProvider")
-    void given_multiple_event_ids_should_evaluate_dmn(String eventId,
-                                                      String postEventState,
-                                                      String appealType,
-                                                      List<Map<String, String>> expectation) {
+    void given_event_ids_should_evaluate_dmn(String eventId,
+                                             String postEventState,
+                                             String appealType,
+                                             List<Map<String, String>> expectation) {
 
         VariableMap inputVariables = new VariableMapImpl();
         inputVariables.putValue("eventId", eventId);
@@ -473,7 +501,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(24));
+        assertThat(logic.getRules().size(), is(26));
 
     }
 }
