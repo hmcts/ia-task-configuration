@@ -210,7 +210,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                 "decideAnApplication",
                 singletonList(
                     Map.of(
-                        "taskType", "processAnApplication",
+                        "taskType", "processApplication",
                         "completionMode", "Auto"
                     )
                 )
