@@ -343,52 +343,6 @@
           <text></text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0sopj8a">
-        <inputEntry id="UnaryTests_06m4nz6">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1r6ibjl">
-          <text>"dummyEventForMultipleCategoriesCancel"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0d9do2z">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0pu32ux">
-          <text>"Cancel"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_17wev74">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1i6k9r2">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0z5pd7l">
-          <text>"followUpOverdue, caseProgression"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1yumlrd">
-        <inputEntry id="UnaryTests_0jf0s0e">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0dps9wd">
-          <text>"dummyEventForMultipleCategoriesWarn"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0vui1td">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0msaiw4">
-          <text>"Warn"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1vt94fk">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_01pglx0">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_08epid6">
-          <text>"followUpOverdue, caseProgression"</text>
-        </outputEntry>
-      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

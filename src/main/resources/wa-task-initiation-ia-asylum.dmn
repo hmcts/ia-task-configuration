@@ -777,35 +777,6 @@
           <text>"followUpOverdue"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1tjsb2a">
-        <inputEntry id="UnaryTests_0k05a1h">
-          <text>"dummyEventForMultipleCategories"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1sx1l49">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0ows98x">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_185gm0f">
-          <text>"testTaskIdForMultipleCategories"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0qmh0jb">
-          <text>"Test task to test multiple categories"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_015twui">
-          <text>"TCW"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0b45bki">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1u7mshj">
-          <text>2</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_031dftw">
-          <text>"caseProgression, followUpOverdue"</text>
-        </outputEntry>
-      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
