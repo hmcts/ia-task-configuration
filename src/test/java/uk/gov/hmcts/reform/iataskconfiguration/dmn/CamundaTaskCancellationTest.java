@@ -59,11 +59,11 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 asList(
                     Map.of(
                         "action", "Cancel",
-                        "TaskCategories", "Followup overdue"
+                        "processCategories", "followUpOverdue"
                     ),
                     Map.of(
                         "action", "Cancel",
-                        "TaskCategories", "Time extension"
+                        "processCategories", "timeExtension"
                     )
                 )
             ),
@@ -74,11 +74,11 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 asList(
                     Map.of(
                         "action", "Cancel",
-                        "TaskCategories", "Followup overdue"
+                        "processCategories", "followUpOverdue"
                     ),
                     Map.of(
                         "action", "Cancel",
-                        "TaskCategories", "Time extension"
+                        "processCategories", "timeExtension"
                     )
                 )
             ),
@@ -90,11 +90,11 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
 
                     Map.of(
                         "action", "Cancel",
-                        "TaskCategories", "Followup overdue"
+                        "processCategories", "followUpOverdue"
                     ),
                     Map.of(
                         "action", "Cancel",
-                        "TaskCategories", "Time extension"
+                        "processCategories", "timeExtension"
                     )
                 )
             ),
@@ -105,7 +105,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 singletonList(
                     Map.of(
                         "action", "Cancel",
-                        "TaskCategories", "Followup overdue"
+                        "processCategories", "followUpOverdue"
                     )
                 )
             ),
@@ -116,7 +116,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 singletonList(
                     Map.of(
                         "action", "Cancel",
-                        "TaskCategories", "Followup overdue"
+                        "processCategories", "followUpOverdue"
                     )
                 )
             ),
@@ -127,7 +127,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 singletonList(
                     Map.of(
                         "action", "Cancel",
-                        "TaskCategories", "Followup overdue"
+                        "processCategories", "followUpOverdue"
                     )
                 )
             ),
@@ -138,7 +138,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 singletonList(
                     Map.of(
                         "action", "Cancel",
-                        "TaskCategories", "Followup overdue"
+                        "processCategories", "followUpOverdue"
                     )
                 )
             ),
@@ -161,7 +161,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 singletonList(
                     Map.of(
                         "action", "Cancel",
-                        "TaskCategories", "Followup overdue"
+                        "processCategories", "followUpOverdue"
                     )
                 )
             ),
@@ -172,7 +172,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 singletonList(
                     Map.of(
                         "action", "Cancel",
-                        "TaskCategories", "Followup overdue"
+                        "processCategories", "followUpOverdue"
                     )
                 )
             ),
