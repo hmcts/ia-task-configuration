@@ -207,10 +207,10 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "recordApplication",
+                "decideAnApplication",
                 singletonList(
                     Map.of(
-                        "taskType", "processAnApplication",
+                        "taskType", "processApplication",
                         "completionMode", "Auto"
                     )
                 )
@@ -224,7 +224,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
 
     @ParameterizedTest(name = "event id: {0}")
     @MethodSource("scenarioProvider")
-    void given_multiple_event_ids_should_evaluate_dmn(String eventId, List<Map<String, String>> expectation) {
+    void given_event_ids_should_evaluate_dmn(String eventId, List<Map<String, String>> expectation) {
 
         VariableMap inputVariables = new VariableMapImpl();
         inputVariables.putValue("eventId", eventId);
