@@ -1,6 +1,6 @@
 #!groovy
 
-@Library("Infrastructure")
+@Library('Infrastructure@sync-branches-support-camunda-pipeline')
 
 def type = "java"
 def product = "ia"
