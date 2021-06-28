@@ -1,12 +1,13 @@
 #!groovy
 
-@Library("Infrastructure")
+@Library('Infrastructure@sync-branches-support-camunda-pipeline')
 
 def type = "java"
 def product = "ia"
 def component = "task-configuration"
 def s2sServiceName = "wa_camunda_pipeline_upload"
 def tenantId = "ia"
+def branchesToSync = ['demo', 'perftest']
 
 withCamundaOnlyPipeline(type, product, component, s2sServiceName, tenantId) {
 
@@ -14,5 +15,9 @@ withCamundaOnlyPipeline(type, product, component, s2sServiceName, tenantId) {
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: '**/reports/tests/**/*'
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: '**/reports/tests/integration/**/*'
   }
+
+
+  // Sync environment specific branches with master branch
+  syncBranchesWithMaster(branchesToSync)
 
 }
