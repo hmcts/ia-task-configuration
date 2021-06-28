@@ -209,7 +209,6 @@ dependencyManagement {
       entry 'spring-web'
       entry 'spring-webmvc'
     }
-
   }
 }
 

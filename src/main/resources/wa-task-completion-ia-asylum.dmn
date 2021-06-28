@@ -174,6 +174,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_00ego89">
+        <inputEntry id="UnaryTests_0mupz2m">
+          <text>"requestRespondentEvidence","requestCaseBuilding","requestReasonsForAppeal","sendDirection","requestResponseReview","requestCaseEdit","sendDirectionWithQuestions","requestCmaRequirements","reviewCmaRequirements","updateDetailsAfterCma","requestResponseAmend","reviewHearingRequirements","createCaseSummary","generateHearingBundle","decisionAndReasonsStarted","recordAllocatedJudge","changeDirectionDueDate","decideAnApplication"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1qvmdyv">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1tkxwpo">
+          <text></text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
