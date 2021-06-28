@@ -458,64 +458,6 @@
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1i9o6sq">
-        <inputEntry id="UnaryTests_1musj01">
-          <text>"applyForFTPAAppellant"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1smiopm">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1ywfz0e">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1syzaj0">
-          <text>"allocateFtpaToJudge"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_01ckded">
-          <text>"Allocate FTPA to Judge"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0er2zgp">
-          <text>"TCW"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1hsb5kf">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0mk2103">
-          <text>5</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1iua13p">
-          <text>"caseProgression"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_03s34kj">
-        <inputEntry id="UnaryTests_0x6p0iq">
-          <text>"applyForFTPARespondent"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_01jhn05">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_192o02p">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1homrsi">
-          <text>"allocateFtpaToJudge"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0ck5w1d">
-          <text>"Allocate FTPA to Judge"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1ybvr5k">
-          <text>"TCW"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1xkqk32">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_13mlqbd">
-          <text>5</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_145k53n">
-          <text>"caseProgression"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_0i6qihx">
         <inputEntry id="UnaryTests_03alruf">
           <text>"requestRespondentEvidence"</text>
