@@ -168,6 +168,20 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "buildCase",
+                "caseUnderReview",
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewAppealSkeletonArgument",
+                        "name", "Review Appeal Skeleton Argument",
+                        "group", "TCW",
+                        "workingDaysAllowed", 2,
+                        "processCategories",  "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
                 "submitReasonsForAppeal",
                 "reasonsForAppealSubmitted",
                 null,
