@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 public enum DmnDecisionTable {
     WA_TASK_ALLOWED_DAYS_IA_ASYLUM("wa-task-allowed-days-ia-asylum", "wa-task-allowed-days-ia-asylum.dmn"),
     WA_TASK_CANCELLATION_IA_ASYLUM("wa-task-cancellation-ia-asylum", "wa-task-cancellation-ia-asylum.dmn"),
+    WA_TASK_CANCELLATION_WA_WACASETYPE("wa-task-cancellation-wa-wacasetype", "wa-task-cancellation-wa-wacasetype.dmn"),
     WA_TASK_COMPLETION_IA_ASYLUM("wa-task-completion-ia-asylum", "wa-task-completion-ia-asylum.dmn"),
     WA_TASK_CONFIGURATION_IA_ASYLUM("wa-task-configuration-ia-asylum", "wa-task-configuration-ia-asylum.dmn"),
     WA_TASK_INITIATION_IA_ASYLUM("wa-task-initiation-ia-asylum", "wa-task-initiation-ia-asylum.dmn"),
