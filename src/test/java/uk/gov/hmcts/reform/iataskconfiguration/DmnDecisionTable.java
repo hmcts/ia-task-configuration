@@ -10,6 +10,10 @@ public enum DmnDecisionTable {
     WA_TASK_INITIATION_IA_ASYLUM("wa-task-initiation-ia-asylum", "wa-task-initiation-ia-asylum.dmn"),
     WA_TASK_PERMISSIONS_IA_ASYLUM("wa-task-permissions-ia-asylum", "wa-task-permissions-ia-asylum.dmn"),
 
+    WA_TASK_CONFIGURATION_WA_WACASETYPE(
+        "wa-task-configuration-wa-wacasetype",
+        "wa-task-configuration-wa-wacasetype.dmn"
+    ),
     WA_TASK_CANCELLATION_WA_WACASETYPE(
         "wa-task-cancellation-wa-wacasetype",
         "wa-task-cancellation-wa-wacasetype.dmn"
