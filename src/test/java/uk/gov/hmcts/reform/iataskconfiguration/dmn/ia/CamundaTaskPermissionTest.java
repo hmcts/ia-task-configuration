@@ -1,4 +1,4 @@
-package uk.gov.hmcts.reform.iataskconfiguration.dmn;
+package uk.gov.hmcts.reform.iataskconfiguration.dmn.ia;
 
 import org.camunda.bpm.dmn.engine.DmnDecisionTableResult;
 import org.camunda.bpm.dmn.engine.impl.DmnDecisionTableImpl;

@@ -1,4 +1,4 @@
-package uk.gov.hmcts.reform.iataskconfiguration.dmn;
+package uk.gov.hmcts.reform.iataskconfiguration.dmn.ia;
 
 import lombok.Builder;
 import lombok.Value;
