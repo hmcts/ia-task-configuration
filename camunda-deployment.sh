@@ -8,16 +8,17 @@
 
 BASEDIR=$(dirname "$0")
 SERVICE_TOKEN=$1
-PRODUCT="ia"
-TENANT_ID="ia"
+JURISDICTION="ia"
 
-for file in $BASEDIR/src/main/resources/*.bpmn $BASEDIR/src/main/resources/*.dmn; do
-  if [ -f "$file" ]; then
-    curl --silent --show-error ${CAMUNDA_URL}/deployment/create \
-      -H 'Content-Type: multipart/form-data' \
-      -H "ServiceAuthorization: ${SERVICE_TOKEN}" \
-      -F "deployment-source=$PRODUCT" \
-      -F "tenant-id=$TENANT_ID" \
-      -F data=@$file
+for file in $BASEDIR/src/main/resources/*.dmn; do
+  if [[ $file == *"wacasetype"* ]]; then
+    JURISDICTION="wa"
+  else JURISDICTION="ia"
   fi
+  curl --silent --show-error ${CAMUNDA_URL}/deployment/create \
+    -H 'Content-Type: multipart/form-data' \
+    -H "ServiceAuthorization: ${SERVICE_TOKEN}" \
+    -F "deployment-source=${JURISDICTION}" \
+    -F "tenant-id=${JURISDICTION}" \
+    -F data=@$file
 done
