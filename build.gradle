@@ -4,10 +4,10 @@ plugins {
   id 'pmd'
   id 'jacoco'
   id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-  id 'org.springframework.boot' version '2.3.5.RELEASE'
-  id 'com.github.ben-manes.versions' version '0.36.0'
-  id 'org.owasp.dependencycheck' version '6.1.1'
-  id 'org.sonarqube' version '3.1.1'
+  id 'org.springframework.boot' version '2.4.9'
+  id 'com.github.ben-manes.versions' version '0.38.0'
+  id 'org.owasp.dependencycheck' version '6.1.6'
+  id 'org.sonarqube' version '3.2.0'
   id 'info.solidsoft.pitest' version '1.5.2'
   id 'io.freefair.lombok' version '5.3.0'
 }
@@ -193,22 +193,6 @@ dependencyManagement {
       entry 'guava'
     }
 
-    //CVE-2021-22118
-    dependencySet(group: 'org.springframework', version: '5.2.15.RELEASE') {
-      entry 'spring-aop'
-      entry 'spring-aspects'
-      entry 'spring-beans'
-      entry 'spring-context'
-      entry 'spring-context-support'
-      entry 'spring-core'
-      entry 'spring-expression'
-      entry 'spring-jcl'
-      entry 'spring-jdbc'
-      entry 'spring-orm'
-      entry 'spring-tx'
-      entry 'spring-web'
-      entry 'spring-webmvc'
-    }
   }
 }
 
@@ -219,10 +203,9 @@ repositories {
 }
 
 def versions = [
-  junit           : '5.7.1',
-  junitPlatform   : '1.7.0',
+  junit           : '5.7.2',
+  junitPlatform   : '1.7.2',
   reformLogging   : '5.1.5',
-  springBoot      : '2.4.2',
   springfoxSwagger: '2.9.2',
   camunda         : '7.14.0',
   pitest          : '1.5.2',
@@ -243,25 +226,26 @@ ext.libraries = [
 
 dependencies {
 
-  implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: versions.springBoot
-  implementation group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: versions.springBoot
-  implementation group: 'org.springframework.boot', name: 'spring-boot-starter-aop', version: versions.springBoot
-  implementation group: 'org.springframework.boot', name: 'spring-boot-starter-json', version: versions.springBoot
+  implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web'
+  implementation group: 'org.springframework.boot', name: 'spring-boot-starter-actuator'
+  implementation group: 'org.springframework.boot', name: 'spring-boot-starter-aop'
+  implementation group: 'org.springframework.boot', name: 'spring-boot-starter-json'
 
   implementation group: 'io.springfox', name: 'springfox-swagger2', version: versions.springfoxSwagger
 
   implementation group: 'com.github.hmcts.java-logging', name: 'java-logging', version: versions.reformLogging
   implementation group: 'com.github.hmcts.java-logging', name: 'java-logging-appinsights', version: versions.reformLogging
 
-  compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.14.0'
-  compile group: 'org.apache.logging.log4j', name: 'log4j-to-slf4j', version: '2.14.1'
+  implementation group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.14.0'
+  implementation group: 'org.apache.logging.log4j', name: 'log4j-to-slf4j', version: '2.14.1'
 
-  compile group: 'org.apache.tomcat.embed', name: 'tomcat-embed-core', version: versions.tomcat
-  compile group: 'org.apache.tomcat.embed', name: 'tomcat-embed-websocket', version: versions.tomcat
-  compile group: 'org.camunda.bpm', name: 'camunda-external-task-client', version: '1.4.1'
+  implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-core', version: versions.tomcat
+  implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-websocket', version: versions.tomcat
 
-  annotationProcessor 'org.projectlombok:lombok:1.18.12'
-  compileOnly 'org.projectlombok:lombok:1.18.12'
+  implementation 'org.camunda.bpm:camunda-external-task-client:7.15.0'
+
+  annotationProcessor 'org.projectlombok:lombok:1.18.20'
+  compileOnly 'org.projectlombok:lombok:1.18.20'
 
   testCompile group: 'org.pitest', name: 'pitest', version: versions.pitest
   testCompile 'info.solidsoft.gradle.pitest:gradle-pitest-plugin:1.5.2'
