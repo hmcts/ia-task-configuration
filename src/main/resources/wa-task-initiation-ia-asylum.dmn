@@ -14,8 +14,8 @@
       </input>
       <input id="InputClause_0a0i7vo" label="Appeal Type" camunda:inputVariable="appealType">
         <inputExpression id="LiteralExpression_18qwedg" typeRef="string">
-          <text>if(caseData != null and caseData.Data != null and caseData.Data.appealType != null) then
-caseData.Data.appealType
+          <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.appealType != null) then
+            additionalData.Data.appealType
 else
 null</text>
         </inputExpression>
