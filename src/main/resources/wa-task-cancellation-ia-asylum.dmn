@@ -44,6 +44,29 @@
           <text></text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0oevcin">
+        <inputEntry id="UnaryTests_0hdsp95">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ax4vfz">
+          <text>"moveToPaymentPending"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nnm2md">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0k2lu6w">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1jql7dj">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1xr5jcx">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0002p19">
+          <text>"reviewTheAppeal"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0m3e4d4">
         <inputEntry id="UnaryTests_0sqoj1l">
           <text>"awaitingReasonsForAppeal"</text>

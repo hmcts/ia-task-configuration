@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.5.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.8.1">
   <decision id="wa-task-initiation-ia-asylum" name="Task initiation DMN">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT">
-      <input id="Input_1" label="Event Id" camunda:inputVariable="eventId">
+      <input id="Input_1" label="Event Id" biodi:width="514" camunda:inputVariable="eventId">
         <inputExpression id="InputExpression_1" typeRef="string">
           <text></text>
         </inputExpression>
@@ -12,7 +12,7 @@
           <text></text>
         </inputExpression>
       </input>
-      <input id="InputClause_0a0i7vo" label="Appeal Type" camunda:inputVariable="appealType">
+      <input id="InputClause_0a0i7vo" label="Appeal Type" biodi:width="397" camunda:inputVariable="appealType">
         <inputExpression id="LiteralExpression_18qwedg" typeRef="string">
           <text></text>
         </inputExpression>
@@ -60,36 +60,36 @@
           <text>"appealSubmitted"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1syvbhj">
-          <text>"refusalOfHumanRights","refusalOfEu","protection"</text>
+          <text>"revocationOfProtection","deprivation","protection"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0sfd5sj">
-          <text>"checkFeeStatus"</text>
+          <text>"reviewTheAppeal"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_08l47ys">
-          <text>"Check Fee Status"</text>
+          <text>"Review the appeal"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0zqmmfq">
           <text>"TCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0t06g2j">
-          <text>28</text>
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_02ctkt2">
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1x4lczj">
-          <text>"followUpOverdue"</text>
+          <text>"caseProgression"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_16cn5ci">
         <inputEntry id="UnaryTests_1hf1bm4">
-          <text>"submitAppeal"</text>
+          <text>"payAndSubmitAppeal"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0hicgo1">
           <text>"appealSubmitted"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_15fveit">
-          <text></text>
+          <text>"protection"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1idu6wl">
           <text>"reviewTheAppeal"</text>
@@ -107,6 +107,35 @@
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1t0no71">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_06ed8l7">
+        <inputEntry id="UnaryTests_0o6tab6">
+          <text>"payAndSubmitAppeal","markAppealPaid","moveToSubmitted","payForAppeal"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_13k00w5">
+          <text>"appealSubmitted"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_00cd5b6">
+          <text>"refusalOfHumanRights","refusalOfEu"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0jy8mbh">
+          <text>"reviewTheAppeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_09r2kw7">
+          <text>"Review the appeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_03z43rh">
+          <text>"TCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0rh25e8">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0apgo3b">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0836hvx">
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
