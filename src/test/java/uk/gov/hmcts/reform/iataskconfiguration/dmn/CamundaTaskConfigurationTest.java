@@ -18,11 +18,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static java.util.Collections.emptyMap;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static uk.gov.hmcts.reform.iataskconfiguration.DmnDecisionTable.WA_TASK_CONFIGURATION_IA_ASYLUM;
 
@@ -37,7 +39,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(7));
+        assertThat(logic.getRules().size(), is(8));
     }
 
     @SuppressWarnings("checkstyle:indentation")
@@ -121,6 +123,55 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 "value", expectedCaseManagementCategories.get(i)
             )));
         }
+    }
+
+    @ParameterizedTest
+    @CsvSource({"arrangeOfflinePayment", "markCaseAsPaid"})
+    void when_taskId_then_return_Routine_Work(String taskId) {
+        VariableMap inputVariables = new VariableMapImpl();
+
+        inputVariables.putValue("taskId", taskId);
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        List<Map<String, Object>> workTypeResultList = dmnDecisionTableResult.getResultList().stream()
+            .filter((r) -> r.containsValue("workType"))
+            .collect(Collectors.toList());
+
+        assertEquals(1, workTypeResultList.size());
+
+        assertEquals(Map.of(
+            "name", "workType",
+            "value", "Routine Work"
+        ), workTypeResultList.get(0));
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+        "reviewAppeal", "followUpOverdueRespondentEvidence", "reviewRespondentEvidence", "followUpOverdueCaseBuilding",
+        "reviewAppealSkeletonArgument", "followUpOverdueReasonsForAppeal", "reviewReasonsForAppeal",
+        "followUpOverdueClarifyingAnswers", "reviewClarifyingAnswers", "followUpOverdueRespondentReview",
+        "reviewRespondentResponse", "followUpOverdueCMARequirements", "reviewCmaRequirements",
+        "reviewAdditionalHomeOfficeEvidence", "reviewAdditionalAppellantEvidence", "reviewAddendumHomeOfficeEvidence",
+        "reviewAddendumAppellantEvidence", "reviewAddendumEvidence", "processReviewDecisionApplication"
+    })
+    void when_taskId_then_return_Decision_making_work(String taskId) {
+        VariableMap inputVariables = new VariableMapImpl();
+
+        inputVariables.putValue("taskId", taskId);
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        List<Map<String, Object>> workTypeResultList = dmnDecisionTableResult.getResultList().stream()
+            .filter((r) -> r.containsValue("workType"))
+            .collect(Collectors.toList());
+
+        assertEquals(1, workTypeResultList.size());
+
+        assertEquals(Map.of(
+            "name", "workType",
+            "value", "Decision-making work"
+        ), workTypeResultList.get(0));
     }
 
     @ParameterizedTest
