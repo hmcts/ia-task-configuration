@@ -196,10 +196,50 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 .expectedWorkType("Routine Work")
                 .build();
 
+        Scenario givenSomeCaseDataAndTaskIdIsEmptyThenExpectNoWorkTypeRuleScenario =
+            Scenario.builder()
+                .caseData(Map.of(
+                    "appealType", "refusalOfHumanRights",
+                    "appellantGivenNames", "some appellant given names",
+                    "appellantFamilyName", "some appellant family name",
+                    "caseManagementLocation", Map.of(
+                        "region", "some other region",
+                        "baseLocation", "some other location"
+                    ),
+                    "staffLocation", "some other location name",
+                    "caseManagementCategory", Map.of(
+                        "value", Map.of("code", "refusalOfHumanRights", "label", "Refusal of a human rights claim"),
+                        "list_items", List.of(Map.of("code", "refusalOfHumanRights", "label", refusalOfEuLabel))
+                    )
+                ))
+                .taskId("")
+                .expectedCaseNameValue("some appellant given names some appellant family name")
+                .expectedAppealTypeValue("Human rights")
+                .expectedRegionValue("some other region")
+                .expectedLocationValue("some other location")
+                .expectedLocationNameValue("some other location name")
+                .expectedCaseManagementCategoryValue("Human rights")
+                .build();
+
+        Scenario givenNoCaseDataAndSomeTaskIdThenExpectOnlyTheWorkTypeRuleScenario =
+            Scenario.builder()
+                .caseData(emptyMap())
+                .taskId("markCaseAsPaid")
+                .expectedCaseNameValue(null)
+                .expectedAppealTypeValue("")
+                .expectedRegionValue("1")
+                .expectedLocationValue("765324")
+                .expectedLocationNameValue("Taylor House")
+                .expectedCaseManagementCategoryValue("")
+                .expectedWorkType("Routine Work")
+                .build();
+
         return Stream.of(
             givenCaseDataIsMissedThenDefaultToTaylorHouseScenario,
             givenCaseDataIsPresentThenReturnNameAndValueScenario,
-            givenSomeCaseDataAndArrangeOfflinePaymentTaskIdThenReturnExpectedNameAndValueScenario
+            givenSomeCaseDataAndArrangeOfflinePaymentTaskIdThenReturnExpectedNameAndValueScenario,
+            givenSomeCaseDataAndTaskIdIsEmptyThenExpectNoWorkTypeRuleScenario,
+            givenNoCaseDataAndSomeTaskIdThenExpectOnlyTheWorkTypeRuleScenario
         );
     }
 
