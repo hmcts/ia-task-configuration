@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.8.1">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.5.0">
   <decision id="wa-task-configuration-ia-asylum" name="Task configuration DMN">
     <decisionTable id="DecisionTable_14cx079" hitPolicy="RULE ORDER">
       <input id="InputClause_1gxyo7f" label="CCD Case Data" camunda:inputVariable="caseData">
@@ -7,10 +7,18 @@
           <text></text>
         </inputExpression>
       </input>
+      <input id="InputClause_1gmuynt" label="Task id" biodi:width="293" camunda:inputVariable="taskId">
+        <inputExpression id="LiteralExpression_06iiuqg" typeRef="string">
+          <text></text>
+        </inputExpression>
+      </input>
       <output id="Output_1" label="Name" name="name" typeRef="string" />
       <output id="OutputClause_021y3bb" label="Value" name="value" typeRef="string" biodi:width="803" />
       <rule id="DecisionRule_0u7yi27">
         <inputEntry id="UnaryTests_03ky0ek">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03q2nz0">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0nkps91">
@@ -24,6 +32,9 @@
         <inputEntry id="UnaryTests_0mkzt2r">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_1esseck">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_0selern">
           <text>"appealType"</text>
         </outputEntry>
@@ -33,6 +44,9 @@
       </rule>
       <rule id="DecisionRule_0r3u9cf">
         <inputEntry id="UnaryTests_1bqxdqr">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0wxfevs">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0etwrk3">
@@ -46,6 +60,9 @@
         <inputEntry id="UnaryTests_0slfog9">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_1u21xrs">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_0kun6mv">
           <text>"location"</text>
         </outputEntry>
@@ -55,6 +72,9 @@
       </rule>
       <rule id="DecisionRule_1oirne1">
         <inputEntry id="UnaryTests_04xtpdu">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ssoq5v">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1lvlmxm">
@@ -67,6 +87,9 @@
       <rule id="DecisionRule_03afipt">
         <inputEntry id="UnaryTests_0aqybrx">
           <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nmr895">
+          <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_04r7w97">
           <text>"caseManagementCategory"</text>
@@ -82,6 +105,20 @@ else if caseData.appealType = "refusalOfEu" then "EEA"
 else if caseData.appealType = "deprivation" then "DoC" 
 else if caseData.appealType = "protection" then "Protection" 
 else if caseData.appealType = "revocationOfProtection" then "Revocation" else ""</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ikmf14">
+        <inputEntry id="UnaryTests_0epux74">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1y3kj1v">
+          <text>"arrangeOfflinePayment","markCaseAsPaid"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0rvgay2">
+          <text>"workType"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0zoponq">
+          <text>"Routine Work"</text>
         </outputEntry>
       </rule>
     </decisionTable>
