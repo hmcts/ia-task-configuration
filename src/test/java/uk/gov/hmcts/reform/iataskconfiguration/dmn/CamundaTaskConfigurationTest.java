@@ -39,7 +39,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(9));
+        assertThat(logic.getRules().size(), is(10));
     }
 
     @SuppressWarnings("checkstyle:indentation")
@@ -196,6 +196,32 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         assertEquals(Map.of(
             "name", "workType",
             "value", "Hearing Work"
+        ), workTypeResultList.get(0));
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+        "processApplication","processHearingRequirementsApplication","processHearingCentreApplication",
+        "processApplicationToExpedite","processApplicationToTransfer", "processApplicationforTimeExtension",
+        "processApplicationToWithdraw","processAppealDetailsApplication","processLinkedCaseApplication",
+        "processReinstatementApplication"
+    })
+    void when_taskId_then_return_Applications(String taskId) {
+        VariableMap inputVariables = new VariableMapImpl();
+
+        inputVariables.putValue("taskId", taskId);
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        List<Map<String, Object>> workTypeResultList = dmnDecisionTableResult.getResultList().stream()
+            .filter((r) -> r.containsValue("workType"))
+            .collect(Collectors.toList());
+
+        assertEquals(1, workTypeResultList.size());
+
+        assertEquals(Map.of(
+            "name", "workType",
+            "value", "Applications"
         ), workTypeResultList.get(0));
     }
 

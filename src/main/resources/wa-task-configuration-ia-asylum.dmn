@@ -7,7 +7,7 @@
           <text></text>
         </inputExpression>
       </input>
-      <input id="InputClause_1gmuynt" label="Task id" biodi:width="311" camunda:inputVariable="taskId">
+      <input id="InputClause_1gmuynt" label="Task id" biodi:width="433" camunda:inputVariable="taskId">
         <inputExpression id="LiteralExpression_06iiuqg" typeRef="string">
           <text></text>
         </inputExpression>
@@ -140,13 +140,29 @@ else if caseData.appealType = "revocationOfProtection" then "Revocation" else ""
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1ps3x4j">
-<text> "addListingDate","createHearingBundle","reviewHearingBundle","generateDraftDecisionAndReasons","uploadDecision","uploadHearingRecording","updateHearingRequirements","editListing","followUpOverdueHearingRequirements","reviewHearingRequirements"</text>
+          <text>"addListingDate","createHearingBundle","reviewHearingBundle","generateDraftDecisionAndReasons","uploadDecision","uploadHearingRecording","updateHearingRequirements","editListing",
+             "followUpOverdueHearingRequirements","reviewHearingRequirements"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0c3eia6">
           <text>"workType"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_19poitv">
           <text>"Hearing Work"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1mgtmkd">
+        <inputEntry id="UnaryTests_0mpogvu">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0uoqs4p">
+          <text>"processApplication","processHearingRequirementsApplication","processHearingCentreApplication","processApplicationToExpedite","processApplicationToTransfer",
+"processApplicationforTimeExtension","processApplicationToWithdraw","processAppealDetailsApplication","processLinkedCaseApplication","processReinstatementApplication"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1qi2rsb">
+          <text>"workType"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1spq9ei">
+          <text>"Applications"</text>
         </outputEntry>
       </rule>
     </decisionTable>
