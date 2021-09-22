@@ -7,7 +7,7 @@
           <text></text>
         </inputExpression>
       </input>
-      <input id="InputClause_1gmuynt" label="Task id" biodi:width="293" camunda:inputVariable="taskId">
+      <input id="InputClause_1gmuynt" label="Task id" biodi:width="311" camunda:inputVariable="taskId">
         <inputExpression id="LiteralExpression_06iiuqg" typeRef="string">
           <text></text>
         </inputExpression>
@@ -133,6 +133,20 @@ else if caseData.appealType = "revocationOfProtection" then "Revocation" else ""
         </outputEntry>
         <outputEntry id="LiteralExpression_0mfd2ul">
           <text>"Decision-making work"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_03n8x3v">
+        <inputEntry id="UnaryTests_0u2qxu3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ps3x4j">
+<text> "addListingDate","createHearingBundle","reviewHearingBundle","generateDraftDecisionAndReasons","uploadDecision","uploadHearingRecording","updateHearingRequirements","editListing","followUpOverdueHearingRequirements","reviewHearingRequirements"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0c3eia6">
+          <text>"workType"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_19poitv">
+          <text>"Hearing Work"</text>
         </outputEntry>
       </rule>
     </decisionTable>
