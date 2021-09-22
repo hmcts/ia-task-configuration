@@ -142,7 +142,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
         assertEquals(Map.of(
             "name", "workType",
-            "value", "Routine Work"
+            "value", "routine_work"
         ), workTypeResultList.get(0));
     }
 
@@ -170,7 +170,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
         assertEquals(Map.of(
             "name", "workType",
-            "value", "Decision-making work"
+            "value", "decision_making_work"
         ), workTypeResultList.get(0));
     }
 
@@ -195,14 +195,14 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
         assertEquals(Map.of(
             "name", "workType",
-            "value", "Hearing Work"
+            "value", "hearing_work"
         ), workTypeResultList.get(0));
     }
 
     @ParameterizedTest
     @CsvSource({
         "processApplication", "processHearingRequirementsApplication", "processHearingCentreApplication",
-        "processApplicationToExpedite", "processApplicationToTransfer", "processApplicationforTimeExtension",
+        "processApplicationToExpedite", "processApplicationToTransfer", "processApplicationForTimeExtension",
         "processApplicationToWithdraw", "processAppealDetailsApplication", "processLinkedCaseApplication",
         "processReinstatementApplication"
     })
@@ -221,7 +221,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
         assertEquals(Map.of(
             "name", "workType",
-            "value", "Applications"
+            "value", "applications"
         ), workTypeResultList.get(0));
     }
 
@@ -244,7 +244,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
         assertEquals(Map.of(
             "name", "workType",
-            "value", "Upper Tribunal"
+            "value", "upper_tribunal"
         ), workTypeResultList.get(0));
     }
 
@@ -318,7 +318,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 .expectedLocationValue("some other location")
                 .expectedLocationNameValue("some other location name")
                 .expectedCaseManagementCategoryValue("Human rights")
-                .expectedWorkType("Routine Work")
+                .expectedWorkType("routine_work")
                 .build();
 
         Scenario givenSomeCaseDataAndTaskTypeIsEmptyThenExpectNoWorkTypeRuleScenario =
@@ -356,7 +356,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 .expectedLocationValue("765324")
                 .expectedLocationNameValue("Taylor House")
                 .expectedCaseManagementCategoryValue("")
-                .expectedWorkType("Routine Work")
+                .expectedWorkType("routine_work")
                 .build();
 
         return Stream.of(

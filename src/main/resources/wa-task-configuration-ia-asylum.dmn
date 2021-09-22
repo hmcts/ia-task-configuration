@@ -118,7 +118,7 @@ else if caseData.appealType = "revocationOfProtection" then "Revocation" else ""
           <text>"workType"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0zoponq">
-          <text>"Routine Work"</text>
+          <text>"routine_work"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1csczvs">
@@ -132,7 +132,7 @@ else if caseData.appealType = "revocationOfProtection" then "Revocation" else ""
           <text>"workType"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0mfd2ul">
-          <text>"Decision-making work"</text>
+          <text>"decision_making_work"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_03n8x3v">
@@ -147,7 +147,7 @@ else if caseData.appealType = "revocationOfProtection" then "Revocation" else ""
           <text>"workType"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_19poitv">
-          <text>"Hearing Work"</text>
+          <text>"hearing_work"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1mgtmkd">
@@ -156,13 +156,13 @@ else if caseData.appealType = "revocationOfProtection" then "Revocation" else ""
         </inputEntry>
         <inputEntry id="UnaryTests_0uoqs4p">
           <text>"processApplication","processHearingRequirementsApplication","processHearingCentreApplication","processApplicationToExpedite","processApplicationToTransfer",
-"processApplicationforTimeExtension","processApplicationToWithdraw","processAppealDetailsApplication","processLinkedCaseApplication","processReinstatementApplication"</text>
+"processApplicationForTimeExtension","processApplicationToWithdraw","processAppealDetailsApplication","processLinkedCaseApplication","processReinstatementApplication"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1qi2rsb">
           <text>"workType"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1spq9ei">
-          <text>"Applications"</text>
+          <text>"applications"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_00yasz5">
@@ -176,7 +176,7 @@ else if caseData.appealType = "revocationOfProtection" then "Revocation" else ""
           <text>"workType"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0jcwzi7">
-          <text>"Upper Tribunal"</text>
+          <text>"upper_tribunal"</text>
         </outputEntry>
       </rule>
     </decisionTable>
