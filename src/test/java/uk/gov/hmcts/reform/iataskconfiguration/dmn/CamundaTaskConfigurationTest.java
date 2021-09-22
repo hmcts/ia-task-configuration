@@ -127,10 +127,10 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
     @ParameterizedTest
     @CsvSource({"arrangeOfflinePayment", "markCaseAsPaid"})
-    void when_taskId_then_return_Routine_Work(String taskId) {
+    void when_taskId_then_return_Routine_Work(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
 
-        inputVariables.putValue("taskId", taskId);
+        inputVariables.putValue("taskType", taskType);
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
@@ -155,10 +155,10 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "reviewAdditionalHomeOfficeEvidence", "reviewAdditionalAppellantEvidence", "reviewAddendumHomeOfficeEvidence",
         "reviewAddendumAppellantEvidence", "reviewAddendumEvidence", "processReviewDecisionApplication"
     })
-    void when_taskId_then_return_Decision_making_work(String taskId) {
+    void when_taskId_then_return_Decision_making_work(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
 
-        inputVariables.putValue("taskId", taskId);
+        inputVariables.putValue("taskType", taskType);
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
@@ -180,10 +180,10 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "uploadDecision", "uploadHearingRecording", "updateHearingRequirements", "editListing",
         "followUpOverdueHearingRequirements", "reviewHearingRequirements"
     })
-    void when_taskId_then_return_Hearing_Work(String taskId) {
+    void when_taskId_then_return_Hearing_Work(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
 
-        inputVariables.putValue("taskId", taskId);
+        inputVariables.putValue("taskType", taskType);
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
@@ -206,10 +206,10 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "processApplicationToWithdraw", "processAppealDetailsApplication", "processLinkedCaseApplication",
         "processReinstatementApplication"
     })
-    void when_taskId_then_return_Applications(String taskId) {
+    void when_taskId_then_return_Applications(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
 
-        inputVariables.putValue("taskId", taskId);
+        inputVariables.putValue("taskType", taskType);
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
@@ -229,10 +229,10 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     @CsvSource({
         "allocationFTPAToJudge", "decideOnFTPA"
     })
-    void when_taskId_then_return_Upper_Tribunal(String taskId) {
+    void when_taskId_then_return_Upper_Tribunal(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
 
-        inputVariables.putValue("taskId", taskId);
+        inputVariables.putValue("taskType", taskType);
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
@@ -250,10 +250,10 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
     @ParameterizedTest
     @MethodSource("nameAndValueScenarioProvider")
-    void when_caseData_and_taskId_then_return_expected_name_and_value_rows(Scenario scenario) {
+    void when_caseData_and_taskType_then_return_expected_name_and_value_rows(Scenario scenario) {
         VariableMap inputVariables = new VariableMapImpl();
         inputVariables.putValue("caseData", scenario.caseData);
-        inputVariables.putValue("taskId", scenario.taskId);
+        inputVariables.putValue("taskType", scenario.taskType);
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
@@ -311,7 +311,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                         "list_items", List.of(Map.of("code", "refusalOfHumanRights", "label", refusalOfEuLabel))
                     )
                 ))
-                .taskId("arrangeOfflinePayment")
+                .taskType("arrangeOfflinePayment")
                 .expectedCaseNameValue("some appellant given names some appellant family name")
                 .expectedAppealTypeValue("Human rights")
                 .expectedRegionValue("some other region")
@@ -321,7 +321,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 .expectedWorkType("Routine Work")
                 .build();
 
-        Scenario givenSomeCaseDataAndTaskIdIsEmptyThenExpectNoWorkTypeRuleScenario =
+        Scenario givenSomeCaseDataAndTaskTypeIsEmptyThenExpectNoWorkTypeRuleScenario =
             Scenario.builder()
                 .caseData(Map.of(
                     "appealType", "refusalOfHumanRights",
@@ -337,7 +337,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                         "list_items", List.of(Map.of("code", "refusalOfHumanRights", "label", refusalOfEuLabel))
                     )
                 ))
-                .taskId("")
+                .taskType("")
                 .expectedCaseNameValue("some appellant given names some appellant family name")
                 .expectedAppealTypeValue("Human rights")
                 .expectedRegionValue("some other region")
@@ -346,10 +346,10 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 .expectedCaseManagementCategoryValue("Human rights")
                 .build();
 
-        Scenario givenNoCaseDataAndSomeTaskIdThenExpectOnlyTheWorkTypeRuleScenario =
+        Scenario givenNoCaseDataAndSomeTaskTypeThenExpectOnlyTheWorkTypeRuleScenario =
             Scenario.builder()
                 .caseData(emptyMap())
-                .taskId("markCaseAsPaid")
+                .taskType("markCaseAsPaid")
                 .expectedCaseNameValue(null)
                 .expectedAppealTypeValue("")
                 .expectedRegionValue("1")
@@ -363,8 +363,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             givenCaseDataIsMissedThenDefaultToTaylorHouseScenario,
             givenCaseDataIsPresentThenReturnNameAndValueScenario,
             givenSomeCaseDataAndArrangeOfflinePaymentTaskIdThenReturnExpectedNameAndValueScenario,
-            givenSomeCaseDataAndTaskIdIsEmptyThenExpectNoWorkTypeRuleScenario,
-            givenNoCaseDataAndSomeTaskIdThenExpectOnlyTheWorkTypeRuleScenario
+            givenSomeCaseDataAndTaskTypeIsEmptyThenExpectNoWorkTypeRuleScenario,
+            givenNoCaseDataAndSomeTaskTypeThenExpectOnlyTheWorkTypeRuleScenario
         );
     }
 
@@ -372,7 +372,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     @Builder
     private static class Scenario {
         Map<String, Object> caseData;
-        String taskId;
+        String taskType;
 
         String expectedCaseNameValue;
         String expectedAppealTypeValue;
@@ -392,7 +392,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         getExpectedValue(rules, "location", scenario.getExpectedLocationValue());
         getExpectedValue(rules, "locationName", scenario.getExpectedLocationNameValue());
         getExpectedValue(rules, "caseManagementCategory", scenario.getExpectedCaseManagementCategoryValue());
-        if (StringUtils.isNotBlank(scenario.taskId)) {
+        if (StringUtils.isNotBlank(scenario.taskType)) {
             getExpectedValue(rules, "workType", scenario.getExpectedWorkType());
         }
 
