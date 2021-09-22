@@ -165,6 +165,20 @@ else if caseData.appealType = "revocationOfProtection" then "Revocation" else ""
           <text>"Applications"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_00yasz5">
+        <inputEntry id="UnaryTests_0zfo8ln">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04wtfxs">
+          <text>"allocationFTPAToJudge","decideOnFTPA"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ywf3hm">
+          <text>"workType"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0jcwzi7">
+          <text>"Upper Tribunal"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
