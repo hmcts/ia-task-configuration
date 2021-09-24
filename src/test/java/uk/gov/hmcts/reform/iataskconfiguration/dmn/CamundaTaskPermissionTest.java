@@ -40,11 +40,13 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 asList(
                     Map.of(
                         "name", "tribunal-caseworker",
-                        "value", "Read,Refer,Own,Manage,Cancel"
+                        "value", "Read,Refer,Own,Manage,Cancel",
+                        "roleCategory", "LEGAL_OPERATIONS"
                     ),
                     Map.of(
                         "name", "senior-tribunal-caseworker",
-                        "value", "Read,Refer,Own,Manage,Cancel"
+                        "value", "Read,Refer,Own,Manage,Cancel",
+                        "roleCategory", "LEGAL_OPERATIONS"
                     )
                 )
             ),
@@ -54,11 +56,13 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 asList(
                     Map.of(
                         "name", "tribunal-caseworker",
-                        "value", "Read,Refer,Own,Manage,Cancel"
+                        "value", "Read,Refer,Own,Manage,Cancel",
+                        "roleCategory", "LEGAL_OPERATIONS"
                     ),
                     Map.of(
                         "name", "senior-tribunal-caseworker",
-                        "value", "Read,Refer,Own,Manage,Cancel"
+                        "value", "Read,Refer,Own,Manage,Cancel",
+                        "roleCategory", "LEGAL_OPERATIONS"
                     )
                 )
             ),
@@ -68,11 +72,13 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 asList(
                     Map.of(
                         "name", "tribunal-caseworker",
-                        "value", "Read,Refer,Own,Manage,Cancel"
+                        "value", "Read,Refer,Own,Manage,Cancel",
+                        "roleCategory", "LEGAL_OPERATIONS"
                     ),
                     Map.of(
                         "name", "senior-tribunal-caseworker",
-                        "value", "Read,Refer,Own,Manage,Cancel"
+                        "value", "Read,Refer,Own,Manage,Cancel",
+                        "roleCategory", "LEGAL_OPERATIONS"
                     )
                 )
             )
@@ -99,8 +105,6 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
 
-
-
         List<String> inputColumnIds = asList("taskType", "case");
         //Inputs
         assertThat(logic.getInputs().size(), is(2));
@@ -109,11 +113,12 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         List<String> outputColumnIds = asList(
             "name",
             "value",
+            "roleCategory",
             "authorisations",
             "assignmentPriority",
             "autoAssignable"
         );
-        assertThat(logic.getOutputs().size(), is(5));
+        assertThat(logic.getOutputs().size(), is(6));
         assertThatOutputContainInOrder(outputColumnIds, logic.getOutputs());
         //Rules
         assertThat(logic.getRules().size(), is(2));
