@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="wa-completion-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.8.1">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="wa-completion-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.10.0">
   <decision id="wa-task-completion-ia-asylum" name="Task completion DMN">
     <decisionTable id="DecisionTable_01re27m" hitPolicy="COLLECT">
-      <input id="eventId" label="Event ID" biodi:width="250">
+      <input id="eventId" label="Event ID" biodi:width="614">
         <inputExpression id="LiteralExpression_1ngg489" typeRef="string">
           <text>eventId</text>
         </inputExpression>
@@ -61,6 +61,39 @@
           <text>"reviewClarifyingQuestionsAnswers"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0kdk8vs">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_19m181l">
+        <inputEntry id="UnaryTests_1fa5tqp">
+          <text>"markEvidenceAsReviewed"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_15ivr9l">
+          <text>"reviewAdditionalEvidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0wfwufd">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ermjaa">
+        <inputEntry id="UnaryTests_10jbxe2">
+          <text>"markEvidenceAsReviewed"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ej8jjr">
+          <text>"reviewAdditionalHomeOfficeEvidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0im41fd">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0h6mspv">
+        <inputEntry id="UnaryTests_1pwjkzs">
+          <text>"uploadAdditionalEvidenceHomeOffice"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0o15bhr">
+          <text>"reviewAdditionalHomeOfficeEvidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_15x2og0">
           <text>"Auto"</text>
         </outputEntry>
       </rule>

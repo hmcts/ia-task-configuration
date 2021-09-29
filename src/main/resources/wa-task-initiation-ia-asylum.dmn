@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.4.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.10.0">
   <decision id="wa-task-initiation-ia-asylum" name="Task initiation DMN">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT">
-      <input id="Input_1" label="Event Id" camunda:inputVariable="eventId">
+      <input id="Input_1" label="Event Id" biodi:width="402" camunda:inputVariable="eventId">
         <inputExpression id="InputExpression_1" typeRef="string">
           <text></text>
         </inputExpression>
       </input>
-      <input id="InputClause_0gxli97" label="Post event state" biodi:width="268" camunda:inputVariable="postEventState">
+      <input id="InputClause_0gxli97" label="Post event state" biodi:width="235" camunda:inputVariable="postEventState">
         <inputExpression id="LiteralExpression_0dijl5x" typeRef="string">
           <text></text>
         </inputExpression>
       </input>
-      <input id="InputClause_0a0i7vo" label="Appeal Type" camunda:inputVariable="appealType">
+      <input id="InputClause_0a0i7vo" label="Appeal Type" biodi:width="256" camunda:inputVariable="appealType">
         <inputExpression id="LiteralExpression_18qwedg" typeRef="string">
           <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.appealType != null) then
             additionalData.Data.appealType
@@ -20,8 +20,8 @@ else
 null</text>
         </inputExpression>
       </input>
-      <output id="Output_1" label="Task Id" name="taskId" typeRef="string" />
-      <output id="OutputClause_0p5fhhd" label="Name" name="name" typeRef="string" />
+      <output id="Output_1" label="Task Id" name="taskId" typeRef="string" biodi:width="275" />
+      <output id="OutputClause_0p5fhhd" label="Name" name="name" typeRef="string" biodi:width="295" />
       <output id="OutputClause_0f63m65" label="Group" name="group" typeRef="string" biodi:width="192" />
       <output id="OutputClause_165p3r3" label="Delay Duration" name="delayDuration" typeRef="integer" />
       <output id="OutputClause_0i6c6c2" label="Working Days Allowed" name="workingDaysAllowed" typeRef="integer" />
@@ -63,36 +63,36 @@ null</text>
           <text>"appealSubmitted"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1syvbhj">
-          <text>"refusalOfHumanRights","refusalOfEu","protection"</text>
+          <text>"revocationOfProtection","deprivation"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0sfd5sj">
-          <text>"checkFeeStatus"</text>
+          <text>"reviewTheAppeal"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_08l47ys">
-          <text>"Check Fee Status"</text>
+          <text>"Review the appeal"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0zqmmfq">
           <text>"TCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0t06g2j">
-          <text>28</text>
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_02ctkt2">
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1x4lczj">
-          <text>"followUpOverdue"</text>
+          <text>"caseProgression"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_16cn5ci">
         <inputEntry id="UnaryTests_1hf1bm4">
-          <text>"submitAppeal"</text>
+          <text>"submitAppeal", "payAndSubmitAppeal"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0hicgo1">
           <text>"appealSubmitted"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_15fveit">
-          <text></text>
+          <text>"protection"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1idu6wl">
           <text>"reviewTheAppeal"</text>
@@ -110,6 +110,35 @@ null</text>
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1t0no71">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0xzi2j0">
+        <inputEntry id="UnaryTests_1xiod7u">
+          <text>"payAndSubmitAppeal","markAppealPaid","moveToSubmitted","payForAppeal"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08cfchy">
+          <text>"appealSubmitted"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19nc6sw">
+          <text>"refusalOfHumanRights","refusalOfEu"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_14i0saf">
+          <text>"reviewTheAppeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_17mw5ff">
+          <text>"Review the appeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1x26onc">
+          <text>"TCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ddgs5t">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ol5505">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0wnnmif">
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
@@ -168,6 +197,64 @@ null</text>
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0s3kz5g">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1mgitox">
+        <inputEntry id="UnaryTests_198kac5">
+          <text>"uploadAdditionalEvidence"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14eemob">
+          <text>"caseUnderReview","respondentReview","submitHearingRequirements","listing","prepareForHearing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ygsshp">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1y680ep">
+          <text>"reviewAdditionalEvidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_11xunkf">
+          <text>"Review additional evidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0rtngox">
+          <text>"TCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0qlx5fk">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_07faeys">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_09g5ruk">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_19j4znz">
+        <inputEntry id="UnaryTests_0u1jn94">
+          <text>"uploadAdditionalEvidenceHomeOffice"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1j8mchm">
+          <text>"caseUnderReview","respondentReview","submitHearingRequirements","listing","prepareForHearing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0pnjfti">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_14obixe">
+          <text>"reviewAdditionalHomeOfficeEvidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_03t2r2u">
+          <text>"Review additional Home Office evidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1wr31e6">
+          <text>"TCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0txkmz4">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_13x9dbl">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1soxij3">
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
