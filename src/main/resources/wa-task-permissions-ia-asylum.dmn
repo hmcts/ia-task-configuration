@@ -125,6 +125,32 @@
           <text>false</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0hv79lq">
+        <inputEntry id="UnaryTests_0tzrow3">
+          <text>"Allocate hearing judge","Upload hearing recording"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1sw9xpj">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_09116fr">
+          <text>"hearing-centre-admin"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_18uxrkl">
+          <text>"Read,Refer,Own"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0fbgbzp">
+          <text>"ADMINISTRATOR"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_11pjfav">
+          <text>"IA"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0jexll1">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0l87ays">
+          <text>false</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

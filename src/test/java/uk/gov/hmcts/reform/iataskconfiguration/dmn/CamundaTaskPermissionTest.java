@@ -135,7 +135,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
     @CsvSource(value = {
         "Arrange offline payment", "Mark case as paid", "Add listing date"
     })
-    void given_taskType_when_evaluate_dmn_then_it_returns_third_rule(String taskType) {
+    void given_taskType_when_evaluate_dmn_then_it_returns_first_and_forth_rule(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
         inputVariables.putValue("taskType", taskType);
 
@@ -151,6 +151,35 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
             ),
             Map.of(
                 "name", "national-business-centre",
+                "value", "Read,Refer,Own",
+                "roleCategory", "ADMINISTRATOR",
+                "authorisations", "IA",
+                "autoAssignable", false
+            )
+        )));
+    }
+
+    @SuppressWarnings("checkstyle:indentation")
+    @ParameterizedTest
+    @CsvSource(value = {
+        "Allocate hearing judge", "Upload hearing recording"
+    })
+    void given_taskType_when_evaluate_dmn_then_it_returns_first_and_fifth_rule(String taskType) {
+        VariableMap inputVariables = new VariableMapImpl();
+        inputVariables.putValue("taskType", taskType);
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        MatcherAssert.assertThat(dmnDecisionTableResult.getResultList(), is(List.of(
+            Map.of(
+                "name", "task-supervisor",
+                "value", "Read,Refer,Manage,Cancel",
+                "roleCategory", "LEGAL_OPERATIONS",
+                "authorisations", "IA",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "hearing-centre-admin",
                 "value", "Read,Refer,Own",
                 "roleCategory", "ADMINISTRATOR",
                 "authorisations", "IA",
@@ -181,7 +210,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         assertThat(logic.getOutputs().size(), is(6));
         assertThatOutputContainInOrder(outputColumnIds, logic.getOutputs());
         //Rules
-        assertThat(logic.getRules().size(), is(4));
+        assertThat(logic.getRules().size(), is(5));
 
     }
 
