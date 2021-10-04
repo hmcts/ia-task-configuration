@@ -100,7 +100,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         "Review CMA requirements", "Review additional Home Office evidence", "Review additional Appellant evidence",
         "Review additional Home Office evidence", "Review additional Appellant evidence", "create hearing bundle"
     })
-    void given_taskType_when_evaluate_dmn_then_it_returns_one_two_three_and_four_rules(String taskType) {
+    void given_taskType_when_evaluate_dmn_then_it_returns_first_second_and_third_rules(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
         inputVariables.putValue("taskType", taskType);
 
@@ -130,6 +130,35 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         )));
     }
 
+    @SuppressWarnings("checkstyle:indentation")
+    @ParameterizedTest
+    @CsvSource(value = {
+        "Arrange offline payment", "Mark case as paid", "Add listing date"
+    })
+    void given_taskType_when_evaluate_dmn_then_it_returns_third_rule(String taskType) {
+        VariableMap inputVariables = new VariableMapImpl();
+        inputVariables.putValue("taskType", taskType);
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        MatcherAssert.assertThat(dmnDecisionTableResult.getResultList(), is(List.of(
+            Map.of(
+                "name", "task-supervisor",
+                "value", "Read,Refer,Manage,Cancel",
+                "roleCategory", "LEGAL_OPERATIONS",
+                "authorisations", "IA",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "national-business-centre",
+                "value", "Read,Refer,Own",
+                "roleCategory", "ADMINISTRATOR",
+                "authorisations", "IA",
+                "autoAssignable", false
+            )
+        )));
+    }
+
     @Test
     void if_this_test_fails_needs_updating_with_your_changes() {
 
@@ -152,7 +181,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         assertThat(logic.getOutputs().size(), is(6));
         assertThatOutputContainInOrder(outputColumnIds, logic.getOutputs());
         //Rules
-        assertThat(logic.getRules().size(), is(3));
+        assertThat(logic.getRules().size(), is(4));
 
     }
 

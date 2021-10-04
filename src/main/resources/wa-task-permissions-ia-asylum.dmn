@@ -99,6 +99,32 @@
           <text>true</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_16vvqmd">
+        <inputEntry id="UnaryTests_0gxxmc7">
+          <text>"Arrange offline payment","Mark case as paid","Add listing date"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12c3use">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1p54gmk">
+          <text>"national-business-centre"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1fw41sy">
+          <text>"Read,Refer,Own"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_03y9mpj">
+          <text>"ADMINISTRATOR"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1vy0t38">
+          <text>"IA"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1t1fpby">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0r5nut3">
+          <text>false</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
