@@ -151,6 +151,58 @@
           <text>false</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1xv2gxq">
+        <inputEntry id="UnaryTests_1oxh1tt">
+          <text>"Review hearing bundle","Generate draft decision and reasons","Upload decision","Review addendum Home Office evidence","Review addendum Appellant evidence","Review addendum evidence"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19myw41">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0kynksi">
+          <text>"hearing-judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_124xecb">
+          <text>"Read,Refer,Own"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1pkhxc7">
+          <text>"JUDICIAL"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0uc1qqh">
+          <text>"IA"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_15edozy">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ygk8oj">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0b91c94">
+        <inputEntry id="UnaryTests_1099gbv">
+          <text>"Review hearing bundle","Generate draft decision and reasons","Upload decision","Review addendum Home Office evidence","Review addendum Appellant evidence","Review addendum evidence"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1sgyxq7">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_04bwliv">
+          <text>"judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1n6hq4e">
+          <text>"Read,Refer,Own"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0pti6xc">
+          <text>"JUDICIAL"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1r21fdy">
+          <text>"IA"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0g1mgog">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0sy9mkt">
+          <text>false</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
