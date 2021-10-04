@@ -32,7 +32,6 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
     }
 
     static Stream<Arguments> scenarioProvider() {
-
         return Stream.of(
             Arguments.of(
                 "someTaskType",
@@ -66,6 +65,31 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                         "roleCategory", "LEGAL_OPERATIONS"
                     )
                 )
+            ),
+            Arguments.of(
+                "Review respondent evidence",
+                null,
+                List.of(
+                    Map.of(
+                        "name", "tribunal-caseworker",
+                        "value", "Read,Refer,Own",
+                        "roleCategory", "LEGAL_OPERATIONS",
+                        "authorisations", "IA",
+                        "autoAssignable", true
+                    ),
+                    Map.of(
+                        "name", "case-manager",
+                        "value", "Read,Refer,Own",
+                        "roleCategory", "LEGAL_OPERATIONS",
+                        "authorisations", "IA",
+                        "autoAssignable", true
+                    ),
+                    Map.of(
+                        "name", "senior-tribunal-caseworker",
+                        "value", "Read,Refer,Own,Manage,Cancel",
+                        "roleCategory", "LEGAL_OPERATIONS"
+                    )
+                )
             )
         );
     }
@@ -75,12 +99,12 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
     void given_multiple_event_ids_should_evaluate_dmn(String taskType,
                                                       String caseData,
                                                       List<Map<String, String>> expectation) {
-
         VariableMap inputVariables = new VariableMapImpl();
         inputVariables.putValue("taskType", taskType);
         inputVariables.putValue("case", caseData);
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
         MatcherAssert.assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
     }
 
@@ -90,7 +114,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
 
-        List<String> inputColumnIds = asList("taskType", "case");
+        List<String> inputColumnIds = asList("taskType", "caseData");
         //Inputs
         assertThat(logic.getInputs().size(), is(2));
         assertThatInputContainInOrder(inputColumnIds, logic.getInputs());
@@ -106,7 +130,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         assertThat(logic.getOutputs().size(), is(6));
         assertThatOutputContainInOrder(outputColumnIds, logic.getOutputs());
         //Rules
-        assertThat(logic.getRules().size(), is(2));
+        assertThat(logic.getRules().size(), is(3));
 
     }
 

@@ -7,7 +7,7 @@
           <text></text>
         </inputExpression>
       </input>
-      <input id="Input_1" label="Case Data" camunda:inputVariable="case">
+      <input id="Input_1" label="Case Data" camunda:inputVariable="caseData">
         <inputExpression id="InputExpression_1" typeRef="string">
           <text></text>
         </inputExpression>
@@ -42,7 +42,34 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1c5me4u">
-          <text>"Y"</text>
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ivpl63">
+        <description>Tribunal caseworker task permissions</description>
+        <inputEntry id="UnaryTests_155q736">
+          <text>"Review respondent evidence","Follow up overdue respondent evidence","Review appeal skeleton argument","Follow up overdue case building","Review reasons for appeal","Follow up overdue reasons for appeal","Review clarifying answers","Follow up overdue clarifying answers","Review respondent response","Follow up overdue respondent review","Review hearing requirements","Follow up overdue hearing requirements","Review CMA requirements","Review additional Home Office evidence","Review additional Appellant evidence","Review additional Home Office evidence","Review additional Appellant evidence","create hearing bundle"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0buofva">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_09mnhlx">
+          <text>"case-manager"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ekjswr">
+          <text>"Read,Refer,Own"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1tlohef">
+          <text>"LEGAL_OPERATIONS"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0rn9vbl">
+          <text>"IA"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1048wbc">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1oc4t5p">
+          <text>true</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0vjgddh">
