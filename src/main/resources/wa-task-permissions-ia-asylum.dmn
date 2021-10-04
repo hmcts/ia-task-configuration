@@ -46,7 +46,7 @@
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0ivpl63">
-        <description>Tribunal caseworker task permissions</description>
+        <description>case manager task permissions</description>
         <inputEntry id="UnaryTests_155q736">
           <text>"Review respondent evidence","Follow up overdue respondent evidence","Review appeal skeleton argument","Follow up overdue case building","Review reasons for appeal","Follow up overdue reasons for appeal","Review clarifying answers","Follow up overdue clarifying answers","Review respondent response","Follow up overdue respondent review","Review hearing requirements","Follow up overdue hearing requirements","Review CMA requirements","Review additional Home Office evidence","Review additional Appellant evidence","Review additional Home Office evidence","Review additional Appellant evidence","create hearing bundle"</text>
         </inputEntry>
@@ -70,6 +70,33 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_1oc4t5p">
           <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_03pnfh8">
+        <description>supervisor task permissions</description>
+        <inputEntry id="UnaryTests_1ossj9o">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0occzoo">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0766p7u">
+          <text>"task-supervisor"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1gda35a">
+          <text>"Read,Refer,Manage,Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0uxj36c">
+          <text>"LEGAL_OPERATIONS"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_188mn11">
+          <text>"IA"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1hkzpbs">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0a25vtn">
+          <text>false</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0vjgddh">
