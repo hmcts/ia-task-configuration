@@ -44,11 +44,6 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                         "roleCategory", "LEGAL_OPERATIONS",
                         "authorisations", "IA",
                         "autoAssignable", false
-                    ),
-                    Map.of(
-                        "name", "senior-tribunal-caseworker",
-                        "value", "Read,Refer,Own,Manage,Cancel",
-                        "roleCategory", "LEGAL_OPERATIONS"
                     )
                 )
             ),
@@ -62,11 +57,6 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                         "roleCategory", "LEGAL_OPERATIONS",
                         "authorisations", "IA",
                         "autoAssignable", false
-                    ),
-                    Map.of(
-                        "name", "senior-tribunal-caseworker",
-                        "value", "Read,Refer,Own,Manage,Cancel",
-                        "roleCategory", "LEGAL_OPERATIONS"
                     )
                 )
             ),
@@ -80,11 +70,6 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                         "roleCategory", "LEGAL_OPERATIONS",
                         "authorisations", "IA",
                         "autoAssignable", false
-                    ),
-                    Map.of(
-                        "name", "senior-tribunal-caseworker",
-                        "value", "Read,Refer,Own,Manage,Cancel",
-                        "roleCategory", "LEGAL_OPERATIONS"
                     )
                 )
             )
@@ -115,7 +100,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         "Review CMA requirements", "Review additional Home Office evidence", "Review additional Appellant evidence",
         "Review additional Home Office evidence", "Review additional Appellant evidence", "create hearing bundle"
     })
-    void given_taskType_when_evaluate_dmn_then_it_returns_expected_rules(String taskType) {
+    void given_taskType_when_evaluate_dmn_then_it_returns_one_two_three_and_four_rules(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
         inputVariables.putValue("taskType", taskType);
 
@@ -123,13 +108,12 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
 
         MatcherAssert.assertThat(dmnDecisionTableResult.getResultList(), is(List.of(
             Map.of(
-                "name", "tribunal-caseworker",
-                "value", "Read,Refer,Own",
+                "name", "task-supervisor",
+                "value", "Read,Refer,Manage,Cancel",
                 "roleCategory", "LEGAL_OPERATIONS",
                 "authorisations", "IA",
-                "autoAssignable", true
-            ),
-            Map.of(
+                "autoAssignable", false
+            ), Map.of(
                 "name", "case-manager",
                 "value", "Read,Refer,Own",
                 "roleCategory", "LEGAL_OPERATIONS",
@@ -137,16 +121,11 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "autoAssignable", true
             ),
             Map.of(
-                "name", "task-supervisor",
-                "value", "Read,Refer,Manage,Cancel",
+                "name", "tribunal-caseworker",
+                "value", "Read,Refer,Own",
                 "roleCategory", "LEGAL_OPERATIONS",
                 "authorisations", "IA",
-                "autoAssignable", false
-            ),
-            Map.of(
-                "name", "senior-tribunal-caseworker",
-                "value", "Read,Refer,Own,Manage,Cancel",
-                "roleCategory", "LEGAL_OPERATIONS"
+                "autoAssignable", true
             )
         )));
     }
@@ -173,7 +152,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         assertThat(logic.getOutputs().size(), is(6));
         assertThatOutputContainInOrder(outputColumnIds, logic.getOutputs());
         //Rules
-        assertThat(logic.getRules().size(), is(4));
+        assertThat(logic.getRules().size(), is(3));
 
     }
 

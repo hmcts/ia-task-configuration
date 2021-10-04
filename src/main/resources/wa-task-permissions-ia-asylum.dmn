@@ -18,31 +18,31 @@
       <output id="OutputClause_16bocer" label="Authorisations" name="authorisations" typeRef="string" />
       <output id="OutputClause_1n914lw" label="Assignment Priority" name="assignmentPriority" typeRef="integer" />
       <output id="OutputClause_04cbxc1" label="Auto Assignable" name="autoAssignable" typeRef="boolean" />
-      <rule id="DecisionRule_1tvtlre">
-        <description>Tribunal caseworker task permissions</description>
-        <inputEntry id="UnaryTests_13ukkz6">
-          <text>"Review respondent evidence","Follow up overdue respondent evidence","Review appeal skeleton argument","Follow up overdue case building","Review reasons for appeal","Follow up overdue reasons for appeal","Review clarifying answers","Follow up overdue clarifying answers","Review respondent response","Follow up overdue respondent review","Review hearing requirements","Follow up overdue hearing requirements","Review CMA requirements","Review additional Home Office evidence","Review additional Appellant evidence","Review additional Home Office evidence","Review additional Appellant evidence","create hearing bundle"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_10s330p">
+      <rule id="DecisionRule_03pnfh8">
+        <description>supervisor task permissions</description>
+        <inputEntry id="UnaryTests_1ossj9o">
           <text></text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_0pwg10h">
-          <text>"tribunal-caseworker"</text>
+        <inputEntry id="UnaryTests_0occzoo">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0766p7u">
+          <text>"task-supervisor"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_151ry1h">
-          <text>"Read,Refer,Own"</text>
+        <outputEntry id="LiteralExpression_1gda35a">
+          <text>"Read,Refer,Manage,Cancel"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_1rwokl1">
+        <outputEntry id="LiteralExpression_0uxj36c">
           <text>"LEGAL_OPERATIONS"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_0niqcsd">
+        <outputEntry id="LiteralExpression_188mn11">
           <text>"IA"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_1ynp9nn">
+        <outputEntry id="LiteralExpression_1hkzpbs">
           <text></text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_1c5me4u">
-          <text>true</text>
+        <outputEntry id="LiteralExpression_0a25vtn">
+          <text>false</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0ivpl63">
@@ -72,58 +72,31 @@
           <text>true</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_03pnfh8">
-        <description>supervisor task permissions</description>
-        <inputEntry id="UnaryTests_1ossj9o">
+      <rule id="DecisionRule_1tvtlre">
+        <description>Tribunal caseworker task permissions</description>
+        <inputEntry id="UnaryTests_13ukkz6">
+          <text>"Review respondent evidence","Follow up overdue respondent evidence","Review appeal skeleton argument","Follow up overdue case building","Review reasons for appeal","Follow up overdue reasons for appeal","Review clarifying answers","Follow up overdue clarifying answers","Review respondent response","Follow up overdue respondent review","Review hearing requirements","Follow up overdue hearing requirements","Review CMA requirements","Review additional Home Office evidence","Review additional Appellant evidence","Review additional Home Office evidence","Review additional Appellant evidence","create hearing bundle"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10s330p">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_0occzoo">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0766p7u">
-          <text>"task-supervisor"</text>
+        <outputEntry id="LiteralExpression_0pwg10h">
+          <text>"tribunal-caseworker"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_1gda35a">
-          <text>"Read,Refer,Manage,Cancel"</text>
+        <outputEntry id="LiteralExpression_151ry1h">
+          <text>"Read,Refer,Own"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_0uxj36c">
+        <outputEntry id="LiteralExpression_1rwokl1">
           <text>"LEGAL_OPERATIONS"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_188mn11">
+        <outputEntry id="LiteralExpression_0niqcsd">
           <text>"IA"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_1hkzpbs">
+        <outputEntry id="LiteralExpression_1ynp9nn">
           <text></text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_0a25vtn">
-          <text>false</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0vjgddh">
-        <description>Senior tribunal caseworker task permissions</description>
-        <inputEntry id="UnaryTests_1ltuu3g">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0qkny80">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1ti6ulm">
-          <text>"senior-tribunal-caseworker"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0z3dkq8">
-          <text>"Read,Refer,Own,Manage,Cancel"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_08kcmoj">
-          <text>"LEGAL_OPERATIONS"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0yfmjpv">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1dt4hlx">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_00ek24e">
-          <text></text>
+        <outputEntry id="LiteralExpression_1c5me4u">
+          <text>true</text>
         </outputEntry>
       </rule>
     </decisionTable>
