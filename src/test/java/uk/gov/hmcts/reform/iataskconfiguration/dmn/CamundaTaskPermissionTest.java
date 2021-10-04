@@ -101,7 +101,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                                                       List<Map<String, String>> expectation) {
         VariableMap inputVariables = new VariableMapImpl();
         inputVariables.putValue("taskType", taskType);
-        inputVariables.putValue("case", caseData);
+        inputVariables.putValue("caseData", caseData);
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
