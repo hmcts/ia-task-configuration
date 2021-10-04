@@ -11,6 +11,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.MethodSource;
 import uk.gov.hmcts.reform.iataskconfiguration.DmnDecisionTableBaseUnitTest;
 
@@ -65,31 +66,6 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                         "roleCategory", "LEGAL_OPERATIONS"
                     )
                 )
-            ),
-            Arguments.of(
-                "Review respondent evidence",
-                null,
-                List.of(
-                    Map.of(
-                        "name", "tribunal-caseworker",
-                        "value", "Read,Refer,Own",
-                        "roleCategory", "LEGAL_OPERATIONS",
-                        "authorisations", "IA",
-                        "autoAssignable", true
-                    ),
-                    Map.of(
-                        "name", "case-manager",
-                        "value", "Read,Refer,Own",
-                        "roleCategory", "LEGAL_OPERATIONS",
-                        "authorisations", "IA",
-                        "autoAssignable", true
-                    ),
-                    Map.of(
-                        "name", "senior-tribunal-caseworker",
-                        "value", "Read,Refer,Own,Manage,Cancel",
-                        "roleCategory", "LEGAL_OPERATIONS"
-                    )
-                )
             )
         );
     }
@@ -106,6 +82,45 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
         MatcherAssert.assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
+    }
+
+    @SuppressWarnings("checkstyle:indentation")
+    @ParameterizedTest
+    @CsvSource(value = {
+        "Review respondent evidence", "Follow up overdue respondent evidence", "Review appeal skeleton argument",
+        "Follow up overdue case building", "Review reasons for appeal", "Follow up overdue reasons for appeal",
+        "Review clarifying answers", "Follow up overdue clarifying answers", "Review respondent response",
+        "Follow up overdue respondent review", "Review hearing requirements", "Follow up overdue hearing requirements",
+        "Review CMA requirements", "Review additional Home Office evidence", "Review additional Appellant evidence",
+        "Review additional Home Office evidence", "Review additional Appellant evidence", "create hearing bundle"
+    })
+    void given_taskType_when_evaluate_dmn_then_returns_expected_rules(String taskType) {
+        VariableMap inputVariables = new VariableMapImpl();
+        inputVariables.putValue("taskType", taskType);
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        MatcherAssert.assertThat(dmnDecisionTableResult.getResultList(), is(List.of(
+            Map.of(
+                "name", "tribunal-caseworker",
+                "value", "Read,Refer,Own",
+                "roleCategory", "LEGAL_OPERATIONS",
+                "authorisations", "IA",
+                "autoAssignable", true
+            ),
+            Map.of(
+                "name", "case-manager",
+                "value", "Read,Refer,Own",
+                "roleCategory", "LEGAL_OPERATIONS",
+                "authorisations", "IA",
+                "autoAssignable", true
+            ),
+            Map.of(
+                "name", "senior-tribunal-caseworker",
+                "value", "Read,Refer,Own,Manage,Cancel",
+                "roleCategory", "LEGAL_OPERATIONS"
+            )
+        )));
     }
 
     @Test
