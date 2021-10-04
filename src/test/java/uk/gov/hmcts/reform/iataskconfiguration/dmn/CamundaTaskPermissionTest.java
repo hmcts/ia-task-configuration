@@ -37,12 +37,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "someTaskType",
                 "someCaseData",
-                asList(
-                    Map.of(
-                        "name", "tribunal-caseworker",
-                        "value", "Read,Refer,Own,Manage,Cancel",
-                        "roleCategory", "LEGAL_OPERATIONS"
-                    ),
+                List.of(
                     Map.of(
                         "name", "senior-tribunal-caseworker",
                         "value", "Read,Refer,Own,Manage,Cancel",
@@ -53,12 +48,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "null",
                 "someCaseData",
-                asList(
-                    Map.of(
-                        "name", "tribunal-caseworker",
-                        "value", "Read,Refer,Own,Manage,Cancel",
-                        "roleCategory", "LEGAL_OPERATIONS"
-                    ),
+                List.of(
                     Map.of(
                         "name", "senior-tribunal-caseworker",
                         "value", "Read,Refer,Own,Manage,Cancel",
@@ -69,12 +59,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "someTaskType",
                 "null",
-                asList(
-                    Map.of(
-                        "name", "tribunal-caseworker",
-                        "value", "Read,Refer,Own,Manage,Cancel",
-                        "roleCategory", "LEGAL_OPERATIONS"
-                    ),
+                List.of(
                     Map.of(
                         "name", "senior-tribunal-caseworker",
                         "value", "Read,Refer,Own,Manage,Cancel",
