@@ -577,6 +577,35 @@ null</text>
           <text>"followUpOverdue"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0j3ds1p">
+        <inputEntry id="UnaryTests_0n6oqr8">
+          <text>"changeDirectionDueDate"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qnbskk">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0h3ne68">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0g4oz38">
+          <text>"followUpExtendedDirection"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_10uny2o">
+          <text>"Follow-up extended direction"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_109x5cm">
+          <text>"TCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0fcdssf">
+          <text>if (directionDueDate != null and directionDueDate != "") then (date(directionDueDate) - date(now)).days else 0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_03j4j35">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0um9t1g">
+          <text>"followUpOverdue"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_10q7721">
         <inputEntry id="UnaryTests_0ifxfwu">
           <text>"requestCaseBuilding"</text>
