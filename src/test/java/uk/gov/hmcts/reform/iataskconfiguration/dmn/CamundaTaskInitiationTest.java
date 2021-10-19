@@ -447,6 +447,20 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "submitClarifyingQuestionAnswers",
+                "null",
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewClarifyingQuestionsAnswers",
+                        "name", "Review Clarifying Questions Answers",
+                        "group", "TCW",
+                        "workingDaysAllowed", 2,
+                        "processCategories",  "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
                 "submitCmaRequirements",
                 "cmaRequirementsSubmitted",
                 null,
