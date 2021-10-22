@@ -41,7 +41,6 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "name", "task-supervisor",
                         "value", "Read,Refer,Manage,Cancel",
-                        "roleCategory", "LEGAL_OPERATIONS",
                         "authorisations", "IA",
                         "autoAssignable", false
                     )
@@ -54,7 +53,6 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "name", "task-supervisor",
                         "value", "Read,Refer,Manage,Cancel",
-                        "roleCategory", "LEGAL_OPERATIONS",
                         "authorisations", "IA",
                         "autoAssignable", false
                     )
@@ -67,7 +65,6 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "name", "task-supervisor",
                         "value", "Read,Refer,Manage,Cancel",
-                        "roleCategory", "LEGAL_OPERATIONS",
                         "authorisations", "IA",
                         "autoAssignable", false
                     )
@@ -82,7 +79,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                                                                                 String caseData,
                                                                                 List<Map<String, String>> expectation) {
         VariableMap inputVariables = new VariableMapImpl();
-        inputVariables.putValue("taskType", taskType);
+        inputVariables.putValue("taskAttributes", Map.of("taskTypeId", taskType));
         inputVariables.putValue("caseData", caseData);
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
@@ -93,16 +90,16 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
     @SuppressWarnings("checkstyle:indentation")
     @ParameterizedTest
     @CsvSource(value = {
-        "Review respondent evidence", "Follow up overdue respondent evidence", "Review appeal skeleton argument",
-        "Follow up overdue case building", "Review reasons for appeal", "Follow up overdue reasons for appeal",
-        "Review clarifying answers", "Follow up overdue clarifying answers", "Review respondent response",
-        "Follow up overdue respondent review", "Review hearing requirements", "Follow up overdue hearing requirements",
-        "Review CMA requirements", "Review additional Home Office evidence", "Review additional Appellant evidence",
-        "Review additional Home Office evidence", "Review additional Appellant evidence", "create hearing bundle"
+        "reviewRespondentEvidence", "followUpOverdueRespondentEvidence", "reviewAppealSkeletonArgument",
+        "followUpOverdueCaseBuilding", "reviewReasonsForAppeal", "followUpOverdueReasonsForAppeal",
+        "reviewClarifyingQuestionsAnswers", "followUpOverdueClarifyingAnswers", "reviewRespondentResponse",
+        "followUpOverdueRespondentReview", "reviewHearingRequirements", "followUpOverdueHearingRequirements",
+        "reviewCmaRequirements", "reviewAdditionalHomeOfficeEvidence", "reviewAdditionalAppellantEvidence",
+        "reviewAdditionalHomeOfficeEvidence", "reviewAdditionalAppellantEvidence", "createHearingBundle"
     })
     void given_taskType_when_evaluate_dmn_then_it_returns_first_second_and_third_rules(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
-        inputVariables.putValue("taskType", taskType);
+        inputVariables.putValue("taskAttributes", Map.of("taskTypeId", taskType));
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
@@ -110,7 +107,6 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
             Map.of(
                 "name", "task-supervisor",
                 "value", "Read,Refer,Manage,Cancel",
-                "roleCategory", "LEGAL_OPERATIONS",
                 "authorisations", "IA",
                 "autoAssignable", false
             ), Map.of(
@@ -133,11 +129,11 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
     @SuppressWarnings("checkstyle:indentation")
     @ParameterizedTest
     @CsvSource(value = {
-        "Arrange offline payment", "Mark case as paid", "Add listing date"
+        "arrangeOfflinePayment", "markCaseAsPaid", "addListingDate"
     })
     void given_taskType_when_evaluate_dmn_then_it_returns_first_and_forth_rule(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
-        inputVariables.putValue("taskType", taskType);
+        inputVariables.putValue("taskAttributes", Map.of("taskTypeId", taskType));
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
@@ -145,7 +141,6 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
             Map.of(
                 "name", "task-supervisor",
                 "value", "Read,Refer,Manage,Cancel",
-                "roleCategory", "LEGAL_OPERATIONS",
                 "authorisations", "IA",
                 "autoAssignable", false
             ),
@@ -162,11 +157,11 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
     @SuppressWarnings("checkstyle:indentation")
     @ParameterizedTest
     @CsvSource(value = {
-        "Allocate hearing judge", "Upload hearing recording"
+        "allocateHearingJudge", "uploadHearingRecording"
     })
     void given_taskType_when_evaluate_dmn_then_it_returns_first_and_fifth_rule(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
-        inputVariables.putValue("taskType", taskType);
+        inputVariables.putValue("taskAttributes", Map.of("taskTypeId", taskType));
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
@@ -174,7 +169,6 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
             Map.of(
                 "name", "task-supervisor",
                 "value", "Read,Refer,Manage,Cancel",
-                "roleCategory", "LEGAL_OPERATIONS",
                 "authorisations", "IA",
                 "autoAssignable", false
             ),
@@ -191,12 +185,12 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
     @SuppressWarnings("checkstyle:indentation")
     @ParameterizedTest
     @CsvSource(value = {
-        "Review hearing bundle", "Generate draft decision and reasons", "Upload decision",
-        "Review addendum Home Office evidence", "Review addendum Appellant evidence", "Review addendum evidence"
+        "reviewHearingBundle", "generateDraftDecisionAndReasons", "uploadDecision", "reviewAddendumHomeOfficeEvidence",
+        "reviewAddendumAppellantEvidence", "reviewAddendumEvidence"
     })
     void given_taskType_when_evaluate_dmn_then_it_returns_first_sixth_and_seventh_rule(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
-        inputVariables.putValue("taskType", taskType);
+        inputVariables.putValue("taskAttributes", Map.of("taskTypeId", taskType));
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
@@ -204,7 +198,6 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
             Map.of(
                 "name", "task-supervisor",
                 "value", "Read,Refer,Manage,Cancel",
-                "roleCategory", "LEGAL_OPERATIONS",
                 "authorisations", "IA",
                 "autoAssignable", false
             ),
@@ -231,7 +224,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
 
-        List<String> inputColumnIds = asList("taskType", "caseData");
+        List<String> inputColumnIds = asList("taskTypeId", "caseData");
         //Inputs
         assertThat(logic.getInputs().size(), is(2));
         assertThatInputContainInOrder(inputColumnIds, logic.getInputs());

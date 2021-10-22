@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-permissions-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.5.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-permissions-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.2.0">
   <decision id="wa-task-permissions-ia-asylum" name="Permissions DMN">
     <decisionTable id="DecisionTable_1pr5oic" hitPolicy="RULE ORDER">
-      <input id="InputClause_12crj6e" label="Task Type" camunda:inputVariable="taskType">
-        <inputExpression id="LiteralExpression_11cu08d" typeRef="string">
-          <text></text>
+      <input id="InputClause_12crj6e" label="Task Type Id" camunda:inputVariable="taskTypeId">
+        <inputExpression id="LiteralExpression_11cu08d" typeRef="string" expressionLanguage="feel">
+          <text>if(taskAttributes != null and taskAttributes.taskTypeId != null) then
+            taskAttributes.taskTypeId
+else
+null</text>
         </inputExpression>
       </input>
       <input id="Input_1" label="Case Data" camunda:inputVariable="caseData">
@@ -33,7 +36,7 @@
           <text>"Read,Refer,Manage,Cancel"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0uxj36c">
-          <text>"LEGAL_OPERATIONS"</text>
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_188mn11">
           <text>"IA"</text>
@@ -48,7 +51,7 @@
       <rule id="DecisionRule_0ivpl63">
         <description>case manager task permissions</description>
         <inputEntry id="UnaryTests_155q736">
-          <text>"Review respondent evidence","Follow up overdue respondent evidence","Review appeal skeleton argument","Follow up overdue case building","Review reasons for appeal","Follow up overdue reasons for appeal","Review clarifying answers","Follow up overdue clarifying answers","Review respondent response","Follow up overdue respondent review","Review hearing requirements","Follow up overdue hearing requirements","Review CMA requirements","Review additional Home Office evidence","Review additional Appellant evidence","Review additional Home Office evidence","Review additional Appellant evidence","create hearing bundle"</text>
+          <text>"reviewRespondentEvidence","followUpOverdueRespondentEvidence","reviewAppealSkeletonArgument","followUpOverdueCaseBuilding","reviewReasonsForAppeal","followUpOverdueReasonsForAppeal","reviewClarifyingQuestionsAnswers","followUpOverdueClarifyingAnswers","reviewRespondentResponse","followUpOverdueRespondentReview","reviewHearingRequirements","followUpOverdueHearingRequirements","reviewCmaRequirements","reviewAdditionalHomeOfficeEvidence","reviewAdditionalAppellantEvidence","reviewAdditionalHomeOfficeEvidence","reviewAdditionalAppellantEvidence","createHearingBundle"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0buofva">
           <text></text>
@@ -75,7 +78,7 @@
       <rule id="DecisionRule_1tvtlre">
         <description>Tribunal caseworker task permissions</description>
         <inputEntry id="UnaryTests_13ukkz6">
-          <text>"Review respondent evidence","Follow up overdue respondent evidence","Review appeal skeleton argument","Follow up overdue case building","Review reasons for appeal","Follow up overdue reasons for appeal","Review clarifying answers","Follow up overdue clarifying answers","Review respondent response","Follow up overdue respondent review","Review hearing requirements","Follow up overdue hearing requirements","Review CMA requirements","Review additional Home Office evidence","Review additional Appellant evidence","Review additional Home Office evidence","Review additional Appellant evidence","create hearing bundle"</text>
+          <text>"reviewRespondentEvidence","followUpOverdueRespondentEvidence","reviewAppealSkeletonArgument","followUpOverdueCaseBuilding","reviewReasonsForAppeal","followUpOverdueReasonsForAppeal","reviewClarifyingQuestionsAnswers","followUpOverdueClarifyingAnswers","reviewRespondentResponse","followUpOverdueRespondentReview","reviewHearingRequirements","followUpOverdueHearingRequirements","reviewCmaRequirements","reviewAdditionalHomeOfficeEvidence","reviewAdditionalAppellantEvidence","reviewAdditionalHomeOfficeEvidence","reviewAdditionalAppellantEvidence","createHearingBundle"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_10s330p">
           <text></text>
@@ -101,7 +104,7 @@
       </rule>
       <rule id="DecisionRule_16vvqmd">
         <inputEntry id="UnaryTests_0gxxmc7">
-          <text>"Arrange offline payment","Mark case as paid","Add listing date"</text>
+          <text>"arrangeOfflinePayment","markCaseAsPaid","addListingDate"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_12c3use">
           <text></text>
@@ -127,7 +130,7 @@
       </rule>
       <rule id="DecisionRule_0hv79lq">
         <inputEntry id="UnaryTests_0tzrow3">
-          <text>"Allocate hearing judge","Upload hearing recording"</text>
+          <text>"allocateHearingJudge","uploadHearingRecording"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1sw9xpj">
           <text></text>
@@ -153,7 +156,7 @@
       </rule>
       <rule id="DecisionRule_1xv2gxq">
         <inputEntry id="UnaryTests_1oxh1tt">
-          <text>"Review hearing bundle","Generate draft decision and reasons","Upload decision","Review addendum Home Office evidence","Review addendum Appellant evidence","Review addendum evidence"</text>
+          <text>"reviewHearingBundle","generateDraftDecisionAndReasons","uploadDecision","reviewAddendumHomeOfficeEvidence","reviewAddendumAppellantEvidence","reviewAddendumEvidence"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_19myw41">
           <text></text>
@@ -179,7 +182,7 @@
       </rule>
       <rule id="DecisionRule_0b91c94">
         <inputEntry id="UnaryTests_1099gbv">
-          <text>"Review hearing bundle","Generate draft decision and reasons","Upload decision","Review addendum Home Office evidence","Review addendum Appellant evidence","Review addendum evidence"</text>
+          <text>"reviewHearingBundle","generateDraftDecisionAndReasons","uploadDecision","reviewAddendumHomeOfficeEvidence","reviewAddendumAppellantEvidence","reviewAddendumEvidence"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1sgyxq7">
           <text></text>
