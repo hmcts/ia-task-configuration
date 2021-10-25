@@ -80,7 +80,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                                                                                 List<Map<String, String>> expectation) {
         VariableMap inputVariables = new VariableMapImpl();
         inputVariables.putValue("taskAttributes", Map.of("taskTypeId", taskType));
-        inputVariables.putValue("caseData", caseData);
+        inputVariables.putValue("case", caseData);
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
@@ -218,13 +218,44 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         )));
     }
 
+    @SuppressWarnings("checkstyle:indentation")
+    @Test
+    void given_blank_taskType_when_evaluate_dmn_then_it_returns_release1_rule() {
+        VariableMap inputVariables = new VariableMapImpl();
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        MatcherAssert.assertThat(dmnDecisionTableResult.getResultList(), is(List.of(
+            Map.of(
+                "name", "task-supervisor",
+                "value", "Read,Refer,Manage,Cancel",
+                "authorisations", "IA",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "tribunal-caseworker",
+                "value", "Read,Refer,Own,Manage,Cancel",
+                "roleCategory", "LEGAL_OPERATIONS",
+                "authorisations", "IA",
+                "autoAssignable", true
+            ),
+            Map.of(
+                "name", "senior-tribunal-caseworker",
+                "value", "Read,Refer,Own,Manage,Cancel",
+                "roleCategory", "LEGAL_OPERATIONS",
+                "authorisations", "IA",
+                "autoAssignable", true
+            )
+        )));
+    }
+
     @Test
     void if_this_test_fails_needs_updating_with_your_changes() {
 
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
 
-        List<String> inputColumnIds = asList("taskTypeId", "caseData");
+        List<String> inputColumnIds = asList("taskTypeId", "case");
         //Inputs
         assertThat(logic.getInputs().size(), is(2));
         assertThatInputContainInOrder(inputColumnIds, logic.getInputs());
@@ -240,7 +271,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         assertThat(logic.getOutputs().size(), is(6));
         assertThatOutputContainInOrder(outputColumnIds, logic.getOutputs());
         //Rules
-        assertThat(logic.getRules().size(), is(7));
+        assertThat(logic.getRules().size(), is(9));
 
     }
 

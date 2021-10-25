@@ -7,10 +7,10 @@
           <text>if(taskAttributes != null and taskAttributes.taskTypeId != null) then
             taskAttributes.taskTypeId
 else
-null</text>
+"r1"</text>
         </inputExpression>
       </input>
-      <input id="Input_1" label="Case Data" camunda:inputVariable="caseData">
+      <input id="Input_1" label="Case Data" camunda:inputVariable="case">
         <inputExpression id="InputExpression_1" typeRef="string">
           <text></text>
         </inputExpression>
@@ -204,6 +204,58 @@ null</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0sy9mkt">
           <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_04eoe1k">
+        <inputEntry id="UnaryTests_0se58ll">
+          <text>"r1"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1m2r097">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0hftahv">
+          <text>"tribunal-caseworker"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_051fxvi">
+          <text>"Read,Refer,Own,Manage,Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_02k1ff3">
+          <text>"LEGAL_OPERATIONS"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0jgns61">
+          <text>"IA"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1lugw75">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_16jo15y">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ks3xbb">
+        <inputEntry id="UnaryTests_1k8ldgj">
+          <text>"r1"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0yw7wdu">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0l9cpfg">
+          <text>"senior-tribunal-caseworker"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1w3llu8">
+          <text>"Read,Refer,Own,Manage,Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1god3td">
+          <text>"LEGAL_OPERATIONS"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ukk3uh">
+          <text>"IA"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ymzlmg">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1r4jwp2">
+          <text>true</text>
         </outputEntry>
       </rule>
     </decisionTable>
