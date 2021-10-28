@@ -239,17 +239,6 @@ dependencies {
   implementation group: 'com.github.hmcts.java-logging', name: 'java-logging', version: versions.reformLogging
   implementation group: 'com.github.hmcts.java-logging', name: 'java-logging-appinsights', version: versions.reformLogging
 
-  implementation group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.14.0'
-  implementation group: 'org.apache.logging.log4j', name: 'log4j-to-slf4j', version: '2.14.1'
-
-  implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-core', version: versions.tomcat
-  implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-websocket', version: versions.tomcat
-
-  implementation group: 'org.camunda.bpm', name: 'camunda-external-task-client', version: versions.camunda
-
-  annotationProcessor 'org.projectlombok:lombok:1.18.20'
-  compileOnly 'org.projectlombok:lombok:1.18.20'
-
   testCompile group: 'org.pitest', name: 'pitest', version: versions.pitest
   testCompile 'info.solidsoft.gradle.pitest:gradle-pitest-plugin:1.5.2'
 
@@ -264,7 +253,6 @@ dependencies {
   testImplementation group: 'org.camunda.bpm.dmn', name: 'camunda-engine-dmn', version: versions.camunda
   testImplementation group: 'org.camunda.bpm.assert', name: 'camunda-bpm-assert', version: '8.0.0'
   testImplementation group: 'org.camunda.bpm', name: 'camunda-engine', version: versions.camunda
-  testImplementation group: 'com.h2database', name: 'h2', version: '1.4.200'
 
   integrationTestImplementation sourceSets.main.runtimeClasspath
   integrationTestImplementation sourceSets.test.runtimeClasspath
@@ -272,9 +260,6 @@ dependencies {
   functionalTestImplementation sourceSets.main.runtimeClasspath
 
   smokeTestImplementation sourceSets.main.runtimeClasspath
-
-
-
 }
 
 mainClassName = 'uk.gov.hmcts.reform.iataskconfiguration.Application'
