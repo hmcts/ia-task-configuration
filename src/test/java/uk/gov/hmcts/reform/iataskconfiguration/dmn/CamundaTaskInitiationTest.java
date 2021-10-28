@@ -485,9 +485,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     }
 
     public static Stream<Arguments> makeAnApplicationScenarioProvider() {
-        String adjourn = "Adjourn";
-        String noApplicationType = "";
-
         return Stream.of(
             Arguments.of(
                 "makeAnApplication",
@@ -495,31 +492,44 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData(" {\n"
                                       + "        \"Data\" : {\n"
                                       + "          \"lastModifiedApplication\" : {\n"
-                                      + "            \"type\" : \"" + noApplicationType + "\",\n"
+                                      + "            \"type\" : \"\",\n"
                                       + "            \"decision\" : \"\"\n"
                                       + "          }\n"
                                       + "        }\n"
                                       + "      }"),
                 emptyList()
             ),
-            Arguments.of(
-                "makeAnApplication",
-                null,
-                mapAdditionalData(" {\n"
-                                      + "        \"Data\" : {\n"
-                                      + "          \"lastModifiedApplication\" : {\n"
-                                      + "            \"type\" : \"" + adjourn + "\",\n"
-                                      + "            \"decision\" : \"\"\n"
-                                      + "          }\n"
-                                      + "        }\n"
-                                      + "      }"),
-                singletonList(
-                    Map.of(
-                        "taskId", "processApplication",
-                        "name", "Process Application",
-                        "group", "TCW",
-                        "workingDaysAllowed", 2
-                    )
+            getArgumentOf("Adjourn"),
+            getArgumentOf("Expedite"),
+            getArgumentOf("Link/unlink appeals"),
+            getArgumentOf("Time extension"),
+            getArgumentOf("Transfer"),
+            getArgumentOf("Withdraw"),
+            getArgumentOf("Update hearing requirements"),
+            getArgumentOf("Update appeal details"),
+            getArgumentOf("Reinstate an ended appeal"),
+            getArgumentOf("Other")
+        );
+    }
+
+    private static Arguments getArgumentOf(String applicationType) {
+        return Arguments.of(
+            "makeAnApplication",
+            null,
+            mapAdditionalData(" {\n"
+                                  + "        \"Data\" : {\n"
+                                  + "          \"lastModifiedApplication\" : {\n"
+                                  + "            \"type\" : \"" + applicationType + "\",\n"
+                                  + "            \"decision\" : \"\"\n"
+                                  + "          }\n"
+                                  + "        }\n"
+                                  + "      }"),
+            singletonList(
+                Map.of(
+                    "taskId", "processApplication",
+                    "name", "Process Application",
+                    "group", "TCW",
+                    "workingDaysAllowed", 2
                 )
             )
         );
