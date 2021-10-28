@@ -34,55 +34,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     }
 
     static Stream<Arguments> scenarioProvider() {
-
         return Stream.of(
-            Arguments.of(
-                "makeAnApplication",
-                null,
-                mapAdditionalData(" {\n"
-                                      + "        \"Data\" : {\n"
-                                      + "          \"lastModifiedApplication\" : {\n"
-                                      + "            \"type\" : \"\",\n"
-                                      + "            \"decision\" : \"\"\n"
-                                      + "          },\n"
-                                      + "          \"appealType\" : \"protection\",\n"
-                                      + "          \"lastModifiedDirection\" : {\n"
-                                      + "            \"directionType\" : \"\",\n"
-                                      + "            \"dateDue\" : \"\",\n"
-                                      + "            \"uniqueId\" : \"\"\n"
-                                      + "          }\n"
-                                      + "        },\n"
-                                      + "        \"Definition\" : null\n"
-                                      + "      }"),
-                emptyList()
-            ),
-            Arguments.of(
-                "makeAnApplication",
-                null,
-                mapAdditionalData(" {\n"
-                                      + "        \"Data\" : {\n"
-                                      + "          \"lastModifiedApplication\" : {\n"
-                                      + "            \"type\" : \"Adjourn\",\n"
-                                      + "            \"decision\" : \"\"\n"
-                                      + "          },\n"
-                                      + "          \"appealType\" : \"protection\",\n"
-                                      + "          \"lastModifiedDirection\" : {\n"
-                                      + "            \"directionType\" : \"\",\n"
-                                      + "            \"dateDue\" : \"\",\n"
-                                      + "            \"uniqueId\" : \"\"\n"
-                                      + "          }\n"
-                                      + "        },\n"
-                                      + "        \"Definition\" : null\n"
-                                      + "      }"),
-                singletonList(
-                    Map.of(
-                        "taskId", "processApplication",
-                        "name", "Process Application",
-                        "group", "TCW",
-                        "workingDaysAllowed", 2
-                    )
-                )
-            ),
             Arguments.of(
                 "submitAppeal",
                 "appealSubmitted",
@@ -522,7 +474,63 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                                       String postEventState,
                                                       Map<String, Object> additionalData,
                                                       List<Map<String, String>> expectation) {
+        VariableMap inputVariables = new VariableMapImpl();
+        inputVariables.putValue("eventId", eventId);
+        inputVariables.putValue("postEventState", postEventState);
+        inputVariables.putValue("additionalData", additionalData);
 
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
+    }
+
+    public static Stream<Arguments> makeAnApplicationScenarioProvider() {
+        String adjourn = "Adjourn";
+        String noApplicationType = "";
+
+        return Stream.of(
+            Arguments.of(
+                "makeAnApplication",
+                null,
+                mapAdditionalData(" {\n"
+                                      + "        \"Data\" : {\n"
+                                      + "          \"lastModifiedApplication\" : {\n"
+                                      + "            \"type\" : \"" + noApplicationType + "\",\n"
+                                      + "            \"decision\" : \"\"\n"
+                                      + "          }\n"
+                                      + "        }\n"
+                                      + "      }"),
+                emptyList()
+            ),
+            Arguments.of(
+                "makeAnApplication",
+                null,
+                mapAdditionalData(" {\n"
+                                      + "        \"Data\" : {\n"
+                                      + "          \"lastModifiedApplication\" : {\n"
+                                      + "            \"type\" : \"" + adjourn + "\",\n"
+                                      + "            \"decision\" : \"\"\n"
+                                      + "          }\n"
+                                      + "        }\n"
+                                      + "      }"),
+                singletonList(
+                    Map.of(
+                        "taskId", "processApplication",
+                        "name", "Process Application",
+                        "group", "TCW",
+                        "workingDaysAllowed", 2
+                    )
+                )
+            )
+        );
+    }
+
+    @ParameterizedTest
+    @MethodSource("makeAnApplicationScenarioProvider")
+    void given_makeAnApplication_should_evaluate_dmn(String eventId,
+                                                     String postEventState,
+                                                     Map<String, Object> additionalData,
+                                                     List<Map<String, String>> expectation) {
         VariableMap inputVariables = new VariableMapImpl();
         inputVariables.putValue("eventId", eventId);
         inputVariables.putValue("postEventState", postEventState);
