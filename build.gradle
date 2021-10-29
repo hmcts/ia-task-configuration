@@ -156,7 +156,7 @@ sonarqube {
     property "sonar.pitest.mode", "reuseReport"
     property "sonar.pitest.reportsDirectory", "build/reports/pitest"
     property "sonar.exclusions", "src/main/java/uk/gov/hmcts/reform/iataskconfiguration/config/**," +
-                                 "src/main/java/uk/gov/hmcts/reform/iataskconfiguration/Application.java"
+      "src/main/java/uk/gov/hmcts/reform/iataskconfiguration/Application.java"
   }
 }
 
@@ -213,7 +213,7 @@ def versions = [
   camunda         : '7.15.0',
   pitest          : '1.5.2',
   sonarPitest     : '0.5',
-  tomcat          : '9.0.50'
+  tomcat          : '9.0.54'
 
 ]
 
