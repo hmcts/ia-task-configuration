@@ -20,7 +20,7 @@ else
 null</text>
         </inputExpression>
       </input>
-      <input id="InputClause_0fxch1t" label="Last modified direction type" biodi:width="288" camunda:inputVariable="lastModifiedApplicationType">
+      <input id="InputClause_0fxch1t" label="Last modified application type" biodi:width="288" camunda:inputVariable="lastModifiedApplicationType">
         <inputExpression id="LiteralExpression_13n1gp7" typeRef="string" expressionLanguage="feel">
           <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.lastModifiedApplication != null) then
             additionalData.Data.lastModifiedApplication.type
@@ -28,7 +28,7 @@ else
 null</text>
         </inputExpression>
       </input>
-      <input id="InputClause_0def1bq" label="Last modified direction decision" biodi:width="274" camunda:inputVariable="lastModifiedApplicationDecision">
+      <input id="InputClause_0def1bq" label="Last modified application decision" biodi:width="274" camunda:inputVariable="lastModifiedApplicationDecision">
         <inputExpression id="LiteralExpression_1yomlvg" typeRef="string">
           <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.lastModifiedApplication != null) then
             additionalData.Data.lastModifiedApplication.decision
@@ -53,7 +53,7 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0227fct">
-          <text>"Adjourn","Expedite","Link/unlink appeals","Time extension","Transfer","Withdraw","Update hearing requirements","Update appeal details","Reinstate an ended appeal","Other"</text>
+          <text>"Adjourn","Expedite","Link/unlink appeals","Time extension","Transfer","Update hearing requirements","Update appeal details","Change hearing centre","Other"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1t0wgqg">
           <text></text>

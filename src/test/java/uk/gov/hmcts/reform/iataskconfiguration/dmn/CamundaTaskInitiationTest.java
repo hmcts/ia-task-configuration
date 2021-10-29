@@ -504,10 +504,9 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             getArgumentOf("Link/unlink appeals"),
             getArgumentOf("Time extension"),
             getArgumentOf("Transfer"),
-            getArgumentOf("Withdraw"),
             getArgumentOf("Update hearing requirements"),
             getArgumentOf("Update appeal details"),
-            getArgumentOf("Reinstate an ended appeal"),
+            getArgumentOf("Change hearing centre"),
             getArgumentOf("Other")
         );
     }
