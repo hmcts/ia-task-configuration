@@ -528,7 +528,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     "taskId", "processApplication",
                     "name", "Process Application",
                     "group", "TCW",
-                    "workingDaysAllowed", 2
+                    "workingDaysAllowed", 2,
+                    "processCategories", "application"
                 )
             )
         );
