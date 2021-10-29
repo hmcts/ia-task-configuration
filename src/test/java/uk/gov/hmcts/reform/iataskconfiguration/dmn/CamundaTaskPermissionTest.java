@@ -79,7 +79,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                                                                                 String caseData,
                                                                                 List<Map<String, String>> expectation) {
         VariableMap inputVariables = new VariableMapImpl();
-        inputVariables.putValue("taskAttributes", Map.of("taskTypeId", taskType));
+        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
         inputVariables.putValue("case", caseData);
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
@@ -99,7 +99,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
     })
     void given_taskType_when_evaluate_dmn_then_it_returns_first_second_and_third_rules(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
-        inputVariables.putValue("taskAttributes", Map.of("taskTypeId", taskType));
+        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
@@ -133,7 +133,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
     })
     void given_taskType_when_evaluate_dmn_then_it_returns_first_and_forth_rule(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
-        inputVariables.putValue("taskAttributes", Map.of("taskTypeId", taskType));
+        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
@@ -161,7 +161,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
     })
     void given_taskType_when_evaluate_dmn_then_it_returns_first_and_fifth_rule(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
-        inputVariables.putValue("taskAttributes", Map.of("taskTypeId", taskType));
+        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
@@ -190,7 +190,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
     })
     void given_taskType_when_evaluate_dmn_then_it_returns_first_sixth_and_seventh_rule(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
-        inputVariables.putValue("taskAttributes", Map.of("taskTypeId", taskType));
+        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
@@ -255,7 +255,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
 
-        List<String> inputColumnIds = asList("taskTypeId", "case");
+        List<String> inputColumnIds = asList("taskType", "case");
         //Inputs
         assertThat(logic.getInputs().size(), is(2));
         assertThatInputContainInOrder(inputColumnIds, logic.getInputs());
