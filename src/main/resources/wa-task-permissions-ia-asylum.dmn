@@ -229,7 +229,7 @@ else
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_16jo15y">
-          <text>true</text>
+          <text>false</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0ks3xbb">
@@ -255,7 +255,7 @@ else
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1r4jwp2">
-          <text>true</text>
+          <text>false</text>
         </outputEntry>
       </rule>
     </decisionTable>
