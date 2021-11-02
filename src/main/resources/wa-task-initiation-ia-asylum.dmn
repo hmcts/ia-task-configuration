@@ -77,6 +77,41 @@ null</text>
           <text>"application"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1205pgi">
+        <inputEntry id="UnaryTests_1b29g9t">
+          <text>"makeAnApplication"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1x6e3bu">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10foe2w">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01k65lk">
+          <text>"Judge's review of application decision"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0fh79f5">
+          <text>"pending"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0axzr7q">
+          <text>"processApplicationToReviewDecision"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0eniqxw">
+          <text>"Process Application to Review Decision"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0tjns57">
+          <text>"TCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ntq0fj">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0spcrb9">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1pyp879">
+          <text>"application"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0awsb0p">
         <inputEntry id="UnaryTests_116xfi4">
           <text>"submitAppeal"</text>
