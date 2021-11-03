@@ -506,7 +506,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       + "        \"Data\" : {\n"
                                       + "          \"lastModifiedApplication\" : {\n"
                                       + "            \"type\" : \"Judge's review of application decision\",\n"
-                                      + "            \"decision\" : \"Pending\"\n"
+                                      + "            \"decision\" : \"\"\n"
                                       + "          }\n"
                                       + "        }\n"
                                       + "      }"),
