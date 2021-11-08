@@ -60,14 +60,14 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "group", "TCW",
                         "workingDaysAllowed", 2,
                         "delayDuration", 28,
-                        "processCategories",  "followUpOverdue"
+                        "processCategories", "followUpOverdue"
                     ),
                     Map.of(
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
-                        "processCategories",  "caseProgression"
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
@@ -82,14 +82,14 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "group", "TCW",
                         "workingDaysAllowed", 2,
                         "delayDuration", 28,
-                        "processCategories",  "followUpOverdue"
+                        "processCategories", "followUpOverdue"
                     ),
                     Map.of(
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
-                        "processCategories",  "caseProgression"
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
@@ -104,14 +104,14 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "group", "TCW",
                         "workingDaysAllowed", 2,
                         "delayDuration", 28,
-                        "processCategories",  "followUpOverdue"
+                        "processCategories", "followUpOverdue"
                     ),
                     Map.of(
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
-                        "processCategories",  "caseProgression"
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
@@ -125,7 +125,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Review the appeal",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
-                        "processCategories",  "caseProgression"
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
@@ -153,7 +153,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Review Respondent Evidence",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
-                        "processCategories",  "caseProgression"
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
@@ -167,7 +167,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Review Appeal Skeleton Argument",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
-                        "processCategories",  "caseProgression"
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
@@ -181,7 +181,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Review Appeal Skeleton Argument",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
-                        "processCategories",  "caseProgression"
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
@@ -195,7 +195,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Review Reasons For Appeal",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
-                        "processCategories",  "caseProgression"
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
@@ -209,7 +209,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Review Clarifying Questions Answers",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
-                        "processCategories",  "caseProgression"
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
@@ -223,7 +223,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Review Cma Requirements",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
-                        "processCategories",  "caseProgression"
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
@@ -237,7 +237,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Attend Cma",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
-                        "processCategories",  "caseProgression"
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
@@ -251,7 +251,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Review Respondent Response",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
-                        "processCategories",  "caseProgression"
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
@@ -265,7 +265,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Create Case Summary",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
-                        "processCategories",  "caseProgression"
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
@@ -279,7 +279,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Create Hearing Bundle",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
-                        "processCategories",  "caseProgression"
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
@@ -293,7 +293,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Start Decisions And Reasons Document",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
-                        "processCategories",  "caseProgression"
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
@@ -307,7 +307,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Review hearing requirements",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
-                        "processCategories",  "caseProgression"
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
@@ -322,7 +322,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "group", "TCW",
                         "workingDaysAllowed", 2,
                         "delayDuration", 0,
-                        "processCategories",  "followUpOverdue"
+                        "processCategories", "followUpOverdue"
                     )
                 )
             ),
@@ -337,7 +337,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "group", "TCW",
                         "workingDaysAllowed", 2,
                         "delayDuration", 0,
-                        "processCategories",  "followUpOverdue"
+                        "processCategories", "followUpOverdue"
                     )
                 )
             ),
@@ -352,7 +352,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "group", "TCW",
                         "workingDaysAllowed", 2,
                         "delayDuration", 0,
-                        "processCategories",  "followUpOverdue"
+                        "processCategories", "followUpOverdue"
                     )
                 )
             ),
@@ -367,7 +367,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "group", "TCW",
                         "workingDaysAllowed", 2,
                         "delayDuration", 0,
-                        "processCategories",  "followUpOverdue"
+                        "processCategories", "followUpOverdue"
                     )
                 )
             ),
@@ -382,7 +382,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "group", "TCW",
                         "workingDaysAllowed", 2,
                         "delayDuration", 0,
-                        "processCategories",  "followUpOverdue"
+                        "processCategories", "followUpOverdue"
                     )
                 )
             ),
@@ -397,7 +397,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "group", "TCW",
                         "workingDaysAllowed", 2,
                         "delayDuration", 0,
-                        "processCategories",  "followUpOverdue"
+                        "processCategories", "followUpOverdue"
                     )
                 )
             ),
@@ -412,7 +412,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "group", "TCW",
                         "workingDaysAllowed", 2,
                         "delayDuration", 0,
-                        "processCategories",  "followUpOverdue"
+                        "processCategories", "followUpOverdue"
                     )
                 )
             ),
@@ -427,7 +427,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "group", "TCW",
                         "workingDaysAllowed", 2,
                         "delayDuration", 0,
-                        "processCategories",  "followUpOverdue"
+                        "processCategories", "followUpOverdue"
                     )
                 )
             ),
@@ -441,7 +441,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Follow-up Notice of Change",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
-                        "processCategories",  "followUpOverdue",
+                        "processCategories", "followUpOverdue",
                         "delayDuration", 14
                     )
                 )
@@ -456,7 +456,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Follow-up Notice of Change",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
-                        "processCategories",  "followUpOverdue",
+                        "processCategories", "followUpOverdue",
                         "delayDuration", 14
                     )
                 )
@@ -496,16 +496,81 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
     }
 
+    public static Stream<Arguments> addendumScenarioProvider() {
+        return Stream.of(
+            Arguments.of(
+                "uploadAddendumEvidenceLegalRep",
+                "preHearing",
+                List.of(
+                    Map.of(
+                        "taskId", "startDecisionsAndReasonsDocument",
+                        "name", "Start Decisions And Reasons Document",
+                        "group", "TCW",
+                        "workingDaysAllowed", 2,
+                        "processCategories", "caseProgression"
+                    ),
+                    Map.of(
+                        "taskId", "reviewAddendumEvidence",
+                        "name", "Review Addendum Evidence",
+                        "group", "Judge",
+                        "workingDaysAllowed", 2
+                    )
+                )
+            ),
+            Arguments.of(
+                "uploadAddendumEvidenceLegalRep",
+                "decision",
+                List.of(
+                    Map.of(
+                        "taskId", "reviewAddendumEvidence",
+                        "name", "Review Addendum Evidence",
+                        "group", "Judge",
+                        "workingDaysAllowed", 2
+                    )
+                )
+            ),
+            Arguments.of(
+                "uploadAddendumEvidenceLegalRep",
+                "decided",
+                List.of(
+                    Map.of(
+                        "taskId", "reviewAddendumEvidence",
+                        "name", "Review Addendum Evidence",
+                        "group", "Judge",
+                        "workingDaysAllowed", 2
+                    )
+                )
+            )
+        );
+    }
+
+    @ParameterizedTest
+    @MethodSource("addendumScenarioProvider")
+    void given_addendum_events_when_evaluate_initiate_dmn_then_expect_reviewAddendumEvidence_task(
+        String eventId,
+        String postEventState,
+        List<Map<String, String>> expectation
+    ) {
+        VariableMap inputVariables = new VariableMapImpl();
+        inputVariables.putValue("eventId", eventId);
+        inputVariables.putValue("postEventState", postEventState);
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
+    }
+
     private static Map<String, Object> mapAppealType(String appealType) {
         String appealTypeJson = "{\n"
-               + "   \"Data\":{\n"
-               + "      \"appealType\":\"" + appealType + "\"\n"
-               + "   }"
-               + "}";
+            + "   \"Data\":{\n"
+            + "      \"appealType\":\"" + appealType + "\"\n"
+            + "   }"
+            + "}";
 
         ObjectMapper mapper = new ObjectMapper();
         try {
-            TypeReference<HashMap<String, Object>> typeRef = new TypeReference<>() {};
+            TypeReference<HashMap<String, Object>> typeRef = new TypeReference<>() {
+            };
             return mapper.readValue(appealTypeJson, typeRef);
         } catch (IOException exp) {
             return null;
