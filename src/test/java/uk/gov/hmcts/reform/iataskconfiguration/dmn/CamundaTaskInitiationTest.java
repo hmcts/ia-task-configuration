@@ -570,7 +570,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "group", "TCW",
                         "workingDaysAllowed", 2,
                         "delayDuration", 0,
-                        "processCategories",  "followUpOverdue"
+                        "processCategories",  "caseProgression"
                     )
                 )
             ),
@@ -675,7 +675,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "group", "TCW",
                         "workingDaysAllowed", 2,
                         "delayDuration", 0,
-                        "processCategories",  "followUpOverdue"
+                        "processCategories",  "caseProgression"
                     )
                 )
             ),

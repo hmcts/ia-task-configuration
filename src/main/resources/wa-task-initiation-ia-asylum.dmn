@@ -603,7 +603,7 @@ null</text>
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0um9t1g">
-          <text>"followUpOverdue"</text>
+          <text>"caseProgression"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_10q7721">
@@ -806,7 +806,7 @@ null</text>
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_12zlwly">
-          <text>"followUpOverdue"</text>
+          <text>"caseProgression"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1nbkbh7">
