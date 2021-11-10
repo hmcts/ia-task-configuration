@@ -513,7 +513,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "reviewAddendumEvidence",
                         "name", "Review Addendum Evidence",
                         "group", "Judge",
-                        "workingDaysAllowed", 2
+                        "workingDaysAllowed", 2,
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
@@ -525,7 +526,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "reviewAddendumEvidence",
                         "name", "Review Addendum Evidence",
                         "group", "Judge",
-                        "workingDaysAllowed", 2
+                        "workingDaysAllowed", 2,
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
@@ -537,7 +539,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "reviewAddendumEvidence",
                         "name", "Review Addendum Evidence",
                         "group", "Judge",
-                        "workingDaysAllowed", 2
+                        "workingDaysAllowed", 2,
+                        "processCategories", "caseProgression"
                     )
                 )
             )
