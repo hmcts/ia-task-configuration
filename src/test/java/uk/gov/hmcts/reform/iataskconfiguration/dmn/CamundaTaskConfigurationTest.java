@@ -18,7 +18,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -131,7 +130,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     void when_taskId_then_return_Routine_Work(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
 
-        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
+        inputVariables.putValue("taskType", taskType);
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
@@ -160,7 +159,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     void when_taskId_then_return_Decision_making_work(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
 
-        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
+        inputVariables.putValue("taskType", taskType);
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
@@ -185,7 +184,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     void when_taskId_then_return_Hearing_Work(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
 
-        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
+        inputVariables.putValue("taskType", taskType);
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
@@ -211,7 +210,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     void when_taskId_then_return_Applications(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
 
-        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
+        inputVariables.putValue("taskType", taskType);
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
@@ -234,7 +233,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     void when_taskId_then_return_Upper_Tribunal(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
 
-        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
+        inputVariables.putValue("taskType", taskType);
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
@@ -255,7 +254,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     void when_caseData_and_taskType_then_return_expected_name_and_value_rows(Scenario scenario) {
         VariableMap inputVariables = new VariableMapImpl();
         inputVariables.putValue("caseData", scenario.caseData);
-        inputVariables.putValue("taskAttributes", scenario.getTaskAttributes());
+        inputVariables.putValue("taskType", scenario.taskType);
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
@@ -313,7 +312,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                         "list_items", List.of(Map.of("code", "refusalOfHumanRights", "label", refusalOfEuLabel))
                     )
                 ))
-                .taskAttributes(Map.of("taskType", "arrangeOfflinePayment"))
+                .taskType("arrangeOfflinePayment")
                 .expectedCaseNameValue("some appellant given names some appellant family name")
                 .expectedAppealTypeValue("Human rights")
                 .expectedRegionValue("some other region")
@@ -339,7 +338,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                         "list_items", List.of(Map.of("code", "refusalOfHumanRights", "label", refusalOfEuLabel))
                     )
                 ))
-                .taskAttributes(Map.of("taskType", ""))
+                .taskType("")
                 .expectedCaseNameValue("some appellant given names some appellant family name")
                 .expectedAppealTypeValue("Human rights")
                 .expectedRegionValue("some other region")
@@ -351,7 +350,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         Scenario givenNoCaseDataAndSomeTaskTypeThenExpectOnlyTheWorkTypeRuleScenario =
             Scenario.builder()
                 .caseData(emptyMap())
-                .taskAttributes(Map.of("taskType", "markCaseAsPaid"))
+                .taskType("markCaseAsPaid")
                 .expectedCaseNameValue(null)
                 .expectedAppealTypeValue("")
                 .expectedRegionValue("1")
@@ -374,7 +373,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     @Builder
     private static class Scenario {
         Map<String, Object> caseData;
-        Map<String, Object> taskAttributes;
+        String taskType;
+
         String expectedCaseNameValue;
         String expectedAppealTypeValue;
         String expectedRegionValue;
@@ -393,8 +393,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         getExpectedValue(rules, "location", scenario.getExpectedLocationValue());
         getExpectedValue(rules, "locationName", scenario.getExpectedLocationNameValue());
         getExpectedValue(rules, "caseManagementCategory", scenario.getExpectedCaseManagementCategoryValue());
-        if (!Objects.isNull(scenario.getTaskAttributes())
-            && StringUtils.isNotBlank(scenario.taskAttributes.get("taskType").toString())) {
+        if (StringUtils.isNotBlank(scenario.taskType)) {
             getExpectedValue(rules, "workType", scenario.getExpectedWorkType());
         }
 
