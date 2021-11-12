@@ -207,6 +207,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0n9e4tj">
+        <inputEntry id="UnaryTests_0fs9v2g">
+          <text>"generateDecisionAndReasons"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1hcnnwk">
+          <text>"reviewHearingBundle"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_19vjdi8">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_00ego89">
         <inputEntry id="UnaryTests_0mupz2m">
           <text>"requestRespondentEvidence","requestCaseBuilding","requestReasonsForAppeal","sendDirection","requestRespondentReview","requestCaseEdit","sendDirectionWithQuestions","requestCmaRequirements","reviewCmaRequirements","updateDetailsAfterCma","requestResponseAmend","reviewHearingRequirements","createCaseSummary","generateHearingBundle","decisionAndReasonsStarted","recordAllocatedJudge","changeDirectionDueDate","decideAnApplication"</text>

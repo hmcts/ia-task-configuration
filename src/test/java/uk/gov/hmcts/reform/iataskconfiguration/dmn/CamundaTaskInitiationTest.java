@@ -546,6 +546,27 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "listCase",
+                "prepareForHearing",
+                null,
+                List.of(
+                    Map.of(
+                        "taskId", "createCaseSummary",
+                        "name", "Create Case Summary",
+                        "group", "TCW",
+                        "workingDaysAllowed", 2,
+                        "processCategories", "caseProgression"
+                    ),
+                    Map.of(
+                        "taskId", "reviewHearingBundle",
+                        "name", "Review Hearing bundle",
+                        "group", "TCW",
+                        "workingDaysAllowed", 0,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
                 null,
                 "finalBundling",
                 null,
@@ -873,7 +894,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(5));
         assertThat(logic.getOutputs().size(), is(6));
-        assertThat(logic.getRules().size(), is(30));
+        assertThat(logic.getRules().size(), is(31));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {
@@ -953,4 +974,5 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             return null;
         }
     }
+
 }
