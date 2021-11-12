@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.4.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.5.0">
   <decision id="wa-task-initiation-ia-asylum" name="Task initiation DMN">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT">
       <input id="Input_1" label="Event Id" camunda:inputVariable="eventId">
@@ -7,7 +7,7 @@
           <text></text>
         </inputExpression>
       </input>
-      <input id="InputClause_0gxli97" label="Post event state" biodi:width="268" camunda:inputVariable="postEventState">
+      <input id="InputClause_0gxli97" label="Post event state" biodi:width="159" camunda:inputVariable="postEventState">
         <inputExpression id="LiteralExpression_0dijl5x" typeRef="string">
           <text></text>
         </inputExpression>
@@ -720,6 +720,35 @@ null</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1ydf6vl">
           <text>"followUpOverdue"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_156zx69">
+        <inputEntry id="UnaryTests_02x35qp">
+          <text>"allocateTheCase"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1y13vcd">
+          <text>"preHearing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1gbr5zf">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_11wbkoa">
+          <text>"reviewHearingBundle"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_03no7yx">
+          <text>"Review Hearing bundle"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0l0odx0">
+          <text>"Judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_09xye1s">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0jhixxa">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_16pxmjz">
+          <text>"caseProgression"</text>
         </outputEntry>
       </rule>
     </decisionTable>
