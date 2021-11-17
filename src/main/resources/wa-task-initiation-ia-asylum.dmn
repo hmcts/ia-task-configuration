@@ -724,10 +724,10 @@ null</text>
       </rule>
       <rule id="DecisionRule_156zx69">
         <inputEntry id="UnaryTests_02x35qp">
-          <text></text>
+          <text>"listCase"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1y13vcd">
-          <text>"preHearing"</text>
+          <text>"prepareForHearing"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1gbr5zf">
           <text></text>
@@ -745,7 +745,7 @@ null</text>
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0jhixxa">
-          <text></text>
+          <text>0</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_16pxmjz">
           <text>"caseProgression"</text>
