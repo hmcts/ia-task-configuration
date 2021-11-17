@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.4.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.5.0">
   <decision id="wa-task-initiation-ia-asylum" name="Task initiation DMN">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT">
-      <input id="Input_1" label="Event Id" camunda:inputVariable="eventId">
+      <input id="Input_1" label="Event Id" biodi:width="229" camunda:inputVariable="eventId">
         <inputExpression id="InputExpression_1" typeRef="string">
           <text></text>
         </inputExpression>
@@ -720,6 +720,35 @@ null</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1ydf6vl">
           <text>"followUpOverdue"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_01gn31z">
+        <inputEntry id="UnaryTests_1f34on1">
+          <text>"decisionAndReasonsStarted"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0strwdo">
+          <text>"decision"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01fpnx7">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1w0qdop">
+          <text>"startDecisionsAndReasonsDocument"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1bpzojp">
+          <text>"Start decisions and reasons document"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1bc78wo">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1na4w4n">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0dx7i96">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0f9b7hb">
+          <text>"caseProgression"</text>
         </outputEntry>
       </rule>
     </decisionTable>
