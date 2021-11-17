@@ -199,13 +199,12 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "decisionAndReasonsStarted",
-                asList(
+                "generateDecisionAndReasons",
+                List.of(
                     Map.of(
                         "taskType", "startDecisionsAndReasonsDocument",
                         "completionMode", "Auto"
-                    ),
-                    emptyMap()
+                    )
                 )
             ),
             Arguments.of(

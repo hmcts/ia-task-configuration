@@ -193,7 +193,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
     @ParameterizedTest
     @CsvSource(value = {
         "reviewHearingBundle", "generateDraftDecisionAndReasons", "uploadDecision", "reviewAddendumHomeOfficeEvidence",
-        "reviewAddendumAppellantEvidence", "reviewAddendumEvidence"
+        "reviewAddendumAppellantEvidence", "reviewAddendumEvidence, startDecisionsAndReasonsDocument"
     })
     void given_taskType_when_evaluate_dmn_then_it_returns_first_sixth_and_seventh_rule(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
