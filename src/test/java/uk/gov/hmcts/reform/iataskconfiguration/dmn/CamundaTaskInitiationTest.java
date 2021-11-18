@@ -284,6 +284,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewHearingBundle",
                         "name", "Review Hearing bundle",
+                        "group", "TCW",
                         "workingDaysAllowed", 0,
                         "processCategories", "caseProgression"
                     )
