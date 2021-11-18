@@ -116,13 +116,13 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "name", "tribunal-caseworker",
                 "value", "Read,Refer,Own",
                 "roleCategory", "LEGAL_OPERATIONS",
-                "autoAssignable", true
+                "autoAssignable", false
             ),
             Map.of(
                 "name", "senior-tribunal-caseworker",
                 "value", "Read,Refer,Own",
                 "roleCategory", "LEGAL_OPERATIONS",
-                "autoAssignable", true
+                "autoAssignable", false
             )
         )));
     }
