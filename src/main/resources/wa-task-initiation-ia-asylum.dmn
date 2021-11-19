@@ -77,6 +77,41 @@ null</text>
           <text>"application"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1cuj0a1">
+        <inputEntry id="UnaryTests_0ta0c5p">
+          <text>"decideAnApplication"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1q7kmhp">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0q4uyr6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1msnczz">
+          <text>"Adjourn","Expedite","Transfer","Update hearing requirements"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jybxg3">
+          <text>"granted"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0e7h5hl">
+          <text>"editListing"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1yv85zv">
+          <text>"Edit Listing"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1rfwteq">
+          <text>"TCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0pokif1">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1vfli4b">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0graerw">
+          <text></text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0awsb0p">
         <inputEntry id="UnaryTests_116xfi4">
           <text>"submitAppeal"</text>
