@@ -846,6 +846,53 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
     }
 
+    public static Stream<Arguments> decideAnApplicationScenarioProvider() {
+        return Stream.of(
+            getDecideAnApplicationArgumentsOf("Adjourn"),
+            getDecideAnApplicationArgumentsOf("Expedite"),
+            getDecideAnApplicationArgumentsOf("Transfer")
+        );
+    }
+
+    private static Arguments getDecideAnApplicationArgumentsOf(String applicationType) {
+        return Arguments.of(
+            "decideAnApplication",
+            null,
+            mapAdditionalData(" {\n"
+                                  + "        \"Data\" : {\n"
+                                  + "          \"lastModifiedApplication\" : {\n"
+                                  + "            \"type\" : \"" + applicationType + "\",\n"
+                                  + "            \"decision\" : \"Granted\"\n"
+                                  + "          }\n"
+                                  + "        }\n"
+                                  + "      }"),
+            singletonList(
+                Map.of(
+                    "taskId", "editListing",
+                    "name", "Edit Listing",
+                    "group", "TCW",
+                    "workingDaysAllowed", 2
+                )
+            )
+        );
+    }
+
+    @ParameterizedTest
+    @MethodSource("decideAnApplicationScenarioProvider")
+    void given_decideAnApplication_should_evaluate_dmn(String eventId,
+                                                       String postEventState,
+                                                       Map<String, Object> additionalData,
+                                                       List<Map<String, String>> expectation) {
+        VariableMap inputVariables = new VariableMapImpl();
+        inputVariables.putValue("eventId", eventId);
+        inputVariables.putValue("postEventState", postEventState);
+        inputVariables.putValue("additionalData", additionalData);
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
+    }
+
     @Test
     void if_this_test_fails_needs_updating_with_your_changes() {
 

@@ -180,9 +180,35 @@ else
           <text>false</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1ozfrsh">
+        <inputEntry id="UnaryTests_0uib54a">
+          <text>"editListing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1x1ax8h">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1eihmu3">
+          <text>"hearing-centre-admin"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_19susnl">
+          <text>"Read,Refer,Own"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0lqk766">
+          <text>"ADMINISTRATOR"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0r854kv">
+          <text>"IA"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1piwnuo">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_06hbsav">
+          <text>true</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1xv2gxq">
         <inputEntry id="UnaryTests_1oxh1tt">
-          <text>"reviewHearingBundle","generateDraftDecisionAndReasons","uploadDecision","reviewAddendumHomeOfficeEvidence","reviewAddendumAppellantEvidence","reviewAddendumEvidence"</text>
+          <text>"reviewHearingBundle","generateDraftDecisionAndReasons","uploadDecision","reviewAddendumHomeOfficeEvidence","reviewAddendumAppellantEvidence","reviewAddendumEvidence","editListing"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_19myw41">
           <text></text>
