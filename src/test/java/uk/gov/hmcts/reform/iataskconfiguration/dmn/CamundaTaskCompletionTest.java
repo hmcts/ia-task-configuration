@@ -266,7 +266,8 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskType", "editListing",
                         "completionMode", "Auto"
-                    )
+                    ),
+                    emptyMap()
                 )
             ),
             Arguments.of(
