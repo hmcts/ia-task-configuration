@@ -261,13 +261,6 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "autoAssignable", true
             ),
             Map.of(
-                "name", "hearing-judge",
-                "value", "Read,Refer,Own",
-                "roleCategory", "JUDICIAL",
-                "authorisations", "IA",
-                "autoAssignable", true
-            ),
-            Map.of(
                 "name", "judge",
                 "value", "Read,Refer,Own",
                 "roleCategory", "JUDICIAL",

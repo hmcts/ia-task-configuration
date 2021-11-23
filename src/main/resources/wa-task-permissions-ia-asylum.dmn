@@ -208,7 +208,7 @@ else
       </rule>
       <rule id="DecisionRule_1xv2gxq">
         <inputEntry id="UnaryTests_1oxh1tt">
-          <text>"reviewHearingBundle","generateDraftDecisionAndReasons","uploadDecision","reviewAddendumHomeOfficeEvidence","reviewAddendumAppellantEvidence","reviewAddendumEvidence","editListing"</text>
+          <text>"reviewHearingBundle","generateDraftDecisionAndReasons","uploadDecision","reviewAddendumHomeOfficeEvidence","reviewAddendumAppellantEvidence","reviewAddendumEvidence"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_19myw41">
           <text></text>
