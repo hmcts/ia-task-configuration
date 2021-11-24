@@ -234,7 +234,7 @@ null</text>
           <text>"uploadAdditionalEvidenceHomeOffice"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1j8mchm">
-          <text>"caseUnderReview","respondentReview","submitHearingRequirements","listing","prepareForHearing"</text>
+          <text>"caseBuilding","caseUnderReview","respondentReview","submitHearingRequirements","listing","prepareForHearing"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0pnjfti">
           <text></text>
