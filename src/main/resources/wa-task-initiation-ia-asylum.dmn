@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.10.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.11.1">
   <decision id="wa-task-initiation-ia-asylum" name="Task initiation DMN">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT">
       <input id="Input_1" label="Event Id" biodi:width="402" camunda:inputVariable="eventId">
@@ -545,6 +545,35 @@ null</text>
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0jmdde0">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_07teyxb">
+        <inputEntry id="UnaryTests_0p3nl58">
+          <text>"draftHearingRequirements","listCaseWithoutHearingRequirements"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15qo5ag">
+          <text>"listing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1njy151">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ivegyu">
+          <text>"addListingDate"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0oxhisb">
+          <text>"Add listing date"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0y8qs1z">
+          <text>"TCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1w0pa9e">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ujoz1u">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_16vl1mf">
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
