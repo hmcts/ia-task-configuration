@@ -95,7 +95,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         "reviewAdditionalHomeOfficeEvidence", "reviewAdditionalAppellantEvidence", "createHearingBundle",
         "processApplication"
     })
-    void given_taskType_when_evaluate_dmn_then_it_returns_supervisor_and_manager_and_TCWs_rules(String taskType) {
+    void given_taskType_when_evaluate_dmn_then_it_returns_supervisor_and_manager_and_Tcw_rules(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
         inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
 
@@ -132,7 +132,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
     @CsvSource(value = {
         "arrangeOfflinePayment", "markCaseAsPaid"
     })
-    void given_taskType_when_evaluate_dmn_then_it_returns_supervisor_and_NBC_rules(String taskType) {
+    void given_taskType_when_evaluate_dmn_then_it_returns_supervisor_and_Nbc_rules(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
         inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
 
@@ -215,7 +215,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
 
     @ParameterizedTest
     @CsvSource(value = {"addListingDate"})
-    void given_taskType_when_evaluate_dmn_then_it_returns_TCWs_NBC_judge_rules(String taskType) {
+    void given_taskType_when_evaluate_dmn_then_it_returns_Tcw_Nbc_judge_rules(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
         inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
 
