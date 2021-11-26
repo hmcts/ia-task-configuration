@@ -94,7 +94,7 @@ null</text>
           <text>"Granted"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0t26cs3">
-          <text>"udpateHearingRequirements"</text>
+          <text>"updateHearingRequirements"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1qomupt">
           <text>"Update hearing requirements"</text>
