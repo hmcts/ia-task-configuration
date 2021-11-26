@@ -218,9 +218,20 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1ny9qek">
+        <inputEntry id="UnaryTests_0nbkrvd">
+          <text>"updateHearingRequirements"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_07jnfi6">
+          <text>"updateHearingRequirements"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ebts2z">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_00ego89">
         <inputEntry id="UnaryTests_0mupz2m">
-          <text>"requestRespondentEvidence","requestCaseBuilding","requestReasonsForAppeal","sendDirection","requestRespondentReview","requestCaseEdit","sendDirectionWithQuestions","requestCmaRequirements","reviewCmaRequirements","updateDetailsAfterCma","requestResponseAmend","reviewHearingRequirements","createCaseSummary","generateHearingBundle","decisionAndReasonsStarted","recordAllocatedJudge","changeDirectionDueDate","decideAnApplication","editCaseListing"</text>
+          <text>"requestRespondentEvidence","requestCaseBuilding","requestReasonsForAppeal","sendDirection","requestRespondentReview","requestCaseEdit","sendDirectionWithQuestions","requestCmaRequirements","reviewCmaRequirements","updateDetailsAfterCma","requestResponseAmend","reviewHearingRequirements","createCaseSummary","generateHearingBundle","decisionAndReasonsStarted","recordAllocatedJudge","changeDirectionDueDate","decideAnApplication","editCaseListing","updateHearingRequirements"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1qvmdyv">
           <text></text>
