@@ -240,7 +240,7 @@ else
       <rule id="DecisionRule_0b91c94">
         <description>Judge task permissions</description>
         <inputEntry id="UnaryTests_1099gbv">
-          <text>"reviewHearingBundle","generateDraftDecisionAndReasons","uploadDecision","reviewAddendumHomeOfficeEvidence","reviewAddendumAppellantEvidence","reviewAddendumEvidence","editListing",updateHearingRequirements"</text>
+          <text>"reviewHearingBundle","generateDraftDecisionAndReasons","uploadDecision","reviewAddendumHomeOfficeEvidence","reviewAddendumAppellantEvidence","reviewAddendumEvidence","editListing","updateHearingRequirements"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1sgyxq7">
           <text></text>

@@ -214,10 +214,15 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         )));
     }
 
-    @Test
-    void given_taskType_is_editListing_when_evaluate_dmn_then_returns_expected_rules() {
+    @ParameterizedTest
+    @CsvSource(value = {
+        "editListing", "updateHearingRequirements"
+    })
+    void given_taskType_is_editListing_or_updateHearingRequirements_when_evaluate_dmn_then_returns_expected_rules(
+        String taskType) {
+
         VariableMap inputVariables = new VariableMapImpl();
-        inputVariables.putValue("taskAttributes", Map.of("taskType", "editListing"));
+        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
