@@ -40,7 +40,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(11));
+        assertThat(logic.getRules().size(), is(12));
     }
 
     @SuppressWarnings("checkstyle:indentation")
@@ -262,6 +262,27 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         assertThat(dmnDecisionTableResult.getResultList(), is(getExpectedValues(scenario)));
     }
 
+    @ParameterizedTest
+    @MethodSource("markdownScenarioProvider")
+    void when_description_is_set_then_return_mark_down(Scenario scenario) {
+        VariableMap inputVariables = new VariableMapImpl();
+
+        inputVariables.putValue("taskAttributes", scenario.getTaskAttributes());
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        List<Map<String, Object>> descriptionList = dmnDecisionTableResult.getResultList().stream()
+            .filter((r) -> r.containsValue("description"))
+            .collect(Collectors.toList());
+
+        assertEquals(1, descriptionList.size());
+
+        assertEquals(Map.of(
+            "name", "description",
+            "value", scenario.getExpectedMarkdown()
+        ), descriptionList.get(0));
+    }
+
     private static Stream<Scenario> nameAndValueScenarioProvider() {
         Scenario givenCaseDataIsMissedThenDefaultToTaylorHouseScenario = Scenario.builder()
             .caseData(emptyMap())
@@ -370,6 +391,44 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         );
     }
 
+    private static Stream<Scenario> markdownScenarioProvider() {
+        String appealTypeMarkdown = "### Heading  \n"
+                                    + "##Heading  \n"
+                                    + "`somecode`  \n"
+                                    + "```paragraph here```  \n"
+                                    + "This text is ___really important___.\n"
+                                    + "\n"
+                                    + "> #### The quarterly results look great!\n"
+                                    + ">\n"
+                                    + "> - Revenue was off the chart.\n"
+                                    + "> - Profits were higher than ever.\n"
+                                    + ">\n"
+                                    + ">  *Everything* is going according to **plan**.\n"
+                                    + "1. First item  \n"
+                                    + "2. Second item  \n"
+                                    + "3. Third item  \n"
+                                    + "4. Fourth item\n"
+                                    + "\n"
+                                    + "- First item  \n"
+                                    + "- Second item  \n"
+                                    + "- Third item  \n"
+                                    + "- Fourth item\n"
+                                    + "\n"
+                                    + "\n"
+                                    + "<https://www.markdownguide.org>\n"
+                                    + "<fake@example.com>\n"
+                                    + "\n"
+                                    + "[Request respondent evidence]"
+                                    + "(/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentEvidence)";
+        Scenario appealType = Scenario.builder()
+            .caseData(emptyMap())
+            .taskAttributes(Map.of("taskType", "reviewTheAppeal"))
+            .expectedMarkdown(appealTypeMarkdown)
+            .build();
+
+        return Stream.of(appealType);
+    }
+
     @Value
     @Builder
     private static class Scenario {
@@ -382,6 +441,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         String expectedLocationNameValue;
         String expectedCaseManagementCategoryValue;
         String expectedWorkType;
+        String expectedMarkdown;
     }
 
     private List<Map<String, String>> getExpectedValues(Scenario scenario) {
@@ -396,6 +456,11 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         if (!Objects.isNull(scenario.getTaskAttributes())
             && StringUtils.isNotBlank(scenario.taskAttributes.get("taskType").toString())) {
             getExpectedValue(rules, "workType", scenario.getExpectedWorkType());
+        }
+        if (!Objects.isNull(scenario.getTaskAttributes())
+            && StringUtils.isNotBlank(scenario.taskAttributes.get("taskType").toString())
+            && StringUtils.isNotBlank(scenario.getExpectedMarkdown())) {
+            getExpectedValue(rules, "description", scenario.getExpectedMarkdown());
         }
 
         return rules;

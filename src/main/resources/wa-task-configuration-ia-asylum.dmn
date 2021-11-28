@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.2.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.4.0">
   <decision id="wa-task-configuration-ia-asylum" name="Task configuration DMN">
     <decisionTable id="DecisionTable_14cx079" hitPolicy="COLLECT">
       <input id="InputClause_1gxyo7f" label="CCD Case Data" camunda:inputVariable="caseData">
@@ -182,6 +182,46 @@ else if caseData.appealType = "revocationOfProtection" then "Revocation" else ""
         </outputEntry>
         <outputEntry id="LiteralExpression_0jcwzi7">
           <text>"upper_tribunal"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0v4vfgp">
+        <inputEntry id="UnaryTests_1kzf249">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1nr37wa">
+          <text>"reviewTheAppeal"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1e6pz1p">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1hd1oqt">
+          <text>"### Heading  
+##Heading  
+`somecode`  
+```paragraph here```  
+This text is ___really important___.
+
+&gt; #### The quarterly results look great!
+&gt;
+&gt; - Revenue was off the chart.
+&gt; - Profits were higher than ever.
+&gt;
+&gt;  *Everything* is going according to **plan**.
+1. First item  
+2. Second item  
+3. Third item  
+4. Fourth item
+
+- First item  
+- Second item  
+- Third item  
+- Fourth item
+
+
+&lt;https://www.markdownguide.org&gt;
+&lt;fake@example.com&gt;
+
+[Request respondent evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentEvidence)"</text>
         </outputEntry>
       </rule>
     </decisionTable>
