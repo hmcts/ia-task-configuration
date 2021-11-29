@@ -243,6 +243,49 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
     }
 
     @Test
+    void given_sendDecisionsAndReasons_when_evaluates_then_judges_tcws_rules() {
+        VariableMap inputVariables = new VariableMapImpl();
+        inputVariables.putValue("taskAttributes", Map.of("taskType", "sendDecisionsAndReasons"));
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        MatcherAssert.assertThat(dmnDecisionTableResult.getResultList(), is(List.of(
+            Map.of(
+                "name", "task-supervisor",
+                "value", "Read,Refer,Manage,Cancel",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "tribunal-caseworker",
+                "value", "Read,Refer,Own",
+                "roleCategory", "LEGAL_OPERATIONS",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "senior-tribunal-caseworker",
+                "value", "Read,Refer,Own",
+                "roleCategory", "LEGAL_OPERATIONS",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "hearing-judge",
+                "value", "Read,Refer,Own",
+                "roleCategory", "JUDICIAL",
+                "authorisations", "IA",
+                "autoAssignable", true
+            ),
+            Map.of(
+                "name", "judge",
+                "value", "Read,Refer,Own",
+                "roleCategory", "JUDICIAL",
+                "authorisations", "IA",
+                "autoAssignable", false
+            )
+        )));
+
+    }
+
+    @Test
     void if_this_test_fails_needs_updating_with_your_changes() {
 
         //The purpose of this test is to prevent adding new rows without being tested

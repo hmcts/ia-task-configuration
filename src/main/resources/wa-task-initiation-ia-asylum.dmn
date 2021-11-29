@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.10.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.11.1">
   <decision id="wa-task-initiation-ia-asylum" name="Task initiation DMN">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT">
       <input id="Input_1" label="Event Id" biodi:width="402" camunda:inputVariable="eventId">
@@ -836,6 +836,35 @@ null</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1ydf6vl">
           <text>"followUpOverdue"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1sp3n4i">
+        <inputEntry id="UnaryTests_0mco2ez">
+          <text>"decisionAndReasonsStarted"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1bobsl8">
+          <text>"decision"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zkw8k3">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ahmzme">
+          <text>"sendDecisionsAndReasons"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0wkh1jh">
+          <text>"Send decisions and reasons"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0cbxo8g">
+          <text>"TCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_10t2l1v">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_133ujy9">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_06pyxlu">
+          <text></text>
         </outputEntry>
       </rule>
     </decisionTable>
