@@ -109,7 +109,7 @@ null</text>
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0graerw">
-          <text></text>
+          <text>"application"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0gqilgu">
@@ -144,7 +144,7 @@ null</text>
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1uwhpct">
-          <text></text>
+          <text>"application"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0awsb0p">
