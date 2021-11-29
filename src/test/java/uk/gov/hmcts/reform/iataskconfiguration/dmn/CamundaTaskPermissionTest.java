@@ -66,6 +66,17 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                         "autoAssignable", false
                     )
                 )
+            ),
+            Arguments.of(
+                "someTaskType",
+                "{}",
+                List.of(
+                    Map.of(
+                        "name", "task-supervisor",
+                        "value", "Read,Refer,Manage,Cancel",
+                        "autoAssignable", false
+                    )
+                )
             )
         );
     }
@@ -93,7 +104,8 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         "followUpOverdueRespondentReview", "reviewHearingRequirements", "followUpOverdueHearingRequirements",
         "reviewCmaRequirements", "reviewAdditionalHomeOfficeEvidence", "reviewAdditionalAppellantEvidence",
         "reviewAdditionalHomeOfficeEvidence", "reviewAdditionalAppellantEvidence", "createHearingBundle",
-        "processApplication"
+        "processApplication", "attendCma", "startDecisionsAndReasonsDocument", "createCaseSummary", "followUpNoticeOfChange",
+        "followUpOverdueCmaRequirements", "followUpNonStandardDirection", "decideOnTimeExtension"
     })
     void given_taskType_when_evaluate_dmn_then_it_returns_first_second_and_third_rules(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
