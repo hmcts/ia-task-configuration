@@ -793,6 +793,27 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       + "      }"),
                 emptyList()
             ),
+            Arguments.of(
+                "makeAnApplication",
+                null,
+                mapAdditionalData(" {\n"
+                                      + "        \"Data\" : {\n"
+                                      + "          \"lastModifiedApplication\" : {\n"
+                                      + "            \"type\" : \"Judge's review of application decision\",\n"
+                                      + "            \"decision\" : \"\"\n"
+                                      + "          }\n"
+                                      + "        }\n"
+                                      + "      }"),
+                singletonList(
+                    Map.of(
+                        "taskId", "processApplicationToReviewDecision",
+                        "name", "Process Application to Review Decision",
+                        "group", "TCW",
+                        "workingDaysAllowed", 2,
+                        "processCategories", "application"
+                    )
+                )
+            ),
             getArgumentOf("Adjourn"),
             getArgumentOf("Expedite"),
             getArgumentOf("Link/unlink appeals"),
@@ -853,7 +874,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(5));
         assertThat(logic.getOutputs().size(), is(6));
-        assertThat(logic.getRules().size(), is(28));
+        assertThat(logic.getRules().size(), is(29));
     }
 
     private static Map<String, Object> mapAdditionalData(String additionalData) {
