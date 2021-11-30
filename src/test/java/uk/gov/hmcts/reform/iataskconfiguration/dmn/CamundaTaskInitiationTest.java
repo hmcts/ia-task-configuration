@@ -37,195 +37,238 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
         return Stream.of(
             Arguments.of(
-                "makeAnApplication",
-                null,
-                null,
-                singletonList(
-                    Map.of(
-                        "taskId", "processApplication",
-                        "name", "Process Application",
-                        "group", "TCW",
-                        "workingDaysAllowed", 2
-                    )
-                )
-            ),
-            Arguments.of(
                 "submitAppeal",
                 "appealSubmitted",
-                mapAppealType("revocationOfProtection"),
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "revocationOfProtection" + "\"\n"
+                                      + "   }"
+                                      + "}"),
                 singletonList(
                     Map.of(
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
-                        "processCategories",  "caseProgression"
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
             Arguments.of(
                 "submitAppeal",
                 "appealSubmitted",
-                mapAppealType("refusalOfEu"),
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "refusalOfEu" + "\"\n"
+                                      + "   }"
+                                      + "}"),
                 emptyList()
             ),
             Arguments.of(
                 "submitAppeal",
                 "appealSubmitted",
-                mapAppealType("refusalOfHumanRights"),
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "refusalOfHumanRights" + "\"\n"
+                                      + "   }"
+                                      + "}"),
                 emptyList()
             ),
             Arguments.of(
                 "submitAppeal",
                 "appealSubmitted",
-                mapAppealType("deprivation"),
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "deprivation" + "\"\n"
+                                      + "   }"
+                                      + "}"),
                 singletonList(
                     Map.of(
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
-                        "processCategories",  "caseProgression"
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
             Arguments.of(
                 "submitAppeal",
                 "appealSubmitted",
-                mapAppealType("protection"),
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "protection" + "\"\n"
+                                      + "   }"
+                                      + "}"),
                 singletonList(
                     Map.of(
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
-                        "processCategories",  "caseProgression"
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
             Arguments.of(
                 "payAndSubmitAppeal",
                 "appealSubmitted",
-                mapAppealType("protection"),
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "protection" + "\"\n"
+                                      + "   }"
+                                      + "}"),
                 singletonList(
                     Map.of(
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
-                        "processCategories",  "caseProgression"
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
             Arguments.of(
                 "payAndSubmitAppeal",
                 "appealSubmitted",
-                mapAppealType("refusalOfHumanRights"),
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "refusalOfHumanRights" + "\"\n"
+                                      + "   }"
+                                      + "}"),
                 singletonList(
                     Map.of(
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
-                        "processCategories",  "caseProgression"
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
             Arguments.of(
                 "payAndSubmitAppeal",
                 "appealSubmitted",
-                mapAppealType("refusalOfEu"),
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "refusalOfEu" + "\"\n"
+                                      + "   }"
+                                      + "}"),
                 singletonList(
                     Map.of(
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
-                        "processCategories",  "caseProgression"
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
             Arguments.of(
                 "markAppealPaid",
                 "appealSubmitted",
-                mapAppealType("refusalOfHumanRights"),
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "refusalOfHumanRights" + "\"\n"
+                                      + "   }"
+                                      + "}"),
                 singletonList(
                     Map.of(
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
-                        "processCategories",  "caseProgression"
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
             Arguments.of(
                 "markAppealPaid",
                 "appealSubmitted",
-                mapAppealType("refusalOfEu"),
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "refusalOfEu" + "\"\n"
+                                      + "   }"
+                                      + "}"),
                 singletonList(
                     Map.of(
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
-                        "processCategories",  "caseProgression"
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
             Arguments.of(
                 "moveToSubmitted",
                 "appealSubmitted",
-                mapAppealType("refusalOfHumanRights"),
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "refusalOfHumanRights" + "\"\n"
+                                      + "   }"
+                                      + "}"),
                 singletonList(
                     Map.of(
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
-                        "processCategories",  "caseProgression"
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
             Arguments.of(
                 "moveToSubmitted",
                 "appealSubmitted",
-                mapAppealType("refusalOfEu"),
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "refusalOfEu" + "\"\n"
+                                      + "   }"
+                                      + "}"),
                 singletonList(
                     Map.of(
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
-                        "processCategories",  "caseProgression"
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
             Arguments.of(
                 "payForAppeal",
                 "appealSubmitted",
-                mapAppealType("refusalOfHumanRights"),
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "refusalOfHumanRights" + "\"\n"
+                                      + "   }"
+                                      + "}"),
                 singletonList(
                     Map.of(
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
-                        "processCategories",  "caseProgression"
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
             Arguments.of(
                 "payForAppeal",
                 "appealSubmitted",
-                mapAppealType("refusalOfEu"),
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "refusalOfEu" + "\"\n"
+                                      + "   }"
+                                      + "}"),
                 singletonList(
                     Map.of(
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
-                        "processCategories",  "caseProgression"
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
@@ -253,7 +296,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Review Respondent Evidence",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
-                        "processCategories",  "caseProgression"
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
@@ -261,13 +304,13 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "uploadAdditionalEvidence",
                 "caseUnderReview",
                 null,
-                asList(
+                List.of(
                     Map.of(
                         "taskId", "reviewAdditionalEvidence",
                         "name", "Review additional evidence",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
-                        "processCategories",  "caseProgression"
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
@@ -275,13 +318,13 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "uploadAdditionalEvidence",
                 "respondentReview",
                 null,
-                asList(
+                List.of(
                     Map.of(
                         "taskId", "reviewAdditionalEvidence",
                         "name", "Review additional evidence",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
-                        "processCategories",  "caseProgression"
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
@@ -289,13 +332,13 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "uploadAdditionalEvidence",
                 "submitHearingRequirements",
                 null,
-                asList(
+                List.of(
                     Map.of(
                         "taskId", "reviewAdditionalEvidence",
                         "name", "Review additional evidence",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
-                        "processCategories",  "caseProgression"
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
@@ -303,13 +346,13 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "uploadAdditionalEvidence",
                 "listing",
                 null,
-                asList(
+                List.of(
                     Map.of(
                         "taskId", "reviewAdditionalEvidence",
                         "name", "Review additional evidence",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
-                        "processCategories",  "caseProgression"
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
@@ -323,14 +366,14 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Review additional evidence",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
-                        "processCategories",  "caseProgression"
+                        "processCategories", "caseProgression"
                     ),
                     Map.of(
                         "taskId", "createCaseSummary",
                         "name", "Create Case Summary",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
-                        "processCategories",  "caseProgression"
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
@@ -344,7 +387,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Review additional Home Office evidence",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
-                        "processCategories",  "caseProgression"
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
@@ -358,7 +401,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Review additional Home Office evidence",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
-                        "processCategories",  "caseProgression"
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
@@ -372,7 +415,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Review additional Home Office evidence",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
-                        "processCategories",  "caseProgression"
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
@@ -386,7 +429,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Review additional Home Office evidence",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
-                        "processCategories",  "caseProgression"
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
@@ -400,7 +443,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Review Appeal Skeleton Argument",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
-                        "processCategories",  "caseProgression"
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
@@ -414,7 +457,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Review Appeal Skeleton Argument",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
-                        "processCategories",  "caseProgression"
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
@@ -428,7 +471,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Review Reasons For Appeal",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
-                        "processCategories",  "caseProgression"
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
@@ -442,7 +485,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Review Clarifying Questions Answers",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
-                        "processCategories",  "caseProgression"
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
@@ -456,7 +499,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Review Cma Requirements",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
-                        "processCategories",  "caseProgression"
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
@@ -470,7 +513,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Attend Cma",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
-                        "processCategories",  "caseProgression"
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
@@ -484,7 +527,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Review Respondent Response",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
-                        "processCategories",  "caseProgression"
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
@@ -498,7 +541,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Create Case Summary",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
-                        "processCategories",  "caseProgression"
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
@@ -512,7 +555,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Create Hearing Bundle",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
-                        "processCategories",  "caseProgression"
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
@@ -526,7 +569,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Start Decisions And Reasons Document",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
-                        "processCategories",  "caseProgression"
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
@@ -540,7 +583,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Review hearing requirements",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
-                        "processCategories",  "caseProgression"
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
@@ -555,7 +598,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "group", "TCW",
                         "workingDaysAllowed", 2,
                         "delayDuration", 0,
-                        "processCategories",  "followUpOverdue"
+                        "processCategories", "followUpOverdue"
                     )
                 )
             ),
@@ -570,7 +613,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "group", "TCW",
                         "workingDaysAllowed", 2,
                         "delayDuration", 0,
-                        "processCategories",  "caseProgression"
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
@@ -585,7 +628,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "group", "TCW",
                         "workingDaysAllowed", 2,
                         "delayDuration", 0,
-                        "processCategories",  "followUpOverdue"
+                        "processCategories", "followUpOverdue"
                     )
                 )
             ),
@@ -600,7 +643,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "group", "TCW",
                         "workingDaysAllowed", 2,
                         "delayDuration", 0,
-                        "processCategories",  "followUpOverdue"
+                        "processCategories", "followUpOverdue"
                     )
                 )
             ),
@@ -615,7 +658,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "group", "TCW",
                         "workingDaysAllowed", 2,
                         "delayDuration", 0,
-                        "processCategories",  "followUpOverdue"
+                        "processCategories", "followUpOverdue"
                     )
                 )
             ),
@@ -630,7 +673,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "group", "TCW",
                         "workingDaysAllowed", 2,
                         "delayDuration", 0,
-                        "processCategories",  "followUpOverdue"
+                        "processCategories", "followUpOverdue"
                     )
                 )
             ),
@@ -645,7 +688,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "group", "TCW",
                         "workingDaysAllowed", 2,
                         "delayDuration", 0,
-                        "processCategories",  "followUpOverdue"
+                        "processCategories", "followUpOverdue"
                     )
                 )
             ),
@@ -660,7 +703,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "group", "TCW",
                         "workingDaysAllowed", 2,
                         "delayDuration", 0,
-                        "processCategories",  "followUpOverdue"
+                        "processCategories", "followUpOverdue"
                     )
                 )
             ),
@@ -675,7 +718,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "group", "TCW",
                         "workingDaysAllowed", 2,
                         "delayDuration", 0,
-                        "processCategories",  "caseProgression"
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
@@ -689,7 +732,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Follow-up Notice of Change",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
-                        "processCategories",  "followUpOverdue",
+                        "processCategories", "followUpOverdue",
                         "delayDuration", 14
                     )
                 )
@@ -704,7 +747,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Follow-up Notice of Change",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
-                        "processCategories",  "followUpOverdue",
+                        "processCategories", "followUpOverdue",
                         "delayDuration", 14
                     )
                 )
@@ -735,26 +778,90 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
     }
 
+    public static Stream<Arguments> makeAnApplicationScenarioProvider() {
+        return Stream.of(
+            Arguments.of(
+                "makeAnApplication",
+                null,
+                mapAdditionalData(" {\n"
+                                      + "        \"Data\" : {\n"
+                                      + "          \"lastModifiedApplication\" : {\n"
+                                      + "            \"type\" : \"\",\n"
+                                      + "            \"decision\" : \"\"\n"
+                                      + "          }\n"
+                                      + "        }\n"
+                                      + "      }"),
+                emptyList()
+            ),
+            getArgumentOf("Adjourn"),
+            getArgumentOf("Expedite"),
+            getArgumentOf("Link/unlink appeals"),
+            getArgumentOf("Time extension"),
+            getArgumentOf("Transfer"),
+            getArgumentOf("Withdraw"),
+            getArgumentOf("Update hearing requirements"),
+            getArgumentOf("Update appeal details"),
+            getArgumentOf("Reinstate an ended appeal"),
+            getArgumentOf("Other")
+        );
+    }
+
+    private static Arguments getArgumentOf(String applicationType) {
+        return Arguments.of(
+            "makeAnApplication",
+            null,
+            mapAdditionalData(" {\n"
+                                  + "        \"Data\" : {\n"
+                                  + "          \"lastModifiedApplication\" : {\n"
+                                  + "            \"type\" : \"" + applicationType + "\",\n"
+                                  + "            \"decision\" : \"\"\n"
+                                  + "          }\n"
+                                  + "        }\n"
+                                  + "      }"),
+            singletonList(
+                Map.of(
+                    "taskId", "processApplication",
+                    "name", "Process Application",
+                    "group", "TCW",
+                    "workingDaysAllowed", 5,
+                    "processCategories", "application"
+                )
+            )
+        );
+    }
+
+    @ParameterizedTest
+    @MethodSource("makeAnApplicationScenarioProvider")
+    void given_makeAnApplication_should_evaluate_dmn(String eventId,
+                                                     String postEventState,
+                                                     Map<String, Object> additionalData,
+                                                     List<Map<String, String>> expectation) {
+        VariableMap inputVariables = new VariableMapImpl();
+        inputVariables.putValue("eventId", eventId);
+        inputVariables.putValue("postEventState", postEventState);
+        inputVariables.putValue("additionalData", additionalData);
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
+    }
+
     @Test
     void if_this_test_fails_needs_updating_with_your_changes() {
 
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
+        assertThat(logic.getInputs().size(), is(5));
+        assertThat(logic.getOutputs().size(), is(6));
         assertThat(logic.getRules().size(), is(28));
-
     }
 
-    private static Map<String, Object> mapAppealType(String appealType) {
-        String appealTypeJson = "{\n"
-            + "   \"Data\":{\n"
-            + "      \"appealType\":\"" + appealType + "\"\n"
-            + "   }"
-            + "}";
-
+    private static Map<String, Object> mapAdditionalData(String additionalData) {
         ObjectMapper mapper = new ObjectMapper();
         try {
-            TypeReference<HashMap<String, Object>> typeRef = new TypeReference<>() {};
-            return mapper.readValue(appealTypeJson, typeRef);
+            TypeReference<HashMap<String, Object>> typeRef = new TypeReference<>() {
+            };
+            return mapper.readValue(additionalData, typeRef);
         } catch (IOException exp) {
             return null;
         }
