@@ -1057,6 +1057,41 @@ null</text>
           <text>"followUpOverdue"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_14ahiq5">
+        <inputEntry id="UnaryTests_0ho5uzj">
+          <text>"uploadAddendumEvidenceLegalRep","uploadAddendumEvidence","uploadAddendumEvidenceHomeOffice","uploadAddendumEvidenceAdminOfficer"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ddvkas">
+          <text>"preHearing","decision","decided"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ddvkaw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ddvkar">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0cc4gbk">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0nu1njx">
+          <text>"reviewAddendumEvidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0z0czz4">
+          <text>"Review Addendum Evidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_07pmgsg">
+          <text>"Judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0g1hn0w">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1luld57">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1chu8ia">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

@@ -869,12 +869,78 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
     @Test
     void if_this_test_fails_needs_updating_with_your_changes() {
-
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(5));
         assertThat(logic.getOutputs().size(), is(6));
-        assertThat(logic.getRules().size(), is(29));
+        assertThat(logic.getRules().size(), is(30));
+    }
+
+    public static Stream<Arguments> addendumScenarioProvider() {
+        return Stream.of(
+            Arguments.of(
+                "uploadAddendumEvidenceLegalRep",
+                "preHearing",
+                List.of(
+                    Map.of(
+                        "taskId", "startDecisionsAndReasonsDocument",
+                        "name", "Start Decisions And Reasons Document",
+                        "group", "TCW",
+                        "workingDaysAllowed", 2,
+                        "processCategories", "caseProgression"
+                    ),
+                    Map.of(
+                        "taskId", "reviewAddendumEvidence",
+                        "name", "Review Addendum Evidence",
+                        "group", "Judge",
+                        "workingDaysAllowed", 2,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "uploadAddendumEvidenceLegalRep",
+                "decision",
+                List.of(
+                    Map.of(
+                        "taskId", "reviewAddendumEvidence",
+                        "name", "Review Addendum Evidence",
+                        "group", "Judge",
+                        "workingDaysAllowed", 2,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "uploadAddendumEvidenceLegalRep",
+                "decided",
+                List.of(
+                    Map.of(
+                        "taskId", "reviewAddendumEvidence",
+                        "name", "Review Addendum Evidence",
+                        "group", "Judge",
+                        "workingDaysAllowed", 2,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            )
+        );
+    }
+
+    @ParameterizedTest
+    @MethodSource("addendumScenarioProvider")
+    void given_addendum_events_when_evaluate_initiate_dmn_then_expect_reviewAddendumEvidence_task(
+        String eventId,
+        String postEventState,
+        List<Map<String, String>> expectation
+    ) {
+        VariableMap inputVariables = new VariableMapImpl();
+        inputVariables.putValue("eventId", eventId);
+        inputVariables.putValue("postEventState", postEventState);
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
     }
 
     private static Map<String, Object> mapAdditionalData(String additionalData) {
