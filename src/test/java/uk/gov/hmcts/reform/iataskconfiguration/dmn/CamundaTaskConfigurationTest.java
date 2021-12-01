@@ -155,7 +155,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "followUpOverdueClarifyingAnswers", "reviewClarifyingAnswers", "followUpOverdueRespondentReview",
         "reviewRespondentResponse", "followUpOverdueCMARequirements", "reviewCmaRequirements",
         "reviewAdditionalHomeOfficeEvidence", "reviewAdditionalAppellantEvidence", "reviewAddendumHomeOfficeEvidence",
-        "reviewAddendumAppellantEvidence", "reviewAddendumEvidence", "processReviewDecisionApplication"
+        "reviewAddendumAppellantEvidence", "reviewAddendumEvidence", "processReviewDecisionApplication",
+        "reviewAdditionalEvidence"
     })
     void when_taskId_then_return_Decision_making_work(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
