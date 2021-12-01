@@ -864,7 +864,7 @@ null</text>
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_06pyxlu">
-          <text></text>
+          <text>"caseProgression"</text>
         </outputEntry>
       </rule>
     </decisionTable>
