@@ -184,6 +184,48 @@ else if caseData.appealType = "revocationOfProtection" then "Revocation" else ""
           <text>"upper_tribunal"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1dhhpyl">
+        <inputEntry id="UnaryTests_13pqmkc">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10f3uas">
+          <text>"processApplication","reviewTheAppeal","decideOnTimeExtension","reviewRespondentEvidence","reviewAppealSkeletonArgument","reviewReasonsForAppeal","reviewClarifyingQuestionsAnswers","reviewCmaRequirements","attendCma","reviewRespondentResponse","createCaseSummary","createHearingBundle","startDecisionsAndReasonsDocument","reviewHearingRequirements","followUpOverdueRespondentEvidence","followUpOverdueCaseBuilding","followUpOverdueReasonsForAppeal","followUpOverdueClarifyingAnswers","followUpOverdueCmaRequirements","followUpOverdueRespondentReview","followUpOverdueHearingRequirements","followUpNonStandardDirection","followUpNoticeOfChange","reviewAdditionalEvidence","reviewAdditionalHomeOfficeEvidence"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_05l5bvs">
+          <text>"roleCategory"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_18y163a">
+          <text>"LEGAL_OPERATIONS"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_01muxrj">
+        <inputEntry id="UnaryTests_0ullysh">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1glizm3">
+          <text>"arrangeOfflinePayment","markCaseAsPaid","addListingDate","allocateHearingJudge","uploadHearingRecording"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1131kat">
+          <text>"roleCategory"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0el7tae">
+          <text>"ADMINISTRATOR"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_01cmxvs">
+        <inputEntry id="UnaryTests_1np8ii5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15ftuu0">
+          <text>"reviewHearingBundle","generateDraftDecisionAndReasons","uploadDecision","reviewAddendumHomeOfficeEvidence","reviewAddendumAppellantEvidence","reviewAddendumEvidence"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_15nowth">
+          <text>"roleCategory"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1cn9cb2">
+          <text>"JUDICIAL"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
