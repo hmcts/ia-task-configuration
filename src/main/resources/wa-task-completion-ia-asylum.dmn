@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="wa-completion-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.10.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="wa-completion-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.11.1">
   <decision id="wa-task-completion-ia-asylum" name="Task completion DMN">
     <decisionTable id="DecisionTable_01re27m" hitPolicy="COLLECT">
       <input id="eventId" label="Event ID" biodi:width="614">
@@ -165,7 +165,7 @@
       </rule>
       <rule id="DecisionRule_1mw2ara">
         <inputEntry id="UnaryTests_0jn2e7x">
-          <text>"decisionAndReasonsStarted"</text>
+          <text>"generateDecisionAndReasons"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1q0zt8z">
           <text>"startDecisionsAndReasonsDocument"</text>
@@ -204,17 +204,6 @@
           <text>"processApplication"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1mv1jjs">
-          <text>"Auto"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0n9e4tj">
-        <inputEntry id="UnaryTests_0fs9v2g">
-          <text>"generateDecisionAndReasons"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1hcnnwk">
-          <text>"reviewHearingBundle"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_19vjdi8">
           <text>"Auto"</text>
         </outputEntry>
       </rule>

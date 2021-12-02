@@ -1127,6 +1127,41 @@ null</text>
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1ahjdac">
+        <inputEntry id="UnaryTests_06mn0dx">
+          <text>"decisionAndReasonsStarted"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0za4ybz">
+          <text>"decision"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1kn0qgr">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01p65ai">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ydycq9">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1tfucqq">
+          <text>"startDecisionsAndReasonsDocument"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1gtv1rl">
+          <text>"Start decisions and reasons document"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_01s0ar0">
+          <text>"TCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0uxhsqp">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0fkgqb1">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0m2jpwd">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
