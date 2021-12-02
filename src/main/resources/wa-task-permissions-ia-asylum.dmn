@@ -69,7 +69,7 @@ else
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1048wbc">
-          <text></text>
+          <text>1</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1oc4t5p">
           <text>true</text>
@@ -96,7 +96,7 @@ else
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1ynp9nn">
-          <text></text>
+          <text>1</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1c5me4u">
           <text>false</text>
@@ -123,9 +123,36 @@ else
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_11r2dnr">
-          <text></text>
+          <text>1</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1kjalwr">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0mzuuvc">
+        <description>Judge task permissions</description>
+        <inputEntry id="UnaryTests_0mzihm0">
+          <text>"reviewTheAppeal","reviewRespondentEvidence","followUpOverdueRespondentEvidence","reviewAppealSkeletonArgument","followUpOverdueCaseBuilding","reviewReasonsForAppeal","followUpOverdueReasonsForAppeal","reviewClarifyingQuestionsAnswers","followUpOverdueClarifyingAnswers","reviewRespondentResponse","followUpOverdueRespondentReview","reviewHearingRequirements","followUpOverdueHearingRequirements","reviewCmaRequirements","reviewAdditionalHomeOfficeEvidence","reviewAdditionalAppellantEvidence","reviewAdditionalHomeOfficeEvidence","reviewAdditionalAppellantEvidence","createHearingBundle","processApplication"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15oy3kp">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0zsbfdo">
+          <text>"judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1qa45z2">
+          <text>"Read,Refer,Execute"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_06zjq08">
+          <text>"JUDICIAL"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1c8wftf">
+          <text>"IA"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_09bennu">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1du41ub">
           <text>false</text>
         </outputEntry>
       </rule>
@@ -150,7 +177,7 @@ else
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1t1fpby">
-          <text></text>
+          <text>1</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0r5nut3">
           <text>false</text>
@@ -177,9 +204,87 @@ else
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0jexll1">
-          <text></text>
+          <text>1</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0l87ays">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0spqww2">
+        <inputEntry id="UnaryTests_0vmy0oj">
+          <text>"allocateHearingJudge"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_190pyoc">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ldbpi0">
+          <text>"tribunal-caseworker"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1tlcgb1">
+          <text>"Read,Refer,Execute"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1vwn7j0">
+          <text>"LEGAL_OPERATIONS"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1yd4fhm">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0lpi60d">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0yfgbsz">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1wd5okj">
+        <inputEntry id="UnaryTests_0co919o">
+          <text>"allocateHearingJudge"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_055yime">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1512irv">
+          <text>"senior-tribunal-caseworker"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0viqzzm">
+          <text>"Read,Refer,Execute"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0feri8q">
+          <text>"LEGAL_OPERATIONS"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0dbwm40">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_09kz1ml">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1tq2ebs">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1m8fmne">
+        <inputEntry id="UnaryTests_0mj1usm">
+          <text>"allocateHearingJudge"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0v4c0af">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1rn83pp">
+          <text>"judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0pz9iqg">
+          <text>"Read,Refer,Execute"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_07so8lo">
+          <text>"JUDICIAL"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0etme74">
+          <text>"IA"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_161i2q9">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0tvvgrs">
           <text>false</text>
         </outputEntry>
       </rule>
@@ -204,7 +309,7 @@ else
           <text>"IA"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_15edozy">
-          <text></text>
+          <text>1</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1ygk8oj">
           <text>true</text>
@@ -231,9 +336,61 @@ else
           <text>"IA"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0g1mgog">
-          <text></text>
+          <text>1</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0sy9mkt">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0g1ctxl">
+        <inputEntry id="UnaryTests_1e2n054">
+          <text>"reviewHearingBundle"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0glmnf8">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1tt0n61">
+          <text>"tribunal-caseworker"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0hhuwls">
+          <text>"Read,Refer,Execute"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0r411nz">
+          <text>"LEGAL_OPERATIONS"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_01zx5su">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ab7q8q">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_142qidj">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1v7shrr">
+        <inputEntry id="UnaryTests_0u86080">
+          <text>"reviewHearingBundle"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1815pdd">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ajqftf">
+          <text>"senior-tribunal-caseworker"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0240g7i">
+          <text>"Read,Refer,Execute"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1e5r0d6">
+          <text>"LEGAL_OPERATIONS"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1sqkj3l">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1h76xw3">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_05tthfz">
           <text>false</text>
         </outputEntry>
       </rule>
