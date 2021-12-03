@@ -131,7 +131,28 @@ else if caseData.appealType = "revocationOfProtection" then "Revocation" else ""
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1gm06lg">
-          <text>"reviewTheAppeal","followUpOverdueRespondentEvidence","reviewRespondentEvidence","followUpOverdueCaseBuilding","reviewAppealSkeletonArgument","followUpOverdueReasonsForAppeal","reviewReasonsForAppeal",       "followUpOverdueClarifyingAnswers","reviewClarifyingAnswers","followUpOverdueRespondentReview","reviewRespondentResponse","followUpOverdueCMARequirements","reviewCmaRequirements","reviewAdditionalHomeOfficeEvidence",           "reviewAdditionalAppellantEvidence","reviewAddendumHomeOfficeEvidence","reviewAddendumAppellantEvidence","reviewAddendumEvidence","processReviewDecisionApplication"</text>
+          <text>
+            "reviewTheAppeal",
+            "followUpOverdueRespondentEvidence",
+            "reviewRespondentEvidence",
+            "followUpOverdueCaseBuilding",
+            "reviewAppealSkeletonArgument",
+            "followUpOverdueReasonsForAppeal",
+            "reviewReasonsForAppeal",     
+            "followUpOverdueClarifyingAnswers",
+            "reviewClarifyingAnswers",
+            "followUpOverdueRespondentReview",
+            "reviewRespondentResponse",
+            "followUpOverdueCMARequirements",
+            "reviewCmaRequirements",
+            "reviewAdditionalEvidence",
+            "reviewAdditionalHomeOfficeEvidence",
+            "reviewAdditionalAppellantEvidence",
+            "reviewAddendumHomeOfficeEvidence",
+            "reviewAddendumAppellantEvidence",
+            "reviewAddendumEvidence",
+            "processReviewDecisionApplication"
+          </text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0omxasv">
           <text>"workType"</text>
