@@ -78,7 +78,7 @@ else
       <rule id="DecisionRule_1tvtlre">
         <description>Tribunal caseworker task permissions</description>
         <inputEntry id="UnaryTests_13ukkz6">
-          <text>"reviewTheAppeal","reviewRespondentEvidence","followUpOverdueRespondentEvidence","reviewAppealSkeletonArgument","followUpOverdueCaseBuilding","reviewReasonsForAppeal","followUpOverdueReasonsForAppeal","reviewClarifyingQuestionsAnswers","followUpOverdueClarifyingAnswers","reviewRespondentResponse","followUpOverdueRespondentReview","reviewHearingRequirements","followUpOverdueHearingRequirements","reviewCmaRequirements","reviewAdditionalHomeOfficeEvidence","reviewAdditionalAppellantEvidence","reviewAdditionalHomeOfficeEvidence","reviewAdditionalAppellantEvidence","createHearingBundle","processApplication"</text>
+          <text>"reviewTheAppeal","reviewRespondentEvidence","followUpOverdueRespondentEvidence","reviewAppealSkeletonArgument","followUpOverdueCaseBuilding","reviewReasonsForAppeal","followUpOverdueReasonsForAppeal","reviewClarifyingQuestionsAnswers","followUpOverdueClarifyingAnswers","reviewRespondentResponse","followUpOverdueRespondentReview","reviewHearingRequirements","followUpOverdueHearingRequirements","reviewCmaRequirements","reviewAdditionalHomeOfficeEvidence","reviewAdditionalAppellantEvidence","reviewAdditionalHomeOfficeEvidence","reviewAdditionalAppellantEvidence","createHearingBundle","processApplication","editListing"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_10s330p">
           <text></text>
@@ -105,7 +105,7 @@ else
       <rule id="DecisionRule_1x1oenn">
         <description>Senior Tribunal caseworker task permissions</description>
         <inputEntry id="UnaryTests_183egaw">
-          <text>"reviewTheAppeal","reviewRespondentEvidence","followUpOverdueRespondentEvidence","reviewAppealSkeletonArgument","followUpOverdueCaseBuilding","reviewReasonsForAppeal","followUpOverdueReasonsForAppeal","reviewClarifyingQuestionsAnswers","followUpOverdueClarifyingAnswers","reviewRespondentResponse","followUpOverdueRespondentReview","reviewHearingRequirements","followUpOverdueHearingRequirements","reviewCmaRequirements","reviewAdditionalHomeOfficeEvidence","reviewAdditionalAppellantEvidence","reviewAdditionalHomeOfficeEvidence","reviewAdditionalAppellantEvidence","createHearingBundle","processApplication"</text>
+          <text>"reviewTheAppeal","reviewRespondentEvidence","followUpOverdueRespondentEvidence","reviewAppealSkeletonArgument","followUpOverdueCaseBuilding","reviewReasonsForAppeal","followUpOverdueReasonsForAppeal","reviewClarifyingQuestionsAnswers","followUpOverdueClarifyingAnswers","reviewRespondentResponse","followUpOverdueRespondentReview","reviewHearingRequirements","followUpOverdueHearingRequirements","reviewCmaRequirements","reviewAdditionalHomeOfficeEvidence","reviewAdditionalAppellantEvidence","reviewAdditionalHomeOfficeEvidence","reviewAdditionalAppellantEvidence","createHearingBundle","processApplication","editListing"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_18tqbn3">
           <text></text>
@@ -183,6 +183,33 @@ else
           <text>false</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1920mo0">
+        <description></description>
+        <inputEntry id="UnaryTests_03ns5jd">
+          <text>"editListing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1d0teaw">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1f5p296">
+          <text>"hearing-centre-admin"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_063hm5l">
+          <text>"Read,Refer,Own"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1hrnkwv">
+          <text>"ADMINISTRATOR"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1gbbkbx">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0o3qffo">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0rfoghw">
+          <text>true</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1xv2gxq">
         <description>Hearing judge task permissions</description>
         <inputEntry id="UnaryTests_1oxh1tt">
@@ -213,7 +240,7 @@ else
       <rule id="DecisionRule_0b91c94">
         <description>Judge task permissions</description>
         <inputEntry id="UnaryTests_1099gbv">
-          <text>"reviewHearingBundle","generateDraftDecisionAndReasons","uploadDecision","reviewAddendumHomeOfficeEvidence","reviewAddendumAppellantEvidence","reviewAddendumEvidence","startDecisionsAndReasonsDocument"</text>
+          <text>"reviewHearingBundle","generateDraftDecisionAndReasons","uploadDecision","reviewAddendumHomeOfficeEvidence","reviewAddendumAppellantEvidence","reviewAddendumEvidence","startDecisionsAndReasonsDocument","editListing"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1sgyxq7">
           <text></text>

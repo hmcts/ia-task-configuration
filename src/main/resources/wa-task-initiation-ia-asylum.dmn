@@ -112,6 +112,41 @@ null</text>
           <text>"application"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_141yqc4">
+        <inputEntry id="UnaryTests_0nfnq7j">
+          <text>"decideAnApplication"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0y84e11">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1hafjat">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1b335mc">
+          <text>"Adjourn","Expedite","Transfer"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1njxyoc">
+          <text>"Granted"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_171625f">
+          <text>"editListing"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1fl35nh">
+          <text>"Edit Listing"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1q5nax7">
+          <text>"TCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0uad2vw">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12cjht1">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ebf9sj">
+          <text></text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0awsb0p">
         <inputEntry id="UnaryTests_116xfi4">
           <text>"submitAppeal"</text>
