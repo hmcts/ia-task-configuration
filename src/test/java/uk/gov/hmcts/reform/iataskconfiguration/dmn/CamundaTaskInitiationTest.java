@@ -903,13 +903,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
     public static Stream<Arguments> decideAnApplicationScenarioProvider() {
         return Stream.of(
-            getDecideAnApplicationArgumentsOf("Adjourn"),
-            getDecideAnApplicationArgumentsOf("Expedite"),
-            getDecideAnApplicationArgumentsOf("Transfer")
+            getDecideAnApplicationArgumentsOf("Adjourn", "editListing", "Edit Listing"),
+            getDecideAnApplicationArgumentsOf("Expedite", "editListing", "Edit Listing"),
+            getDecideAnApplicationArgumentsOf("Transfer", "editListing", "Edit Listing"),
+            getDecideAnApplicationArgumentsOf(
+                "Update hearing requirements",
+                "updateHearingRequirements",
+                "Update hearing requirements"
+            )
         );
     }
 
-    private static Arguments getDecideAnApplicationArgumentsOf(String applicationType) {
+    private static Arguments getDecideAnApplicationArgumentsOf(String applicationType, String taskId, String name) {
         return Arguments.of(
             "decideAnApplication",
             null,
@@ -923,10 +928,11 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                   + "      }"),
             singletonList(
                 Map.of(
-                    "taskId", "editListing",
-                    "name", "Edit Listing",
+                    "taskId", taskId,
+                    "name", name,
                     "group", "TCW",
-                    "workingDaysAllowed", 2
+                    "workingDaysAllowed", 2,
+                    "processCategories", "application"
                 )
             )
         );
@@ -954,7 +960,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(5));
         assertThat(logic.getOutputs().size(), is(6));
-        assertThat(logic.getRules().size(), is(33));
+        assertThat(logic.getRules().size(), is(34));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {
