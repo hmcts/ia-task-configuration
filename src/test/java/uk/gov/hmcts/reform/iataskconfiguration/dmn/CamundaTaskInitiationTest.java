@@ -42,8 +42,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 null,
                 singletonList(
                     Map.of(
-                        "taskId", "startDecisionsAndReasonsDocument",
-                        "name", "Start decisions and reasons document",
+                        "taskId", "sendDecisionsAndReasons",
+                        "name", "Send decisions and reasons",
                         "group", "TCW",
                         "processCategories", "caseProgression"
                     )
