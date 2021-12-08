@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.2.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.8.1">
   <decision id="wa-task-configuration-ia-asylum" name="Task configuration DMN">
     <decisionTable id="DecisionTable_14cx079" hitPolicy="COLLECT">
       <input id="InputClause_1gxyo7f" label="CCD Case Data" camunda:inputVariable="caseData">
@@ -18,7 +18,7 @@ null</text>
         </inputExpression>
       </input>
       <output id="Output_1" label="Name" name="name" typeRef="string" />
-      <output id="OutputClause_021y3bb" label="Value" name="value" typeRef="string" biodi:width="803" />
+      <output id="OutputClause_021y3bb" label="Value" name="value" typeRef="string" biodi:width="416" />
       <rule id="DecisionRule_0u7yi27">
         <inputEntry id="UnaryTests_03ky0ek">
           <text></text>
@@ -131,8 +131,7 @@ else if caseData.appealType = "revocationOfProtection" then "Revocation" else ""
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1gm06lg">
-          <text>
-            "reviewTheAppeal",
+          <text>"reviewTheAppeal",
             "followUpOverdueRespondentEvidence",
             "reviewRespondentEvidence",
             "followUpOverdueCaseBuilding",
@@ -151,8 +150,7 @@ else if caseData.appealType = "revocationOfProtection" then "Revocation" else ""
             "reviewAddendumHomeOfficeEvidence",
             "reviewAddendumAppellantEvidence",
             "reviewAddendumEvidence",
-            "processReviewDecisionApplication"
-          </text>
+            "processReviewDecisionApplication"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0omxasv">
           <text>"workType"</text>
@@ -245,6 +243,64 @@ else if caseData.appealType = "revocationOfProtection" then "Revocation" else ""
         </outputEntry>
         <outputEntry id="LiteralExpression_1cn9cb2">
           <text>"JUDICIAL"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0dkaz16">
+        <inputEntry id="UnaryTests_1y7mx6x">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1up0ed8">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ahc8rm">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_154wrdc">
+          <text>
+if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "processApplication" or taskType != null and taskType = "processApplication")
+then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)"
+else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewTheAppeal" or taskType != null and taskType = "reviewTheAppeal")
+then "[Request respondent evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentEvidence)"
+else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "decideOnTimeExtension" or taskType != null and taskType ="decideOnTimeExtension")
+then "[Change the direction due date](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/changeDirectionDueDate)"
+else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewRespondentEvidence" or taskType != null and taskType ="reviewRespondentEvidence")
+then
+"[Request case building](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestCaseBuilding)&lt;br /&gt;[Request reasons for appeal](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestReasonsForAppeal)&lt;br /&gt;[Send non-standard direction](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDirection)"
+else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewAppealSkeletonArgument" or taskType != null and taskType ="reviewAppealSkeletonArgument")
+then "[Request respondent review](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentReview)&lt;br /&gt;[Request case edit](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestCaseEdit)"
+else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewReasonsForAppeal" or taskType != null and taskType ="reviewReasonsForAppeal")
+then "[Request respondent review](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentReview)&lt;br /&gt;[Send direction with questions](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDirectionWithQuestions)&lt;br /&gt;[Request CMA requirements](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestCmaRequirements)"
+else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewClarifyingQuestionsAnswers" or taskType != null and taskType ="reviewClarifyingQuestionsAnswers")
+then "[Request respondent review](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentReview)&lt;br /&gt;[Send direction with questions](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDirectionWithQuestions)&lt;br /&gt;[Request CMA requirements](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestCmaRequirements)"
+else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewCmaRequirements" or taskType != null and taskType = "reviewCmaRequirements")
+then "[Review CMA Requirements](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/reviewCmaRequirements)"
+else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "attendCma" or taskType != null and taskType = "attendCma")
+then "[Update case details after CMA](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/updateDetailsAfterCma)"
+else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewRespondentResponse" or taskType != null and taskType = "reviewRespondentResponse")
+then "[Review Home Office response](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestResponseReview)&lt;br /&gt;[Amend appeal response](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestResponseAmend)"
+else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "createCaseSummary" or taskType != null and taskType = "createCaseSummary")
+then "[Create case summary](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/createCaseSummary)"
+else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "createHearingBundle" or taskType != null and taskType = "createHearingBundle")
+then "[Generate the hearing bundle](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/generateHearingBundle)&lt;br /&gt;[Customise the hearing bundle](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/customiseHearingBundle)"
+else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "startDecisionsAndReasonsDocument" or taskType != null and taskType ="startDecisionsAndReasonsDocument")
+then "[Start decision and reasons document](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decisionAndReasonsStarted/decisionAndReasonsStartedcaseIntroduction)"
+else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewHearingRequirements" or taskType != null and taskType = "reviewHearingRequirements")
+then "[Review hearing requirements](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/reviewHearingRequirements)"
+else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewAdditionalEvidence" or taskType != null and taskType ="reviewAdditionalEvidence")
+then "[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markEvidenceAsReviewed)"
+else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewAdditionalHomeOfficeEvidence" or taskType != null and taskType ="reviewAdditionalHomeOfficeEvidence")	 then "[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markEvidenceAsReviewed)"
+else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "arrangeOfflinePayment" or taskType != null and taskType ="arrangeOfflinePayment") then "[Mark the appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid)"
+else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "markCaseAsPaid" or taskType != null and taskType ="markCaseAsPaid") then "[Mark the appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid)"
+else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "addListingDate" or taskType != null and taskType ="addListingDate")	then "[List the case](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/listCase)"
+else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "allocateHearingJudge" or taskType != null and taskType ="allocateHearingJudge")	 then "[Allocate judge](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/recordAllocatedJudge)"
+else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "uploadHearingRecording" or taskType != null and taskType = "uploadHearingRecording") then "[Upload the hearing recording](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/uploadHearingRecording)"
+else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "generateDraftDecisionAndReasons" or taskType != null and taskType = "generateDraftDecisionAndReasons")	then "[Generate the draft decisions and reasons document](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/generateDecisionAndReasons)"
+else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewAddendumHomeOfficeEvidence" or taskType != null and taskType = "reviewAddendumHomeOfficeEvidence") then "[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markEvidenceAsReviewed)"
+else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewAddendumAppellantEvidence" or taskType != null and taskType = "reviewAddendumAppellantEvidence") then "[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markEvidenceAsReviewed)"
+else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewAddendumEvidence" or taskType != null and taskType = "reviewAddendumEvidence") then "[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markEvidenceAsReviewed)"
+else ""
+
+</text>
         </outputEntry>
       </rule>
     </decisionTable>
