@@ -40,7 +40,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(11));
+        assertThat(logic.getRules().size(), is(14));
     }
 
     @SuppressWarnings("checkstyle:indentation")
@@ -155,7 +155,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "followUpOverdueClarifyingAnswers", "reviewClarifyingAnswers", "followUpOverdueRespondentReview",
         "reviewRespondentResponse", "followUpOverdueCMARequirements", "reviewCmaRequirements",
         "reviewAdditionalHomeOfficeEvidence", "reviewAdditionalAppellantEvidence", "reviewAddendumHomeOfficeEvidence",
-        "reviewAddendumAppellantEvidence", "reviewAddendumEvidence", "processReviewDecisionApplication"
+        "reviewAddendumAppellantEvidence", "reviewAddendumEvidence", "processReviewDecisionApplication",
+        "reviewAdditionalEvidence"
     })
     void when_taskId_then_return_Decision_making_work(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
@@ -251,6 +252,83 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     }
 
     @ParameterizedTest
+    @CsvSource({
+        "reviewHearingBundle","generateDraftDecisionAndReasons","uploadDecision","reviewAddendumHomeOfficeEvidence",
+        "reviewAddendumAppellantEvidence","reviewAddendumEvidence"
+    })
+    void when_taskId_then_return_judicial_role_category(String taskType) {
+        VariableMap inputVariables = new VariableMapImpl();
+
+        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        List<Map<String, Object>> workTypeResultList = dmnDecisionTableResult.getResultList().stream()
+            .filter((r) -> r.containsValue("roleCategory"))
+            .collect(Collectors.toList());
+
+        assertEquals(1, workTypeResultList.size());
+
+        assertEquals(Map.of(
+            "name", "roleCategory",
+            "value", "JUDICIAL"
+        ), workTypeResultList.get(0));
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+        "arrangeOfflinePayment","markCaseAsPaid","addListingDate","allocateHearingJudge","uploadHearingRecording"
+    })
+    void when_taskId_then_return_administrator_role_category(String taskType) {
+        VariableMap inputVariables = new VariableMapImpl();
+
+        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        List<Map<String, Object>> workTypeResultList = dmnDecisionTableResult.getResultList().stream()
+            .filter((r) -> r.containsValue("roleCategory"))
+            .collect(Collectors.toList());
+
+        assertEquals(1, workTypeResultList.size());
+
+        assertEquals(Map.of(
+            "name", "roleCategory",
+            "value", "ADMINISTRATOR"
+        ), workTypeResultList.get(0));
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+        "processApplication","reviewTheAppeal","decideOnTimeExtension","reviewRespondentEvidence",
+        "reviewAppealSkeletonArgument","reviewReasonsForAppeal","reviewClarifyingQuestionsAnswers",
+        "reviewCmaRequirements","attendCma","reviewRespondentResponse","createCaseSummary","createHearingBundle",
+        "startDecisionsAndReasonsDocument","reviewHearingRequirements","followUpOverdueRespondentEvidence",
+        "followUpOverdueCaseBuilding","followUpOverdueReasonsForAppeal","followUpOverdueClarifyingAnswers",
+        "followUpOverdueCmaRequirements","followUpOverdueRespondentReview","followUpOverdueHearingRequirements",
+        "followUpNonStandardDirection","followUpNoticeOfChange","reviewAdditionalEvidence",
+        "reviewAdditionalHomeOfficeEvidence"
+    })
+    void when_taskId_then_return_legal_operations_role_category(String taskType) {
+        VariableMap inputVariables = new VariableMapImpl();
+
+        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        List<Map<String, Object>> workTypeResultList = dmnDecisionTableResult.getResultList().stream()
+            .filter((r) -> r.containsValue("roleCategory"))
+            .collect(Collectors.toList());
+
+        assertEquals(1, workTypeResultList.size());
+
+        assertEquals(Map.of(
+            "name", "roleCategory",
+            "value", "LEGAL_OPERATIONS"
+        ), workTypeResultList.get(0));
+    }
+
+    @ParameterizedTest
     @MethodSource("nameAndValueScenarioProvider")
     void when_caseData_and_taskType_then_return_expected_name_and_value_rows(Scenario scenario) {
         VariableMap inputVariables = new VariableMapImpl();
@@ -321,6 +399,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 .expectedLocationNameValue("some other location name")
                 .expectedCaseManagementCategoryValue("Human rights")
                 .expectedWorkType("routine_work")
+                .expectedRoleCategory("ADMINISTRATOR")
                 .build();
 
         Scenario givenSomeCaseDataAndTaskTypeIsEmptyThenExpectNoWorkTypeRuleScenario =
@@ -359,6 +438,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 .expectedLocationNameValue("Taylor House")
                 .expectedCaseManagementCategoryValue("")
                 .expectedWorkType("routine_work")
+                .expectedRoleCategory("ADMINISTRATOR")
                 .build();
 
         return Stream.of(
@@ -382,6 +462,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         String expectedLocationNameValue;
         String expectedCaseManagementCategoryValue;
         String expectedWorkType;
+        String expectedRoleCategory;
     }
 
     private List<Map<String, String>> getExpectedValues(Scenario scenario) {
@@ -396,6 +477,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         if (!Objects.isNull(scenario.getTaskAttributes())
             && StringUtils.isNotBlank(scenario.taskAttributes.get("taskType").toString())) {
             getExpectedValue(rules, "workType", scenario.getExpectedWorkType());
+            getExpectedValue(rules, "roleCategory", scenario.getExpectedRoleCategory());
         }
 
         return rules;
