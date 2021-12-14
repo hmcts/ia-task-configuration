@@ -7,39 +7,45 @@
           <text></text>
         </inputExpression>
       </input>
-      <input id="InputClause_0gxli97" label="Post event state" biodi:width="235" camunda:inputVariable="postEventState">
+      <input id="InputClause_0gxli97" label="Post event state" biodi:width="341" camunda:inputVariable="postEventState">
         <inputExpression id="LiteralExpression_0dijl5x" typeRef="string">
           <text></text>
         </inputExpression>
       </input>
       <input id="InputClause_0a0i7vo" label="Appeal Type" biodi:width="256" camunda:inputVariable="appealType">
         <inputExpression id="LiteralExpression_18qwedg" typeRef="string">
-          <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.appealType != null) then
-            additionalData.Data.appealType
-else
-null</text>
+          <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.appealType
+                        != null) then
+                        additionalData.Data.appealType
+                        else
+                        null
+                    </text>
         </inputExpression>
       </input>
       <input id="InputClause_15dhd3c" label="Last modified application type" biodi:width="306" camunda:inputVariable="lastModifiedApplicationType">
         <inputExpression id="LiteralExpression_00shf3r" typeRef="string">
-          <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.lastModifiedApplication != null) then
-            additionalData.Data.lastModifiedApplication.type
-else
-null</text>
+          <text>if(additionalData != null and additionalData.Data != null and
+                        additionalData.Data.lastModifiedApplication != null) then
+                        additionalData.Data.lastModifiedApplication.type
+                        else
+                        null
+                    </text>
         </inputExpression>
       </input>
       <input id="InputClause_10uivrc" label="Last modified application decision" biodi:width="378" camunda:inputVariable="lastModifiedApplicationDecision">
         <inputExpression id="LiteralExpression_1gqrajz" typeRef="string">
-          <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.lastModifiedApplication != null) then
-            additionalData.Data.lastModifiedApplication.decision
-else
-null</text>
+          <text>if(additionalData != null and additionalData.Data != null and
+                        additionalData.Data.lastModifiedApplication != null) then
+                        additionalData.Data.lastModifiedApplication.decision
+                        else
+                        null
+                    </text>
         </inputExpression>
       </input>
       <output id="Output_1" label="Task Id" name="taskId" typeRef="string" biodi:width="275" />
       <output id="OutputClause_0p5fhhd" label="Name" name="name" typeRef="string" biodi:width="295" />
       <output id="OutputClause_0f63m65" label="Group" name="group" typeRef="string" biodi:width="192" />
-      <output id="OutputClause_165p3r3" label="Delay Duration" name="delayDuration" typeRef="integer" />
+      <output id="OutputClause_165p3r3" label="Delay Duration" name="delayDuration" typeRef="integer" biodi:width="536" />
       <output id="OutputClause_0i6c6c2" label="Working Days Allowed" name="workingDaysAllowed" typeRef="integer" />
       <output id="OutputClause_10rno4c" label="Process Categories Identifiers" name="processCategories" typeRef="string" biodi:width="300" />
       <rule id="DecisionRule_1fenvxm">
@@ -53,7 +59,18 @@ null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1gkkvta">
-          <text>"Adjourn","Expedite","Link/unlink appeals","Time extension","Transfer","Withdraw","Update hearing requirements","Update appeal details","Reinstate an ended appeal","Other"</text>
+          <text>
+                        "Adjourn",
+                        "Expedite",
+                        "Link/unlink appeals",
+                        "Time extension",
+                        "Transfer",
+                        "Withdraw",
+                        "Update hearing requirements",
+                        "Update appeal details",
+                        "Reinstate an ended appeal",
+                        "Other"
+                    </text>
         </inputEntry>
         <inputEntry id="UnaryTests_1sr2i4d">
           <text></text>
@@ -254,7 +271,12 @@ null</text>
       </rule>
       <rule id="DecisionRule_0xzi2j0">
         <inputEntry id="UnaryTests_1xiod7u">
-          <text>"payAndSubmitAppeal","markAppealPaid","moveToSubmitted","payForAppeal"</text>
+          <text>
+                        "payAndSubmitAppeal",
+                        "markAppealPaid",
+                        "moveToSubmitted",
+                        "payForAppeal"
+                    </text>
         </inputEntry>
         <inputEntry id="UnaryTests_08cfchy">
           <text>"appealSubmitted"</text>
@@ -362,7 +384,13 @@ null</text>
           <text>"uploadAdditionalEvidence"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_14eemob">
-          <text>"caseUnderReview","respondentReview","submitHearingRequirements","listing","prepareForHearing"</text>
+          <text>
+                        "caseUnderReview",
+                        "respondentReview",
+                        "submitHearingRequirements",
+                        "listing",
+                        "prepareForHearing"
+                    </text>
         </inputEntry>
         <inputEntry id="UnaryTests_1ygsshp">
           <text></text>
@@ -397,7 +425,13 @@ null</text>
           <text>"uploadAdditionalEvidenceHomeOffice"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1j8mchm">
-          <text>"caseUnderReview","respondentReview","submitHearingRequirements","listing","prepareForHearing"</text>
+          <text>
+                        "caseUnderReview",
+                        "respondentReview",
+                        "submitHearingRequirements",
+                        "listing",
+                        "prepareForHearing"
+                    </text>
         </inputEntry>
         <inputEntry id="UnaryTests_0pnjfti">
           <text></text>
@@ -803,7 +837,11 @@ null</text>
           <text>"TCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1u0h529">
-          <text>if (directionDueDate != null and directionDueDate != "") then (date(directionDueDate) - date(now)).days else 0</text>
+          <text>
+                        if (directionDueDate != null and directionDueDate != "") then
+                        (date(directionDueDate) - date(now)).days
+                        else 0
+                    </text>
         </outputEntry>
         <outputEntry id="LiteralExpression_184ro7i">
           <text>2</text>
@@ -838,7 +876,11 @@ null</text>
           <text>"TCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0fcdssf">
-          <text>if (directionDueDate != null and directionDueDate != "") then (date(directionDueDate) - date(now)).days else 0</text>
+          <text>
+                        if (directionDueDate != null and directionDueDate != "") then
+                        (date(directionDueDate) - date(now)).days
+                        else 0
+                    </text>
         </outputEntry>
         <outputEntry id="LiteralExpression_03j4j35">
           <text>2</text>
@@ -873,7 +915,11 @@ null</text>
           <text>"TCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_16vucs8">
-          <text>if (directionDueDate != null and directionDueDate != "") then (date(directionDueDate) - date(now)).days else 0</text>
+          <text>
+                        if (directionDueDate != null and directionDueDate != "") then
+                        (date(directionDueDate) - date(now)).days
+                        else 0
+                    </text>
         </outputEntry>
         <outputEntry id="LiteralExpression_17t1pof">
           <text>2</text>
@@ -908,7 +954,11 @@ null</text>
           <text>"TCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1bqrry5">
-          <text>if (directionDueDate != null and directionDueDate != "") then (date(directionDueDate) - date(now)).days else 0</text>
+          <text>
+                        if (directionDueDate != null and directionDueDate != "") then
+                        (date(directionDueDate) - date(now)).days
+                        else 0
+                    </text>
         </outputEntry>
         <outputEntry id="LiteralExpression_19cly21">
           <text>2</text>
@@ -943,7 +993,11 @@ null</text>
           <text>"TCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1dcun57">
-          <text>if (directionDueDate != null and directionDueDate != "") then (date(directionDueDate) - date(now)).days else 0</text>
+          <text>
+                        if (directionDueDate != null and directionDueDate != "") then
+                        (date(directionDueDate) - date(now)).days
+                        else 0
+                    </text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0kqlc9o">
           <text>2</text>
@@ -978,7 +1032,11 @@ null</text>
           <text>"TCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1398afp" expressionLanguage="feel">
-          <text>if (directionDueDate != null and directionDueDate != "") then (date(directionDueDate) - date(now)).days else 0</text>
+          <text>
+                        if (directionDueDate != null and directionDueDate != "") then
+                        (date(directionDueDate) - date(now)).days
+                        else 0
+                    </text>
         </outputEntry>
         <outputEntry id="LiteralExpression_137jbcs">
           <text>2</text>
@@ -1013,7 +1071,11 @@ null</text>
           <text>"TCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1a0n0d2">
-          <text>if (directionDueDate != null and directionDueDate != "") then (date(directionDueDate) - date(now)).days else 0</text>
+          <text>
+                        if (directionDueDate != null and directionDueDate != "") then
+                        (date(directionDueDate) - date(now)).days
+                        else 0
+                    </text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0a21cw2">
           <text>2</text>
@@ -1048,7 +1110,11 @@ null</text>
           <text>"TCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_08ot9zz">
-          <text>if (directionDueDate != null and directionDueDate != "") then (date(directionDueDate) - date(now)).days else 0</text>
+          <text>
+                        if (directionDueDate != null and directionDueDate != "") then
+                        (date(directionDueDate) - date(now)).days
+                        else 0
+                    </text>
         </outputEntry>
         <outputEntry id="LiteralExpression_07ijv3r">
           <text>2</text>
@@ -1083,7 +1149,11 @@ null</text>
           <text>"TCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0qjgx5e">
-          <text>if (directionDueDate != null and directionDueDate != "") then (date(directionDueDate) - date(now)).days else 0</text>
+          <text>
+                        if (directionDueDate != null and directionDueDate != "") then
+                        (date(directionDueDate) - date(now)).days
+                        else 0
+                    </text>
         </outputEntry>
         <outputEntry id="LiteralExpression_05d86le">
           <text>2</text>
@@ -1129,7 +1199,12 @@ null</text>
       </rule>
       <rule id="DecisionRule_14ahiq5">
         <inputEntry id="UnaryTests_0ho5uzj">
-          <text>"uploadAddendumEvidenceLegalRep","uploadAddendumEvidence","uploadAddendumEvidenceHomeOffice","uploadAddendumEvidenceAdminOfficer"</text>
+          <text>
+                        "uploadAddendumEvidenceLegalRep",
+                        "uploadAddendumEvidence",
+                        "uploadAddendumEvidenceHomeOffice",
+                        "uploadAddendumEvidenceAdminOfficer"
+                    </text>
         </inputEntry>
         <inputEntry id="UnaryTests_0ddvkas">
           <text>"preHearing","decision","decided"</text>

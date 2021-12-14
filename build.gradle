@@ -248,8 +248,8 @@ dependencies {
   implementation group: 'com.github.hmcts.java-logging', name: 'java-logging', version: versions.reformLogging
   implementation group: 'com.github.hmcts.java-logging', name: 'java-logging-appinsights', version: versions.reformLogging
 
-  implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-core', version: '9.0.54'
-  implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-websocket', version: '9.0.54'
+  implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-core', version: versions.tomcat
+  implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-websocket', version: versions.tomcat
 
   testCompile group: 'org.pitest', name: 'pitest', version: versions.pitest
   testCompile 'info.solidsoft.gradle.pitest:gradle-pitest-plugin:1.5.2'

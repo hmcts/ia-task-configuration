@@ -9,6 +9,7 @@ import org.camunda.bpm.engine.variable.impl.VariableMapImpl;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.platform.commons.util.StringUtils;
@@ -36,11 +37,34 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         CURRENT_DMN_DECISION_TABLE = WA_TASK_CONFIGURATION_IA_ASYLUM;
     }
 
+    @ParameterizedTest
+    @CsvSource({
+        "followUpNoticeOfChange"
+    })
+    void when_taskId_then_return_Access_Requests(String taskType) {
+        VariableMap inputVariables = new VariableMapImpl();
+
+        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        List<Map<String, Object>> workTypeResultList = dmnDecisionTableResult.getResultList().stream()
+            .filter((r) -> r.containsValue("workType"))
+            .collect(Collectors.toList());
+
+        assertEquals(1, workTypeResultList.size());
+
+        assertEquals(Map.of(
+            "name", "workType",
+            "value", "access_requests"
+        ), workTypeResultList.get(0));
+    }
+
     @Test
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(12));
+        assertThat(logic.getRules().size(), is(15));
     }
 
     @SuppressWarnings("checkstyle:indentation")
@@ -126,136 +150,87 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         }
     }
 
-    @ParameterizedTest
-    @CsvSource({"arrangeOfflinePayment", "markCaseAsPaid", "attendCma", "createCaseSummary", "followUpExtendedDirection", "followUpNonStandardDirection", "reviewAdditionalEvidence", "reviewClarifyingQuestionsAnswers"})
-    void when_taskId_then_return_Routine_Work(String taskType) {
-        VariableMap inputVariables = new VariableMapImpl();
-
-        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
-
-        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
-
-        List<Map<String, Object>> workTypeResultList = dmnDecisionTableResult.getResultList().stream()
-            .filter((r) -> r.containsValue("workType"))
-            .collect(Collectors.toList());
-
-        assertEquals(1, workTypeResultList.size());
-
-        assertEquals(Map.of(
+    public static Stream<Arguments> workTypeScenarioProvider() {
+        List<Map<String, String>> routineWork = List.of(Map.of(
             "name", "workType",
             "value", "routine_work"
-        ), workTypeResultList.get(0));
-    }
-
-    @ParameterizedTest
-    @CsvSource({
-        "reviewTheAppeal", "followUpOverdueRespondentEvidence", "reviewRespondentEvidence",
-        "followUpOverdueCaseBuilding",
-        "reviewAppealSkeletonArgument", "followUpOverdueReasonsForAppeal", "reviewReasonsForAppeal",
-        "followUpOverdueClarifyingAnswers", "reviewClarifyingAnswers", "followUpOverdueRespondentReview",
-        "reviewRespondentResponse", "followUpOverdueCMARequirements", "reviewCmaRequirements",
-        "reviewAdditionalHomeOfficeEvidence", "reviewAdditionalAppellantEvidence", "reviewAddendumHomeOfficeEvidence",
-        "reviewAddendumAppellantEvidence", "reviewAddendumEvidence", "processReviewDecisionApplication",
-        "decideOnTimeExtension", "sendDecisionsAndReasons", "startDecisionsAndReasonsDocument"
-    })
-    void when_taskId_then_return_Decision_making_work(String taskType) {
-        VariableMap inputVariables = new VariableMapImpl();
-
-        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
-
-        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
-
-        List<Map<String, Object>> workTypeResultList = dmnDecisionTableResult.getResultList().stream()
-            .filter((r) -> r.containsValue("workType"))
-            .collect(Collectors.toList());
-
-        assertEquals(1, workTypeResultList.size());
-
-        assertEquals(Map.of(
+        ));
+        List<Map<String, String>> decisionMakingWork = List.of(Map.of(
             "name", "workType",
             "value", "decision_making_work"
-        ), workTypeResultList.get(0));
-    }
-
-    @ParameterizedTest
-    @CsvSource({
-        "addListingDate", "createHearingBundle", "reviewHearingBundle", "generateDraftDecisionAndReasons",
-        "uploadDecision", "uploadHearingRecording", "updateHearingRequirements", "editListing",
-        "followUpOverdueHearingRequirements", "reviewHearingRequirements", "createHearingBundle"
-    })
-    void when_taskId_then_return_Hearing_Work(String taskType) {
-        VariableMap inputVariables = new VariableMapImpl();
-
-        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
-
-        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
-
-        List<Map<String, Object>> workTypeResultList = dmnDecisionTableResult.getResultList().stream()
-            .filter((r) -> r.containsValue("workType"))
-            .collect(Collectors.toList());
-
-        assertEquals(1, workTypeResultList.size());
-
-        assertEquals(Map.of(
+        ));
+        List<Map<String, String>> hearingWork = List.of(Map.of(
             "name", "workType",
             "value", "hearing_work"
-        ), workTypeResultList.get(0));
-    }
-
-    @ParameterizedTest
-    @CsvSource({
-        "processApplication", "processHearingRequirementsApplication", "processHearingCentreApplication",
-        "processApplicationToExpedite", "processApplicationToTransfer", "processApplicationForTimeExtension",
-        "processApplicationToWithdraw", "processAppealDetailsApplication", "processLinkedCaseApplication",
-        "processReinstatementApplication", "processApplicationToReviewDecision"
-    })
-    void when_taskId_then_return_Applications(String taskType) {
-        VariableMap inputVariables = new VariableMapImpl();
-
-        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
-
-        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
-
-        List<Map<String, Object>> workTypeResultList = dmnDecisionTableResult.getResultList().stream()
-            .filter((r) -> r.containsValue("workType"))
-            .collect(Collectors.toList());
-
-        assertEquals(1, workTypeResultList.size());
-
-        assertEquals(Map.of(
+        ));
+        List<Map<String, String>> applications = List.of(Map.of(
             "name", "workType",
             "value", "applications"
-        ), workTypeResultList.get(0));
-    }
-
-    @ParameterizedTest
-    @CsvSource({
-        "allocationFTPAToJudge", "decideOnFTPA"
-    })
-    void when_taskId_then_return_Upper_Tribunal(String taskType) {
-        VariableMap inputVariables = new VariableMapImpl();
-
-        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
-
-        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
-
-        List<Map<String, Object>> workTypeResultList = dmnDecisionTableResult.getResultList().stream()
-            .filter((r) -> r.containsValue("workType"))
-            .collect(Collectors.toList());
-
-        assertEquals(1, workTypeResultList.size());
-
-        assertEquals(Map.of(
+        ));
+        List<Map<String, String>> upperTribunal = List.of(Map.of(
             "name", "workType",
             "value", "upper_tribunal"
-        ), workTypeResultList.get(0));
+        ));
+
+        return Stream.of(
+            Arguments.of("arrangeOfflinePayment", routineWork),
+            Arguments.of("markCaseAsPaid", routineWork),
+            Arguments.of("attendCma", routineWork),
+            Arguments.of("createCaseSummary", routineWork),
+            Arguments.of("followUpExtendedDirection", routineWork),
+            Arguments.of("followUpNonStandardDirection", routineWork),
+            Arguments.of("reviewClarifyingQuestionsAnswers", routineWork),
+            Arguments.of("reviewAdditionalEvidence", List.of(
+                routineWork.get(0),
+                decisionMakingWork.get(0)
+            )),
+            Arguments.of("reviewTheAppeal", decisionMakingWork),
+            Arguments.of("followUpOverdueRespondentEvidence", decisionMakingWork),
+            Arguments.of("reviewRespondentEvidence", decisionMakingWork),
+            Arguments.of("followUpOverdueCaseBuilding", decisionMakingWork),
+            Arguments.of("reviewAppealSkeletonArgument", decisionMakingWork),
+            Arguments.of("followUpOverdueReasonsForAppeal", decisionMakingWork),
+            Arguments.of("reviewReasonsForAppeal", decisionMakingWork),
+            Arguments.of("followUpOverdueClarifyingAnswers", decisionMakingWork),
+            Arguments.of("reviewClarifyingAnswers", decisionMakingWork),
+            Arguments.of("followUpOverdueRespondentReview", decisionMakingWork),
+            Arguments.of("reviewRespondentResponse", decisionMakingWork),
+            Arguments.of("followUpOverdueCMARequirements", decisionMakingWork),
+            Arguments.of("reviewCmaRequirements", decisionMakingWork),
+            Arguments.of("reviewAdditionalHomeOfficeEvidence", decisionMakingWork),
+            Arguments.of("reviewAdditionalAppellantEvidence", decisionMakingWork),
+            Arguments.of("reviewAddendumHomeOfficeEvidence", decisionMakingWork),
+            Arguments.of("decideOnTimeExtension", decisionMakingWork),
+            Arguments.of("sendDecisionsAndReasons", decisionMakingWork),
+            Arguments.of("addListingDate", hearingWork),
+            Arguments.of("createHearingBundle", hearingWork),
+            Arguments.of("reviewHearingBundle", hearingWork),
+            Arguments.of("generateDraftDecisionAndReasons", hearingWork),
+            Arguments.of("uploadDecision", hearingWork),
+            Arguments.of("uploadHearingRecording", hearingWork),
+            Arguments.of("updateHearingRequirements", hearingWork),
+            Arguments.of("editListing", hearingWork),
+            Arguments.of("followUpOverdueHearingRequirements", hearingWork),
+            Arguments.of("reviewHearingRequirements", hearingWork),
+            Arguments.of("processApplication", applications),
+            Arguments.of("processHearingRequirementsApplication", applications),
+            Arguments.of("processHearingCentreApplication", applications),
+            Arguments.of("processApplicationToExpedite", applications),
+            Arguments.of("processApplicationToTransfer", applications),
+            Arguments.of("processApplicationForTimeExtension", applications),
+            Arguments.of("processApplicationToWithdraw", applications),
+            Arguments.of("processAppealDetailsApplication", applications),
+            Arguments.of("processLinkedCaseApplication", applications),
+            Arguments.of("processReinstatementApplication", applications),
+            Arguments.of("processApplicationToReviewDecision", applications),
+            Arguments.of("allocationFTPAToJudge", upperTribunal),
+            Arguments.of("decideOnFTPA", upperTribunal)
+        );
     }
 
     @ParameterizedTest
-    @CsvSource({
-        "followUpNoticeOfChange"
-    })
-    void when_taskId_then_return_Access_Requests(String taskType) {
+    @MethodSource("workTypeScenarioProvider")
+    void when_taskId_then_return_workType(String taskType, List<Map<String, String>> expected) {
         VariableMap inputVariables = new VariableMapImpl();
 
         inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
@@ -266,11 +241,83 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             .filter((r) -> r.containsValue("workType"))
             .collect(Collectors.toList());
 
+        assertEquals(expected, workTypeResultList);
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+        "reviewHearingBundle", "generateDraftDecisionAndReasons", "uploadDecision", "reviewAddendumHomeOfficeEvidence",
+        "reviewAddendumAppellantEvidence", "reviewAddendumEvidence"
+    })
+    void when_taskId_then_return_judicial_role_category(String taskType) {
+        VariableMap inputVariables = new VariableMapImpl();
+
+        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        List<Map<String, Object>> workTypeResultList = dmnDecisionTableResult.getResultList().stream()
+            .filter((r) -> r.containsValue("roleCategory"))
+            .collect(Collectors.toList());
+
         assertEquals(1, workTypeResultList.size());
 
         assertEquals(Map.of(
-            "name", "workType",
-            "value", "access_requests"
+            "name", "roleCategory",
+            "value", "JUDICIAL"
+        ), workTypeResultList.get(0));
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+        "arrangeOfflinePayment", "markCaseAsPaid", "addListingDate", "allocateHearingJudge", "uploadHearingRecording"
+    })
+    void when_taskId_then_return_administrator_role_category(String taskType) {
+        VariableMap inputVariables = new VariableMapImpl();
+
+        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        List<Map<String, Object>> workTypeResultList = dmnDecisionTableResult.getResultList().stream()
+            .filter((r) -> r.containsValue("roleCategory"))
+            .collect(Collectors.toList());
+
+        assertEquals(1, workTypeResultList.size());
+
+        assertEquals(Map.of(
+            "name", "roleCategory",
+            "value", "ADMINISTRATOR"
+        ), workTypeResultList.get(0));
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+        "processApplication", "reviewTheAppeal", "decideOnTimeExtension", "reviewRespondentEvidence",
+        "reviewAppealSkeletonArgument", "reviewReasonsForAppeal", "reviewClarifyingQuestionsAnswers",
+        "reviewCmaRequirements", "attendCma", "reviewRespondentResponse", "createCaseSummary", "createHearingBundle",
+        "startDecisionsAndReasonsDocument", "reviewHearingRequirements", "followUpOverdueRespondentEvidence",
+        "followUpOverdueCaseBuilding", "followUpOverdueReasonsForAppeal", "followUpOverdueClarifyingAnswers",
+        "followUpOverdueCmaRequirements", "followUpOverdueRespondentReview", "followUpOverdueHearingRequirements",
+        "followUpNonStandardDirection", "followUpNoticeOfChange", "reviewAdditionalEvidence",
+        "reviewAdditionalHomeOfficeEvidence"
+    })
+    void when_taskId_then_return_legal_operations_role_category(String taskType) {
+        VariableMap inputVariables = new VariableMapImpl();
+
+        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        List<Map<String, Object>> workTypeResultList = dmnDecisionTableResult.getResultList().stream()
+            .filter((r) -> r.containsValue("roleCategory"))
+            .collect(Collectors.toList());
+
+        assertEquals(1, workTypeResultList.size());
+
+        assertEquals(Map.of(
+            "name", "roleCategory",
+            "value", "LEGAL_OPERATIONS"
         ), workTypeResultList.get(0));
     }
 
@@ -345,6 +392,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 .expectedLocationNameValue("some other location name")
                 .expectedCaseManagementCategoryValue("Human rights")
                 .expectedWorkType("routine_work")
+                .expectedRoleCategory("ADMINISTRATOR")
                 .build();
 
         Scenario givenSomeCaseDataAndTaskTypeIsEmptyThenExpectNoWorkTypeRuleScenario =
@@ -383,6 +431,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 .expectedLocationNameValue("Taylor House")
                 .expectedCaseManagementCategoryValue("")
                 .expectedWorkType("routine_work")
+                .expectedRoleCategory("ADMINISTRATOR")
                 .build();
 
         return Stream.of(
@@ -406,6 +455,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         String expectedLocationNameValue;
         String expectedCaseManagementCategoryValue;
         String expectedWorkType;
+        String expectedRoleCategory;
     }
 
     private List<Map<String, String>> getExpectedValues(Scenario scenario) {
@@ -420,6 +470,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         if (!Objects.isNull(scenario.getTaskAttributes())
             && StringUtils.isNotBlank(scenario.taskAttributes.get("taskType").toString())) {
             getExpectedValue(rules, "workType", scenario.getExpectedWorkType());
+            getExpectedValue(rules, "roleCategory", scenario.getExpectedRoleCategory());
         }
 
         return rules;

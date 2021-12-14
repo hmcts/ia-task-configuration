@@ -1,209 +1,392 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.11.1">
-  <decision id="wa-task-configuration-ia-asylum" name="Task configuration DMN">
-    <decisionTable id="DecisionTable_14cx079" hitPolicy="COLLECT">
-      <input id="InputClause_1gxyo7f" label="CCD Case Data" camunda:inputVariable="caseData">
-        <inputExpression id="LiteralExpression_0mra7c4" typeRef="string">
-          <text></text>
-        </inputExpression>
-      </input>
-      <input id="InputClause_1gmuynt" label="Task type" biodi:width="924" camunda:inputVariable="taskType">
-        <inputExpression id="LiteralExpression_06iiuqg" typeRef="string">
-          <text>if(taskAttributes != null and taskAttributes.taskType != null) then
-            taskAttributes. taskType
-else if(taskType != null) then
-           taskType
-else 
-null</text>
-        </inputExpression>
-      </input>
-      <output id="Output_1" label="Name" name="name" typeRef="string" />
-      <output id="OutputClause_021y3bb" label="Value" name="value" typeRef="string" biodi:width="803" />
-      <rule id="DecisionRule_0u7yi27">
-        <inputEntry id="UnaryTests_03ky0ek">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_03q2nz0">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0nkps91">
-          <text>"caseName"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_06tqng3">
-          <text>caseData.appellantGivenNames + " " + caseData.appellantFamilyName</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0oagl97">
-        <inputEntry id="UnaryTests_0mkzt2r">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1esseck">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0selern">
-          <text>"appealType"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0t707ev">
-          <text>if caseData.appealType = "refusalOfHumanRights" then "Human rights" else if caseData.appealType = "refusalOfEu" then "EEA" else if caseData.appealType = "deprivation" then "DoC" else if caseData.appealType = "protection" then "Protection" else if caseData.appealType = "revocationOfProtection" then "Revocation" else ""</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0r3u9cf">
-        <inputEntry id="UnaryTests_1bqxdqr">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0wxfevs">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0etwrk3">
-          <text>"region"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_05korws">
-          <text>if (caseData.caseManagementLocation != null and caseData.caseManagementLocation.region != null) then caseData.caseManagementLocation.region else "1"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_06fd9qz">
-        <inputEntry id="UnaryTests_0slfog9">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1u21xrs">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0kun6mv">
-          <text>"location"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0jj1wzo">
-          <text>if (caseData.caseManagementLocation != null and caseData.caseManagementLocation.baseLocation != null) then caseData.caseManagementLocation.baseLocation else "765324"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1oirne1">
-        <inputEntry id="UnaryTests_04xtpdu">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1ssoq5v">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1lvlmxm">
-          <text>"locationName"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0xp4dc7">
-          <text>if (caseData.caseManagementLocation != null and caseData.caseManagementLocation.baseLocation != null  and caseData.staffLocation != null) then caseData.staffLocation else "Taylor House"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_03afipt">
-        <inputEntry id="UnaryTests_0aqybrx">
-          <text>-</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0nmr895">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_04r7w97">
-          <text>"caseManagementCategory"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_099dwbs">
-          <text>if (caseData.caseManagementCategory !=null and caseData.caseManagementCategory.value.code = "refusalOfHumanRights") then "Human rights"
-else if (caseData.caseManagementCategory !=null and caseData.caseManagementCategory.value.code = "refusalOfEu") then "EEA"
-else if (caseData.caseManagementCategory !=null and caseData.caseManagementCategory.value.code = "deprivation") then "DoC"
-else if (caseData.caseManagementCategory !=null and caseData.caseManagementCategory.value.code = "protection") then "Protection"
-else if (caseData.caseManagementCategory !=null and caseData.caseManagementCategory.value.code = "revocationOfProtection") then "Revocation"
-else if caseData.appealType = "refusalOfHumanRights" then "Human rights"
-else if caseData.appealType = "refusalOfEu" then "EEA"
-else if caseData.appealType = "deprivation" then "DoC"
-else if caseData.appealType = "protection" then "Protection"
-else if caseData.appealType = "revocationOfProtection" then "Revocation" else ""</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0ikmf14">
-        <inputEntry id="UnaryTests_0epux74">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1y3kj1v">
-          <text>"arrangeOfflinePayment","markCaseAsPaid","attendCma","createCaseSummary","followUpExtendedDirection","followUpNonStandardDirection","reviewAdditionalEvidence","reviewClarifyingQuestionsAnswers"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0rvgay2">
-          <text>"workType"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0zoponq">
-          <text>"routine_work"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1csczvs">
-        <inputEntry id="UnaryTests_0wmnz5z">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1gm06lg">
-          <text>"reviewTheAppeal","followUpOverdueRespondentEvidence","reviewRespondentEvidence","followUpOverdueCaseBuilding","reviewAppealSkeletonArgument","followUpOverdueReasonsForAppeal","reviewReasonsForAppeal",       "followUpOverdueClarifyingAnswers","reviewClarifyingAnswers","followUpOverdueRespondentReview","reviewRespondentResponse","followUpOverdueCMARequirements","reviewCmaRequirements","reviewAdditionalHomeOfficeEvidence",           "reviewAdditionalAppellantEvidence","reviewAddendumHomeOfficeEvidence","reviewAddendumAppellantEvidence","reviewAddendumEvidence","processReviewDecisionApplication","decideOnTimeExtension","sendDecisionsAndReasons","startDecisionsAndReasonsDocument"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0omxasv">
-          <text>"workType"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0mfd2ul">
-          <text>"decision_making_work"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_03n8x3v">
-        <inputEntry id="UnaryTests_0u2qxu3">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1ps3x4j">
-          <text>"addListingDate","createHearingBundle","reviewHearingBundle","generateDraftDecisionAndReasons","uploadDecision","uploadHearingRecording","updateHearingRequirements","editListing","followUpOverdueHearingRequirements","reviewHearingRequirements","createHearingBundle"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0c3eia6">
-          <text>"workType"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_19poitv">
-          <text>"hearing_work"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1mgtmkd">
-        <inputEntry id="UnaryTests_0mpogvu">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0uoqs4p">
-          <text>"processApplication","processHearingRequirementsApplication","processHearingCentreApplication","processApplicationToExpedite","processApplicationToTransfer",
-"processApplicationForTimeExtension","processApplicationToWithdraw","processAppealDetailsApplication","processLinkedCaseApplication","processReinstatementApplication","processApplicationToReviewDecision"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1qi2rsb">
-          <text>"workType"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1spq9ei">
-          <text>"applications"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_00yasz5">
-        <inputEntry id="UnaryTests_0zfo8ln">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_04wtfxs">
-          <text>"allocationFTPAToJudge","decideOnFTPA"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1ywf3hm">
-          <text>"workType"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0jcwzi7">
-          <text>"upper_tribunal"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_00hw86q">
-        <inputEntry id="UnaryTests_1ov750e">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1466etp">
-          <text>"followUpNoticeOfChange"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0bjcvtf">
-          <text>"workType"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0qvacss">
-          <text>"access_requests"</text>
-        </outputEntry>
-      </rule>
-    </decisionTable>
-  </decision>
-  <dmndi:DMNDI>
-    <dmndi:DMNDiagram id="DMNDiagram_1ifewa3">
-      <dmndi:DMNShape id="DMNShape_0ijg0or" dmnElementRef="wa-task-configuration-ia-asylum">
-        <dc:Bounds height="80" width="180" x="150" y="80" />
-      </dmndi:DMNShape>
-    </dmndi:DMNDiagram>
-  </dmndi:DMNDI>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/"
+             xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/"
+             xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0"
+             xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD"
+             namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.11.1">
+    <decision id="wa-task-configuration-ia-asylum" name="Task configuration DMN">
+        <decisionTable id="DecisionTable_14cx079" hitPolicy="COLLECT">
+            <input id="InputClause_1gxyo7f" label="CCD Case Data" camunda:inputVariable="caseData">
+                <inputExpression id="LiteralExpression_0mra7c4" typeRef="string">
+                    <text></text>
+                </inputExpression>
+            </input>
+            <input id="InputClause_1gmuynt" label="Task type" biodi:width="415" camunda:inputVariable="taskType">
+                <inputExpression id="LiteralExpression_06iiuqg" typeRef="string">
+                    <text>if(taskAttributes != null and taskAttributes.taskType != null) then
+                        taskAttributes. taskType
+                        else if(taskType != null) then
+                        taskType
+                        else
+                        null
+                    </text>
+                </inputExpression>
+            </input>
+            <output id="Output_1" label="Name" name="name" typeRef="string"/>
+            <output id="OutputClause_021y3bb" label="Value" name="value" typeRef="string" biodi:width="803"/>
+            <rule id="DecisionRule_0u7yi27">
+                <inputEntry id="UnaryTests_03ky0ek">
+                    <text></text>
+                </inputEntry>
+                <inputEntry id="UnaryTests_03q2nz0">
+                    <text></text>
+                </inputEntry>
+                <outputEntry id="LiteralExpression_0nkps91">
+                    <text>"caseName"</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_06tqng3">
+                    <text>caseData.appellantGivenNames + " " + caseData.appellantFamilyName</text>
+                </outputEntry>
+            </rule>
+            <rule id="DecisionRule_0oagl97">
+                <inputEntry id="UnaryTests_0mkzt2r">
+                    <text></text>
+                </inputEntry>
+                <inputEntry id="UnaryTests_1esseck">
+                    <text></text>
+                </inputEntry>
+                <outputEntry id="LiteralExpression_0selern">
+                    <text>"appealType"</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_0t707ev">
+                    <text>
+                        if caseData.appealType = "refusalOfHumanRights" then
+                        "Human rights"
+                        else if caseData.appealType = "refusalOfEu" then
+                        "EEA"
+                        else if caseData.appealType = "deprivation" then
+                        "DoC"
+                        else if caseData.appealType = "protection" then
+                        "Protection"
+                        else if caseData.appealType = "revocationOfProtection" then
+                        "Revocation"
+                        else ""
+                    </text>
+                </outputEntry>
+            </rule>
+            <rule id="DecisionRule_0r3u9cf">
+                <inputEntry id="UnaryTests_1bqxdqr">
+                    <text></text>
+                </inputEntry>
+                <inputEntry id="UnaryTests_0wxfevs">
+                    <text></text>
+                </inputEntry>
+                <outputEntry id="LiteralExpression_0etwrk3">
+                    <text>"region"</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_05korws">
+                    <text>
+                        if (caseData.caseManagementLocation != null and caseData.caseManagementLocation.region != null)
+                        then
+                        caseData.caseManagementLocation.region else "1"
+                    </text>
+                </outputEntry>
+            </rule>
+            <rule id="DecisionRule_06fd9qz">
+                <inputEntry id="UnaryTests_0slfog9">
+                    <text></text>
+                </inputEntry>
+                <inputEntry id="UnaryTests_1u21xrs">
+                    <text></text>
+                </inputEntry>
+                <outputEntry id="LiteralExpression_0kun6mv">
+                    <text>"location"</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_0jj1wzo">
+                    <text>
+                        if (caseData.caseManagementLocation != null and caseData.caseManagementLocation.baseLocation !=
+                        null) then
+                        caseData.caseManagementLocation.baseLocation else "765324"
+                    </text>
+                </outputEntry>
+            </rule>
+            <rule id="DecisionRule_1oirne1">
+                <inputEntry id="UnaryTests_04xtpdu">
+                    <text></text>
+                </inputEntry>
+                <inputEntry id="UnaryTests_1ssoq5v">
+                    <text></text>
+                </inputEntry>
+                <outputEntry id="LiteralExpression_1lvlmxm">
+                    <text>"locationName"</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_0xp4dc7">
+                    <text>
+                        if (caseData.caseManagementLocation != null and caseData.caseManagementLocation.baseLocation !=
+                        null and caseData.staffLocation != null) then
+                        caseData.staffLocation else "Taylor House"
+                    </text>
+                </outputEntry>
+            </rule>
+            <rule id="DecisionRule_03afipt">
+                <inputEntry id="UnaryTests_0aqybrx">
+                    <text>-</text>
+                </inputEntry>
+                <inputEntry id="UnaryTests_0nmr895">
+                    <text></text>
+                </inputEntry>
+                <outputEntry id="LiteralExpression_04r7w97">
+                    <text>"caseManagementCategory"</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_099dwbs">
+                    <text>
+                        if (caseData.caseManagementCategory !=null and caseData.caseManagementCategory.value.code =
+                        "refusalOfHumanRights") then
+                        "Human rights"
+                        else if (caseData.caseManagementCategory !=null and caseData.caseManagementCategory.value.code =
+                        "refusalOfEu") then
+                        "EEA"
+                        else if (caseData.caseManagementCategory !=null and caseData.caseManagementCategory.value.code =
+                        "deprivation") then
+                        "DoC"
+                        else if (caseData.caseManagementCategory !=null and caseData.caseManagementCategory.value.code =
+                        "protection") then
+                        "Protection"
+                        else if (caseData.caseManagementCategory !=null and caseData.caseManagementCategory.value.code =
+                        "revocationOfProtection") then
+                        "Revocation"
+                        else if caseData.appealType = "refusalOfHumanRights" then
+                        "Human rights"
+                        else if caseData.appealType = "refusalOfEu" then
+                        "EEA"
+                        else if caseData.appealType = "deprivation" then
+                        "DoC"
+                        else if caseData.appealType = "protection" then
+                        "Protection"
+                        else if caseData.appealType = "revocationOfProtection" then
+                        "Revocation"
+                        else ""
+                    </text>
+                </outputEntry>
+            </rule>
+            <rule id="DecisionRule_0ikmf14">
+                <inputEntry id="UnaryTests_0epux74">
+                    <text></text>
+                </inputEntry>
+                <inputEntry id="UnaryTests_1y3kj1v">
+                    <text>
+                        "arrangeOfflinePayment",
+                        "markCaseAsPaid",
+                        "attendCma",
+                        "createCaseSummary",
+                        "followUpExtendedDirection",
+                        "followUpNonStandardDirection",
+                        "reviewAdditionalEvidence",
+                        "reviewClarifyingQuestionsAnswers"
+                    </text>
+                </inputEntry>
+                <outputEntry id="LiteralExpression_0rvgay2">
+                    <text>"workType"</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_0zoponq">
+                    <text>"routine_work"</text>
+                </outputEntry>
+            </rule>
+            <rule id="DecisionRule_1csczvs">
+                <inputEntry id="UnaryTests_0wmnz5z">
+                    <text></text>
+                </inputEntry>
+                <inputEntry id="UnaryTests_1gm06lg">
+                    <text>
+                        "reviewTheAppeal",
+                        "followUpOverdueRespondentEvidence",
+                        "reviewRespondentEvidence",
+                        "followUpOverdueCaseBuilding",
+                        "reviewAppealSkeletonArgument",
+                        "followUpOverdueReasonsForAppeal",
+                        "reviewReasonsForAppeal",
+                        "followUpOverdueClarifyingAnswers",
+                        "reviewClarifyingAnswers",
+                        "followUpOverdueRespondentReview",
+                        "reviewRespondentResponse",
+                        "followUpOverdueCMARequirements",
+                        "reviewCmaRequirements",
+                        "reviewAdditionalEvidence",
+                        "reviewAdditionalHomeOfficeEvidence",
+                        "reviewAdditionalAppellantEvidence",
+                        "reviewAddendumHomeOfficeEvidence",
+                        "reviewAddendumAppellantEvidence",
+                        "reviewAddendumEvidence",
+                        "processReviewDecisionApplication",
+                        "decideOnTimeExtension",
+                        "sendDecisionsAndReasons",
+                        "startDecisionsAndReasonsDocument"
+                    </text>
+                </inputEntry>
+                <outputEntry id="LiteralExpression_0omxasv">
+                    <text>"workType"</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_0mfd2ul">
+                    <text>"decision_making_work"</text>
+                </outputEntry>
+            </rule>
+            <rule id="DecisionRule_03n8x3v">
+                <inputEntry id="UnaryTests_0u2qxu3">
+                    <text></text>
+                </inputEntry>
+                <inputEntry id="UnaryTests_1ps3x4j">
+                    <text>
+                        "addListingDate",
+                        "reviewHearingBundle",
+                        "generateDraftDecisionAndReasons",
+                        "uploadDecision",
+                        "uploadHearingRecording",
+                        "updateHearingRequirements",
+                        "editListing",
+                        "followUpOverdueHearingRequirements",
+                        "reviewHearingRequirements",
+                        "createHearingBundle"
+                    </text>
+                </inputEntry>
+                <outputEntry id="LiteralExpression_0c3eia6">
+                    <text>"workType"</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_19poitv">
+                    <text>"hearing_work"</text>
+                </outputEntry>
+            </rule>
+            <rule id="DecisionRule_1mgtmkd">
+                <inputEntry id="UnaryTests_0mpogvu">
+                    <text></text>
+                </inputEntry>
+                <inputEntry id="UnaryTests_0uoqs4p">
+                    <text>
+                        "processApplication",
+                        "processHearingRequirementsApplication",
+                        "processHearingCentreApplication",
+                        "processApplicationToExpedite",
+                        "processApplicationToTransfer",
+                        "processApplicationForTimeExtension",
+                        "processApplicationToWithdraw",
+                        "processAppealDetailsApplication",
+                        "processLinkedCaseApplication",
+                        "processReinstatementApplication",
+                        "processApplicationToReviewDecision"
+                    </text>
+                </inputEntry>
+                <outputEntry id="LiteralExpression_1qi2rsb">
+                    <text>"workType"</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_1spq9ei">
+                    <text>"applications"</text>
+                </outputEntry>
+            </rule>
+            <rule id="DecisionRule_00yasz5">
+                <inputEntry id="UnaryTests_0zfo8ln">
+                    <text></text>
+                </inputEntry>
+                <inputEntry id="UnaryTests_04wtfxs">
+                    <text>"allocationFTPAToJudge","decideOnFTPA"</text>
+                </inputEntry>
+                <outputEntry id="LiteralExpression_1ywf3hm">
+                    <text>"workType"</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_0jcwzi7">
+                    <text>"upper_tribunal"</text>
+                </outputEntry>
+            </rule>
+            <rule id="DecisionRule_00hw86q">
+                <inputEntry id="UnaryTests_1ov750e">
+                    <text></text>
+                </inputEntry>
+                <inputEntry id="UnaryTests_1466etp">
+                    <text>"followUpNoticeOfChange"</text>
+                </inputEntry>
+                <outputEntry id="LiteralExpression_0bjcvtf">
+                    <text>"workType"</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_0qvacss">
+                    <text>"access_requests"</text>
+                </outputEntry>
+            </rule>
+            <rule id="DecisionRule_1dhhpyl">
+                <inputEntry id="UnaryTests_13pqmkc">
+                    <text></text>
+                </inputEntry>
+                <inputEntry id="UnaryTests_10f3uas">
+                    <text>
+                        "processApplication",
+                        "reviewTheAppeal",
+                        "decideOnTimeExtension",
+                        "reviewRespondentEvidence",
+                        "reviewAppealSkeletonArgument",
+                        "reviewReasonsForAppeal",
+                        "reviewClarifyingQuestionsAnswers",
+                        "reviewCmaRequirements",
+                        "attendCma",
+                        "reviewRespondentResponse",
+                        "createCaseSummary",
+                        "createHearingBundle",
+                        "startDecisionsAndReasonsDocument",
+                        "reviewHearingRequirements",
+                        "followUpOverdueRespondentEvidence",
+                        "followUpOverdueCaseBuilding",
+                        "followUpOverdueReasonsForAppeal",
+                        "followUpOverdueClarifyingAnswers",
+                        "followUpOverdueCmaRequirements",
+                        "followUpOverdueRespondentReview",
+                        "followUpOverdueHearingRequirements",
+                        "followUpNonStandardDirection",
+                        "followUpNoticeOfChange",
+                        "reviewAdditionalEvidence",
+                        "reviewAdditionalHomeOfficeEvidence"
+                    </text>
+                </inputEntry>
+                <outputEntry id="LiteralExpression_05l5bvs">
+                    <text>"roleCategory"</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_18y163a">
+                    <text>"LEGAL_OPERATIONS"</text>
+                </outputEntry>
+            </rule>
+            <rule id="DecisionRule_01muxrj">
+                <inputEntry id="UnaryTests_0ullysh">
+                    <text></text>
+                </inputEntry>
+                <inputEntry id="UnaryTests_1glizm3">
+                    <text>
+                        "arrangeOfflinePayment",
+                        "markCaseAsPaid",
+                        "addListingDate",
+                        "allocateHearingJudge",
+                        "uploadHearingRecording"
+                    </text>
+                </inputEntry>
+                <outputEntry id="LiteralExpression_1131kat">
+                    <text>"roleCategory"</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_0el7tae">
+                    <text>"ADMINISTRATOR"</text>
+                </outputEntry>
+            </rule>
+            <rule id="DecisionRule_01cmxvs">
+                <inputEntry id="UnaryTests_1np8ii5">
+                    <text></text>
+                </inputEntry>
+                <inputEntry id="UnaryTests_15ftuu0">
+                    <text>
+                        "reviewHearingBundle",
+                        "generateDraftDecisionAndReasons",
+                        "uploadDecision",
+                        "reviewAddendumHomeOfficeEvidence",
+                        "reviewAddendumAppellantEvidence",
+                        "reviewAddendumEvidence"
+                    </text>
+                </inputEntry>
+                <outputEntry id="LiteralExpression_15nowth">
+                    <text>"roleCategory"</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_1cn9cb2">
+                    <text>"JUDICIAL"</text>
+                </outputEntry>
+            </rule>
+        </decisionTable>
+    </decision>
+    <dmndi:DMNDI>
+        <dmndi:DMNDiagram id="DMNDiagram_1ifewa3">
+            <dmndi:DMNShape id="DMNShape_0ijg0or" dmnElementRef="wa-task-configuration-ia-asylum">
+                <dc:Bounds height="80" width="180" x="150" y="80"/>
+            </dmndi:DMNShape>
+        </dmndi:DMNDiagram>
+    </dmndi:DMNDI>
 </definitions>
