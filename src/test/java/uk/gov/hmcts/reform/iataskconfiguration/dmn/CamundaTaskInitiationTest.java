@@ -611,10 +611,31 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "draftHearingRequirements",
                 "listing",
                 null,
-                singletonList(
+                List.of(
                     Map.of(
                         "taskId", "reviewHearingRequirements",
                         "name", "Review hearing requirements",
+                        "group", "TCW",
+                        "workingDaysAllowed", 2,
+                        "processCategories", "caseProgression"
+                    ),
+                    Map.of(
+                        "taskId", "addListingDate",
+                        "name", "Add listing date",
+                        "group", "TCW",
+                        "workingDaysAllowed", 2,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "listCaseWithoutHearingRequirements",
+                "listing",
+                null,
+                List.of(
+                    Map.of(
+                        "taskId", "addListingDate",
+                        "name", "Add listing date",
                         "group", "TCW",
                         "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
@@ -960,7 +981,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(5));
         assertThat(logic.getOutputs().size(), is(6));
-        assertThat(logic.getRules().size(), is(34));
+        assertThat(logic.getRules().size(), is(35));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {
