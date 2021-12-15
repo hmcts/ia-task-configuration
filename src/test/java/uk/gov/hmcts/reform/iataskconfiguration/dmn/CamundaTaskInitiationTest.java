@@ -869,9 +869,29 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     )
                 )
             ),
+            Arguments.of(
+                "makeAnApplication",
+                null,
+                mapAdditionalData(" {\n"
+                                      + "        \"Data\" : {\n"
+                                      + "          \"lastModifiedApplication\" : {\n"
+                                      + "            \"type\" : \"Link/unlink appeals\",\n"
+                                      + "            \"decision\" : \"\"\n"
+                                      + "          }\n"
+                                      + "        }\n"
+                                      + "      }"),
+                singletonList(
+                    Map.of(
+                        "taskId", "processLinkedCaseApplication",
+                        "name", "Process linked case application",
+                        "group", "TCW",
+                        "workingDaysAllowed", 5,
+                        "processCategories", "application"
+                    )
+                )
+            ),
             getArgumentOf("Adjourn"),
             getArgumentOf("Expedite"),
-            getArgumentOf("Link/unlink appeals"),
             getArgumentOf("Time extension"),
             getArgumentOf("Transfer"),
             getArgumentOf("Withdraw"),
@@ -981,7 +1001,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(5));
         assertThat(logic.getOutputs().size(), is(6));
-        assertThat(logic.getRules().size(), is(35));
+        assertThat(logic.getRules().size(), is(36));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {

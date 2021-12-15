@@ -70,7 +70,6 @@
           <text>
             "Adjourn",
             "Expedite",
-            "Link/unlink appeals",
             "Time extension",
             "Transfer",
             "Withdraw",
@@ -134,6 +133,41 @@
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1pyp879">
+          <text>"application"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1mkwakw">
+        <inputEntry id="UnaryTests_0e0tep7">
+          <text>"makeAnApplication"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0pm0h1o">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05s7pj9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1r0l3xa">
+          <text>"Link/unlink appeals"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1b8elr6">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0qbaud1">
+          <text>"processLinkedCaseApplication"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_07resrd">
+          <text>"Process linked case application"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1c9irf3">
+          <text>"TCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_111z2ae">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1gpskxc">
+          <text>5</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0caasi5">
           <text>"application"</text>
         </outputEntry>
       </rule>
