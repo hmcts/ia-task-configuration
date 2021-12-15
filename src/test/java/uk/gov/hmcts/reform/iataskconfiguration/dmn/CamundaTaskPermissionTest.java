@@ -29,6 +29,14 @@ import static uk.gov.hmcts.reform.iataskconfiguration.DmnDecisionTable.WA_TASK_P
 
 class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
 
+    private static final Map<String, Serializable> nationalBusinessCentre = Map.of(
+        "name", "national-business-centre",
+        "value", "Read,Refer,Own",
+        "roleCategory", "ADMINISTRATOR",
+        "assignmentPriority", 1,
+        "autoAssignable", false
+    );
+
     private static final Map<String, Serializable> taskSupervisor = Map.of(
         "autoAssignable", false,
         "name", "task-supervisor",
@@ -94,14 +102,6 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         "value", "Read,Refer,Own"
     );
 
-    private static final Map<String, Serializable> hearingCentreAdminPriorityOneWithAutoAssignable = Map.of(
-        "autoAssignable", true,
-        "assignmentPriority", 1,
-        "name", "hearing-centre-admin",
-        "value", "Read,Refer,Own",
-        "roleCategory", "ADMINISTRATOR"
-    );
-
     private static final Map<String, Serializable> hearingCentreAdminPriorityOne = Map.of(
         "autoAssignable", false,
         "assignmentPriority", 1,
@@ -165,7 +165,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     taskSupervisor,
                     tribunalCaseWorkerPriorityOne,
                     seniorCaseWorkerPriorityOne,
-                    hearingCentreAdminPriorityOneWithAutoAssignable,
+                    hearingCentreAdminPriorityOne,
                     judgePriorityOne
                 )
             ),
@@ -175,7 +175,17 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     taskSupervisor,
                     tribunalCaseWorkerPriorityOne,
                     seniorCaseWorkerPriorityOne,
-                    hearingCentreAdminPriorityOneWithAutoAssignable,
+                    hearingCentreAdminPriorityOne,
+                    judgePriorityOne
+                )
+            ),
+            Arguments.of(
+                "addListingDate",
+                List.of(
+                    taskSupervisor,
+                    tribunalCaseWorkerPriorityOne,
+                    seniorCaseWorkerPriorityOne,
+                    nationalBusinessCentre,
                     judgePriorityOne
                 )
             )
@@ -323,7 +333,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
     @SuppressWarnings("checkstyle:indentation")
     @ParameterizedTest
     @CsvSource(value = {
-        "arrangeOfflinePayment", "markCaseAsPaid", "addListingDate"
+        "arrangeOfflinePayment", "markCaseAsPaid"
     })
     void given_taskType_when_evaluate_dmn_then_it_returns_first_and_forth_rule(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
@@ -458,7 +468,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         assertThat(logic.getOutputs().size(), is(6));
         assertThatOutputContainInOrder(outputColumnIds, logic.getOutputs());
         //Rules
-        assertThat(logic.getRules().size(), is(14));
+        assertThat(logic.getRules().size(), is(13));
     }
 
     private void assertThatInputContainInOrder(List<String> inputColumnIds, List<DmnDecisionTableInputImpl> inputs) {

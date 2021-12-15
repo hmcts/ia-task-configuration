@@ -5,10 +5,10 @@
       <input id="InputClause_12crj6e" label="Task Type" biodi:width="406" camunda:inputVariable="taskType">
         <inputExpression id="LiteralExpression_11cu08d" typeRef="string" expressionLanguage="feel">
           <text>if(taskAttributes != null and taskAttributes.taskType != null) then
-                        taskAttributes.taskType
-                        else
-                        "r1"
-                    </text>
+            taskAttributes.taskType
+            else
+            "r1"
+          </text>
         </inputExpression>
       </input>
       <input id="Input_1" label="Case Data" camunda:inputVariable="case">
@@ -53,35 +53,35 @@
         <description>case manager task permissions</description>
         <inputEntry id="UnaryTests_155q736">
           <text>
-                        "reviewTheAppeal",
-                        "reviewRespondentEvidence",
-                        "followUpOverdueRespondentEvidence",
-                        "reviewAppealSkeletonArgument",
-                        "followUpOverdueCaseBuilding",
-                        "reviewReasonsForAppeal",
-                        "followUpOverdueReasonsForAppeal",
-                        "reviewClarifyingQuestionsAnswers",
-                        "followUpOverdueClarifyingAnswers",
-                        "reviewRespondentResponse",
-                        "followUpOverdueRespondentReview",
-                        "reviewHearingRequirements",
-                        "followUpOverdueHearingRequirements",
-                        "reviewCmaRequirements",
-                        "reviewAdditionalHomeOfficeEvidence",
-                        "reviewAdditionalAppellantEvidence",
-                        "reviewAdditionalHomeOfficeEvidence",
-                        "reviewAdditionalAppellantEvidence",
-                        "createHearingBundle",
-                        "processApplication",
-                        "attendCma",
-                        "startDecisionsAndReasonsDocument",
-                        "createCaseSummary",
-                        "followUpNoticeOfChange",
-                        "followUpOverdueCmaRequirements",
-                        "followUpNonStandardDirection",
-                        "decideOnTimeExtension",
-                        "reviewAdditionalEvidence"
-                    </text>
+            "reviewTheAppeal",
+            "reviewRespondentEvidence",
+            "followUpOverdueRespondentEvidence",
+            "reviewAppealSkeletonArgument",
+            "followUpOverdueCaseBuilding",
+            "reviewReasonsForAppeal",
+            "followUpOverdueReasonsForAppeal",
+            "reviewClarifyingQuestionsAnswers",
+            "followUpOverdueClarifyingAnswers",
+            "reviewRespondentResponse",
+            "followUpOverdueRespondentReview",
+            "reviewHearingRequirements",
+            "followUpOverdueHearingRequirements",
+            "reviewCmaRequirements",
+            "reviewAdditionalHomeOfficeEvidence",
+            "reviewAdditionalAppellantEvidence",
+            "reviewAdditionalHomeOfficeEvidence",
+            "reviewAdditionalAppellantEvidence",
+            "createHearingBundle",
+            "processApplication",
+            "attendCma",
+            "startDecisionsAndReasonsDocument",
+            "createCaseSummary",
+            "followUpNoticeOfChange",
+            "followUpOverdueCmaRequirements",
+            "followUpNonStandardDirection",
+            "decideOnTimeExtension",
+            "reviewAdditionalEvidence"
+          </text>
         </inputEntry>
         <inputEntry id="UnaryTests_0buofva">
           <text></text>
@@ -109,38 +109,39 @@
         <description>Tribunal caseworker task permissions</description>
         <inputEntry id="UnaryTests_13ukkz6">
           <text>
-                        "reviewTheAppeal",
-                        "reviewRespondentEvidence",
-                        "followUpOverdueRespondentEvidence",
-                        "reviewAppealSkeletonArgument",
-                        "followUpOverdueCaseBuilding",
-                        "reviewReasonsForAppeal",
-                        "followUpOverdueReasonsForAppeal",
-                        "reviewClarifyingQuestionsAnswers",
-                        "followUpOverdueClarifyingAnswers",
-                        "reviewRespondentResponse",
-                        "followUpOverdueRespondentReview",
-                        "reviewHearingRequirements",
-                        "followUpOverdueHearingRequirements",
-                        "reviewCmaRequirements",
-                        "reviewAdditionalHomeOfficeEvidence",
-                        "reviewAdditionalAppellantEvidence",
-                        "reviewAdditionalHomeOfficeEvidence",
-                        "reviewAdditionalAppellantEvidence",
-                        "createHearingBundle",
-                        "processApplication",
-                        "attendCma",
-                        "startDecisionsAndReasonsDocument",
-                        "createCaseSummary",
-                        "followUpNoticeOfChange",
-                        "followUpOverdueCmaRequirements",
-                        "followUpNonStandardDirection",
-                        "decideOnTimeExtension",
-                        "reviewAdditionalEvidence",
-                        "editListing",
-                        "updateHearingRequirements",
-                        "sendDecisionsAndReasons"
-                    </text>
+            "reviewTheAppeal",
+            "reviewRespondentEvidence",
+            "followUpOverdueRespondentEvidence",
+            "reviewAppealSkeletonArgument",
+            "followUpOverdueCaseBuilding",
+            "reviewReasonsForAppeal",
+            "followUpOverdueReasonsForAppeal",
+            "reviewClarifyingQuestionsAnswers",
+            "followUpOverdueClarifyingAnswers",
+            "reviewRespondentResponse",
+            "followUpOverdueRespondentReview",
+            "reviewHearingRequirements",
+            "followUpOverdueHearingRequirements",
+            "reviewCmaRequirements",
+            "reviewAdditionalHomeOfficeEvidence",
+            "reviewAdditionalAppellantEvidence",
+            "reviewAdditionalHomeOfficeEvidence",
+            "reviewAdditionalAppellantEvidence",
+            "createHearingBundle",
+            "processApplication",
+            "attendCma",
+            "startDecisionsAndReasonsDocument",
+            "createCaseSummary",
+            "followUpNoticeOfChange",
+            "followUpOverdueCmaRequirements",
+            "followUpNonStandardDirection",
+            "decideOnTimeExtension",
+            "reviewAdditionalEvidence",
+            "editListing",
+            "updateHearingRequirements",
+            "sendDecisionsAndReasons",
+            "addListingDate"
+          </text>
         </inputEntry>
         <inputEntry id="UnaryTests_10s330p">
           <text></text>
@@ -168,38 +169,39 @@
         <description>Senior Tribunal caseworker task permissions</description>
         <inputEntry id="UnaryTests_183egaw">
           <text>
-                        "reviewTheAppeal",
-                        "reviewRespondentEvidence",
-                        "followUpOverdueRespondentEvidence",
-                        "reviewAppealSkeletonArgument",
-                        "followUpOverdueCaseBuilding",
-                        "reviewReasonsForAppeal",
-                        "followUpOverdueReasonsForAppeal",
-                        "reviewClarifyingQuestionsAnswers",
-                        "followUpOverdueClarifyingAnswers",
-                        "reviewRespondentResponse",
-                        "followUpOverdueRespondentReview",
-                        "reviewHearingRequirements",
-                        "followUpOverdueHearingRequirements",
-                        "reviewCmaRequirements",
-                        "reviewAdditionalHomeOfficeEvidence",
-                        "reviewAdditionalAppellantEvidence",
-                        "reviewAdditionalHomeOfficeEvidence",
-                        "reviewAdditionalAppellantEvidence",
-                        "createHearingBundle",
-                        "processApplication",
-                        "attendCma",
-                        "startDecisionsAndReasonsDocument",
-                        "createCaseSummary",
-                        "followUpNoticeOfChange",
-                        "followUpOverdueCmaRequirements",
-                        "followUpNonStandardDirection",
-                        "decideOnTimeExtension",
-                        "reviewAdditionalEvidence",
-                        "editListing",
-                        "updateHearingRequirements",
-                        "sendDecisionsAndReasons"
-                    </text>
+            "reviewTheAppeal",
+            "reviewRespondentEvidence",
+            "followUpOverdueRespondentEvidence",
+            "reviewAppealSkeletonArgument",
+            "followUpOverdueCaseBuilding",
+            "reviewReasonsForAppeal",
+            "followUpOverdueReasonsForAppeal",
+            "reviewClarifyingQuestionsAnswers",
+            "followUpOverdueClarifyingAnswers",
+            "reviewRespondentResponse",
+            "followUpOverdueRespondentReview",
+            "reviewHearingRequirements",
+            "followUpOverdueHearingRequirements",
+            "reviewCmaRequirements",
+            "reviewAdditionalHomeOfficeEvidence",
+            "reviewAdditionalAppellantEvidence",
+            "reviewAdditionalHomeOfficeEvidence",
+            "reviewAdditionalAppellantEvidence",
+            "createHearingBundle",
+            "processApplication",
+            "attendCma",
+            "startDecisionsAndReasonsDocument",
+            "createCaseSummary",
+            "followUpNoticeOfChange",
+            "followUpOverdueCmaRequirements",
+            "followUpNonStandardDirection",
+            "decideOnTimeExtension",
+            "reviewAdditionalEvidence",
+            "editListing",
+            "updateHearingRequirements",
+            "sendDecisionsAndReasons",
+            "addListingDate"
+          </text>
         </inputEntry>
         <inputEntry id="UnaryTests_18tqbn3">
           <text></text>
@@ -227,36 +229,36 @@
         <description>Judge task permissions</description>
         <inputEntry id="UnaryTests_0mzihm0">
           <text>
-                        "reviewTheAppeal",
-                        "reviewRespondentEvidence",
-                        "followUpOverdueRespondentEvidence",
-                        "reviewAppealSkeletonArgument",
-                        "followUpOverdueCaseBuilding",
-                        "reviewReasonsForAppeal",
-                        "followUpOverdueReasonsForAppeal",
-                        "reviewClarifyingQuestionsAnswers",
-                        "followUpOverdueClarifyingAnswers",
-                        "reviewRespondentResponse",
-                        "followUpOverdueRespondentReview",
-                        "reviewHearingRequirements",
-                        "followUpOverdueHearingRequirements",
-                        "reviewCmaRequirements",
-                        "reviewAdditionalHomeOfficeEvidence",
-                        "reviewAdditionalAppellantEvidence",
-                        "reviewAdditionalHomeOfficeEvidence",
-                        "reviewAdditionalAppellantEvidence",
-                        "createHearingBundle",
-                        "processApplication",
-                        "attendCma",
-                        "startDecisionsAndReasonsDocument",
-                        "createCaseSummary",
-                        "followUpNoticeOfChange",
-                        "followUpOverdueCmaRequirements",
-                        "followUpNonStandardDirection",
-                        "decideOnTimeExtension",
-                        "reviewAdditionalEvidence",
-                        "allocateHearingJudge"
-                    </text>
+            "reviewTheAppeal",
+            "reviewRespondentEvidence",
+            "followUpOverdueRespondentEvidence",
+            "reviewAppealSkeletonArgument",
+            "followUpOverdueCaseBuilding",
+            "reviewReasonsForAppeal",
+            "followUpOverdueReasonsForAppeal",
+            "reviewClarifyingQuestionsAnswers",
+            "followUpOverdueClarifyingAnswers",
+            "reviewRespondentResponse",
+            "followUpOverdueRespondentReview",
+            "reviewHearingRequirements",
+            "followUpOverdueHearingRequirements",
+            "reviewCmaRequirements",
+            "reviewAdditionalHomeOfficeEvidence",
+            "reviewAdditionalAppellantEvidence",
+            "reviewAdditionalHomeOfficeEvidence",
+            "reviewAdditionalAppellantEvidence",
+            "createHearingBundle",
+            "processApplication",
+            "attendCma",
+            "startDecisionsAndReasonsDocument",
+            "createCaseSummary",
+            "followUpNoticeOfChange",
+            "followUpOverdueCmaRequirements",
+            "followUpNonStandardDirection",
+            "decideOnTimeExtension",
+            "reviewAdditionalEvidence",
+            "allocateHearingJudge"
+          </text>
         </inputEntry>
         <inputEntry id="UnaryTests_15oy3kp">
           <text></text>
@@ -284,10 +286,10 @@
         <description>National business centre task permissions</description>
         <inputEntry id="UnaryTests_0gxxmc7">
           <text>
-                        "arrangeOfflinePayment",
-                        "markCaseAsPaid",
-                        "addListingDate"
-                    </text>
+            "arrangeOfflinePayment",
+            "markCaseAsPaid",
+            "addListingDate"
+          </text>
         </inputEntry>
         <inputEntry id="UnaryTests_12c3use">
           <text></text>
@@ -315,9 +317,11 @@
         <description>Hearing centre admin task permissions</description>
         <inputEntry id="UnaryTests_0tzrow3">
           <text>
-                        "allocateHearingJudge",
-                        "uploadHearingRecording"
-                    </text>
+            "allocateHearingJudge",
+            "uploadHearingRecording",
+            "editListing",
+            "updateHearingRequirements"
+          </text>
         </inputEntry>
         <inputEntry id="UnaryTests_1sw9xpj">
           <text></text>
@@ -341,41 +345,11 @@
           <text>false</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1920mo0">
-        <description>Hearing centre admin task permissions with auto-assign</description>
-        <inputEntry id="UnaryTests_03ns5jd">
-          <text>
-                        "editListing",
-                        "updateHearingRequirements"
-                    </text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1d0teaw">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1f5p296">
-          <text>"hearing-centre-admin"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_063hm5l">
-          <text>"Read,Refer,Own"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1hrnkwv">
-          <text>"ADMINISTRATOR"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1gbbkbx">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0o3qffo">
-          <text>1</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0rfoghw">
-          <text>true</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_0spqww2">
         <inputEntry id="UnaryTests_0vmy0oj">
           <text>
-                        "allocateHearingJudge", "reviewHearingBundle"
-                    </text>
+            "allocateHearingJudge", "reviewHearingBundle"
+          </text>
         </inputEntry>
         <inputEntry id="UnaryTests_190pyoc">
           <text></text>
@@ -402,8 +376,8 @@
       <rule id="DecisionRule_1wd5okj">
         <inputEntry id="UnaryTests_0co919o">
           <text>
-                        "allocateHearingJudge","reviewHearingBundle"
-                    </text>
+            "allocateHearingJudge","reviewHearingBundle"
+          </text>
         </inputEntry>
         <inputEntry id="UnaryTests_055yime">
           <text></text>
@@ -431,15 +405,15 @@
         <description>Hearing judge task permissions</description>
         <inputEntry id="UnaryTests_1oxh1tt">
           <text>
-                        "reviewHearingBundle",
-                        "generateDraftDecisionAndReasons",
-                        "uploadDecision",
-                        "reviewAddendumHomeOfficeEvidence",
-                        "reviewAddendumAppellantEvidence",
-                        "reviewAddendumEvidence",
-                        "startDecisionsAndReasonsDocument",
-                        "sendDecisionsAndReasons"
-                    </text>
+            "reviewHearingBundle",
+            "generateDraftDecisionAndReasons",
+            "uploadDecision",
+            "reviewAddendumHomeOfficeEvidence",
+            "reviewAddendumAppellantEvidence",
+            "reviewAddendumEvidence",
+            "startDecisionsAndReasonsDocument",
+            "sendDecisionsAndReasons"
+          </text>
         </inputEntry>
         <inputEntry id="UnaryTests_19myw41">
           <text></text>
@@ -467,17 +441,18 @@
         <description>Judge task permissions</description>
         <inputEntry id="UnaryTests_1099gbv">
           <text>
-                        "reviewHearingBundle",
-                        "generateDraftDecisionAndReasons",
-                        "uploadDecision",
-                        "reviewAddendumHomeOfficeEvidence",
-                        "reviewAddendumAppellantEvidence",
-                        "reviewAddendumEvidence",
-                        "startDecisionsAndReasonsDocument",
-                        "editListing",
-                        "updateHearingRequirements",
-                        "sendDecisionsAndReasons"
-                    </text>
+            "reviewHearingBundle",
+            "generateDraftDecisionAndReasons",
+            "uploadDecision",
+            "reviewAddendumHomeOfficeEvidence",
+            "reviewAddendumAppellantEvidence",
+            "reviewAddendumEvidence",
+            "startDecisionsAndReasonsDocument",
+            "editListing",
+            "updateHearingRequirements",
+            "sendDecisionsAndReasons",
+            "addListingDate"
+          </text>
         </inputEntry>
         <inputEntry id="UnaryTests_1sgyxq7">
           <text></text>
