@@ -566,7 +566,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData(" {\n"
                                       + "        \"Data\" : {\n"
                                       + "          \"listCaseHearingDate\" : \""
-                                      + LocalDateTime.now().plusDays(1).format(DateTimeFormatter.ISO_LOCAL_DATE_TIME) + "\""
+                                      + LocalDateTime.now().plusDays(1).format(DateTimeFormatter.ISO_LOCAL_DATE_TIME)
+                                      + "\""
                                       + "        }\n"
                                       + "      }"),
                 List.of(

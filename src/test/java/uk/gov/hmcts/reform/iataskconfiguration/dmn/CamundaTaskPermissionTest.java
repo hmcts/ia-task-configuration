@@ -367,30 +367,6 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
     }
 
     @SuppressWarnings("checkstyle:indentation")
-    @Test
-    void given_uploadHearingRecording_taskType_when_evaluate_dmn_then_it_returns_first_and_fifth_rule() {
-        VariableMap inputVariables = new VariableMapImpl();
-        inputVariables.putValue("taskAttributes", Map.of("taskType", "uploadHearingRecording"));
-
-        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
-
-        MatcherAssert.assertThat(dmnDecisionTableResult.getResultList(), is(List.of(
-            Map.of(
-                "name", "task-supervisor",
-                "value", "Read,Refer,Manage,Cancel",
-                "autoAssignable", false
-            ),
-            Map.of(
-                "name", "hearing-centre-admin",
-                "value", "Read,Refer,Own",
-                "roleCategory", "ADMINISTRATOR",
-                "assignmentPriority", 1,
-                "autoAssignable", false
-            )
-        )));
-    }
-
-    @SuppressWarnings("checkstyle:indentation")
     @ParameterizedTest
     @CsvSource(value = {
         "generateDraftDecisionAndReasons", "uploadDecision", "reviewAddendumHomeOfficeEvidence",

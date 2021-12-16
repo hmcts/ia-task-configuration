@@ -34,10 +34,10 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
 
         return Stream.of(
             Arguments.of(
-                "requestRespondentEvidence",
+                "uploadHearingRecording",
                 asList(
                     Map.of(
-                        "taskType", "reviewTheAppeal",
+                        "taskType", "uploadHearingRecording",
                         "completionMode", "Auto"
                     ),
                     emptyMap()
@@ -312,7 +312,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
 
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(22));
+        assertThat(logic.getRules().size(), is(23));
 
     }
 

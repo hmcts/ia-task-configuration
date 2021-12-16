@@ -240,9 +240,20 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1vtl9to">
+        <inputEntry id="UnaryTests_1v66z3f">
+          <text>"uploadHearingRecording"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_035b0e0">
+          <text>"uploadHearingRecording"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0rrkglx">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_00ego89">
         <inputEntry id="UnaryTests_0mupz2m">
-          <text>"requestRespondentEvidence","requestCaseBuilding","requestReasonsForAppeal","sendDirection","requestRespondentReview","requestCaseEdit","sendDirectionWithQuestions","requestCmaRequirements","reviewCmaRequirements","updateDetailsAfterCma","requestResponseAmend","reviewHearingRequirements","createCaseSummary","generateHearingBundle","decisionAndReasonsStarted","recordAllocatedJudge","changeDirectionDueDate","decideAnApplication","editCaseListing","updateHearingRequirements","sendDecisionAndReasons"</text>
+          <text>"requestRespondentEvidence","requestCaseBuilding","requestReasonsForAppeal","sendDirection","requestRespondentReview","requestCaseEdit","sendDirectionWithQuestions","requestCmaRequirements","reviewCmaRequirements","updateDetailsAfterCma","requestResponseAmend","reviewHearingRequirements","createCaseSummary","generateHearingBundle","decisionAndReasonsStarted","recordAllocatedJudge","changeDirectionDueDate","decideAnApplication","editCaseListing","updateHearingRequirements","sendDecisionAndReasons","uploadHearingRecording"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1qvmdyv">
           <text></text>
