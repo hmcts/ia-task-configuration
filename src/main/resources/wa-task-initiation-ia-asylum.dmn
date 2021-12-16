@@ -1371,7 +1371,11 @@
           <text>"TCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0iux1x0">
-          <text></text>
+          <text>
+            if (additionalData.Data.listCaseHearingDate != null and additionalData.Data.listCaseHearingDate != "") then
+            (date(additionalData.Data.listCaseHearingDate) - date(now)).days
+            else 0
+          </text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0qiy0on">
           <text></text>

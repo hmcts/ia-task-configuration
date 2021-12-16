@@ -14,6 +14,8 @@ import org.junit.jupiter.params.provider.MethodSource;
 import uk.gov.hmcts.reform.iataskconfiguration.DmnDecisionTableBaseUnitTest;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -561,7 +563,12 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "listCase",
                 "prepareForHearing",
-                null,
+                mapAdditionalData(" {\n"
+                                      + "        \"Data\" : {\n"
+                                      + "          \"listCaseHearingDate\" : \""
+                                      + LocalDateTime.now().plusDays(1).format(DateTimeFormatter.ISO_LOCAL_DATE) + "\""
+                                      + "        }\n"
+                                      + "      }"),
                 List.of(
                     Map.of(
                         "taskId", "createCaseSummary",
@@ -580,6 +587,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "uploadHearingRecording",
                         "name", "Upload hearing recording",
                         "group", "TCW",
+                        "delayDuration", 1,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -832,6 +840,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         inputVariables.putValue("eventId", eventId);
         inputVariables.putValue("postEventState", postEventState);
         inputVariables.putValue("additionalData", map);
+        inputVariables.putValue("now", LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE));
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
