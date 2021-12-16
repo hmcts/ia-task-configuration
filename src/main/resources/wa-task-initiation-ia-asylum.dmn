@@ -1373,7 +1373,7 @@
         <outputEntry id="LiteralExpression_0iux1x0">
           <text>
             if (additionalData.Data.listCaseHearingDate != null and additionalData.Data.listCaseHearingDate != "") then
-            (date(additionalData.Data.listCaseHearingDate) - date(now)).days
+            (date and time(additionalData.Data.listCaseHearingDate) - date and time(now)).days
             else 0
           </text>
         </outputEntry>
