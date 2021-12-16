@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn"
-             xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0"
-             xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/"
-             xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD"
-             namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.11.1">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.11.1">
   <decision id="wa-task-initiation-ia-asylum" name="Task initiation DMN">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT">
       <input id="Input_1" label="Event Id" biodi:width="402" camunda:inputVariable="eventId">
@@ -26,8 +22,7 @@
           </text>
         </inputExpression>
       </input>
-      <input id="InputClause_15dhd3c" label="Last modified application type" biodi:width="306"
-             camunda:inputVariable="lastModifiedApplicationType">
+      <input id="InputClause_15dhd3c" label="Last modified application type" biodi:width="306" camunda:inputVariable="lastModifiedApplicationType">
         <inputExpression id="LiteralExpression_00shf3r" typeRef="string">
           <text>if(additionalData != null and additionalData.Data != null and
             additionalData.Data.lastModifiedApplication != null) then
@@ -37,8 +32,7 @@
           </text>
         </inputExpression>
       </input>
-      <input id="InputClause_10uivrc" label="Last modified application decision" biodi:width="378"
-             camunda:inputVariable="lastModifiedApplicationDecision">
+      <input id="InputClause_10uivrc" label="Last modified application decision" biodi:width="378" camunda:inputVariable="lastModifiedApplicationDecision">
         <inputExpression id="LiteralExpression_1gqrajz" typeRef="string">
           <text>if(additionalData != null and additionalData.Data != null and
             additionalData.Data.lastModifiedApplication != null) then
@@ -48,14 +42,12 @@
           </text>
         </inputExpression>
       </input>
-      <output id="Output_1" label="Task Id" name="taskId" typeRef="string" biodi:width="275"/>
-      <output id="OutputClause_0p5fhhd" label="Name" name="name" typeRef="string" biodi:width="295"/>
-      <output id="OutputClause_0f63m65" label="Group" name="group" typeRef="string" biodi:width="192"/>
-      <output id="OutputClause_165p3r3" label="Delay Duration" name="delayDuration" typeRef="integer"
-              biodi:width="536"/>
-      <output id="OutputClause_0i6c6c2" label="Working Days Allowed" name="workingDaysAllowed" typeRef="integer"/>
-      <output id="OutputClause_10rno4c" label="Process Categories Identifiers" name="processCategories" typeRef="string"
-              biodi:width="300"/>
+      <output id="Output_1" label="Task Id" name="taskId" typeRef="string" biodi:width="275" />
+      <output id="OutputClause_0p5fhhd" label="Name" name="name" typeRef="string" biodi:width="295" />
+      <output id="OutputClause_0f63m65" label="Group" name="group" typeRef="string" biodi:width="192" />
+      <output id="OutputClause_165p3r3" label="Delay Duration" name="delayDuration" typeRef="integer" biodi:width="536" />
+      <output id="OutputClause_0i6c6c2" label="Working Days Allowed" name="workingDaysAllowed" typeRef="integer" />
+      <output id="OutputClause_10rno4c" label="Process Categories Identifiers" name="processCategories" typeRef="string" biodi:width="300" />
       <rule id="DecisionRule_1fenvxm">
         <inputEntry id="UnaryTests_09nq8bu">
           <text>"makeAnApplication"</text>
@@ -1312,7 +1304,7 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0rzyouv">
-          <text>0</text>
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1yo5sal">
           <text>"caseProgression"</text>
@@ -1353,12 +1345,47 @@
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_120lgaq">
+        <inputEntry id="UnaryTests_0baup96">
+          <text>"listCase"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0m55o62">
+          <text>"prepareForHearing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ine3mp">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zkuz8w">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nxf73a">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0a0iod5">
+          <text>"uploadHearingRecording"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0e4n0gr">
+          <text>"Upload hearing recording"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1yqfive">
+          <text>"TCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0iux1x0">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0qiy0on">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1hxqajs">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram id="DMNDiagram_0b2rkcb">
       <dmndi:DMNShape id="DMNShape_0wc7glt" dmnElementRef="wa-task-initiation-ia-asylum">
-        <dc:Bounds height="80" width="180" x="150" y="80"/>
+        <dc:Bounds height="80" width="180" x="150" y="80" />
       </dmndi:DMNShape>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>
