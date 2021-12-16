@@ -118,6 +118,15 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
     public static Stream<Arguments> genericScenarioProvider() {
         return Stream.of(
             Arguments.of(
+                "uploadHearingRecording",
+                List.of(
+                    taskSupervisor,
+                    tribunalCaseWorkerPriorityOne,
+                    seniorCaseWorkerPriorityOne,
+                    hearingCentreAdminPriorityOne
+                )
+            ),
+            Arguments.of(
                 "startDecisionsAndReasonsDocument",
                 List.of(
                     taskSupervisor,
