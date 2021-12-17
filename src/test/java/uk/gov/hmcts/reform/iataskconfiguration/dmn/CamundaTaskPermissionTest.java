@@ -202,6 +202,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
 
     /*
         todo: Refactor all other tests into this one for the sake of simplicity
+        important: permissions rules in the DMN are in order, in case you can't find why your test fails.
      */
     @ParameterizedTest
     @MethodSource("genericScenarioProvider")
