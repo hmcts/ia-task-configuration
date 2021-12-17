@@ -594,6 +594,26 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "editCaseListing",
+                null,
+                mapAdditionalData(" {\n"
+                                      + "        \"Data\" : {\n"
+                                      + "          \"listCaseHearingDate\" : \""
+                                      + LocalDateTime.now().plusDays(1).format(DateTimeFormatter.ISO_LOCAL_DATE_TIME)
+                                      + "\""
+                                      + "        }\n"
+                                      + "      }"),
+                List.of(
+                    Map.of(
+                        "taskId", "uploadHearingRecording",
+                        "name", "Upload hearing recording",
+                        "group", "TCW",
+                        "delayDuration", 1,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
                 null,
                 "finalBundling",
                 null,
@@ -996,7 +1016,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(5));
         assertThat(logic.getOutputs().size(), is(6));
-        assertThat(logic.getRules().size(), is(36));
+        assertThat(logic.getRules().size(), is(37));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {
