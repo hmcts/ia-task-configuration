@@ -210,7 +210,8 @@
                         "processReviewDecisionApplication",
                         "decideOnTimeExtension",
                         "sendDecisionsAndReasons",
-                        "startDecisionsAndReasonsDocument"
+                        "startDecisionsAndReasonsDocument",
+                        "decideAnFTPA"
                     </text>
                 </inputEntry>
                 <outputEntry id="LiteralExpression_0omxasv">
