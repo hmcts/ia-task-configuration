@@ -44,6 +44,16 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "residentJudgeFtpaDecision",
+                asList(
+                    Map.of(
+                        "taskType", "decideAnFTPA",
+                        "completionMode", "Auto"
+                    ),
+                    emptyMap()
+                )
+            ),
+            Arguments.of(
                 "leadershipJudgeFtpaDecision",
                 asList(
                     Map.of(
