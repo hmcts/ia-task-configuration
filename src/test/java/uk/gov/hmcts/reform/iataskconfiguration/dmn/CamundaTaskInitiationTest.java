@@ -37,6 +37,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
         return Stream.of(
             Arguments.of(
+                "recordAllocatedJudge",
+                null,
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "decideAnFTPA",
+                        "name", "Decide an FTPA",
+                        "group", "TCW"
+                    )
+                )
+            ),
+            Arguments.of(
                 "decisionAndReasonsStarted",
                 "decision",
                 null,
@@ -574,7 +586,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "reviewHearingBundle",
                         "name", "Review Hearing bundle",
                         "group", "TCW",
-                        "workingDaysAllowed", 0,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -981,7 +992,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(5));
         assertThat(logic.getOutputs().size(), is(6));
-        assertThat(logic.getRules().size(), is(35));
+        assertThat(logic.getRules().size(), is(36));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {
