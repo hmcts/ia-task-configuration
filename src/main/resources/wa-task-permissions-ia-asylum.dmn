@@ -1,542 +1,548 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-permissions-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.11.1">
-  <decision id="wa-task-permissions-ia-asylum" name="Permissions DMN">
-    <decisionTable id="DecisionTable_1pr5oic" hitPolicy="RULE ORDER">
-      <input id="InputClause_12crj6e" label="Task Type" biodi:width="406" camunda:inputVariable="taskType">
-        <inputExpression id="LiteralExpression_11cu08d" typeRef="string" expressionLanguage="feel">
-          <text>if(taskAttributes != null and taskAttributes.taskType != null) then
-            taskAttributes.taskType
-            else
-            "r1"
-          </text>
-        </inputExpression>
-      </input>
-      <input id="Input_1" label="Case Data" camunda:inputVariable="case">
-        <inputExpression id="InputExpression_1" typeRef="string">
-          <text></text>
-        </inputExpression>
-      </input>
-      <output id="Output_1" label="Name" name="name" typeRef="string" />
-      <output id="OutputClause_1mzxe7i" label="Value" name="value" typeRef="string" biodi:width="297" />
-      <output id="OutputClause_05whhwf" label="RoleCategory" name="roleCategory" typeRef="string" />
-      <output id="OutputClause_16bocer" label="Authorisations" name="authorisations" typeRef="string" />
-      <output id="OutputClause_1n914lw" label="Assignment Priority" name="assignmentPriority" typeRef="integer" />
-      <output id="OutputClause_04cbxc1" label="Auto Assignable" name="autoAssignable" typeRef="boolean" />
-      <rule id="DecisionRule_03pnfh8">
-        <description>supervisor task permissions</description>
-        <inputEntry id="UnaryTests_1ossj9o">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0occzoo">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0766p7u">
-          <text>"task-supervisor"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1gda35a">
-          <text>"Read,Refer,Manage,Cancel"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0uxj36c">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_188mn11">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1hkzpbs">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0a25vtn">
-          <text>false</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0ivpl63">
-        <description>case manager task permissions</description>
-        <inputEntry id="UnaryTests_155q736">
-          <text>
-            "reviewTheAppeal",
-            "reviewRespondentEvidence",
-            "followUpOverdueRespondentEvidence",
-            "reviewAppealSkeletonArgument",
-            "followUpOverdueCaseBuilding",
-            "reviewReasonsForAppeal",
-            "followUpOverdueReasonsForAppeal",
-            "reviewClarifyingQuestionsAnswers",
-            "followUpOverdueClarifyingAnswers",
-            "reviewRespondentResponse",
-            "followUpOverdueRespondentReview",
-            "reviewHearingRequirements",
-            "followUpOverdueHearingRequirements",
-            "reviewCmaRequirements",
-            "reviewAdditionalHomeOfficeEvidence",
-            "reviewAdditionalAppellantEvidence",
-            "reviewAdditionalHomeOfficeEvidence",
-            "reviewAdditionalAppellantEvidence",
-            "createHearingBundle",
-            "processApplication",
-            "attendCma",
-            "startDecisionsAndReasonsDocument",
-            "createCaseSummary",
-            "followUpNoticeOfChange",
-            "followUpOverdueCmaRequirements",
-            "followUpNonStandardDirection",
-            "decideOnTimeExtension",
-            "reviewAdditionalEvidence"
-          </text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0buofva">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_09mnhlx">
-          <text>"case-manager"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0ekjswr">
-          <text>"Read,Refer,Own"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1tlohef">
-          <text>"LEGAL_OPERATIONS"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0rn9vbl">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1048wbc">
-          <text>1</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1oc4t5p">
-          <text>true</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1tvtlre">
-        <description>Tribunal caseworker task permissions</description>
-        <inputEntry id="UnaryTests_13ukkz6">
-          <text>
-            "reviewTheAppeal",
-            "reviewRespondentEvidence",
-            "followUpOverdueRespondentEvidence",
-            "reviewAppealSkeletonArgument",
-            "followUpOverdueCaseBuilding",
-            "reviewReasonsForAppeal",
-            "followUpOverdueReasonsForAppeal",
-            "reviewClarifyingQuestionsAnswers",
-            "followUpOverdueClarifyingAnswers",
-            "reviewRespondentResponse",
-            "followUpOverdueRespondentReview",
-            "reviewHearingRequirements",
-            "followUpOverdueHearingRequirements",
-            "reviewCmaRequirements",
-            "reviewAdditionalHomeOfficeEvidence",
-            "reviewAdditionalAppellantEvidence",
-            "reviewAdditionalHomeOfficeEvidence",
-            "reviewAdditionalAppellantEvidence",
-            "createHearingBundle",
-            "processApplication",
-            "attendCma",
-            "startDecisionsAndReasonsDocument",
-            "createCaseSummary",
-            "followUpNoticeOfChange",
-            "followUpOverdueCmaRequirements",
-            "followUpNonStandardDirection",
-            "decideOnTimeExtension",
-            "reviewAdditionalEvidence",
-            "editListing",
-            "updateHearingRequirements",
-            "sendDecisionsAndReasons",
-            "addListingDate"
-          </text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_10s330p">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0pwg10h">
-          <text>"tribunal-caseworker"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_151ry1h">
-          <text>"Read,Refer,Own"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1rwokl1">
-          <text>"LEGAL_OPERATIONS"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0niqcsd">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1ynp9nn">
-          <text>1</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1c5me4u">
-          <text>false</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1x1oenn">
-        <description>Senior Tribunal caseworker task permissions</description>
-        <inputEntry id="UnaryTests_183egaw">
-          <text>
-            "reviewTheAppeal",
-            "reviewRespondentEvidence",
-            "followUpOverdueRespondentEvidence",
-            "reviewAppealSkeletonArgument",
-            "followUpOverdueCaseBuilding",
-            "reviewReasonsForAppeal",
-            "followUpOverdueReasonsForAppeal",
-            "reviewClarifyingQuestionsAnswers",
-            "followUpOverdueClarifyingAnswers",
-            "reviewRespondentResponse",
-            "followUpOverdueRespondentReview",
-            "reviewHearingRequirements",
-            "followUpOverdueHearingRequirements",
-            "reviewCmaRequirements",
-            "reviewAdditionalHomeOfficeEvidence",
-            "reviewAdditionalAppellantEvidence",
-            "reviewAdditionalHomeOfficeEvidence",
-            "reviewAdditionalAppellantEvidence",
-            "createHearingBundle",
-            "processApplication",
-            "attendCma",
-            "startDecisionsAndReasonsDocument",
-            "createCaseSummary",
-            "followUpNoticeOfChange",
-            "followUpOverdueCmaRequirements",
-            "followUpNonStandardDirection",
-            "decideOnTimeExtension",
-            "reviewAdditionalEvidence",
-            "editListing",
-            "updateHearingRequirements",
-            "sendDecisionsAndReasons",
-            "addListingDate"
-          </text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_18tqbn3">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_145ah9f">
-          <text>"senior-tribunal-caseworker"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1nhvpem">
-          <text>"Read,Refer,Own"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_03nq5c0">
-          <text>"LEGAL_OPERATIONS"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_140ri28">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_11r2dnr">
-          <text>1</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1kjalwr">
-          <text>false</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0mzuuvc">
-        <description>Judge task permissions</description>
-        <inputEntry id="UnaryTests_0mzihm0">
-          <text>
-            "reviewTheAppeal",
-            "reviewRespondentEvidence",
-            "followUpOverdueRespondentEvidence",
-            "reviewAppealSkeletonArgument",
-            "followUpOverdueCaseBuilding",
-            "reviewReasonsForAppeal",
-            "followUpOverdueReasonsForAppeal",
-            "reviewClarifyingQuestionsAnswers",
-            "followUpOverdueClarifyingAnswers",
-            "reviewRespondentResponse",
-            "followUpOverdueRespondentReview",
-            "reviewHearingRequirements",
-            "followUpOverdueHearingRequirements",
-            "reviewCmaRequirements",
-            "reviewAdditionalHomeOfficeEvidence",
-            "reviewAdditionalAppellantEvidence",
-            "reviewAdditionalHomeOfficeEvidence",
-            "reviewAdditionalAppellantEvidence",
-            "createHearingBundle",
-            "processApplication",
-            "attendCma",
-            "startDecisionsAndReasonsDocument",
-            "createCaseSummary",
-            "followUpNoticeOfChange",
-            "followUpOverdueCmaRequirements",
-            "followUpNonStandardDirection",
-            "decideOnTimeExtension",
-            "reviewAdditionalEvidence",
-            "allocateHearingJudge"
-          </text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_15oy3kp">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0zsbfdo">
-          <text>"judge"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1qa45z2">
-          <text>"Read,Refer,Execute"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_06zjq08">
-          <text>"JUDICIAL"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1c8wftf">
-          <text>"IA"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_09bennu">
-          <text>2</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1du41ub">
-          <text>false</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_16vvqmd">
-        <description>National business centre task permissions</description>
-        <inputEntry id="UnaryTests_0gxxmc7">
-          <text>
-            "arrangeOfflinePayment",
-            "markCaseAsPaid",
-            "addListingDate"
-          </text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_12c3use">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1p54gmk">
-          <text>"national-business-centre"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1fw41sy">
-          <text>"Read,Refer,Own"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_03y9mpj">
-          <text>"ADMINISTRATOR"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1vy0t38">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1t1fpby">
-          <text>1</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0r5nut3">
-          <text>false</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0hv79lq">
-        <description>Hearing centre admin task permissions</description>
-        <inputEntry id="UnaryTests_0tzrow3">
-          <text>
-            "allocateHearingJudge",
-            "uploadHearingRecording",
-            "editListing",
-            "updateHearingRequirements"
-          </text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1sw9xpj">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_09116fr">
-          <text>"hearing-centre-admin"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_18uxrkl">
-          <text>"Read,Refer,Own"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0fbgbzp">
-          <text>"ADMINISTRATOR"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_11pjfav">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0jexll1">
-          <text>1</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0l87ays">
-          <text>false</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0spqww2">
-        <inputEntry id="UnaryTests_0vmy0oj">
-          <text>
-            "allocateHearingJudge", "reviewHearingBundle"
-          </text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_190pyoc">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0ldbpi0">
-          <text>"tribunal-caseworker"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1tlcgb1">
-          <text>"Read,Refer,Execute"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1vwn7j0">
-          <text>"LEGAL_OPERATIONS"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1yd4fhm">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0lpi60d">
-          <text>2</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0yfgbsz">
-          <text>false</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1wd5okj">
-        <inputEntry id="UnaryTests_0co919o">
-          <text>
-            "allocateHearingJudge","reviewHearingBundle"
-          </text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_055yime">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1512irv">
-          <text>"senior-tribunal-caseworker"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0viqzzm">
-          <text>"Read,Refer,Execute"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0feri8q">
-          <text>"LEGAL_OPERATIONS"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0dbwm40">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_09kz1ml">
-          <text>2</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1tq2ebs">
-          <text>false</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1xv2gxq">
-        <description>Hearing judge task permissions</description>
-        <inputEntry id="UnaryTests_1oxh1tt">
-          <text>
-            "reviewHearingBundle",
-            "generateDraftDecisionAndReasons",
-            "uploadDecision",
-            "reviewAddendumHomeOfficeEvidence",
-            "reviewAddendumAppellantEvidence",
-            "reviewAddendumEvidence",
-            "startDecisionsAndReasonsDocument",
-            "sendDecisionsAndReasons"
-          </text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_19myw41">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0kynksi">
-          <text>"hearing-judge"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_124xecb">
-          <text>"Read,Refer,Own"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1pkhxc7">
-          <text>"JUDICIAL"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0uc1qqh">
-          <text>"IA"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_15edozy">
-          <text>1</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1ygk8oj">
-          <text>true</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0b91c94">
-        <description>Judge task permissions</description>
-        <inputEntry id="UnaryTests_1099gbv">
-          <text>
-            "reviewHearingBundle",
-            "generateDraftDecisionAndReasons",
-            "uploadDecision",
-            "reviewAddendumHomeOfficeEvidence",
-            "reviewAddendumAppellantEvidence",
-            "reviewAddendumEvidence",
-            "startDecisionsAndReasonsDocument",
-            "editListing",
-            "updateHearingRequirements",
-            "sendDecisionsAndReasons",
-            "addListingDate"
-          </text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1sgyxq7">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_04bwliv">
-          <text>"judge"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1n6hq4e">
-          <text>"Read,Refer,Own"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0pti6xc">
-          <text>"JUDICIAL"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1r21fdy">
-          <text>"IA"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0g1mgog">
-          <text>1</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0sy9mkt">
-          <text>false</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_04eoe1k">
-        <description>Senior Tribunal caseworker task permissions</description>
-        <inputEntry id="UnaryTests_0se58ll">
-          <text>"r1"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1m2r097">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0hftahv">
-          <text>"tribunal-caseworker"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_051fxvi">
-          <text>"Read,Refer,Own,Manage,Cancel"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_02k1ff3">
-          <text>"LEGAL_OPERATIONS"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0jgns61">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1lugw75">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_16jo15y">
-          <text>false</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0ks3xbb">
-        <description>Default Senior Tribunal caseworker task permissions</description>
-        <inputEntry id="UnaryTests_1k8ldgj">
-          <text>"r1"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0yw7wdu">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0l9cpfg">
-          <text>"senior-tribunal-caseworker"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1w3llu8">
-          <text>"Read,Refer,Own,Manage,Cancel"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1god3td">
-          <text>"LEGAL_OPERATIONS"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0ukk3uh">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0ymzlmg">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1r4jwp2">
-          <text>false</text>
-        </outputEntry>
-      </rule>
-    </decisionTable>
-  </decision>
-  <dmndi:DMNDI>
-    <dmndi:DMNDiagram>
-      <dmndi:DMNShape dmnElementRef="wa-task-permissions-ia-asylum">
-        <dc:Bounds height="80" width="180" x="160" y="100" />
-      </dmndi:DMNShape>
-    </dmndi:DMNDiagram>
-  </dmndi:DMNDI>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/"
+             xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/"
+             xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0"
+             xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-permissions-definition" name="DRD"
+             namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.11.1">
+    <decision id="wa-task-permissions-ia-asylum" name="Permissions DMN">
+        <decisionTable id="DecisionTable_1pr5oic" hitPolicy="RULE ORDER">
+            <input id="InputClause_12crj6e" label="Task Type" biodi:width="406" camunda:inputVariable="taskType">
+                <inputExpression id="LiteralExpression_11cu08d" typeRef="string" expressionLanguage="feel">
+                    <text>if(taskAttributes != null and taskAttributes.taskType != null) then
+                        taskAttributes.taskType
+                        else
+                        "r1"
+                    </text>
+                </inputExpression>
+            </input>
+            <input id="Input_1" label="Case Data" camunda:inputVariable="case">
+                <inputExpression id="InputExpression_1" typeRef="string">
+                    <text></text>
+                </inputExpression>
+            </input>
+            <output id="Output_1" label="Name" name="name" typeRef="string"/>
+            <output id="OutputClause_1mzxe7i" label="Value" name="value" typeRef="string" biodi:width="297"/>
+            <output id="OutputClause_05whhwf" label="RoleCategory" name="roleCategory" typeRef="string"/>
+            <output id="OutputClause_16bocer" label="Authorisations" name="authorisations" typeRef="string"/>
+            <output id="OutputClause_1n914lw" label="Assignment Priority" name="assignmentPriority" typeRef="integer"/>
+            <output id="OutputClause_04cbxc1" label="Auto Assignable" name="autoAssignable" typeRef="boolean"/>
+            <rule id="DecisionRule_03pnfh8">
+                <description>supervisor task permissions</description>
+                <inputEntry id="UnaryTests_1ossj9o">
+                    <text></text>
+                </inputEntry>
+                <inputEntry id="UnaryTests_0occzoo">
+                    <text></text>
+                </inputEntry>
+                <outputEntry id="LiteralExpression_0766p7u">
+                    <text>"task-supervisor"</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_1gda35a">
+                    <text>"Read,Refer,Manage,Cancel"</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_0uxj36c">
+                    <text></text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_188mn11">
+                    <text></text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_1hkzpbs">
+                    <text></text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_0a25vtn">
+                    <text>false</text>
+                </outputEntry>
+            </rule>
+            <rule id="DecisionRule_0ivpl63">
+                <description>case manager task permissions</description>
+                <inputEntry id="UnaryTests_155q736">
+                    <text>
+                        "reviewTheAppeal",
+                        "reviewRespondentEvidence",
+                        "followUpOverdueRespondentEvidence",
+                        "reviewAppealSkeletonArgument",
+                        "followUpOverdueCaseBuilding",
+                        "reviewReasonsForAppeal",
+                        "followUpOverdueReasonsForAppeal",
+                        "reviewClarifyingQuestionsAnswers",
+                        "followUpOverdueClarifyingAnswers",
+                        "reviewRespondentResponse",
+                        "followUpOverdueRespondentReview",
+                        "reviewHearingRequirements",
+                        "followUpOverdueHearingRequirements",
+                        "reviewCmaRequirements",
+                        "reviewAdditionalHomeOfficeEvidence",
+                        "reviewAdditionalAppellantEvidence",
+                        "reviewAdditionalHomeOfficeEvidence",
+                        "reviewAdditionalAppellantEvidence",
+                        "createHearingBundle",
+                        "processApplication",
+                        "attendCma",
+                        "startDecisionsAndReasonsDocument",
+                        "createCaseSummary",
+                        "followUpNoticeOfChange",
+                        "followUpOverdueCmaRequirements",
+                        "followUpNonStandardDirection",
+                        "decideOnTimeExtension",
+                        "reviewAdditionalEvidence"
+                    </text>
+                </inputEntry>
+                <inputEntry id="UnaryTests_0buofva">
+                    <text></text>
+                </inputEntry>
+                <outputEntry id="LiteralExpression_09mnhlx">
+                    <text>"case-manager"</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_0ekjswr">
+                    <text>"Read,Refer,Own"</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_1tlohef">
+                    <text>"LEGAL_OPERATIONS"</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_0rn9vbl">
+                    <text></text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_1048wbc">
+                    <text>1</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_1oc4t5p">
+                    <text>true</text>
+                </outputEntry>
+            </rule>
+            <rule id="DecisionRule_1tvtlre">
+                <description>Tribunal caseworker task permissions</description>
+                <inputEntry id="UnaryTests_13ukkz6">
+                    <text>
+                        "reviewTheAppeal",
+                        "reviewRespondentEvidence",
+                        "followUpOverdueRespondentEvidence",
+                        "reviewAppealSkeletonArgument",
+                        "followUpOverdueCaseBuilding",
+                        "reviewReasonsForAppeal",
+                        "followUpOverdueReasonsForAppeal",
+                        "reviewClarifyingQuestionsAnswers",
+                        "followUpOverdueClarifyingAnswers",
+                        "reviewRespondentResponse",
+                        "followUpOverdueRespondentReview",
+                        "reviewHearingRequirements",
+                        "followUpOverdueHearingRequirements",
+                        "reviewCmaRequirements",
+                        "reviewAdditionalHomeOfficeEvidence",
+                        "reviewAdditionalAppellantEvidence",
+                        "reviewAdditionalHomeOfficeEvidence",
+                        "reviewAdditionalAppellantEvidence",
+                        "createHearingBundle",
+                        "processApplication",
+                        "attendCma",
+                        "startDecisionsAndReasonsDocument",
+                        "createCaseSummary",
+                        "followUpNoticeOfChange",
+                        "followUpOverdueCmaRequirements",
+                        "followUpNonStandardDirection",
+                        "decideOnTimeExtension",
+                        "reviewAdditionalEvidence",
+                        "editListing",
+                        "updateHearingRequirements",
+                        "sendDecisionsAndReasons",
+                        "addListingDate"
+                    </text>
+                </inputEntry>
+                <inputEntry id="UnaryTests_10s330p">
+                    <text></text>
+                </inputEntry>
+                <outputEntry id="LiteralExpression_0pwg10h">
+                    <text>"tribunal-caseworker"</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_151ry1h">
+                    <text>"Read,Refer,Own"</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_1rwokl1">
+                    <text>"LEGAL_OPERATIONS"</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_0niqcsd">
+                    <text></text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_1ynp9nn">
+                    <text>1</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_1c5me4u">
+                    <text>false</text>
+                </outputEntry>
+            </rule>
+            <rule id="DecisionRule_1x1oenn">
+                <description>Senior Tribunal caseworker task permissions</description>
+                <inputEntry id="UnaryTests_183egaw">
+                    <text>
+                        "reviewTheAppeal",
+                        "reviewRespondentEvidence",
+                        "followUpOverdueRespondentEvidence",
+                        "reviewAppealSkeletonArgument",
+                        "followUpOverdueCaseBuilding",
+                        "reviewReasonsForAppeal",
+                        "followUpOverdueReasonsForAppeal",
+                        "reviewClarifyingQuestionsAnswers",
+                        "followUpOverdueClarifyingAnswers",
+                        "reviewRespondentResponse",
+                        "followUpOverdueRespondentReview",
+                        "reviewHearingRequirements",
+                        "followUpOverdueHearingRequirements",
+                        "reviewCmaRequirements",
+                        "reviewAdditionalHomeOfficeEvidence",
+                        "reviewAdditionalAppellantEvidence",
+                        "reviewAdditionalHomeOfficeEvidence",
+                        "reviewAdditionalAppellantEvidence",
+                        "createHearingBundle",
+                        "processApplication",
+                        "attendCma",
+                        "startDecisionsAndReasonsDocument",
+                        "createCaseSummary",
+                        "followUpNoticeOfChange",
+                        "followUpOverdueCmaRequirements",
+                        "followUpNonStandardDirection",
+                        "decideOnTimeExtension",
+                        "reviewAdditionalEvidence",
+                        "editListing",
+                        "updateHearingRequirements",
+                        "sendDecisionsAndReasons",
+                        "addListingDate"
+                    </text>
+                </inputEntry>
+                <inputEntry id="UnaryTests_18tqbn3">
+                    <text></text>
+                </inputEntry>
+                <outputEntry id="LiteralExpression_145ah9f">
+                    <text>"senior-tribunal-caseworker"</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_1nhvpem">
+                    <text>"Read,Refer,Own"</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_03nq5c0">
+                    <text>"LEGAL_OPERATIONS"</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_140ri28">
+                    <text></text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_11r2dnr">
+                    <text>1</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_1kjalwr">
+                    <text>false</text>
+                </outputEntry>
+            </rule>
+            <rule id="DecisionRule_0mzuuvc">
+                <description>Judge task permissions</description>
+                <inputEntry id="UnaryTests_0mzihm0">
+                    <text>
+                        "reviewTheAppeal",
+                        "reviewRespondentEvidence",
+                        "followUpOverdueRespondentEvidence",
+                        "reviewAppealSkeletonArgument",
+                        "followUpOverdueCaseBuilding",
+                        "reviewReasonsForAppeal",
+                        "followUpOverdueReasonsForAppeal",
+                        "reviewClarifyingQuestionsAnswers",
+                        "followUpOverdueClarifyingAnswers",
+                        "reviewRespondentResponse",
+                        "followUpOverdueRespondentReview",
+                        "reviewHearingRequirements",
+                        "followUpOverdueHearingRequirements",
+                        "reviewCmaRequirements",
+                        "reviewAdditionalHomeOfficeEvidence",
+                        "reviewAdditionalAppellantEvidence",
+                        "reviewAdditionalHomeOfficeEvidence",
+                        "reviewAdditionalAppellantEvidence",
+                        "createHearingBundle",
+                        "processApplication",
+                        "attendCma",
+                        "startDecisionsAndReasonsDocument",
+                        "createCaseSummary",
+                        "followUpNoticeOfChange",
+                        "followUpOverdueCmaRequirements",
+                        "followUpNonStandardDirection",
+                        "decideOnTimeExtension",
+                        "reviewAdditionalEvidence",
+                        "allocateHearingJudge"
+                    </text>
+                </inputEntry>
+                <inputEntry id="UnaryTests_15oy3kp">
+                    <text></text>
+                </inputEntry>
+                <outputEntry id="LiteralExpression_0zsbfdo">
+                    <text>"judge"</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_1qa45z2">
+                    <text>"Read,Refer,Execute"</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_06zjq08">
+                    <text>"JUDICIAL"</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_1c8wftf">
+                    <text>"IA"</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_09bennu">
+                    <text>2</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_1du41ub">
+                    <text>false</text>
+                </outputEntry>
+            </rule>
+            <rule id="DecisionRule_16vvqmd">
+                <description>National business centre task permissions</description>
+                <inputEntry id="UnaryTests_0gxxmc7">
+                    <text>
+                        "arrangeOfflinePayment",
+                        "markCaseAsPaid",
+                        "addListingDate"
+                    </text>
+                </inputEntry>
+                <inputEntry id="UnaryTests_12c3use">
+                    <text></text>
+                </inputEntry>
+                <outputEntry id="LiteralExpression_1p54gmk">
+                    <text>"national-business-centre"</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_1fw41sy">
+                    <text>"Read,Refer,Own"</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_03y9mpj">
+                    <text>"ADMINISTRATOR"</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_1vy0t38">
+                    <text></text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_1t1fpby">
+                    <text>1</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_0r5nut3">
+                    <text>false</text>
+                </outputEntry>
+            </rule>
+            <rule id="DecisionRule_0hv79lq">
+                <description>Hearing centre admin task permissions</description>
+                <inputEntry id="UnaryTests_0tzrow3">
+                    <text>
+                        "allocateHearingJudge",
+                        "uploadHearingRecording",
+                        "editListing",
+                        "updateHearingRequirements"
+                    </text>
+                </inputEntry>
+                <inputEntry id="UnaryTests_1sw9xpj">
+                    <text></text>
+                </inputEntry>
+                <outputEntry id="LiteralExpression_09116fr">
+                    <text>"hearing-centre-admin"</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_18uxrkl">
+                    <text>"Read,Refer,Own"</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_0fbgbzp">
+                    <text>"ADMINISTRATOR"</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_11pjfav">
+                    <text></text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_0jexll1">
+                    <text>1</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_0l87ays">
+                    <text>false</text>
+                </outputEntry>
+            </rule>
+            <rule id="DecisionRule_0spqww2">
+                <inputEntry id="UnaryTests_0vmy0oj">
+                    <text>
+                        "allocateHearingJudge", "reviewHearingBundle"
+                    </text>
+                </inputEntry>
+                <inputEntry id="UnaryTests_190pyoc">
+                    <text></text>
+                </inputEntry>
+                <outputEntry id="LiteralExpression_0ldbpi0">
+                    <text>"tribunal-caseworker"</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_1tlcgb1">
+                    <text>"Read,Refer,Execute"</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_1vwn7j0">
+                    <text>"LEGAL_OPERATIONS"</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_1yd4fhm">
+                    <text></text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_0lpi60d">
+                    <text>2</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_0yfgbsz">
+                    <text>false</text>
+                </outputEntry>
+            </rule>
+            <rule id="DecisionRule_1wd5okj">
+                <inputEntry id="UnaryTests_0co919o">
+                    <text>
+                        "allocateHearingJudge","reviewHearingBundle"
+                    </text>
+                </inputEntry>
+                <inputEntry id="UnaryTests_055yime">
+                    <text></text>
+                </inputEntry>
+                <outputEntry id="LiteralExpression_1512irv">
+                    <text>"senior-tribunal-caseworker"</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_0viqzzm">
+                    <text>"Read,Refer,Execute"</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_0feri8q">
+                    <text>"LEGAL_OPERATIONS"</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_0dbwm40">
+                    <text></text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_09kz1ml">
+                    <text>2</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_1tq2ebs">
+                    <text>false</text>
+                </outputEntry>
+            </rule>
+            <rule id="DecisionRule_1xv2gxq">
+                <description>Hearing judge task permissions</description>
+                <inputEntry id="UnaryTests_1oxh1tt">
+                    <text>
+                        "reviewHearingBundle",
+                        "generateDraftDecisionAndReasons",
+                        "uploadDecision",
+                        "reviewAddendumHomeOfficeEvidence",
+                        "reviewAddendumAppellantEvidence",
+                        "reviewAddendumEvidence",
+                        "startDecisionsAndReasonsDocument",
+                        "sendDecisionsAndReasons",
+                        "decideAnFTPA"
+                    </text>
+                </inputEntry>
+                <inputEntry id="UnaryTests_19myw41">
+                    <text></text>
+                </inputEntry>
+                <outputEntry id="LiteralExpression_0kynksi">
+                    <text>"hearing-judge"</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_124xecb">
+                    <text>"Read,Refer,Own"</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_1pkhxc7">
+                    <text>"JUDICIAL"</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_0uc1qqh">
+                    <text>"IA"</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_15edozy">
+                    <text>1</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_1ygk8oj">
+                    <text>true</text>
+                </outputEntry>
+            </rule>
+            <rule id="DecisionRule_0b91c94">
+                <description>Judge task permissions</description>
+                <inputEntry id="UnaryTests_1099gbv">
+                    <text>
+                        "reviewHearingBundle",
+                        "generateDraftDecisionAndReasons",
+                        "uploadDecision",
+                        "reviewAddendumHomeOfficeEvidence",
+                        "reviewAddendumAppellantEvidence",
+                        "reviewAddendumEvidence",
+                        "startDecisionsAndReasonsDocument",
+                        "editListing",
+                        "updateHearingRequirements",
+                        "sendDecisionsAndReasons",
+                        "addListingDate",
+                        "decideAnFTPA"
+                    </text>
+                </inputEntry>
+                <inputEntry id="UnaryTests_1sgyxq7">
+                    <text></text>
+                </inputEntry>
+                <outputEntry id="LiteralExpression_04bwliv">
+                    <text>"judge"</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_1n6hq4e">
+                    <text>"Read,Refer,Own"</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_0pti6xc">
+                    <text>"JUDICIAL"</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_1r21fdy">
+                    <text>"IA"</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_0g1mgog">
+                    <text>1</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_0sy9mkt">
+                    <text>false</text>
+                </outputEntry>
+            </rule>
+            <rule id="DecisionRule_04eoe1k">
+                <description>Senior Tribunal caseworker task permissions</description>
+                <inputEntry id="UnaryTests_0se58ll">
+                    <text>"r1"</text>
+                </inputEntry>
+                <inputEntry id="UnaryTests_1m2r097">
+                    <text></text>
+                </inputEntry>
+                <outputEntry id="LiteralExpression_0hftahv">
+                    <text>"tribunal-caseworker"</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_051fxvi">
+                    <text>"Read,Refer,Own,Manage,Cancel"</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_02k1ff3">
+                    <text>"LEGAL_OPERATIONS"</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_0jgns61">
+                    <text></text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_1lugw75">
+                    <text></text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_16jo15y">
+                    <text>false</text>
+                </outputEntry>
+            </rule>
+            <rule id="DecisionRule_0ks3xbb">
+                <description>Default Senior Tribunal caseworker task permissions</description>
+                <inputEntry id="UnaryTests_1k8ldgj">
+                    <text>"r1"</text>
+                </inputEntry>
+                <inputEntry id="UnaryTests_0yw7wdu">
+                    <text></text>
+                </inputEntry>
+                <outputEntry id="LiteralExpression_0l9cpfg">
+                    <text>"senior-tribunal-caseworker"</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_1w3llu8">
+                    <text>"Read,Refer,Own,Manage,Cancel"</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_1god3td">
+                    <text>"LEGAL_OPERATIONS"</text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_0ukk3uh">
+                    <text></text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_0ymzlmg">
+                    <text></text>
+                </outputEntry>
+                <outputEntry id="LiteralExpression_1r4jwp2">
+                    <text>false</text>
+                </outputEntry>
+            </rule>
+        </decisionTable>
+    </decision>
+    <dmndi:DMNDI>
+        <dmndi:DMNDiagram>
+            <dmndi:DMNShape dmnElementRef="wa-task-permissions-ia-asylum">
+                <dc:Bounds height="80" width="180" x="160" y="100"/>
+            </dmndi:DMNShape>
+        </dmndi:DMNDiagram>
+    </dmndi:DMNDI>
 </definitions>
