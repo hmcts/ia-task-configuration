@@ -34,7 +34,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
 
         return Stream.of(
             Arguments.of(
-                "moveToSubmitted",
+                "markAppealPaid",
                 asList(
                     Map.of(
                         "taskType", "requestOfflinePayment",

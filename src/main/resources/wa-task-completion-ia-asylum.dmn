@@ -242,7 +242,7 @@
       </rule>
       <rule id="DecisionRule_1x8xnwy">
         <inputEntry id="UnaryTests_1rbwpjb">
-          <text>"moveToSubmitted"</text>
+          <text>"markAppealPaid"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0xikpyu">
           <text>"requestOfflinePayment"</text>
@@ -253,7 +253,7 @@
       </rule>
       <rule id="DecisionRule_00ego89">
         <inputEntry id="UnaryTests_0mupz2m">
-          <text>"requestRespondentEvidence","requestCaseBuilding","requestReasonsForAppeal","sendDirection","requestRespondentReview","requestCaseEdit","sendDirectionWithQuestions","requestCmaRequirements","reviewCmaRequirements","updateDetailsAfterCma","requestResponseAmend","reviewHearingRequirements","createCaseSummary","generateHearingBundle","decisionAndReasonsStarted","recordAllocatedJudge","changeDirectionDueDate","decideAnApplication","editCaseListing","updateHearingRequirements","sendDecisionAndReasons","moveToSubmitted"</text>
+          <text>"requestRespondentEvidence","requestCaseBuilding","requestReasonsForAppeal","sendDirection","requestRespondentReview","requestCaseEdit","sendDirectionWithQuestions","requestCmaRequirements","reviewCmaRequirements","updateDetailsAfterCma","requestResponseAmend","reviewHearingRequirements","createCaseSummary","generateHearingBundle","decisionAndReasonsStarted","recordAllocatedJudge","changeDirectionDueDate","decideAnApplication","editCaseListing","updateHearingRequirements","sendDecisionAndReasons","markAppealPaid"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1qvmdyv">
           <text></text>
