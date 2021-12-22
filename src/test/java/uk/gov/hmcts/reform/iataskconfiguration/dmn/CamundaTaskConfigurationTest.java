@@ -370,7 +370,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             .expectedCaseManagementCategoryValue("Human rights")
             .expectedWorkType("routine_work")
             .expectedRoleCategory("ADMINISTRATOR")
-            .expectedDescriptionValue("[Mark the appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid)")
+            .expectedDescriptionValue(
+                "[Mark the appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid)")
             .build();
 
         Scenario givenSomeCaseDataAndArrangeOfflinePaymentTaskIdThenReturnExpectedNameAndValueScenario =
@@ -385,8 +386,14 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     ),
                     "staffLocation", "some other location name",
                     "caseManagementCategory", Map.of(
-                        "value", Map.of("code", "refusalOfHumanRights", "label", "Refusal of a human rights claim"),
-                        "list_items", List.of(Map.of("code", "refusalOfHumanRights", "label", refusalOfEuLabel))
+                        "value", Map.of(
+                            "code", "refusalOfHumanRights",
+                            "label", "Refusal of a human rights claim"
+                        ),
+                        "list_items", List.of(Map.of(
+                            "code", "refusalOfHumanRights",
+                            "label", refusalOfEuLabel
+                        ))
                     )
                 ))
                 .taskAttributes(Map.of("taskType", "markCaseAsPaid"))
@@ -414,8 +421,13 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     ),
                     "staffLocation", "some other location name",
                     "caseManagementCategory", Map.of(
-                        "value", Map.of("code", "refusalOfHumanRights", "label", "Refusal of a human rights claim"),
-                        "list_items", List.of(Map.of("code", "refusalOfHumanRights", "label", refusalOfEuLabel))
+                        "value", Map.of(
+                            "code", "refusalOfHumanRights",
+                            "label", "Refusal of a human rights claim"
+                        ),
+                        "list_items", List.of(Map.of(
+                            "code", "refusalOfHumanRights",
+                            "label", refusalOfEuLabel))
                     )
                 ))
                 .taskAttributes(Map.of("taskType", "markCaseAsPaid"))
