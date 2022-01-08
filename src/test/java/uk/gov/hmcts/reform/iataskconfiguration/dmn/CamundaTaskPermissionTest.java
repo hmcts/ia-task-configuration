@@ -146,7 +146,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "name", "judge",
                 "value", "Read,Refer,Execute",
                 "roleCategory", "JUDICIAL",
-                "authorisations", "IA",
+                "authorisations", "373",
                 "assignmentPriority",2,
                 "autoAssignable", false
             )
@@ -243,7 +243,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "name", "judge",
                 "value", "Read,Refer,Execute",
                 "roleCategory", "JUDICIAL",
-                "authorisations", "IA",
+                "authorisations", "373",
                 "assignmentPriority",2,
                 "autoAssignable", false
             )
@@ -272,7 +272,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "name", "hearing-judge",
                 "value", "Read,Refer,Own",
                 "roleCategory", "JUDICIAL",
-                "authorisations", "IA",
+                "authorisations", "373",
                 "assignmentPriority",1,
                 "autoAssignable", true
             ),
@@ -280,7 +280,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "name", "judge",
                 "value", "Read,Refer,Own",
                 "roleCategory", "JUDICIAL",
-                "authorisations", "IA",
+                "authorisations", "373",
                 "assignmentPriority",1,
                 "autoAssignable", false
             )
@@ -305,7 +305,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "name", "hearing-judge",
                 "value", "Read,Refer,Own",
                 "roleCategory", "JUDICIAL",
-                "authorisations", "IA",
+                "authorisations", "373",
                 "assignmentPriority",1,
                 "autoAssignable", true
             ),
@@ -313,7 +313,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "name", "judge",
                 "value", "Read,Refer,Own",
                 "roleCategory", "JUDICIAL",
-                "authorisations", "IA",
+                "authorisations", "373",
                 "assignmentPriority",1,
                 "autoAssignable", false
             ),
