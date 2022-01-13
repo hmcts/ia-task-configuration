@@ -208,7 +208,7 @@ else if caseData.appealType = "revocationOfProtection" then "Revocation" else ""
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_10f3uas">
-          <text>"processApplication","reviewTheAppeal","decideOnTimeExtension","reviewRespondentEvidence","reviewAppealSkeletonArgument","reviewReasonsForAppeal","reviewClarifyingQuestionsAnswers","reviewCmaRequirements","attendCma","reviewRespondentResponse","createCaseSummary","createHearingBundle","startDecisionsAndReasonsDocument","reviewHearingRequirements","followUpOverdueRespondentEvidence","followUpOverdueCaseBuilding","followUpOverdueReasonsForAppeal","followUpOverdueClarifyingAnswers","followUpOverdueCmaRequirements","followUpOverdueRespondentReview","followUpOverdueHearingRequirements","followUpNonStandardDirection","followUpNoticeOfChange","reviewAdditionalEvidence","reviewAdditionalHomeOfficeEvidence"</text>
+          <text>"processApplication","reviewTheAppeal","decideOnTimeExtension","reviewRespondentEvidence","reviewAppealSkeletonArgument","reviewReasonsForAppeal","reviewClarifyingQuestionsAnswers","reviewCmaRequirements","attendCma","reviewRespondentResponse","createCaseSummary","createHearingBundle","startDecisionsAndReasonsDocument","reviewHearingRequirements","followUpOverdueRespondentEvidence","followUpOverdueCaseBuilding","followUpOverdueReasonsForAppeal","followUpOverdueClarifyingAnswers","followUpOverdueCmaRequirements","followUpOverdueRespondentReview","followUpOverdueHearingRequirements","followUpNonStandardDirection","followUpNoticeOfChange","reviewAdditionalEvidence","reviewAdditionalHomeOfficeEvidence","reviewSpecificAccessRequestLegalOps"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_05l5bvs">
           <text>"roleCategory"</text>
@@ -222,7 +222,8 @@ else if caseData.appealType = "revocationOfProtection" then "Revocation" else ""
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1glizm3">
-          <text>"arrangeOfflinePayment","markCaseAsPaid","addListingDate","allocateHearingJudge","uploadHearingRecording"</text>
+          <text>"arrangeOfflinePayment","markCaseAsPaid","addListingDate","allocateHearingJudge","uploadHearingRecording","
+reviewSpecificAccessRequestAdmin"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1131kat">
           <text>"roleCategory"</text>
@@ -236,7 +237,8 @@ else if caseData.appealType = "revocationOfProtection" then "Revocation" else ""
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_15ftuu0">
-          <text>"reviewHearingBundle","generateDraftDecisionAndReasons","uploadDecision","reviewAddendumHomeOfficeEvidence","reviewAddendumAppellantEvidence","reviewAddendumEvidence"</text>
+          <text>"reviewHearingBundle","generateDraftDecisionAndReasons","uploadDecision","reviewAddendumHomeOfficeEvidence","reviewAddendumAppellantEvidence","reviewAddendumEvidence","
+reviewSpecificAccessRequestJudiciary"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_15nowth">
           <text>"roleCategory"</text>
@@ -298,6 +300,20 @@ else if (taskAttributes != null and taskAttributes.taskType != null and taskAttr
 else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewAddendumAppellantEvidence" or taskType != null and taskType = "reviewAddendumAppellantEvidence") then "[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markEvidenceAsReviewed)"
 else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewAddendumEvidence" or taskType != null and taskType = "reviewAddendumEvidence") then "[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markEvidenceAsReviewed)"
 else ""</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0fpew6w">
+        <inputEntry id="UnaryTests_1dsxa1j">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ul72fr">
+          <text>"reviewSpecificAccessRequestJudiciary","reviewSpecificAccessRequestLegalOps","reviewSpecificAccessRequestAdmin"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1f53slh">
+          <text>"workType"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0huw4e7">
+          <text>"access-requests"</text>
         </outputEntry>
       </rule>
     </decisionTable>
