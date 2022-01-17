@@ -9,7 +9,6 @@
       </input>
       <output id="Output_1" label="Task Id" name="taskId" typeRef="string" />
       <output id="OutputClause_0k3nczm" label="Name" name="name" typeRef="string" />
-      <output id="OutputClause_0l5ezm8" label="Group" name="group" typeRef="string" />
       <output id="OutputClause_0cc4yuf" label="Working Days Allowed" name="workingDaysAllowed" typeRef="integer" />
       <rule id="DecisionRule_0r5llam">
         <inputEntry id="UnaryTests_08zv4eq">
@@ -20,9 +19,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_1criy6v">
           <text>"Follow Up Overdue Respondent Evidence"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0wln9if">
-          <text>"TCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1f69864">
           <text>2</text>
@@ -38,9 +34,6 @@
         <outputEntry id="LiteralExpression_0lk78xu">
           <text>"Follow Up Overdue Case Building"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_0n62pfk">
-          <text>"TCW"</text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_1hf5645">
           <text>2</text>
         </outputEntry>
@@ -54,9 +47,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_15vwmti">
           <text>"Follow Up Overdue Reasons For Appeal"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1oeju8y">
-          <text>"TCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_16qv6sr">
           <text>2</text>
@@ -72,9 +62,6 @@
         <outputEntry id="LiteralExpression_1e24rvq">
           <text>"Follow Up Overdue Clarifying Answers"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_17m7v9t">
-          <text>"TCW"</text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_0vtn0y2">
           <text>2</text>
         </outputEntry>
@@ -88,9 +75,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0gacoms">
           <text>"Follow Up Overdue Cma Requirements"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_153ewk4">
-          <text>"TCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1f75ves">
           <text>2</text>
@@ -106,9 +90,6 @@
         <outputEntry id="LiteralExpression_0dje4x4">
           <text>"Follow Up Overdue Respondent Review"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_01g5vk0">
-          <text>"TCW"</text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_1vlxrfl">
           <text>2</text>
         </outputEntry>
@@ -122,9 +103,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_04ytfye">
           <text>"Follow Up Overdue Hearing Requirements"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_07xrbh4">
-          <text>"TCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0bkded4">
           <text>2</text>

@@ -38,7 +38,6 @@ class CamundaTaskAllowedDaysTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "followUpOverdueRespondentEvidence",
                         "name", "Follow Up Overdue Respondent Evidence",
-                        "group", "TCW",
                         "workingDaysAllowed", 2
                     )
                 )
@@ -49,7 +48,6 @@ class CamundaTaskAllowedDaysTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "followUpOverdueCaseBuilding",
                         "name", "Follow Up Overdue Case Building",
-                        "group", "TCW",
                         "workingDaysAllowed", 2
                     )
                 )
@@ -60,7 +58,6 @@ class CamundaTaskAllowedDaysTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "followUpOverdueReasonsForAppeal",
                         "name", "Follow Up Overdue Reasons For Appeal",
-                        "group", "TCW",
                         "workingDaysAllowed", 2
                     )
                 )
@@ -71,7 +68,6 @@ class CamundaTaskAllowedDaysTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "followUpOverdueClarifyingAnswers",
                         "name", "Follow Up Overdue Clarifying Answers",
-                        "group", "TCW",
                         "workingDaysAllowed", 2
                     )
                 )
@@ -82,7 +78,6 @@ class CamundaTaskAllowedDaysTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "followUpOverdueCmaRequirements",
                         "name", "Follow Up Overdue Cma Requirements",
-                        "group", "TCW",
                         "workingDaysAllowed", 2
                     )
                 )
@@ -93,7 +88,6 @@ class CamundaTaskAllowedDaysTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "followUpOverdueRespondentReview",
                         "name", "Follow Up Overdue Respondent Review",
-                        "group", "TCW",
                         "workingDaysAllowed", 2
                     )
                 )
@@ -104,7 +98,6 @@ class CamundaTaskAllowedDaysTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "followUpOverdueHearingRequirements",
                         "name", "Follow Up Overdue Hearing Requirements",
-                        "group", "TCW",
                         "workingDaysAllowed", 2
                     )
                 )
