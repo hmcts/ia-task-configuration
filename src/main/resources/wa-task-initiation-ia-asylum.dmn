@@ -1361,10 +1361,10 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1tfucqq">
-          <text>"sendDecisionsAndReasons"</text>
+          <text>"startDecisionsAndReasonsDocument"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1gtv1rl">
-          <text>"Send decisions and reasons"</text>
+          <text>"Start decisions and reasons document"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_01s0ar0">
           <text>"TCW"</text>
