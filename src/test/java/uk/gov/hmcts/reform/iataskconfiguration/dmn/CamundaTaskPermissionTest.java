@@ -187,6 +187,16 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     seniorCaseWorkerPriorityOne,
                     nationalBusinessCentre,
                     judgePriorityOne
+                ),
+                Arguments.of(
+                    "processLinkedCaseApplication",
+                    List.of(
+                        taskSupervisor,
+                        caseManager,
+                        tribunalCaseWorkerPriorityOne,
+                        seniorCaseWorkerPriorityOne,
+                        judgePriorityOne
+                    )
                 )
             )
         );
@@ -283,7 +293,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         "reviewAdditionalHomeOfficeEvidence", "reviewAdditionalAppellantEvidence", "createHearingBundle",
         "processApplication", "attendCma", "createCaseSummary",
         "followUpNoticeOfChange", "followUpOverdueCmaRequirements", "followUpNonStandardDirection",
-        "decideOnTimeExtension", "reviewAdditionalEvidence", "attendCma",
+        "decideOnTimeExtension", "attendCma",
         "createCaseSummary", "followUpNoticeOfChange", "followUpOverdueCmaRequirements", "followUpNonStandardDirection",
         "decideOnTimeExtension", "reviewAdditionalEvidence"
     })
