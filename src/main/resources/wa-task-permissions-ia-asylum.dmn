@@ -149,8 +149,8 @@
             "updateHearingRequirements",
             "sendDecisionsAndReasons",
             "addListingDate",
-            "processLinkedCaseApplication"
-          </text>
+            "processLinkedCaseApplication",
+            "uploadHearingRecording"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_10s330p">
           <text></text>
@@ -213,8 +213,8 @@
             "updateHearingRequirements",
             "sendDecisionsAndReasons",
             "addListingDate",
-            "processLinkedCaseApplication"
-          </text>
+            "processLinkedCaseApplication",
+            "uploadHearingRecording"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_18tqbn3">
           <text></text>
@@ -341,7 +341,8 @@
             "allocateHearingJudge",
             "uploadHearingRecording",
             "editListing",
-            "updateHearingRequirements"
+            "updateHearingRequirements",
+            "uploadHearingRecording"
           </text>
         </inputEntry>
         <inputEntry id="UnaryTests_1sw9xpj">
