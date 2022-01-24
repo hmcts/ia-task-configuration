@@ -1451,6 +1451,43 @@
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1uv7rz8">
+        <inputEntry id="UnaryTests_04gtwjf">
+          <text>"editCaseListing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01ihfw5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rmi4vw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0giuzs5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rcdoin">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0jezx6a">
+          <text>"uploadHearingRecording"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12pydxt">
+          <text>"Upload hearing recording"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1gdphad">
+          <text>"TCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_15q99dh">
+          <text>if (listCaseHearingDate != null and CaseHearingDate != "") then
+		(date and time(listCaseHearingDate) - date and time(now)).days
+            else 0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0xk87vh">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ccww51">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
