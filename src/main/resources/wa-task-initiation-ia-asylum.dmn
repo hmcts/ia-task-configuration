@@ -1405,9 +1405,7 @@
           <text>"TCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0ay6ciw">
-          <text>
-          
-if (listCaseHearingDate != null and CaseHearingDate != "") then
+          <text>if (listCaseHearingDate != null and CaseHearingDate != "") then
 		(date and time(listCaseHearingDate) - date and time(now)).days
             else 1</text>
         </outputEntry>
@@ -1415,6 +1413,41 @@ if (listCaseHearingDate != null and CaseHearingDate != "") then
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0dmehyy">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1rvt3fp">
+        <inputEntry id="UnaryTests_0pwjwlw">
+          <text>"recordAllocatedJudge"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vl7t5a">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1aydw8t">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1eaoe15">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1i9re3e">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0j21h84">
+          <text>"decideAnFTPA"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0f26to9">
+          <text>"Decide an FTPA"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1m9yu2i">
+          <text>"TCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0niuaia">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_09yy6kk">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_14ng722">
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>

@@ -472,7 +472,8 @@
             "reviewAddendumAppellantEvidence",
             "reviewAddendumEvidence",
             "startDecisionsAndReasonsDocument",
-            "sendDecisionsAndReasons"
+            "sendDecisionsAndReasons",
+            "decideAnFTPA"
           </text>
         </inputEntry>
         <inputEntry id="UnaryTests_19myw41">
@@ -515,7 +516,8 @@
             "updateHearingRequirements",
             "sendDecisionsAndReasons",
             "addListingDate",
-            "processLinkedCaseApplication"
+            "processLinkedCaseApplication",
+            "decideAnFTPA"
           </text>
         </inputEntry>
         <inputEntry id="UnaryTests_1sgyxq7">

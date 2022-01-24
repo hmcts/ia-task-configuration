@@ -185,6 +185,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 decisionMakingWork.get(0)
             )),
             Arguments.of("reviewTheAppeal", decisionMakingWork),
+            Arguments.of("decideAnFTPA", decisionMakingWork),
             Arguments.of("followUpOverdueRespondentEvidence", decisionMakingWork),
             Arguments.of("reviewRespondentEvidence", decisionMakingWork),
             Arguments.of("followUpOverdueCaseBuilding", decisionMakingWork),
