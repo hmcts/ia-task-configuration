@@ -306,7 +306,8 @@
           <text>
             "arrangeOfflinePayment",
             "markCaseAsPaid",
-            "addListingDate"
+            "addListingDate",
+            "requestOfflinePayment"
           </text>
         </inputEntry>
         <inputEntry id="UnaryTests_12c3use">

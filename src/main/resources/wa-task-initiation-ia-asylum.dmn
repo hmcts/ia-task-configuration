@@ -268,6 +268,41 @@
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0bci62z">
+        <inputEntry id="UnaryTests_18125rs">
+          <text>"submitAppeal"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1oummr6">
+          <text>"pendingPayment"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06p8cu7">
+          <text>"refusalOfEu","refusalOfHumanRights","protection"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1c7o2wu">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ljyrj3">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_034phrk">
+          <text>"requestOfflinePayment"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1jizaa6">
+          <text>"Request offline payment"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0rmrcso">
+          <text>"TCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_15dic25">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1x8oor9">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1rgp3l4">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_16cn5ci">
         <inputEntry id="UnaryTests_1hf1bm4">
           <text>"submitAppeal", "payAndSubmitAppeal"</text>

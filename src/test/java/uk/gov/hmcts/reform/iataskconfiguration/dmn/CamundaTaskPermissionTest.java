@@ -349,7 +349,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
     @SuppressWarnings("checkstyle:indentation")
     @ParameterizedTest
     @CsvSource(value = {
-        "arrangeOfflinePayment", "markCaseAsPaid"
+        "arrangeOfflinePayment", "markCaseAsPaid", "requestOfflinePayment"
     })
     void given_taskType_when_evaluate_dmn_then_it_returns_first_and_forth_rule(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
