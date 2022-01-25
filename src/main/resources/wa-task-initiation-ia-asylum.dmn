@@ -1440,9 +1440,9 @@
           <text>"TCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0ay6ciw">
-          <text>if (listCaseHearingDate != null and CaseHearingDate != "") then
+          <text>if (listCaseHearingDate != null) then
 		(date and time(listCaseHearingDate) - date and time(now)).days
-            else 1</text>
+            else 0</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0hz4nyc">
           <text></text>
@@ -1512,7 +1512,7 @@
           <text>"TCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_15q99dh">
-          <text>if (listCaseHearingDate != null and CaseHearingDate != "") then
+          <text>if (listCaseHearingDate != null) then
 		(date and time(listCaseHearingDate) - date and time(now)).days
             else 0</text>
         </outputEntry>

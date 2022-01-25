@@ -634,7 +634,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData(" {\n"
                                       + "        \"Data\" : {\n"
                                       + "          \"listCaseHearingDate\" : \""
-                                      + LocalDateTime.now().plusDays(1).format(DateTimeFormatter.ISO_LOCAL_DATE_TIME)
+                                      + LocalDateTime.now().plusDays(0).format(DateTimeFormatter.ISO_LOCAL_DATE_TIME)
                                       + "\""
                                       + "        }\n"
                                       + "      }"),
@@ -657,7 +657,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "uploadHearingRecording",
                         "name", "Upload hearing recording",
                         "group", "TCW",
-                        "delayDuration", 1,
+                        "delayDuration", 0,
                         "processCategories", "caseProgression"
                     )
                 )
