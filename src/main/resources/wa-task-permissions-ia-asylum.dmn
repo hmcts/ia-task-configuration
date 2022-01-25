@@ -340,8 +340,6 @@
         <inputEntry id="UnaryTests_0tzrow3">
           <text>
             "allocateHearingJudge",
-            "uploadHearingRecording",
-            "updateHearingRequirements",
             "uploadHearingRecording"
           </text>
         </inputEntry>

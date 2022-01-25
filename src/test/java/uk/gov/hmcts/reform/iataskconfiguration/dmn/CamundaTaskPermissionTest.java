@@ -181,7 +181,6 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     taskSupervisor,
                     tribunalCaseWorkerPriorityOne,
                     seniorCaseWorkerPriorityOne,
-                    hearingCentreAdminPriorityOne,
                     judgePriorityOne
                 )
             ),

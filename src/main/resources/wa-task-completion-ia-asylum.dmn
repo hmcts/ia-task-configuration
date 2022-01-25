@@ -86,6 +86,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1aibb9e">
+        <inputEntry id="UnaryTests_1qgf71h">
+          <text>"markEvidenceAsReviewed"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1cjnxd5">
+          <text>"reviewAddendumEvidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0fm3ljn">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0h6mspv">
         <inputEntry id="UnaryTests_1pwjkzs">
           <text>"uploadAdditionalEvidenceHomeOffice"</text>
