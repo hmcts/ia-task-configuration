@@ -107,7 +107,7 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1048wbc">
-          <text>1</text>
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1oc4t5p">
           <text>true</text>
@@ -150,7 +150,7 @@
             "sendDecisionsAndReasons",
             "addListingDate",
             "processLinkedCaseApplication",
-            "uploadHearingRecording"</text>
+            "uploadHearingRecording","editListing"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_10s330p">
           <text></text>
@@ -214,7 +214,7 @@
             "sendDecisionsAndReasons",
             "addListingDate",
             "processLinkedCaseApplication",
-            "uploadHearingRecording"</text>
+            "uploadHearingRecording","editListing"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_18tqbn3">
           <text></text>
@@ -340,7 +340,6 @@
           <text>
             "allocateHearingJudge",
             "uploadHearingRecording",
-            "editListing",
             "updateHearingRequirements",
             "uploadHearingRecording"
           </text>
@@ -368,6 +367,38 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0l87ays">
           <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_18rs5ky">
+        <description>Hearing centre admin task permissions auto assignable</description>
+        <inputEntry id="UnaryTests_1cgrso7">
+          <text>
+            "editListing"
+          </text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04pyhrr">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0gri47a">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_051hiag">
+          <text>"hearing-centre-admin"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1hlrzb7">
+          <text>"Read,Refer,Own"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12fn0bz">
+          <text>"ADMINISTRATOR"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_00yepsd">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1mxepgh">
+          <text>1</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1qrxrbe">
+          <text>true</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0spqww2">
@@ -517,7 +548,7 @@
             "sendDecisionsAndReasons",
             "addListingDate",
             "processLinkedCaseApplication",
-            "decideAnFTPA"
+            "decideAnFTPA","editListing"
           </text>
         </inputEntry>
         <inputEntry id="UnaryTests_1sgyxq7">
