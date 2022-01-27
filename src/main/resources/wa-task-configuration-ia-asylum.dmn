@@ -229,7 +229,7 @@ reviewSpecificAccessRequestAdmin"</text>
           <text>"roleCategory"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0el7tae">
-          <text>"ADMINISTRATOR"</text>
+          <text>"ADMIN"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_01cmxvs">

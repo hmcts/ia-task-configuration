@@ -318,7 +318,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
         assertEquals(Map.of(
             "name", "roleCategory",
-            "value", "ADMINISTRATOR"
+            "value", "ADMIN"
         ), workTypeResultList.get(0));
     }
 
@@ -400,7 +400,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             .expectedLocationNameValue("some other location name")
             .expectedCaseManagementCategoryValue("Human rights")
             .expectedWorkType("routine_work")
-            .expectedRoleCategory("ADMINISTRATOR")
+            .expectedRoleCategory("ADMIN")
             .expectedDescriptionValue("[Mark the appeal as "
                                       + "paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid)")
             .build();
@@ -429,7 +429,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 .expectedLocationNameValue("some other location name")
                 .expectedCaseManagementCategoryValue("Human rights")
                 .expectedWorkType("routine_work")
-                .expectedRoleCategory("ADMINISTRATOR")
+                .expectedRoleCategory("ADMIN")
                 .expectedDescriptionValue("[Mark the appeal as "
                                           + "paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid)")
                 .build();
@@ -458,7 +458,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 .expectedLocationNameValue("some other location name")
                 .expectedCaseManagementCategoryValue("Human rights")
                 .expectedWorkType("routine_work")
-                .expectedRoleCategory("ADMINISTRATOR")
+                .expectedRoleCategory("ADMIN")
                 .expectedDescriptionValue("[Mark the appeal as "
                                           + "paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid)")
                 .build();
@@ -474,7 +474,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 .expectedLocationNameValue("Taylor House")
                 .expectedCaseManagementCategoryValue("")
                 .expectedWorkType("routine_work")
-                .expectedRoleCategory("ADMINISTRATOR")
+                .expectedRoleCategory("ADMIN")
                 .expectedDescriptionValue("[Mark the appeal as "
                                           + "paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid)")
                 .build();

@@ -199,14 +199,14 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
             ), Map.of(
                 "name", "national-business-centre",
                 "value", "Read,Refer,Own",
-                "roleCategory", "ADMINISTRATOR",
+                "roleCategory", "ADMIN",
                 "assignmentPriority",1,
                 "autoAssignable", false
             ),
             Map.of(
                 "name", "hearing-centre-admin",
                 "value", "Read,Refer,Own",
-                "roleCategory", "ADMINISTRATOR",
+                "roleCategory", "ADMIN",
                 "assignmentPriority",1,
                 "autoAssignable", false
             )
@@ -257,7 +257,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
             Map.of(
                 "name", "national-business-centre",
                 "value", "Read,Refer,Own",
-                "roleCategory", "ADMINISTRATOR",
+                "roleCategory", "ADMIN",
                 "assignmentPriority",1,
                 "autoAssignable", false
             )
@@ -281,7 +281,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
             Map.of(
                 "name", "hearing-centre-admin",
                 "value", "Read,Refer,Own",
-                "roleCategory", "ADMINISTRATOR",
+                "roleCategory", "ADMIN",
                 "assignmentPriority",1,
                 "autoAssignable", false
             )
@@ -305,7 +305,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
             Map.of(
                 "name", "hearing-centre-admin",
                 "value", "Read,Refer,Own",
-                "roleCategory", "ADMINISTRATOR",
+                "roleCategory", "ADMIN",
                 "assignmentPriority",1,
                 "autoAssignable", false
             ),
