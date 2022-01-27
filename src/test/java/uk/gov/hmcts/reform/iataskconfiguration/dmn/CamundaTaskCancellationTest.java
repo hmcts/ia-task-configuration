@@ -122,7 +122,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "caseBuilding",
-                "submitCase",
+                "buildCase",
                 null,
                 singletonList(
                     Map.of(
