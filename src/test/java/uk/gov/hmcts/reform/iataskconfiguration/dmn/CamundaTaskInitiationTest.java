@@ -55,11 +55,19 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "decisionAndReasonsStarted",
                 "decision",
                 null,
-                singletonList(
+                asList(
                     Map.of(
-                        "taskId", "startDecisionsAndReasonsDocument",
-                        "name", "Start decisions and reasons document",
+                        "taskId", "sendDecisionsAndReasons",
+                        "name", "Send decisions and reasons",
                         "group", "TCW",
+                        "workingDaysAllowed", 0,
+                        "processCategories", "caseProgression"
+                    ),
+                    Map.of(
+                        "taskId", "prepareDecisionsAndReasons",
+                        "name", "Prepare decisions and reasons",
+                        "group", "TCW",
+                        "workingDaysAllowed", 0,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -658,7 +666,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Upload hearing recording",
                         "group", "TCW",
                         "delayDuration", 0,
-                        "processCategories", "caseProgression"
+                        "processCategories", "followUpOverdue"
                     )
                 )
             ),
@@ -678,7 +686,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Upload hearing recording",
                         "group", "TCW",
                         "delayDuration", 0,
-                        "processCategories", "caseProgression"
+                        "processCategories", "followUpOverdue"
                     )
                 )
             ),
@@ -1204,7 +1212,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(5));
         assertThat(logic.getOutputs().size(), is(6));
-        assertThat(logic.getRules().size(), is(41));
+        assertThat(logic.getRules().size(), is(42));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {

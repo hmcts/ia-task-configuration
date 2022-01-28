@@ -174,17 +174,6 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1mw2ara">
-        <inputEntry id="UnaryTests_0jn2e7x">
-          <text>"generateDecisionAndReasons"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1q0zt8z">
-          <text>"startDecisionsAndReasonsDocument"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_16xfnyx">
-          <text>"Auto"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_1tvqgcw">
         <inputEntry id="UnaryTests_1lm3kb6">
           <text>"recordAllocatedJudge"</text>
@@ -240,12 +229,23 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1s2se0d">
-        <inputEntry id="UnaryTests_1diis8c">
+      <rule id="DecisionRule_0sfe37n">
+        <inputEntry id="UnaryTests_1selz0c">
           <text>"sendDecisionAndReasons"</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_1xk8dcp">
+        <outputEntry id="LiteralExpression_0q6nn80">
           <text>"sendDecisionsAndReasons"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0q14frf">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1s2se0d">
+        <inputEntry id="UnaryTests_1diis8c">
+          <text>"generateDecisionAndReasons"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1xk8dcp">
+          <text>"prepareDecisionsAndReasons"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_04anh91">
           <text>"Auto"</text>
@@ -286,7 +286,7 @@
       </rule>
       <rule id="DecisionRule_00ego89">
         <inputEntry id="UnaryTests_0mupz2m">
-          <text>"requestRespondentEvidence","requestCaseBuilding","requestReasonsForAppeal","sendDirection","requestRespondentReview","requestCaseEdit","sendDirectionWithQuestions","requestCmaRequirements","reviewCmaRequirements","updateDetailsAfterCma","requestResponseAmend","reviewHearingRequirements","createCaseSummary","generateHearingBundle","decisionAndReasonsStarted","recordAllocatedJudge","changeDirectionDueDate","decideAnApplication","editCaseListing","updateHearingRequirements","sendDecisionAndReasons","uploadHearingRecording","leadershipJudgeFtpaDecision","residentJudgeFtpaDecision"</text>
+          <text>"requestRespondentEvidence","requestCaseBuilding","requestReasonsForAppeal","sendDirection","requestRespondentReview","requestCaseEdit","sendDirectionWithQuestions","requestCmaRequirements","reviewCmaRequirements","updateDetailsAfterCma","requestResponseAmend","reviewHearingRequirements","createCaseSummary","generateHearingBundle","decisionAndReasonsStarted","recordAllocatedJudge","changeDirectionDueDate","decideAnApplication","editCaseListing","updateHearingRequirements","sendDecisionAndReasons","generateDecisionAndReasons","uploadHearingRecording","leadershipJudgeFtpaDecision","residentJudgeFtpaDecision"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1qvmdyv">
           <text></text>

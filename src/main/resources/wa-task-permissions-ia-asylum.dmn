@@ -84,8 +84,7 @@
             "followUpOverdueCmaRequirements",
             "followUpNonStandardDirection",
             "decideOnTimeExtension",
-            "reviewAdditionalEvidence",
-            "processLinkedCaseApplication"
+            "reviewAdditionalEvidence"
           </text>
         </inputEntry>
         <inputEntry id="UnaryTests_0buofva">
@@ -148,9 +147,7 @@
             "editListing",
             "updateHearingRequirements",
             "sendDecisionsAndReasons",
-            "addListingDate",
-            "processLinkedCaseApplication",
-            "uploadHearingRecording","editListing"</text>
+            "addListingDate"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_10s330p">
           <text></text>
@@ -212,9 +209,7 @@
             "editListing",
             "updateHearingRequirements",
             "sendDecisionsAndReasons",
-            "addListingDate",
-            "processLinkedCaseApplication",
-            "uploadHearingRecording","editListing"</text>
+            "addListingDate"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_18tqbn3">
           <text></text>
@@ -245,34 +240,16 @@
         <description>Judge task permissions</description>
         <inputEntry id="UnaryTests_0mzihm0">
           <text>
-            "reviewTheAppeal",
-            "reviewRespondentEvidence",
-            "followUpOverdueRespondentEvidence",
-            "reviewAppealSkeletonArgument",
-            "followUpOverdueCaseBuilding",
-            "reviewReasonsForAppeal",
-            "followUpOverdueReasonsForAppeal",
-            "reviewClarifyingQuestionsAnswers",
-            "followUpOverdueClarifyingAnswers",
-            "reviewRespondentResponse",
-            "followUpOverdueRespondentReview",
-            "reviewHearingRequirements",
-            "followUpOverdueHearingRequirements",
-            "reviewCmaRequirements",
-            "reviewAdditionalHomeOfficeEvidence",
-            "reviewAdditionalAppellantEvidence",
-            "reviewAdditionalHomeOfficeEvidence",
-            "reviewAdditionalAppellantEvidence",
-            "createHearingBundle",
             "processApplication",
-            "attendCma",
-            "startDecisionsAndReasonsDocument",
-            "createCaseSummary",
-            "followUpNoticeOfChange",
-            "followUpOverdueCmaRequirements",
-            "followUpNonStandardDirection",
             "decideOnTimeExtension",
-            "reviewAdditionalEvidence"
+            "allocateHearingJudge",
+            "reviewAddendumEvidence",
+            "reviewHearingBundle",
+            "prepareDecisionsAndReasons",
+            "sendDecisionsAndReasons",
+            "processLinkedCaseApplication",
+            "processReviewDecisionApplication",
+            "decideAnFTPA"
           </text>
         </inputEntry>
         <inputEntry id="UnaryTests_15oy3kp">
@@ -304,10 +281,9 @@
         <description>National business centre task permissions</description>
         <inputEntry id="UnaryTests_0gxxmc7">
           <text>
-            "arrangeOfflinePayment",
-            "markCaseAsPaid",
-            "addListingDate",
-            "requestOfflinePayment"
+            "requestOfflinePayment",
+            "updatePaymentStatus",
+            "addListingDate"
           </text>
         </inputEntry>
         <inputEntry id="UnaryTests_12c3use">
@@ -340,7 +316,9 @@
         <inputEntry id="UnaryTests_0tzrow3">
           <text>
             "allocateHearingJudge",
-            "uploadHearingRecording"
+            "uploadHearingRecording",
+            "editListing",
+            "updateHearingRequirements"
           </text>
         </inputEntry>
         <inputEntry id="UnaryTests_1sw9xpj">
@@ -368,42 +346,15 @@
           <text>false</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_18rs5ky">
-        <description>Hearing centre admin task permissions auto assignable</description>
-        <inputEntry id="UnaryTests_1cgrso7">
-          <text>
-            "editListing"
-          </text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_04pyhrr">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0gri47a">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_051hiag">
-          <text>"hearing-centre-admin"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1hlrzb7">
-          <text>"Read,Refer,Own"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_12fn0bz">
-          <text>"ADMINISTRATOR"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_00yepsd">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1mxepgh">
-          <text>1</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1qrxrbe">
-          <text>true</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_0spqww2">
         <inputEntry id="UnaryTests_0vmy0oj">
           <text>
-            "allocateHearingJudge"
+            "allocateHearingJudge",
+            "reviewHearingBundle",
+            "reviewAddendumHomeOfficeEvidence",
+            "reviewAddendumAppellantEvidence",
+            "reviewAddendumEvidence",
+            "editListing"
           </text>
         </inputEntry>
         <inputEntry id="UnaryTests_190pyoc">
@@ -434,7 +385,12 @@
       <rule id="DecisionRule_1wd5okj">
         <inputEntry id="UnaryTests_0co919o">
           <text>
-            "allocateHearingJudge"
+            "allocateHearingJudge",
+            "reviewHearingBundle",
+            "reviewAddendumHomeOfficeEvidence",
+            "reviewAddendumAppellantEvidence",
+            "reviewAddendumEvidence",
+            "editListing"
           </text>
         </inputEntry>
         <inputEntry id="UnaryTests_055yime">
@@ -462,35 +418,6 @@
           <text>false</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0wv27ye">
-        <inputEntry id="UnaryTests_000xagg">
-          <text>"allocateHearingJudge"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1ebs8us">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0qipraa">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_014p7gl">
-          <text>"judge"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0tgfj4w">
-          <text>"Read,Refer,Execute"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_12bavqn">
-          <text>"JUDICIAL"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0i3q8hl">
-          <text>"373"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_169gwer">
-          <text>2</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0ogb6i9">
-          <text>false</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_1xv2gxq">
         <description>Hearing judge task permissions</description>
         <inputEntry id="UnaryTests_1oxh1tt">
@@ -501,10 +428,7 @@
             "reviewAddendumHomeOfficeEvidence",
             "reviewAddendumAppellantEvidence",
             "reviewAddendumEvidence",
-            "startDecisionsAndReasonsDocument",
-            "sendDecisionsAndReasons",
-            "decideAnFTPA"
-          </text>
+            "sendDecisionsAndReasons"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_19myw41">
           <text></text>
@@ -541,13 +465,10 @@
             "reviewAddendumHomeOfficeEvidence",
             "reviewAddendumAppellantEvidence",
             "reviewAddendumEvidence",
-            "startDecisionsAndReasonsDocument",
             "editListing",
             "updateHearingRequirements",
             "sendDecisionsAndReasons",
-            "addListingDate",
-            "processLinkedCaseApplication",
-            "decideAnFTPA","editListing"
+            "addListingDate"
           </text>
         </inputEntry>
         <inputEntry id="UnaryTests_1sgyxq7">
@@ -572,64 +493,6 @@
           <text>1</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0sy9mkt">
-          <text>false</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0diq6er">
-        <inputEntry id="UnaryTests_1hozmh4">
-          <text>"reviewHearingBundle"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1dnr7gs">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1hj82xz">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0oi5h9r">
-          <text>"tribunal-caseworker"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0zn9r05">
-          <text>"Read,Refer,Execute"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1d7g17q">
-          <text>"LEGAL_OPERATIONS"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0r6po99">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1aim63r">
-          <text>2</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0l65ngr">
-          <text>false</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1aphieb">
-        <inputEntry id="UnaryTests_01re1v0">
-          <text>"reviewHearingBundle"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0fut8jp">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1vylmzl">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0r94fsw">
-          <text>"senior-tribunal-caseworker"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0thmig7">
-          <text>"Read,Refer,Execute"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1uqmc91">
-          <text>"LEGAL_OPERATIONS"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0dg1olv">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0ym9kcz">
-          <text>2</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0u5sbw4">
           <text>false</text>
         </outputEntry>
       </rule>

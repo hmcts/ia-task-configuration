@@ -255,15 +255,6 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "generateDecisionAndReasons",
-                asList(
-                    Map.of(
-                        "taskType", "startDecisionsAndReasonsDocument",
-                        "completionMode", "Auto"
-                    )
-                )
-            ),
-            Arguments.of(
                 "recordAllocatedJudge",
                 asList(
                     Map.of(
@@ -322,6 +313,16 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                 asList(
                     Map.of(
                         "taskType", "sendDecisionsAndReasons",
+                        "completionMode", "Auto"
+                    ),
+                    emptyMap()
+                )
+            ),
+            Arguments.of(
+                "generateDecisionAndReasons",
+                asList(
+                    Map.of(
+                        "taskType", "prepareDecisionsAndReasons",
                         "completionMode", "Auto"
                     ),
                     emptyMap()
