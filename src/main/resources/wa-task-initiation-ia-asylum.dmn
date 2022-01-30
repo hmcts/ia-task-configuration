@@ -276,7 +276,7 @@
           <text>"pendingPayment"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_06p8cu7">
-          <text>"refusalOfEu","refusalOfHumanRights","protection"</text>
+          <text>"refusalOfEu","refusalOfHumanRights"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1c7o2wu">
           <text></text>
@@ -303,38 +303,38 @@
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_16cn5ci">
-        <inputEntry id="UnaryTests_1hf1bm4">
-          <text>"submitAppeal", "payAndSubmitAppeal"</text>
+      <rule id="DecisionRule_116uu7o">
+        <inputEntry id="UnaryTests_0feh6cl">
+          <text>"submitAppeal"</text>
         </inputEntry>
-        <inputEntry id="UnaryTests_0hicgo1">
+        <inputEntry id="UnaryTests_10dhs3v">
           <text>"appealSubmitted"</text>
         </inputEntry>
-        <inputEntry id="UnaryTests_15fveit">
+        <inputEntry id="UnaryTests_10a9054">
           <text>"protection"</text>
         </inputEntry>
-        <inputEntry id="UnaryTests_0ymsiph">
+        <inputEntry id="UnaryTests_0urn01s">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_16ayje3">
+        <inputEntry id="UnaryTests_0uzs3x2">
           <text></text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_1idu6wl">
-          <text>"reviewTheAppeal"</text>
+        <outputEntry id="LiteralExpression_1ni1309">
+          <text>"requestOfflinePayment"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_1llbt9e">
-          <text>"Review the appeal"</text>
+        <outputEntry id="LiteralExpression_110tas1">
+          <text>"Request offline payment"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_1ujg79d">
+        <outputEntry id="LiteralExpression_0fmuewh">
           <text>"TCW"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_1cj0xz3">
+        <outputEntry id="LiteralExpression_0jefn7z">
           <text></text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_10zmxqe">
+        <outputEntry id="LiteralExpression_0byclnk">
           <text>2</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_1t0no71">
+        <outputEntry id="LiteralExpression_0wdpdr3">
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
@@ -351,7 +351,7 @@
           <text>"appealSubmitted"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_19nc6sw">
-          <text>"refusalOfHumanRights","refusalOfEu"</text>
+          <text>"refusalOfHumanRights","refusalOfEu","protection"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0y4m95u">
           <text></text>
@@ -375,6 +375,41 @@
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0wnnmif">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0l32agr">
+        <inputEntry id="UnaryTests_1slir5l">
+          <text>"markPaymentRequestSent"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1bsntag">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0htpft8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1nxj8k6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0q4apa4">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0qyg9b5">
+          <text>"updatePaymentStatus"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_09dj3mj">
+          <text>"Update payment status"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0uxoqgp">
+          <text>"TCW"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0bs6bot">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0tuur20">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1jrteo9">
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>

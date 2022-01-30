@@ -54,6 +54,16 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "markPaymentRequestSent",
+                asList(
+                    Map.of(
+                        "taskType", "requestOfflinePayment",
+                        "completionMode", "Auto"
+                    ),
+                    emptyMap()
+                )
+            ),
+            Arguments.of(
                 "requestRespondentEvidence",
                 asList(
                     Map.of(
@@ -370,7 +380,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
 
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(26));
+        assertThat(logic.getRules().size(), is(27));
 
     }
 
