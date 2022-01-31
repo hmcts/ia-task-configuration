@@ -404,13 +404,13 @@
           <text>"TCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0bs6bot">
-          <text></text>
+          <text>21</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0tuur20">
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1jrteo9">
-          <text>"caseProgression"</text>
+          <text>"followUpOverdue"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_046wm6a">

@@ -295,9 +295,20 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0rn0s02">
+        <inputEntry id="UnaryTests_0ee288y">
+          <text>"markAppealPaid","endAppeal"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0m9g12c">
+          <text>"updatePaymentStatus"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0tzc5ni">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_00ego89">
         <inputEntry id="UnaryTests_0mupz2m">
-          <text>"requestRespondentEvidence","requestCaseBuilding","requestReasonsForAppeal","sendDirection","requestRespondentReview","requestCaseEdit","sendDirectionWithQuestions","requestCmaRequirements","reviewCmaRequirements","updateDetailsAfterCma","requestResponseAmend","reviewHearingRequirements","createCaseSummary","generateHearingBundle","decisionAndReasonsStarted","recordAllocatedJudge","changeDirectionDueDate","decideAnApplication","editCaseListing","updateHearingRequirements","sendDecisionAndReasons","generateDecisionAndReasons","uploadHearingRecording","leadershipJudgeFtpaDecision","residentJudgeFtpaDecision","markPaymentRequestSent"</text>
+          <text>"requestRespondentEvidence","requestCaseBuilding","requestReasonsForAppeal","sendDirection","requestRespondentReview","requestCaseEdit","sendDirectionWithQuestions","requestCmaRequirements","reviewCmaRequirements","updateDetailsAfterCma","requestResponseAmend","reviewHearingRequirements","createCaseSummary","generateHearingBundle","decisionAndReasonsStarted","recordAllocatedJudge","changeDirectionDueDate","decideAnApplication","editCaseListing","updateHearingRequirements","sendDecisionAndReasons","generateDecisionAndReasons","uploadHearingRecording","leadershipJudgeFtpaDecision","residentJudgeFtpaDecision","markPaymentRequestSent","markAppealPaid","endAppeal"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1qvmdyv">
           <text></text>
