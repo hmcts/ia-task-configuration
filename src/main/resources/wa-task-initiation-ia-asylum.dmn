@@ -45,7 +45,7 @@
       <output id="Output_1" label="Task Id" name="taskId" typeRef="string" biodi:width="173" />
       <output id="OutputClause_0p5fhhd" label="Name" name="name" typeRef="string" biodi:width="172" />
       <output id="OutputClause_0f63m65" label="Group" name="group" typeRef="string" biodi:width="150" />
-      <output id="OutputClause_165p3r3" label="Delay Duration" name="delayDuration" typeRef="integer" biodi:width="150" />
+      <output id="OutputClause_165p3r3" label="Delay Duration" name="delayDuration" typeRef="integer" biodi:width="252" />
       <output id="OutputClause_0i6c6c2" label="Working Days Allowed" name="workingDaysAllowed" typeRef="integer" biodi:width="150" />
       <output id="OutputClause_10rno4c" label="Process Categories Identifiers" name="processCategories" typeRef="string" biodi:width="150" />
       <rule id="DecisionRule_1fenvxm">
@@ -404,7 +404,8 @@
           <text>"TCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0bs6bot">
-          <text>21</text>
+          <text>if (paymentRequestSentDate != null and paymentRequestSentDate != "") then (date(paymentRequestSentDate) - date(now)).days + 21
+            else 0</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0tuur20">
           <text>2</text>

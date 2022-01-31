@@ -381,13 +381,19 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "markPaymentRequestSent",
                 "null",
-                null,
+                mapAdditionalData(" {\n"
+                                      + "        \"Data\" : {\n"
+                                      + "          \"paymentRequestSentDate\" : \""
+                                      + LocalDateTime.now().plusDays(21).format(DateTimeFormatter.ISO_LOCAL_DATE_TIME)
+                                      + "\""
+                                      + "        }\n"
+                                      + "      }"),
                 singletonList(
                     Map.of(
                         "taskId", "updatePaymentStatus",
                         "name", "Update payment status",
                         "group", "TCW",
-                        "delayDuration",21,
+                        "delayDuration",0,
                         "workingDaysAllowed", 2,
                         "processCategories", "followUpOverdue"
                     )
