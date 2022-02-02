@@ -404,7 +404,7 @@
           <text>"TCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0bs6bot">
-          <text>if (paymentRequestSentDate != null and paymentRequestSentDate != "") then (date(paymentRequestSentDate) - date(now)).days + 21
+          <text>if (paymentRequestSentDate != null and paymentRequestSentDate != "") then (date(paymentRequestSentDate) - date(now)).days
             else 0</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0tuur20">
