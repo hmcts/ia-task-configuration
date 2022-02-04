@@ -1077,7 +1077,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             getArgumentOf("Update hearing requirements"),
             getArgumentOf("Update appeal details"),
             getArgumentOf("Reinstate an ended appeal"),
-            getArgumentOf("Other")
+            getArgumentOf("Other"),
+            getArgumentOf("Link/unlink appeals")
         );
     }
 
@@ -1096,27 +1097,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       + "      }"),
                 emptyList()
             ),
-            Arguments.of(
-                "makeAnApplication",
-                null,
-                mapAdditionalData(" {\n"
-                                      + "        \"Data\" : {\n"
-                                      + "          \"lastModifiedApplication\" : {\n"
-                                      + "            \"type\" : \"Link/unlink appeals\",\n"
-                                      + "            \"decision\" : \"\"\n"
-                                      + "          }\n"
-                                      + "        }\n"
-                                      + "      }"),
-                singletonList(
-                    Map.of(
-                        "taskId", "processLinkedCaseApplication",
-                        "name", "Process linked case application",
-                        "group", "TCW",
-                        "workingDaysAllowed", 2,
-                        "processCategories", "application"
-                    )
-                )
-            ),
             getArgumentOf("Adjourn"),
             getArgumentOf("Expedite"),
             getArgumentOf("Time extension"),
@@ -1125,7 +1105,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             getArgumentOf("Update hearing requirements"),
             getArgumentOf("Update appeal details"),
             getArgumentOf("Reinstate an ended appeal"),
-            getArgumentOf("Other")
+            getArgumentOf("Other"),
+            getArgumentOf("Link/unlink appeals")
         );
     }
 
@@ -1228,7 +1209,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(5));
         assertThat(logic.getOutputs().size(), is(6));
-        assertThat(logic.getRules().size(), is(42));
+        assertThat(logic.getRules().size(), is(41));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {

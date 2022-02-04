@@ -311,10 +311,6 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                         "taskType", "processApplication",
                         "completionMode", "Auto"
                     ),
-                    Map.of(
-                        "taskType", "processLinkedCaseApplication",
-                        "completionMode", "Auto"
-                    ),
                     emptyMap()
                 )
             ),
@@ -359,15 +355,6 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "linkAppeal",
-                asList(
-                    Map.of(
-                        "taskType", "processLinkedCaseApplication",
-                        "completionMode", "Auto"
-                    )
-                )
-            ),
-            Arguments.of(
                 "editCaseListing",
                 asList(
                     Map.of(
@@ -400,7 +387,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
 
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(28));
+        assertThat(logic.getRules().size(), is(27));
 
     }
 
