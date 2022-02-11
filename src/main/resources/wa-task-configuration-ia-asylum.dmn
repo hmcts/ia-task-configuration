@@ -422,14 +422,27 @@
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "arrangeOfflinePayment" or taskType != null and taskType ="arrangeOfflinePayment") then "[Mark the appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "markCaseAsPaid" or taskType != null and taskType ="markCaseAsPaid") then "[Mark the appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "addListingDate" or taskType != null and taskType ="addListingDate")	then "[List the case](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/listCase)"
-                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "allocateHearingJudge" or taskType != null and taskType ="allocateHearingJudge")	 then "[Allocate judge](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/recordAllocatedJudge)"
+else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "allocateHearingJudge" or taskType != null and taskType ="allocateHearingJudge") then "[Allocate Hearing Judge](/role-access/allocate-role/allocate?caseId=${[CASE_REFERENCE]}&amp;roleCategory=${[JUDICIAL]})"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "uploadHearingRecording" or taskType != null and taskType = "uploadHearingRecording") then "[Upload the hearing recording](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/uploadHearingRecording)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "generateDraftDecisionAndReasons" or taskType != null and taskType = "generateDraftDecisionAndReasons")	then "[Generate the draft decisions and reasons document](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/generateDecisionAndReasons)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewAddendumHomeOfficeEvidence" or taskType != null and taskType = "reviewAddendumHomeOfficeEvidence") then "[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markEvidenceAsReviewed)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewAddendumAppellantEvidence" or taskType != null and taskType = "reviewAddendumAppellantEvidence") then "[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markEvidenceAsReviewed)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewAddendumEvidence" or taskType != null and taskType = "reviewAddendumEvidence") then "[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markEvidenceAsReviewed)"
-                        else ""
-                    </text>
+else ""</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0fpew6w">
+        <inputEntry id="UnaryTests_1dsxa1j">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ul72fr">
+          <text>"reviewSpecificAccessRequestJudiciary","reviewSpecificAccessRequestLegalOps","reviewSpecificAccessRequestAdmin"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1f53slh">
+          <text>"workType"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0huw4e7">
+          <text>"access-requests"</text>
         </outputEntry>
       </rule>
     </decisionTable>

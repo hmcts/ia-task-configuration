@@ -64,7 +64,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(16));
+        assertThat(logic.getRules().size(), is(17));
     }
 
     @SuppressWarnings("checkstyle:indentation")
@@ -226,6 +226,30 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("allocationFTPAToJudge", upperTribunal),
             Arguments.of("decideOnFTPA", upperTribunal)
         );
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+        "reviewSpecificAccessRequestJudiciary", "reviewSpecificAccessRequestLegalOps",
+        "reviewSpecificAccessRequestAdmin"
+    })
+    void when_taskId_then_return_Access_requests(String taskType) {
+        VariableMap inputVariables = new VariableMapImpl();
+
+        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        List<Map<String, Object>> workTypeResultList = dmnDecisionTableResult.getResultList().stream()
+            .filter((r) -> r.containsValue("workType"))
+            .collect(Collectors.toList());
+
+        assertEquals(1, workTypeResultList.size());
+
+        assertEquals(Map.of(
+            "name", "workType",
+            "value", "access-requests"
+        ), workTypeResultList.get(0));
     }
 
     @ParameterizedTest
@@ -560,7 +584,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "arrangeOfflinePayment,[Mark the appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid)",
         "markCaseAsPaid,[Mark the appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid)",
         "addListingDate," + "[List the case](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/listCase)",
-        "allocateHearingJudge," + "[Allocate judge](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/recordAllocatedJudge)",
+        "allocateHearingJudge," + "[Allocate Hearing Judge](/role-access/allocate-role/allocate?caseId=${[CASE_REFERENCE]}&roleCategory=${[JUDICIAL]})",
         "uploadHearingRecording,[Upload the hearing recording](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/upload"
             + "HearingRecording)",
         "generateDraftDecisionAndReasons,[Generate the draft decisions and reasons document](/case/IA/Asylum"

@@ -44,7 +44,6 @@
       </input>
       <output id="Output_1" label="Task Id" name="taskId" typeRef="string" biodi:width="173" />
       <output id="OutputClause_0p5fhhd" label="Name" name="name" typeRef="string" biodi:width="172" />
-      <output id="OutputClause_0f63m65" label="Group" name="group" typeRef="string" biodi:width="150" />
       <output id="OutputClause_165p3r3" label="Delay Duration" name="delayDuration" typeRef="integer" biodi:width="252" />
       <output id="OutputClause_0i6c6c2" label="Working Days Allowed" name="workingDaysAllowed" typeRef="integer" biodi:width="150" />
       <output id="OutputClause_10rno4c" label="Process Categories Identifiers" name="processCategories" typeRef="string" biodi:width="150" />
@@ -80,9 +79,6 @@
         <outputEntry id="LiteralExpression_02t95m8">
           <text>"Process Application"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_0epp4rf">
-          <text>"TCW"</text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_1x6roa1">
           <text></text>
         </outputEntry>
@@ -114,9 +110,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0eniqxw">
           <text>"Process Application to Review Decision"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0tjns57">
-          <text>"TCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0ntq0fj">
           <text></text>
@@ -150,9 +143,6 @@
         <outputEntry id="LiteralExpression_1fl35nh">
           <text>"Edit Listing"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_1q5nax7">
-          <text>"TCW"</text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_0uad2vw">
           <text></text>
         </outputEntry>
@@ -184,9 +174,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_16zy5n5">
           <text>"Update hearing requirements"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0dq02bi">
-          <text>"TCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1p7rbc0">
           <text></text>
@@ -220,9 +207,6 @@
         <outputEntry id="LiteralExpression_08l47ys">
           <text>"Review the appeal"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_0zqmmfq">
-          <text>"TCW"</text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_0t06g2j">
           <text></text>
         </outputEntry>
@@ -255,9 +239,6 @@
         <outputEntry id="LiteralExpression_1jizaa6">
           <text>"Request offline payment"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_0rmrcso">
-          <text>"TCW"</text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_15dic25">
           <text></text>
         </outputEntry>
@@ -289,9 +270,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_110tas1">
           <text>"Request offline payment"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0fmuewh">
-          <text>"TCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0jefn7z">
           <text></text>
@@ -330,9 +308,6 @@
         <outputEntry id="LiteralExpression_17mw5ff">
           <text>"Review the appeal"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_1x26onc">
-          <text>"TCW"</text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_1ddgs5t">
           <text></text>
         </outputEntry>
@@ -364,9 +339,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_09dj3mj">
           <text>"Update payment status"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0uxoqgp">
-          <text>"TCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0bs6bot">
           <text></text>
@@ -400,9 +372,6 @@
         <outputEntry id="LiteralExpression_1jfenyd">
           <text>"Decide On Time Extension"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_0o3ekx3">
-          <text>"TCW"</text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_0tpiw26">
           <text></text>
         </outputEntry>
@@ -434,9 +403,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0xmc4hn">
           <text>"Review Respondent Evidence"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0ezi8jw">
-          <text>"TCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1i50q27">
           <text></text>
@@ -476,9 +442,6 @@
         <outputEntry id="LiteralExpression_11xunkf">
           <text>"Review additional evidence"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_0rtngox">
-          <text>"TCW"</text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_0qlx5fk">
           <text></text>
         </outputEntry>
@@ -495,6 +458,7 @@
         </inputEntry>
         <inputEntry id="UnaryTests_1j8mchm">
           <text>
+          "caseBuilding",
             "caseUnderReview",
             "respondentReview",
             "submitHearingRequirements",
@@ -516,9 +480,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_03t2r2u">
           <text>"Review additional Home Office evidence"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1wr31e6">
-          <text>"TCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0txkmz4">
           <text></text>
@@ -552,9 +513,6 @@
         <outputEntry id="LiteralExpression_0vqidni">
           <text>"Review Appeal Skeleton Argument"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_1pbeee3">
-          <text>"TCW"</text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_10nev13">
           <text></text>
         </outputEntry>
@@ -586,9 +544,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0fl6zjq">
           <text>"Review Reasons For Appeal"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1ey5yzs">
-          <text>"TCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1ym5r20">
           <text></text>
@@ -622,9 +577,6 @@
         <outputEntry id="LiteralExpression_135jzws">
           <text>"Review Clarifying Questions Answers"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_1vlo7cs">
-          <text>"TCW"</text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_00ur2tu">
           <text></text>
         </outputEntry>
@@ -656,9 +608,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_098my6x">
           <text>"Review Cma Requirements"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_180gwcu">
-          <text>"TCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0nmzwz6">
           <text></text>
@@ -692,9 +641,6 @@
         <outputEntry id="LiteralExpression_1ddqedk">
           <text>"Attend Cma"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_05ydvee">
-          <text>"TCW"</text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_0xnoa0r">
           <text></text>
         </outputEntry>
@@ -726,9 +672,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_1x9v27m">
           <text>"Review Respondent Response"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1tjk1uy">
-          <text>"TCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_14a2upo">
           <text></text>
@@ -762,9 +705,6 @@
         <outputEntry id="LiteralExpression_069jnni">
           <text>"Create Case Summary"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_02ocahm">
-          <text>"TCW"</text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_0wetk4k">
           <text></text>
         </outputEntry>
@@ -796,9 +736,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_1nrvy42">
           <text>"Create Hearing Bundle"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1846q2j">
-          <text>"TCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1bk7hvs">
           <text></text>
@@ -832,9 +769,6 @@
         <outputEntry id="LiteralExpression_05ohaft">
           <text>"Start Decisions And Reasons Document"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_0e3nnlv">
-          <text>"TCW"</text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_14mxl3i">
           <text></text>
         </outputEntry>
@@ -866,9 +800,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0gdp0c7">
           <text>"Review hearing requirements"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_14ib57y">
-          <text>"TCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1dbwiwt">
           <text></text>
@@ -905,9 +836,6 @@
         <outputEntry id="LiteralExpression_1tv1mka">
           <text>"Add listing date"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_0kfyki2">
-          <text>"TCW"</text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_12gcl16">
           <text></text>
         </outputEntry>
@@ -939,9 +867,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_00pwci6">
           <text>"Follow-up overdue respondent evidence"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_11zq0r5">
-          <text>"TCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1u0h529">
           <text>
@@ -979,9 +904,6 @@
         <outputEntry id="LiteralExpression_10uny2o">
           <text>"Follow-up extended direction"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_109x5cm">
-          <text>"TCW"</text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_0fcdssf">
           <text>
             if (directionDueDate != null and directionDueDate != "") then
@@ -1017,9 +939,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0gk868l">
           <text>"Follow-up overdue case building"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_13iptpi">
-          <text>"TCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_16vucs8">
           <text>
@@ -1057,9 +976,6 @@
         <outputEntry id="LiteralExpression_19gui3y">
           <text>"Follow-up overdue reasons for appeal"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_1ov6s7e">
-          <text>"TCW"</text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_1bqrry5">
           <text>
             if (directionDueDate != null and directionDueDate != "") then
@@ -1095,9 +1011,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_1674tdo">
           <text>"Follow-up overdue clarifying answers"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0ep4zfp">
-          <text>"TCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1dcun57">
           <text>
@@ -1135,9 +1048,6 @@
         <outputEntry id="LiteralExpression_13tike8">
           <text>"Follow-up overdue CMA requirements"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_0acruk7">
-          <text>"TCW"</text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_1398afp" expressionLanguage="feel">
           <text>
             if (directionDueDate != null and directionDueDate != "") then
@@ -1173,9 +1083,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_073g0mv">
           <text>"Follow-up overdue respondent review"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0w06nqy">
-          <text>"TCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1a0n0d2">
           <text>
@@ -1213,9 +1120,6 @@
         <outputEntry id="LiteralExpression_1agouf6">
           <text>"Follow-up overdue hearing requirements"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_024gb4c">
-          <text>"TCW"</text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_08ot9zz">
           <text>
             if (directionDueDate != null and directionDueDate != "") then
@@ -1252,9 +1156,6 @@
         <outputEntry id="LiteralExpression_16h7h9l">
           <text>"Follow-up non-standard direction"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_0jlzd0j">
-          <text>"TCW"</text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_0qjgx5e">
           <text>
             if (directionDueDate != null and directionDueDate != "") then
@@ -1290,9 +1191,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_00aitap">
           <text>"Follow-up Notice of Change"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1k6hin9">
-          <text>"TCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0fdvtci">
           <text>14</text>
@@ -1331,9 +1229,6 @@
         <outputEntry id="LiteralExpression_0z0czz4">
           <text>"Review Addendum Evidence"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_07pmgsg">
-          <text>"Judge"</text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_0g1hn0w">
           <text></text>
         </outputEntry>
@@ -1365,9 +1260,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_145h90s">
           <text>"Review Hearing bundle"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_15vtqt0">
-          <text>"TCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_05642ga">
           <text></text>
@@ -1401,9 +1293,6 @@
         <outputEntry id="LiteralExpression_1gtv1rl">
           <text>"Send decisions and reasons"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_01s0ar0">
-          <text>"TCW"</text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_0uxhsqp">
           <text></text>
         </outputEntry>
@@ -1436,9 +1325,6 @@
         <outputEntry id="LiteralExpression_0kcf3dg">
           <text>"Prepare decisions and reasons"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_02611f2">
-          <text>"TCW"</text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_1a2bkyf">
           <text></text>
         </outputEntry>
@@ -1470,9 +1356,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_118gmru">
           <text>"Upload hearing recording"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1vg5b6j">
-          <text>"TCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0ay6ciw">
           <text>if (listCaseHearingDate != null) then
@@ -1508,9 +1391,6 @@
         <outputEntry id="LiteralExpression_0f26to9">
           <text>"Decide an FTPA"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_1m9yu2i">
-          <text>"TCW"</text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_0niuaia">
           <text></text>
         </outputEntry>
@@ -1542,9 +1422,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0hr3h69">
           <text>"Edit listing"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0mfypmp">
-          <text>"TCW"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1cl36q6">
           <text></text>
