@@ -515,6 +515,19 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "uploadAdditionalEvidenceHomeOffice",
+                "caseBuilding",
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewAdditionalHomeOfficeEvidence",
+                        "name", "Review additional Home Office evidence",
+                        "workingDaysAllowed", 2,
+                        "processCategories",  "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "uploadAdditionalEvidenceHomeOffice",
                 "caseUnderReview",
                 null,
                 singletonList(
