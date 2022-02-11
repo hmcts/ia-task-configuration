@@ -393,7 +393,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "updatePaymentStatus",
                         "name", "Update payment status",
                         "group", "TCW",
-                        "delayDuration",0,
                         "workingDaysAllowed", 2,
                         "processCategories", "followUpOverdue"
                     )

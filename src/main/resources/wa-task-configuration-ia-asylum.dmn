@@ -324,7 +324,7 @@
                         "followUpNonStandardDirection",
                         "followUpNoticeOfChange",
                         "reviewAdditionalEvidence",
-                        "reviewAdditionalHomeOfficeEvidence"
+                        "reviewAdditionalHomeOfficeEvidence","reviewSpecificAccessRequestLegalOps"
                     </text>
         </inputEntry>
         <outputEntry id="LiteralExpression_05l5bvs">
@@ -351,7 +351,7 @@
           <text>"roleCategory"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0el7tae">
-          <text>"ADMINISTRATOR"</text>
+          <text>"ADMIN"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_01cmxvs">
@@ -365,7 +365,7 @@
                         "uploadDecision",
                         "reviewAddendumHomeOfficeEvidence",
                         "reviewAddendumAppellantEvidence",
-                        "reviewAddendumEvidence"
+                        "reviewAddendumEvidence","reviewSpecificAccessRequestJudiciary"
                     </text>
         </inputEntry>
         <outputEntry id="LiteralExpression_15nowth">

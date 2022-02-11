@@ -247,7 +247,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     @ParameterizedTest
     @CsvSource({
         "reviewHearingBundle", "generateDraftDecisionAndReasons", "uploadDecision", "reviewAddendumHomeOfficeEvidence",
-        "reviewAddendumAppellantEvidence", "reviewAddendumEvidence"
+        "reviewAddendumAppellantEvidence", "reviewAddendumEvidence","reviewSpecificAccessRequestJudiciary"
     })
     void when_taskId_then_return_judicial_role_category(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
@@ -272,7 +272,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     @CsvSource({
         "arrangeOfflinePayment", "markCaseAsPaid", "addListingDate", "allocateHearingJudge", "uploadHearingRecording"
     })
-    void when_taskId_then_return_administrator_role_category(String taskType) {
+    void when_taskId_then_return_ADMIN_role_category(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
 
         inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
@@ -287,7 +287,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
         assertEquals(Map.of(
             "name", "roleCategory",
-            "value", "ADMINISTRATOR"
+            "value", "ADMIN"
         ), workTypeResultList.get(0));
     }
 
@@ -300,7 +300,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "followUpOverdueCaseBuilding", "followUpOverdueReasonsForAppeal", "followUpOverdueClarifyingAnswers",
         "followUpOverdueCmaRequirements", "followUpOverdueRespondentReview", "followUpOverdueHearingRequirements",
         "followUpNonStandardDirection", "followUpNoticeOfChange", "reviewAdditionalEvidence",
-        "reviewAdditionalHomeOfficeEvidence"
+        "reviewAdditionalHomeOfficeEvidence","reviewSpecificAccessRequestLegalOps"
     })
     void when_taskId_then_return_legal_operations_role_category(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
@@ -369,7 +369,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             .expectedLocationNameValue("some other location name")
             .expectedCaseManagementCategoryValue("Human rights")
             .expectedWorkType("routine_work")
-            .expectedRoleCategory("ADMINISTRATOR")
+            .expectedRoleCategory("ADMIN")
             .expectedDescriptionValue(
                 "[Mark the appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid)")
             .build();
@@ -404,7 +404,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 .expectedLocationNameValue("some other location name")
                 .expectedCaseManagementCategoryValue("Human rights")
                 .expectedWorkType("routine_work")
-                .expectedRoleCategory("ADMINISTRATOR")
+                .expectedRoleCategory("ADMIN")
                 .expectedDescriptionValue("[Mark the appeal as "
                                               + "paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid)")
                 .build();
@@ -438,7 +438,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 .expectedLocationNameValue("some other location name")
                 .expectedCaseManagementCategoryValue("Human rights")
                 .expectedWorkType("routine_work")
-                .expectedRoleCategory("ADMINISTRATOR")
+                .expectedRoleCategory("ADMIN")
                 .expectedDescriptionValue("[Mark the appeal as "
                                               + "paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid)")
                 .build();
@@ -454,7 +454,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 .expectedLocationNameValue("Taylor House")
                 .expectedCaseManagementCategoryValue("")
                 .expectedWorkType("routine_work")
-                .expectedRoleCategory("ADMINISTRATOR")
+                .expectedRoleCategory("ADMIN")
                 .expectedDescriptionValue("[Mark the appeal as "
                                               + "paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid)")
                 .build();
