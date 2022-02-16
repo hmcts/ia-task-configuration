@@ -208,12 +208,13 @@ repositories {
 def versions = [
   junit           : '5.7.2',
   junitPlatform   : '1.7.2',
-  reformLogging   : '5.1.5',
+  reformLogging   : '5.1.7',
   springfoxSwagger: '2.9.2',
   camunda         : '7.15.0',
   pitest          : '1.5.2',
   sonarPitest     : '0.5',
-  tomcat          : '9.0.54'
+  tomcat          : '9.0.58',
+  log4j           : '2.17.1'
 
 ]
 
@@ -236,11 +237,11 @@ dependencies {
 
   implementation group: 'io.springfox', name: 'springfox-swagger2', version: versions.springfoxSwagger
 
-  implementation group: 'com.github.hmcts.java-logging', name: 'java-logging', version: versions.reformLogging
-  implementation group: 'com.github.hmcts.java-logging', name: 'java-logging-appinsights', version: versions.reformLogging
+  implementation group: 'com.github.hmcts.java-logging', name: 'logging', version: versions.reformLogging
+  implementation group: 'com.github.hmcts.java-logging', name: 'logging-appinsights', version: versions.reformLogging
 
-  implementation group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.15.0'
-  implementation group: 'org.apache.logging.log4j', name: 'log4j-to-slf4j', version: '2.15.0'
+  implementation group: 'org.apache.logging.log4j', name: 'log4j-api', version: versions.log4j
+  implementation group: 'org.apache.logging.log4j', name: 'log4j-to-slf4j', version: versions.log4j
 
   implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-core', version: versions.tomcat
   implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-websocket', version: versions.tomcat
