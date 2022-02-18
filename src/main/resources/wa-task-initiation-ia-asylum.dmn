@@ -685,7 +685,7 @@
       </rule>
       <rule id="DecisionRule_02svucz">
         <inputEntry id="UnaryTests_1gh1dkz">
-          <text></text>
+          <text>"listCase"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1jw5p9b">
           <text>"prepareForHearing"</text>
@@ -717,7 +717,7 @@
       </rule>
       <rule id="DecisionRule_1p1dgii">
         <inputEntry id="UnaryTests_1sl3ymc">
-          <text></text>
+          <text>"createCaseSummary"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_094ouxj">
           <text>"finalBundling"</text>
@@ -749,7 +749,7 @@
       </rule>
       <rule id="DecisionRule_0rscfh8">
         <inputEntry id="UnaryTests_1qn90yh">
-          <text></text>
+          <text>"generateHearingBundle"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1yw134u">
           <text>"preHearing"</text>
