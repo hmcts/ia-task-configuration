@@ -2,17 +2,17 @@
 <definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.12.0">
   <decision id="wa-task-initiation-ia-asylum" name="Task initiation DMN">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT" biodi:annotationsWidth="400">
-      <input id="Input_1" label="Event Id" biodi:width="212" camunda:inputVariable="eventId">
+      <input id="Input_1" label="Event Id" biodi:width="194" camunda:inputVariable="eventId">
         <inputExpression id="InputExpression_1" typeRef="string">
           <text></text>
         </inputExpression>
       </input>
-      <input id="InputClause_0gxli97" label="Post event state" biodi:width="234" camunda:inputVariable="postEventState">
+      <input id="InputClause_0gxli97" label="Post event state" biodi:width="150" camunda:inputVariable="postEventState">
         <inputExpression id="LiteralExpression_0dijl5x" typeRef="string">
           <text></text>
         </inputExpression>
       </input>
-      <input id="InputClause_0a0i7vo" label="Appeal Type" biodi:width="256" camunda:inputVariable="appealType">
+      <input id="InputClause_0a0i7vo" label="Appeal Type" biodi:width="150" camunda:inputVariable="appealType">
         <inputExpression id="LiteralExpression_18qwedg" typeRef="string">
           <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.appealType
             != null) then
@@ -22,7 +22,7 @@
           </text>
         </inputExpression>
       </input>
-      <input id="InputClause_15dhd3c" label="Last modified application type" biodi:width="150" camunda:inputVariable="lastModifiedApplicationType">
+      <input id="InputClause_15dhd3c" label="Last modified application type" biodi:width="267" camunda:inputVariable="lastModifiedApplicationType">
         <inputExpression id="LiteralExpression_00shf3r" typeRef="string">
           <text>if(additionalData != null and additionalData.Data != null and
             additionalData.Data.lastModifiedApplication != null) then
@@ -32,7 +32,7 @@
           </text>
         </inputExpression>
       </input>
-      <input id="InputClause_10uivrc" label="Last modified application decision" biodi:width="150" camunda:inputVariable="lastModifiedApplicationDecision">
+      <input id="InputClause_10uivrc" label="Last modified application decision" biodi:width="266" camunda:inputVariable="lastModifiedApplicationDecision">
         <inputExpression id="LiteralExpression_1gqrajz" typeRef="string">
           <text>if(additionalData != null and additionalData.Data != null and
             additionalData.Data.lastModifiedApplication != null) then
@@ -43,10 +43,10 @@
         </inputExpression>
       </input>
       <output id="Output_1" label="Task Id" name="taskId" typeRef="string" biodi:width="173" />
-      <output id="OutputClause_0p5fhhd" label="Name" name="name" typeRef="string" biodi:width="172" />
-      <output id="OutputClause_165p3r3" label="Delay Duration" name="delayDuration" typeRef="integer" biodi:width="252" />
-      <output id="OutputClause_0i6c6c2" label="Working Days Allowed" name="workingDaysAllowed" typeRef="integer" biodi:width="150" />
-      <output id="OutputClause_10rno4c" label="Process Categories Identifiers" name="processCategories" typeRef="string" biodi:width="150" />
+      <output id="OutputClause_0p5fhhd" label="Name" name="name" typeRef="string" biodi:width="150" />
+      <output id="OutputClause_165p3r3" label="Delay Duration" name="delayDuration" typeRef="integer" biodi:width="150" />
+      <output id="OutputClause_0i6c6c2" label="Working Days Allowed" name="workingDaysAllowed" typeRef="integer" biodi:width="230.66668701171875" />
+      <output id="OutputClause_10rno4c" label="Process Categories Identifiers" name="processCategories" typeRef="string" biodi:width="268" />
       <rule id="DecisionRule_1fenvxm">
         <inputEntry id="UnaryTests_09nq8bu">
           <text>"makeAnApplication"</text>
@@ -1430,6 +1430,74 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1n5kme0">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ccjj99">
+        <inputEntry id="UnaryTests_0p1y2zl">
+          <text>"generateHearingBundle"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0meif91">
+          <text>"finalBundling"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1bim95x">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19m544v">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0y0d5i1">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0z4r4du">
+          <text>"allocateHearingJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0975uc8">
+          <text>"Allocate Hearing Judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0p256tl">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1pijvfs">
+          <text>if (listCaseHearingDate != null and CaseHearingDate != "") then
+		((date(listCaseHearingDate) - date(now)) - 2).days
+                 else 0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0vzcsec">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_04hhuiw">
+        <inputEntry id="UnaryTests_0ppim0e">
+          <text>"sendToPreHearing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_153xkbn">
+          <text>"preHearing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1mxlypa">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1bux75i">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09ji3yk">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_11yjkca">
+          <text>"allocateHearingJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1eokflp">
+          <text>"Allocate Hearing Judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0nlmxvs">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ze2qn5">
+          <text>if (listCaseHearingDate != null and CaseHearingDate != "") then
+		((date(listCaseHearingDate) - date(now)) - 2).day
+                else 0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0jwwc9l">
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
