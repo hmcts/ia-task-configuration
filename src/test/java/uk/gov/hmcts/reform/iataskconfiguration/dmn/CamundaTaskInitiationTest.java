@@ -483,17 +483,10 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "uploadAdditionalEvidence",
                 "prepareForHearing",
                 null,
-                asList(
+                singletonList(
                     Map.of(
                         "taskId", "reviewAdditionalEvidence",
                         "name", "Review additional evidence",
-
-                        "workingDaysAllowed", 2,
-                        "processCategories", "caseProgression"
-                    ),
-                    Map.of(
-                        "taskId", "createCaseSummary",
-                        "name", "Create Case Summary",
 
                         "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
@@ -680,20 +673,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                null,
-                "prepareForHearing",
-                null,
-                singletonList(
-                    Map.of(
-                        "taskId", "createCaseSummary",
-                        "name", "Create Case Summary",
-
-                        "workingDaysAllowed", 2,
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
                 "listCase",
                 "prepareForHearing",
                 mapAdditionalData(" {\n"
@@ -728,7 +707,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                null,
+                "createCaseSummary",
                 "finalBundling",
                 null,
                 singletonList(
@@ -742,7 +721,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                null,
+                "generateHearingBundle",
                 "preHearing",
                 null,
                 singletonList(
@@ -959,13 +938,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "changeHearingCentre",
                 "prepareForHearing",
                 null,
-                List.of(
-                    Map.of(
-                        "name", "Create Case Summary",
-                        "workingDaysAllowed", 2,
-                        "processCategories", "caseProgression",
-                        "taskId", "createCaseSummary"
-                    ),
+                singletonList(
                     Map.of(
                         "taskId", "editListing",
                         "name", "Edit listing",
@@ -978,14 +951,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "changeHearingCentre",
                 "finalBundling",
                 null,
-                List.of(
-                    Map.of(
-                        "taskId", "createHearingBundle",
-                        "name", "Create Hearing Bundle",
-
-                        "workingDaysAllowed", 2,
-                        "processCategories", "caseProgression"
-                    ),
+                singletonList(
                     Map.of(
                         "taskId", "editListing",
                         "name", "Edit listing",
@@ -998,14 +964,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "changeHearingCentre",
                 "preHearing",
                 null,
-                List.of(
-                    Map.of(
-                        "taskId", "startDecisionsAndReasonsDocument",
-                        "name", "Start Decisions And Reasons Document",
-
-                        "workingDaysAllowed", 2,
-                        "processCategories", "caseProgression"
-                    ),
+                singletonList(
                     Map.of(
                         "taskId", "editListing",
                         "name", "Edit listing",
@@ -1237,13 +1196,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "uploadAddendumEvidenceLegalRep",
                 "preHearing",
-                List.of(
-                    Map.of(
-                        "taskId", "startDecisionsAndReasonsDocument",
-                        "name", "Start Decisions And Reasons Document",
-                        "workingDaysAllowed", 2,
-                        "processCategories", "caseProgression"
-                    ),
+                singletonList(
                     Map.of(
                         "taskId", "reviewAddendumEvidence",
                         "name", "Review Addendum Evidence",
