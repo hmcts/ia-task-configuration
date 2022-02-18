@@ -515,7 +515,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "reviewAdditionalHomeOfficeEvidence",
                         "name", "Review additional Home Office evidence",
                         "workingDaysAllowed", 2,
-                        "processCategories",  "caseProgression"
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
@@ -987,6 +987,34 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "generateHearingBundle",
+                "finalBundling",
+                null,
+                List.of(
+                    Map.of(
+                        "taskId", "allocateHearingJudge",
+                        "name", "Allocate Hearing Judge",
+
+                        "workingDaysAllowed", 0,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "sendToPreHearing",
+                "preHearing",
+                null,
+                List.of(
+                    Map.of(
+                        "taskId", "allocateHearingJudge",
+                        "name", "Allocate Hearing Judge",
+
+                        "workingDaysAllowed", 0,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
                 "unknownEvent",
                 null,
                 null,
@@ -1061,34 +1089,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         );
     }
 
-    public static Stream<Arguments> makeAnApplicationLinkScenarioProvider() {
-        return Stream.of(
-            Arguments.of(
-                "makeAnApplication",
-                null,
-                mapAdditionalData(" {\n"
-                                      + "        \"Data\" : {\n"
-                                      + "          \"lastModifiedApplication\" : {\n"
-                                      + "            \"type\" : \"\",\n"
-                                      + "            \"decision\" : \"\"\n"
-                                      + "          }\n"
-                                      + "        }\n"
-                                      + "      }"),
-                emptyList()
-            ),
-            getArgumentOf("Adjourn"),
-            getArgumentOf("Expedite"),
-            getArgumentOf("Time extension"),
-            getArgumentOf("Transfer"),
-            getArgumentOf("Withdraw"),
-            getArgumentOf("Update hearing requirements"),
-            getArgumentOf("Update appeal details"),
-            getArgumentOf("Reinstate an ended appeal"),
-            getArgumentOf("Other"),
-            getArgumentOf("Link/unlink appeals")
-        );
-    }
-
     private static Arguments getArgumentOf(String applicationType) {
         return Arguments.of(
             "makeAnApplication",
@@ -1111,6 +1111,68 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             )
         );
+    }
+
+    public static Stream<Arguments> sendToPreHearingScenarioProvider() {
+        return Stream.of(
+            Arguments.of(
+                "generateHearingBundle",
+                "finalBundling",
+                singletonList(
+                    Map.of(
+                        "taskId", "allocateHearingJudge",
+                        "name", "Allocate Hearing Judge",
+                        "workingDaysAllowed", 0,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            )
+        );
+    }
+
+    @ParameterizedTest
+    @MethodSource("sendToPreHearingScenarioProvider")
+    void send_to_pre_hearing_should_evaluate_dmn(String eventId,
+                                                 String postEventState,
+                                                 List<Map<String, String>> expectation) {
+        VariableMap inputVariables = new VariableMapImpl();
+        inputVariables.putValue("eventId", eventId);
+        inputVariables.putValue("postEventState", postEventState);
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
+    }
+
+    public static Stream<Arguments> generateHearingBundleScenarioProvider() {
+        return Stream.of(
+            Arguments.of(
+                "generateHearingBundle",
+                "finalBundling",
+                singletonList(
+                    Map.of(
+                        "taskId", "allocateHearingJudge",
+                        "name", "Allocate Hearing Judge",
+                        "workingDaysAllowed", 0,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            )
+        );
+    }
+
+    @ParameterizedTest
+    @MethodSource("generateHearingBundleScenarioProvider")
+    void given_generate_hearing_bundle_should_evaluate_dmn(String eventId,
+                                                           String postEventState,
+                                                           List<Map<String, String>> expectation) {
+        VariableMap inputVariables = new VariableMapImpl();
+        inputVariables.putValue("eventId", eventId);
+        inputVariables.putValue("postEventState", postEventState);
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
     }
 
     @ParameterizedTest
@@ -1188,7 +1250,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(5));
         assertThat(logic.getOutputs().size(), is(5));
-        assertThat(logic.getRules().size(), is(41));
+        assertThat(logic.getRules().size(), is(43));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {
