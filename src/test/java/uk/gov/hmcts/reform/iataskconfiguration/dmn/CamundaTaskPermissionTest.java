@@ -161,6 +161,13 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     hearingJudgePriorityOne,
                     judgePriorityOne
                 )
+            ),
+            Arguments.of(
+                "processApplicationToReviewDecision",
+                List.of(
+                    taskSupervisor,
+                    judgePriorityTwo
+                )
             )
         );
     }
@@ -381,6 +388,34 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "roleCategory", "JUDICIAL",
                 "authorisations", "373",
                 "assignmentPriority",1,
+                "autoAssignable", false
+            )
+        )));
+    }
+
+    @SuppressWarnings("checkstyle:indentation")
+    @ParameterizedTest
+    @CsvSource(value = {
+        "processApplicationToReviewDecision",
+    })
+    void given_taskType_5_when_evaluate_dmn_then_it_returns_expected(String taskType) {
+        VariableMap inputVariables = new VariableMapImpl();
+        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        MatcherAssert.assertThat(dmnDecisionTableResult.getResultList(), is(List.of(
+            Map.of(
+                "name", "task-supervisor",
+                "value", "Read,Refer,Manage,Cancel",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "judge",
+                "value", "Read,Refer,Execute",
+                "roleCategory", "JUDICIAL",
+                "authorisations", "373",
+                "assignmentPriority",2,
                 "autoAssignable", false
             )
         )));
