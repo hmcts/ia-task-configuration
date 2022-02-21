@@ -247,7 +247,7 @@
             "reviewHearingBundle",
             "prepareDecisionsAndReasons",
             "sendDecisionsAndReasons",
-            "processReviewDecisionApplication",
+            "processApplicationToReviewDecision",
             "decideAnFTPA"
           </text>
         </inputEntry>
