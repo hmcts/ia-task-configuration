@@ -39,8 +39,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskType", "decideAnFTPA",
                         "completionMode", "Auto"
-                    ),
-                    emptyMap()
+                    )
                 )
             ),
             Arguments.of(
@@ -49,8 +48,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskType", "decideAnFTPA",
                         "completionMode", "Auto"
-                    ),
-                    emptyMap()
+                    )
                 )
             ),
             Arguments.of(
@@ -59,8 +57,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskType", "requestOfflinePayment",
                         "completionMode", "Auto"
-                    ),
-                    emptyMap()
+                    )
                 )
             ),
             Arguments.of(
@@ -69,8 +66,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskType", "updatePaymentStatus",
                         "completionMode", "Auto"
-                    ),
-                    emptyMap()
+                    )
                 )
             ),
             Arguments.of(
@@ -89,8 +85,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskType", "reviewTheAppeal",
                         "completionMode", "Auto"
-                    ),
-                    emptyMap()
+                    )
                 )
             ),
             Arguments.of(
@@ -99,8 +94,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskType", "uploadHearingRecording",
                         "completionMode", "Auto"
-                    ),
-                    emptyMap()
+                    )
                 )
             ),
             Arguments.of(
@@ -109,8 +103,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskType", "reviewRespondentEvidence",
                         "completionMode", "Auto"
-                    ),
-                    emptyMap()
+                    )
                 )
             ),
             Arguments.of(
@@ -119,8 +112,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskType", "reviewRespondentEvidence",
                         "completionMode", "Auto"
-                    ),
-                    emptyMap()
+                    )
                 )
             ),
             Arguments.of(
@@ -129,8 +121,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskType", "reviewRespondentEvidence",
                         "completionMode", "Auto"
-                    ),
-                    emptyMap()
+                    )
                 )
             ),
             Arguments.of(
@@ -156,8 +147,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskType", "reviewAppealSkeletonArgument",
                         "completionMode", "Auto"
-                    ),
-                    emptyMap()
+                    )
                 )
             ),
             Arguments.of(
@@ -166,8 +156,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskType", "reviewAppealSkeletonArgument",
                         "completionMode", "Auto"
-                    ),
-                    emptyMap()
+                    )
                 )
             ),
             Arguments.of(
@@ -180,8 +169,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskType", "reviewClarifyingQuestionsAnswers",
                         "completionMode", "Auto"
-                    ),
-                    emptyMap()
+                    )
                 )
             ),
             Arguments.of(
@@ -194,8 +182,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskType", "reviewClarifyingQuestionsAnswers",
                         "completionMode", "Auto"
-                    ),
-                    emptyMap()
+                    )
                 )
             ),
             Arguments.of(
@@ -230,8 +217,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskType", "reviewCmaRequirements",
                         "completionMode", "Auto"
-                    ),
-                    emptyMap()
+                    )
                 )
             ),
             Arguments.of(
@@ -240,8 +226,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskType", "attendCma",
                         "completionMode", "Auto"
-                    ),
-                    emptyMap()
+                    )
                 )
             ),
             Arguments.of(
@@ -250,8 +235,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskType", "reviewRespondentResponse",
                         "completionMode", "Auto"
-                    ),
-                    emptyMap()
+                    )
                 )
             ),
             Arguments.of(
@@ -260,8 +244,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskType", "reviewHearingRequirements",
                         "completionMode", "Auto"
-                    ),
-                    emptyMap()
+                    )
                 )
             ),
             Arguments.of(
@@ -270,8 +253,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskType", "createCaseSummary",
                         "completionMode", "Auto"
-                    ),
-                    emptyMap()
+                    )
                 )
             ),
             Arguments.of(
@@ -290,8 +272,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskType", "allocateFtpaToJudge",
                         "completionMode", "Auto"
-                    ),
-                    emptyMap()
+                    )
                 )
             ),
             Arguments.of(
@@ -300,8 +281,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskType", "decideOnTimeExtension",
                         "completionMode", "Auto"
-                    ),
-                    emptyMap()
+                    )
                 )
             ),
             Arguments.of(
@@ -310,8 +290,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskType", "processApplication",
                         "completionMode", "Auto"
-                    ),
-                    emptyMap()
+                    )
                 )
             ),
             Arguments.of(
@@ -320,8 +299,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskType", "editListing",
                         "completionMode", "Auto"
-                    ),
-                    emptyMap()
+                    )
                 )
             ),
             Arguments.of(
@@ -340,8 +318,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskType", "sendDecisionsAndReasons",
                         "completionMode", "Auto"
-                    ),
-                    emptyMap()
+                    )
                 )
             ),
             Arguments.of(
@@ -350,8 +327,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskType", "prepareDecisionsAndReasons",
                         "completionMode", "Auto"
-                    ),
-                    emptyMap()
+                    )
                 )
             ),
             Arguments.of(
@@ -360,8 +336,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskType", "editListing",
                         "completionMode", "Auto"
-                    ),
-                    emptyMap()
+                    )
                 )
             ),
             Arguments.of(
