@@ -92,6 +92,14 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         "roleCategory", "JUDICIAL",
         "value", "Read,Refer,Own"
     );
+    private static final Map<String, Serializable> hearingJudgePriorityTwo = Map.of(
+        "autoAssignable", false,
+        "assignmentPriority", 2,
+        "authorisations", "373",
+        "name", "hearing-judge",
+        "roleCategory", "JUDICIAL",
+        "value", "Read,Refer,Execute"
+    );
     private static final Map<String, Serializable> judgePriorityOne = Map.of(
         "autoAssignable", false,
         "assignmentPriority", 1,
@@ -117,10 +125,11 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
     public static Stream<Arguments> genericScenarioProvider() {
         return Stream.of(
             Arguments.of(
-                "decideAnFTPA",
+                "decideFTPA",
                 List.of(
                     taskSupervisor,
-                    judgePriorityTwo
+                    judgePriorityTwo,
+                    hearingJudgePriorityTwo
                 )
             ),
             Arguments.of(
@@ -134,9 +143,6 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "sendDecisionsAndReasons",
                 List.of(
                     taskSupervisor,
-                    tribunalCaseWorkerPriorityOne,
-                    seniorCaseWorkerPriorityOne,
-                    judgePriorityTwo,
                     hearingJudgePriorityOne,
                     judgePriorityOne
                 )
@@ -155,7 +161,6 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "reviewHearingBundle",
                 List.of(
                     taskSupervisor,
-                    judgePriorityTwo,
                     tribunalCaseWorkerPriorityTwo,
                     seniorCaseWorkerPriorityTwo,
                     hearingJudgePriorityOne,
@@ -163,10 +168,20 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "processApplicationToReviewDecision",
+                "editListing",
                 List.of(
                     taskSupervisor,
-                    judgePriorityTwo
+                    judgePriorityTwo,
+                    hearingJudgePriorityTwo,
+                    hearingCentreAdminPriorityOne,
+                    tribunalCaseWorkerPriorityTwo,
+                    seniorCaseWorkerPriorityTwo
+                )
+            ),
+            Arguments.of(
+                "processApplicationToReviewDecision",
+                List.of(
+                    taskSupervisor
                 )
             )
         );
@@ -260,12 +275,10 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         "followUpOverdueCaseBuilding", "followUpOverdueReasonsForAppeal", "reviewTheAppeal",
         "reviewClarifyingQuestionsAnswers", "followUpOverdueClarifyingAnswers", "reviewRespondentResponse",
         "followUpOverdueRespondentReview", "reviewHearingRequirements", "followUpOverdueHearingRequirements",
-        "reviewCmaRequirements", "reviewAdditionalHomeOfficeEvidence", "reviewAdditionalAppellantEvidence",
-        "reviewAdditionalHomeOfficeEvidence", "reviewAdditionalAppellantEvidence", "createHearingBundle",
-        "attendCma", "createCaseSummary",
+        "reviewCmaRequirements", "createHearingBundle",
+        "attendCma",
         "followUpNoticeOfChange", "followUpOverdueCmaRequirements", "followUpNonStandardDirection",
-         "attendCma",
-        "createCaseSummary", "followUpNoticeOfChange", "followUpOverdueCmaRequirements",
+         "attendCma", "followUpNoticeOfChange", "followUpOverdueCmaRequirements",
         "followUpNonStandardDirection",
          "reviewAdditionalEvidence"
     })
@@ -298,6 +311,60 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "value", "Read,Refer,Own",
                 "roleCategory", "LEGAL_OPERATIONS",
                 "assignmentPriority", 1,
+                "autoAssignable", false
+            )
+        )));
+    }
+
+    @SuppressWarnings("checkstyle:indentation")
+    @ParameterizedTest
+    @CsvSource(value = {
+        "caseSummaryHearingBundleStartDecision"
+    })
+    void given_taskType_when_evaluate_dmn_then_it_returns_1st_2nd_3rd_4th_5th_rules(String taskType) {
+        VariableMap inputVariables = new VariableMapImpl();
+        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        MatcherAssert.assertThat(dmnDecisionTableResult.getResultList(), is(List.of(
+            Map.of(
+                "name", "task-supervisor",
+                "value", "Read,Refer,Manage,Cancel",
+                "autoAssignable", false
+            ), Map.of(
+                "name", "case-manager",
+                "value", "Read,Refer,Own",
+                "roleCategory", "LEGAL_OPERATIONS",
+                "autoAssignable", true
+            ),
+            Map.of(
+                "name", "tribunal-caseworker",
+                "value", "Read,Refer,Own",
+                "roleCategory", "LEGAL_OPERATIONS",
+                "assignmentPriority", 1,
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "senior-tribunal-caseworker",
+                "value", "Read,Refer,Own",
+                "roleCategory", "LEGAL_OPERATIONS",
+                "assignmentPriority", 1,
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "judge",
+                "value", "Read,Refer,Execute",
+                "roleCategory", "JUDICIAL",
+                "authorisations", "373",
+                "assignmentPriority", 2,
+                "autoAssignable", false
+            ),Map.of(
+                "name", "hearing-judge",
+                "value", "Read,Refer,Execute",
+                "roleCategory", "JUDICIAL",
+                "authorisations", "373",
+                "assignmentPriority",2,
                 "autoAssignable", false
             )
         )));
@@ -348,17 +415,19 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "autoAssignable", false
             ),
             Map.of(
-                "name", "tribunal-caseworker",
-                "value", "Read,Refer,Own",
-                "roleCategory", "LEGAL_OPERATIONS",
-                "assignmentPriority", 1,
+                "name", "judge",
+                "value", "Read,Refer,Execute",
+                "roleCategory", "JUDICIAL",
+                "authorisations", "373",
+                "assignmentPriority",2,
                 "autoAssignable", false
             ),
             Map.of(
-                "name", "senior-tribunal-caseworker",
-                "value", "Read,Refer,Own",
-                "roleCategory", "LEGAL_OPERATIONS",
-                "assignmentPriority", 1,
+                "name", "hearing-judge",
+                "value", "Read,Refer,Execute",
+                "roleCategory", "JUDICIAL",
+                "authorisations", "373",
+                "assignmentPriority",2,
                 "autoAssignable", false
             ),
             Map.of(
@@ -381,14 +450,6 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "roleCategory", "LEGAL_OPERATIONS",
                 "assignmentPriority", 2,
                 "autoAssignable", false
-            ),
-            Map.of(
-                "name", "judge",
-                "value", "Read,Refer,Own",
-                "roleCategory", "JUDICIAL",
-                "authorisations", "373",
-                "assignmentPriority",1,
-                "autoAssignable", false
             )
         )));
     }
@@ -408,14 +469,6 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
             Map.of(
                 "name", "task-supervisor",
                 "value", "Read,Refer,Manage,Cancel",
-                "autoAssignable", false
-            ),
-            Map.of(
-                "name", "judge",
-                "value", "Read,Refer,Execute",
-                "roleCategory", "JUDICIAL",
-                "authorisations", "373",
-                "assignmentPriority",2,
                 "autoAssignable", false
             )
         )));
@@ -472,7 +525,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         assertThat(logic.getOutputs().size(), is(7));
         assertThatOutputContainInOrder(outputColumnIds, logic.getOutputs());
         //Rules
-        assertThat(logic.getRules().size(), is(13));
+        assertThat(logic.getRules().size(), is(14));
     }
 
     private void assertThatInputContainInOrder(List<String> inputColumnIds, List<DmnDecisionTableInputImpl> inputs) {
