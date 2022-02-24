@@ -164,7 +164,7 @@
                         "arrangeOfflinePayment",
                         "markCaseAsPaid",
                         "attendCma",
-                        "createCaseSummary",
+                        "caseSummaryHearingBundleStartDecision",
                         "followUpExtendedDirection",
                         "followUpNonStandardDirection",
                         "reviewAdditionalEvidence",
@@ -206,7 +206,7 @@
                         "processReviewDecisionApplication",
                         "decideOnTimeExtension",
                         "sendDecisionsAndReasons",
-                        "startDecisionsAndReasonsDocument",               "decideAnFTPA"
+                        "decideAnFTPA"
                     </text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0omxasv">
@@ -230,9 +230,7 @@
                         "updateHearingRequirements",
                         "editListing",
                         "followUpOverdueHearingRequirements",
-                        "reviewHearingRequirements",
-                        "createHearingBundle"
-                    </text>
+                        "reviewHearingRequirements"                    </text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0c3eia6">
           <text>"workType"</text>
@@ -310,9 +308,7 @@
                         "reviewCmaRequirements",
                         "attendCma",
                         "reviewRespondentResponse",
-                        "createCaseSummary",
-                        "createHearingBundle",
-                        "startDecisionsAndReasonsDocument",
+                        "caseSummaryHearingBundleStartDecision",
                         "reviewHearingRequirements",
                         "followUpOverdueRespondentEvidence",
                         "followUpOverdueCaseBuilding",
@@ -408,8 +404,8 @@
                         then "[Update case details after CMA](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/updateDetailsAfterCma)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewRespondentResponse" or taskType != null and taskType = "reviewRespondentResponse")
                         then "[Review Home Office response](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestResponseReview)&lt;br /&gt;[Amend appeal response](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestResponseAmend)"
-                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "createCaseSummary" or taskType != null and taskType = "createCaseSummary")
-                        then "[Create case summary](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/createCaseSummary)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "caseSummaryHearingBundleStartDecision" or taskType != null and taskType = "caseSummaryHearingBundleStartDecision")
+                        then "[Create case summary](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/caseSummaryHearingBundleStartDecision)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "createHearingBundle" or taskType != null and taskType = "createHearingBundle")
                         then "[Generate the hearing bundle](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/generateHearingBundle)&lt;br /&gt;[Customise the hearing bundle](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/customiseHearingBundle)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "startDecisionsAndReasonsDocument" or taskType != null and taskType ="startDecisionsAndReasonsDocument")

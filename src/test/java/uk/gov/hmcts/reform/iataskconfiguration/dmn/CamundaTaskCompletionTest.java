@@ -248,10 +248,10 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "createCaseSummary",
+                "caseSummaryHearingBundleStartDecision",
                 asList(
                     Map.of(
-                        "taskType", "createCaseSummary",
+                        "taskType", "caseSummaryHearingBundleStartDecision",
                         "completionMode", "Auto"
                     )
                 )

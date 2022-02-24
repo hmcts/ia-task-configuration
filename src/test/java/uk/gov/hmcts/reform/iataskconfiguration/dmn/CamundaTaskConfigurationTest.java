@@ -176,7 +176,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("arrangeOfflinePayment", routineWork),
             Arguments.of("markCaseAsPaid", routineWork),
             Arguments.of("attendCma", routineWork),
-            Arguments.of("createCaseSummary", routineWork),
+            Arguments.of("caseSummaryHearingBundleStartDecision", routineWork),
             Arguments.of("followUpExtendedDirection", routineWork),
             Arguments.of("followUpNonStandardDirection", routineWork),
             Arguments.of("reviewClarifyingQuestionsAnswers", routineWork),
@@ -204,7 +204,6 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("decideOnTimeExtension", decisionMakingWork),
             Arguments.of("sendDecisionsAndReasons", decisionMakingWork),
             Arguments.of("addListingDate", hearingWork),
-            Arguments.of("createHearingBundle", hearingWork),
             Arguments.of("reviewHearingBundle", hearingWork),
             Arguments.of("generateDraftDecisionAndReasons", hearingWork),
             Arguments.of("uploadDecision", hearingWork),
@@ -319,8 +318,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     @CsvSource({
         "processApplication", "reviewTheAppeal", "decideOnTimeExtension", "reviewRespondentEvidence",
         "reviewAppealSkeletonArgument", "reviewReasonsForAppeal", "reviewClarifyingQuestionsAnswers",
-        "reviewCmaRequirements", "attendCma", "reviewRespondentResponse", "createCaseSummary", "createHearingBundle",
-        "startDecisionsAndReasonsDocument", "reviewHearingRequirements", "followUpOverdueRespondentEvidence",
+        "reviewCmaRequirements", "attendCma", "reviewRespondentResponse", "caseSummaryHearingBundleStartDecision",
+        "reviewHearingRequirements", "followUpOverdueRespondentEvidence",
         "followUpOverdueCaseBuilding", "followUpOverdueReasonsForAppeal", "followUpOverdueClarifyingAnswers",
         "followUpOverdueCmaRequirements", "followUpOverdueRespondentReview", "followUpOverdueHearingRequirements",
         "followUpNonStandardDirection", "followUpNoticeOfChange", "reviewAdditionalEvidence",
@@ -565,8 +564,9 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             + "[Review Home Office response](/case/IA/Asylum/${[CASE_REFERENCE]}/"
             + "trigger/requestResponseReview)<br />[Amend appeal response](/case/IA/Asylum/${[CASE_REFERENCE]}/"
             + "trigger/requestResponseAmend)",
-        "createCaseSummary,"
-            + "[Create case summary](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/createCaseSummary)",
+        "caseSummaryHearingBundleStartDecision,"
+            + "[Create case summary](/case/IA/Asylum/${[CASE_REFERENCE]}"
+            + "/trigger/caseSummaryHearingBundleStartDecision)",
         "createHearingBundle,"
             + "[Generate the hearing bundle](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger"
             + "/generateHearingBundle)<br />"
