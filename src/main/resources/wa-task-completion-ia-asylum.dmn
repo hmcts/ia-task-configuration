@@ -154,10 +154,10 @@
       </rule>
       <rule id="DecisionRule_0z5xy01">
         <inputEntry id="UnaryTests_0iji488">
-          <text>"createCaseSummary"</text>
+          <text>"caseSummaryHearingBundleStartDecision"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1j4sst9">
-          <text>"createCaseSummary"</text>
+          <text>"caseSummaryHearingBundleStartDecision"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1sfxkbw">
           <text>"Auto"</text>
