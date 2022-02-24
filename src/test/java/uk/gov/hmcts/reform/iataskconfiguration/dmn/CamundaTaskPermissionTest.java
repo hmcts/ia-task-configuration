@@ -32,7 +32,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
     private static final Map<String, Serializable> nationalBusinessCentre = Map.of(
         "name", "national-business-centre",
         "value", "Read,Refer,Own",
-        "roleCategory", "ADMIN",
+        "roleCategory", "ADMINISTRATOR",
         "assignmentPriority", 1,
         "autoAssignable", false
     );
@@ -114,7 +114,15 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         "assignmentPriority", 1,
         "name", "hearing-centre-admin",
         "value", "Read,Refer,Own",
-        "roleCategory", "ADMIN"
+        "roleCategory", "ADMINISTRATOR"
+    );
+    private static final Map<String, Serializable> ftpaJudgePriorityOne = Map.of(
+        "autoAssignable", false,
+        "assignmentPriority", 1,
+        "authorisations", "373",
+        "name", "FTPA-judge",
+        "roleCategory", "JUDICIAL",
+        "value", "Read,Refer,Own"
     );
 
     @BeforeAll
@@ -129,7 +137,10 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     taskSupervisor,
                     judgePriorityTwo,
-                    hearingJudgePriorityTwo
+                    hearingJudgePriorityTwo,
+                    hearingJudgePriorityOne,
+                    judgePriorityOne,
+                    ftpaJudgePriorityOne
                 )
             ),
             Arguments.of(
@@ -153,8 +164,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     taskSupervisor,
                     tribunalCaseWorkerPriorityOne,
                     seniorCaseWorkerPriorityOne,
-                    hearingCentreAdminPriorityOne,
-                    judgePriorityOne
+                    hearingCentreAdminPriorityOne
                 )
             ),
             Arguments.of(
@@ -179,9 +189,32 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "addListingDate",
+                List.of(
+                    taskSupervisor,
+                    judgePriorityTwo,
+                    hearingJudgePriorityTwo,
+                    nationalBusinessCentre,
+                    tribunalCaseWorkerPriorityTwo,
+                    seniorCaseWorkerPriorityTwo
+                )
+            ),
+            Arguments.of(
                 "processApplicationToReviewDecision",
                 List.of(
-                    taskSupervisor
+                    taskSupervisor,
+                    hearingJudgePriorityOne,
+                    judgePriorityOne
+                )
+            ),
+            Arguments.of(
+                "prepareDecisionsAndReasons",
+                List.of(
+                    taskSupervisor,
+                    judgePriorityTwo,
+                    hearingJudgePriorityTwo,
+                    hearingJudgePriorityOne,
+                    judgePriorityOne
                 )
             )
         );
@@ -373,33 +406,6 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
     @SuppressWarnings("checkstyle:indentation")
     @ParameterizedTest
     @CsvSource(value = {
-        "requestOfflinePayment","updatePaymentStatus"
-    })
-    void given_taskType_when_evaluate_dmn_then_it_returns_first_and_forth_rule(String taskType) {
-        VariableMap inputVariables = new VariableMapImpl();
-        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
-
-        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
-
-        MatcherAssert.assertThat(dmnDecisionTableResult.getResultList(), is(List.of(
-            Map.of(
-                "name", "task-supervisor",
-                "value", "Read,Refer,Manage,Cancel",
-                "autoAssignable", false
-            ),
-            Map.of(
-                "name", "national-business-centre",
-                "value", "Read,Refer,Own",
-                "roleCategory", "ADMIN",
-                "assignmentPriority", 1,
-                "autoAssignable", false
-            )
-        )));
-    }
-
-    @SuppressWarnings("checkstyle:indentation")
-    @ParameterizedTest
-    @CsvSource(value = {
         "editListing"
     })
     void given_taskType_when_evaluate_dmn_then_it_returns_expected(String taskType) {
@@ -433,7 +439,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
             Map.of(
                 "name", "hearing-centre-admin",
                 "value", "Read,Refer,Own",
-                "roleCategory", "ADMIN",
+                "roleCategory", "ADMINISTRATOR",
                 "assignmentPriority", 1,
                 "autoAssignable", false
             ),
@@ -470,6 +476,22 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "name", "task-supervisor",
                 "value", "Read,Refer,Manage,Cancel",
                 "autoAssignable", false
+            ),
+            Map.of(
+                "autoAssignable", true,
+                "assignmentPriority", 1,
+                "authorisations", "373",
+                "name", "hearing-judge",
+                "roleCategory", "JUDICIAL",
+                "value", "Read,Refer,Own"
+            ),
+            Map.of(
+                "autoAssignable", false,
+                "assignmentPriority", 1,
+                "authorisations", "373",
+                "name", "judge",
+                "roleCategory", "JUDICIAL",
+                "value", "Read,Refer,Own"
             )
         )));
     }
@@ -525,7 +547,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         assertThat(logic.getOutputs().size(), is(7));
         assertThatOutputContainInOrder(outputColumnIds, logic.getOutputs());
         //Rules
-        assertThat(logic.getRules().size(), is(14));
+        assertThat(logic.getRules().size(), is(15));
     }
 
     private void assertThatInputContainInOrder(List<String> inputColumnIds, List<DmnDecisionTableInputImpl> inputs) {
