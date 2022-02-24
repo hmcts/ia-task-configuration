@@ -311,8 +311,6 @@
         <description>National business centre task permissions</description>
         <inputEntry id="UnaryTests_0gxxmc7">
           <text>
-            "requestOfflinePayment",
-            "updatePaymentStatus",
             "addListingDate"
           </text>
         </inputEntry>
@@ -329,7 +327,7 @@
           <text>"Read,Refer,Own"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_03y9mpj">
-          <text>"ADMIN"</text>
+          <text>"ADMINISTRATOR"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1vy0t38">
           <text></text>
@@ -364,7 +362,7 @@
           <text>"Read,Refer,Own"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0fbgbzp">
-          <text>"ADMIN"</text>
+          <text>"ADMINISTRATOR"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_11pjfav">
           <text></text>
@@ -381,11 +379,9 @@
           <text>
             "allocateHearingJudge",
             "reviewHearingBundle",
-            "reviewAddendumHomeOfficeEvidence",
-            "reviewAddendumAppellantEvidence",
             "reviewAddendumEvidence",
-            "editListing"
-          </text>
+            "editListing",
+            "addListingDate"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_190pyoc">
           <text></text>
@@ -417,11 +413,9 @@
           <text>
             "allocateHearingJudge",
             "reviewHearingBundle",
-            "reviewAddendumHomeOfficeEvidence",
-            "reviewAddendumAppellantEvidence",
             "reviewAddendumEvidence",
-            "editListing"
-          </text>
+            "editListing",
+            "addListingDate"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_055yime">
           <text></text>
@@ -452,13 +446,14 @@
         <description>Hearing judge task permissions</description>
         <inputEntry id="UnaryTests_1oxh1tt">
           <text>
-            "reviewHearingBundle",
-            "generateDraftDecisionAndReasons",
-            "uploadDecision",
-            "reviewAddendumHomeOfficeEvidence",
-            "reviewAddendumAppellantEvidence",
-            "reviewAddendumEvidence",
-            "sendDecisionsAndReasons"</text>
+          "reviewHearingBundle",
+          "processApplicationToReviewDecision",
+          "uploadDecision",
+          "reviewAddendumEvidence",
+          "sendDecisionsAndReasons",
+          "prepareDecisionsAndReasons",
+          "decideFTPA"
+          </text>
         </inputEntry>
         <inputEntry id="UnaryTests_19myw41">
           <text></text>
@@ -490,15 +485,13 @@
         <inputEntry id="UnaryTests_1099gbv">
           <text>
             "reviewHearingBundle",
-            "generateDraftDecisionAndReasons",
             "uploadDecision",
-            "reviewAddendumHomeOfficeEvidence",
-            "reviewAddendumAppellantEvidence",
             "reviewAddendumEvidence",
-            "updateHearingRequirements",
+            "processApplicationToReviewDecision",
             "sendDecisionsAndReasons",
-            "addListingDate"
-          </text>
+            "decideFTPA",
+            "prepareDecisionsAndReasons"
+            </text>
         </inputEntry>
         <inputEntry id="UnaryTests_1sgyxq7">
           <text></text>
@@ -522,6 +515,36 @@
           <text>1</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0sy9mkt">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_14oarem">
+        <description>Judge task permissions</description>
+        <inputEntry id="UnaryTests_1lcov8q">
+          <text>"decideFTPA"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_114aema">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ml03wy">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_10b3yjx">
+          <text>"FTPA-judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0j0k6w4">
+          <text>"Read,Refer,Own"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0lym9xr">
+          <text>"JUDICIAL"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_09xtyc0">
+          <text>"373"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0t5dv9d">
+          <text>1</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0zreqf3">
           <text>false</text>
         </outputEntry>
       </rule>
