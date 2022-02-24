@@ -2,12 +2,12 @@
 <definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.12.0">
   <decision id="wa-task-initiation-ia-asylum" name="Task initiation DMN">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT" biodi:annotationsWidth="400">
-      <input id="Input_1" label="Event Id" biodi:width="194" camunda:inputVariable="eventId">
+      <input id="Input_1" label="Event Id" biodi:width="319" camunda:inputVariable="eventId">
         <inputExpression id="InputExpression_1" typeRef="string">
           <text></text>
         </inputExpression>
       </input>
-      <input id="InputClause_0gxli97" label="Post event state" biodi:width="150" camunda:inputVariable="postEventState">
+      <input id="InputClause_0gxli97" label="Post event state" biodi:width="334" camunda:inputVariable="postEventState">
         <inputExpression id="LiteralExpression_0dijl5x" typeRef="string">
           <text></text>
         </inputExpression>
@@ -42,10 +42,10 @@
           </text>
         </inputExpression>
       </input>
-      <output id="Output_1" label="Task Id" name="taskId" typeRef="string" biodi:width="173" />
+      <output id="Output_1" label="Task Id" name="taskId" typeRef="string" biodi:width="368.6666717529297" />
       <output id="OutputClause_0p5fhhd" label="Name" name="name" typeRef="string" biodi:width="150" />
       <output id="OutputClause_165p3r3" label="Delay Duration" name="delayDuration" typeRef="integer" biodi:width="150" />
-      <output id="OutputClause_0i6c6c2" label="Working Days Allowed" name="workingDaysAllowed" typeRef="integer" biodi:width="230.66668701171875" />
+      <output id="OutputClause_0i6c6c2" label="Working Days Allowed" name="workingDaysAllowed" typeRef="integer" biodi:width="230" />
       <output id="OutputClause_10rno4c" label="Process Categories Identifiers" name="processCategories" typeRef="string" biodi:width="268" />
       <rule id="DecisionRule_1fenvxm">
         <inputEntry id="UnaryTests_09nq8bu">
@@ -700,10 +700,10 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0a8r2w4">
-          <text>"createCaseSummary"</text>
+          <text>"caseSummaryHearingBundleStartDecision"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_069jnni">
-          <text>"Create Case Summary"</text>
+          <text>"Case Summary Hearing Bundle Start Decision"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0wetk4k">
           <text></text>
@@ -712,70 +712,6 @@
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0pumcv9">
-          <text>"caseProgression"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1p1dgii">
-        <inputEntry id="UnaryTests_1sl3ymc">
-          <text>"createCaseSummary"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_094ouxj">
-          <text>"finalBundling"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0q7iabr">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1t51alm">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0w9cior">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_19tg089">
-          <text>"createHearingBundle"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1nrvy42">
-          <text>"Create Hearing Bundle"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1bk7hvs">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0ct7jss">
-          <text>2</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_198icli">
-          <text>"caseProgression"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0rscfh8">
-        <inputEntry id="UnaryTests_1qn90yh">
-          <text>"generateHearingBundle"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1yw134u">
-          <text>"preHearing"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1qmi0k4">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0tz91as">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1bpercp">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1gs16f8">
-          <text>"startDecisionsAndReasonsDocument"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_05ohaft">
-          <text>"Start Decisions And Reasons Document"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_14mxl3i">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0twp9o1">
-          <text>2</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1rwj0ce">
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
