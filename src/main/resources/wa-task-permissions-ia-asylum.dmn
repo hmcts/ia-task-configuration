@@ -75,7 +75,6 @@
             "reviewAdditionalAppellantEvidence",
             "reviewAdditionalHomeOfficeEvidence",
             "reviewAdditionalAppellantEvidence",
-            "createHearingBundle",
             "processApplication",
             "attendCma",
             "startDecisionsAndReasons",
@@ -131,7 +130,6 @@
             "followUpOverdueHearingRequirements",
             "reviewCmaRequirements",
             "caseSummaryHearingBundleStartDecision",
-            "createHearingBundle",
             "processApplication",
             "attendCma",
             "startDecisionsAndReasons",
@@ -188,7 +186,6 @@
             "reviewCmaRequirements",
             "reviewAdditionalEvidence",
             "caseSummaryHearingBundleStartDecision",
-            "createHearingBundle",
             "processApplication",
             "attendCma",
             "startDecisionsAndReasons",
@@ -236,7 +233,7 @@
              "prepareDecisionsAndReasons",
              "updateHearingRequirement",
              "processReviewDecisionApplication",
-             "decideFTPA",
+             "decideAnFTPA",
              "editListing",
              "caseSummaryHearingBundleStartDecision"
           </text>
@@ -277,7 +274,7 @@
           "prepareDecisionsAndReasons",
           "updateHearingRequirement",
           "processReviewDecisionApplication",
-          "decideFTPA",
+          "decideAnFTPA",
           "editListing",
           "caseSummaryHearingBundleStartDecision"
           </text>
@@ -452,7 +449,7 @@
           "reviewAddendumEvidence",
           "sendDecisionsAndReasons",
           "prepareDecisionsAndReasons",
-          "decideFTPA"
+          "decideAnFTPA"
           </text>
         </inputEntry>
         <inputEntry id="UnaryTests_19myw41">
@@ -489,7 +486,7 @@
             "reviewAddendumEvidence",
             "processApplicationToReviewDecision",
             "sendDecisionsAndReasons",
-            "decideFTPA",
+            "decideAnFTPA",
             "prepareDecisionsAndReasons"
             </text>
         </inputEntry>
@@ -521,7 +518,7 @@
       <rule id="DecisionRule_14oarem">
         <description>Judge task permissions</description>
         <inputEntry id="UnaryTests_1lcov8q">
-          <text>"decideFTPA"</text>
+          <text>"decideAnFTPA"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_114aema">
           <text></text>

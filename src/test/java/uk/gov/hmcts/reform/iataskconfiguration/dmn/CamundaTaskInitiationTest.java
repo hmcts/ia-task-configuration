@@ -684,52 +684,21 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       + "      }"),
                 List.of(
                     Map.of(
-                        "taskId", "createCaseSummary",
-                        "name", "Create Case Summary",
-
+                        "taskId", "caseSummaryHearingBundleStartDecision",
+                        "name", "Case Summary Hearing Bundle Start Decision",
                         "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     ),
                     Map.of(
                         "taskId", "reviewHearingBundle",
                         "name", "Review Hearing bundle",
-
                         "workingDaysAllowed", 0,
                         "processCategories", "caseProgression"
                     ),
                     Map.of(
                         "taskId", "uploadHearingRecording",
                         "name", "Upload hearing recording",
-
                         "delayDuration", 0,
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
-                "createCaseSummary",
-                "finalBundling",
-                null,
-                singletonList(
-                    Map.of(
-                        "taskId", "createHearingBundle",
-                        "name", "Create Hearing Bundle",
-
-                        "workingDaysAllowed", 2,
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
-                "generateHearingBundle",
-                "preHearing",
-                null,
-                singletonList(
-                    Map.of(
-                        "taskId", "startDecisionsAndReasonsDocument",
-                        "name", "Start Decisions And Reasons Document",
-
-                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -994,7 +963,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "allocateHearingJudge",
                         "name", "Allocate Hearing Judge",
-
                         "workingDaysAllowed", 0,
                         "processCategories", "caseProgression"
                     )
@@ -1070,7 +1038,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "processApplicationToReviewDecision",
                         "name", "Process Application to Review Decision",
-
                         "workingDaysAllowed", 2,
                         "processCategories", "application"
                     )
@@ -1105,7 +1072,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 Map.of(
                     "taskId", "processApplication",
                     "name", "Process Application",
-
                     "workingDaysAllowed", 5,
                     "processCategories", "application"
                 )
@@ -1250,7 +1216,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(5));
         assertThat(logic.getOutputs().size(), is(5));
-        assertThat(logic.getRules().size(), is(43));
+        assertThat(logic.getRules().size(), is(41));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {

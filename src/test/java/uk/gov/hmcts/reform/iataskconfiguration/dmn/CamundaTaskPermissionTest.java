@@ -133,7 +133,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
     public static Stream<Arguments> genericScenarioProvider() {
         return Stream.of(
             Arguments.of(
-                "decideFTPA",
+                "decideAnFTPA",
                 List.of(
                     taskSupervisor,
                     judgePriorityTwo,
@@ -308,7 +308,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         "followUpOverdueCaseBuilding", "followUpOverdueReasonsForAppeal", "reviewTheAppeal",
         "reviewClarifyingQuestionsAnswers", "followUpOverdueClarifyingAnswers", "reviewRespondentResponse",
         "followUpOverdueRespondentReview", "reviewHearingRequirements", "followUpOverdueHearingRequirements",
-        "reviewCmaRequirements", "createHearingBundle",
+        "reviewCmaRequirements",
         "attendCma",
         "followUpNoticeOfChange", "followUpOverdueCmaRequirements", "followUpNonStandardDirection",
          "attendCma", "followUpNoticeOfChange", "followUpOverdueCmaRequirements",
