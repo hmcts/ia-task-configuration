@@ -137,6 +137,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     taskSupervisor,
                     judgePriorityTwo,
+                    hearingJudgePriorityTwo,
                     hearingJudgePriorityOne,
                     judgePriorityOne,
                     ftpaJudgePriorityOne
@@ -208,6 +209,24 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "prepareDecisionsAndReasons",
+                List.of(
+                    taskSupervisor,
+                    judgePriorityTwo,
+                    hearingJudgePriorityTwo,
+                    hearingJudgePriorityOne,
+                    judgePriorityOne
+                )
+            ),
+            Arguments.of(
+                "processReviewDecisionApplication",
+                List.of(
+                    taskSupervisor,
+                    judgePriorityTwo,
+                    hearingJudgePriorityTwo
+                )
+            ),
+            Arguments.of(
+                "uploadDecision",
                 List.of(
                     taskSupervisor,
                     hearingJudgePriorityOne,

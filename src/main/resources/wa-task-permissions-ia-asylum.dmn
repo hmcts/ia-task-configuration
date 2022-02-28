@@ -230,7 +230,7 @@
              "decideOnTimeExtension",
              "allocateHearingJudge",
              "addListingDate",
-             "updateHearingRequirement",
+             "prepareDecisionsAndReasons","updateHearingRequirement",
              "processReviewDecisionApplication",
              "decideAnFTPA",
              "editListing",
@@ -271,7 +271,7 @@
           "allocateHearingJudge",
           "addListingDate",
           "updateHearingRequirement",
-          "editListing",
+          "processReviewDecisionApplication","decideAnFTPA","prepareDecisionsAndReasons","editListing",
           "caseSummaryHearingBundleStartDecision"
           </text>
         </inputEntry>
@@ -444,6 +444,7 @@
           "reviewAddendumEvidence",
           "sendDecisionsAndReasons",
           "prepareDecisionsAndReasons",
+          "uploadDecision",
           "decideAnFTPA"
           </text>
         </inputEntry>
@@ -481,7 +482,7 @@
             "processApplicationToReviewDecision",
             "sendDecisionsAndReasons",
             "decideAnFTPA",
-            "prepareDecisionsAndReasons"
+            "uploadDecision","prepareDecisionsAndReasons"
             </text>
         </inputEntry>
         <inputEntry id="UnaryTests_1sgyxq7">
