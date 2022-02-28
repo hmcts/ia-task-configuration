@@ -273,28 +273,6 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_09pi57y">
-        <inputEntry id="UnaryTests_0k2r8ic">
-          <text>"markPaymentRequestSent"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_094vigh">
-          <text>"requestOfflinePayment"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0bxlf8v">
-          <text>"Auto"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0rn0s02">
-        <inputEntry id="UnaryTests_0ee288y">
-          <text>"markAppealPaid","endAppeal"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0m9g12c">
-          <text>"updatePaymentStatus"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0tzc5ni">
-          <text>"Auto"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_00ego89">
         <inputEntry id="UnaryTests_0mupz2m">
           <text>"generateHearingBundle","decisionAndReasonsStarted","updateHearingRequirements","endAppeal"</text>
