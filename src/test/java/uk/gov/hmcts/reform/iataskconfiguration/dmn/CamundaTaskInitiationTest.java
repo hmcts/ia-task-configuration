@@ -614,7 +614,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     Map.of(
                         "taskId", "caseSummaryHearingBundleStartDecision",
-                        "name", "Case Summary Hearing Bundle Start Decision",
+                        "name", "Create Case Summary, Hearing bundle and Start Decisions and Reasons",
                         "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     ),
