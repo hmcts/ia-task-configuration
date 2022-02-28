@@ -218,17 +218,6 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_161z4aa">
-        <inputEntry id="UnaryTests_0a7k326">
-          <text>"updateHearingRequirements"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1smbhgz">
-          <text>"updateHearingRequirements"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0cunnda">
-          <text>"Auto"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_0sfe37n">
         <inputEntry id="UnaryTests_1selz0c">
           <text>"sendDecisionAndReasons"</text>
