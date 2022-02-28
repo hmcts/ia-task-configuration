@@ -42,7 +42,7 @@
           </text>
         </inputExpression>
       </input>
-      <output id="Output_1" label="Task Id" name="taskId" typeRef="string" biodi:width="368.6666717529297" />
+      <output id="Output_1" label="Task Id" name="taskId" typeRef="string" biodi:width="368" />
       <output id="OutputClause_0p5fhhd" label="Name" name="name" typeRef="string" biodi:width="150" />
       <output id="OutputClause_165p3r3" label="Delay Duration" name="delayDuration" typeRef="integer" biodi:width="150" />
       <output id="OutputClause_0i6c6c2" label="Working Days Allowed" name="workingDaysAllowed" typeRef="integer" biodi:width="230" />
@@ -217,70 +217,6 @@
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0bci62z">
-        <inputEntry id="UnaryTests_18125rs">
-          <text>"submitAppeal"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1oummr6">
-          <text>"pendingPayment"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_06p8cu7">
-          <text>"refusalOfEu","refusalOfHumanRights"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1c7o2wu">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0ljyrj3">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_034phrk">
-          <text>"requestOfflinePayment"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1jizaa6">
-          <text>"Request offline payment"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_15dic25">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1x8oor9">
-          <text>2</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1rgp3l4">
-          <text>"caseProgression"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_116uu7o">
-        <inputEntry id="UnaryTests_0feh6cl">
-          <text>"submitAppeal"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_10dhs3v">
-          <text>"appealSubmitted"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_10a9054">
-          <text>"protection"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0urn01s">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0uzs3x2">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1ni1309">
-          <text>"requestOfflinePayment"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_110tas1">
-          <text>"Request offline payment"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0jefn7z">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0byclnk">
-          <text>2</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0wdpdr3">
-          <text>"caseProgression"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_0xzi2j0">
         <inputEntry id="UnaryTests_1xiod7u">
           <text>
@@ -316,38 +252,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0wnnmif">
           <text>"caseProgression"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0l32agr">
-        <inputEntry id="UnaryTests_1slir5l">
-          <text>"markPaymentRequestSent"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1bsntag">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0htpft8">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1nxj8k6">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0q4apa4">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0qyg9b5">
-          <text>"updatePaymentStatus"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_09dj3mj">
-          <text>"Update payment status"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0bs6bot">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0tuur20">
-          <text>2</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1jrteo9">
-          <text>"followUpOverdue"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_046wm6a">

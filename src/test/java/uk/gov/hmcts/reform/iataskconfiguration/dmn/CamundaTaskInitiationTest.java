@@ -109,57 +109,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "submitAppeal",
-                "pendingPayment",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "refusalOfEu" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                singletonList(
-                    Map.of(
-                        "taskId", "requestOfflinePayment",
-                        "name", "Request offline payment",
-                        "workingDaysAllowed", 2,
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
-                "submitAppeal",
-                "pendingPayment",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "refusalOfHumanRights" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                singletonList(
-                    Map.of(
-                        "taskId", "requestOfflinePayment",
-                        "name", "Request offline payment",
-                        "workingDaysAllowed", 2,
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
-                "submitAppeal",
-                "appealSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "protection" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                singletonList(
-                    Map.of(
-                        "taskId", "requestOfflinePayment",
-                        "name", "Request offline payment",
-                        "workingDaysAllowed", 2,
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
                 "payAndSubmitAppeal",
                 "appealSubmitted",
                 mapAdditionalData("{\n"
@@ -372,26 +321,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
                         "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
-                "markPaymentRequestSent",
-                "null",
-                mapAdditionalData(" {\n"
-                                      + "        \"Data\" : {\n"
-                                      + "          \"paymentRequestSentDate\" : \""
-                                      + LocalDateTime.now().plusDays(21).format(DateTimeFormatter.ISO_LOCAL_DATE_TIME)
-                                      + "\""
-                                      + "        }\n"
-                                      + "      }"),
-                singletonList(
-                    Map.of(
-                        "taskId", "updatePaymentStatus",
-                        "name", "Update payment status",
-
-                        "workingDaysAllowed", 2,
-                        "processCategories", "followUpOverdue"
                     )
                 )
             ),
@@ -1216,7 +1145,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(5));
         assertThat(logic.getOutputs().size(), is(5));
-        assertThat(logic.getRules().size(), is(41));
+        assertThat(logic.getRules().size(), is(38));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {
