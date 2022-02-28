@@ -983,7 +983,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             getArgumentOf("Time extension"),
             getArgumentOf("Transfer"),
             getArgumentOf("Withdraw"),
-            getArgumentOf("Update hearing requirements"),
             getArgumentOf("Update appeal details"),
             getArgumentOf("Reinstate an ended appeal"),
             getArgumentOf("Other"),
@@ -1096,12 +1095,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         return Stream.of(
             getDecideAnApplicationArgumentsOf("Adjourn", "editListing", "Edit Listing"),
             getDecideAnApplicationArgumentsOf("Expedite", "editListing", "Edit Listing"),
-            getDecideAnApplicationArgumentsOf("Transfer", "editListing", "Edit Listing"),
-            getDecideAnApplicationArgumentsOf(
-                "Update hearing requirements",
-                "updateHearingRequirements",
-                "Update hearing requirements"
-            )
+            getDecideAnApplicationArgumentsOf("Transfer", "editListing", "Edit Listing")
         );
     }
 
@@ -1151,7 +1145,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(5));
         assertThat(logic.getOutputs().size(), is(5));
-        assertThat(logic.getRules().size(), is(38));
+        assertThat(logic.getRules().size(), is(37));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {

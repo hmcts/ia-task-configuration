@@ -153,38 +153,6 @@
           <text>"application"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_02nr1r3">
-        <inputEntry id="UnaryTests_0xybhvu">
-          <text>"decideAnApplication"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1jtrp9d">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1i25bdn">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1sa3eea">
-          <text>"Update hearing requirements"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1262wwz">
-          <text>"Granted"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0njnfos">
-          <text>"updateHearingRequirements"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_16zy5n5">
-          <text>"Update hearing requirements"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1p7rbc0">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_15gx3d9">
-          <text>2</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_07o90u6">
-          <text>"application"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_0awsb0p">
         <inputEntry id="UnaryTests_116xfi4">
           <text>"submitAppeal"</text>

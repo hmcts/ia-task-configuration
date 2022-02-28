@@ -137,8 +137,7 @@
             "followUpOverdueCmaRequirements",
             "followUpNonStandardDirection",
             "decideOnTimeExtension",
-            "reviewAdditionalEvidence",
-            "updateHearingRequirements"
+            "reviewAdditionalEvidence"
           </text>
         </inputEntry>
         <inputEntry id="UnaryTests_10s330p">
@@ -193,8 +192,7 @@
             "followUpOverdueCmaRequirements",
             "followUpNonStandardDirection",
             "decideOnTimeExtension",
-            "reviewAdditionalEvidence",
-            "updateHearingRequirements"
+            "reviewAdditionalEvidence"
           </text>
         </inputEntry>
         <inputEntry id="UnaryTests_18tqbn3">
@@ -230,7 +228,7 @@
              "decideOnTimeExtension",
              "allocateHearingJudge",
              "addListingDate",
-             "prepareDecisionsAndReasons","updateHearingRequirement",
+             "prepareDecisionsAndReasons",
              "processReviewDecisionApplication",
              "decideAnFTPA",
              "editListing",
@@ -270,7 +268,6 @@
           "decideOnTimeExtension",
           "allocateHearingJudge",
           "addListingDate",
-          "updateHearingRequirement",
           "processReviewDecisionApplication","decideAnFTPA","prepareDecisionsAndReasons","editListing",
           "caseSummaryHearingBundleStartDecision"
           </text>
@@ -338,8 +335,7 @@
           <text>
             "allocateHearingJudge",
             "uploadHearingRecording",
-            "editListing",
-            "updateHearingRequirements"
+            "editListing"
           </text>
         </inputEntry>
         <inputEntry id="UnaryTests_1sw9xpj">

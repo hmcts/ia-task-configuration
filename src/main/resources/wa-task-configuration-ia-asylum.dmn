@@ -227,7 +227,6 @@
                         "generateDraftDecisionAndReasons",
                         "uploadDecision",
                         "uploadHearingRecording",
-                        "updateHearingRequirements",
                         "editListing",
                         "followUpOverdueHearingRequirements",
                         "reviewHearingRequirements"                    </text>
