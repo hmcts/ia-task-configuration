@@ -21,7 +21,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
 
-import static java.util.Arrays.asList;
 import static java.util.Collections.emptyList;
 import static java.util.Collections.singletonList;
 import static org.hamcrest.CoreMatchers.is;
@@ -52,17 +51,24 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "decisionAndReasonsStarted",
+                "generateDecisionsAndReasons",
                 "decision",
                 null,
-                asList(
+                singletonList(
                     Map.of(
                         "taskId", "sendDecisionsAndReasons",
                         "name", "Send decisions and reasons",
 
                         "workingDaysAllowed", 0,
                         "processCategories", "caseProgression"
-                    ),
+                    )
+                )
+            ),
+            Arguments.of(
+                "decisionAndReasonsStarted",
+                "decision",
+                null,
+                singletonList(
                     Map.of(
                         "taskId", "prepareDecisionsAndReasons",
                         "name", "Prepare decisions and reasons",
