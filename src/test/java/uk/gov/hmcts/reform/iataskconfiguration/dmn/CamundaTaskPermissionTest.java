@@ -207,14 +207,6 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     hearingJudgePriorityOne,
                     judgePriorityOne
                 )
-            ),
-            Arguments.of(
-                "processReviewDecisionApplication",
-                List.of(
-                    taskSupervisor,
-                    judgePriorityTwo,
-                    hearingJudgePriorityTwo
-                )
             )
         );
     }

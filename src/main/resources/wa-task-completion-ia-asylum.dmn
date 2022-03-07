@@ -264,12 +264,23 @@
       </rule>
       <rule id="DecisionRule_00ego89">
         <inputEntry id="UnaryTests_0mupz2m">
-          <text>"generateHearingBundle","decisionAndReasonsStarted","updateHearingRequirements","endAppeal"</text>
+          <text>"decideAnApplication"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1qvmdyv">
-          <text></text>
+          <text>"processApplicationToReviewDecision"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1tkxwpo">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1u3c7sd">
+        <inputEntry id="UnaryTests_1dd0p7u">
+          <text>"generateHearingBundle","decisionAndReasonsStarted","updateHearingRequirements","endAppeal"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ex7ytl">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1pimqlw">
           <text></text>
         </outputEntry>
       </rule>
