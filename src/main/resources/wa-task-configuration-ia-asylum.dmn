@@ -203,7 +203,7 @@
                         "reviewAddendumHomeOfficeEvidence",
                         "reviewAddendumAppellantEvidence",
                         "reviewAddendumEvidence",
-                        "processReviewDecisionApplication",
+                        "processApplicationToReviewDecision",
                         "decideOnTimeExtension",
                         "sendDecisionsAndReasons",
                         "decideAnFTPA"

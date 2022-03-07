@@ -194,6 +194,8 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "processApplicationToReviewDecision",
                 List.of(
                     taskSupervisor,
+                    judgePriorityTwo,
+                    hearingJudgePriorityTwo,
                     hearingJudgePriorityOne,
                     judgePriorityOne
                 )
@@ -206,14 +208,6 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     hearingJudgePriorityTwo,
                     hearingJudgePriorityOne,
                     judgePriorityOne
-                )
-            ),
-            Arguments.of(
-                "processReviewDecisionApplication",
-                List.of(
-                    taskSupervisor,
-                    judgePriorityTwo,
-                    hearingJudgePriorityTwo
                 )
             )
         );
@@ -475,6 +469,22 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "name", "task-supervisor",
                 "value", "Read,Refer,Manage,Cancel",
                 "autoAssignable", false
+            ),
+            Map.of(
+                "autoAssignable", false,
+                "assignmentPriority", 2,
+                "authorisations", "373",
+                "name", "judge",
+                "roleCategory", "JUDICIAL",
+                "value", "Read,Refer,Execute"
+            ),
+            Map.of(
+                "autoAssignable", false,
+                "assignmentPriority", 2,
+                "authorisations", "373",
+                "name", "hearing-judge",
+                "roleCategory", "JUDICIAL",
+                "value", "Read,Refer,Execute"
             ),
             Map.of(
                 "autoAssignable", true,

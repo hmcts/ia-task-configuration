@@ -220,7 +220,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("processApplicationToWithdraw", applications),
             Arguments.of("processAppealDetailsApplication", applications),
             Arguments.of("processReinstatementApplication", applications),
-            Arguments.of("processApplicationToReviewDecision", applications),
+            Arguments.of("processApplicationToReviewDecision", List.of(decisionMakingWork.get(0), applications.get(0))),
             Arguments.of("allocationFTPAToJudge", upperTribunal),
             Arguments.of("decideOnFTPA", upperTribunal)
         );
