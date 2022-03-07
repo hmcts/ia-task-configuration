@@ -440,7 +440,6 @@
           "reviewAddendumEvidence",
           "sendDecisionsAndReasons",
           "prepareDecisionsAndReasons",
-          "uploadDecision",
           "decideAnFTPA"
           </text>
         </inputEntry>
@@ -478,7 +477,7 @@
             "processApplicationToReviewDecision",
             "sendDecisionsAndReasons",
             "decideAnFTPA",
-            "uploadDecision","prepareDecisionsAndReasons"
+            "prepareDecisionsAndReasons"
             </text>
         </inputEntry>
         <inputEntry id="UnaryTests_1sgyxq7">
