@@ -166,7 +166,12 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskType", "reviewAdditionalHomeOfficeEvidence",
                         "completionMode", "Auto"
-                    ),
+                    )
+                )
+            ),
+            Arguments.of(
+                "markAddendumEvidenceAsReviewed",
+                asList(
                     Map.of(
                         "taskType", "reviewAddendumEvidence",
                         "completionMode", "Auto"

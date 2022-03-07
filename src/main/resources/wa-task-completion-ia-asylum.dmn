@@ -88,7 +88,7 @@
       </rule>
       <rule id="DecisionRule_1aibb9e">
         <inputEntry id="UnaryTests_1qgf71h">
-          <text>"markEvidenceAsReviewed"</text>
+          <text>"markAddendumEvidenceAsReviewed"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1cjnxd5">
           <text>"reviewAddendumEvidence"</text>
