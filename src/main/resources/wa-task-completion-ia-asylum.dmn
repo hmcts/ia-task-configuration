@@ -163,17 +163,6 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1vs7030">
-        <inputEntry id="UnaryTests_0w4ligs">
-          <text>"generateHearingBundle"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0fyq8it">
-          <text>"createHearingBundle"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_111ql3o">
-          <text>"Auto"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_1tvqgcw">
         <inputEntry id="UnaryTests_1lm3kb6">
           <text>"recordAllocatedJudge"</text>
