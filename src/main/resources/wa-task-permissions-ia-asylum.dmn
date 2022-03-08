@@ -227,8 +227,6 @@
              "processApplication",
              "decideOnTimeExtension",
              "allocateHearingJudge",
-             "processApplicationToReviewDecision",
-             "prepareDecisionsAndReasons",
              "decideAnFTPA",
              "editListing",
              "caseSummaryHearingBundleStartDecision"
@@ -266,8 +264,7 @@
           "processApplication",
           "decideOnTimeExtension",
           "allocateHearingJudge",
-          "processApplicationToReviewDecision",
-          "decideAnFTPA","prepareDecisionsAndReasons","editListing",
+          "decideAnFTPA","editListing",
           "caseSummaryHearingBundleStartDecision"
           </text>
         </inputEntry>
