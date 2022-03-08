@@ -649,27 +649,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
                         "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
-                    ),
-                    Map.of(
-                        "taskId", "addListingDate",
-                        "name", "Add listing date",
-
-                        "workingDaysAllowed", 2,
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
-                "listCaseWithoutHearingRequirements",
-                "listing",
-                null,
-                List.of(
-                    Map.of(
-                        "taskId", "addListingDate",
-                        "name", "Add listing date",
-
-                        "workingDaysAllowed", 2,
-                        "processCategories", "caseProgression"
                     )
                 )
             ),
@@ -1145,7 +1124,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(5));
         assertThat(logic.getOutputs().size(), is(5));
-        assertThat(logic.getRules().size(), is(37));
+        assertThat(logic.getRules().size(), is(36));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {

@@ -227,7 +227,7 @@
              "processApplication",
              "decideOnTimeExtension",
              "allocateHearingJudge",
-             "addListingDate", "processApplicationToReviewDecision",
+             "processApplicationToReviewDecision",
              "prepareDecisionsAndReasons",
              "decideAnFTPA",
              "editListing",
@@ -266,7 +266,7 @@
           "processApplication",
           "decideOnTimeExtension",
           "allocateHearingJudge",
-          "addListingDate", "processApplicationToReviewDecision",
+          "processApplicationToReviewDecision",
           "decideAnFTPA","prepareDecisionsAndReasons","editListing",
           "caseSummaryHearingBundleStartDecision"
           </text>
@@ -293,38 +293,6 @@
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0n6tcd2">
-          <text>false</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_16vvqmd">
-        <description>National business centre task permissions</description>
-        <inputEntry id="UnaryTests_0gxxmc7">
-          <text>
-            "addListingDate"
-          </text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_12c3use">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0aciy6q">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1p54gmk">
-          <text>"national-business-centre"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1fw41sy">
-          <text>"Read,Refer,Own"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_03y9mpj">
-          <text>"ADMIN"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1vy0t38">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1t1fpby">
-          <text>1</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0r5nut3">
           <text>false</text>
         </outputEntry>
       </rule>
@@ -368,8 +336,8 @@
             "allocateHearingJudge",
             "reviewHearingBundle",
             "reviewAddendumEvidence",
-            "editListing",
-            "addListingDate"</text>
+            "editListing"
+</text>
         </inputEntry>
         <inputEntry id="UnaryTests_190pyoc">
           <text></text>
@@ -402,8 +370,8 @@
             "allocateHearingJudge",
             "reviewHearingBundle",
             "reviewAddendumEvidence",
-            "editListing",
-            "addListingDate"</text>
+            "editListing"
+</text>
         </inputEntry>
         <inputEntry id="UnaryTests_055yime">
           <text></text>

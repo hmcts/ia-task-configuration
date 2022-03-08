@@ -619,41 +619,6 @@
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0ic4721">
-        <inputEntry id="UnaryTests_0izgjmt">
-          <text>
-            "draftHearingRequirements",
-            "listCaseWithoutHearingRequirements"
-          </text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1w5ruam">
-          <text>"listing"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1l1j8t6">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_17goipf">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1fcagcc">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1g5umul">
-          <text>"addListingDate"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1tv1mka">
-          <text>"Add listing date"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_12gcl16">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0aaa76d">
-          <text>2</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0zet6ey">
-          <text>"caseProgression"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_0i6qihx">
         <inputEntry id="UnaryTests_03alruf">
           <text>"requestRespondentEvidence"</text>

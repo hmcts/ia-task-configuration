@@ -180,17 +180,6 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "addListingDate",
-                List.of(
-                    taskSupervisor,
-                    judgePriorityTwo,
-                    hearingJudgePriorityTwo,
-                    nationalBusinessCentre,
-                    tribunalCaseWorkerPriorityTwo,
-                    seniorCaseWorkerPriorityTwo
-                )
-            ),
-            Arguments.of(
                 "processApplicationToReviewDecision",
                 List.of(
                     taskSupervisor,
@@ -556,7 +545,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         assertThat(logic.getOutputs().size(), is(7));
         assertThatOutputContainInOrder(outputColumnIds, logic.getOutputs());
         //Rules
-        assertThat(logic.getRules().size(), is(15));
+        assertThat(logic.getRules().size(), is(14));
     }
 
     private void assertThatInputContainInOrder(List<String> inputColumnIds, List<DmnDecisionTableInputImpl> inputs) {
