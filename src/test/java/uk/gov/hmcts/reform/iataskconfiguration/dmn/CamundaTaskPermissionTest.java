@@ -136,8 +136,6 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "decideAnFTPA",
                 List.of(
                     taskSupervisor,
-                    judgePriorityTwo,
-                    hearingJudgePriorityTwo,
                     hearingJudgePriorityOne,
                     judgePriorityOne,
                     ftpaJudgePriorityOne
@@ -361,21 +359,6 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "value", "Read,Refer,Own",
                 "roleCategory", "LEGAL_OPERATIONS",
                 "assignmentPriority", 1,
-                "autoAssignable", false
-            ),
-            Map.of(
-                "name", "judge",
-                "value", "Read,Refer,Execute",
-                "roleCategory", "JUDICIAL",
-                "authorisations", "373",
-                "assignmentPriority", 2,
-                "autoAssignable", false
-            ),Map.of(
-                "name", "hearing-judge",
-                "value", "Read,Refer,Execute",
-                "roleCategory", "JUDICIAL",
-                "authorisations", "373",
-                "assignmentPriority",2,
                 "autoAssignable", false
             )
         )));

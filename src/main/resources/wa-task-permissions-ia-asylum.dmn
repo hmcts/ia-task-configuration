@@ -73,8 +73,6 @@
             "reviewCmaRequirements",
             "reviewAdditionalHomeOfficeEvidence",
             "reviewAdditionalAppellantEvidence",
-            "reviewAdditionalHomeOfficeEvidence",
-            "reviewAdditionalAppellantEvidence",
             "processApplication",
             "attendCma",
             "startDecisionsAndReasons",
@@ -227,9 +225,7 @@
              "processApplication",
              "decideOnTimeExtension",
              "allocateHearingJudge",
-             "decideAnFTPA",
-             "editListing",
-             "caseSummaryHearingBundleStartDecision"
+             "editListing"
           </text>
         </inputEntry>
         <inputEntry id="UnaryTests_15oy3kp">
@@ -264,8 +260,7 @@
           "processApplication",
           "decideOnTimeExtension",
           "allocateHearingJudge",
-          "decideAnFTPA","editListing",
-          "caseSummaryHearingBundleStartDecision"
+          "editListing"
           </text>
         </inputEntry>
         <inputEntry id="UnaryTests_0t8gv37">
