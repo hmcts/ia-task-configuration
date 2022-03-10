@@ -1144,7 +1144,7 @@
       </rule>
       <rule id="DecisionRule_1rvt3fp">
         <inputEntry id="UnaryTests_0pwjwlw">
-          <text>"recordAllocatedJudge"</text>
+          <text>"applyForFTPAAppellant", "applyForFTPARespondent"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1vl7t5a">
           <text></text>

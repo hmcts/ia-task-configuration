@@ -136,7 +136,6 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "decideAnFTPA",
                 List.of(
                     taskSupervisor,
-                    hearingJudgePriorityOne,
                     judgePriorityOne,
                     ftpaJudgePriorityOne
                 )

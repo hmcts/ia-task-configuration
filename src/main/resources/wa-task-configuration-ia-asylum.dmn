@@ -205,8 +205,7 @@
                         "reviewAddendumEvidence",
                         "processApplicationToReviewDecision",
                         "decideOnTimeExtension",
-                        "sendDecisionsAndReasons",
-                        "decideAnFTPA"
+                        "sendDecisionsAndReasons"
                     </text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0omxasv">
@@ -267,7 +266,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_04wtfxs">
-          <text>"allocationFTPAToJudge","decideOnFTPA"</text>
+          <text>"decideAnFTPA"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1ywf3hm">
           <text>"workType"</text>

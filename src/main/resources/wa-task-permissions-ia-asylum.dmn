@@ -398,9 +398,8 @@
           "processApplicationToReviewDecision",
           "reviewAddendumEvidence",
           "sendDecisionsAndReasons",
-          "prepareDecisionsAndReasons",
-          "decideAnFTPA"
-          </text>
+          "prepareDecisionsAndReasons"
+</text>
         </inputEntry>
         <inputEntry id="UnaryTests_19myw41">
           <text></text>

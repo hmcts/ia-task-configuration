@@ -38,7 +38,20 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
         return Stream.of(
             Arguments.of(
-                "recordAllocatedJudge",
+                "applyForFTPAAppellant",
+                null,
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "decideAnFTPA",
+                        "name", "Decide an FTPA",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "applyForFTPARespondent",
                 null,
                 null,
                 singletonList(

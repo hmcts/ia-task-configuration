@@ -163,17 +163,6 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1tvqgcw">
-        <inputEntry id="UnaryTests_1lm3kb6">
-          <text>"recordAllocatedJudge"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1lpt12w">
-          <text>"allocateFtpaToJudge"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0lp2uyq">
-          <text>"Auto"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_0gdgm8a">
         <inputEntry id="UnaryTests_16tdmu0">
           <text>"changeDirectionDueDate"</text>
