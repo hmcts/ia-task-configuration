@@ -16,9 +16,9 @@
           <text></text>
         </inputExpression>
       </input>
-      <output id="OutputClause_1q156ce" label="Case Access Category" name="caseAccessCategory" typeRef="string" />
+      <output id="OutputClause_1q156ce" label="Case Access Category" name="caseAccessCategory" typeRef="string" biodi:width="179" />
       <output id="Output_1" label="Name" name="name" typeRef="string" biodi:width="150" />
-      <output id="OutputClause_1mzxe7i" label="Value" name="value" typeRef="string" biodi:width="150" />
+      <output id="OutputClause_1mzxe7i" label="Value" name="value" typeRef="string" biodi:width="249.6666717529297" />
       <output id="OutputClause_05whhwf" label="RoleCategory" name="roleCategory" typeRef="string" biodi:width="168" />
       <output id="OutputClause_16bocer" label="Authorisations" name="authorisations" typeRef="string" biodi:width="150" />
       <output id="OutputClause_1n914lw" label="Assignment Priority" name="assignmentPriority" typeRef="integer" biodi:width="150" />
@@ -94,7 +94,7 @@
           <text>"case-manager"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0ekjswr">
-          <text>"Read,Refer,Own"</text>
+          <text>"Read,Refer,Own,Cancel"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1tlohef">
           <text>"LEGAL_OPERATIONS"</text>
@@ -148,7 +148,7 @@
           <text>"tribunal-caseworker"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_151ry1h">
-          <text>"Read,Refer,Own"</text>
+          <text>"Read,Refer,Own,Manage,Cancel"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1rwokl1">
           <text>"LEGAL_OPERATIONS"</text>
@@ -203,7 +203,7 @@
           <text>"senior-tribunal-caseworker"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1nhvpem">
-          <text>"Read,Refer,Own"</text>
+          <text>"Read,Refer,Own,Manage,Cancel"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_03nq5c0">
           <text>"LEGAL_OPERATIONS"</text>
@@ -238,7 +238,7 @@
           <text>"judge"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1qa45z2">
-          <text>"Read,Refer,Execute"</text>
+          <text>"Read,Refer,Execute,Manage,Cancel"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_06zjq08">
           <text>"JUDICIAL"</text>
@@ -273,7 +273,7 @@
           <text>"hearing-judge"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1g9ombg">
-          <text>"Read,Refer,Execute"</text>
+          <text>"Read,Refer,Execute,Manage,Cancel"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_017of59">
           <text>"JUDICIAL"</text>
@@ -307,7 +307,7 @@
           <text>"hearing-centre-admin"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_18uxrkl">
-          <text>"Read,Refer,Own"</text>
+          <text>"Read,Refer,Own,Manage,Cancel"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0fbgbzp">
           <text>"ADMIN"</text>
@@ -341,7 +341,7 @@
           <text>"tribunal-caseworker"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1tlcgb1">
-          <text>"Read,Refer,Execute"</text>
+          <text>"Read,Refer,Execute,Manage,Cancel"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1vwn7j0">
           <text>"LEGAL_OPERATIONS"</text>
@@ -375,7 +375,7 @@
           <text>"senior-tribunal-caseworker"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0viqzzm">
-          <text>"Read,Refer,Execute"</text>
+          <text>"Read,Refer,Execute,Manage,Cancel"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0feri8q">
           <text>"LEGAL_OPERATIONS"</text>
@@ -411,7 +411,7 @@
           <text>"hearing-judge"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_124xecb">
-          <text>"Read,Refer,Own"</text>
+          <text>"Read,Refer,Own,Cancel"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1pkhxc7">
           <text>"JUDICIAL"</text>
@@ -448,7 +448,7 @@
           <text>"judge"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1n6hq4e">
-          <text>"Read,Refer,Own"</text>
+          <text>"Read,Refer,Own,Manage,Cancel"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0pti6xc">
           <text>"JUDICIAL"</text>
@@ -478,7 +478,7 @@
           <text>"FTPA-judge"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0j0k6w4">
-          <text>"Read,Refer,Own"</text>
+          <text>"Read,Refer,Own,Manage,Cancel"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0lym9xr">
           <text>"JUDICIAL"</text>
