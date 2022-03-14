@@ -1132,7 +1132,7 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0ay6ciw">
           <text>if (listCaseHearingDate != null) then
-		(date and time(listCaseHearingDate) - date and time(now)).days
+		(date(listCaseHearingDate) -date(now)).days
             else 0</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0hz4nyc">
