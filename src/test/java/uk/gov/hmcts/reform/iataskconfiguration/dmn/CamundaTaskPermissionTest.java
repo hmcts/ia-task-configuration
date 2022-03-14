@@ -169,8 +169,6 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "editListing",
                 List.of(
                     taskSupervisor,
-                    judgePriorityTwo,
-                    hearingJudgePriorityTwo,
                     hearingCentreAdminPriorityOne,
                     tribunalCaseWorkerPriorityTwo,
                     seniorCaseWorkerPriorityTwo
@@ -378,22 +376,6 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
             Map.of(
                 "name", "task-supervisor",
                 "value", "Read,Refer,Manage,Cancel",
-                "autoAssignable", false
-            ),
-            Map.of(
-                "name", "judge",
-                "value", "Read,Refer,Execute,Manage,Cancel",
-                "roleCategory", "JUDICIAL",
-                "authorisations", "373",
-                "assignmentPriority",2,
-                "autoAssignable", false
-            ),
-            Map.of(
-                "name", "hearing-judge",
-                "value", "Read,Refer,Execute,Manage,Cancel",
-                "roleCategory", "JUDICIAL",
-                "authorisations", "373",
-                "assignmentPriority",2,
                 "autoAssignable", false
             ),
             Map.of(
