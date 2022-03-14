@@ -220,14 +220,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1ps3x4j">
-          <text>
-                        "reviewHearingBundle",
-                        "generateDraftDecisionAndReasons",
-                        "uploadDecision",
-                        "uploadHearingRecording",
-                        "editListing",
-                        "followUpOverdueHearingRequirements",
-                        "reviewHearingRequirements"                    </text>
+          <text>"reviewHearingBundle","generateDraftDecisionAndReasons","uploadDecision","uploadHearingRecording","editListing","followUpOverdueHearingRequirements","reviewHearingRequirements","allocateHearingJudge"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0c3eia6">
           <text>"workType"</text>
