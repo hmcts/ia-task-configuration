@@ -1046,7 +1046,7 @@
       </rule>
       <rule id="DecisionRule_1ahjdac">
         <inputEntry id="UnaryTests_06mn0dx">
-          <text>"generateDecisionsAndReasons"</text>
+          <text>"generateDecisionAndReasons"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0za4ybz">
           <text>"decision"</text>

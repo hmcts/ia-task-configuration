@@ -64,7 +64,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "generateDecisionsAndReasons",
+                "generateDecisionAndReasons",
                 "decision",
                 null,
                 singletonList(
