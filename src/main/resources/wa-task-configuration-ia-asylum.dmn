@@ -339,14 +339,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_15ftuu0">
-          <text>
-                        "reviewHearingBundle",
-                        "generateDraftDecisionAndReasons",
-                        "uploadDecision",
-                        "reviewAddendumHomeOfficeEvidence",
-                        "reviewAddendumAppellantEvidence",
-                        "reviewAddendumEvidence","reviewSpecificAccessRequestJudiciary"
-                    </text>
+          <text>"reviewHearingBundle","generateDraftDecisionAndReasons","uploadDecision","reviewAddendumHomeOfficeEvidence","reviewAddendumAppellantEvidence","reviewAddendumEvidence","reviewSpecificAccessRequestJudiciary","processApplicationToReviewDecision","sendDecisionsAndReasons","prepareDecisionsAndReasons","decideAnFTPA"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_15nowth">
           <text>"roleCategory"</text>
