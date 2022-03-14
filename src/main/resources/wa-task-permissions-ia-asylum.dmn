@@ -112,31 +112,7 @@
       <rule id="DecisionRule_1tvtlre">
         <description>Tribunal caseworker task permissions</description>
         <inputEntry id="UnaryTests_13ukkz6">
-          <text>
-            "reviewTheAppeal",
-            "reviewRespondentEvidence",
-            "followUpOverdueRespondentEvidence",
-            "reviewAppealSkeletonArgument",
-            "followUpOverdueCaseBuilding",
-            "reviewReasonsForAppeal",
-            "followUpOverdueReasonsForAppeal",
-            "reviewClarifyingQuestionsAnswers",
-            "followUpOverdueClarifyingAnswers",
-            "reviewRespondentResponse",
-            "followUpOverdueRespondentReview",
-            "reviewHearingRequirements",
-            "followUpOverdueHearingRequirements",
-            "reviewCmaRequirements",
-            "caseSummaryHearingBundleStartDecision",
-            "processApplication",
-            "attendCma",
-            "startDecisionsAndReasons",
-            "followUpNoticeOfChange",
-            "followUpOverdueCmaRequirements",
-            "followUpNonStandardDirection",
-            "decideOnTimeExtension",
-            "reviewAdditionalEvidence"
-          </text>
+          <text>"reviewTheAppeal","reviewRespondentEvidence","followUpOverdueRespondentEvidence","reviewAppealSkeletonArgument","followUpOverdueCaseBuilding","reviewReasonsForAppeal","followUpOverdueReasonsForAppeal","reviewClarifyingQuestionsAnswers","followUpOverdueClarifyingAnswers","reviewRespondentResponse","followUpOverdueRespondentReview","reviewHearingRequirements","followUpOverdueHearingRequirements","reviewCmaRequirements","caseSummaryHearingBundleStartDecision","processApplication","attendCma","startDecisionsAndReasons","followUpNoticeOfChange","followUpOverdueCmaRequirements","followUpNonStandardDirection","decideOnTimeExtension","reviewAdditionalEvidence","reviewAdditionalHomeOfficeEvidence"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_10s330p">
           <text></text>
@@ -181,7 +157,7 @@
             "reviewHearingRequirements",
             "followUpOverdueHearingRequirements",
             "reviewCmaRequirements",
-            "reviewAdditionalEvidence",
+            "reviewAdditionalHomeOfficeEvidence",
             "caseSummaryHearingBundleStartDecision",
             "processApplication",
             "attendCma",
