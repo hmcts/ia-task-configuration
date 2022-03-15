@@ -604,6 +604,9 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             + "markEvidenceAsReviewed),",
         "reviewAddendumEvidence,[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markEvidenceAsReviewed),",
         "editListing,[Edit case listing](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/editCaseListing),",
+        "decideAnFTPA,"
+            + "[Leadership judge FTPA decision](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/leadershipJudgeFtpaDecision)<br />"
+            + "[Resident judge FTPA decision](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/residentJudgeFtpaDecision),",
         "prepareDecisionsAndReasons,[Prepare decisions and reasons](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
             + "generateDecisionAndReasons),"
     })
