@@ -576,8 +576,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             + "trigger/requestResponseReview)<br />[Amend appeal response](/case/IA/Asylum/${[CASE_REFERENCE]}/"
             + "trigger/requestResponseAmend),",
         "caseSummaryHearingBundleStartDecision,"
-            + "[Create case summary](/case/IA/Asylum/${[CASE_REFERENCE]}"
-            + "/trigger/caseSummaryHearingBundleStartDecision),",
+            + "[Create case summary](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/createCaseSummary),",
         "createHearingBundle,"
             + "[Generate the hearing bundle](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger"
             + "/generateHearingBundle)<br />"
