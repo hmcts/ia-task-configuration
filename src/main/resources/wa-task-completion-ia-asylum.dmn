@@ -154,7 +154,7 @@
       </rule>
       <rule id="DecisionRule_0z5xy01">
         <inputEntry id="UnaryTests_0iji488">
-          <text>"decisionsAndReasonsStarted"</text>
+          <text>"decisionAndReasonsStarted"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1j4sst9">
           <text>"caseSummaryHearingBundleStartDecision"</text>
