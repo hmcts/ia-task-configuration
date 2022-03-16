@@ -199,8 +199,7 @@
         <inputEntry id="UnaryTests_0mzihm0">
           <text>
              "processApplication",
-             "decideOnTimeExtension",
-             "allocateHearingJudge"
+             "decideOnTimeExtension"
           </text>
         </inputEntry>
         <inputEntry id="UnaryTests_15oy3kp">
@@ -233,8 +232,7 @@
         <inputEntry id="UnaryTests_10vg6mj">
           <text>
           "processApplication",
-          "decideOnTimeExtension",
-          "allocateHearingJudge"
+          "decideOnTimeExtension"
           </text>
         </inputEntry>
         <inputEntry id="UnaryTests_0t8gv37">
@@ -299,7 +297,6 @@
       <rule id="DecisionRule_0spqww2">
         <inputEntry id="UnaryTests_0vmy0oj">
           <text>
-            "allocateHearingJudge",
             "reviewHearingBundle",
             "reviewAddendumEvidence",
             "editListing"
@@ -333,7 +330,6 @@
       <rule id="DecisionRule_1wd5okj">
         <inputEntry id="UnaryTests_0co919o">
           <text>
-            "allocateHearingJudge",
             "reviewHearingBundle",
             "reviewAddendumEvidence",
             "editListing"
