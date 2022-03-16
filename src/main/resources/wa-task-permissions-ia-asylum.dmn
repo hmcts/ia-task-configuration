@@ -245,7 +245,7 @@
           <text>"hearing-judge"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1g9ombg">
-          <text>"Read,Refer,Execute,Manage,Cancel"</text>
+          <text>"Read,Refer,Execute,Cancel"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_017of59">
           <text>"JUDICIAL"</text>
@@ -448,7 +448,7 @@
           <text>"FTPA-judge"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0j0k6w4">
-          <text>"Read,Refer,Own,Manage,Cancel"</text>
+          <text>"Read,Refer,Own,Cancel"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0lym9xr">
           <text>"JUDICIAL"</text>

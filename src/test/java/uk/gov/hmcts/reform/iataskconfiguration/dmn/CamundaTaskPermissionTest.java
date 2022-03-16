@@ -98,7 +98,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         "authorisations", "373",
         "name", "hearing-judge",
         "roleCategory", "JUDICIAL",
-        "value", "Read,Refer,Execute,Manage,Cancel"
+        "value", "Read,Refer,Execute,Cancel"
     );
     private static final Map<String, Serializable> judgePriorityOne = Map.of(
         "autoAssignable", false,
@@ -122,7 +122,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         "authorisations", "373",
         "name", "FTPA-judge",
         "roleCategory", "JUDICIAL",
-        "value", "Read,Refer,Own,Manage,Cancel"
+        "value", "Read,Refer,Own,Cancel"
     );
 
     @BeforeAll
