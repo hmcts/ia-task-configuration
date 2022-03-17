@@ -44,8 +44,8 @@
       </input>
       <output id="Output_1" label="Task Id" name="taskId" typeRef="string" biodi:width="368" />
       <output id="OutputClause_0p5fhhd" label="Name" name="name" typeRef="string" biodi:width="150" />
-      <output id="OutputClause_165p3r3" label="Delay Duration" name="delayDuration" typeRef="integer" biodi:width="150" />
-      <output id="OutputClause_0i6c6c2" label="Working Days Allowed" name="workingDaysAllowed" typeRef="integer" biodi:width="230" />
+      <output id="OutputClause_165p3r3" label="Delay Duration" name="delayDuration" typeRef="integer" biodi:width="232" />
+      <output id="OutputClause_0i6c6c2" label="Working Days Allowed" name="workingDaysAllowed" typeRef="integer" biodi:width="199" />
       <output id="OutputClause_10rno4c" label="Process Categories Identifiers" name="processCategories" typeRef="string" biodi:width="268" />
       <rule id="DecisionRule_1fenvxm">
         <inputEntry id="UnaryTests_09nq8bu">
@@ -1229,12 +1229,12 @@
           <text>"Allocate Hearing Judge"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0p256tl">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1pijvfs">
-          <text>if (listCaseHearingDate != null and CaseHearingDate != "") then
+          <text>if (listCaseHearingDate != null and listCaseHearingDate != "") then
 		((date(listCaseHearingDate) - date(now)) - 2).days
                  else 0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1pijvfs">
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0vzcsec">
           <text>"caseProgression"</text>
@@ -1263,12 +1263,12 @@
           <text>"Allocate Hearing Judge"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0nlmxvs">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0ze2qn5">
-          <text>if (listCaseHearingDate != null and CaseHearingDate != "") then
+          <text>if (listCaseHearingDate != null and listCaseHearingDate != "") then
 		((date(listCaseHearingDate) - date(now)) - 2).day
                 else 0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ze2qn5">
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0jwwc9l">
           <text>"caseProgression"</text>
