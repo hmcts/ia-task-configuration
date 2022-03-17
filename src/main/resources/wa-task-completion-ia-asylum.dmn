@@ -97,17 +97,6 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0h6mspv">
-        <inputEntry id="UnaryTests_1pwjkzs">
-          <text>"uploadAdditionalEvidenceHomeOffice"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0o15bhr">
-          <text>"reviewAdditionalHomeOfficeEvidence"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_15x2og0">
-          <text>"Auto"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_19ss4q7">
         <inputEntry id="UnaryTests_013vo07">
           <text>"reviewCmaRequirements"</text>
