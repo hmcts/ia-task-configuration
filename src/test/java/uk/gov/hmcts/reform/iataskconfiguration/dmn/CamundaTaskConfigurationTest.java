@@ -599,11 +599,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             + "HearingRecording),",
         "generateDraftDecisionAndReasons,[Generate the draft decisions and reasons document](/case/IA/Asylum"
             + "/${[CASE_REFERENCE]}/trigger/generateDecisionAndReasons),",
-        "reviewAddendumHomeOfficeEvidence,[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
-            + "markEvidenceAsReviewed),",
-        "reviewAddendumAppellantEvidence,[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
-            + "markEvidenceAsReviewed),",
-        "reviewAddendumEvidence,[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markEvidenceAsReviewed),",
+        "reviewAddendumEvidence,[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
+            + "markAddendumEvidenceAsReviewed),",
         "editListing,[Edit case listing](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/editCaseListing),",
         "decideAnFTPA,[Leadership judge FTPA decision](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
             + "leadershipJudgeFtpaDecision)<br />"
