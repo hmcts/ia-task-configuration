@@ -594,7 +594,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "arrangeOfflinePayment,[Mark the appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid),",
         "markCaseAsPaid,[Mark the appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid),",
         "allocateHearingJudge," + "[Allocate Hearing Judge](/role-access/allocate-role/allocate?caseId="
-            + "${[CASE_REFERENCE]}&roleCategory=${[JUDICIAL]}),",
+            + "${[CASE_REFERENCE]}&roleCategory=JUDICIAL&jurisdiction=IA),",
         "uploadHearingRecording,[Upload the hearing recording](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/upload"
             + "HearingRecording),",
         "generateDraftDecisionAndReasons,[Generate the draft decisions and reasons document](/case/IA/Asylum"
