@@ -1014,10 +1014,10 @@
       </rule>
       <rule id="DecisionRule_0zahy0c">
         <inputEntry id="UnaryTests_1rco0qt">
-          <text>"listCase"</text>
+          <text>"generateHearingBundle", "customiseHearingBundle"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0bjc5ai">
-          <text>"prepareForHearing"</text>
+          <text>"preHearing"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0y0jbut">
           <text></text>
@@ -1208,7 +1208,7 @@
       </rule>
       <rule id="DecisionRule_0ccjj99">
         <inputEntry id="UnaryTests_0p1y2zl">
-          <text>"generateHearingBundle"</text>
+          <text>"generateHearingBundle", "customiseHearingBundle"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0meif91">
           <text>"finalBundling"</text>

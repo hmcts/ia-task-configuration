@@ -638,15 +638,35 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "processCategories", "caseProgression"
                     ),
                     Map.of(
+                        "taskId", "uploadHearingRecording",
+                        "name", "Upload hearing recording",
+                        "delayDuration", 0,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "generateHearingBundle",
+                "preHearing",
+                null,
+                singletonList(
+                    Map.of(
                         "taskId", "reviewHearingBundle",
                         "name", "Review Hearing bundle",
                         "workingDaysAllowed", 0,
                         "processCategories", "caseProgression"
-                    ),
+                    )
+                )
+            ),
+            Arguments.of(
+                "customiseHearingBundle",
+                "preHearing",
+                null,
+                List.of(
                     Map.of(
-                        "taskId", "uploadHearingRecording",
-                        "name", "Upload hearing recording",
-                        "delayDuration", 0,
+                        "taskId", "reviewHearingBundle",
+                        "name", "Review Hearing bundle",
+                        "workingDaysAllowed", 0,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -884,6 +904,19 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "generateHearingBundle",
+                "finalBundling",
+                null,
+                List.of(
+                    Map.of(
+                        "taskId", "allocateHearingJudge",
+                        "name", "Allocate Hearing Judge",
+                        "workingDaysAllowed", 0,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "customiseHearingBundle",
                 "finalBundling",
                 null,
                 List.of(
