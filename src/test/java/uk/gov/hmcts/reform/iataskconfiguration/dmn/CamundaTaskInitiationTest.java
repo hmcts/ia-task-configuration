@@ -646,32 +646,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "generateHearingBundle",
-                "preHearing",
-                null,
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewHearingBundle",
-                        "name", "Review Hearing bundle",
-                        "workingDaysAllowed", 0,
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
-                "customiseHearingBundle",
-                "preHearing",
-                null,
-                List.of(
-                    Map.of(
-                        "taskId", "reviewHearingBundle",
-                        "name", "Review Hearing bundle",
-                        "workingDaysAllowed", 0,
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
                 "draftHearingRequirements",
                 "listing",
                 null,
@@ -908,6 +882,12 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 null,
                 List.of(
                     Map.of(
+                        "taskId", "reviewHearingBundle",
+                        "name", "Review Hearing bundle",
+                        "workingDaysAllowed", 0,
+                        "processCategories", "caseProgression"
+                    ),
+                    Map.of(
                         "taskId", "allocateHearingJudge",
                         "name", "Allocate Hearing Judge",
                         "delayDuration", 0,
@@ -920,6 +900,12 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "finalBundling",
                 null,
                 List.of(
+                    Map.of(
+                        "taskId", "reviewHearingBundle",
+                        "name", "Review Hearing bundle",
+                        "workingDaysAllowed", 0,
+                        "processCategories", "caseProgression"
+                    ),
                     Map.of(
                         "taskId", "allocateHearingJudge",
                         "name", "Allocate Hearing Judge",
@@ -1074,7 +1060,13 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "generateHearingBundle",
                 "finalBundling",
-                singletonList(
+                List.of(
+                    Map.of(
+                        "taskId", "reviewHearingBundle",
+                        "name", "Review Hearing bundle",
+                        "workingDaysAllowed", 0,
+                        "processCategories", "caseProgression"
+                    ),
                     Map.of(
                         "taskId", "allocateHearingJudge",
                         "name", "Allocate Hearing Judge",
