@@ -87,7 +87,6 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
     private static final Map<String, Serializable> hearingJudgePriorityOne = Map.of(
         "autoAssignable", true,
         "assignmentPriority", 1,
-        "authorisations", "373",
         "name", "hearing-judge",
         "roleCategory", "JUDICIAL",
         "value", "Read,Refer,Own,Cancel"
@@ -95,7 +94,6 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
     private static final Map<String, Serializable> hearingJudgePriorityTwo = Map.of(
         "autoAssignable", false,
         "assignmentPriority", 2,
-        "authorisations", "373",
         "name", "hearing-judge",
         "roleCategory", "JUDICIAL",
         "value", "Read,Refer,Execute,Cancel"
@@ -119,7 +117,6 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
     private static final Map<String, Serializable> ftpaJudgePriorityOne = Map.of(
         "autoAssignable", false,
         "assignmentPriority", 1,
-        "authorisations", "373",
         "name", "FTPA-judge",
         "roleCategory", "JUDICIAL",
         "value", "Read,Refer,Own,Cancel"
@@ -429,7 +426,6 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
             Map.of(
                 "autoAssignable", true,
                 "assignmentPriority", 1,
-                "authorisations", "373",
                 "name", "hearing-judge",
                 "roleCategory", "JUDICIAL",
                 "value", "Read,Refer,Own,Cancel"
