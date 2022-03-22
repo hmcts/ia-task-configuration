@@ -626,7 +626,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData(" {\n"
                                       + "        \"Data\" : {\n"
                                       + "          \"listCaseHearingDate\" : \""
-                                      + LocalDateTime.now().plusDays(0).format(DateTimeFormatter.ISO_LOCAL_DATE_TIME)
+                                      + LocalDateTime.now().plusDays(5).format(DateTimeFormatter.ISO_LOCAL_DATE_TIME)
                                       + "\""
                                       + "        }\n"
                                       + "      }"),
@@ -640,7 +640,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "uploadHearingRecording",
                         "name", "Upload hearing recording",
-                        "delayDuration", 0,
+                        "delayDuration", 5,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -879,7 +879,13 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "generateHearingBundle",
                 "finalBundling",
-                null,
+                mapAdditionalData(" {\n"
+                                  + "        \"Data\" : {\n"
+                                  + "          \"listCaseHearingDate\" : \""
+                                  + LocalDateTime.now().plusDays(5).format(DateTimeFormatter.ISO_LOCAL_DATE_TIME)
+                                  + "\""
+                                  + "        }\n"
+                                  + "      }"),
                 List.of(
                     Map.of(
                         "taskId", "reviewHearingBundle",
@@ -890,7 +896,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "allocateHearingJudge",
                         "name", "Allocate Hearing Judge",
-                        "delayDuration", 0,
+                        "delayDuration", 3,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -898,7 +904,13 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "customiseHearingBundle",
                 "finalBundling",
-                null,
+                mapAdditionalData(" {\n"
+                                  + "        \"Data\" : {\n"
+                                  + "          \"listCaseHearingDate\" : \""
+                                  + LocalDateTime.now().plusDays(5).format(DateTimeFormatter.ISO_LOCAL_DATE_TIME)
+                                  + "\""
+                                  + "        }\n"
+                                  + "      }"),
                 List.of(
                     Map.of(
                         "taskId", "reviewHearingBundle",
@@ -909,7 +921,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "allocateHearingJudge",
                         "name", "Allocate Hearing Judge",
-                        "delayDuration", 0,
+                        "delayDuration", 3,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -917,13 +929,19 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "sendToPreHearing",
                 "preHearing",
-                null,
+                mapAdditionalData(" {\n"
+                                  + "        \"Data\" : {\n"
+                                  + "          \"listCaseHearingDate\" : \""
+                                  + LocalDateTime.now().plusDays(5).format(DateTimeFormatter.ISO_LOCAL_DATE_TIME)
+                                  + "\""
+                                  + "        }\n"
+                                  + "      }"),
                 List.of(
                     Map.of(
                         "taskId", "allocateHearingJudge",
                         "name", "Allocate Hearing Judge",
 
-                        "delayDuration", 0,
+                        "delayDuration", 3,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -947,6 +965,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         VariableMap inputVariables = new VariableMapImpl();
         inputVariables.putValue("eventId", eventId);
         inputVariables.putValue("postEventState", postEventState);
+        inputVariables.putValue("now", LocalDateTime.now().minusMinutes(10)
+            .format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
         inputVariables.putValue("additionalData", map);
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
@@ -1022,74 +1042,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             )
         );
-    }
-
-    public static Stream<Arguments> sendToPreHearingScenarioProvider() {
-        return Stream.of(
-            Arguments.of(
-                "sendToPreHearing",
-                "preHearing",
-                singletonList(
-                    Map.of(
-                        "taskId", "allocateHearingJudge",
-                        "name", "Allocate Hearing Judge",
-                        "delayDuration", 0,
-                        "processCategories", "caseProgression"
-                    )
-                )
-            )
-        );
-    }
-
-    @ParameterizedTest
-    @MethodSource("sendToPreHearingScenarioProvider")
-    void send_to_pre_hearing_should_evaluate_dmn(String eventId,
-                                                 String postEventState,
-                                                 List<Map<String, String>> expectation) {
-        VariableMap inputVariables = new VariableMapImpl();
-        inputVariables.putValue("eventId", eventId);
-        inputVariables.putValue("postEventState", postEventState);
-
-        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
-
-        assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
-    }
-
-    public static Stream<Arguments> generateHearingBundleScenarioProvider() {
-        return Stream.of(
-            Arguments.of(
-                "generateHearingBundle",
-                "finalBundling",
-                List.of(
-                    Map.of(
-                        "taskId", "reviewHearingBundle",
-                        "name", "Review Hearing bundle",
-                        "workingDaysAllowed", 0,
-                        "processCategories", "caseProgression"
-                    ),
-                    Map.of(
-                        "taskId", "allocateHearingJudge",
-                        "name", "Allocate Hearing Judge",
-                        "delayDuration", 0,
-                        "processCategories", "caseProgression"
-                    )
-                )
-            )
-        );
-    }
-
-    @ParameterizedTest
-    @MethodSource("generateHearingBundleScenarioProvider")
-    void given_generate_hearing_bundle_should_evaluate_dmn(String eventId,
-                                                           String postEventState,
-                                                           List<Map<String, String>> expectation) {
-        VariableMap inputVariables = new VariableMapImpl();
-        inputVariables.putValue("eventId", eventId);
-        inputVariables.putValue("postEventState", postEventState);
-
-        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
-
-        assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
     }
 
     @ParameterizedTest

@@ -1131,9 +1131,9 @@
           <text>"Upload hearing recording"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0ay6ciw">
-          <text>if (listCaseHearingDate != null) then
-		(date(listCaseHearingDate) -date(now)).days
-            else 0</text>
+          <text>if (additionalData != null and additionalData.Data != null and additionalData.Data.listCaseHearingDate != null and additionalData.Data.listCaseHearingDate != "")
+	then (date and time(additionalData.Data.listCaseHearingDate) - date and time(now)).days
+else 0</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0hz4nyc">
           <text></text>
@@ -1229,9 +1229,9 @@
           <text>"Allocate Hearing Judge"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0p256tl">
-          <text>if (listCaseHearingDate != null and listCaseHearingDate != "") then
-		((date(listCaseHearingDate) - date(now)) - 2).days
-                 else 0</text>
+          <text>if (additionalData != null and additionalData.Data != null and additionalData.Data.listCaseHearingDate != null and additionalData.Data.listCaseHearingDate != "")
+	then ((date and time(additionalData.Data.listCaseHearingDate) - date and time(now))).days - 2
+else 0</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1pijvfs">
           <text></text>
@@ -1263,9 +1263,9 @@
           <text>"Allocate Hearing Judge"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0nlmxvs">
-          <text>if (listCaseHearingDate != null and listCaseHearingDate != "") then
-		((date(listCaseHearingDate) - date(now)) - 2).day
-                else 0</text>
+          <text>if (additionalData != null and additionalData.Data != null and additionalData.Data.listCaseHearingDate != null and additionalData.Data.listCaseHearingDate != "")
+	then ((date and time(additionalData.Data.listCaseHearingDate) - date and time(now))).days - 2
+else 0</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0ze2qn5">
           <text></text>
