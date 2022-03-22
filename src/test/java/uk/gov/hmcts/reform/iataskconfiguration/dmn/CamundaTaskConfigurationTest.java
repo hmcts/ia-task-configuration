@@ -180,10 +180,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("followUpExtendedDirection", routineWork),
             Arguments.of("followUpNonStandardDirection", routineWork),
             Arguments.of("reviewClarifyingQuestionsAnswers", routineWork),
-            Arguments.of("reviewAdditionalEvidence", List.of(
-                routineWork.get(0),
-                decisionMakingWork.get(0)
-            )),
+            Arguments.of("reviewAdditionalEvidence", decisionMakingWork),
             Arguments.of("reviewTheAppeal", decisionMakingWork),
             Arguments.of("followUpOverdueRespondentEvidence", decisionMakingWork),
             Arguments.of("reviewRespondentEvidence", decisionMakingWork),
