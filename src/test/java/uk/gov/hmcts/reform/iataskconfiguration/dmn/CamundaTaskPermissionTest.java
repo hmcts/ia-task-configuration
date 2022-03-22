@@ -40,7 +40,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
     private static final Map<String, Serializable> taskSupervisor = Map.of(
         "autoAssignable", false,
         "name", "task-supervisor",
-        "value", "Read,Refer,Manage,Cancel"
+        "value", "Read,Refer,Execute,Manage,Cancel"
     );
     private static final Map<String, Serializable> caseManager = Map.of(
         "autoAssignable", true,
@@ -223,7 +223,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     Map.of(
                         "name", "task-supervisor",
-                        "value", "Read,Refer,Manage,Cancel",
+                        "value", "Read,Refer,Execute,Manage,Cancel",
                         "autoAssignable", false
                     )
                 )
@@ -234,7 +234,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     Map.of(
                         "name", "task-supervisor",
-                        "value", "Read,Refer,Manage,Cancel",
+                        "value", "Read,Refer,Execute,Manage,Cancel",
                         "autoAssignable", false
                     )
                 )
@@ -245,7 +245,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     Map.of(
                         "name", "task-supervisor",
-                        "value", "Read,Refer,Manage,Cancel",
+                        "value", "Read,Refer,Execute,Manage,Cancel",
                         "autoAssignable", false
                     )
                 )
@@ -256,7 +256,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     Map.of(
                         "name", "task-supervisor",
-                        "value", "Read,Refer,Manage,Cancel",
+                        "value", "Read,Refer,Execute,Manage,Cancel",
                         "autoAssignable", false
                     )
                 )
@@ -301,7 +301,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         MatcherAssert.assertThat(dmnDecisionTableResult.getResultList(), is(List.of(
             Map.of(
                 "name", "task-supervisor",
-                "value", "Read,Refer,Manage,Cancel",
+                "value", "Read,Refer,Execute,Manage,Cancel",
                 "autoAssignable", false
             ), Map.of(
                 "name", "case-manager",
@@ -340,7 +340,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         MatcherAssert.assertThat(dmnDecisionTableResult.getResultList(), is(List.of(
             Map.of(
                 "name", "task-supervisor",
-                "value", "Read,Refer,Manage,Cancel",
+                "value", "Read,Refer,Execute,Manage,Cancel",
                 "autoAssignable", false
             ), Map.of(
                 "name", "case-manager",
@@ -379,7 +379,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         MatcherAssert.assertThat(dmnDecisionTableResult.getResultList(), is(List.of(
             Map.of(
                 "name", "task-supervisor",
-                "value", "Read,Refer,Manage,Cancel",
+                "value", "Read,Refer,Execute,Manage,Cancel",
                 "autoAssignable", false
             ),
             Map.of(
@@ -420,7 +420,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         MatcherAssert.assertThat(dmnDecisionTableResult.getResultList(), is(List.of(
             Map.of(
                 "name", "task-supervisor",
-                "value", "Read,Refer,Manage,Cancel",
+                "value", "Read,Refer,Execute,Manage,Cancel",
                 "autoAssignable", false
             ),
             Map.of(
@@ -451,7 +451,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         MatcherAssert.assertThat(dmnDecisionTableResult.getResultList(), is(List.of(
             Map.of(
                 "name", "task-supervisor",
-                "value", "Read,Refer,Manage,Cancel",
+                "value", "Read,Refer,Execute,Manage,Cancel",
                 "autoAssignable", false
             ),
             Map.of(
