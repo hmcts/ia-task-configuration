@@ -28,5 +28,12 @@
     <packageUrl regex="true">^pkg:maven/com\.h2database/h2@.*$</packageUrl>
     <vulnerabilityName>CWE-94: Improper Control of Generation of Code ('Code Injection')</vulnerabilityName>
   </suppress>
+  <suppress>
+    <notes>
+      <![CDATA[https://nvd.nist.gov/vuln/detail/CVE-2020-36518]]>
+      <![CDATA[https://github.com/FasterXML/jackson-databind/issues/2816]]>
+    </notes>
+    <cve>CVE-2020-36518</cve>
+  </suppress>
 </suppressions>
 
