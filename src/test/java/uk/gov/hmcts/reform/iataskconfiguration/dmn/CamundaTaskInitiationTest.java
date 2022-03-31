@@ -128,6 +128,60 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "submitAppeal",
+                "appealSubmitted",
+                mapAdditionalData("{\n"
+                                  + "   \"Data\":{\n"
+                                  + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
+                                  + "      \"journeyType\":\"" + "aip" + "\"\n"
+                                  + "   }"
+                                  + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewTheAppeal",
+                        "name", "Review the appeal",
+                        "workingDaysAllowed", 2,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "submitAppeal",
+                "appealSubmitted",
+                mapAdditionalData("{\n"
+                                  + "   \"Data\":{\n"
+                                  + "      \"appealType\":\"" + "refusalOfEu" + "\",\n"
+                                  + "      \"journeyType\":\"" + "aip" + "\"\n"
+                                  + "   }"
+                                  + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewTheAppeal",
+                        "name", "Review the appeal",
+                        "workingDaysAllowed", 2,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "submitAppeal",
+                "appealSubmitted",
+                mapAdditionalData("{\n"
+                                  + "   \"Data\":{\n"
+                                  + "      \"appealType\":\"" + "protection" + "\",\n"
+                                  + "      \"journeyType\":\"" + "aip" + "\"\n"
+                                  + "   }"
+                                  + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewTheAppeal",
+                        "name", "Review the appeal",
+                        "workingDaysAllowed", 2,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
                 "payAndSubmitAppeal",
                 "appealSubmitted",
                 mapAdditionalData("{\n"
@@ -955,7 +1009,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         );
     }
 
-    @ParameterizedTest(name = "event id: {0} post event state: {1} appeal type: {2}")
+    @ParameterizedTest(name = "event id: {0} post event state: {1} additional data: {2}")
     @MethodSource("scenarioProvider")
     void given_multiple_event_ids_should_evaluate_dmn(String eventId,
                                                       String postEventState,
@@ -1112,9 +1166,9 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getInputs().size(), is(5));
+        assertThat(logic.getInputs().size(), is(6));
         assertThat(logic.getOutputs().size(), is(5));
-        assertThat(logic.getRules().size(), is(36));
+        assertThat(logic.getRules().size(), is(37));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {
