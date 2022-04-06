@@ -933,13 +933,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "generateHearingBundle",
                 "finalBundling",
-                mapAdditionalData(" {\n"
-                                  + "        \"Data\" : {\n"
-                                  + "          \"listCaseHearingDate\" : \""
-                                  + LocalDateTime.now().plusDays(5).format(DateTimeFormatter.ISO_LOCAL_DATE_TIME)
-                                  + "\""
-                                  + "        }\n"
-                                  + "      }"),
+                null,
                 List.of(
                     Map.of(
                         "taskId", "reviewHearingBundle",
@@ -950,7 +944,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "allocateHearingJudge",
                         "name", "Allocate Hearing Judge",
-                        "delayDuration", 3,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -958,13 +951,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "customiseHearingBundle",
                 "finalBundling",
-                mapAdditionalData(" {\n"
-                                  + "        \"Data\" : {\n"
-                                  + "          \"listCaseHearingDate\" : \""
-                                  + LocalDateTime.now().plusDays(5).format(DateTimeFormatter.ISO_LOCAL_DATE_TIME)
-                                  + "\""
-                                  + "        }\n"
-                                  + "      }"),
+                null,
                 List.of(
                     Map.of(
                         "taskId", "reviewHearingBundle",
@@ -975,7 +962,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "allocateHearingJudge",
                         "name", "Allocate Hearing Judge",
-                        "delayDuration", 3,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -983,19 +969,11 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "sendToPreHearing",
                 "preHearing",
-                mapAdditionalData(" {\n"
-                                  + "        \"Data\" : {\n"
-                                  + "          \"listCaseHearingDate\" : \""
-                                  + LocalDateTime.now().plusDays(5).format(DateTimeFormatter.ISO_LOCAL_DATE_TIME)
-                                  + "\""
-                                  + "        }\n"
-                                  + "      }"),
+                null,
                 List.of(
                     Map.of(
                         "taskId", "allocateHearingJudge",
                         "name", "Allocate Hearing Judge",
-
-                        "delayDuration", 3,
                         "processCategories", "caseProgression"
                     )
                 )

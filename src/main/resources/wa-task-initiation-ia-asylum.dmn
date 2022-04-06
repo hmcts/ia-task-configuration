@@ -1378,9 +1378,7 @@ else 0</text>
           <text>"Allocate Hearing Judge"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0p256tl">
-          <text>if (additionalData != null and additionalData.Data != null and additionalData.Data.listCaseHearingDate != null and additionalData.Data.listCaseHearingDate != "")
-	then ((date and time(additionalData.Data.listCaseHearingDate) - date and time(now))).days - 2
-else 0</text>
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1pijvfs">
           <text></text>
@@ -1415,9 +1413,7 @@ else 0</text>
           <text>"Allocate Hearing Judge"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0nlmxvs">
-          <text>if (additionalData != null and additionalData.Data != null and additionalData.Data.listCaseHearingDate != null and additionalData.Data.listCaseHearingDate != "")
-	then ((date and time(additionalData.Data.listCaseHearingDate) - date and time(now))).days - 2
-else 0</text>
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0ze2qn5">
           <text></text>
