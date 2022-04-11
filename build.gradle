@@ -205,9 +205,21 @@ dependencyManagement {
       entry 'logback-core'
     }
 
-    //CVE-2021-22060
-    dependency group: 'org.springframework', name: 'spring-core', version: '5.3.15'
-
+    // CVE-2021-22965
+    dependencySet(group: 'org.springframework', version: '5.3.18') {
+      entry 'spring-core'
+      entry 'spring-aop'
+      entry 'spring-beans'
+      entry 'spring-context'
+      entry 'spring-context-support'
+      entry 'spring-expression'
+      entry 'spring-jcl'
+      entry 'spring-jdbc'
+      entry 'spring-tx'
+      entry 'spring-web'
+      entry 'spring-webmvc'
+      entry 'spring-test'
+    }
   }
 }
 
