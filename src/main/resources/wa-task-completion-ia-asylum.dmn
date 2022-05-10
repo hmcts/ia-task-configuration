@@ -44,7 +44,7 @@
       </rule>
       <rule id="DecisionRule_1v9cegc">
         <inputEntry id="UnaryTests_1ckmgqx">
-          <text>"requestResponseReview","sendDirectionWithQuestions","requestCmaRequirements"</text>
+          <text>"requestRespondentReview","sendDirectionWithQuestions","requestCmaRequirements"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_11wnabl">
           <text>"reviewReasonsForAppeal"</text>
