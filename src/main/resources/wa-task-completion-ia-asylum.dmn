@@ -55,7 +55,7 @@
       </rule>
       <rule id="DecisionRule_0vuq3ym">
         <inputEntry id="UnaryTests_025guv0">
-          <text>"requestResponseReview","sendDirectionWithQuestions","requestCmaRequirements"</text>
+          <text>"requestRespondentReview","sendDirectionWithQuestions","requestCmaRequirements"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_03hy3xh">
           <text>"reviewClarifyingQuestionsAnswers"</text>
