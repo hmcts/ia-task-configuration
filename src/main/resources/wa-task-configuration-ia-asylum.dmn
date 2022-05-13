@@ -7,7 +7,7 @@
           <text></text>
         </inputExpression>
       </input>
-      <input id="InputClause_1gmuynt" label="Task type" biodi:width="415" camunda:inputVariable="taskType">
+      <input id="InputClause_1gmuynt" label="Task type" biodi:width="150" camunda:inputVariable="taskType">
         <inputExpression id="LiteralExpression_06iiuqg" typeRef="string">
           <text>if(taskAttributes != null and taskAttributes.taskType != null) then
                         taskAttributes. taskType
@@ -18,8 +18,8 @@
                     </text>
         </inputExpression>
       </input>
-      <output id="Output_1" label="Name" name="name" typeRef="string" />
-      <output id="OutputClause_021y3bb" label="Value" name="value" typeRef="string" biodi:width="803" />
+      <output id="Output_1" label="Name" name="name" typeRef="string" biodi:width="150" />
+      <output id="OutputClause_021y3bb" label="Value" name="value" typeRef="string" biodi:width="1973" />
       <rule id="DecisionRule_0u7yi27">
         <inputEntry id="UnaryTests_03ky0ek">
           <text></text>
@@ -374,8 +374,6 @@
                         then "[Request respondent review](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentReview)&lt;br /&gt;[Send direction with questions](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDirectionWithQuestions)"
 			                  else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewReasonsForAppeal" or taskType != null and taskType ="reviewReasonsForAppeal")
                         then "[Request respondent review](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentReview)&lt;br /&gt;[Request CMA requirements](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestCmaRequirements)"
-                        else if ((taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewClarifyingQuestionsAnswers" or taskType != null and taskType ="reviewClarifyingQuestionsAnswers") and (caseData != null and caseData.journeyType = "aip"))
-                        then "[Request respondent review](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentReview)&lt;br /&gt;[Send direction with questions](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDirectionWithQuestions)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewClarifyingQuestionsAnswers" or taskType != null and taskType ="reviewClarifyingQuestionsAnswers")
                         then "[Request respondent review](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentReview)&lt;br /&gt;[Request CMA requirements](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestCmaRequirements)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewCmaRequirements" or taskType != null and taskType = "reviewCmaRequirements")
