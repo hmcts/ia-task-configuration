@@ -554,9 +554,6 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "reviewReasonsForAppeal,"
             + "[Request respondent review](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentReview)<br />"
             + "[Request CMA requirements](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestCmaRequirements),",
-        "reviewClarifyingQuestionsAnswers,"
-            + "[Request respondent review](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentReview)<br />"
-            + "[Request CMA requirements](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestCmaRequirements),",
         "reviewCmaRequirements,"
             + "[Review CMA Requirements](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/reviewCmaRequirements),",
         "attendCma,"
