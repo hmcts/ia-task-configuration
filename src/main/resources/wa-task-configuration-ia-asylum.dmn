@@ -308,7 +308,8 @@
                         "followUpNonStandardDirection",
                         "followUpNoticeOfChange",
                         "reviewAdditionalEvidence",
-                        "reviewAdditionalHomeOfficeEvidence","reviewSpecificAccessRequestLegalOps"
+                        "reviewAdditionalHomeOfficeEvidence","reviewSpecificAccessRequestLegalOps",
+            "followUpExtendedDirection"
                     </text>
         </inputEntry>
         <outputEntry id="LiteralExpression_05l5bvs">
