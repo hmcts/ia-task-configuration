@@ -206,8 +206,15 @@ dependencyManagement {
     }
 
     //CVE-2021-22060
-    dependency group: 'org.springframework', name: 'spring-core', version: '5.3.15'
-
+    dependencySet(group: 'org.springframework', name: 'spring-core', version: '5.3.19') {
+      entry 'spring-core'
+      entry 'spring-aop'
+      entry 'spring-beans'
+      entry 'spring-context'
+      entry 'spring-expression'
+      entry 'spring-jcl'
+      entry 'spring-web'
+    }
   }
 }
 
@@ -258,11 +265,6 @@ dependencies {
   implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-core', version: versions.tomcat
   implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-websocket', version: versions.tomcat
 
-  implementation group: 'org.camunda.bpm', name: 'camunda-external-task-client', version: versions.camunda
-
-  annotationProcessor 'org.projectlombok:lombok:1.18.20'
-  compileOnly 'org.projectlombok:lombok:1.18.20'
-
   testCompile group: 'org.pitest', name: 'pitest', version: versions.pitest
   testCompile 'info.solidsoft.gradle.pitest:gradle-pitest-plugin:1.5.2'
 
@@ -277,7 +279,6 @@ dependencies {
   testImplementation group: 'org.camunda.bpm.dmn', name: 'camunda-engine-dmn', version: versions.camunda
   testImplementation group: 'org.camunda.bpm.assert', name: 'camunda-bpm-assert', version: '8.0.0'
   testImplementation group: 'org.camunda.bpm', name: 'camunda-engine', version: versions.camunda
-  testImplementation group: 'com.h2database', name: 'h2', version: '1.4.200'
 
   integrationTestImplementation sourceSets.main.runtimeClasspath
   integrationTestImplementation sourceSets.test.runtimeClasspath
@@ -285,8 +286,6 @@ dependencies {
   functionalTestImplementation sourceSets.main.runtimeClasspath
 
   smokeTestImplementation sourceSets.main.runtimeClasspath
-
-
 }
 
 mainClassName = 'uk.gov.hmcts.reform.iataskconfiguration.Application'

@@ -9,6 +9,7 @@ import org.camunda.bpm.engine.variable.impl.VariableMapImpl;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.platform.commons.util.StringUtils;
@@ -36,11 +37,34 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         CURRENT_DMN_DECISION_TABLE = WA_TASK_CONFIGURATION_IA_ASYLUM;
     }
 
+    @ParameterizedTest
+    @CsvSource({
+        "followUpNoticeOfChange"
+    })
+    void when_taskId_then_return_Access_Requests(String taskType) {
+        VariableMap inputVariables = new VariableMapImpl();
+
+        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        List<Map<String, Object>> workTypeResultList = dmnDecisionTableResult.getResultList().stream()
+            .filter((r) -> r.containsValue("workType"))
+            .collect(Collectors.toList());
+
+        assertEquals(1, workTypeResultList.size());
+
+        assertEquals(Map.of(
+            "name", "workType",
+            "value", "access_requests"
+        ), workTypeResultList.get(0));
+    }
+
     @Test
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(16));
+        assertThat(logic.getRules().size(), is(17));
     }
 
     @SuppressWarnings("checkstyle:indentation")
@@ -126,129 +150,76 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         }
     }
 
-    @ParameterizedTest
-    @CsvSource({"arrangeOfflinePayment", "markCaseAsPaid"})
-    void when_taskId_then_return_Routine_Work(String taskType) {
-        VariableMap inputVariables = new VariableMapImpl();
-
-        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
-
-        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
-
-        List<Map<String, Object>> workTypeResultList = dmnDecisionTableResult.getResultList().stream()
-            .filter((r) -> r.containsValue("workType"))
-            .collect(Collectors.toList());
-
-        assertEquals(1, workTypeResultList.size());
-
-        assertEquals(Map.of(
+    public static Stream<Arguments> workTypeScenarioProvider() {
+        List<Map<String, String>> routineWork = List.of(Map.of(
             "name", "workType",
             "value", "routine_work"
-        ), workTypeResultList.get(0));
-    }
-
-    @ParameterizedTest
-    @CsvSource({
-        "reviewTheAppeal", "followUpOverdueRespondentEvidence", "reviewRespondentEvidence",
-        "followUpOverdueCaseBuilding",
-        "reviewAppealSkeletonArgument", "followUpOverdueReasonsForAppeal", "reviewReasonsForAppeal",
-        "followUpOverdueClarifyingAnswers", "reviewClarifyingAnswers", "followUpOverdueRespondentReview",
-        "reviewRespondentResponse", "followUpOverdueCMARequirements", "reviewCmaRequirements",
-        "reviewAdditionalHomeOfficeEvidence", "reviewAdditionalAppellantEvidence", "reviewAddendumHomeOfficeEvidence",
-        "reviewAddendumAppellantEvidence", "reviewAddendumEvidence", "processReviewDecisionApplication",
-        "reviewAdditionalEvidence"
-    })
-    void when_taskId_then_return_Decision_making_work(String taskType) {
-        VariableMap inputVariables = new VariableMapImpl();
-
-        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
-
-        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
-
-        List<Map<String, Object>> workTypeResultList = dmnDecisionTableResult.getResultList().stream()
-            .filter((r) -> r.containsValue("workType"))
-            .collect(Collectors.toList());
-
-        assertEquals(1, workTypeResultList.size());
-
-        assertEquals(Map.of(
+        ));
+        List<Map<String, String>> decisionMakingWork = List.of(Map.of(
             "name", "workType",
             "value", "decision_making_work"
-        ), workTypeResultList.get(0));
-    }
-
-    @ParameterizedTest
-    @CsvSource({
-        "addListingDate", "createHearingBundle", "reviewHearingBundle", "generateDraftDecisionAndReasons",
-        "uploadDecision", "uploadHearingRecording", "updateHearingRequirements", "editListing",
-        "followUpOverdueHearingRequirements", "reviewHearingRequirements"
-    })
-    void when_taskId_then_return_Hearing_Work(String taskType) {
-        VariableMap inputVariables = new VariableMapImpl();
-
-        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
-
-        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
-
-        List<Map<String, Object>> workTypeResultList = dmnDecisionTableResult.getResultList().stream()
-            .filter((r) -> r.containsValue("workType"))
-            .collect(Collectors.toList());
-
-        assertEquals(1, workTypeResultList.size());
-
-        assertEquals(Map.of(
+        ));
+        List<Map<String, String>> hearingWork = List.of(Map.of(
             "name", "workType",
             "value", "hearing_work"
-        ), workTypeResultList.get(0));
-    }
-
-    @ParameterizedTest
-    @CsvSource({
-        "processApplication", "processHearingRequirementsApplication", "processHearingCentreApplication",
-        "processApplicationToExpedite", "processApplicationToTransfer", "processApplicationForTimeExtension",
-        "processApplicationToWithdraw", "processAppealDetailsApplication", "processLinkedCaseApplication",
-        "processReinstatementApplication"
-    })
-    void when_taskId_then_return_Applications(String taskType) {
-        VariableMap inputVariables = new VariableMapImpl();
-
-        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
-
-        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
-
-        List<Map<String, Object>> workTypeResultList = dmnDecisionTableResult.getResultList().stream()
-            .filter((r) -> r.containsValue("workType"))
-            .collect(Collectors.toList());
-
-        assertEquals(1, workTypeResultList.size());
-
-        assertEquals(Map.of(
+        ));
+        List<Map<String, String>> applications = List.of(Map.of(
             "name", "workType",
             "value", "applications"
-        ), workTypeResultList.get(0));
-    }
-
-    @ParameterizedTest
-    @CsvSource({
-        "allocationFTPAToJudge", "decideOnFTPA"
-    })
-    void when_taskId_then_return_Upper_Tribunal(String taskType) {
-        VariableMap inputVariables = new VariableMapImpl();
-
-        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
-
-        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
-
-        List<Map<String, Object>> workTypeResultList = dmnDecisionTableResult.getResultList().stream()
-            .filter((r) -> r.containsValue("workType"))
-            .collect(Collectors.toList());
-
-        assertEquals(1, workTypeResultList.size());
-
-        assertEquals(Map.of(
+        ));
+        List<Map<String, String>> upperTribunal = List.of(Map.of(
             "name", "workType",
             "value", "upper_tribunal"
-        ), workTypeResultList.get(0));
+        ));
+
+        return Stream.of(
+            Arguments.of("arrangeOfflinePayment", routineWork),
+            Arguments.of("markCaseAsPaid", routineWork),
+            Arguments.of("attendCma", routineWork),
+            Arguments.of("caseSummaryHearingBundleStartDecision", routineWork),
+            Arguments.of("followUpExtendedDirection", routineWork),
+            Arguments.of("followUpNonStandardDirection", routineWork),
+            Arguments.of("reviewClarifyingQuestionsAnswers", routineWork),
+            Arguments.of("reviewAdditionalEvidence", decisionMakingWork),
+            Arguments.of("reviewTheAppeal", decisionMakingWork),
+            Arguments.of("followUpOverdueRespondentEvidence", decisionMakingWork),
+            Arguments.of("reviewRespondentEvidence", decisionMakingWork),
+            Arguments.of("followUpOverdueCaseBuilding", decisionMakingWork),
+            Arguments.of("reviewAppealSkeletonArgument", decisionMakingWork),
+            Arguments.of("followUpOverdueReasonsForAppeal", decisionMakingWork),
+            Arguments.of("reviewReasonsForAppeal", decisionMakingWork),
+            Arguments.of("followUpOverdueClarifyingAnswers", decisionMakingWork),
+            Arguments.of("reviewClarifyingAnswers", decisionMakingWork),
+            Arguments.of("followUpOverdueRespondentReview", decisionMakingWork),
+            Arguments.of("reviewRespondentResponse", decisionMakingWork),
+            Arguments.of("followUpOverdueCMARequirements", decisionMakingWork),
+            Arguments.of("reviewCmaRequirements", decisionMakingWork),
+            Arguments.of("reviewAdditionalHomeOfficeEvidence", decisionMakingWork),
+            Arguments.of("reviewAdditionalAppellantEvidence", decisionMakingWork),
+            Arguments.of("reviewAddendumHomeOfficeEvidence", decisionMakingWork),
+            Arguments.of("decideOnTimeExtension", decisionMakingWork),
+            Arguments.of("sendDecisionsAndReasons", decisionMakingWork),
+            Arguments.of("reviewHearingBundle", hearingWork),
+            Arguments.of("generateDraftDecisionAndReasons", hearingWork),
+            Arguments.of("uploadDecision", hearingWork),
+            Arguments.of("uploadHearingRecording", hearingWork),
+            Arguments.of("editListing", hearingWork),
+            Arguments.of("followUpOverdueHearingRequirements", hearingWork),
+            Arguments.of("reviewHearingRequirements", hearingWork),
+            Arguments.of("allocateHearingJudge", hearingWork),
+            Arguments.of("prepareDecisionsAndReasons", hearingWork),
+            Arguments.of("processApplication", applications),
+            Arguments.of("processHearingRequirementsApplication", applications),
+            Arguments.of("processHearingCentreApplication", applications),
+            Arguments.of("processApplicationToExpedite", applications),
+            Arguments.of("processApplicationToTransfer", applications),
+            Arguments.of("processApplicationForTimeExtension", applications),
+            Arguments.of("processApplicationToWithdraw", applications),
+            Arguments.of("processAppealDetailsApplication", applications),
+            Arguments.of("processReinstatementApplication", applications),
+            Arguments.of("processApplicationToReviewDecision", applications),
+            Arguments.of("decideAnFTPA", upperTribunal)
+        );
     }
 
     @ParameterizedTest
@@ -276,9 +247,26 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     }
 
     @ParameterizedTest
+    @MethodSource("workTypeScenarioProvider")
+    void when_taskId_then_return_workType(String taskType, List<Map<String, String>> expected) {
+        VariableMap inputVariables = new VariableMapImpl();
+
+        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        List<Map<String, Object>> workTypeResultList = dmnDecisionTableResult.getResultList().stream()
+            .filter((r) -> r.containsValue("workType"))
+            .collect(Collectors.toList());
+
+        assertEquals(expected, workTypeResultList);
+    }
+
+    @ParameterizedTest
     @CsvSource({
-        "reviewHearingBundle","generateDraftDecisionAndReasons","uploadDecision","reviewAddendumHomeOfficeEvidence",
-        "reviewAddendumAppellantEvidence","reviewAddendumEvidence"
+        "reviewHearingBundle", "generateDraftDecisionAndReasons", "uploadDecision", "reviewAddendumHomeOfficeEvidence",
+        "reviewAddendumAppellantEvidence", "reviewAddendumEvidence", "reviewSpecificAccessRequestJudiciary",
+        "processApplicationToReviewDecision", "sendDecisionsAndReasons", "prepareDecisionsAndReasons", "decideAnFTPA"
     })
     void when_taskId_then_return_judicial_role_category(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
@@ -301,9 +289,9 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
     @ParameterizedTest
     @CsvSource({
-        "arrangeOfflinePayment","markCaseAsPaid","addListingDate","allocateHearingJudge","uploadHearingRecording"
+        "arrangeOfflinePayment", "markCaseAsPaid", "allocateHearingJudge", "uploadHearingRecording", "editListing"
     })
-    void when_taskId_then_return_administrator_role_category(String taskType) {
+    void when_taskId_then_return_Admin_role_category(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
 
         inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
@@ -324,14 +312,14 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
     @ParameterizedTest
     @CsvSource({
-        "processApplication","reviewTheAppeal","decideOnTimeExtension","reviewRespondentEvidence",
-        "reviewAppealSkeletonArgument","reviewReasonsForAppeal","reviewClarifyingQuestionsAnswers",
-        "reviewCmaRequirements","attendCma","reviewRespondentResponse","createCaseSummary","createHearingBundle",
-        "startDecisionsAndReasonsDocument","reviewHearingRequirements","followUpOverdueRespondentEvidence",
-        "followUpOverdueCaseBuilding","followUpOverdueReasonsForAppeal","followUpOverdueClarifyingAnswers",
-        "followUpOverdueCmaRequirements","followUpOverdueRespondentReview","followUpOverdueHearingRequirements",
-        "followUpNonStandardDirection","followUpNoticeOfChange","reviewAdditionalEvidence",
-        "reviewAdditionalHomeOfficeEvidence"
+        "processApplication", "reviewTheAppeal", "decideOnTimeExtension", "reviewRespondentEvidence",
+        "reviewAppealSkeletonArgument", "reviewReasonsForAppeal", "reviewClarifyingQuestionsAnswers",
+        "reviewCmaRequirements", "attendCma", "reviewRespondentResponse", "caseSummaryHearingBundleStartDecision",
+        "reviewHearingRequirements", "followUpOverdueRespondentEvidence",
+        "followUpOverdueCaseBuilding", "followUpOverdueReasonsForAppeal", "followUpOverdueClarifyingAnswers",
+        "followUpOverdueCmaRequirements", "followUpOverdueRespondentReview", "followUpOverdueHearingRequirements",
+        "followUpNonStandardDirection", "followUpNoticeOfChange", "reviewAdditionalEvidence",
+        "reviewAdditionalHomeOfficeEvidence","reviewSpecificAccessRequestLegalOps"
     })
     void when_taskId_then_return_legal_operations_role_category(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
@@ -401,8 +389,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             .expectedCaseManagementCategoryValue("Human rights")
             .expectedWorkType("routine_work")
             .expectedRoleCategory("ADMIN")
-            .expectedDescriptionValue("[Mark the appeal as "
-                                      + "paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid)")
+            .expectedDescriptionValue(
+                "[Mark the appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid)")
             .build();
 
         Scenario givenSomeCaseDataAndArrangeOfflinePaymentTaskIdThenReturnExpectedNameAndValueScenario =
@@ -417,11 +405,17 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     ),
                     "staffLocation", "some other location name",
                     "caseManagementCategory", Map.of(
-                        "value", Map.of("code", "refusalOfHumanRights", "label", "Refusal of a human rights claim"),
-                        "list_items", List.of(Map.of("code", "refusalOfHumanRights", "label", refusalOfEuLabel))
+                        "value", Map.of(
+                            "code", "refusalOfHumanRights",
+                            "label", "Refusal of a human rights claim"
+                        ),
+                        "list_items", List.of(Map.of(
+                            "code", "refusalOfHumanRights",
+                            "label", refusalOfEuLabel
+                        ))
                     )
                 ))
-                .taskAttributes(Map.of("taskType", "arrangeOfflinePayment"))
+                .taskAttributes(Map.of("taskType", "markCaseAsPaid"))
                 .expectedCaseNameValue("some appellant given names some appellant family name")
                 .expectedAppealTypeValue("Human rights")
                 .expectedRegionValue("some other region")
@@ -431,7 +425,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 .expectedWorkType("routine_work")
                 .expectedRoleCategory("ADMIN")
                 .expectedDescriptionValue("[Mark the appeal as "
-                                          + "paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid)")
+                                              + "paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid)")
                 .build();
 
         Scenario givenSomeCaseDataAndTaskTypeIsEmptyThenExpectNoWorkTypeRuleScenario =
@@ -446,8 +440,13 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     ),
                     "staffLocation", "some other location name",
                     "caseManagementCategory", Map.of(
-                        "value", Map.of("code", "refusalOfHumanRights", "label", "Refusal of a human rights claim"),
-                        "list_items", List.of(Map.of("code", "refusalOfHumanRights", "label", refusalOfEuLabel))
+                        "value", Map.of(
+                            "code", "refusalOfHumanRights",
+                            "label", "Refusal of a human rights claim"
+                        ),
+                        "list_items", List.of(Map.of(
+                            "code", "refusalOfHumanRights",
+                            "label", refusalOfEuLabel))
                     )
                 ))
                 .taskAttributes(Map.of("taskType", "markCaseAsPaid"))
@@ -460,7 +459,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 .expectedWorkType("routine_work")
                 .expectedRoleCategory("ADMIN")
                 .expectedDescriptionValue("[Mark the appeal as "
-                                          + "paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid)")
+                                              + "paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid)")
                 .build();
 
         Scenario givenNoCaseDataAndSomeTaskTypeThenExpectOnlyTheWorkTypeRuleScenario =
@@ -476,7 +475,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 .expectedWorkType("routine_work")
                 .expectedRoleCategory("ADMIN")
                 .expectedDescriptionValue("[Mark the appeal as "
-                                          + "paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid)")
+                                              + "paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid)")
                 .build();
 
         return Stream.of(
@@ -513,12 +512,12 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         getExpectedValue(rules, "location", scenario.getExpectedLocationValue());
         getExpectedValue(rules, "locationName", scenario.getExpectedLocationNameValue());
         getExpectedValue(rules, "caseManagementCategory", scenario.getExpectedCaseManagementCategoryValue());
-
         if (!Objects.isNull(scenario.getTaskAttributes())
             && StringUtils.isNotBlank(scenario.taskAttributes.get("taskType").toString())) {
             getExpectedValue(rules, "workType", scenario.getExpectedWorkType());
             getExpectedValue(rules, "roleCategory", scenario.getExpectedRoleCategory());
         }
+
         getExpectedValue(rules, "description", scenario.getExpectedDescriptionValue());
         return rules;
     }
@@ -533,69 +532,78 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     @ParameterizedTest
     @CsvSource({
         "processApplication,"
-        + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)",
+            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),",
         "reviewTheAppeal,[Request respondent evidence]"
-                          + "(/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentEvidence)",
+            + "(/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentEvidence),",
         "decideOnTimeExtension,"
-        + "[Change the direction due date](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/changeDirectionDueDate)",
+            + "[Change the direction due date](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/changeDirectionDueDate),",
         "reviewRespondentEvidence,"
-        + "[Request case building](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestCaseBuilding)<br />"
-        + "[Request reasons for appeal](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestReasonsForAppeal)<br />"
-        + "[Send non-standard direction](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDirection)",
+            + "[Request reasons for appeal](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestReasonsForAppeal)<br />"
+            + "[Send non-standard direction](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDirection),"
+            + "aip",
+        "reviewRespondentEvidence,"
+            + "[Request case building](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestCaseBuilding)<br />"
+            + "[Send non-standard direction](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDirection),",
         "reviewAppealSkeletonArgument,"
-        + "[Request respondent review](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentReview)<br />"
-        + "[Request case edit](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestCaseEdit)",
+            + "[Request respondent review](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentReview)<br />"
+            + "[Request case edit](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestCaseEdit),",
         "reviewReasonsForAppeal,"
-        + "[Request respondent review](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentReview)<br />"
-        + "[Send direction with questions](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDirectionWithQuestions)"
-        + "<br />[Request CMA requirements](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestCmaRequirements)",
-        "reviewClarifyingQuestionsAnswers,"
-        + "[Request respondent review](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentReview)<br />"
-        + "[Send direction with questions](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDirectionWithQuestions)"
-        + "<br />[Request CMA requirements](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestCmaRequirements)",
+            + "[Request respondent review](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentReview)<br />"
+            + "[Send direction with questions](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDirectionWithQuestions),"
+            + "aip",
+        "reviewReasonsForAppeal,"
+            + "[Request respondent review](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentReview)<br />"
+            + "[Request CMA requirements](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestCmaRequirements),",
         "reviewCmaRequirements,"
-        + "[Review CMA Requirements](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/reviewCmaRequirements)",
+            + "[Review CMA Requirements](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/reviewCmaRequirements),",
         "attendCma,"
-        + "[Update case details after CMA](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/updateDetailsAfterCma)",
+            + "[Update case details after CMA](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/updateDetailsAfterCma),",
         "reviewRespondentResponse,"
-        + "[Review Home Office response](/case/IA/Asylum/${[CASE_REFERENCE]}/"
-        + "trigger/requestResponseReview)<br />[Amend appeal response](/case/IA/Asylum/${[CASE_REFERENCE]}/"
-        + "trigger/requestResponseAmend)",
-        "createCaseSummary,"
-        + "[Create case summary](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/createCaseSummary)",
+            + "[Review Home Office response](/case/IA/Asylum/${[CASE_REFERENCE]}/"
+            + "trigger/requestResponseReview)<br />[Amend appeal response](/case/IA/Asylum/${[CASE_REFERENCE]}/"
+            + "trigger/requestResponseAmend),",
         "createHearingBundle,"
-        + "[Generate the hearing bundle](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger"
-        + "/generateHearingBundle)<br />"
-        + "[Customise the hearing bundle](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/customiseHearingBundle)",
+            + "[Generate the hearing bundle](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger"
+            + "/generateHearingBundle)<br />"
+            + "[Customise the hearing bundle](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/customiseHearingBundle),",
         "startDecisionsAndReasonsDocument,"
-        + "[Start decision and reasons document](/case/IA/Asylum/${[CASE_REFERENCE]}"
-        + "/trigger/decisionAndReasonsStarted/decisionAndReasonsStartedcaseIntroduction)",
+            + "[Start decision and reasons document](/case/IA/Asylum/${[CASE_REFERENCE]}"
+            + "/trigger/decisionAndReasonsStarted/decisionAndReasonsStartedcaseIntroduction),",
         "reviewHearingRequirements,"
-        + "[Review hearing requirements](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger"
-        + "/reviewHearingRequirements)",
+            + "[Review hearing requirements](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger"
+            + "/reviewHearingRequirements),",
         "reviewAdditionalEvidence,[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markEvidence"
-        + "AsReviewed)",
+            + "AsReviewed),",
         "reviewAdditionalHomeOfficeEvidence,[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markEvidence"
-        + "AsReviewed)",
-        "arrangeOfflinePayment,[Mark the appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid)",
-        "markCaseAsPaid,[Mark the appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid)",
-        "addListingDate,[List the case](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/listCase)",
-        "allocateHearingJudge,[Allocate Hearing Judge](/role-access/allocate-role/allocate?caseId=${[CASE_REFERENCE]}"
-        + "&roleCategory=${[JUDICIAL]})",
+            + "AsReviewed),",
+        "arrangeOfflinePayment,[Mark the appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid),",
+        "markCaseAsPaid,[Mark the appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid),",
+        "allocateHearingJudge," + "[Allocate Hearing Judge](/role-access/allocate-role/allocate?caseId="
+            + "${[CASE_REFERENCE]}&roleCategory=JUDICIAL&jurisdiction=IA),",
         "uploadHearingRecording,[Upload the hearing recording](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/upload"
-        + "HearingRecording)",
+            + "HearingRecording),",
         "generateDraftDecisionAndReasons,[Generate the draft decisions and reasons document](/case/IA/Asylum"
-        + "/${[CASE_REFERENCE]}/trigger/generateDecisionAndReasons)",
-        "reviewAddendumHomeOfficeEvidence,[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
-        + "markEvidenceAsReviewed)",
-        "reviewAddendumAppellantEvidence,[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
-        + "markEvidenceAsReviewed)",
-        "reviewAddendumEvidence,[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markEvidenceAsReviewed)"
+            + "/${[CASE_REFERENCE]}/trigger/generateDecisionAndReasons),",
+        "reviewAddendumEvidence,[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
+            + "markAddendumEvidenceAsReviewed),",
+        "editListing,[Edit case listing](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/editCaseListing),",
+        "decideAnFTPA,[Leadership judge FTPA decision](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
+            + "leadershipJudgeFtpaDecision)<br />"
+            + "[Resident judge FTPA decision](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/residentJudgeFtpaDecision),",
+        "prepareDecisionsAndReasons,[Prepare decisions and reasons](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
+            + "generateDecisionAndReasons),",
+        "sendDecisionsAndReasons,[Complete decision and reasons](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
+            + "sendDecisionAndReasons),",
+        "processApplicationToReviewDecision, [Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
+            + "decideAnApplication),"
     })
-    void should_return_a_200_description_property(String taskType, String expectedDescription) {
+    void should_return_a_200_description_property(String taskType, String expectedDescription, String journeyType) {
         VariableMap inputVariables = new VariableMapImpl();
 
         inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
+        if (journeyType != null) {
+            inputVariables.putValue("caseData", Map.of("journeyType", journeyType));
+        }
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
@@ -611,5 +619,6 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         ), descriptionList.get(0));
 
     }
+
 }
 
