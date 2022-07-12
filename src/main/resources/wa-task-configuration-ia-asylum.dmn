@@ -203,10 +203,7 @@
                         "reviewAddendumAppellantEvidence",
                         "reviewAddendumEvidence",
                         "decideOnTimeExtension",
-                        "startDecisionsAndReasonsDocument",
-                        "createHearingBundle",
-                        "createCaseSummary"
-                    </text>
+                        "sendDecisionsAndReasons"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0omxasv">
           <text>"workType"</text>
@@ -220,7 +217,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1ps3x4j">
-          <text>"reviewHearingBundle","generateDraftDecisionAndReasons","uploadDecision","uploadHearingRecording","editListing","followUpOverdueHearingRequirements","reviewHearingRequirements","allocateHearingJudge", "prepareDecisionsAndReasons"</text>
+          <text>"reviewHearingBundle","generateDraftDecisionAndReasons","uploadDecision","uploadHearingRecording","editListing","followUpOverdueHearingRequirements","reviewHearingRequirements","allocateHearingJudge","prepareDecisionsAndReasons","startDecisionsAndReasonsDocument","createHearingBundle","createCaseSummary"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0c3eia6">
           <text>"workType"</text>
