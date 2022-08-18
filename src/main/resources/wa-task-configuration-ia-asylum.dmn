@@ -421,20 +421,6 @@
           <text>"access-requests"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_03xsyex">
-        <inputEntry id="UnaryTests_1qo4j8b">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1men7qw">
-          <text>"reviewSpecificAccessRequestJudiciary"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0cfke9d">
-          <text>"roleCategory"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1piaqy0">
-          <text>"JUDICIAL"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_03w0k6p">
         <inputEntry id="UnaryTests_0gxi32u">
           <text></text>
