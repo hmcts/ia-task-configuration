@@ -326,7 +326,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1glizm3">
-          <text>"arrangeOfflinePayment","markCaseAsPaid","allocateHearingJudge","uploadHearingRecording","editListing"</text>
+          <text>"arrangeOfflinePayment","markCaseAsPaid","allocateHearingJudge","uploadHearingRecording","editListing","reviewSpecificAccessRequestAdmin"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1131kat">
           <text>"roleCategory"</text>
@@ -419,34 +419,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0huw4e7">
           <text>"access-requests"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_03w0k6p">
-        <inputEntry id="UnaryTests_0gxi32u">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_03oo7qj">
-          <text>"reviewSpecificAccessRequestLegalOps"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0l4f8ya">
-          <text>"roleCategory"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_149630k">
-          <text>"LEGAL_OPERATIONS"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1i5tb25">
-        <inputEntry id="UnaryTests_1ip5x93">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0nm8u26">
-          <text>"reviewSpecificAccessRequestAdmin"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0q17j7i">
-          <text>"roleCategory"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1wztj7f">
-          <text>"ADMIN"</text>
         </outputEntry>
       </rule>
     </decisionTable>
