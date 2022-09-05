@@ -65,5 +65,8 @@
     </notes>
     <cve>CVE-2022-22965</cve>
   </suppress>
+  <suppress until="2030-01-01">
+    <cve>CVE-2022-25857</cve>
+  </suppress>
 </suppressions>
 
