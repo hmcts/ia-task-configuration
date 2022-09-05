@@ -270,7 +270,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1466etp">
-          <text>"followUpNoticeOfChange"</text>
+          <text>"followUpNoticeOfChange", "reviewSpecificAccessRequestJudiciary","reviewSpecificAccessRequestLegalOps","reviewSpecificAccessRequestAdmin"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0bjcvtf">
           <text>"workType"</text>
@@ -405,20 +405,6 @@
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "processApplicationToReviewDecision" or taskType != null and taskType = "processApplicationToReviewDecision") then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)"
                         else ""
           </text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0fpew6w">
-        <inputEntry id="UnaryTests_1dsxa1j">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1ul72fr">
-          <text>"reviewSpecificAccessRequestJudiciary","reviewSpecificAccessRequestLegalOps","reviewSpecificAccessRequestAdmin"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1f53slh">
-          <text>"workType"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0huw4e7">
-          <text>"access-requests"</text>
         </outputEntry>
       </rule>
     </decisionTable>

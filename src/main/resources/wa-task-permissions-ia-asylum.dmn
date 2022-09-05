@@ -528,7 +528,7 @@
       <rule id="DecisionRule_1jyzdux">
         <description>Judge task permissions</description>
         <inputEntry id="UnaryTests_0pcvlxs">
-          <text>"reviewSpecificAccessRequestJudiciary"</text>
+          <text>"reviewSpecificAccessRequestJudiciary", "reviewSpecificAccessRequestLegalOps","reviewSpecificAccessRequestAdmin"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0ru9xxq">
           <text></text>
@@ -553,126 +553,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_14ca7h1">
           <text>true</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1a7ma1y">
-        <description>Tribunal caseworker task permissions</description>
-        <inputEntry id="UnaryTests_1kijtm9">
-          <text>"reviewSpecificAccessRequestLegalOps"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0gizdmm">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0710m8l">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1ceifua">
-          <text>"leadership-judge"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_06c0uek">
-          <text>"Read,Refer,Own,Manage,Cancel"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0nt1ud8">
-          <text>"LEGAL_OPERATIONS"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0fwcikr">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_07x3f62">
-          <text>1</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1oxk6tr">
-          <text>true</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0one38h">
-        <description>Senior Tribunal caseworker task permissions</description>
-        <inputEntry id="UnaryTests_1oy5fm4">
-          <text>"reviewSpecificAccessRequestLegalOps"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_02lqxic">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0fdyfzs">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_05yeod9">
-          <text>"leadership-judge"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0b3xjs2">
-          <text>"Read,Refer,Own,Manage,Cancel"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0yfw10s">
-          <text>"LEGAL_OPERATIONS"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1eqoutg">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1ienyzs">
-          <text>1</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1ng3fhr">
-          <text>true</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0c4h32m">
-        <description>National business centre task permissions</description>
-        <inputEntry id="UnaryTests_1iml9if">
-          <text>"reviewSpecificAccessRequestAdmin"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1cqj7uv">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_01z6qd9">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_05nm66z">
-          <text>"leadership-judge"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0bplk2r">
-          <text>"Read,Refer,Own,Manage,Cancel"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_09wptcn">
-          <text>"ADMIN"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1yyz9ft">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1w4wfm6">
-          <text>1</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0mvdqw4">
-          <text>false</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0v1nd64">
-        <description>Hearing centre admin task permissions</description>
-        <inputEntry id="UnaryTests_08vpdw1">
-          <text>"reviewSpecificAccessRequestAdmin"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_087au4z">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0ad0c4b">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1ndm8x7">
-          <text>"leadership-judge"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0zr4dnz">
-          <text>"Read,Refer,Own,Manage,Cancel"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1ac4q8x">
-          <text>"ADMIN"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1vnpz7i">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0fwgfn8">
-          <text>1</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0tj676t">
-          <text>false</text>
         </outputEntry>
       </rule>
     </decisionTable>
