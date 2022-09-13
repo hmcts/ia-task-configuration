@@ -12,7 +12,7 @@
           <text></text>
         </inputExpression>
       </input>
-      <input id="InputClause_0a0i7vo" label="Appeal Type" biodi:width="512" camunda:inputVariable="appealType">
+      <input id="InputClause_0a0i7vo" label="Appeal Type" biodi:width="519" camunda:inputVariable="appealType">
         <inputExpression id="LiteralExpression_18qwedg" typeRef="string">
           <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.appealType
             != null) then
@@ -250,7 +250,7 @@
           <text>"appealSubmitted"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1jz4zmi">
-          <text>"refusalOfHumanRights","refusalOfEu"</text>
+          <text>"refusalOfHumanRights","refusalOfEu","protection","euSettlementScheme"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1nlo9li">
           <text>"aip"</text>
@@ -290,7 +290,7 @@
           <text>"appealSubmitted"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_19nc6sw">
-          <text>"refusalOfHumanRights","refusalOfEu"</text>
+          <text>"refusalOfHumanRights","refusalOfEu","protection","euSettlementScheme" </text>
         </inputEntry>
         <inputEntry id="UnaryTests_0dywuhs">
           <text></text>
