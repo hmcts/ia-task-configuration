@@ -552,7 +552,7 @@
           <text>1</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_14ca7h1">
-          <text>true</text>
+          <text>false</text>
         </outputEntry>
       </rule>
     </decisionTable>
