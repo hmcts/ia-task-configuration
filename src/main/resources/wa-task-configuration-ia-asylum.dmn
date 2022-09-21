@@ -293,10 +293,10 @@
           <text>"reviewSpecificAccessRequestJudiciary","reviewSpecificAccessRequestLegalOps","reviewSpecificAccessRequestAdmin"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1hrei14">
-          <text>additionalProperties_roleAssignmentId</text>
+          <text>"additionalProperties_roleAssignmentId"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1h9eb82">
-          <text>if(taskAttributes !=null and taskAttributes.roleAssignmentId != null) then taskAttributes.roleAssignmentId else ""</text>
+          <text>if (taskAttributes !=null and taskAttributes.roleAssignmentId != null) then taskAttributes.roleAssignmentId else "1234"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1dhhpyl">

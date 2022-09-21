@@ -15,11 +15,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.platform.commons.util.StringUtils;
 import uk.gov.hmcts.reform.iataskconfiguration.DmnDecisionTableBaseUnitTest;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -64,7 +60,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(16));
+        assertThat(logic.getRules().size(), is(17));
     }
 
     @SuppressWarnings("checkstyle:indentation")
@@ -233,7 +229,9 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     void when_taskId_then_return_Access_requests(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
 
-        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
+        String roleAssignmentId = UUID.randomUUID().toString();
+        Map<String, String> taskAttributes = Map.of("taskType", taskType, "roleAssignmentId", roleAssignmentId);
+        inputVariables.putValue("taskAttributes", taskAttributes);
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
@@ -247,6 +245,34 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             "name", "workType",
             "value", "access_requests"
         ), workTypeResultList.get(0));
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+        "reviewSpecificAccessRequestJudiciary", "reviewSpecificAccessRequestLegalOps",
+        "reviewSpecificAccessRequestAdmin"
+    })
+    void should_return_request_value_when_role_assignment_id_exists_in_task_attributes(String taskType) {
+        VariableMap inputVariables = new VariableMapImpl();
+
+        String roleAssignmentId = UUID.randomUUID().toString();
+
+        Map<String, String> taskAttributes = Map.of("taskType", taskType, "roleAssignmentId", roleAssignmentId);
+        inputVariables.putValue("taskAttributes", taskAttributes);
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        List<Map<String, Object>> dmnResults = dmnDecisionTableResult.getResultList().stream()
+            .filter((r) -> r.containsValue("additionalProperties_roleAssignmentId"))
+            .collect(Collectors.toList());
+
+        assertThat(dmnResults.size(), is(1));
+
+        assertTrue(dmnResults.contains(Map.of(
+            "name", "additionalProperties_roleAssignmentId",
+            "value", roleAssignmentId
+        )));
+
     }
 
     @ParameterizedTest
@@ -274,7 +300,12 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     void when_taskId_then_return_judicial_role_category(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
 
-        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
+        String roleAssignmentId = UUID.randomUUID().toString();
+        inputVariables.putValue("taskAttributes", Map.of(
+                                    "taskType", taskType,
+                                    "additionalProperties", Map.of("roleAssignmentId", roleAssignmentId)
+                                )
+        );
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
