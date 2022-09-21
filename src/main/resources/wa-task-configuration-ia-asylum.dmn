@@ -20,6 +20,7 @@
       </input>
       <output id="Output_1" label="Name" name="name" typeRef="string" />
       <output id="OutputClause_021y3bb" label="Value" name="value" typeRef="string" biodi:width="803" />
+      <output id="OutputClause_06m3ktt" name="Reconfigure" typeRef="boolean" biodi:width="192" />
       <rule id="DecisionRule_0u7yi27">
         <inputEntry id="UnaryTests_03ky0ek">
           <text></text>
@@ -32,6 +33,9 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_06tqng3">
           <text>caseData.appellantGivenNames + " " + caseData.appellantFamilyName</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_09ruaaf">
+          <text>true</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0oagl97">
@@ -60,6 +64,9 @@
                         "EUSS"
                         else ""</text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_1ndtqfy">
+          <text></text>
+        </outputEntry>
       </rule>
       <rule id="DecisionRule_0r3u9cf">
         <inputEntry id="UnaryTests_1bqxdqr">
@@ -77,6 +84,9 @@
                         then
                         caseData.caseManagementLocation.region else "1"
                     </text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0dwx9qa">
+          <text></text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_06fd9qz">
@@ -96,6 +106,9 @@
                         caseData.caseManagementLocation.baseLocation else "765324"
                     </text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_1wrzh5i">
+          <text>true</text>
+        </outputEntry>
       </rule>
       <rule id="DecisionRule_1oirne1">
         <inputEntry id="UnaryTests_04xtpdu">
@@ -113,6 +126,9 @@
                         null and caseData.staffLocation != null) then
                         caseData.staffLocation else "Taylor House"
                     </text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1la2dkb">
+          <text>true</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_03afipt">
@@ -160,6 +176,9 @@
                         else ""
                     </text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_1oq20o8">
+          <text></text>
+        </outputEntry>
       </rule>
       <rule id="DecisionRule_0ikmf14">
         <inputEntry id="UnaryTests_0epux74">
@@ -181,6 +200,9 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0zoponq">
           <text>"routine_work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_19npk6t">
+          <text></text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1csczvs">
@@ -217,6 +239,9 @@
         <outputEntry id="LiteralExpression_0mfd2ul">
           <text>"decision_making_work"</text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_0mhslbm">
+          <text></text>
+        </outputEntry>
       </rule>
       <rule id="DecisionRule_03n8x3v">
         <inputEntry id="UnaryTests_0u2qxu3">
@@ -230,6 +255,9 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_19poitv">
           <text>"hearing_work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_02mo95c">
+          <text></text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1mgtmkd">
@@ -256,6 +284,9 @@
         <outputEntry id="LiteralExpression_1spq9ei">
           <text>"applications"</text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_1cyayj1">
+          <text></text>
+        </outputEntry>
       </rule>
       <rule id="DecisionRule_00yasz5">
         <inputEntry id="UnaryTests_0zfo8ln">
@@ -270,6 +301,9 @@
         <outputEntry id="LiteralExpression_0jcwzi7">
           <text>"upper_tribunal"</text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_0bikbnv">
+          <text></text>
+        </outputEntry>
       </rule>
       <rule id="DecisionRule_00hw86q">
         <inputEntry id="UnaryTests_1ov750e">
@@ -283,6 +317,9 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0qvacss">
           <text>"access_requests"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_08zn369">
+          <text></text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1dhhpyl">
@@ -326,6 +363,9 @@
         <outputEntry id="LiteralExpression_18y163a">
           <text>"LEGAL_OPERATIONS"</text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_0cde4ic">
+          <text></text>
+        </outputEntry>
       </rule>
       <rule id="DecisionRule_01muxrj">
         <inputEntry id="UnaryTests_0ullysh">
@@ -340,6 +380,9 @@
         <outputEntry id="LiteralExpression_0el7tae">
           <text>"ADMIN"</text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_1exp16h">
+          <text></text>
+        </outputEntry>
       </rule>
       <rule id="DecisionRule_01cmxvs">
         <inputEntry id="UnaryTests_1np8ii5">
@@ -353,6 +396,9 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_1cn9cb2">
           <text>"JUDICIAL"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0me2qfr">
+          <text></text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1lny4x5">
@@ -412,6 +458,9 @@
                         else ""
           </text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_184xf0n">
+          <text></text>
+        </outputEntry>
       </rule>
       <rule id="DecisionRule_0fpew6w">
         <inputEntry id="UnaryTests_1dsxa1j">
@@ -425,6 +474,9 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0huw4e7">
           <text>"access-requests"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_06t2smu">
+          <text></text>
         </outputEntry>
       </rule>
     </decisionTable>
