@@ -15,7 +15,11 @@ import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.platform.commons.util.StringUtils;
 import uk.gov.hmcts.reform.iataskconfiguration.DmnDecisionTableBaseUnitTest;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -353,7 +357,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "followUpOverdueCaseBuilding", "followUpOverdueReasonsForAppeal", "followUpOverdueClarifyingAnswers",
         "followUpOverdueCmaRequirements", "followUpOverdueRespondentReview", "followUpOverdueHearingRequirements",
         "followUpNonStandardDirection", "followUpNoticeOfChange", "reviewAdditionalEvidence",
-        "reviewAdditionalHomeOfficeEvidence","reviewSpecificAccessRequestLegalOps"
+        "reviewAdditionalHomeOfficeEvidence", "reviewSpecificAccessRequestLegalOps"
     })
     void when_taskId_then_return_legal_operations_role_category(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
@@ -480,7 +484,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                         ),
                         "list_items", List.of(Map.of(
                             "code", "refusalOfHumanRights",
-                            "label", refusalOfEuLabel))
+                            "label", refusalOfEuLabel
+                        ))
                     )
                 ))
                 .taskAttributes(Map.of("taskType", "markCaseAsPaid"))
