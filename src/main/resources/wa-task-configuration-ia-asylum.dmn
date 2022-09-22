@@ -279,6 +279,20 @@
           <text>"access_requests"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_16zvd79">
+        <inputEntry id="UnaryTests_0zsiyu0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0b3q932">
+          <text>"reviewSpecificAccessRequestJudiciary","reviewSpecificAccessRequestLegalOps","reviewSpecificAccessRequestAdmin"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1hrei14">
+          <text>"additionalProperties_roleAssignmentId"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1h9eb82">
+          <text>if (taskAttributes !=null and taskAttributes.roleAssignmentId != null) then taskAttributes.roleAssignmentId else "1234"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1dhhpyl">
         <inputEntry id="UnaryTests_13pqmkc">
           <text></text>
