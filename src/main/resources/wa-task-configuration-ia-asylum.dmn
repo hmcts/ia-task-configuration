@@ -462,23 +462,6 @@
           <text></text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0fpew6w">
-        <inputEntry id="UnaryTests_1dsxa1j">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1ul72fr">
-          <text>"reviewSpecificAccessRequestJudiciary","reviewSpecificAccessRequestLegalOps","reviewSpecificAccessRequestAdmin"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1f53slh">
-          <text>"workType"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0huw4e7">
-          <text>"access-requests"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_06t2smu">
-          <text></text>
-        </outputEntry>
-      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
