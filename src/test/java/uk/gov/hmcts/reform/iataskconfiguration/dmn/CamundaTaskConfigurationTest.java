@@ -322,7 +322,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "followUpOverdueCaseBuilding", "followUpOverdueReasonsForAppeal", "followUpOverdueClarifyingAnswers",
         "followUpOverdueCmaRequirements", "followUpOverdueRespondentReview", "followUpOverdueHearingRequirements",
         "followUpNonStandardDirection", "followUpNoticeOfChange", "reviewAdditionalEvidence",
-        "reviewAdditionalHomeOfficeEvidence","reviewSpecificAccessRequestLegalOps"
+        "reviewAdditionalHomeOfficeEvidence", "reviewSpecificAccessRequestLegalOps"
     })
     void when_taskId_then_return_legal_operations_role_category(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
@@ -365,6 +365,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             .expectedLocationNameValue("Taylor House")
             .expectedCaseManagementCategoryValue("")
             .expectedDescriptionValue("")
+            .expectedReconfigureValue("true")
             .build();
 
         String refusalOfEuLabel = "Refusal of a human rights claim";
@@ -391,6 +392,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             .expectedLocationNameValue("some other location name")
             .expectedCaseManagementCategoryValue("Human rights")
             .expectedWorkType("routine_work")
+            .expectedReconfigureValue("true")
             .expectedRoleCategory("ADMIN")
             .expectedDescriptionValue(
                 "[Mark the appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid)")
@@ -425,6 +427,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 .expectedLocationValue("some other location")
                 .expectedLocationNameValue("some other location name")
                 .expectedCaseManagementCategoryValue("Human rights")
+                .expectedReconfigureValue("true")
                 .expectedWorkType("routine_work")
                 .expectedRoleCategory("ADMIN")
                 .expectedDescriptionValue("[Mark the appeal as "
@@ -449,7 +452,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                         ),
                         "list_items", List.of(Map.of(
                             "code", "refusalOfHumanRights",
-                            "label", refusalOfEuLabel))
+                            "label", refusalOfEuLabel
+                        ))
                     )
                 ))
                 .taskAttributes(Map.of("taskType", "markCaseAsPaid"))
@@ -460,6 +464,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 .expectedLocationNameValue("some other location name")
                 .expectedCaseManagementCategoryValue("Human rights")
                 .expectedWorkType("routine_work")
+                .expectedReconfigureValue("true")
                 .expectedRoleCategory("ADMIN")
                 .expectedDescriptionValue("[Mark the appeal as "
                                               + "paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid)")
@@ -476,6 +481,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 .expectedLocationNameValue("Taylor House")
                 .expectedCaseManagementCategoryValue("")
                 .expectedWorkType("routine_work")
+                .expectedReconfigureValue("true")
                 .expectedRoleCategory("ADMIN")
                 .expectedDescriptionValue("[Mark the appeal as "
                                               + "paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid)")
@@ -504,16 +510,32 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         String expectedWorkType;
         String expectedRoleCategory;
         String expectedDescriptionValue;
+        String expectedReconfigureValue;
     }
 
-    private List<Map<String, String>> getExpectedValues(Scenario scenario) {
-        List<Map<String, String>> rules = new ArrayList<>();
+    private List<Map<String, Object>> getExpectedValues(Scenario scenario) {
+        List<Map<String, Object>> rules = new ArrayList<>();
 
-        getExpectedValue(rules, "caseName", scenario.getExpectedCaseNameValue());
+        getExpectedValueWithReconfigure(
+            rules,
+            "caseName",
+            scenario.getExpectedCaseNameValue(),
+            scenario.getExpectedReconfigureValue()
+        );
         getExpectedValue(rules, "appealType", scenario.getExpectedAppealTypeValue());
         getExpectedValue(rules, "region", scenario.getExpectedRegionValue());
-        getExpectedValue(rules, "location", scenario.getExpectedLocationValue());
-        getExpectedValue(rules, "locationName", scenario.getExpectedLocationNameValue());
+        getExpectedValueWithReconfigure(
+            rules,
+            "location",
+            scenario.getExpectedLocationValue(),
+            scenario.getExpectedReconfigureValue()
+        );
+        getExpectedValueWithReconfigure(
+            rules,
+            "locationName",
+            scenario.getExpectedLocationNameValue(),
+            scenario.getExpectedReconfigureValue()
+        );
         getExpectedValue(rules, "caseManagementCategory", scenario.getExpectedCaseManagementCategoryValue());
         if (!Objects.isNull(scenario.getTaskAttributes())
             && StringUtils.isNotBlank(scenario.taskAttributes.get("taskType").toString())) {
@@ -525,10 +547,18 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         return rules;
     }
 
-    private void getExpectedValue(List<Map<String, String>> rules, String name, String value) {
-        Map<String, String> rule = new HashMap<>();
+    private void getExpectedValue(List<Map<String, Object>> rules, String name, String value) {
+        Map<String, Object> rule = new HashMap<>();
         rule.put("name", name);
         rule.put("value", value);
+        rules.add(rule);
+    }
+
+    private void getExpectedValueWithReconfigure(List<Map<String, Object>> rules, String name, String value, String reconfigure) {
+        Map<String, Object> rule = new HashMap<>();
+        rule.put("name", name);
+        rule.put("value", value);
+        rule.put("Reconfigure", Boolean.valueOf(reconfigure));
         rules.add(rule);
     }
 
