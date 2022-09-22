@@ -66,11 +66,10 @@
     <cve>CVE-2022-22965</cve>
   </suppress>
   <suppress>
-    <notes>
-      <![CDATA[https://nvd.nist.gov/vuln/detail/CVE-2022-25857,
-         Spring Framework ]]>
-    </notes>
+    <cve>CVE-2022-38751</cve>
+    <cve>CVE-2022-38750</cve>
     <cve>CVE-2022-25857</cve>
+    <cve>CVE-2022-38749</cve>
   </suppress>
 </suppressions>
 
