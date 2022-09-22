@@ -245,7 +245,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
         assertEquals(Map.of(
             "name", "workType",
-            "value", "access-requests"
+            "value", "access_requests"
         ), workTypeResultList.get(0));
     }
 

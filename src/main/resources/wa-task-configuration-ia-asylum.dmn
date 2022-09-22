@@ -310,7 +310,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1466etp">
-          <text>"followUpNoticeOfChange"</text>
+          <text>"followUpNoticeOfChange", "reviewSpecificAccessRequestJudiciary","reviewSpecificAccessRequestLegalOps","reviewSpecificAccessRequestAdmin"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0bjcvtf">
           <text>"workType"</text>
@@ -372,7 +372,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1glizm3">
-          <text>"arrangeOfflinePayment","markCaseAsPaid","allocateHearingJudge","uploadHearingRecording","editListing"</text>
+          <text>"arrangeOfflinePayment","markCaseAsPaid","allocateHearingJudge","uploadHearingRecording","editListing","reviewSpecificAccessRequestAdmin"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1131kat">
           <text>"roleCategory"</text>
