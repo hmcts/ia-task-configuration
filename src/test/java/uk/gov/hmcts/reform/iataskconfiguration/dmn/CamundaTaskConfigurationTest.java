@@ -634,8 +634,14 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             + "generateDecisionAndReasons),",
         "sendDecisionsAndReasons,[Complete decision and reasons](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
             + "sendDecisionAndReasons),",
-        "processApplicationToReviewDecision, [Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
-            + "decideAnApplication),"
+        "processApplicationToReviewDecision,[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
+            + "decideAnApplication),",
+        "reviewSpecificAccessRequestJudiciary,[Review Access Request](/role-access/"
+            + "reviewSpecificAccessRequestJudiciary/assignment/${[roleAssignmentId]}/specific-access),",
+        "reviewSpecificAccessRequestLegalOps,[Review Access Request](/role-access/"
+            + "reviewSpecificAccessRequestLegalOps/assignment/${[roleAssignmentId]}/specific-access),",
+        "reviewSpecificAccessRequestAdmin,[Review Access Request](/role-access/"
+            + "reviewSpecificAccessRequestAdmin/assignment/${[roleAssignmentId]}/specific-access),"
     })
     void should_return_a_200_description_property(String taskType, String expectedDescription, String journeyType) {
         VariableMap inputVariables = new VariableMapImpl();
