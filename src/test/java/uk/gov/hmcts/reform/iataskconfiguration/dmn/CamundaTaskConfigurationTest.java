@@ -554,7 +554,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         rules.add(rule);
     }
 
-    private void getExpectedValueWithReconfigure(List<Map<String, Object>> rules, String name, String value, String reconfigure) {
+    private void getExpectedValueWithReconfigure(List<Map<String, Object>> rules, String name, String value,
+                                                 String reconfigure) {
         Map<String, Object> rule = new HashMap<>();
         rule.put("name", name);
         rule.put("value", value);
