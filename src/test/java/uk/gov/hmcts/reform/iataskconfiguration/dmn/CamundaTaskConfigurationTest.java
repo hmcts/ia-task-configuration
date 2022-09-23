@@ -638,17 +638,18 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "processApplicationToReviewDecision,[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
             + "decideAnApplication),",
         "reviewSpecificAccessRequestJudiciary,[Review Access Request](/role-access/"
-            + "reviewSpecificAccessRequestJudiciary/assignment/${[roleAssignmentId]}/specific-access),",
+            + "${[taskId]}/assignment/${[roleAssignmentId]}/specific-access),",
         "reviewSpecificAccessRequestLegalOps,[Review Access Request](/role-access/"
-            + "reviewSpecificAccessRequestLegalOps/assignment/${[roleAssignmentId]}/specific-access),",
+            + "${[taskId]}/assignment/${[roleAssignmentId]}/specific-access),",
         "reviewSpecificAccessRequestAdmin,[Review Access Request](/role-access/"
-            + "reviewSpecificAccessRequestAdmin/assignment/${[roleAssignmentId]}/specific-access),"
+            + "${[taskId]}/assignment/${[roleAssignmentId]}/specific-access),"
     })
     void should_return_a_200_description_property(String taskType, String expectedDescription, String journeyType) {
         VariableMap inputVariables = new VariableMapImpl();
 
         String roleAssignmentId = UUID.randomUUID().toString();
-        Map<String, String> taskAttributes = Map.of("taskType", taskType, "roleAssignmentId", roleAssignmentId);
+        String taskId = UUID.randomUUID().toString();
+        Map<String, String> taskAttributes = Map.of("taskType", taskType, "roleAssignmentId", roleAssignmentId, "taskId", taskId);
         inputVariables.putValue("taskAttributes", taskAttributes);
         if (journeyType != null) {
             inputVariables.putValue("caseData", Map.of("journeyType", journeyType));
@@ -664,7 +665,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
         assertEquals(Map.of(
             "name", "description",
-            "value", expectedDescription.replace("${[roleAssignmentId]}", roleAssignmentId)
+            "value", expectedDescription.replace("${[roleAssignmentId]}", roleAssignmentId).replace("${[taskId]}", taskId)
         ), descriptionList.get(0));
 
     }
