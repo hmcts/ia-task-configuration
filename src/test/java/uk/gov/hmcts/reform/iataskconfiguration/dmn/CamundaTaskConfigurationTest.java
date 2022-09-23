@@ -300,6 +300,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     @CsvSource({
         "reviewHearingBundle", "generateDraftDecisionAndReasons", "uploadDecision", "reviewAddendumHomeOfficeEvidence",
         "reviewAddendumAppellantEvidence", "reviewAddendumEvidence", "reviewSpecificAccessRequestJudiciary",
+        "reviewSpecificAccessRequestLegalOps", "reviewSpecificAccessRequestAdmin",
         "processApplicationToReviewDecision", "sendDecisionsAndReasons", "prepareDecisionsAndReasons", "decideAnFTPA"
     })
     void when_taskId_then_return_judicial_role_category(String taskType) {
@@ -358,7 +359,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "followUpOverdueCaseBuilding", "followUpOverdueReasonsForAppeal", "followUpOverdueClarifyingAnswers",
         "followUpOverdueCmaRequirements", "followUpOverdueRespondentReview", "followUpOverdueHearingRequirements",
         "followUpNonStandardDirection", "followUpNoticeOfChange", "reviewAdditionalEvidence",
-        "reviewAdditionalHomeOfficeEvidence", "reviewSpecificAccessRequestLegalOps"
+        "reviewAdditionalHomeOfficeEvidence"
     })
     void when_taskId_then_return_legal_operations_role_category(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
@@ -646,7 +647,9 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     void should_return_a_200_description_property(String taskType, String expectedDescription, String journeyType) {
         VariableMap inputVariables = new VariableMapImpl();
 
-        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
+        String roleAssignmentId = UUID.randomUUID().toString();
+        Map<String, String> taskAttributes = Map.of("taskType", taskType, "roleAssignmentId", roleAssignmentId);
+        inputVariables.putValue("taskAttributes", taskAttributes);
         if (journeyType != null) {
             inputVariables.putValue("caseData", Map.of("journeyType", journeyType));
         }
@@ -661,7 +664,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
         assertEquals(Map.of(
             "name", "description",
-            "value", expectedDescription
+            "value", expectedDescription.replace("${[roleAssignmentId]}", roleAssignmentId)
         ), descriptionList.get(0));
 
     }

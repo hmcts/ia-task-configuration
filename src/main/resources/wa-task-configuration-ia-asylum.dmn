@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.0.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.2.0">
   <decision id="wa-task-configuration-ia-asylum" name="Task configuration DMN">
     <decisionTable id="DecisionTable_14cx079" hitPolicy="COLLECT">
       <input id="InputClause_1gxyo7f" label="CCD Case Data" camunda:inputVariable="caseData">
@@ -322,7 +322,6 @@
                         "followUpNoticeOfChange",
                         "reviewAdditionalEvidence",
                         "reviewAdditionalHomeOfficeEvidence",
-                        "reviewSpecificAccessRequestLegalOps",
                         "startDecisionsAndReasonsDocument",
                         "createHearingBundle",
                         "createCaseSummary"
@@ -340,7 +339,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1glizm3">
-          <text>"arrangeOfflinePayment","markCaseAsPaid","allocateHearingJudge","uploadHearingRecording","editListing","reviewSpecificAccessRequestAdmin"</text>
+          <text>"arrangeOfflinePayment","markCaseAsPaid","allocateHearingJudge","uploadHearingRecording","editListing"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1131kat">
           <text>"roleCategory"</text>
@@ -354,7 +353,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_15ftuu0">
-          <text>"reviewHearingBundle","generateDraftDecisionAndReasons","uploadDecision","reviewAddendumHomeOfficeEvidence","reviewAddendumAppellantEvidence","reviewAddendumEvidence","reviewSpecificAccessRequestJudiciary","processApplicationToReviewDecision","sendDecisionsAndReasons","prepareDecisionsAndReasons","decideAnFTPA"</text>
+          <text>"reviewHearingBundle","generateDraftDecisionAndReasons","uploadDecision","reviewAddendumHomeOfficeEvidence","reviewAddendumAppellantEvidence","reviewAddendumEvidence","reviewSpecificAccessRequestJudiciary","reviewSpecificAccessRequestLegalOps","reviewSpecificAccessRequestAdmin","processApplicationToReviewDecision","sendDecisionsAndReasons","prepareDecisionsAndReasons","decideAnFTPA"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_15nowth">
           <text>"roleCategory"</text>
@@ -417,9 +416,7 @@
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "decideAnFTPA" or taskType != null and taskType = "decideAnFTPA") then "[Leadership judge FTPA decision](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/leadershipJudgeFtpaDecision)&lt;br /&gt;[Resident judge FTPA decision](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/residentJudgeFtpaDecision)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "sendDecisionsAndReasons" or taskType != null and taskType = "sendDecisionsAndReasons") then "[Complete decision and reasons](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDecisionAndReasons)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "processApplicationToReviewDecision" or taskType != null and taskType = "processApplicationToReviewDecision") then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)"
-                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewSpecificAccessRequestJudiciary" or taskType != null and taskType = "reviewSpecificAccessRequestJudiciary") then "[Review Access Request](/role-access/reviewSpecificAccessRequestJudiciary/assignment/${[roleAssignmentId]}/specific-access)"
-                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewSpecificAccessRequestLegalOps" or taskType != null and taskType = "reviewSpecificAccessRequestLegalOps") then "[Review Access Request](/role-access/reviewSpecificAccessRequestLegalOps/assignment/${[roleAssignmentId]}/specific-access)"
-                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewSpecificAccessRequestAdmin" or taskType != null and taskType = "reviewSpecificAccessRequestAdmin") then "[Review Access Request](/role-access/reviewSpecificAccessRequestAdmin/assignment/${[roleAssignmentId]}/specific-access)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.roleAssignmentId != null) then "[Review Access Request](/role-access/" + taskAttributes.taskType + "/assignment/" + taskAttributes.roleAssignmentId + "/specific-access)"
                         else ""
           </text>
         </outputEntry>
