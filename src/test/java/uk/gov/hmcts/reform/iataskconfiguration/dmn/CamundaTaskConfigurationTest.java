@@ -649,7 +649,9 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
         String roleAssignmentId = UUID.randomUUID().toString();
         String taskId = UUID.randomUUID().toString();
-        Map<String, String> taskAttributes = Map.of("taskType", taskType, "roleAssignmentId", roleAssignmentId, "taskId", taskId);
+        Map<String, String> taskAttributes = Map.of("taskType", taskType,
+                                                    "roleAssignmentId", roleAssignmentId,
+                                                    "taskId", taskId);
         inputVariables.putValue("taskAttributes", taskAttributes);
         if (journeyType != null) {
             inputVariables.putValue("caseData", Map.of("journeyType", journeyType));
@@ -665,7 +667,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
         assertEquals(Map.of(
             "name", "description",
-            "value", expectedDescription.replace("${[roleAssignmentId]}", roleAssignmentId).replace("${[taskId]}", taskId)
+            "value", expectedDescription
+                .replace("${[roleAssignmentId]}", roleAssignmentId).replace("${[taskId]}", taskId)
         ), descriptionList.get(0));
 
     }
