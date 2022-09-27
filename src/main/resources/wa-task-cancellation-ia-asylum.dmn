@@ -7,7 +7,7 @@
           <text>fromState</text>
         </inputExpression>
       </input>
-      <input id="InputClause_0ain215" label="Event">
+      <input id="InputClause_0ain215" label="Event" biodi:width="330">
         <inputExpression id="LiteralExpression_0h2l2zj" typeRef="string">
           <text>event</text>
         </inputExpression>
@@ -371,7 +371,7 @@
           <text>-</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1002qs3">
-          <text>"editAppealAfterSubmit","editAppeal"</text>
+          <text>"editAppealAfterSubmit"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0brgsan">
           <text></text>
