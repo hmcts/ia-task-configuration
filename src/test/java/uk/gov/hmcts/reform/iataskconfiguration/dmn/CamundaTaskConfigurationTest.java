@@ -596,7 +596,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         Map<String, Object> rule = new HashMap<>();
         rule.put("name", name);
         rule.put("value", value);
-        rule.put("Reconfigure", Boolean.valueOf(reconfigure));
+        rule.put("canReconfigure", Boolean.valueOf(reconfigure));
         rules.add(rule);
     }
 

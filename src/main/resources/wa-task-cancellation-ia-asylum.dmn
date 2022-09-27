@@ -389,6 +389,52 @@
           <text></text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_18pmsxl">
+        <inputEntry id="UnaryTests_0afwjs5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ruvdw4">
+          <text>"changeHearingCentre"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0dsj8lu">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0pgjlyg">
+          <text>"Reconfigure"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_00pcqgl">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ue8p8m">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ii5ued">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1x9twvw">
+        <inputEntry id="UnaryTests_1njmwrl">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0knw6yd">
+          <text>"editListing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_109anp4">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1uprkz6">
+          <text>"Reconfigure"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1qt3cu9">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1krnal1">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0veqes0">
+          <text></text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
