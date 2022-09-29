@@ -179,7 +179,7 @@
           <text>"appealSubmitted"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1syvbhj">
-          <text>"revocationOfProtection","deprivation","protection"</text>
+          <text>"revocationOfProtection","deprivation"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1c6xae8">
           <text></text>
@@ -254,7 +254,7 @@
           <text>"appealSubmitted"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_19nc6sw">
-          <text>"refusalOfHumanRights","refusalOfEu","protection"</text>
+          <text>"refusalOfHumanRights","refusalOfEu"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0dywuhs">
           <text></text>
