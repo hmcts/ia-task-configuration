@@ -179,7 +179,7 @@
           <text>"appealSubmitted"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1syvbhj">
-          <text>"revocationOfProtection","deprivation","protection"</text>
+          <text>"protection"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1c6xae8">
           <text></text>
@@ -206,6 +206,41 @@
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1ccdi5v">
+        <inputEntry id="UnaryTests_1snufct">
+          <text>"submitAppeal"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03o1o0c">
+          <text>"appealSubmitted"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xd8ltv">
+          <text>"revocationOfProtection","deprivation"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0bz5r5q">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qntmhs">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0dcd7qq">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1wktuzu">
+          <text>"reviewTheAppeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_18qxc45">
+          <text>"Review the appeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_16tpxc0">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1agtyqh">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1nxkvtt">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1neox9h">
         <inputEntry id="UnaryTests_0s4uzvv">
           <text>"submitAppeal"</text>
@@ -214,7 +249,7 @@
           <text>"appealSubmitted"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1jz4zmi">
-          <text>"refusalOfHumanRights","refusalOfEu","protection"</text>
+          <text>"refusalOfHumanRights","refusalOfEu"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1nlo9li">
           <text>"aip"</text>
