@@ -2,7 +2,7 @@
 <definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.12.0">
   <decision id="wa-task-initiation-ia-asylum" name="Task initiation DMN">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT" biodi:annotationsWidth="400">
-      <input id="Input_1" label="Event Id" biodi:width="319" camunda:inputVariable="eventId">
+      <input id="Input_1" label="Event Id" biodi:width="515" camunda:inputVariable="eventId">
         <inputExpression id="InputExpression_1" typeRef="string">
           <text></text>
         </inputExpression>
@@ -173,7 +173,8 @@
       </rule>
       <rule id="DecisionRule_0awsb0p">
         <inputEntry id="UnaryTests_116xfi4">
-          <text>"submitAppeal"</text>
+          <text>"submitAppeal",
+"payAndSubmitAppeal"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_07uxcvq">
           <text>"appealSubmitted"</text>
@@ -278,12 +279,11 @@
       </rule>
       <rule id="DecisionRule_0xzi2j0">
         <inputEntry id="UnaryTests_1xiod7u">
-          <text>
-            "payAndSubmitAppeal",
-            "markAppealPaid",
-            "moveToSubmitted",
-            "payForAppeal","recordRemissionDecision"
-          </text>
+          <text>"payAndSubmitAppeal",
+"markAppealPaid",
+"moveToSubmitted",
+"payForAppeal",
+"recordRemissionDecision"          </text>
         </inputEntry>
         <inputEntry id="UnaryTests_08cfchy">
           <text>"appealSubmitted"</text>
