@@ -414,6 +414,42 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "updatePaymentStatus",
+                "appealSubmitted",
+                mapAdditionalData("{\n"
+                                  + "   \"Data\":{\n"
+                                  + "      \"appealType\":\"" + "refusalOfEu" + "\"\n"
+                                  + "   }"
+                                  + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewTheAppeal",
+                        "name", "Review the appeal",
+
+                        "workingDaysAllowed", 2,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "updatePaymentStatus",
+                "appealSubmitted",
+                mapAdditionalData("{\n"
+                                  + "   \"Data\":{\n"
+                                  + "      \"appealType\":\"" + "refusalOfHumanRights" + "\"\n"
+                                  + "   }"
+                                  + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewTheAppeal",
+                        "name", "Review the appeal",
+
+                        "workingDaysAllowed", 2,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
                 "submitTimeExtension",
                 "null",
                 null,
