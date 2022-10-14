@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="wa-cancellation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.12.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="wa-cancellation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.2.0">
   <decision id="wa-task-cancellation-ia-asylum" name="Task cancellation DMN">
     <decisionTable id="DecisionTable_0z3jx1g" hitPolicy="COLLECT">
       <input id="Input_1" label="From State">
@@ -7,7 +7,7 @@
           <text>fromState</text>
         </inputExpression>
       </input>
-      <input id="InputClause_0ain215" label="Event">
+      <input id="InputClause_0ain215" label="Event" biodi:width="330">
         <inputExpression id="LiteralExpression_0h2l2zj" typeRef="string">
           <text>event</text>
         </inputExpression>
@@ -363,6 +363,75 @@
           <text>"There is an application task which might impact other active tasks"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1cbtlhv">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1rxinj8">
+        <inputEntry id="UnaryTests_1hduxph">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1002qs3">
+          <text>"editAppealAfterSubmit"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0brgsan">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_06gd6rb">
+          <text>"Reconfigure"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1jkk1ro">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_19x1wbj">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_181jxp2">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_18pmsxl">
+        <inputEntry id="UnaryTests_0afwjs5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ruvdw4">
+          <text>"changeHearingCentre"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0dsj8lu">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0pgjlyg">
+          <text>"Reconfigure"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_00pcqgl">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ue8p8m">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ii5ued">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1x9twvw">
+        <inputEntry id="UnaryTests_1njmwrl">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0knw6yd">
+          <text>"editCaseListing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_109anp4">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1uprkz6">
+          <text>"Reconfigure"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1qt3cu9">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1krnal1">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0veqes0">
           <text></text>
         </outputEntry>
       </rule>
