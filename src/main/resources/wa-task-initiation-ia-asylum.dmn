@@ -12,23 +12,7 @@
           <text></text>
         </inputExpression>
       </input>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <input id="InputClause_0a0i7vo" label="Appeal Type" biodi:width="512" camunda:inputVariable="appealType">
-=======
-      <input id="InputClause_0a0i7vo" label="Appeal Type" biodi:width="519" camunda:inputVariable="appealType">
->>>>>>> 494d5a1 (Added appealtype EUSS (#219))
-=======
       <input id="InputClause_0a0i7vo" label="Appeal Type" biodi:width="150" camunda:inputVariable="appealType">
->>>>>>> db54b02 (Revert "Added appealtype EUSS" (#226))
-=======
-      <input id="InputClause_0a0i7vo" label="Appeal Type" biodi:width="512" camunda:inputVariable="appealType">
->>>>>>> e5f1fa5 (SNI-1409 add recordRemissionDecision to initiation dmn (#215))
-=======
-      <input id="InputClause_0a0i7vo" label="Appeal Type" biodi:width="512" camunda:inputVariable="appealType">
->>>>>>> 006d37d5ca77b011de2aef9293d49505c5d26904
         <inputExpression id="LiteralExpression_18qwedg" typeRef="string">
           <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.appealType
             != null) then
@@ -266,23 +250,7 @@
           <text>"appealSubmitted"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1jz4zmi">
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-          <text>"refusalOfHumanRights","refusalOfEu"</text>
-=======
           <text>"refusalOfHumanRights","refusalOfEu","protection","euSettlementScheme"</text>
->>>>>>> 494d5a1 (Added appealtype EUSS (#219))
-=======
-          <text>"refusalOfHumanRights","refusalOfEu","protection"</text>
->>>>>>> db54b02 (Revert "Added appealtype EUSS" (#226))
-=======
-          <text>"refusalOfHumanRights","refusalOfEu"</text>
->>>>>>> e5f1fa5 (SNI-1409 add recordRemissionDecision to initiation dmn (#215))
-=======
-          <text>"refusalOfHumanRights","refusalOfEu"</text>
->>>>>>> 006d37d5ca77b011de2aef9293d49505c5d26904
         </inputEntry>
         <inputEntry id="UnaryTests_1nlo9li">
           <text>"aip"</text>
@@ -315,44 +283,14 @@
 "markAppealPaid",
 "moveToSubmitted",
 "payForAppeal",
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 "recordRemissionDecision",
 "updatePaymentStatus"</text>
-=======
-"recordRemissionDecision"          </text>
->>>>>>> e5f1fa5 (SNI-1409 add recordRemissionDecision to initiation dmn (#215))
-=======
-"recordRemissionDecision",
-"updatePaymentStatus"</text>
->>>>>>> 6afe926 (RIA-6101 Add updatePaymentStatus to trigger reviewTheAppeal)
-=======
-"recordRemissionDecision",
-"updatePaymentStatus"</text>
->>>>>>> 006d37d5ca77b011de2aef9293d49505c5d26904
         </inputEntry>
         <inputEntry id="UnaryTests_08cfchy">
           <text>"appealSubmitted"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_19nc6sw">
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-          <text>"refusalOfHumanRights","refusalOfEu"</text>
-=======
           <text>"refusalOfHumanRights","refusalOfEu","protection","euSettlementScheme" </text>
->>>>>>> 494d5a1 (Added appealtype EUSS (#219))
-=======
-          <text>"refusalOfHumanRights","refusalOfEu","protection"</text>
->>>>>>> db54b02 (Revert "Added appealtype EUSS" (#226))
-=======
-          <text>"refusalOfHumanRights","refusalOfEu"</text>
->>>>>>> e5f1fa5 (SNI-1409 add recordRemissionDecision to initiation dmn (#215))
-=======
-          <text>"refusalOfHumanRights","refusalOfEu"</text>
->>>>>>> 006d37d5ca77b011de2aef9293d49505c5d26904
         </inputEntry>
         <inputEntry id="UnaryTests_0dywuhs">
           <text></text>
