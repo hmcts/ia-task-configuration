@@ -70,7 +70,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     @SuppressWarnings("checkstyle:indentation")
     @ParameterizedTest
     @CsvSource(value = {
-        "refusalOfHumanRights, Human rights",
+        "refusalOfHumanRights, Human Rights",
         "refusalOfEu, EEA",
         "deprivation, DoC",
         "protection, Protection",
@@ -127,7 +127,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         );
 
         List<String> expectedCaseManagementCategories = List.of(
-            "Human rights",
+            "Human Rights",
             "EEA",
             "DoC",
             "Protection",
@@ -385,11 +385,11 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             ))
             .taskAttributes(Map.of("taskType", "markCaseAsPaid"))
             .expectedCaseNameValue("some appellant given names some appellant family name")
-            .expectedAppealTypeValue("Human rights")
+            .expectedAppealTypeValue("Human Rights")
             .expectedRegionValue("some other region")
             .expectedLocationValue("some other location")
             .expectedLocationNameValue("some other location name")
-            .expectedCaseManagementCategoryValue("Human rights")
+            .expectedCaseManagementCategoryValue("Human Rights")
             .expectedWorkType("routine_work")
             .expectedRoleCategory("ADMIN")
             .expectedDescriptionValue(
@@ -420,11 +420,11 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 ))
                 .taskAttributes(Map.of("taskType", "markCaseAsPaid"))
                 .expectedCaseNameValue("some appellant given names some appellant family name")
-                .expectedAppealTypeValue("Human rights")
+                .expectedAppealTypeValue("Human Rights")
                 .expectedRegionValue("some other region")
                 .expectedLocationValue("some other location")
                 .expectedLocationNameValue("some other location name")
-                .expectedCaseManagementCategoryValue("Human rights")
+                .expectedCaseManagementCategoryValue("Human Rights")
                 .expectedWorkType("routine_work")
                 .expectedRoleCategory("ADMIN")
                 .expectedDescriptionValue("[Mark the appeal as "
@@ -454,11 +454,11 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 ))
                 .taskAttributes(Map.of("taskType", "markCaseAsPaid"))
                 .expectedCaseNameValue("some appellant given names some appellant family name")
-                .expectedAppealTypeValue("Human rights")
+                .expectedAppealTypeValue("Human Rights")
                 .expectedRegionValue("some other region")
                 .expectedLocationValue("some other location")
                 .expectedLocationNameValue("some other location name")
-                .expectedCaseManagementCategoryValue("Human rights")
+                .expectedCaseManagementCategoryValue("Human Rights")
                 .expectedWorkType("routine_work")
                 .expectedRoleCategory("ADMIN")
                 .expectedDescriptionValue("[Mark the appeal as "

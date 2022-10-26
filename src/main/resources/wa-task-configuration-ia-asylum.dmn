@@ -47,7 +47,7 @@
         <outputEntry id="LiteralExpression_0t707ev">
           <text>
                         if caseData.appealType = "refusalOfHumanRights" then
-                        "Human rights"
+                        "Human Rights"
                         else if caseData.appealType = "refusalOfEu" then
                         "EEA"
                         else if caseData.appealType = "deprivation" then
@@ -128,7 +128,7 @@
           <text>
                         if (caseData.caseManagementCategory !=null and caseData.caseManagementCategory.value.code =
                         "refusalOfHumanRights") then
-                        "Human rights"
+                        "Human Rights"
                         else if (caseData.caseManagementCategory !=null and caseData.caseManagementCategory.value.code =
                         "refusalOfEu") then
                         "EEA"
@@ -142,7 +142,7 @@
                         "revocationOfProtection") then
                         "Revocation"
                         else if caseData.appealType = "refusalOfHumanRights" then
-                        "Human rights"
+                        "Human Rights"
                         else if caseData.appealType = "refusalOfEu" then
                         "EEA"
                         else if caseData.appealType = "deprivation" then
