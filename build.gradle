@@ -215,6 +215,11 @@ dependencyManagement {
       entry 'spring-jcl'
       entry 'spring-web'
     }
+
+    // CVE-2022-42003, CVE-2022-42004
+    dependency group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.14.0-rc1'
+    dependency group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.14.0-rc1'
+    dependency group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.14.0-rc1'
   }
 }
 
@@ -234,7 +239,6 @@ def versions = [
   sonarPitest     : '0.5',
   tomcat          : '9.0.58',
   log4j           : '2.17.1'
-
 ]
 
 ext.libraries = [
