@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.12.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.2.0">
   <decision id="wa-task-initiation-ia-asylum" name="Task initiation DMN">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT" biodi:annotationsWidth="400">
-      <input id="Input_1" label="Event Id" biodi:width="319" camunda:inputVariable="eventId">
+      <input id="Input_1" label="Event Id" biodi:width="515" camunda:inputVariable="eventId">
         <inputExpression id="InputExpression_1" typeRef="string">
           <text></text>
         </inputExpression>
@@ -12,7 +12,7 @@
           <text></text>
         </inputExpression>
       </input>
-      <input id="InputClause_0a0i7vo" label="Appeal Type" biodi:width="150" camunda:inputVariable="appealType">
+      <input id="InputClause_0a0i7vo" label="Appeal Type" biodi:width="512" camunda:inputVariable="appealType">
         <inputExpression id="LiteralExpression_18qwedg" typeRef="string">
           <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.appealType
             != null) then
@@ -173,13 +173,14 @@
       </rule>
       <rule id="DecisionRule_0awsb0p">
         <inputEntry id="UnaryTests_116xfi4">
-          <text>"submitAppeal"</text>
+          <text>"submitAppeal",
+"payAndSubmitAppeal"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_07uxcvq">
           <text>"appealSubmitted"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1syvbhj">
-          <text>"revocationOfProtection","deprivation"</text>
+          <text>"protection"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1c6xae8">
           <text></text>
@@ -206,6 +207,41 @@
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1ccdi5v">
+        <inputEntry id="UnaryTests_1snufct">
+          <text>"submitAppeal"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03o1o0c">
+          <text>"appealSubmitted"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xd8ltv">
+          <text>"revocationOfProtection","deprivation"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0bz5r5q">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qntmhs">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0dcd7qq">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1wktuzu">
+          <text>"reviewTheAppeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_18qxc45">
+          <text>"Review the appeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_16tpxc0">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1agtyqh">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1nxkvtt">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1neox9h">
         <inputEntry id="UnaryTests_0s4uzvv">
           <text>"submitAppeal"</text>
@@ -214,7 +250,7 @@
           <text>"appealSubmitted"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1jz4zmi">
-          <text>"refusalOfHumanRights","refusalOfEu","protection"</text>
+          <text>"refusalOfHumanRights","refusalOfEu"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1nlo9li">
           <text>"aip"</text>
@@ -243,18 +279,18 @@
       </rule>
       <rule id="DecisionRule_0xzi2j0">
         <inputEntry id="UnaryTests_1xiod7u">
-          <text>
-            "payAndSubmitAppeal",
-            "markAppealPaid",
-            "moveToSubmitted",
-            "payForAppeal"
-          </text>
+          <text>"payAndSubmitAppeal",
+"markAppealPaid",
+"moveToSubmitted",
+"payForAppeal",
+"recordRemissionDecision",
+"updatePaymentStatus"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_08cfchy">
           <text>"appealSubmitted"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_19nc6sw">
-          <text>"refusalOfHumanRights","refusalOfEu","protection"</text>
+          <text>"refusalOfHumanRights","refusalOfEu"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0dywuhs">
           <text></text>
