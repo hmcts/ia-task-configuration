@@ -203,7 +203,8 @@
                         "reviewAddendumAppellantEvidence",
                         "reviewAddendumEvidence",
                         "decideOnTimeExtension",
-                        "sendDecisionsAndReasons"</text>
+                        "sendDecisionsAndReasons",
+                        "followUpNoticeOfChange"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0omxasv">
           <text>"workType"</text>
@@ -263,20 +264,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0jcwzi7">
           <text>"upper_tribunal"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_00hw86q">
-        <inputEntry id="UnaryTests_1ov750e">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1466etp">
-          <text>"followUpNoticeOfChange"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0bjcvtf">
-          <text>"workType"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0qvacss">
-          <text>"access_requests"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1dhhpyl">
