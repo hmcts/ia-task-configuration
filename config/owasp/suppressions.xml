@@ -91,5 +91,12 @@
     <cve>CVE-2022-38752</cve>
     <cve>CVE-2021-43980</cve>
   </suppress>
+  <suppress>
+    <notes>
+      <![CDATA[https://nvd.nist.gov/vuln/detail/CVE-2022-42252,
+    Apache Tomcat ]]>
+    </notes>
+    <cve>CVE-2022-42252</cve>
+  </suppress>
 </suppressions>
 
