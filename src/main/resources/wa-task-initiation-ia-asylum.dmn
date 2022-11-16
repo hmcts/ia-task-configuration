@@ -1657,6 +1657,44 @@ else 0</text>
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1x89vur">
+        <inputEntry id="UnaryTests_0jyvgk9">
+          <text>"applyForFTPAAppellant","applyForFTPARespondent"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1do2tdi">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_159r2gv">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_18n9oqa">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0bp76tu">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ioza9b">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vuq6sc">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_00hnnmp">
+          <text>"assignAFTPAJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_05j67w3">
+          <text>"Assign a FTPA Judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1bdxozv">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ux95tx">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_10uxynx">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

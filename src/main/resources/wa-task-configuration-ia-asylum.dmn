@@ -187,7 +187,8 @@
                         "followUpExtendedDirection",
                         "followUpNonStandardDirection",
                         "reviewClarifyingQuestionsAnswers",
-                        "reviewRemissionApplication"
+                        "reviewRemissionApplication",
+                        "assignAFTPAJudge"
                     </text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0rvgay2">
@@ -417,7 +418,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1g0afgt">
-          <text>"reviewRemissionApplication"</text>
+          <text>"reviewRemissionApplication","assignAFTPAJudge"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0gwkgj8">
           <text>"roleCategory"</text>
@@ -484,6 +485,7 @@
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "sendDecisionsAndReasons" or taskType != null and taskType = "sendDecisionsAndReasons") then "[Complete decision and reasons](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDecisionAndReasons)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "processApplicationToReviewDecision" or taskType != null and taskType = "processApplicationToReviewDecision") then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewRemissionApplication" or taskType != null and taskType = "reviewRemissionApplication") then "[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/recordRemissionDecision/recordRemissionDecisionremissionDecision)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "assignAFTPAJudge" or taskType != null and taskType = "assignAFTPAJudge") then "[Record allocated Judge](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/recordAllocatedJudge)"
                         else if (taskAttributes != null and taskAttributes.taskId != null and taskAttributes.roleAssignmentId != null) then "[Review Access Request](/role-access/" + taskAttributes.taskId + "/assignment/" + taskAttributes.roleAssignmentId + "/specific-access)"
                         else ""
           </text>
