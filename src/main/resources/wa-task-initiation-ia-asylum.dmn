@@ -844,7 +844,7 @@
           </text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0bl7lwo">
-          <text>defaults_due_date</text>
+          <text>defaults_direction_due_date</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_184ro7i">
           <text>2</text>
@@ -886,7 +886,7 @@
           </text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0akgwj3">
-          <text>defaults_due_date</text>
+          <text>defaults_direction_due_date</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_03j4j35">
           <text>2</text>
@@ -928,7 +928,7 @@
           </text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1gduh67">
-          <text>defaults_due_date</text>
+          <text>defaults_direction_due_date</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_17t1pof">
           <text>2</text>
@@ -970,7 +970,7 @@
           </text>
         </outputEntry>
         <outputEntry id="LiteralExpression_14m19tb">
-          <text>defaults_due_date</text>
+          <text>defaults_direction_due_date</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_19cly21">
           <text>2</text>
@@ -1012,7 +1012,7 @@
           </text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0kixi56">
-          <text>defaults_due_date</text>
+          <text>defaults_direction_due_date</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0kqlc9o">
           <text>2</text>
@@ -1054,7 +1054,7 @@
           </text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0vn5v1m">
-          <text>defaults_due_date</text>
+          <text>defaults_direction_due_date</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_137jbcs">
           <text>2</text>
@@ -1096,7 +1096,7 @@
           </text>
         </outputEntry>
         <outputEntry id="LiteralExpression_001q1lv">
-          <text>defaults_due_date</text>
+          <text>defaults_direction_due_date</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0a21cw2">
           <text>2</text>
@@ -1138,7 +1138,7 @@
           </text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0vaaj9f">
-          <text>defaults_due_date</text>
+          <text>defaults_direction_due_date</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_07ijv3r">
           <text>2</text>
@@ -1180,7 +1180,7 @@
           </text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0nj1m2t">
-          <text>defaults_due_date</text>
+          <text>defaults_direction_due_date</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_05d86le">
           <text>2</text>
@@ -1584,7 +1584,7 @@ else 0</text>
         <inputExpression id="LiteralExpression_1oln8s7" typeRef="string" />
       </input>
       <output id="OutputClause_09js4tp" label="defaults_14_days" typeRef="json" biodi:width="607" />
-      <output id="OutputClause_10gnunf" label="defaults_due_date" typeRef="json" biodi:width="612" />
+      <output id="OutputClause_10gnunf" label="defaults_direction_due_date" typeRef="json" biodi:width="612" />
       <output id="OutputClause_1qq5ucn" label="defaults_hearing_date" typeRef="json" biodi:width="603" />
       <rule id="DecisionRule_0h1i0mp">
         <inputEntry id="UnaryTests_1uha651">
@@ -1600,14 +1600,12 @@ delayUntilIntervalDays: "14"
         <outputEntry id="LiteralExpression_033vehq">
           <text>{
 delayUntilOrigin: directionDueDate ,
-delayUntilNonWorkingCalendar: "https://www.gov.uk/bank-holidays/england-and-wales.json",
 delayUntilIntervalDays: "0"
 }</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0lx5le1">
           <text>{
 delayUntilOrigin: additionalData.Data.listCaseHearingDate,
-delayUntilNonWorkingCalendar: "https://www.gov.uk/bank-holidays/england-and-wales.json",
 delayUntilIntervalDays: "0"
 }</text>
         </outputEntry>
