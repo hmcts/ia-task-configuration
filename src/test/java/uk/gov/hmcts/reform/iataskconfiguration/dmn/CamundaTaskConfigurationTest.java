@@ -229,7 +229,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     @ParameterizedTest
     @CsvSource({
         "reviewSpecificAccessRequestJudiciary", "reviewSpecificAccessRequestLegalOps",
-        "reviewSpecificAccessRequestAdmin"
+        "reviewSpecificAccessRequestAdmin","reviewSpecificAccessRequestCTSC"
     })
     void when_taskId_then_return_Access_requests(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
@@ -255,7 +255,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     @ParameterizedTest
     @CsvSource({
         "reviewSpecificAccessRequestJudiciary", "reviewSpecificAccessRequestLegalOps",
-        "reviewSpecificAccessRequestAdmin"
+        "reviewSpecificAccessRequestAdmin","reviewSpecificAccessRequestCTSC"
     })
     void should_return_request_value_when_role_assignment_id_exists_in_task_attributes(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
@@ -300,7 +300,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     @CsvSource({
         "reviewHearingBundle", "generateDraftDecisionAndReasons", "uploadDecision", "reviewAddendumHomeOfficeEvidence",
         "reviewAddendumAppellantEvidence", "reviewAddendumEvidence", "reviewSpecificAccessRequestJudiciary",
-        "reviewSpecificAccessRequestLegalOps", "reviewSpecificAccessRequestAdmin",
+        "reviewSpecificAccessRequestLegalOps", "reviewSpecificAccessRequestAdmin","reviewSpecificAccessRequestCTSC",
         "processApplicationToReviewDecision", "sendDecisionsAndReasons", "prepareDecisionsAndReasons", "decideAnFTPA"
     })
     void when_taskId_then_return_judicial_role_category(String taskType) {
@@ -672,6 +672,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "reviewSpecificAccessRequestLegalOps,[Review Access Request](/role-access/"
             + "${[taskId]}/assignment/${[roleAssignmentId]}/specific-access),",
         "reviewSpecificAccessRequestAdmin,[Review Access Request](/role-access/"
+            + "${[taskId]}/assignment/${[roleAssignmentId]}/specific-access),",
+        "reviewSpecificAccessRequestCTSC,[Review Access Request](/role-access/"
             + "${[taskId]}/assignment/${[roleAssignmentId]}/specific-access),"
     })
     void should_return_a_200_description_property(String taskType, String expectedDescription, String journeyType) {
