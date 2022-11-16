@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.2.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.1.0">
   <decision id="wa-task-configuration-ia-asylum" name="Task configuration DMN">
     <decisionTable id="DecisionTable_14cx079" hitPolicy="COLLECT">
       <input id="InputClause_1gxyo7f" label="CCD Case Data" camunda:inputVariable="caseData">
@@ -470,6 +470,63 @@
           </text>
         </outputEntry>
         <outputEntry id="LiteralExpression_184xf0n">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_19luyj2">
+        <inputEntry id="UnaryTests_146j8yf">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1udw3od">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1rth51d">
+          <text>"dueDate"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_16o5zfk">
+          <text>string(now()+duration("P2D"))</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1jr2eev">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1h7513f">
+        <inputEntry id="UnaryTests_0z97zyu">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1nl6j3p">
+          <text>"processApplication"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_14a0n4a">
+          <text>"dueDate"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_03fsgt7">
+          <text>string(now()+duration("P5D"))</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1q6ca4m">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0koyh4b">
+        <inputEntry id="UnaryTests_1q1xsnf">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xl7ic7">
+          <text>"reviewHearingBundle",
+"sendDecisionsAndReasons",
+"prepareDecisionsAndReasons",
+"uploadHearingRecording",
+"decideAnFTPA",
+"editListing",
+"allocateHearingJudge"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1a6ku4p">
+          <text>"dueDate"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_17q0lvv">
+          <text>string(now())</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_124rljq">
           <text></text>
         </outputEntry>
       </rule>
