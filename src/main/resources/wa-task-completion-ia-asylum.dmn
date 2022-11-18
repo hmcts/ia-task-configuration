@@ -262,9 +262,20 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1p6cmc1">
+        <inputEntry id="UnaryTests_0c1fd1w">
+          <text>"listCase"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0wnhqbz">
+          <text>"listTheCase"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0z3ogyi">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1u3c7sd">
         <inputEntry id="UnaryTests_1dd0p7u">
-          <text>"generateHearingBundle","decisionAndReasonsStarted","updateHearingRequirements","endAppeal","requestRespondentEvidence","requestCaseBuilding","requestReasonsForAppeal","sendDirection","requestRespondentReview","requestCaseEdit","sendDirectionWithQuestions","requestCmaRequirements","markEvidenceAsReviewed","markAddendumEvidenceAsReviewed","reviewCmaRequirements","updateDetailsAfterCma","requestResponseAmend","requestResponseReview","reviewHearingRequirements","changeDirectionDueDate","decideAnApplication","editCaseListing","sendDecisionAndReasons","generateDecisionAndReasons","uploadHearingRecording","leadershipJudgeFtpaDecision","residentJudgeFtpaDecision","recordRemissionDecision","recordAllocatedJudge"</text>
+          <text>"generateHearingBundle","decisionAndReasonsStarted","updateHearingRequirements","endAppeal","requestRespondentEvidence","requestCaseBuilding","requestReasonsForAppeal","sendDirection","requestRespondentReview","requestCaseEdit","sendDirectionWithQuestions","requestCmaRequirements","markEvidenceAsReviewed","markAddendumEvidenceAsReviewed","reviewCmaRequirements","updateDetailsAfterCma","requestResponseAmend","requestResponseReview","reviewHearingRequirements","changeDirectionDueDate","decideAnApplication","editCaseListing","sendDecisionAndReasons","generateDecisionAndReasons","uploadHearingRecording","leadershipJudgeFtpaDecision","residentJudgeFtpaDecision","recordRemissionDecision","recordAllocatedJudge","listCase"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1ex7ytl">
           <text></text>
