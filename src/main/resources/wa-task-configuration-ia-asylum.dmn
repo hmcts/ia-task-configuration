@@ -473,20 +473,20 @@
           <text></text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_19luyj2">
-        <inputEntry id="UnaryTests_146j8yf">
+      <rule id="DecisionRule_1dhlom6">
+        <inputEntry id="UnaryTests_0bbbdg5">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_1udw3od">
+        <inputEntry id="UnaryTests_0ldu8ob">
           <text></text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_1rth51d">
-          <text>"dueDate"</text>
+        <outputEntry id="LiteralExpression_0394oxh">
+          <text>"dueDateOrigin"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_16o5zfk">
-          <text>string(now()+duration("P2D"))</text>
+        <outputEntry id="LiteralExpression_0awuicr">
+          <text>string(now())</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_1jr2eev">
+        <outputEntry id="LiteralExpression_0qvc12u">
           <text></text>
         </outputEntry>
       </rule>
@@ -498,12 +498,54 @@
           <text>"processApplication"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_14a0n4a">
-          <text>"dueDate"</text>
+          <text>"dueDateIntervalDays"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_03fsgt7">
-          <text>string(now()+duration("P5D"))</text>
+          <text>5</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1q6ca4m">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_19luyj2">
+        <inputEntry id="UnaryTests_146j8yf">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1udw3od">
+          <text>"processApplicationToReviewDecision",
+"editListing",
+"reviewTheAppeal",
+"decideOnTimeExtension",
+"reviewRespondentEvidence",
+"reviewAdditionalEvidence",
+"reviewAdditionalHomeOfficeEvidence",
+"reviewAppealSkeletonArgument",
+"reviewReasonsForAppeal",
+"reviewClarifyingQuestionsAnswers",
+"reviewCmaRequirements",
+"attendCma",
+"reviewRespondentResponse",
+"caseSummaryHearingBundleStartDecision",
+"reviewHearingRequirements",
+"followUpOverdueRespondentEvidence",
+"followUpExtendedDirection",
+"followUpOverdueCaseBuilding",
+"followUpOverdueReasonsForAppeal",
+"followUpOverdueClarifyingAnswers",
+"followUpOverdueCmaRequirements",
+"followUpOverdueRespondentReview",
+"followUpOverdueHearingRequirements",
+"followUpNonStandardDirection",
+"followUpNoticeOfChange",
+"reviewAddendumEvidence"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1rth51d">
+          <text>"dueDateIntervalDays"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_16o5zfk">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1jr2eev">
           <text></text>
         </outputEntry>
       </rule>
@@ -514,17 +556,13 @@
         <inputEntry id="UnaryTests_1xl7ic7">
           <text>"reviewHearingBundle",
 "sendDecisionsAndReasons",
-"prepareDecisionsAndReasons",
-"uploadHearingRecording",
-"decideAnFTPA",
-"editListing",
-"allocateHearingJudge"</text>
+"prepareDecisionsAndReasons"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1a6ku4p">
-          <text>"dueDate"</text>
+          <text>"dueDateIntervalDays"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_17q0lvv">
-          <text>string(now())</text>
+          <text>0</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_124rljq">
           <text></text>
