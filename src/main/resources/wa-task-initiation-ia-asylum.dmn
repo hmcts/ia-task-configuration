@@ -56,7 +56,6 @@
       </input>
       <output id="Output_1" label="Task Id" name="taskId" typeRef="string" biodi:width="368" />
       <output id="OutputClause_0p5fhhd" label="Name" name="name" typeRef="string" biodi:width="150" />
-      <output id="OutputClause_165p3r3" label="Delay Duration" name="delayDuration" typeRef="integer" biodi:width="232" />
       <output id="OutputClause_0yv4rn4" label="Delay Until" name="delayUntil" typeRef="json" />
       <output id="OutputClause_0i6c6c2" label="Working Days Allowed" name="workingDaysAllowed" typeRef="integer" biodi:width="199" />
       <output id="OutputClause_10rno4c" label="Process Categories Identifiers" name="processCategories" typeRef="string" biodi:width="268" />
@@ -95,9 +94,6 @@
         <outputEntry id="LiteralExpression_02t95m8">
           <text>"Process Application"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_1x6roa1">
-          <text></text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_0ui44ee">
           <text></text>
         </outputEntry>
@@ -133,9 +129,6 @@
         <outputEntry id="LiteralExpression_0eniqxw">
           <text>"Process Application to Review Decision"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_0ntq0fj">
-          <text></text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_1gdp9x0">
           <text></text>
         </outputEntry>
@@ -170,9 +163,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_1fl35nh">
           <text>"Edit Listing"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0uad2vw">
-          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1f93xdp">
           <text></text>
@@ -210,9 +200,6 @@
         <outputEntry id="LiteralExpression_08l47ys">
           <text>"Review the appeal"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_0t06g2j">
-          <text></text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_1wenw7q">
           <text></text>
         </outputEntry>
@@ -248,9 +235,6 @@
         <outputEntry id="LiteralExpression_18qxc45">
           <text>"Review the appeal"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_16tpxc0">
-          <text></text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_0r6ch5n">
           <text></text>
         </outputEntry>
@@ -285,9 +269,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_1jx3ay4">
           <text>"Review the appeal"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_19rxs4w">
-          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1ujfrc4">
           <text></text>
@@ -329,9 +310,6 @@
         <outputEntry id="LiteralExpression_17mw5ff">
           <text>"Review the appeal"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_1ddgs5t">
-          <text></text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_09xhseq">
           <text></text>
         </outputEntry>
@@ -367,9 +345,6 @@
         <outputEntry id="LiteralExpression_1jfenyd">
           <text>"Decide On Time Extension"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_0tpiw26">
-          <text></text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_1asc7t4">
           <text></text>
         </outputEntry>
@@ -404,9 +379,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0xmc4hn">
           <text>"Review Respondent Evidence"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1i50q27">
-          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1k8lqex">
           <text></text>
@@ -448,9 +420,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_11xunkf">
           <text>"Review additional evidence"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0qlx5fk">
-          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_03hqxxm">
           <text></text>
@@ -494,9 +463,6 @@
         <outputEntry id="LiteralExpression_03t2r2u">
           <text>"Review additional Home Office evidence"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_0txkmz4">
-          <text></text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_1iwtgzo">
           <text></text>
         </outputEntry>
@@ -531,9 +497,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0vqidni">
           <text>"Review Appeal Skeleton Argument"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_10nev13">
-          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_04bd8wc">
           <text></text>
@@ -570,9 +533,6 @@
         <outputEntry id="LiteralExpression_0fl6zjq">
           <text>"Review Reasons For Appeal"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_1ym5r20">
-          <text></text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_1s1zsjs">
           <text></text>
         </outputEntry>
@@ -607,9 +567,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_135jzws">
           <text>"Review Clarifying Questions Answers"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_00ur2tu">
-          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1sz7ow2">
           <text></text>
@@ -646,9 +603,6 @@
         <outputEntry id="LiteralExpression_098my6x">
           <text>"Review Cma Requirements"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_0nmzwz6">
-          <text></text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_0f1rc9f">
           <text></text>
         </outputEntry>
@@ -683,9 +637,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_1ddqedk">
           <text>"Attend Cma"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0xnoa0r">
-          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1lsooqf">
           <text></text>
@@ -722,9 +673,6 @@
         <outputEntry id="LiteralExpression_1x9v27m">
           <text>"Review Respondent Response"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_14a2upo">
-          <text></text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_07mctw5">
           <text></text>
         </outputEntry>
@@ -759,9 +707,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_069jnni">
           <text>"Create Hearing Bundle"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0wetk4k">
-          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_102s7dp">
           <text></text>
@@ -798,9 +743,6 @@
         <outputEntry id="LiteralExpression_0gdp0c7">
           <text>"Review hearing requirements"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_1dbwiwt">
-          <text></text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_1ykjnbr">
           <text></text>
         </outputEntry>
@@ -835,13 +777,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_00pwci6">
           <text>"Follow-up overdue respondent evidence"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1u0h529">
-          <text>
-            if (directionDueDate != null and directionDueDate != "") then
-            (date(directionDueDate) - date(now)).days
-            else 0
-          </text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0bl7lwo">
           <text>{
@@ -881,13 +816,6 @@ delayUntilIntervalDays: "0"
         <outputEntry id="LiteralExpression_10uny2o">
           <text>"Follow-up extended direction"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_0fcdssf">
-          <text>
-            if (directionDueDate != null and directionDueDate != "") then
-            (date(directionDueDate) - date(now)).days
-            else 0
-          </text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_0akgwj3">
           <text>{
 delayUntilOrigin: directionDueDate,
@@ -925,13 +853,6 @@ delayUntilIntervalDays: "0"
         </outputEntry>
         <outputEntry id="LiteralExpression_0gk868l">
           <text>"Follow-up overdue case building"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_16vucs8">
-          <text>
-            if (directionDueDate != null and directionDueDate != "") then
-            (date(directionDueDate) - date(now)).days
-            else 0
-          </text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1gduh67">
           <text>{
@@ -971,13 +892,6 @@ delayUntilIntervalDays: "0"
         <outputEntry id="LiteralExpression_19gui3y">
           <text>"Follow-up overdue reasons for appeal"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_1bqrry5">
-          <text>
-            if (directionDueDate != null and directionDueDate != "") then
-            (date(directionDueDate) - date(now)).days
-            else 0
-          </text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_14m19tb">
           <text>{
 delayUntilOrigin: directionDueDate,
@@ -1015,13 +929,6 @@ delayUntilIntervalDays: "0"
         </outputEntry>
         <outputEntry id="LiteralExpression_1674tdo">
           <text>"Follow-up overdue clarifying answers"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1dcun57">
-          <text>
-            if (directionDueDate != null and directionDueDate != "") then
-            (date(directionDueDate) - date(now)).days
-            else 0
-          </text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0kixi56">
           <text>{
@@ -1061,13 +968,6 @@ delayUntilIntervalDays: "0"
         <outputEntry id="LiteralExpression_13tike8">
           <text>"Follow-up overdue CMA requirements"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_1398afp" expressionLanguage="feel">
-          <text>
-            if (directionDueDate != null and directionDueDate != "") then
-            (date(directionDueDate) - date(now)).days
-            else 0
-          </text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_0vn5v1m">
           <text>{
 delayUntilOrigin: directionDueDate,
@@ -1105,13 +1005,6 @@ delayUntilIntervalDays: "0"
         </outputEntry>
         <outputEntry id="LiteralExpression_073g0mv">
           <text>"Follow-up overdue respondent review"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1a0n0d2">
-          <text>
-            if (directionDueDate != null and directionDueDate != "") then
-            (date(directionDueDate) - date(now)).days
-            else 0
-          </text>
         </outputEntry>
         <outputEntry id="LiteralExpression_001q1lv">
           <text>{
@@ -1151,13 +1044,6 @@ delayUntilIntervalDays: "0"
         <outputEntry id="LiteralExpression_1agouf6">
           <text>"Follow-up overdue hearing requirements"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_08ot9zz">
-          <text>
-            if (directionDueDate != null and directionDueDate != "") then
-            (date(directionDueDate) - date(now)).days
-            else 0
-          </text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_0vaaj9f">
           <text>{
 delayUntilOrigin: directionDueDate,
@@ -1196,13 +1082,6 @@ delayUntilIntervalDays: "0"
         <outputEntry id="LiteralExpression_16h7h9l">
           <text>"Follow-up non-standard direction"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_0qjgx5e">
-          <text>
-            if (directionDueDate != null and directionDueDate != "") then
-            (date(directionDueDate) - date(now)).days
-            else 0
-          </text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_0nj1m2t">
           <text>{
 delayUntilOrigin: directionDueDate,
@@ -1240,9 +1119,6 @@ delayUntilIntervalDays: "0"
         </outputEntry>
         <outputEntry id="LiteralExpression_00aitap">
           <text>"Follow-up Notice of Change"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0fdvtci">
-          <text>14</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_175ts1s">
           <text>defaults_14_days</text>
@@ -1284,9 +1160,6 @@ delayUntilIntervalDays: "0"
         <outputEntry id="LiteralExpression_0z0czz4">
           <text>"Review Addendum Evidence"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_0g1hn0w">
-          <text></text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_0cymf1r">
           <text></text>
         </outputEntry>
@@ -1321,9 +1194,6 @@ delayUntilIntervalDays: "0"
         </outputEntry>
         <outputEntry id="LiteralExpression_145h90s">
           <text>"Review Hearing bundle"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_05642ga">
-          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0nsmij5">
           <text></text>
@@ -1360,9 +1230,6 @@ delayUntilIntervalDays: "0"
         <outputEntry id="LiteralExpression_1gtv1rl">
           <text>"Send decisions and reasons"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_0uxhsqp">
-          <text></text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_1sy9wc6">
           <text></text>
         </outputEntry>
@@ -1398,9 +1265,6 @@ delayUntilIntervalDays: "0"
         <outputEntry id="LiteralExpression_0kcf3dg">
           <text>"Prepare decisions and reasons"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_1a2bkyf">
-          <text></text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_1srb2z8">
           <text></text>
         </outputEntry>
@@ -1435,11 +1299,6 @@ delayUntilIntervalDays: "0"
         </outputEntry>
         <outputEntry id="LiteralExpression_118gmru">
           <text>"Upload hearing recording"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0ay6ciw">
-          <text>if (additionalData != null and additionalData.Data != null and additionalData.Data.listCaseHearingDate != null and additionalData.Data.listCaseHearingDate != "")
-	then (date and time(additionalData.Data.listCaseHearingDate) - date and time(now)).days
-else 0</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_03mrn0s">
           <text>{
@@ -1479,9 +1338,6 @@ delayUntilIntervalDays: "0"
         <outputEntry id="LiteralExpression_0f26to9">
           <text>"Decide an FTPA"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_0niuaia">
-          <text></text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_0h5v758">
           <text></text>
         </outputEntry>
@@ -1516,9 +1372,6 @@ delayUntilIntervalDays: "0"
         </outputEntry>
         <outputEntry id="LiteralExpression_0hr3h69">
           <text>"Edit listing"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1cl36q6">
-          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1an2zwl">
           <text></text>
@@ -1555,9 +1408,6 @@ delayUntilIntervalDays: "0"
         <outputEntry id="LiteralExpression_0975uc8">
           <text>"Allocate Hearing Judge"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_0p256tl">
-          <text></text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_1w6go4d">
           <text></text>
         </outputEntry>
@@ -1592,9 +1442,6 @@ delayUntilIntervalDays: "0"
         </outputEntry>
         <outputEntry id="LiteralExpression_1eokflp">
           <text>"Allocate Hearing Judge"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0nlmxvs">
-          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1vbvju2">
           <text></text>
