@@ -760,7 +760,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "uploadHearingRecording",
                         "name", "Upload hearing recording",
-                        "delayDuration", 5,
                         "processCategories", "caseProgression",
                         "delayUntil", Map.of(
                             "delayUntilOrigin", hearingDate,
@@ -792,7 +791,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "followUpOverdueRespondentEvidence",
                         "name", "Follow-up overdue respondent evidence",
                         "workingDaysAllowed", 2,
-                        "delayDuration", 0,
                         "processCategories", "followUpOverdue",
                         "delayUntil", delayUntilDirectionDue
                     )
@@ -807,7 +805,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "followUpExtendedDirection",
                         "name", "Follow-up extended direction",
                         "workingDaysAllowed", 2,
-                        "delayDuration", 0,
                         "processCategories", "caseProgression",
                         "delayUntil", delayUntilDirectionDue
                     )
@@ -822,7 +819,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "followUpOverdueCaseBuilding",
                         "name", "Follow-up overdue case building",
                         "workingDaysAllowed", 2,
-                        "delayDuration", 0,
                         "processCategories", "followUpOverdue",
                         "delayUntil", delayUntilDirectionDue
                     )
@@ -838,7 +834,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Follow-up overdue reasons for appeal",
 
                         "workingDaysAllowed", 2,
-                        "delayDuration", 0,
                         "processCategories", "followUpOverdue",
                         "delayUntil", delayUntilDirectionDue
                     )
@@ -853,7 +848,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "followUpOverdueClarifyingAnswers",
                         "name", "Follow-up overdue clarifying answers",
                         "workingDaysAllowed", 2,
-                        "delayDuration", 0,
                         "processCategories", "followUpOverdue",
                         "delayUntil", delayUntilDirectionDue
                     )
@@ -868,7 +862,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "followUpOverdueCmaRequirements",
                         "name", "Follow-up overdue CMA requirements",
                         "workingDaysAllowed", 2,
-                        "delayDuration", 0,
                         "processCategories", "followUpOverdue",
                         "delayUntil", delayUntilDirectionDue
                     )
@@ -883,7 +876,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "followUpOverdueRespondentReview",
                         "name", "Follow-up overdue respondent review",
                         "workingDaysAllowed", 2,
-                        "delayDuration", 0,
                         "processCategories", "followUpOverdue",
                         "delayUntil", delayUntilDirectionDue
                     )
@@ -898,7 +890,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "followUpOverdueHearingRequirements",
                         "name", "Follow-up overdue hearing requirements",
                         "workingDaysAllowed", 2,
-                        "delayDuration", 0,
                         "processCategories", "followUpOverdue",
                         "delayUntil", delayUntilDirectionDue
                     )
@@ -913,7 +904,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "followUpNonStandardDirection",
                         "name", "Follow-up non-standard direction",
                         "workingDaysAllowed", 2,
-                        "delayDuration", 0,
                         "processCategories", "caseProgression",
                         "delayUntil", delayUntilDirectionDue
                     )
@@ -929,7 +919,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Follow-up Notice of Change",
                         "workingDaysAllowed", 2,
                         "processCategories", "followUpOverdue",
-                        "delayDuration", 14,
                         "delayUntil", delayFor14Days
                     )
                 )
@@ -944,7 +933,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Follow-up Notice of Change",
                         "workingDaysAllowed", 2,
                         "processCategories", "followUpOverdue",
-                        "delayDuration", 14,
                         "delayUntil", delayFor14Days
                     )
                 )
@@ -1216,7 +1204,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(6));
-        assertThat(logic.getOutputs().size(), is(6));
+        assertThat(logic.getOutputs().size(), is(5));
         assertThat(logic.getRules().size(), is(38));
     }
 
