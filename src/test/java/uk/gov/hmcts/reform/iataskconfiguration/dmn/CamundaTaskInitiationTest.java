@@ -71,8 +71,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "sendDecisionsAndReasons",
                         "name", "Send decisions and reasons",
-
-                        "workingDaysAllowed", 0,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -85,8 +83,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "prepareDecisionsAndReasons",
                         "name", "Prepare decisions and reasons",
-
-                        "workingDaysAllowed", 0,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -104,8 +100,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
 
-
-                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -122,7 +116,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
-                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -140,7 +133,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
-                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -158,7 +150,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
-                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -176,7 +167,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
-                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -193,7 +183,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
-                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -211,7 +200,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
-                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -228,7 +216,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
-                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -245,8 +232,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
-
-                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -263,8 +248,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
-
-                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -281,8 +264,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
-
-                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -299,8 +280,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
-
-                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -317,8 +296,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
-
-                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -335,8 +312,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
-
-                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -353,8 +328,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
-
-                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -371,8 +344,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
-
-                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -389,8 +360,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
-
-                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -407,8 +376,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
-
-                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -425,8 +392,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
-
-                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -443,8 +408,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
-
-                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -457,8 +420,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "decideOnTimeExtension",
                         "name", "Decide On Time Extension",
-
-                        "workingDaysAllowed", 2,
                         "processCategories", "timeExtension"
                     )
                 )
@@ -471,8 +432,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewRespondentEvidence",
                         "name", "Review Respondent Evidence",
-
-                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -485,8 +444,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewAdditionalEvidence",
                         "name", "Review additional evidence",
-
-                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -499,8 +456,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewAdditionalEvidence",
                         "name", "Review additional evidence",
-
-                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -513,8 +468,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewAdditionalEvidence",
                         "name", "Review additional evidence",
-
-                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -527,8 +480,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewAdditionalEvidence",
                         "name", "Review additional evidence",
-
-                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -541,8 +492,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewAdditionalEvidence",
                         "name", "Review additional evidence",
-
-                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -555,7 +504,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewAdditionalHomeOfficeEvidence",
                         "name", "Review additional Home Office evidence",
-                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -568,7 +516,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewAdditionalHomeOfficeEvidence",
                         "name", "Review additional Home Office evidence",
-                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -581,7 +528,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewAdditionalHomeOfficeEvidence",
                         "name", "Review additional Home Office evidence",
-                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -594,8 +540,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewAdditionalHomeOfficeEvidence",
                         "name", "Review additional Home Office evidence",
-
-                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -608,8 +552,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewAdditionalHomeOfficeEvidence",
                         "name", "Review additional Home Office evidence",
-
-                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -622,8 +564,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewAdditionalHomeOfficeEvidence",
                         "name", "Review additional Home Office evidence",
-
-                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -636,8 +576,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewAppealSkeletonArgument",
                         "name", "Review Appeal Skeleton Argument",
-
-                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -650,8 +588,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewAppealSkeletonArgument",
                         "name", "Review Appeal Skeleton Argument",
-
-                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -664,8 +600,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewReasonsForAppeal",
                         "name", "Review Reasons For Appeal",
-
-                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -678,8 +612,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewClarifyingQuestionsAnswers",
                         "name", "Review Clarifying Questions Answers",
-
-                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -692,8 +624,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewCmaRequirements",
                         "name", "Review Cma Requirements",
-
-                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -706,8 +636,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "attendCma",
                         "name", "Attend Cma",
-
-                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -720,8 +648,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewRespondentResponse",
                         "name", "Review Respondent Response",
-
-                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -740,7 +666,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "caseSummaryHearingBundleStartDecision",
                         "name", "Create Hearing Bundle",
-                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     ),
                     Map.of(
@@ -759,8 +684,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewHearingRequirements",
                         "name", "Review hearing requirements",
-
-                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -773,8 +696,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "followUpOverdueRespondentEvidence",
                         "name", "Follow-up overdue respondent evidence",
-
-                        "workingDaysAllowed", 2,
                         "delayDuration", 0,
                         "processCategories", "followUpOverdue"
                     )
@@ -788,8 +709,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "followUpExtendedDirection",
                         "name", "Follow-up extended direction",
-
-                        "workingDaysAllowed", 2,
                         "delayDuration", 0,
                         "processCategories", "caseProgression"
                     )
@@ -803,8 +722,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "followUpOverdueCaseBuilding",
                         "name", "Follow-up overdue case building",
-
-                        "workingDaysAllowed", 2,
                         "delayDuration", 0,
                         "processCategories", "followUpOverdue"
                     )
@@ -818,8 +735,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "followUpOverdueReasonsForAppeal",
                         "name", "Follow-up overdue reasons for appeal",
-
-                        "workingDaysAllowed", 2,
                         "delayDuration", 0,
                         "processCategories", "followUpOverdue"
                     )
@@ -833,8 +748,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "followUpOverdueClarifyingAnswers",
                         "name", "Follow-up overdue clarifying answers",
-
-                        "workingDaysAllowed", 2,
                         "delayDuration", 0,
                         "processCategories", "followUpOverdue"
                     )
@@ -848,8 +761,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "followUpOverdueCmaRequirements",
                         "name", "Follow-up overdue CMA requirements",
-
-                        "workingDaysAllowed", 2,
                         "delayDuration", 0,
                         "processCategories", "followUpOverdue"
                     )
@@ -863,8 +774,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "followUpOverdueRespondentReview",
                         "name", "Follow-up overdue respondent review",
-
-                        "workingDaysAllowed", 2,
                         "delayDuration", 0,
                         "processCategories", "followUpOverdue"
                     )
@@ -878,8 +787,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "followUpOverdueHearingRequirements",
                         "name", "Follow-up overdue hearing requirements",
-
-                        "workingDaysAllowed", 2,
                         "delayDuration", 0,
                         "processCategories", "followUpOverdue"
                     )
@@ -893,8 +800,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "followUpNonStandardDirection",
                         "name", "Follow-up non-standard direction",
-
-                        "workingDaysAllowed", 2,
                         "delayDuration", 0,
                         "processCategories", "caseProgression"
                     )
@@ -908,8 +813,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "followUpNoticeOfChange",
                         "name", "Follow-up Notice of Change",
-
-                        "workingDaysAllowed", 2,
                         "processCategories", "followUpOverdue",
                         "delayDuration", 14
                     )
@@ -923,8 +826,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "followUpNoticeOfChange",
                         "name", "Follow-up Notice of Change",
-
-                        "workingDaysAllowed", 2,
                         "processCategories", "followUpOverdue",
                         "delayDuration", 14
                     )
@@ -990,7 +891,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewHearingBundle",
                         "name", "Review Hearing bundle",
-                        "workingDaysAllowed", 0,
                         "processCategories", "caseProgression"
                     ),
                     Map.of(
@@ -1008,7 +908,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewHearingBundle",
                         "name", "Review Hearing bundle",
-                        "workingDaysAllowed", 0,
                         "processCategories", "caseProgression"
                     ),
                     Map.of(
@@ -1088,7 +987,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "processApplicationToReviewDecision",
                         "name", "Process Application to Review Decision",
-                        "workingDaysAllowed", 2,
                         "processCategories", "application"
                     )
                 )
@@ -1121,7 +1019,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 Map.of(
                     "taskId", "processApplication",
                     "name", "Process Application",
-                    "workingDaysAllowed", 5,
                     "processCategories", "application"
                 )
             )
@@ -1168,8 +1065,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 Map.of(
                     "taskId", taskId,
                     "name", name,
-
-                    "workingDaysAllowed", 2,
                     "processCategories", "application"
                 )
             )
@@ -1197,7 +1092,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(6));
-        assertThat(logic.getOutputs().size(), is(5));
+        assertThat(logic.getOutputs().size(), is(4));
         assertThat(logic.getRules().size(), is(38));
     }
 
@@ -1210,7 +1105,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewAddendumEvidence",
                         "name", "Review Addendum Evidence",
-                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -1222,7 +1116,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewAddendumEvidence",
                         "name", "Review Addendum Evidence",
-                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -1234,7 +1127,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewAddendumEvidence",
                         "name", "Review Addendum Evidence",
-                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
