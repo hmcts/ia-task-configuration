@@ -1909,6 +1909,47 @@ else 0</text>
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_10ez2i8">
+        <inputEntry id="UnaryTests_0ix2y8d">
+          <text>"recordRemissionDecision"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ty3s78">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1e1es7v">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1kdhyp6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jkshtt">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0o37kp4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08ljapy">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wod6ri">
+          <text>"partiallyApproved"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1cchhaw">
+          <text>"markAsPaid"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0mcrnwy">
+          <text>"Mark as Paid"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1eg27z5">
+          <text>12</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0hq91ef">
+          <text>14</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0makvh4">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
