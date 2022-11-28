@@ -490,6 +490,23 @@
           <text></text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_15xne0s">
+        <inputEntry id="UnaryTests_1qnztii">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0w3y273">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1u5wlqd">
+          <text>"dueDateNonWorkingCalendar"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_13wfewe">
+          <text>"https://www.gov.uk/bank-holidays/england-and-wales.json"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0icp90o">
+          <text></text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1h7513f">
         <inputEntry id="UnaryTests_0z97zyu">
           <text></text>

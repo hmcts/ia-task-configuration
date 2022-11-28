@@ -36,6 +36,8 @@ import static uk.gov.hmcts.reform.iataskconfiguration.DmnDecisionTable.WA_TASK_C
 
 class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
+    private static final String DEFAULT_CALENDAR = "https://www.gov.uk/bank-holidays/england-and-wales.json";
+
     @BeforeAll
     public static void initialization() {
         CURRENT_DMN_DECISION_TABLE = WA_TASK_CONFIGURATION_IA_ASYLUM;
@@ -68,7 +70,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(21));
+        assertThat(logic.getRules().size(), is(22));
     }
 
     @SuppressWarnings("checkstyle:indentation")
@@ -638,6 +640,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
         getExpectedValue(rules, "description", scenario.getExpectedDescriptionValue());
         getExpectedValue(rules, "dueDateOrigin", scenario.getExpectedDueDateOrigin());
+        getExpectedValue(rules, "dueDateNonWorkingCalendar", DEFAULT_CALENDAR);
         if (!Objects.isNull(scenario.getExpectedDueDateIntervalDays())) {
             getExpectedValue(rules, "dueDateIntervalDays", scenario.getExpectedDueDateIntervalDays());
         }
