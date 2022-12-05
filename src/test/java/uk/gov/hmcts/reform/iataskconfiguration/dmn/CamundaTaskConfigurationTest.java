@@ -20,6 +20,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.UUID;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -233,7 +234,9 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     void when_taskId_then_return_Access_requests(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
 
-        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
+        String roleAssignmentId = UUID.randomUUID().toString();
+        Map<String, String> taskAttributes = Map.of("taskType", taskType, "roleAssignmentId", roleAssignmentId);
+        inputVariables.putValue("taskAttributes", taskAttributes);
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
@@ -245,8 +248,36 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
         assertEquals(Map.of(
             "name", "workType",
-            "value", "access-requests"
+            "value", "access_requests"
         ), workTypeResultList.get(0));
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+        "reviewSpecificAccessRequestJudiciary", "reviewSpecificAccessRequestLegalOps",
+        "reviewSpecificAccessRequestAdmin"
+    })
+    void should_return_request_value_when_role_assignment_id_exists_in_task_attributes(String taskType) {
+        VariableMap inputVariables = new VariableMapImpl();
+
+        String roleAssignmentId = UUID.randomUUID().toString();
+
+        Map<String, String> taskAttributes = Map.of("taskType", taskType, "roleAssignmentId", roleAssignmentId);
+        inputVariables.putValue("taskAttributes", taskAttributes);
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        List<Map<String, Object>> dmnResults = dmnDecisionTableResult.getResultList().stream()
+            .filter((r) -> r.containsValue("additionalProperties_roleAssignmentId"))
+            .collect(Collectors.toList());
+
+        assertThat(dmnResults.size(), is(1));
+
+        assertTrue(dmnResults.contains(Map.of(
+            "name", "additionalProperties_roleAssignmentId",
+            "value", roleAssignmentId
+        )));
+
     }
 
     @ParameterizedTest
@@ -269,12 +300,18 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     @CsvSource({
         "reviewHearingBundle", "generateDraftDecisionAndReasons", "uploadDecision", "reviewAddendumHomeOfficeEvidence",
         "reviewAddendumAppellantEvidence", "reviewAddendumEvidence", "reviewSpecificAccessRequestJudiciary",
+        "reviewSpecificAccessRequestLegalOps", "reviewSpecificAccessRequestAdmin",
         "processApplicationToReviewDecision", "sendDecisionsAndReasons", "prepareDecisionsAndReasons", "decideAnFTPA"
     })
     void when_taskId_then_return_judicial_role_category(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
 
-        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
+        String roleAssignmentId = UUID.randomUUID().toString();
+        inputVariables.putValue("taskAttributes", Map.of(
+                                    "taskType", taskType,
+                                    "additionalProperties", Map.of("roleAssignmentId", roleAssignmentId)
+                                )
+        );
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
@@ -322,7 +359,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "followUpOverdueCaseBuilding", "followUpOverdueReasonsForAppeal", "followUpOverdueClarifyingAnswers",
         "followUpOverdueCmaRequirements", "followUpOverdueRespondentReview", "followUpOverdueHearingRequirements",
         "followUpNonStandardDirection", "followUpNoticeOfChange", "reviewAdditionalEvidence",
-        "reviewAdditionalHomeOfficeEvidence","reviewSpecificAccessRequestLegalOps"
+        "reviewAdditionalHomeOfficeEvidence"
     })
     void when_taskId_then_return_legal_operations_role_category(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
@@ -365,6 +402,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             .expectedLocationNameValue("Taylor House")
             .expectedCaseManagementCategoryValue("")
             .expectedDescriptionValue("")
+            .expectedReconfigureValue("true")
             .build();
 
         String refusalOfEuLabel = "Refusal of a human rights claim";
@@ -391,6 +429,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             .expectedLocationNameValue("some other location name")
             .expectedCaseManagementCategoryValue("Human rights")
             .expectedWorkType("routine_work")
+            .expectedReconfigureValue("true")
             .expectedRoleCategory("ADMIN")
             .expectedDescriptionValue(
                 "[Mark the appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid)")
@@ -425,6 +464,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 .expectedLocationValue("some other location")
                 .expectedLocationNameValue("some other location name")
                 .expectedCaseManagementCategoryValue("Human rights")
+                .expectedReconfigureValue("true")
                 .expectedWorkType("routine_work")
                 .expectedRoleCategory("ADMIN")
                 .expectedDescriptionValue("[Mark the appeal as "
@@ -449,7 +489,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                         ),
                         "list_items", List.of(Map.of(
                             "code", "refusalOfHumanRights",
-                            "label", refusalOfEuLabel))
+                            "label", refusalOfEuLabel
+                        ))
                     )
                 ))
                 .taskAttributes(Map.of("taskType", "markCaseAsPaid"))
@@ -460,6 +501,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 .expectedLocationNameValue("some other location name")
                 .expectedCaseManagementCategoryValue("Human rights")
                 .expectedWorkType("routine_work")
+                .expectedReconfigureValue("true")
                 .expectedRoleCategory("ADMIN")
                 .expectedDescriptionValue("[Mark the appeal as "
                                               + "paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid)")
@@ -476,6 +518,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 .expectedLocationNameValue("Taylor House")
                 .expectedCaseManagementCategoryValue("")
                 .expectedWorkType("routine_work")
+                .expectedReconfigureValue("true")
                 .expectedRoleCategory("ADMIN")
                 .expectedDescriptionValue("[Mark the appeal as "
                                               + "paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid)")
@@ -504,16 +547,32 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         String expectedWorkType;
         String expectedRoleCategory;
         String expectedDescriptionValue;
+        String expectedReconfigureValue;
     }
 
-    private List<Map<String, String>> getExpectedValues(Scenario scenario) {
-        List<Map<String, String>> rules = new ArrayList<>();
+    private List<Map<String, Object>> getExpectedValues(Scenario scenario) {
+        List<Map<String, Object>> rules = new ArrayList<>();
 
-        getExpectedValue(rules, "caseName", scenario.getExpectedCaseNameValue());
+        getExpectedValueWithReconfigure(
+            rules,
+            "caseName",
+            scenario.getExpectedCaseNameValue(),
+            scenario.getExpectedReconfigureValue()
+        );
         getExpectedValue(rules, "appealType", scenario.getExpectedAppealTypeValue());
         getExpectedValue(rules, "region", scenario.getExpectedRegionValue());
-        getExpectedValue(rules, "location", scenario.getExpectedLocationValue());
-        getExpectedValue(rules, "locationName", scenario.getExpectedLocationNameValue());
+        getExpectedValueWithReconfigure(
+            rules,
+            "location",
+            scenario.getExpectedLocationValue(),
+            scenario.getExpectedReconfigureValue()
+        );
+        getExpectedValueWithReconfigure(
+            rules,
+            "locationName",
+            scenario.getExpectedLocationNameValue(),
+            scenario.getExpectedReconfigureValue()
+        );
         getExpectedValue(rules, "caseManagementCategory", scenario.getExpectedCaseManagementCategoryValue());
         if (!Objects.isNull(scenario.getTaskAttributes())
             && StringUtils.isNotBlank(scenario.taskAttributes.get("taskType").toString())) {
@@ -525,10 +584,19 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         return rules;
     }
 
-    private void getExpectedValue(List<Map<String, String>> rules, String name, String value) {
-        Map<String, String> rule = new HashMap<>();
+    private void getExpectedValue(List<Map<String, Object>> rules, String name, String value) {
+        Map<String, Object> rule = new HashMap<>();
         rule.put("name", name);
         rule.put("value", value);
+        rules.add(rule);
+    }
+
+    private void getExpectedValueWithReconfigure(List<Map<String, Object>> rules, String name, String value,
+                                                 String reconfigure) {
+        Map<String, Object> rule = new HashMap<>();
+        rule.put("name", name);
+        rule.put("value", value);
+        rule.put("canReconfigure", Boolean.valueOf(reconfigure));
         rules.add(rule);
     }
 
@@ -597,13 +665,24 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             + "generateDecisionAndReasons),",
         "sendDecisionsAndReasons,[Complete decision and reasons](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
             + "sendDecisionAndReasons),",
-        "processApplicationToReviewDecision, [Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
-            + "decideAnApplication),"
+        "processApplicationToReviewDecision,[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
+            + "decideAnApplication),",
+        "reviewSpecificAccessRequestJudiciary,[Review Access Request](/role-access/"
+            + "${[taskId]}/assignment/${[roleAssignmentId]}/specific-access),",
+        "reviewSpecificAccessRequestLegalOps,[Review Access Request](/role-access/"
+            + "${[taskId]}/assignment/${[roleAssignmentId]}/specific-access),",
+        "reviewSpecificAccessRequestAdmin,[Review Access Request](/role-access/"
+            + "${[taskId]}/assignment/${[roleAssignmentId]}/specific-access),"
     })
     void should_return_a_200_description_property(String taskType, String expectedDescription, String journeyType) {
         VariableMap inputVariables = new VariableMapImpl();
 
-        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
+        String roleAssignmentId = UUID.randomUUID().toString();
+        String taskId = UUID.randomUUID().toString();
+        Map<String, String> taskAttributes = Map.of("taskType", taskType,
+                                                    "roleAssignmentId", roleAssignmentId,
+                                                    "taskId", taskId);
+        inputVariables.putValue("taskAttributes", taskAttributes);
         if (journeyType != null) {
             inputVariables.putValue("caseData", Map.of("journeyType", journeyType));
         }
@@ -619,6 +698,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         assertEquals(Map.of(
             "name", "description",
             "value", expectedDescription
+                .replace("${[roleAssignmentId]}", roleAssignmentId).replace("${[taskId]}", taskId)
         ), descriptionList.get(0));
 
     }
