@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.0.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.2.0">
   <decision id="wa-task-configuration-ia-asylum" name="Task configuration DMN">
     <decisionTable id="DecisionTable_14cx079" hitPolicy="COLLECT">
       <input id="InputClause_1gxyo7f" label="CCD Case Data" camunda:inputVariable="caseData">
@@ -20,6 +20,7 @@
       </input>
       <output id="Output_1" label="Name" name="name" typeRef="string" />
       <output id="OutputClause_021y3bb" label="Value" name="value" typeRef="string" biodi:width="803" />
+      <output id="OutputClause_06m3ktt" label="Can Reconfigure?" name="canReconfigure" typeRef="boolean" biodi:width="192" />
       <rule id="DecisionRule_0u7yi27">
         <inputEntry id="UnaryTests_03ky0ek">
           <text></text>
@@ -32,6 +33,9 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_06tqng3">
           <text>caseData.appellantGivenNames + " " + caseData.appellantFamilyName</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_09ruaaf">
+          <text>true</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0oagl97">
@@ -59,6 +63,9 @@
                         else ""
                     </text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_1ndtqfy">
+          <text></text>
+        </outputEntry>
       </rule>
       <rule id="DecisionRule_0r3u9cf">
         <inputEntry id="UnaryTests_1bqxdqr">
@@ -76,6 +83,9 @@
                         then
                         caseData.caseManagementLocation.region else "1"
                     </text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0dwx9qa">
+          <text></text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_06fd9qz">
@@ -95,6 +105,9 @@
                         caseData.caseManagementLocation.baseLocation else "765324"
                     </text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_1wrzh5i">
+          <text>true</text>
+        </outputEntry>
       </rule>
       <rule id="DecisionRule_1oirne1">
         <inputEntry id="UnaryTests_04xtpdu">
@@ -112,6 +125,9 @@
                         null and caseData.staffLocation != null) then
                         caseData.staffLocation else "Taylor House"
                     </text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1la2dkb">
+          <text>true</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_03afipt">
@@ -154,6 +170,9 @@
                         else ""
                     </text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_1oq20o8">
+          <text></text>
+        </outputEntry>
       </rule>
       <rule id="DecisionRule_0ikmf14">
         <inputEntry id="UnaryTests_0epux74">
@@ -175,6 +194,9 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0zoponq">
           <text>"routine_work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_19npk6t">
+          <text></text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1csczvs">
@@ -212,6 +234,9 @@
         <outputEntry id="LiteralExpression_0mfd2ul">
           <text>"decision_making_work"</text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_0mhslbm">
+          <text></text>
+        </outputEntry>
       </rule>
       <rule id="DecisionRule_03n8x3v">
         <inputEntry id="UnaryTests_0u2qxu3">
@@ -225,6 +250,9 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_19poitv">
           <text>"hearing_work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_02mo95c">
+          <text></text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1mgtmkd">
@@ -251,6 +279,9 @@
         <outputEntry id="LiteralExpression_1spq9ei">
           <text>"applications"</text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_1cyayj1">
+          <text></text>
+        </outputEntry>
       </rule>
       <rule id="DecisionRule_00yasz5">
         <inputEntry id="UnaryTests_0zfo8ln">
@@ -264,6 +295,43 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0jcwzi7">
           <text>"upper_tribunal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0bikbnv">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_00hw86q">
+        <inputEntry id="UnaryTests_1ov750e">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1466etp">
+          <text>"reviewSpecificAccessRequestJudiciary","reviewSpecificAccessRequestLegalOps","reviewSpecificAccessRequestAdmin"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0bjcvtf">
+          <text>"workType"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0qvacss">
+          <text>"access_requests"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_08zn369">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_16zvd79">
+        <inputEntry id="UnaryTests_0zsiyu0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0b3q932">
+          <text>"reviewSpecificAccessRequestJudiciary","reviewSpecificAccessRequestLegalOps","reviewSpecificAccessRequestAdmin"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1hrei14">
+          <text>"additionalProperties_roleAssignmentId"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1h9eb82">
+          <text>if (taskAttributes !=null and taskAttributes.roleAssignmentId != null) then taskAttributes.roleAssignmentId else "1234"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1q1yppm">
+          <text></text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1dhhpyl">
@@ -295,7 +363,6 @@
                         "followUpNoticeOfChange",
                         "reviewAdditionalEvidence",
                         "reviewAdditionalHomeOfficeEvidence",
-                        "reviewSpecificAccessRequestLegalOps",
                         "startDecisionsAndReasonsDocument",
                         "createHearingBundle",
                         "createCaseSummary"
@@ -306,6 +373,9 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_18y163a">
           <text>"LEGAL_OPERATIONS"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0cde4ic">
+          <text></text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_01muxrj">
@@ -321,19 +391,25 @@
         <outputEntry id="LiteralExpression_0el7tae">
           <text>"ADMIN"</text>
         </outputEntry>
+        <outputEntry id="LiteralExpression_1exp16h">
+          <text></text>
+        </outputEntry>
       </rule>
       <rule id="DecisionRule_01cmxvs">
         <inputEntry id="UnaryTests_1np8ii5">
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_15ftuu0">
-          <text>"reviewHearingBundle","generateDraftDecisionAndReasons","uploadDecision","reviewAddendumHomeOfficeEvidence","reviewAddendumAppellantEvidence","reviewAddendumEvidence","reviewSpecificAccessRequestJudiciary","processApplicationToReviewDecision","sendDecisionsAndReasons","prepareDecisionsAndReasons","decideAnFTPA"</text>
+          <text>"reviewHearingBundle","generateDraftDecisionAndReasons","uploadDecision","reviewAddendumHomeOfficeEvidence","reviewAddendumAppellantEvidence","reviewAddendumEvidence","reviewSpecificAccessRequestJudiciary","reviewSpecificAccessRequestLegalOps","reviewSpecificAccessRequestAdmin","processApplicationToReviewDecision","sendDecisionsAndReasons","prepareDecisionsAndReasons","decideAnFTPA"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_15nowth">
           <text>"roleCategory"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1cn9cb2">
           <text>"JUDICIAL"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0me2qfr">
+          <text></text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1lny4x5">
@@ -390,22 +466,12 @@
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "decideAnFTPA" or taskType != null and taskType = "decideAnFTPA") then "[Leadership judge FTPA decision](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/leadershipJudgeFtpaDecision)&lt;br /&gt;[Resident judge FTPA decision](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/residentJudgeFtpaDecision)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "sendDecisionsAndReasons" or taskType != null and taskType = "sendDecisionsAndReasons") then "[Complete decision and reasons](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDecisionAndReasons)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "processApplicationToReviewDecision" or taskType != null and taskType = "processApplicationToReviewDecision") then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)"
+                        else if (taskAttributes != null and taskAttributes.taskId != null and taskAttributes.roleAssignmentId != null) then "[Review Access Request](/role-access/" + taskAttributes.taskId + "/assignment/" + taskAttributes.roleAssignmentId + "/specific-access)"
                         else ""
           </text>
         </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0fpew6w">
-        <inputEntry id="UnaryTests_1dsxa1j">
+        <outputEntry id="LiteralExpression_184xf0n">
           <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1ul72fr">
-          <text>"reviewSpecificAccessRequestJudiciary","reviewSpecificAccessRequestLegalOps","reviewSpecificAccessRequestAdmin"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1f53slh">
-          <text>"workType"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0huw4e7">
-          <text>"access-requests"</text>
         </outputEntry>
       </rule>
     </decisionTable>
