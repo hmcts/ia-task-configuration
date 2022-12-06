@@ -37,6 +37,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     public static void initialization() {
         CURRENT_DMN_DECISION_TABLE = WA_TASK_CONFIGURATION_IA_ASYLUM;
     }
+    
     @ParameterizedTest
     @CsvSource({
         "followUpNoticeOfChange"
@@ -59,6 +60,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             "value", "decision_making_work"
         ), workTypeResultList.get(0));
     }
+
     @Test
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
