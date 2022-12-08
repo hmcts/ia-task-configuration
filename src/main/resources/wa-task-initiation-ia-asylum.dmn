@@ -250,7 +250,7 @@
           <text>"appealSubmitted"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1jz4zmi">
-          <text>"refusalOfHumanRights","refusalOfEu"</text>
+          <text>"refusalOfHumanRights","refusalOfEu","euSettlementScheme"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1nlo9li">
           <text>"aip"</text>
@@ -290,7 +290,7 @@
           <text>"appealSubmitted"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_19nc6sw">
-          <text>"refusalOfHumanRights","refusalOfEu"</text>
+          <text>"refusalOfHumanRights","refusalOfEu","euSettlementScheme"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0dywuhs">
           <text></text>
