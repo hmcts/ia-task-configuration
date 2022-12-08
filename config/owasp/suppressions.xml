@@ -81,15 +81,19 @@
     <cve>CVE-2022-25857</cve>
   </suppress>
   <suppress>
-  <notes>
-    <![CDATA[https://nvd.nist.gov/vuln/detail/CVE-2022-38749,
-    SnakeYml ]]>
-  </notes>
+    <notes>
+      <![CDATA[https://nvd.nist.gov/vuln/detail/CVE-2022-38749,
+      SnakeYml ]]>
+    </notes>
     <cve>CVE-2022-38751</cve>
     <cve>CVE-2022-38750</cve>
     <cve>CVE-2022-38749</cve>
     <cve>CVE-2022-38752</cve>
-    <cve>CVE-2021-43980</cve>
+    <cve>CVE-2021-43980</cve>  
+  </suppress>
+  <suppress>  
+    <cve>CVE-2022-41854</cve>
+    <cve>CVE-2022-42252</cve>     
   </suppress>
   <suppress>
     <notes>
