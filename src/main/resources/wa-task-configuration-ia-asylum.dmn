@@ -60,6 +60,8 @@
                         "Protection"
                         else if caseData.appealType = "revocationOfProtection" then
                         "Revocation"
+                        else if caseData.appealType = "euSettlementScheme" then
+                        "EUSS"
                         else ""
                     </text>
         </outputEntry>
@@ -157,6 +159,9 @@
                         else if (caseData.caseManagementCategory !=null and caseData.caseManagementCategory.value.code =
                         "revocationOfProtection") then
                         "Revocation"
+                        else if (caseData.caseManagementCategory !=null and caseData.caseManagementCategory.value.code =
+                        "euSettlementScheme") then
+                        "EUSS"
                         else if caseData.appealType = "refusalOfHumanRights" then
                         "Human rights"
                         else if caseData.appealType = "refusalOfEu" then
@@ -167,6 +172,8 @@
                         "Protection"
                         else if caseData.appealType = "revocationOfProtection" then
                         "Revocation"
+                        else if caseData.appealType = "euSettlementScheme" then
+                        "EUSS"
                         else ""
                     </text>
         </outputEntry>
