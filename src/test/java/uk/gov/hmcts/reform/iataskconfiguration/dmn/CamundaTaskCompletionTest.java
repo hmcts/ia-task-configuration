@@ -261,6 +261,46 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                         "completionMode", "Auto"
                     ),
                     Map.of(
+                        "taskType", "processApplicationAdjourn",
+                        "completionMode", "Auto"
+                    ),
+                    Map.of(
+                        "taskType", "processApplicationExpedite",
+                        "completionMode", "Auto"
+                    ),
+                    Map.of(
+                        "taskType", "processApplicationTimeExtension",
+                        "completionMode", "Auto"
+                    ),
+                    Map.of(
+                        "taskType", "processApplicationTransfer",
+                        "completionMode", "Auto"
+                    ),
+                    Map.of(
+                        "taskType", "processApplicationWithdraw",
+                        "completionMode", "Auto"
+                    ),
+                    Map.of(
+                        "taskType", "processApplicationUpdateHearingRequirements",
+                        "completionMode", "Auto"
+                    ),
+                    Map.of(
+                        "taskType", "processApplicationUpdateAppealDetails",
+                        "completionMode", "Auto"
+                    ),
+                    Map.of(
+                        "taskType", "processApplicationReinstateAnEndedAppeal",
+                        "completionMode", "Auto"
+                    ),
+                    Map.of(
+                        "taskType", "processApplicationOther",
+                        "completionMode", "Auto"
+                    ),
+                    Map.of(
+                        "taskType", "link/unlinkAppeals",
+                        "completionMode", "Auto"
+                    ),
+                    Map.of(
                         "taskType", "processApplicationToReviewDecision",
                         "completionMode", "Auto"
                     ),
@@ -330,7 +370,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
 
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(22));
+        assertThat(logic.getRules().size(), is(32));
 
     }
 

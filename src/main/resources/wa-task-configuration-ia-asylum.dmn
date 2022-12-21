@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.2.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.5.0">
   <decision id="wa-task-configuration-ia-asylum" name="Task configuration DMN">
     <decisionTable id="DecisionTable_14cx079" hitPolicy="COLLECT">
       <input id="InputClause_1gxyo7f" label="CCD Case Data" camunda:inputVariable="caseData">
@@ -266,18 +266,26 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0uoqs4p">
-          <text>
-                        "processApplication",
-                        "processHearingRequirementsApplication",
-                        "processHearingCentreApplication",
-                        "processApplicationToExpedite",
-                        "processApplicationToTransfer",
-                        "processApplicationForTimeExtension",
-                        "processApplicationToWithdraw",
-                        "processAppealDetailsApplication",
-                        "processReinstatementApplication",
-                        "processApplicationToReviewDecision"
-                    </text>
+          <text>		"processApplication",
+		"processApplicationAdjourn",
+		"processApplicationExpedite",
+		"processApplicationTimeExtension",
+		"processApplicationTransfer",
+		"processApplicationWithdraw",
+		"processApplicationUpdateHearingRequirements",
+		"processApplicationUpdateAppealDetails",
+		"processApplicationReinstateAnEndedAppeal",
+		"processApplicationOther",
+		"link/unlinkAppeals",
+		"processHearingRequirementsApplication",
+		"processHearingCentreApplication",
+		"processApplicationToExpedite",
+		"processApplicationToTransfer",
+		"processApplicationForTimeExtension",
+		"processApplicationToWithdraw",
+		"processAppealDetailsApplication",
+		"processReinstatementApplication",
+		"processApplicationToReviewDecision"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1qi2rsb">
           <text>"workType"</text>
@@ -345,34 +353,42 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_10f3uas">
-          <text>
-                        "processApplication",
-                        "reviewTheAppeal",
-                        "decideOnTimeExtension",
-                        "reviewRespondentEvidence",
-                        "reviewAppealSkeletonArgument",
-                        "reviewReasonsForAppeal",
-                        "reviewClarifyingQuestionsAnswers",
-                        "reviewCmaRequirements",
-                        "attendCma",
-                        "reviewRespondentResponse",
-                        "caseSummaryHearingBundleStartDecision",
-                        "reviewHearingRequirements",
-                        "followUpOverdueRespondentEvidence",
-                        "followUpOverdueCaseBuilding",
-                        "followUpOverdueReasonsForAppeal",
-                        "followUpOverdueClarifyingAnswers",
-                        "followUpOverdueCmaRequirements",
-                        "followUpOverdueRespondentReview",
-                        "followUpOverdueHearingRequirements",
-                        "followUpNonStandardDirection",
-                        "followUpNoticeOfChange",
-                        "reviewAdditionalEvidence",
-                        "reviewAdditionalHomeOfficeEvidence",
-                        "startDecisionsAndReasonsDocument",
-                        "createHearingBundle",
-                        "createCaseSummary"
-                    </text>
+          <text>		"processApplication",
+		"processApplicationAdjourn",
+		"processApplicationExpedite",
+		"processApplicationTimeExtension",
+		"processApplicationTransfer",
+		"processApplicationWithdraw",
+		"processApplicationUpdateHearingRequirements",
+		"processApplicationUpdateAppealDetails",
+		"processApplicationReinstateAnEndedAppeal",
+		"processApplicationOther",
+		"link/unlinkAppeals",
+		"reviewTheAppeal",
+		"decideOnTimeExtension",
+		"reviewRespondentEvidence",
+		"reviewAppealSkeletonArgument",
+		"reviewReasonsForAppeal",
+		"reviewClarifyingQuestionsAnswers",
+		"reviewCmaRequirements",
+		"attendCma",
+		"reviewRespondentResponse",
+		"caseSummaryHearingBundleStartDecision",
+		"reviewHearingRequirements",
+		"followUpOverdueRespondentEvidence",
+		"followUpOverdueCaseBuilding",
+		"followUpOverdueReasonsForAppeal",
+		"followUpOverdueClarifyingAnswers",
+		"followUpOverdueCmaRequirements",
+		"followUpOverdueRespondentReview",
+		"followUpOverdueHearingRequirements",
+		"followUpNonStandardDirection",
+		"followUpNoticeOfChange",
+		"reviewAdditionalEvidence",
+		"reviewAdditionalHomeOfficeEvidence",
+		"startDecisionsAndReasonsDocument",
+		"createHearingBundle",
+		"createCaseSummary"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_05l5bvs">
           <text>"roleCategory"</text>
@@ -430,7 +446,18 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_1iaoi95">
           <text>
-                        if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "processApplication" or taskType != null and taskType = "processApplication")
+                         if ((taskAttributes != null and taskAttributes.taskType != null and
+                              taskAttributes.taskType = "processApplication" or taskAttributes.taskType = "processApplicationAdjourn"	or
+                               	taskAttributes.taskType = "processApplicationExpedite" or taskAttributes.taskType = "processApplicationTimeExtension" or
+                               	taskAttributes.taskType = "processApplicationTransfer" or taskAttributes.taskType = "processApplicationWithdraw" or
+                               	taskAttributes.taskType = "processApplicationUpdateHearingRequirements" or taskAttributes.taskType = "processApplicationUpdateAppealDetails" or
+                               	taskAttributes.taskType = "processApplicationReinstateAnEndedAppeal" or taskAttributes.taskType = "processApplicationOther" or
+                               	taskAttributes.taskType = "link/unlinkAppeals") or (taskType != null and taskType = "processApplication" or taskType = "processApplicationAdjourn" or
+                               	taskType = "processApplicationExpedite" or taskType = "processApplicationTimeExtension" or taskType = "processApplicationTransfer" or
+                               	taskType = "processApplicationWithdraw" or taskType = "processApplicationUpdateHearingRequirements" or
+                               	taskType = "processApplicationUpdateAppealDetails" or taskType = "processApplicationUpdateAppealDetails" or
+                               	taskType = "processApplicationReinstateAnEndedAppeal" or taskType = "processApplicationOther" or taskType = "processApplicationOther" or
+                               	taskType = "link/UnlinkAppeals"))
                         then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewTheAppeal" or taskType != null and taskType = "reviewTheAppeal")
                         then "[Request respondent evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentEvidence)"
