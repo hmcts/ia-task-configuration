@@ -213,6 +213,16 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("createHearingBundle", hearingWork),
             Arguments.of("createCaseSummary", hearingWork),
             Arguments.of("processApplication", applications),
+            Arguments.of("processApplicationAdjourn", applications),
+            Arguments.of("processApplicationExpedite", applications),
+            Arguments.of("processApplicationTimeExtension", applications),
+            Arguments.of("processApplicationTransfer", applications),
+            Arguments.of("processApplicationWithdraw", applications),
+            Arguments.of("processApplicationUpdateHearingRequirements", applications),
+            Arguments.of("processApplicationUpdateAppealDetails", applications),
+            Arguments.of("processApplicationReinstateAnEndedAppeal", applications),
+            Arguments.of("processApplicationOther", applications),
+            Arguments.of("link/unlinkAppeals", applications),
             Arguments.of("processHearingRequirementsApplication", applications),
             Arguments.of("processHearingCentreApplication", applications),
             Arguments.of("processApplicationToExpedite", applications),
@@ -352,14 +362,16 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
     @ParameterizedTest
     @CsvSource({
-        "processApplication", "reviewTheAppeal", "decideOnTimeExtension", "reviewRespondentEvidence",
+        "processApplication","processApplicationAdjourn","processApplicationExpedite","processApplicationTimeExtension",
+        "processApplicationTransfer","processApplicationWithdraw","processApplicationUpdateHearingRequirements",
+        "processApplicationUpdateAppealDetails","processApplicationReinstateAnEndedAppeal","processApplicationOther",
+        "link/unlinkAppeals","reviewTheAppeal", "decideOnTimeExtension", "reviewRespondentEvidence",
         "reviewAppealSkeletonArgument", "reviewReasonsForAppeal", "reviewClarifyingQuestionsAnswers",
         "reviewCmaRequirements", "attendCma", "reviewRespondentResponse", "caseSummaryHearingBundleStartDecision",
-        "reviewHearingRequirements", "followUpOverdueRespondentEvidence",
-        "followUpOverdueCaseBuilding", "followUpOverdueReasonsForAppeal", "followUpOverdueClarifyingAnswers",
-        "followUpOverdueCmaRequirements", "followUpOverdueRespondentReview", "followUpOverdueHearingRequirements",
-        "followUpNonStandardDirection", "followUpNoticeOfChange", "reviewAdditionalEvidence",
-        "reviewAdditionalHomeOfficeEvidence"
+        "reviewHearingRequirements", "followUpOverdueRespondentEvidence","followUpOverdueCaseBuilding",
+        "followUpOverdueReasonsForAppeal", "followUpOverdueClarifyingAnswers","followUpOverdueCmaRequirements",
+        "followUpOverdueRespondentReview", "followUpOverdueHearingRequirements","followUpNonStandardDirection",
+        "followUpNoticeOfChange", "reviewAdditionalEvidence","reviewAdditionalHomeOfficeEvidence"
     })
     void when_taskId_then_return_legal_operations_role_category(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
@@ -603,6 +615,26 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     @ParameterizedTest
     @CsvSource({
         "processApplication,"
+            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),",
+        "processApplicationAdjourn,"
+            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),",
+        "processApplicationExpedite,"
+            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),",
+        "processApplicationTimeExtension,"
+            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),",
+        "processApplicationTransfer,"
+            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),",
+        "processApplicationWithdraw,"
+            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),",
+        "processApplicationUpdateHearingRequirements,"
+            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),",
+        "processApplicationUpdateAppealDetails,"
+            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),",
+        "processApplicationReinstateAnEndedAppeal,"
+            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),",
+        "processApplicationOther,"
+            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),",
+        "link/unlinkAppeals,"
             + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),",
         "reviewTheAppeal,[Request respondent evidence]"
             + "(/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentEvidence),",
