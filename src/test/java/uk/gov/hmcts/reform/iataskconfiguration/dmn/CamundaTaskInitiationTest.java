@@ -1073,19 +1073,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       + "      }"),
                 emptyList()
             ),
-            getArgumentOf("Adjourn","processApplicationAdjourn","Process Adjourn Application"),
-            getArgumentOf("Expedite","processApplicationExpedite","Process Expedite Application"),
-            getArgumentOf("Time extension","processApplicationTimeExtension","Process Time Extension Application"),
-            getArgumentOf("Transfer","processApplicationTransfer","Process Transfer Application"),
-            getArgumentOf("Withdraw","processApplicationWithdraw","Process Withdraw Application"),
-            getArgumentOf("Update hearing requirements","processApplicationUpdateHearingRequirements",
-                          "Process Update Hearing Requirements Application"),
-            getArgumentOf("Update appeal details","processApplicationUpdateAppealDetails",
-                          "Process Update Appeal Details Application"),
-            getArgumentOf("Reinstate an ended appeal","processApplicationReinstateAnEndedAppeal",
-                          "Process Reinstate An Ended Appeal Application"),
-            getArgumentOf("Other","processApplicationOther","Process Other Application"),
-            getArgumentOf("Link/unlink appeals","link/unlinkAppeals","Process Link/Unlink Appeals Application"),
             Arguments.of(
                 "makeAnApplication",
                 null,
@@ -1105,11 +1092,20 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "processCategories", "application"
                     )
                 )
-            )
+            ),
+            getArgumentOf("Adjourn"),
+            getArgumentOf("Expedite"),
+            getArgumentOf("Time extension"),
+            getArgumentOf("Transfer"),
+            getArgumentOf("Withdraw"),
+            getArgumentOf("Update appeal details"),
+            getArgumentOf("Reinstate an ended appeal"),
+            getArgumentOf("Other"),
+            getArgumentOf("Link/unlink appeals")
         );
     }
 
-    private static Arguments getArgumentOf(String applicationType,String taskId, String taskName) {
+    private static Arguments getArgumentOf(String applicationType) {
         return Arguments.of(
             "makeAnApplication",
             null,
@@ -1123,8 +1119,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                   + "      }"),
             singletonList(
                 Map.of(
-                    "taskId", taskId,
-                    "name", taskName,
+                    "taskId", "processApplication",
+                    "name", "Process Application",
                     "workingDaysAllowed", 5,
                     "processCategories", "application"
                 )
@@ -1202,7 +1198,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(6));
         assertThat(logic.getOutputs().size(), is(5));
-        assertThat(logic.getRules().size(), is(47));
+        assertThat(logic.getRules().size(), is(38));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {
