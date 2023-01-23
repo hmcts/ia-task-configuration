@@ -89,11 +89,11 @@
     <cve>CVE-2022-38750</cve>
     <cve>CVE-2022-38749</cve>
     <cve>CVE-2022-38752</cve>
-    <cve>CVE-2021-43980</cve>  
+    <cve>CVE-2021-43980</cve>
   </suppress>
-  <suppress>  
+  <suppress>
     <cve>CVE-2022-41854</cve>
-    <cve>CVE-2022-42252</cve>     
+    <cve>CVE-2022-42252</cve>
   </suppress>
   <suppress>
     <notes>
@@ -113,6 +113,12 @@
    file name: snakeyaml-1.27.jar
    ]]></notes>
     <cve>CVE-2022-41854</cve>
+  </suppress>
+  <suppress>
+    <cve>CVE-2022-45143</cve>
+    <cve>CVE-2021-4277</cve>
+    <cve>CVE-2022-3064</cve>
+    <cve>CVE-2021-4235</cve>
   </suppress>
 </suppressions>
 
