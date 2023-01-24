@@ -232,7 +232,8 @@
                         "reviewAddendumAppellantEvidence",
                         "reviewAddendumEvidence",
                         "decideOnTimeExtension",
-                        "sendDecisionsAndReasons"</text>
+                        "sendDecisionsAndReasons",
+                        "followUpNoticeOfChange"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0omxasv">
           <text>"workType"</text>
@@ -311,7 +312,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1466etp">
-          <text>"followUpNoticeOfChange", "reviewSpecificAccessRequestJudiciary","reviewSpecificAccessRequestLegalOps","reviewSpecificAccessRequestAdmin"</text>
+          <text>"reviewSpecificAccessRequestJudiciary","reviewSpecificAccessRequestLegalOps","reviewSpecificAccessRequestAdmin"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0bjcvtf">
           <text>"workType"</text>

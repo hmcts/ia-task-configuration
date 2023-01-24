@@ -37,7 +37,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     public static void initialization() {
         CURRENT_DMN_DECISION_TABLE = WA_TASK_CONFIGURATION_IA_ASYLUM;
     }
-
+    
     @ParameterizedTest
     @CsvSource({
         "followUpNoticeOfChange"
@@ -57,7 +57,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
         assertEquals(Map.of(
             "name", "workType",
-            "value", "access_requests"
+            "value", "decision_making_work"
         ), workTypeResultList.get(0));
     }
 
@@ -200,6 +200,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("reviewAddendumHomeOfficeEvidence", decisionMakingWork),
             Arguments.of("decideOnTimeExtension", decisionMakingWork),
             Arguments.of("sendDecisionsAndReasons", decisionMakingWork),
+            Arguments.of("followUpNoticeOfChange", decisionMakingWork),
             Arguments.of("reviewHearingBundle", hearingWork),
             Arguments.of("generateDraftDecisionAndReasons", hearingWork),
             Arguments.of("uploadDecision", hearingWork),
