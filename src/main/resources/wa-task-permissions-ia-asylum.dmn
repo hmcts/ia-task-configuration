@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-permissions-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.2.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-permissions-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.12.0">
   <decision id="wa-task-permissions-ia-asylum" name="Permissions DMN">
     <decisionTable id="DecisionTable_1pr5oic" hitPolicy="RULE ORDER">
       <input id="InputClause_12crj6e" label="Task Type" biodi:width="554" camunda:inputVariable="taskType">
@@ -38,7 +38,7 @@
           <text>"task-supervisor"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1gda35a">
-          <text>"Read,Refer,Execute,Manage,Cancel"</text>
+          <text>"Read,Execute,Claim,Manage,Unassign,Assign,Complete,Cancel"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0uxj36c">
           <text></text>
@@ -94,7 +94,7 @@
           <text>"case-manager"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0ekjswr">
-          <text>"Read,Refer,Own,Cancel"</text>
+          <text>"Read,Own,Claim,Cancel"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1tlohef">
           <text>"LEGAL_OPERATIONS"</text>
@@ -125,7 +125,7 @@
           <text>"tribunal-caseworker"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_151ry1h">
-          <text>"Read,Refer,Own,Manage,Cancel"</text>
+          <text>"Read,Own,Claim,Manage,Unassign,Assign,Complete,Cancel"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1rwokl1">
           <text>"LEGAL_OPERATIONS"</text>
@@ -181,7 +181,7 @@
           <text>"senior-tribunal-caseworker"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1nhvpem">
-          <text>"Read,Refer,Own,Manage,Cancel"</text>
+          <text>"Read,Own,Claim,Manage,Unassign,Assign,Complete,Cancel"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_03nq5c0">
           <text>"LEGAL_OPERATIONS"</text>
@@ -214,7 +214,7 @@
           <text>"judge"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1qa45z2">
-          <text>"Read,Refer,Execute,Manage,Cancel"</text>
+          <text>"Read,Execute,Claim,Manage,Unassign,Assign,Complete,Cancel"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_06zjq08">
           <text>"JUDICIAL"</text>
@@ -247,7 +247,7 @@
           <text>"hearing-judge"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1g9ombg">
-          <text>"Read,Refer,Execute,Cancel"</text>
+          <text>"Read,Execute,Claim,Cancel"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_017of59">
           <text>"JUDICIAL"</text>
@@ -281,7 +281,7 @@
           <text>"hearing-centre-admin"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_18uxrkl">
-          <text>"Read,Refer,Own,Manage,Cancel"</text>
+          <text>"Read,Own,Claim,Manage,Unassign,Assign,Complete,Cancel"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0fbgbzp">
           <text>"ADMIN"</text>
@@ -314,7 +314,7 @@
           <text>"tribunal-caseworker"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1tlcgb1">
-          <text>"Read,Refer,Execute,Manage,Cancel"</text>
+          <text>"Read,Execute,Claim,Manage,Unassign,Assign,Complete,Cancel"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1vwn7j0">
           <text>"LEGAL_OPERATIONS"</text>
@@ -347,7 +347,7 @@
           <text>"senior-tribunal-caseworker"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0viqzzm">
-          <text>"Read,Refer,Execute,Manage,Cancel"</text>
+          <text>"Read,Execute,Claim,Manage,Unassign,Assign,Complete,Cancel"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0feri8q">
           <text>"LEGAL_OPERATIONS"</text>
@@ -383,7 +383,7 @@
           <text>"hearing-judge"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_124xecb">
-          <text>"Read,Refer,Own,Cancel"</text>
+          <text>"Read,Own,Claim,Cancel"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1pkhxc7">
           <text>"JUDICIAL"</text>
@@ -420,7 +420,7 @@
           <text>"judge"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1n6hq4e">
-          <text>"Read,Refer,Own,Manage,Cancel"</text>
+          <text>"Read,Own,Claim,Manage,Unassign,Assign,Complete,Cancel"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0pti6xc">
           <text>"JUDICIAL"</text>
@@ -450,7 +450,7 @@
           <text>"FTPA-judge"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0j0k6w4">
-          <text>"Read,Refer,Own,Cancel"</text>
+          <text>"Read,Own,Claim,Cancel"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0lym9xr">
           <text>"JUDICIAL"</text>
@@ -480,7 +480,7 @@
           <text>"tribunal-caseworker"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_051fxvi">
-          <text>"Read,Refer,Own,Manage,Cancel"</text>
+          <text>"Read,Own,Claim,Manage,Unassign,Assign,Complete,Cancel"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_02k1ff3">
           <text>"LEGAL_OPERATIONS"</text>
@@ -510,7 +510,7 @@
           <text>"senior-tribunal-caseworker"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1w3llu8">
-          <text>"Read,Refer,Own,Manage,Cancel"</text>
+          <text>"Read,Own,Claim,Manage,Unassign,Assign,Complete,Cancel"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1god3td">
           <text>"LEGAL_OPERATIONS"</text>
@@ -528,7 +528,7 @@
       <rule id="DecisionRule_1jyzdux">
         <description>Judge task permissions</description>
         <inputEntry id="UnaryTests_0pcvlxs">
-          <text>"reviewSpecificAccessRequestJudiciary", "reviewSpecificAccessRequestLegalOps","reviewSpecificAccessRequestAdmin"</text>
+          <text>"reviewSpecificAccessRequestJudiciary", "reviewSpecificAccessRequestLegalOps","reviewSpecificAccessRequestAdmin","reviewSpecificAccessRequestCTSC"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0ru9xxq">
           <text></text>
@@ -540,7 +540,7 @@
           <text>"leadership-judge"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1eu4g8m">
-          <text>"Read,Refer,Own,Manage,Cancel"</text>
+          <text>"Read,Own,Claim,Manage,Unassign,Assign,Complete,Cancel"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_00y8zyo">
           <text>"JUDICIAL"</text>
