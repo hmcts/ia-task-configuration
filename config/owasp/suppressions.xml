@@ -90,24 +90,26 @@
     <cve>CVE-2022-38749</cve>
     <cve>CVE-2022-38752</cve>
     <cve>CVE-2021-43980</cve>
-  </suppress>
+  </suppress>  
   <suppress>
-    <cve>CVE-2022-41854</cve>
+    <notes><![CDATA[
+   tomcat-embed-core-9.0.58.jar and tomcat-embed-websocket-9.0.58.jar
+   ]]></notes>
     <cve>CVE-2022-42252</cve>
   </suppress>
   <suppress>
-    <notes>Temporarily suppress dependency vulnerabilities</notes>
+    <notes><![CDATA[
+   file name: snakeyaml-1.27.jar
+   ]]></notes>
+    <cve>CVE-2022-41854</cve>    
+  </suppress>
+  <suppress>
+    <cve>CVE-2022-45143</cve>
     <cve>CVE-2021-4277</cve>
-    <cve>CVE-2021-37533</cve>
-    <cve>CVE-2022-25647</cve>
-    <cve>CVE-2021-31684</cve>
-    <cve>CVE-2022-36944</cve>
-    <cve>CVE-2021-4235</cve>
     <cve>CVE-2022-3064</cve>
-    <cve>CVE-2021-22060</cve>
-    <cve>CVE-2022-45143</cve>
-    <cve>CVE-2022-45143</cve>
-    <cve>CVE-2022-1471</cve>
+    <cve>CVE-2021-4235</cve>
+    <cve>CVE-2021-4235</cve>  
+    <cve>CVE-2021-22060</cve>      
   </suppress>
 </suppressions>
 
