@@ -353,10 +353,10 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
     @ParameterizedTest
     @CsvSource({
-        "processApplication", "reviewTheAppeal","adaReviewTheAppeal", "decideOnTimeExtension", "reviewRespondentEvidence",
-        "reviewAppealSkeletonArgument", "reviewReasonsForAppeal", "reviewClarifyingQuestionsAnswers",
-        "reviewCmaRequirements", "attendCma", "reviewRespondentResponse", "caseSummaryHearingBundleStartDecision",
-        "reviewHearingRequirements", "followUpOverdueRespondentEvidence",
+        "processApplication", "reviewTheAppeal","adaReviewTheAppeal", "decideOnTimeExtension",
+        "reviewRespondentEvidence", "reviewAppealSkeletonArgument", "reviewReasonsForAppeal",
+        "reviewClarifyingQuestionsAnswers", "reviewCmaRequirements", "attendCma", "reviewRespondentResponse",
+        "caseSummaryHearingBundleStartDecision", "reviewHearingRequirements", "followUpOverdueRespondentEvidence",
         "followUpOverdueCaseBuilding", "followUpOverdueReasonsForAppeal", "followUpOverdueClarifyingAnswers",
         "followUpOverdueCmaRequirements", "followUpOverdueRespondentReview", "followUpOverdueHearingRequirements",
         "followUpNonStandardDirection", "followUpNoticeOfChange", "reviewAdditionalEvidence",
