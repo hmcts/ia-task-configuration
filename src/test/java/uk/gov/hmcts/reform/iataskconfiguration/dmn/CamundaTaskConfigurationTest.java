@@ -223,6 +223,11 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("processAppealDetailsApplication", applications),
             Arguments.of("processReinstatementApplication", applications),
             Arguments.of("processApplicationToReviewDecision", applications),
+            Arguments.of("adaProcessApplicationAdjourn", applications),
+            Arguments.of("adaProcessApplicationExpedite", applications),
+            Arguments.of("adaProcessApplicationTimeExtension", applications),
+            Arguments.of("adaProcessApplicationWithdraw", applications),
+            Arguments.of("adaProcessApplicationToReviewDecision", applications),
             Arguments.of("decideAnFTPA", upperTribunal)
         );
     }
@@ -302,7 +307,9 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "reviewHearingBundle", "generateDraftDecisionAndReasons", "uploadDecision", "reviewAddendumHomeOfficeEvidence",
         "reviewAddendumAppellantEvidence", "reviewAddendumEvidence", "reviewSpecificAccessRequestJudiciary",
         "reviewSpecificAccessRequestLegalOps", "reviewSpecificAccessRequestAdmin","reviewSpecificAccessRequestCTSC",
-        "processApplicationToReviewDecision", "sendDecisionsAndReasons", "prepareDecisionsAndReasons", "decideAnFTPA"
+        "processApplicationToReviewDecision", "adaProcessApplicationAdjourn", "adaProcessApplicationExpedite",
+        "adaProcessApplicationTimeExtension", "adaProcessApplicationWithdraw", "adaProcessApplicationToReviewDecision",
+        "sendDecisionsAndReasons", "prepareDecisionsAndReasons", "decideAnFTPA"
     })
     void when_taskId_then_return_judicial_role_category(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
@@ -669,6 +676,16 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "sendDecisionsAndReasons,[Complete decision and reasons](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
             + "sendDecisionAndReasons),",
         "processApplicationToReviewDecision,[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
+            + "decideAnApplication),",
+        "adaProcessApplicationAdjourn,[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
+            + "decideAnApplication),",
+        "adaProcessApplicationExpedite,[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
+            + "decideAnApplication),",
+        "adaProcessApplicationTimeExtension,[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
+            + "decideAnApplication),",
+        "adaProcessApplicationWithdraw,[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
+            + "decideAnApplication),",
+        "adaProcessApplicationToReviewDecision,[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
             + "decideAnApplication),",
         "reviewSpecificAccessRequestJudiciary,[Review Access Request](/role-access/"
             + "${[taskId]}/assignment/${[roleAssignmentId]}/specific-access),",

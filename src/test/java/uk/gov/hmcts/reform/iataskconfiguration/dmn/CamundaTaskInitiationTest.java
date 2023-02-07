@@ -1245,6 +1245,130 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         );
     }
 
+    public static Stream<Arguments> adaMakeAnApplicationScenarioProvider() {
+        return Stream.of(
+            Arguments.of(
+                "makeAnApplication",
+                null,
+                mapAdditionalData(" {\n"
+                                      + "        \"Data\" : {\n"
+                                      + "          \"lastModifiedApplication\" : {\n"
+                                      + "            \"type\" : \"\",\n"
+                                      + "            \"decision\" : \"\"\n"
+                                      + "          },\n"
+                                      + "           \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "        }\n"
+                                      + "      }"),
+                emptyList()
+            ),
+            Arguments.of(
+                "makeAnApplication",
+                null,
+                mapAdditionalData(" {\n"
+                                      + "        \"Data\" : {\n"
+                                      + "          \"lastModifiedApplication\" : {\n"
+                                      + "            \"type\" : \"Judge's review of application decision\",\n"
+                                      + "            \"decision\" : \"\"\n"
+                                      + "          },\n"
+                                      + "           \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "        }\n"
+                                      + "      }"),
+                singletonList(
+                    Map.of(
+                        "taskId", "adaProcessApplicationToReviewDecision",
+                        "name", "ADA-Process Application to Review Decision",
+                        "workingDaysAllowed", 0,
+                        "processCategories", "application"
+                    )
+                )
+            ),
+            Arguments.of(
+                "makeAnApplication",
+                null,
+                mapAdditionalData(" {\n"
+                                      + "        \"Data\" : {\n"
+                                      + "          \"lastModifiedApplication\" : {\n"
+                                      + "            \"type\" : \"Adjourn\",\n"
+                                      + "            \"decision\" : \"\"\n"
+                                      + "          },\n"
+                                      + "           \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "        }\n"
+                                      + "      }"),
+                singletonList(
+                    Map.of(
+                        "taskId", "adaProcessApplicationAdjourn",
+                        "name", "ADA-Process Application to Adjourn",
+                        "workingDaysAllowed", 0,
+                        "processCategories", "application"
+                    )
+                )
+            ),
+            Arguments.of(
+                "makeAnApplication",
+                null,
+                mapAdditionalData(" {\n"
+                                      + "        \"Data\" : {\n"
+                                      + "          \"lastModifiedApplication\" : {\n"
+                                      + "            \"type\" : \"Expedite\",\n"
+                                      + "            \"decision\" : \"\"\n"
+                                      + "          },\n"
+                                      + "           \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "        }\n"
+                                      + "      }"),
+                singletonList(
+                    Map.of(
+                        "taskId", "adaProcessApplicationExpedite",
+                        "name", "ADA-Process Application to Expedite",
+                        "workingDaysAllowed", 0,
+                        "processCategories", "application"
+                    )
+                )
+            ),
+            Arguments.of(
+                "makeAnApplication",
+                null,
+                mapAdditionalData(" {\n"
+                                      + "        \"Data\" : {\n"
+                                      + "          \"lastModifiedApplication\" : {\n"
+                                      + "            \"type\" : \"Time extension\",\n"
+                                      + "            \"decision\" : \"\"\n"
+                                      + "          },\n"
+                                      + "           \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "        }\n"
+                                      + "      }"),
+                singletonList(
+                    Map.of(
+                        "taskId", "adaProcessApplicationTimeExtension",
+                        "name", "ADA-Process Application to Time Extension",
+                        "workingDaysAllowed", 0,
+                        "processCategories", "application"
+                    )
+                )
+            ),
+            Arguments.of(
+                "makeAnApplication",
+                null,
+                mapAdditionalData(" {\n"
+                                      + "        \"Data\" : {\n"
+                                      + "          \"lastModifiedApplication\" : {\n"
+                                      + "            \"type\" : \"Withdraw\",\n"
+                                      + "            \"decision\" : \"\"\n"
+                                      + "          },\n"
+                                      + "           \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "        }\n"
+                                      + "      }"),
+                singletonList(
+                    Map.of(
+                        "taskId", "adaProcessApplicationWithdraw",
+                        "name", "ADA-Process Application to Withdraw",
+                        "workingDaysAllowed", 0,
+                        "processCategories", "application"
+                    )
+                )
+            )
+        );
+    }
+
     private static Arguments getArgumentOf(String applicationType) {
         return Arguments.of(
             "makeAnApplication",
@@ -1271,6 +1395,22 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     @ParameterizedTest
     @MethodSource("makeAnApplicationScenarioProvider")
     void given_makeAnApplication_should_evaluate_dmn(String eventId,
+                                                     String postEventState,
+                                                     Map<String, Object> additionalData,
+                                                     List<Map<String, String>> expectation) {
+        VariableMap inputVariables = new VariableMapImpl();
+        inputVariables.putValue("eventId", eventId);
+        inputVariables.putValue("postEventState", postEventState);
+        inputVariables.putValue("additionalData", additionalData);
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
+    }
+
+    @ParameterizedTest
+    @MethodSource("adaMakeAnApplicationScenarioProvider")
+    void given_ada_makeAnApplication_should_evaluate_dmn(String eventId,
                                                      String postEventState,
                                                      Map<String, Object> additionalData,
                                                      List<Map<String, String>> expectation) {
@@ -1338,7 +1478,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(7));
         assertThat(logic.getOutputs().size(), is(5));
-        assertThat(logic.getRules().size(), is(39));
+        assertThat(logic.getRules().size(), is(44));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {

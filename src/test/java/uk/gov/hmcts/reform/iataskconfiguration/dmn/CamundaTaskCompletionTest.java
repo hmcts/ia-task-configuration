@@ -268,6 +268,26 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                         "taskType", "processApplicationToReviewDecision",
                         "completionMode", "Auto"
                     ),
+                    Map.of(
+                        "taskType", "adaProcessApplicationAdjourn",
+                        "completionMode", "Auto"
+                    ),
+                    Map.of(
+                        "taskType", "adaProcessApplicationExpedite",
+                        "completionMode", "Auto"
+                    ),
+                    Map.of(
+                        "taskType", "adaProcessApplicationTimeExtension",
+                        "completionMode", "Auto"
+                    ),
+                    Map.of(
+                        "taskType", "adaProcessApplicationWithdraw",
+                        "completionMode", "Auto"
+                    ),
+                    Map.of(
+                        "taskType", "adaProcessApplicationToReviewDecision",
+                        "completionMode", "Auto"
+                    ),
                     Collections.emptyMap()
                 )
             ),
@@ -334,7 +354,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
 
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(23));
+        assertThat(logic.getRules().size(), is(28));
 
     }
 

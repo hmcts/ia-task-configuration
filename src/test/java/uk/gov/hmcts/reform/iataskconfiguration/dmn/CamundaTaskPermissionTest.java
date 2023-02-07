@@ -187,6 +187,46 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "adaProcessApplicationAdjourn",
+                List.of(
+                    taskSupervisor,
+                    hearingJudgePriorityOne,
+                    judgePriorityOne
+                )
+            ),
+            Arguments.of(
+                "adaProcessApplicationExpedite",
+                List.of(
+                    taskSupervisor,
+                    hearingJudgePriorityOne,
+                    judgePriorityOne
+                )
+            ),
+            Arguments.of(
+                "adaProcessApplicationTimeExtension",
+                List.of(
+                    taskSupervisor,
+                    hearingJudgePriorityOne,
+                    judgePriorityOne
+                )
+            ),
+            Arguments.of(
+                "adaProcessApplicationWithdraw",
+                List.of(
+                    taskSupervisor,
+                    hearingJudgePriorityOne,
+                    judgePriorityOne
+                )
+            ),
+            Arguments.of(
+                "adaProcessApplicationToReviewDecision",
+                List.of(
+                    taskSupervisor,
+                    hearingJudgePriorityOne,
+                    judgePriorityOne
+                )
+            ),
+            Arguments.of(
                 "prepareDecisionsAndReasons",
                 List.of(
                     taskSupervisor,
@@ -410,6 +450,11 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
     @ParameterizedTest
     @CsvSource(value = {
         "processApplicationToReviewDecision",
+        "adaProcessApplicationAdjourn",
+        "adaProcessApplicationExpedite",
+        "adaProcessApplicationTimeExtension",
+        "adaProcessApplicationWithdraw",
+        "adaProcessApplicationToReviewDecision",
     })
     void given_taskType_5_when_evaluate_dmn_then_it_returns_expected(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();

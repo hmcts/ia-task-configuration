@@ -370,6 +370,11 @@
           <text>
           "reviewHearingBundle",
           "processApplicationToReviewDecision",
+          "adaProcessApplicationAdjourn",
+          "adaProcessApplicationExpedite",
+          "adaProcessApplicationTimeExtension",
+          "adaProcessApplicationWithdraw",
+          "adaProcessApplicationToReviewDecision",
           "reviewAddendumEvidence",
           "sendDecisionsAndReasons",
           "prepareDecisionsAndReasons"
@@ -407,6 +412,11 @@
             "reviewHearingBundle",
             "reviewAddendumEvidence",
             "processApplicationToReviewDecision",
+            "adaProcessApplicationAdjourn",
+            "adaProcessApplicationExpedite",
+            "adaProcessApplicationTimeExtension",
+            "adaProcessApplicationWithdraw",
+            "adaProcessApplicationToReviewDecision",
             "sendDecisionsAndReasons",
             "decideAnFTPA",
             "prepareDecisionsAndReasons"

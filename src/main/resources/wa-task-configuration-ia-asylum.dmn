@@ -277,7 +277,12 @@
                         "processApplicationToWithdraw",
                         "processAppealDetailsApplication",
                         "processReinstatementApplication",
-                        "processApplicationToReviewDecision"
+                        "processApplicationToReviewDecision",
+                        "adaProcessApplicationAdjourn",
+                        "adaProcessApplicationExpedite",
+                        "adaProcessApplicationTimeExtension",
+                        "adaProcessApplicationWithdraw",
+                        "adaProcessApplicationToReviewDecision"
                     </text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1qi2rsb">
@@ -408,7 +413,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_15ftuu0">
-          <text>"reviewHearingBundle","generateDraftDecisionAndReasons","uploadDecision","reviewAddendumHomeOfficeEvidence","reviewAddendumAppellantEvidence","reviewAddendumEvidence","reviewSpecificAccessRequestJudiciary","reviewSpecificAccessRequestLegalOps","reviewSpecificAccessRequestAdmin","reviewSpecificAccessRequestCTSC","processApplicationToReviewDecision","sendDecisionsAndReasons","prepareDecisionsAndReasons","decideAnFTPA"</text>
+          <text>"reviewHearingBundle","generateDraftDecisionAndReasons","uploadDecision","reviewAddendumHomeOfficeEvidence","reviewAddendumAppellantEvidence","reviewAddendumEvidence","reviewSpecificAccessRequestJudiciary","reviewSpecificAccessRequestLegalOps","reviewSpecificAccessRequestAdmin","reviewSpecificAccessRequestCTSC","processApplicationToReviewDecision","adaProcessApplicationAdjourn","adaProcessApplicationExpedite","adaProcessApplicationTimeExtension","adaProcessApplicationWithdraw","adaProcessApplicationToReviewDecision","sendDecisionsAndReasons","prepareDecisionsAndReasons","decideAnFTPA"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_15nowth">
           <text>"roleCategory"</text>
@@ -476,6 +481,11 @@
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "decideAnFTPA" or taskType != null and taskType = "decideAnFTPA") then "[Leadership judge FTPA decision](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/leadershipJudgeFtpaDecision)&lt;br /&gt;[Resident judge FTPA decision](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/residentJudgeFtpaDecision)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "sendDecisionsAndReasons" or taskType != null and taskType = "sendDecisionsAndReasons") then "[Complete decision and reasons](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDecisionAndReasons)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "processApplicationToReviewDecision" or taskType != null and taskType = "processApplicationToReviewDecision") then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "adaProcessApplicationAdjourn" or taskType != null and taskType = "adaProcessApplicationAdjourn") then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "adaProcessApplicationExpedite" or taskType != null and taskType = "adaProcessApplicationExpedite") then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "adaProcessApplicationTimeExtension" or taskType != null and taskType = "adaProcessApplicationTimeExtension") then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "adaProcessApplicationWithdraw" or taskType != null and taskType = "adaProcessApplicationWithdraw") then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "adaProcessApplicationToReviewDecision" or taskType != null and taskType = "adaProcessApplicationToReviewDecision") then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)"
                         else if (taskAttributes != null and taskAttributes.taskId != null and taskAttributes.roleAssignmentId != null) then "[Review Access Request](/role-access/" + taskAttributes.taskId + "/assignment/" + taskAttributes.roleAssignmentId + "/specific-access)"
                         else ""
           </text>
