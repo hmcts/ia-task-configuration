@@ -213,6 +213,7 @@
         <inputEntry id="UnaryTests_1gm06lg">
           <text>
                         "reviewTheAppeal",
+                        "adaReviewTheAppeal",
                         "followUpOverdueRespondentEvidence",
                         "reviewRespondentEvidence",
                         "followUpOverdueCaseBuilding",
@@ -348,6 +349,7 @@
           <text>
                         "processApplication",
                         "reviewTheAppeal",
+                        "adaReviewTheAppeal",
                         "decideOnTimeExtension",
                         "reviewRespondentEvidence",
                         "reviewAppealSkeletonArgument",
@@ -434,6 +436,8 @@
                         then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewTheAppeal" or taskType != null and taskType = "reviewTheAppeal")
                         then "[Request respondent evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentEvidence)"
+                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "adaReviewTheAppeal" or taskType != null and taskType = "adaReviewTheAppeal")
+                         then "[Request respondent evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentEvidence)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "decideOnTimeExtension" or taskType != null and taskType ="decideOnTimeExtension")
                         then "[Change the direction due date](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/changeDirectionDueDate)"
                         else if ((taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewRespondentEvidence" or taskType != null and taskType ="reviewRespondentEvidence") and (caseData != null and caseData.journeyType = "aip"))
