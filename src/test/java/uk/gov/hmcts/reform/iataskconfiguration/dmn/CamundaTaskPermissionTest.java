@@ -187,7 +187,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "adaProcessApplicationAdjourn",
+                "adaProcessApplicationToAdjourn",
                 List.of(
                     taskSupervisor,
                     hearingJudgePriorityOne,
@@ -195,7 +195,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "adaProcessApplicationExpedite",
+                "adaProcessApplicationToExpedite",
                 List.of(
                     taskSupervisor,
                     hearingJudgePriorityOne,
@@ -203,7 +203,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "adaProcessApplicationTimeExtension",
+                "adaProcessApplicationForTimeExtension",
                 List.of(
                     taskSupervisor,
                     hearingJudgePriorityOne,
@@ -211,7 +211,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "adaProcessApplicationWithdraw",
+                "adaProcessApplicationToWithdraw",
                 List.of(
                     taskSupervisor,
                     hearingJudgePriorityOne,
@@ -232,6 +232,51 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     taskSupervisor,
                     hearingJudgePriorityOne,
                     judgePriorityOne
+                )
+            ),
+            Arguments.of(
+                "adaProcessApplicationToUpdateHearingRequirements",
+                List.of(
+                    taskSupervisor,
+                    caseManager,
+                    tribunalCaseWorkerPriorityOne,
+                    seniorCaseWorkerPriorityOne
+                )
+            ),
+            Arguments.of(
+                "adaProcessApplicationToUpdateAppealDetails",
+                List.of(
+                    taskSupervisor,
+                    caseManager,
+                    tribunalCaseWorkerPriorityOne,
+                    seniorCaseWorkerPriorityOne
+                )
+            ),
+            Arguments.of(
+                "adaProcessApplicationToReinstateAnEndedAppeal",
+                List.of(
+                    taskSupervisor,
+                    caseManager,
+                    tribunalCaseWorkerPriorityOne,
+                    seniorCaseWorkerPriorityOne
+                )
+            ),
+            Arguments.of(
+                "adaProcessApplicationToOther",
+                List.of(
+                    taskSupervisor,
+                    caseManager,
+                    tribunalCaseWorkerPriorityOne,
+                    seniorCaseWorkerPriorityOne
+                )
+            ),
+            Arguments.of(
+                "adaLinkUnlinkAppeals",
+                List.of(
+                    taskSupervisor,
+                    caseManager,
+                    tribunalCaseWorkerPriorityOne,
+                    seniorCaseWorkerPriorityOne
                 )
             )
         );
@@ -325,9 +370,10 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         "followUpOverdueCaseBuilding", "followUpOverdueReasonsForAppeal", "reviewTheAppeal", "adaReviewTheAppeal",
         "reviewClarifyingQuestionsAnswers", "followUpOverdueClarifyingAnswers", "reviewRespondentResponse",
         "followUpOverdueRespondentReview", "reviewHearingRequirements", "followUpOverdueHearingRequirements",
-        "reviewCmaRequirements",
-        "attendCma",
-        "followUpNoticeOfChange", "followUpOverdueCmaRequirements", "followUpNonStandardDirection",
+        "reviewCmaRequirements", "attendCma", "adaProcessApplicationToUpdateHearingRequirements",
+        "adaProcessApplicationToUpdateAppealDetails", "adaProcessApplicationToReinstateAnEndedAppeal",
+        "adaProcessApplicationToOther", "adaLinkUnlinkAppeals", "followUpNoticeOfChange",
+        "followUpOverdueCmaRequirements", "followUpNonStandardDirection",
          "attendCma", "followUpNoticeOfChange", "followUpOverdueCmaRequirements",
         "followUpNonStandardDirection",
          "reviewAdditionalEvidence", "reviewAdditionalHomeOfficeEvidence"
@@ -450,10 +496,10 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
     @ParameterizedTest
     @CsvSource(value = {
         "processApplicationToReviewDecision",
-        "adaProcessApplicationAdjourn",
-        "adaProcessApplicationExpedite",
-        "adaProcessApplicationTimeExtension",
-        "adaProcessApplicationWithdraw",
+        "adaProcessApplicationToAdjourn",
+        "adaProcessApplicationToExpedite",
+        "adaProcessApplicationForTimeExtension",
+        "adaProcessApplicationToWithdraw",
         "adaProcessApplicationToReviewDecision",
     })
     void given_taskType_5_when_evaluate_dmn_then_it_returns_expected(String taskType) {

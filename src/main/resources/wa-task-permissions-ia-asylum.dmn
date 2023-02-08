@@ -75,6 +75,11 @@
             "reviewAdditionalHomeOfficeEvidence",
             "reviewAdditionalAppellantEvidence",
             "processApplication",
+            "adaProcessApplicationToUpdateHearingRequirements",
+            "adaProcessApplicationToUpdateAppealDetails",
+            "adaProcessApplicationToReinstateAnEndedAppeal",
+            "adaProcessApplicationToOther",
+            "adaLinkUnlinkAppeals",
             "attendCma",
             "startDecisionsAndReasons",
             "caseSummaryHearingBundleStartDecision",
@@ -113,7 +118,7 @@
       <rule id="DecisionRule_1tvtlre">
         <description>Tribunal caseworker task permissions</description>
         <inputEntry id="UnaryTests_13ukkz6">
-          <text>"reviewTheAppeal","adaReviewTheAppeal","reviewRespondentEvidence","followUpOverdueRespondentEvidence","reviewAppealSkeletonArgument","followUpOverdueCaseBuilding","reviewReasonsForAppeal","followUpOverdueReasonsForAppeal","reviewClarifyingQuestionsAnswers","followUpOverdueClarifyingAnswers","reviewRespondentResponse","followUpOverdueRespondentReview","reviewHearingRequirements","followUpOverdueHearingRequirements","reviewCmaRequirements","caseSummaryHearingBundleStartDecision","processApplication","attendCma","startDecisionsAndReasons","followUpNoticeOfChange","followUpOverdueCmaRequirements","followUpNonStandardDirection","decideOnTimeExtension","reviewAdditionalEvidence","reviewAdditionalHomeOfficeEvidence",
+          <text>"reviewTheAppeal","adaReviewTheAppeal","reviewRespondentEvidence","followUpOverdueRespondentEvidence","reviewAppealSkeletonArgument","followUpOverdueCaseBuilding","reviewReasonsForAppeal","followUpOverdueReasonsForAppeal","reviewClarifyingQuestionsAnswers","followUpOverdueClarifyingAnswers","reviewRespondentResponse","followUpOverdueRespondentReview","reviewHearingRequirements","followUpOverdueHearingRequirements","reviewCmaRequirements","caseSummaryHearingBundleStartDecision","processApplication","adaProcessApplicationToUpdateHearingRequirements","adaProcessApplicationToUpdateAppealDetails","adaProcessApplicationToReinstateAnEndedAppeal","adaProcessApplicationToOther","adaLinkUnlinkAppeals","attendCma","startDecisionsAndReasons","followUpNoticeOfChange","followUpOverdueCmaRequirements","followUpNonStandardDirection","decideOnTimeExtension","reviewAdditionalEvidence","reviewAdditionalHomeOfficeEvidence",
             "followUpExtendedDirection","startDecisionsAndReasonsDocument","createHearingBundle","createCaseSummary"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_10s330p">
@@ -163,6 +168,11 @@
             "reviewAdditionalHomeOfficeEvidence",
             "caseSummaryHearingBundleStartDecision",
             "processApplication",
+            "adaProcessApplicationToUpdateHearingRequirements",
+            "adaProcessApplicationToUpdateAppealDetails",
+            "adaProcessApplicationToReinstateAnEndedAppeal",
+            "adaProcessApplicationToOther",
+            "adaLinkUnlinkAppeals",
             "attendCma",
             "startDecisionsAndReasons",
             "followUpNoticeOfChange",
@@ -370,10 +380,10 @@
           <text>
           "reviewHearingBundle",
           "processApplicationToReviewDecision",
-          "adaProcessApplicationAdjourn",
-          "adaProcessApplicationExpedite",
-          "adaProcessApplicationTimeExtension",
-          "adaProcessApplicationWithdraw",
+          "adaProcessApplicationToAdjourn",
+          "adaProcessApplicationToExpedite",
+          "adaProcessApplicationForTimeExtension",
+          "adaProcessApplicationToWithdraw",
           "adaProcessApplicationToReviewDecision",
           "reviewAddendumEvidence",
           "sendDecisionsAndReasons",
@@ -412,10 +422,10 @@
             "reviewHearingBundle",
             "reviewAddendumEvidence",
             "processApplicationToReviewDecision",
-            "adaProcessApplicationAdjourn",
-            "adaProcessApplicationExpedite",
-            "adaProcessApplicationTimeExtension",
-            "adaProcessApplicationWithdraw",
+            "adaProcessApplicationToAdjourn",
+            "adaProcessApplicationToExpedite",
+            "adaProcessApplicationForTimeExtension",
+            "adaProcessApplicationToWithdraw",
             "adaProcessApplicationToReviewDecision",
             "sendDecisionsAndReasons",
             "decideAnFTPA",
