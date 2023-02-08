@@ -313,8 +313,9 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "reviewAddendumAppellantEvidence", "reviewAddendumEvidence", "reviewSpecificAccessRequestJudiciary",
         "reviewSpecificAccessRequestLegalOps", "reviewSpecificAccessRequestAdmin","reviewSpecificAccessRequestCTSC",
         "processApplicationToReviewDecision", "adaProcessApplicationToAdjourn", "adaProcessApplicationToExpedite",
-        "adaProcessApplicationForTimeExtension", "adaProcessApplicationToWithdraw", "adaProcessApplicationToReviewDecision",
-        "sendDecisionsAndReasons", "prepareDecisionsAndReasons", "decideAnFTPA"
+        "adaProcessApplicationForTimeExtension", "adaProcessApplicationToWithdraw",
+        "adaProcessApplicationToReviewDecision", "sendDecisionsAndReasons", "prepareDecisionsAndReasons",
+        "decideAnFTPA"
     })
     void when_taskId_then_return_judicial_role_category(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();

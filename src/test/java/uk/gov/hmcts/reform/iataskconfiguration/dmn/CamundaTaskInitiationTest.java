@@ -1392,7 +1392,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         );
     }
 
-    public static Stream<Arguments> adaMakeAnApplicationLOScenarioProvider() {
+    public static Stream<Arguments> adaMakeAnApplicationLoScenarioProvider() {
         return Stream.of(
             Arguments.of(
                 "makeAnApplication",
@@ -1549,7 +1549,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     }
 
     @ParameterizedTest
-    @MethodSource("adaMakeAnApplicationLOScenarioProvider")
+    @MethodSource("adaMakeAnApplicationLoScenarioProvider")
     void given_ada_makeAnApplication_LO_should_evaluate_dmn(String eventId,
                                                          String postEventState,
                                                          Map<String, Object> additionalData,
