@@ -192,7 +192,9 @@
                         "attendCma",
                         "caseSummaryHearingBundleStartDecision",
                         "followUpExtendedDirection",
+                        "adaFollowUpExtendedDirection",
                         "followUpNonStandardDirection",
+                        "adaFollowUpNonStandardDirection",
                         "reviewClarifyingQuestionsAnswers"
                     </text>
         </inputEntry>
@@ -215,14 +217,17 @@
                         "reviewTheAppeal",
                         "adaReviewTheAppeal",
                         "followUpOverdueRespondentEvidence",
+                        "adaFollowUpOverdueRespondentEvidence",
                         "reviewRespondentEvidence",
                         "followUpOverdueCaseBuilding",
+                        "adaFollowUpOverdueCaseBuilding",
                         "reviewAppealSkeletonArgument",
                         "followUpOverdueReasonsForAppeal",
                         "reviewReasonsForAppeal",
                         "followUpOverdueClarifyingAnswers",
                         "reviewClarifyingAnswers",
                         "followUpOverdueRespondentReview",
+                        "adaFollowUpOverdueRespondentReview",
                         "reviewRespondentResponse",
                         "followUpOverdueCMARequirements",
                         "reviewCmaRequirements",
@@ -322,7 +327,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1466etp">
-          <text>"followUpNoticeOfChange", "reviewSpecificAccessRequestJudiciary","reviewSpecificAccessRequestLegalOps","reviewSpecificAccessRequestAdmin","reviewSpecificAccessRequestCTSC"</text>
+          <text>"followUpNoticeOfChange", "adaFollowUpNoticeOfChange", "reviewSpecificAccessRequestJudiciary","reviewSpecificAccessRequestLegalOps","reviewSpecificAccessRequestAdmin","reviewSpecificAccessRequestCTSC"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0bjcvtf">
           <text>"workType"</text>
@@ -376,14 +381,19 @@
                         "caseSummaryHearingBundleStartDecision",
                         "reviewHearingRequirements",
                         "followUpOverdueRespondentEvidence",
+                        "adaFollowUpOverdueRespondentEvidence",
                         "followUpOverdueCaseBuilding",
+                        "adaFollowUpOverdueCaseBuilding",
                         "followUpOverdueReasonsForAppeal",
                         "followUpOverdueClarifyingAnswers",
                         "followUpOverdueCmaRequirements",
                         "followUpOverdueRespondentReview",
+                        "adaFollowUpOverdueRespondentReview",
                         "followUpOverdueHearingRequirements",
                         "followUpNonStandardDirection",
+                        "adaFollowUpNonStandardDirection",
                         "followUpNoticeOfChange",
+                        "adaFollowUpNoticeOfChange",
                         "reviewAdditionalEvidence",
                         "reviewAdditionalHomeOfficeEvidence",
                         "startDecisionsAndReasonsDocument",
