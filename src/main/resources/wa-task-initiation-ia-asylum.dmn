@@ -97,7 +97,7 @@ else
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0qijb2q">
-          <text></text>
+          <text>"No"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0tbxmk0">
           <text>"processApplication"</text>
@@ -135,7 +135,7 @@ else
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1okvw16">
-          <text></text>
+          <text>"No"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0axzr7q">
           <text>"processApplicationToReviewDecision"</text>
@@ -150,6 +150,386 @@ else
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1pyp879">
+          <text>"application"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0p719je">
+        <inputEntry id="UnaryTests_0kt3put">
+          <text>"makeAnApplication"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1s7andb">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14wej4i">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xm9i8m">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ugf23f">
+          <text>"Adjourn"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_11xcx3q">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xesm5q">
+          <text>"Yes"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_029kljv">
+          <text>"adaProcessApplicationToAdjourn"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_103i51d">
+          <text>"ADA-Process Application to Adjourn"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ghu7hm">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1imj9l0">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1sal20n">
+          <text>"application"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1f3iz2w">
+        <inputEntry id="UnaryTests_0op2yf7">
+          <text>"makeAnApplication"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1mlsahk">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1yq4h2i">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_13xu1a6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0e5eznp">
+          <text>"Expedite"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0w3f3yh">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_134rzcm">
+          <text>"Yes"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0fiuo5k">
+          <text>"adaProcessApplicationToExpedite"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1xwbr6t">
+          <text>"ADA-Process Application to Expedite"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0lp7d0t">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1gyx84l">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1sba1d8">
+          <text>"application"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_19exqpp">
+        <inputEntry id="UnaryTests_03uchvl">
+          <text>"makeAnApplication"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ij9iyl">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1gaocqr">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ei76ca">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ev515n">
+          <text>"Time extension"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_012u5u5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ltdhoj">
+          <text>"Yes"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0qsbrmb">
+          <text>"adaProcessApplicationForTimeExtension"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1jfl497">
+          <text>"ADA-Process Application for Time Extension"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0t9n07t">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ox319p">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_09r2i6m">
+          <text>"application"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_04cftsf">
+        <inputEntry id="UnaryTests_0awibfl">
+          <text>"makeAnApplication"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nbtqa5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0svfv04">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vzmsrl">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1nk9nvj">
+          <text>"Withdraw"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1q23e58">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1j7aeyl">
+          <text>"Yes"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0nzxm1z">
+          <text>"adaProcessApplicationToWithdraw"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1urxaxn">
+          <text>"ADA-Process Application to Withdraw"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0s0fqx1">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_08todqo">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0p5e3j7">
+          <text>"application"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1yasaiv">
+        <inputEntry id="UnaryTests_02jizh2">
+          <text>"makeAnApplication"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rcao3p">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0etixel">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10hh3ah">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1b0c2jo">
+          <text>"Judge's review of application decision"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0l7d2l0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1y2e9ix">
+          <text>"Yes"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1myxpvy">
+          <text>"adaProcessApplicationToReviewDecision"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12l66zl">
+          <text>"ADA-Process Application to Review Decision"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_06x07ri">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0uptpwp">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_14bnhe7">
+          <text>"application"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0cx245k">
+        <inputEntry id="UnaryTests_1tirpun">
+          <text>"makeAnApplication"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0c9ftqv">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_053ww86">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_047h0wd">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pievqv">
+          <text>"Update hearing requirements"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1yo8apv">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0p7h8rn">
+          <text>"Yes"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1l4vaon">
+          <text>"adaProcessApplicationToUpdateHearingRequirements"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_196nmcf">
+          <text>"ADA-Process Application to Update Hearing Requirements"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_13nfvoq">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_17e0yvw">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1a0sdf3">
+          <text>"application"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1gzj6p1">
+        <inputEntry id="UnaryTests_1ahmdme">
+          <text>"makeAnApplication"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1u6w2s9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rx6yk9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ne7e6w">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0mczl1u">
+          <text>"Update appeal details"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_18so7b7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0pdkp4d">
+          <text>"Yes"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1dtjgjo">
+          <text>"adaProcessApplicationToUpdateAppealDetails"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_137qood">
+          <text>"ADA-Process Application to Update Appeal Details"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0atu4a0">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0nvrfhc">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1n48wd2">
+          <text>"application"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1yioj8n">
+        <inputEntry id="UnaryTests_09oarh4">
+          <text>"makeAnApplication"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1oc1cg5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1kgjnru">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ok4hyg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nuna7m">
+          <text>"Reinstate an ended appeal"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_18drwts">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10c9sot">
+          <text>"Yes"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0v1uzl3">
+          <text>"adaProcessApplicationToReinstateAnEndedAppeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_11ei2r5">
+          <text>"ADA-Process Application to Reinstate An Appeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1in3evd">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0n7bzi5">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0u7arhg">
+          <text>"application"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1pkho32">
+        <inputEntry id="UnaryTests_19h8vkm">
+          <text>"makeAnApplication"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0wuouh6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rd7foc">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ykwimg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1o7yrbu">
+          <text>"Other"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1c8wxa5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0y811mx">
+          <text>"Yes"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_10qec33">
+          <text>"adaProcessApplicationToOther"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0qm0wxr">
+          <text>"ADA-Process Other Application"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12vc4pp">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_02oz3uf">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_18u1yzm">
+          <text>"application"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ommw8h">
+        <inputEntry id="UnaryTests_0apm303">
+          <text>"makeAnApplication"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1u4ul8d">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0g57cka">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rjt80k">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1elfchi">
+          <text>"Link/unlink appeals"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0u8drfu">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_13u4vwv">
+          <text>"Yes"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0vickfz">
+          <text>"adaLinkUnlinkAppeals"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_05jvbll">
+          <text>"ADA-Process Application to Link/Unlink Appeals"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_16zxxtw">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_13gfnjz">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_01sqx2j">
           <text>"application"</text>
         </outputEntry>
       </rule>
