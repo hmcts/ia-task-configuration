@@ -1512,6 +1512,234 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "processCategories", "application"
                     )
                 )
+            ),
+            Arguments.of(
+                "requestRespondentEvidence",
+                "awaitingRespondentEvidence",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "No" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "followUpOverdueRespondentEvidence",
+                        "name", "Follow-up overdue respondent evidence",
+
+                        "workingDaysAllowed", 2,
+                        "delayDuration", 0,
+                        "processCategories", "followUpOverdue"
+                    )
+                )
+            ),
+            Arguments.of(
+                "requestRespondentEvidence",
+                "awaitingRespondentEvidence",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "adaFollowUpOverdueRespondentEvidence",
+                        "name", "ADA-Follow-up overdue respondent evidence",
+
+                        "workingDaysAllowed", 0,
+                        "delayDuration", 0,
+                        "processCategories", "followUpOverdue"
+                    )
+                )
+            ),
+            Arguments.of(
+                "changeDirectionDueDate",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "No" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "followUpExtendedDirection",
+                        "name", "Follow-up extended direction",
+
+                        "workingDaysAllowed", 2,
+                        "delayDuration", 0,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "changeDirectionDueDate",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "adaFollowUpExtendedDirection",
+                        "name", "ADA-Follow-up extended direction",
+
+                        "workingDaysAllowed", 0,
+                        "delayDuration", 0,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "requestCaseBuilding",
+                "caseBuilding",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "No" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "followUpOverdueCaseBuilding",
+                        "name", "Follow-up overdue case building",
+
+                        "workingDaysAllowed", 2,
+                        "delayDuration", 0,
+                        "processCategories", "followUpOverdue"
+                    )
+                )
+            ),
+            Arguments.of(
+                "requestCaseBuilding",
+                "caseBuilding",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "adaFollowUpOverdueCaseBuilding",
+                        "name", "ADA-Follow-up overdue case building",
+
+                        "workingDaysAllowed", 0,
+                        "delayDuration", 0,
+                        "processCategories", "followUpOverdue"
+                    )
+                )
+            ),
+            Arguments.of(
+                "requestRespondentReview",
+                "respondentReview",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "No" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "followUpOverdueRespondentReview",
+                        "name", "Follow-up overdue respondent review",
+
+                        "workingDaysAllowed", 2,
+                        "delayDuration", 0,
+                        "processCategories", "followUpOverdue"
+                    )
+                )
+            ),
+            Arguments.of(
+                "requestRespondentReview",
+                "respondentReview",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "adaFollowUpOverdueRespondentReview",
+                        "name", "ADA-Follow-up overdue respondent review",
+
+                        "workingDaysAllowed", 0,
+                        "delayDuration", 0,
+                        "processCategories", "followUpOverdue"
+                    )
+                )
+            ),
+            Arguments.of(
+                "sendDirection",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "No" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "followUpNonStandardDirection",
+                        "name", "Follow-up non-standard direction",
+
+                        "workingDaysAllowed", 2,
+                        "delayDuration", 0,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "sendDirection",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "adaFollowUpNonStandardDirection",
+                        "name", "ADA-Follow-up non-standard direction",
+
+                        "workingDaysAllowed", 0,
+                        "delayDuration", 0,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "removeRepresentation",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "No" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "followUpNoticeOfChange",
+                        "name", "Follow-up Notice of Change",
+
+                        "workingDaysAllowed", 2,
+                        "processCategories", "followUpOverdue",
+                        "delayDuration", 14
+                    )
+                )
+            ),
+            Arguments.of(
+                "removeRepresentation",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "adaFollowUpNoticeOfChange",
+                        "name", "ADA-Follow-up Notice of Change",
+
+                        "workingDaysAllowed", 0,
+                        "processCategories", "followUpOverdue",
+                        "delayDuration", 14
+                    )
+                )
             )
         );
     }
@@ -1618,7 +1846,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(7));
         assertThat(logic.getOutputs().size(), is(5));
-        assertThat(logic.getRules().size(), is(49));
+        assertThat(logic.getRules().size(), is(55));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {
