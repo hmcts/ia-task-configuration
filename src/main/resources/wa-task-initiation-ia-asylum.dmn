@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.2.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.7.0">
   <decision id="wa-task-initiation-ia-asylum" name="Task initiation DMN">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT" biodi:annotationsWidth="400">
       <input id="Input_1" label="Event Id" biodi:width="515" camunda:inputVariable="eventId">
@@ -952,7 +952,7 @@ else
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_18q5unm">
-          <text></text>
+          <text>"No"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_07cq9vh">
           <text>"reviewAppealSkeletonArgument"</text>
@@ -967,6 +967,44 @@ else
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_147dk2d">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0s9upu0">
+        <inputEntry id="UnaryTests_07tpmzh">
+          <text>"submitCase","buildCase"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0m4dhai">
+          <text>"caseUnderReview"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05e2zmn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14kkd9z">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qd6a1a">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1n778kz">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0o4i7rb">
+          <text>"Yes"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1n3ai8n">
+          <text>"adaReviewAppealSkeletonArgument"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1f0cxws">
+          <text>"ADA-Review Appeal Skeleton Argument"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0hp9kdj">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0u8dz61">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1y33wpj">
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
