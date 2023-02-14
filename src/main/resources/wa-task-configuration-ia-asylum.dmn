@@ -398,7 +398,9 @@
                         "reviewAdditionalHomeOfficeEvidence",
                         "startDecisionsAndReasonsDocument",
                         "createHearingBundle",
-                        "createCaseSummary"
+                        "createCaseSummary",
+                        "followUpExtendedDirection",
+                        "adaFollowUpExtendedDirection"
                     </text>
         </inputEntry>
         <outputEntry id="LiteralExpression_05l5bvs">
