@@ -192,7 +192,9 @@
                         "attendCma",
                         "caseSummaryHearingBundleStartDecision",
                         "followUpExtendedDirection",
+                        "adaFollowUpExtendedDirection",
                         "followUpNonStandardDirection",
+                        "adaFollowUpNonStandardDirection",
                         "reviewClarifyingQuestionsAnswers"
                     </text>
         </inputEntry>
@@ -215,8 +217,10 @@
                         "reviewTheAppeal",
                         "adaReviewTheAppeal",
                         "followUpOverdueRespondentEvidence",
+                        "adaFollowUpOverdueRespondentEvidence",
                         "reviewRespondentEvidence",
                         "followUpOverdueCaseBuilding",
+                        "adaFollowUpOverdueCaseBuilding",
                         "reviewAppealSkeletonArgument",
                         "adaReviewAppealSkeletonArgument",
                         "followUpOverdueReasonsForAppeal",
@@ -224,6 +228,7 @@
                         "followUpOverdueClarifyingAnswers",
                         "reviewClarifyingAnswers",
                         "followUpOverdueRespondentReview",
+                        "adaFollowUpOverdueRespondentReview",
                         "reviewRespondentResponse",
                         "followUpOverdueCMARequirements",
                         "reviewCmaRequirements",
@@ -270,6 +275,11 @@
         <inputEntry id="UnaryTests_0uoqs4p">
           <text>
                         "processApplication",
+                        "adaProcessApplicationToUpdateHearingRequirements",
+                        "adaProcessApplicationToUpdateAppealDetails",
+                        "adaProcessApplicationToReinstateAnEndedAppeal",
+                        "adaProcessApplicationToOther",
+                        "adaLinkUnlinkAppeals",
                         "processHearingRequirementsApplication",
                         "processHearingCentreApplication",
                         "processApplicationToExpedite",
@@ -278,7 +288,12 @@
                         "processApplicationToWithdraw",
                         "processAppealDetailsApplication",
                         "processReinstatementApplication",
-                        "processApplicationToReviewDecision"
+                        "processApplicationToReviewDecision",
+                        "adaProcessApplicationToAdjourn",
+                        "adaProcessApplicationToExpedite",
+                        "adaProcessApplicationForTimeExtension",
+                        "adaProcessApplicationToWithdraw",
+                        "adaProcessApplicationToReviewDecision"
                     </text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1qi2rsb">
@@ -313,7 +328,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1466etp">
-          <text>"followUpNoticeOfChange", "reviewSpecificAccessRequestJudiciary","reviewSpecificAccessRequestLegalOps","reviewSpecificAccessRequestAdmin","reviewSpecificAccessRequestCTSC"</text>
+          <text>"followUpNoticeOfChange", "adaFollowUpNoticeOfChange", "reviewSpecificAccessRequestJudiciary","reviewSpecificAccessRequestLegalOps","reviewSpecificAccessRequestAdmin","reviewSpecificAccessRequestCTSC"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0bjcvtf">
           <text>"workType"</text>
@@ -349,6 +364,11 @@
         <inputEntry id="UnaryTests_10f3uas">
           <text>
                         "processApplication",
+                        "adaProcessApplicationToUpdateHearingRequirements",
+                        "adaProcessApplicationToUpdateAppealDetails",
+                        "adaProcessApplicationToReinstateAnEndedAppeal",
+                        "adaProcessApplicationToOther",
+                        "adaLinkUnlinkAppeals",
                         "reviewTheAppeal",
                         "adaReviewTheAppeal",
                         "decideOnTimeExtension",
@@ -363,14 +383,19 @@
                         "caseSummaryHearingBundleStartDecision",
                         "reviewHearingRequirements",
                         "followUpOverdueRespondentEvidence",
+                        "adaFollowUpOverdueRespondentEvidence",
                         "followUpOverdueCaseBuilding",
+                        "adaFollowUpOverdueCaseBuilding",
                         "followUpOverdueReasonsForAppeal",
                         "followUpOverdueClarifyingAnswers",
                         "followUpOverdueCmaRequirements",
                         "followUpOverdueRespondentReview",
+                        "adaFollowUpOverdueRespondentReview",
                         "followUpOverdueHearingRequirements",
                         "followUpNonStandardDirection",
+                        "adaFollowUpNonStandardDirection",
                         "followUpNoticeOfChange",
+                        "adaFollowUpNoticeOfChange",
                         "reviewAdditionalEvidence",
                         "reviewAdditionalHomeOfficeEvidence",
                         "startDecisionsAndReasonsDocument",
@@ -410,7 +435,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_15ftuu0">
-          <text>"reviewHearingBundle","generateDraftDecisionAndReasons","uploadDecision","reviewAddendumHomeOfficeEvidence","reviewAddendumAppellantEvidence","reviewAddendumEvidence","reviewSpecificAccessRequestJudiciary","reviewSpecificAccessRequestLegalOps","reviewSpecificAccessRequestAdmin","reviewSpecificAccessRequestCTSC","processApplicationToReviewDecision","sendDecisionsAndReasons","prepareDecisionsAndReasons","decideAnFTPA"</text>
+          <text>"reviewHearingBundle","generateDraftDecisionAndReasons","uploadDecision","reviewAddendumHomeOfficeEvidence","reviewAddendumAppellantEvidence","reviewAddendumEvidence","reviewSpecificAccessRequestJudiciary","reviewSpecificAccessRequestLegalOps","reviewSpecificAccessRequestAdmin","reviewSpecificAccessRequestCTSC","processApplicationToReviewDecision","adaProcessApplicationToAdjourn","adaProcessApplicationToExpedite","adaProcessApplicationForTimeExtension","adaProcessApplicationToWithdraw","adaProcessApplicationToReviewDecision","sendDecisionsAndReasons","prepareDecisionsAndReasons","decideAnFTPA"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_15nowth">
           <text>"roleCategory"</text>
@@ -435,6 +460,16 @@
         <outputEntry id="LiteralExpression_1iaoi95">
           <text>
                         if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "processApplication" or taskType != null and taskType = "processApplication")
+                        then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "adaProcessApplicationToUpdateHearingRequirements" or taskType != null and taskType = "adaProcessApplicationToUpdateHearingRequirements")
+                        then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "adaProcessApplicationToUpdateAppealDetails" or taskType != null and taskType = "adaProcessApplicationToUpdateAppealDetails")
+                        then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "adaProcessApplicationToReinstateAnEndedAppeal" or taskType != null and taskType = "adaProcessApplicationToReinstateAnEndedAppeal")
+                        then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "adaProcessApplicationToOther" or taskType != null and taskType = "adaProcessApplicationToOther")
+                        then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "adaLinkUnlinkAppeals" or taskType != null and taskType = "adaLinkUnlinkAppeals")
                         then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewTheAppeal" or taskType != null and taskType = "reviewTheAppeal")
                         then "[Request respondent evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentEvidence)"
@@ -480,6 +515,11 @@
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "decideAnFTPA" or taskType != null and taskType = "decideAnFTPA") then "[Leadership judge FTPA decision](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/leadershipJudgeFtpaDecision)&lt;br /&gt;[Resident judge FTPA decision](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/residentJudgeFtpaDecision)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "sendDecisionsAndReasons" or taskType != null and taskType = "sendDecisionsAndReasons") then "[Complete decision and reasons](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDecisionAndReasons)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "processApplicationToReviewDecision" or taskType != null and taskType = "processApplicationToReviewDecision") then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "adaProcessApplicationToAdjourn" or taskType != null and taskType = "adaProcessApplicationToAdjourn") then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "adaProcessApplicationToExpedite" or taskType != null and taskType = "adaProcessApplicationToExpedite") then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "adaProcessApplicationForTimeExtension" or taskType != null and taskType = "adaProcessApplicationForTimeExtension") then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "adaProcessApplicationToWithdraw" or taskType != null and taskType = "adaProcessApplicationToWithdraw") then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "adaProcessApplicationToReviewDecision" or taskType != null and taskType = "adaProcessApplicationToReviewDecision") then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)"
                         else if (taskAttributes != null and taskAttributes.taskId != null and taskAttributes.roleAssignmentId != null) then "[Review Access Request](/role-access/" + taskAttributes.taskId + "/assignment/" + taskAttributes.roleAssignmentId + "/specific-access)"
                         else ""
           </text>

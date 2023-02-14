@@ -61,30 +61,41 @@
             "adaReviewTheAppeal",
             "reviewRespondentEvidence",
             "followUpOverdueRespondentEvidence",
+            "adaFollowUpOverdueRespondentEvidence",
             "reviewAppealSkeletonArgument",
             "adaReviewAppealSkeletonArgument",
             "followUpOverdueCaseBuilding",
+            "adaFollowUpOverdueCaseBuilding",
             "reviewReasonsForAppeal",
             "followUpOverdueReasonsForAppeal",
             "reviewClarifyingQuestionsAnswers",
             "followUpOverdueClarifyingAnswers",
             "reviewRespondentResponse",
             "followUpOverdueRespondentReview",
+            "adaFollowUpOverdueRespondentReview",
             "reviewHearingRequirements",
             "followUpOverdueHearingRequirements",
             "reviewCmaRequirements",
             "reviewAdditionalHomeOfficeEvidence",
             "reviewAdditionalAppellantEvidence",
             "processApplication",
+            "adaProcessApplicationToUpdateHearingRequirements",
+            "adaProcessApplicationToUpdateAppealDetails",
+            "adaProcessApplicationToReinstateAnEndedAppeal",
+            "adaProcessApplicationToOther",
+            "adaLinkUnlinkAppeals",
             "attendCma",
             "startDecisionsAndReasons",
             "caseSummaryHearingBundleStartDecision",
             "followUpNoticeOfChange",
+            "adaFollowUpNoticeOfChange",
             "followUpOverdueCmaRequirements",
             "followUpNonStandardDirection",
+            "adaFollowUpNonStandardDirection",
             "decideOnTimeExtension",
             "reviewAdditionalEvidence",
-            "followUpExtendedDirection"</text>
+            "followUpExtendedDirection",
+            "adaFollowUpExtendedDirection"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0buofva">
           <text></text>
@@ -113,9 +124,10 @@
       </rule>
       <rule id="DecisionRule_1tvtlre">
         <description>Tribunal caseworker task permissions</description>
-        <inputEntry id="UnaryTests_13ukkz6">
-          <text>"reviewTheAppeal","adaReviewTheAppeal","reviewRespondentEvidence","followUpOverdueRespondentEvidence","reviewAppealSkeletonArgument","adaReviewAppealSkeletonArgument","followUpOverdueCaseBuilding","reviewReasonsForAppeal","followUpOverdueReasonsForAppeal","reviewClarifyingQuestionsAnswers","followUpOverdueClarifyingAnswers","reviewRespondentResponse","followUpOverdueRespondentReview","reviewHearingRequirements","followUpOverdueHearingRequirements","reviewCmaRequirements","caseSummaryHearingBundleStartDecision","processApplication","attendCma","startDecisionsAndReasons","followUpNoticeOfChange","followUpOverdueCmaRequirements","followUpNonStandardDirection","decideOnTimeExtension","reviewAdditionalEvidence","reviewAdditionalHomeOfficeEvidence",
-            "followUpExtendedDirection","startDecisionsAndReasonsDocument","createHearingBundle","createCaseSummary"</text>
+        <inputEntry id="UnaryTests_13ukkz6">          
+          <text>"reviewTheAppeal","adaReviewTheAppeal","reviewRespondentEvidence","followUpOverdueRespondentEvidence","adaFollowUpOverdueRespondentEvidence","reviewAppealSkeletonArgument","adaReviewAppealSkeletonArgument","followUpOverdueCaseBuilding","adaFollowUpOverdueCaseBuilding","reviewReasonsForAppeal","followUpOverdueReasonsForAppeal","reviewClarifyingQuestionsAnswers","followUpOverdueClarifyingAnswers","reviewRespondentResponse","followUpOverdueRespondentReview","adaFollowUpOverdueRespondentReview","reviewHearingRequirements","followUpOverdueHearingRequirements","reviewCmaRequirements","caseSummaryHearingBundleStartDecision","processApplication","adaProcessApplicationToUpdateHearingRequirements","adaProcessApplicationToUpdateAppealDetails","adaProcessApplicationToReinstateAnEndedAppeal","adaProcessApplicationToOther","adaLinkUnlinkAppeals","attendCma","startDecisionsAndReasons","followUpNoticeOfChange","adaFollowUpNoticeOfChange","followUpOverdueCmaRequirements","followUpNonStandardDirection","adaFollowUpNonStandardDirection","decideOnTimeExtension","reviewAdditionalEvidence","reviewAdditionalHomeOfficeEvidence",
+            "followUpExtendedDirection","adaFollowUpExtendedDirection",
+            "startDecisionsAndReasonsDocument","createHearingBundle","createCaseSummary"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_10s330p">
           <text></text>
@@ -150,26 +162,36 @@
             "adaReviewTheAppeal",
             "reviewRespondentEvidence",
             "followUpOverdueRespondentEvidence",
+            "adaFollowUpOverdueRespondentEvidence",
             "reviewAppealSkeletonArgument",
             "adaReviewAppealSkeletonArgument",
             "followUpOverdueCaseBuilding",
+            "adaFollowUpOverdueCaseBuilding",
             "reviewReasonsForAppeal",
             "followUpOverdueReasonsForAppeal",
             "reviewClarifyingQuestionsAnswers",
             "followUpOverdueClarifyingAnswers",
             "reviewRespondentResponse",
             "followUpOverdueRespondentReview",
+            "adaFollowUpOverdueRespondentReview",
             "reviewHearingRequirements",
             "followUpOverdueHearingRequirements",
             "reviewCmaRequirements",
             "reviewAdditionalHomeOfficeEvidence",
             "caseSummaryHearingBundleStartDecision",
             "processApplication",
+            "adaProcessApplicationToUpdateHearingRequirements",
+            "adaProcessApplicationToUpdateAppealDetails",
+            "adaProcessApplicationToReinstateAnEndedAppeal",
+            "adaProcessApplicationToOther",
+            "adaLinkUnlinkAppeals",
             "attendCma",
             "startDecisionsAndReasons",
             "followUpNoticeOfChange",
+            "adaFollowUpNoticeOfChange",
             "followUpOverdueCmaRequirements",
             "followUpNonStandardDirection",
+            "adaFollowUpNonStandardDirection",
             "decideOnTimeExtension",
             "reviewAdditionalEvidence",
 "startDecisionsAndReasonsDocument","createHearingBundle","createCaseSummary"
@@ -372,6 +394,11 @@
           <text>
           "reviewHearingBundle",
           "processApplicationToReviewDecision",
+          "adaProcessApplicationToAdjourn",
+          "adaProcessApplicationToExpedite",
+          "adaProcessApplicationForTimeExtension",
+          "adaProcessApplicationToWithdraw",
+          "adaProcessApplicationToReviewDecision",
           "reviewAddendumEvidence",
           "sendDecisionsAndReasons",
           "prepareDecisionsAndReasons"
@@ -409,6 +436,11 @@
             "reviewHearingBundle",
             "reviewAddendumEvidence",
             "processApplicationToReviewDecision",
+            "adaProcessApplicationToAdjourn",
+            "adaProcessApplicationToExpedite",
+            "adaProcessApplicationForTimeExtension",
+            "adaProcessApplicationToWithdraw",
+            "adaProcessApplicationToReviewDecision",
             "sendDecisionsAndReasons",
             "decideAnFTPA",
             "prepareDecisionsAndReasons"

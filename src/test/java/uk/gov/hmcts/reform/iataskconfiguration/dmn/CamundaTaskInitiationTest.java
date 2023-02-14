@@ -1340,12 +1340,520 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         );
     }
 
+    public static Stream<Arguments> adaMakeAnApplicationScenarioProvider() {
+        return Stream.of(
+            Arguments.of(
+                "makeAnApplication",
+                null,
+                mapAdditionalData(" {\n"
+                                      + "        \"Data\" : {\n"
+                                      + "          \"lastModifiedApplication\" : {\n"
+                                      + "            \"type\" : \"\",\n"
+                                      + "            \"decision\" : \"\"\n"
+                                      + "          },\n"
+                                      + "           \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "        }\n"
+                                      + "      }"),
+                emptyList()
+            ),
+            Arguments.of(
+                "makeAnApplication",
+                null,
+                mapAdditionalData(" {\n"
+                                      + "        \"Data\" : {\n"
+                                      + "          \"lastModifiedApplication\" : {\n"
+                                      + "            \"type\" : \"Judge's review of application decision\",\n"
+                                      + "            \"decision\" : \"\"\n"
+                                      + "          },\n"
+                                      + "           \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "        }\n"
+                                      + "      }"),
+                singletonList(
+                    Map.of(
+                        "taskId", "adaProcessApplicationToReviewDecision",
+                        "name", "ADA-Process Application to Review Decision",
+                        "workingDaysAllowed", 0,
+                        "processCategories", "application"
+                    )
+                )
+            ),
+            Arguments.of(
+                "makeAnApplication",
+                null,
+                mapAdditionalData(" {\n"
+                                      + "        \"Data\" : {\n"
+                                      + "          \"lastModifiedApplication\" : {\n"
+                                      + "            \"type\" : \"Adjourn\",\n"
+                                      + "            \"decision\" : \"\"\n"
+                                      + "          },\n"
+                                      + "           \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "        }\n"
+                                      + "      }"),
+                singletonList(
+                    Map.of(
+                        "taskId", "adaProcessApplicationToAdjourn",
+                        "name", "ADA-Process Application to Adjourn",
+                        "workingDaysAllowed", 0,
+                        "processCategories", "application"
+                    )
+                )
+            ),
+            Arguments.of(
+                "makeAnApplication",
+                null,
+                mapAdditionalData(" {\n"
+                                      + "        \"Data\" : {\n"
+                                      + "          \"lastModifiedApplication\" : {\n"
+                                      + "            \"type\" : \"Expedite\",\n"
+                                      + "            \"decision\" : \"\"\n"
+                                      + "          },\n"
+                                      + "           \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "        }\n"
+                                      + "      }"),
+                singletonList(
+                    Map.of(
+                        "taskId", "adaProcessApplicationToExpedite",
+                        "name", "ADA-Process Application to Expedite",
+                        "workingDaysAllowed", 0,
+                        "processCategories", "application"
+                    )
+                )
+            ),
+            Arguments.of(
+                "makeAnApplication",
+                null,
+                mapAdditionalData(" {\n"
+                                      + "        \"Data\" : {\n"
+                                      + "          \"lastModifiedApplication\" : {\n"
+                                      + "            \"type\" : \"Time extension\",\n"
+                                      + "            \"decision\" : \"\"\n"
+                                      + "          },\n"
+                                      + "           \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "        }\n"
+                                      + "      }"),
+                singletonList(
+                    Map.of(
+                        "taskId", "adaProcessApplicationForTimeExtension",
+                        "name", "ADA-Process Application for Time Extension",
+                        "workingDaysAllowed", 0,
+                        "processCategories", "application"
+                    )
+                )
+            ),
+            Arguments.of(
+                "makeAnApplication",
+                null,
+                mapAdditionalData(" {\n"
+                                      + "        \"Data\" : {\n"
+                                      + "          \"lastModifiedApplication\" : {\n"
+                                      + "            \"type\" : \"Withdraw\",\n"
+                                      + "            \"decision\" : \"\"\n"
+                                      + "          },\n"
+                                      + "           \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "        }\n"
+                                      + "      }"),
+                singletonList(
+                    Map.of(
+                        "taskId", "adaProcessApplicationToWithdraw",
+                        "name", "ADA-Process Application to Withdraw",
+                        "workingDaysAllowed", 0,
+                        "processCategories", "application"
+                    )
+                )
+            )
+        );
+    }
+
+    public static Stream<Arguments> adaMakeAnApplicationLoScenarioProvider() {
+        return Stream.of(
+            Arguments.of(
+                "makeAnApplication",
+                null,
+                mapAdditionalData(" {\n"
+                                      + "        \"Data\" : {\n"
+                                      + "          \"lastModifiedApplication\" : {\n"
+                                      + "            \"type\" : \"\",\n"
+                                      + "            \"decision\" : \"\"\n"
+                                      + "          },\n"
+                                      + "           \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "        }\n"
+                                      + "      }"),
+                emptyList()
+            ),
+            Arguments.of(
+                "makeAnApplication",
+                null,
+                mapAdditionalData(" {\n"
+                                      + "        \"Data\" : {\n"
+                                      + "          \"lastModifiedApplication\" : {\n"
+                                      + "            \"type\" : \"Update hearing requirements\",\n"
+                                      + "            \"decision\" : \"\"\n"
+                                      + "          },\n"
+                                      + "           \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "        }\n"
+                                      + "      }"),
+                singletonList(
+                    Map.of(
+                        "taskId", "adaProcessApplicationToUpdateHearingRequirements",
+                        "name", "ADA-Process Application to Update Hearing Requirements",
+                        "workingDaysAllowed", 0,
+                        "processCategories", "application"
+                    )
+                )
+            ),
+            Arguments.of(
+                "makeAnApplication",
+                null,
+                mapAdditionalData(" {\n"
+                                      + "        \"Data\" : {\n"
+                                      + "          \"lastModifiedApplication\" : {\n"
+                                      + "            \"type\" : \"Update appeal details\",\n"
+                                      + "            \"decision\" : \"\"\n"
+                                      + "          },\n"
+                                      + "           \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "        }\n"
+                                      + "      }"),
+                singletonList(
+                    Map.of(
+                        "taskId", "adaProcessApplicationToUpdateAppealDetails",
+                        "name", "ADA-Process Application to Update Appeal Details",
+                        "workingDaysAllowed", 0,
+                        "processCategories", "application"
+                    )
+                )
+            ),
+            Arguments.of(
+                "makeAnApplication",
+                null,
+                mapAdditionalData(" {\n"
+                                      + "        \"Data\" : {\n"
+                                      + "          \"lastModifiedApplication\" : {\n"
+                                      + "            \"type\" : \"Reinstate an ended appeal\",\n"
+                                      + "            \"decision\" : \"\"\n"
+                                      + "          },\n"
+                                      + "           \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "        }\n"
+                                      + "      }"),
+                singletonList(
+                    Map.of(
+                        "taskId", "adaProcessApplicationToReinstateAnEndedAppeal",
+                        "name", "ADA-Process Application to Reinstate An Appeal",
+                        "workingDaysAllowed", 0,
+                        "processCategories", "application"
+                    )
+                )
+            ),
+            Arguments.of(
+                "makeAnApplication",
+                null,
+                mapAdditionalData(" {\n"
+                                      + "        \"Data\" : {\n"
+                                      + "          \"lastModifiedApplication\" : {\n"
+                                      + "            \"type\" : \"Other\",\n"
+                                      + "            \"decision\" : \"\"\n"
+                                      + "          },\n"
+                                      + "           \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "        }\n"
+                                      + "      }"),
+                singletonList(
+                    Map.of(
+                        "taskId", "adaProcessApplicationToOther",
+                        "name", "ADA-Process Other Application",
+                        "workingDaysAllowed", 0,
+                        "processCategories", "application"
+                    )
+                )
+            ),
+            Arguments.of(
+                "makeAnApplication",
+                null,
+                mapAdditionalData(" {\n"
+                                      + "        \"Data\" : {\n"
+                                      + "          \"lastModifiedApplication\" : {\n"
+                                      + "            \"type\" : \"Link/unlink appeals\",\n"
+                                      + "            \"decision\" : \"\"\n"
+                                      + "          },\n"
+                                      + "           \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "        }\n"
+                                      + "      }"),
+                singletonList(
+                    Map.of(
+                        "taskId", "adaLinkUnlinkAppeals",
+                        "name", "ADA-Process Application to Link/Unlink Appeals",
+                        "workingDaysAllowed", 0,
+                        "processCategories", "application"
+                    )
+                )
+            ),
+            Arguments.of(
+                "requestRespondentEvidence",
+                "awaitingRespondentEvidence",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "No" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "followUpOverdueRespondentEvidence",
+                        "name", "Follow-up overdue respondent evidence",
+
+                        "workingDaysAllowed", 2,
+                        "delayDuration", 0,
+                        "processCategories", "followUpOverdue"
+                    )
+                )
+            ),
+            Arguments.of(
+                "requestRespondentEvidence",
+                "awaitingRespondentEvidence",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "adaFollowUpOverdueRespondentEvidence",
+                        "name", "ADA-Follow-up overdue respondent evidence",
+
+                        "workingDaysAllowed", 0,
+                        "delayDuration", 0,
+                        "processCategories", "followUpOverdue"
+                    )
+                )
+            ),
+            Arguments.of(
+                "changeDirectionDueDate",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "No" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "followUpExtendedDirection",
+                        "name", "Follow-up extended direction",
+
+                        "workingDaysAllowed", 2,
+                        "delayDuration", 0,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "changeDirectionDueDate",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "adaFollowUpExtendedDirection",
+                        "name", "ADA-Follow-up extended direction",
+
+                        "workingDaysAllowed", 0,
+                        "delayDuration", 0,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "requestCaseBuilding",
+                "caseBuilding",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "No" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "followUpOverdueCaseBuilding",
+                        "name", "Follow-up overdue case building",
+
+                        "workingDaysAllowed", 2,
+                        "delayDuration", 0,
+                        "processCategories", "followUpOverdue"
+                    )
+                )
+            ),
+            Arguments.of(
+                "requestCaseBuilding",
+                "caseBuilding",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "adaFollowUpOverdueCaseBuilding",
+                        "name", "ADA-Follow-up overdue case building",
+
+                        "workingDaysAllowed", 0,
+                        "delayDuration", 0,
+                        "processCategories", "followUpOverdue"
+                    )
+                )
+            ),
+            Arguments.of(
+                "requestRespondentReview",
+                "respondentReview",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "No" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "followUpOverdueRespondentReview",
+                        "name", "Follow-up overdue respondent review",
+
+                        "workingDaysAllowed", 2,
+                        "delayDuration", 0,
+                        "processCategories", "followUpOverdue"
+                    )
+                )
+            ),
+            Arguments.of(
+                "requestRespondentReview",
+                "respondentReview",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "adaFollowUpOverdueRespondentReview",
+                        "name", "ADA-Follow-up overdue respondent review",
+
+                        "workingDaysAllowed", 0,
+                        "delayDuration", 0,
+                        "processCategories", "followUpOverdue"
+                    )
+                )
+            ),
+            Arguments.of(
+                "sendDirection",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "No" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "followUpNonStandardDirection",
+                        "name", "Follow-up non-standard direction",
+
+                        "workingDaysAllowed", 2,
+                        "delayDuration", 0,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "sendDirection",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "adaFollowUpNonStandardDirection",
+                        "name", "ADA-Follow-up non-standard direction",
+
+                        "workingDaysAllowed", 0,
+                        "delayDuration", 0,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "removeRepresentation",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "No" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "followUpNoticeOfChange",
+                        "name", "Follow-up Notice of Change",
+
+                        "workingDaysAllowed", 2,
+                        "processCategories", "followUpOverdue",
+                        "delayDuration", 14
+                    )
+                )
+            ),
+            Arguments.of(
+                "removeRepresentation",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "adaFollowUpNoticeOfChange",
+                        "name", "ADA-Follow-up Notice of Change",
+
+                        "workingDaysAllowed", 0,
+                        "processCategories", "followUpOverdue",
+                        "delayDuration", 14
+                    )
+                )
+            )
+        );
+    }
+
     @ParameterizedTest
     @MethodSource("makeAnApplicationScenarioProvider")
     void given_makeAnApplication_should_evaluate_dmn(String eventId,
                                                      String postEventState,
                                                      Map<String, Object> additionalData,
                                                      List<Map<String, String>> expectation) {
+        VariableMap inputVariables = new VariableMapImpl();
+        inputVariables.putValue("eventId", eventId);
+        inputVariables.putValue("postEventState", postEventState);
+        inputVariables.putValue("additionalData", additionalData);
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
+    }
+
+    @ParameterizedTest
+    @MethodSource("adaMakeAnApplicationScenarioProvider")
+    void given_ada_makeAnApplication_should_evaluate_dmn(String eventId,
+                                                     String postEventState,
+                                                     Map<String, Object> additionalData,
+                                                     List<Map<String, String>> expectation) {
+        VariableMap inputVariables = new VariableMapImpl();
+        inputVariables.putValue("eventId", eventId);
+        inputVariables.putValue("postEventState", postEventState);
+        inputVariables.putValue("additionalData", additionalData);
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
+    }
+
+    @ParameterizedTest
+    @MethodSource("adaMakeAnApplicationLoScenarioProvider")
+    void given_ada_makeAnApplication_LO_should_evaluate_dmn(String eventId,
+                                                         String postEventState,
+                                                         Map<String, Object> additionalData,
+                                                         List<Map<String, String>> expectation) {
         VariableMap inputVariables = new VariableMapImpl();
         inputVariables.putValue("eventId", eventId);
         inputVariables.putValue("postEventState", postEventState);
@@ -1410,7 +1918,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(7));
         assertThat(logic.getOutputs().size(), is(5));
-        assertThat(logic.getRules().size(), is(40));
+        assertThat(logic.getRules().size(), is(56));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {

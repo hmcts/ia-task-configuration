@@ -251,6 +251,116 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0ttmfdx">
+        <inputEntry id="UnaryTests_0kaipcu">
+          <text>"decideAnApplication"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0i2xv9f">
+          <text>"adaProcessApplicationToAdjourn"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1xnouij">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1cvsvsg">
+        <inputEntry id="UnaryTests_1eofwve">
+          <text>"decideAnApplication"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0i05p5w">
+          <text>"adaProcessApplicationToExpedite"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_070pzp9">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0fhpnyw">
+        <inputEntry id="UnaryTests_0soszbx">
+          <text>"decideAnApplication"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_156phcy">
+          <text>"adaProcessApplicationForTimeExtension"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ojcoma">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1h27pdu">
+        <inputEntry id="UnaryTests_1v02wgf">
+          <text>"decideAnApplication"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_19wtx6l">
+          <text>"adaProcessApplicationToWithdraw"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_13a1kl3">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1y18ihj">
+        <inputEntry id="UnaryTests_08b1nu7">
+          <text>"decideAnApplication"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1su0cxm">
+          <text>"adaProcessApplicationToReviewDecision"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0xpa35g">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0zjxwwa">
+        <inputEntry id="UnaryTests_0cmzgnz">
+          <text>"decideAnApplication"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0dd96d0">
+          <text>"adaProcessApplicationToUpdateHearingRequirements"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0w971ui">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0dqyccf">
+        <inputEntry id="UnaryTests_0vqy5dd">
+          <text>"decideAnApplication"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0edsy0p">
+          <text>"adaProcessApplicationToUpdateAppealDetails"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1vxlxie">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_10l9l71">
+        <inputEntry id="UnaryTests_1sn261g">
+          <text>"decideAnApplication"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0shsuu6">
+          <text>"adaProcessApplicationToReinstateAnEndedAppeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1sdfqqr">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_147e4gj">
+        <inputEntry id="UnaryTests_0hgh6t3">
+          <text>"decideAnApplication"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1sbzgwa">
+          <text>"adaProcessApplicationToOther"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1863mp9">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1qal7vw">
+        <inputEntry id="UnaryTests_050vcfg">
+          <text>"decideAnApplication"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_132yiym">
+          <text>"adaLinkUnlinkAppeals"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1c26l2b">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>        
       <rule id="DecisionRule_12f6clj">
         <inputEntry id="UnaryTests_17pd4ef">
           <text>"requestRespondentReview"</text>
