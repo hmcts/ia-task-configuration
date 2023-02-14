@@ -1256,7 +1256,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewAdditionalEvidence",
                         "name", "Review additional evidence",
-                        
+
                         "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
@@ -1661,7 +1661,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         ))));
     }
 
-    private VariableMap prepareAddendumWithAdaInputVariable(String eventId, String postEventState, String isAda){
+    private VariableMap prepareAddendumWithAdaInputVariable(String eventId, String postEventState, String isAda) {
         String additionalData = "{\"Data\":{\"isAcceleratedDetainedAppeal\":\"" + isAda + "\"}}";
 
         VariableMap inputVariables = new VariableMapImpl();
@@ -1672,7 +1672,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         inputVariables.putValue("additionalData", mapAdditionalData(additionalData));
         return inputVariables;
     }
- 
+
     public static Stream<Arguments> makeAnApplicationScenarioProvider() {
         return Stream.of(
             Arguments.of(
@@ -2321,7 +2321,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(7));
         assertThat(logic.getOutputs().size(), is(5));
-        assertThat(logic.getRules().size(), is(59));        
+        assertThat(logic.getRules().size(), is(59));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {
