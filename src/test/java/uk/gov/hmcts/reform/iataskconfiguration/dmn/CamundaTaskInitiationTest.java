@@ -10,6 +10,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.MethodSource;
 import uk.gov.hmcts.reform.iataskconfiguration.DmnDecisionTableBaseUnitTest;
 
@@ -1198,6 +1199,72 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
     }
 
+    @ParameterizedTest
+    @CsvSource(value = {
+        "uploadAddendumEvidenceLegalRep, preHearing, No",
+        "uploadAddendumEvidenceLegalRep, decision, No",
+        "uploadAddendumEvidenceLegalRep, decided, No",
+        "uploadAddendumEvidence, preHearing, No",
+        "uploadAddendumEvidence, decision, No",
+        "uploadAddendumEvidence, decided, No",
+        "uploadAddendumEvidenceHomeOffice, preHearing, No",
+        "uploadAddendumEvidenceHomeOffice, decision, No",
+        "uploadAddendumEvidenceHomeOffice, decided, No",
+        "uploadAddendumEvidenceAdminOfficer, preHearing, No",
+        "uploadAddendumEvidenceAdminOfficer, decision, No",
+        "uploadAddendumEvidenceAdminOfficer, decided, No"
+    })
+    void given_addendum_events_with_no_ada_should_evaluate_dmn(String eventId, String postEventState, String isAda) {
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(
+            prepareAddendumWithAdaInputVariable(eventId, postEventState, isAda));
+
+        assertThat(dmnDecisionTableResult.getResultList(), is(singletonList(Map.of(
+            "name", "Review Addendum Evidence",
+            "workingDaysAllowed", 2,
+            "processCategories", "caseProgression",
+            "taskId", "reviewAddendumEvidence"
+        ))));
+    }
+
+    @ParameterizedTest
+    @CsvSource(value = {
+        "uploadAddendumEvidenceLegalRep, preHearing, Yes",
+        "uploadAddendumEvidenceLegalRep, decision, Yes",
+        "uploadAddendumEvidenceLegalRep, decided, Yes",
+        "uploadAddendumEvidence, preHearing, Yes",
+        "uploadAddendumEvidence, decision, Yes",
+        "uploadAddendumEvidence, decided, Yes",
+        "uploadAddendumEvidenceHomeOffice, preHearing, Yes",
+        "uploadAddendumEvidenceHomeOffice, decision, Yes",
+        "uploadAddendumEvidenceHomeOffice, decided, Yes",
+        "uploadAddendumEvidenceAdminOfficer, preHearing, Yes",
+        "uploadAddendumEvidenceAdminOfficer, decision, Yes",
+        "uploadAddendumEvidenceAdminOfficer, decided, Yes"
+    })
+    void given_addendum_events_with_yes_ada_should_evaluate_dmn(String eventId, String postEventState, String isAda) {
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(
+            prepareAddendumWithAdaInputVariable(eventId, postEventState, isAda));
+
+        assertThat(dmnDecisionTableResult.getResultList(), is(singletonList(Map.of(
+            "name", "ADA-Review addendum evidence",
+            "workingDaysAllowed", 0,
+            "processCategories", "caseProgression",
+            "taskId", "adaReviewAddendumEvidence"
+        ))));
+    }
+
+    private VariableMap prepareAddendumWithAdaInputVariable(String eventId, String postEventState, String isAda){
+        String additionalData = "{\"Data\":{\"isAcceleratedDetainedAppeal\":\"" + isAda + "\"}}";
+
+        VariableMap inputVariables = new VariableMapImpl();
+        inputVariables.putValue("eventId", eventId);
+        inputVariables.putValue("postEventState", postEventState);
+        inputVariables.putValue("now", LocalDateTime.now().minusMinutes(10)
+            .format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
+        inputVariables.putValue("additionalData", mapAdditionalData(additionalData));
+        return inputVariables;
+    }
+
     public static Stream<Arguments> makeAnApplicationScenarioProvider() {
         return Stream.of(
             Arguments.of(
@@ -1618,7 +1685,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(7));
         assertThat(logic.getOutputs().size(), is(5));
-        assertThat(logic.getRules().size(), is(49));
+        assertThat(logic.getRules().size(), is(50));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {
