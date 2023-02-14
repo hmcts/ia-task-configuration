@@ -61,18 +61,23 @@
             "adaReviewTheAppeal",
             "reviewRespondentEvidence",
             "followUpOverdueRespondentEvidence",
+            "adaFollowUpOverdueRespondentEvidence",
             "reviewAppealSkeletonArgument",
+            "adaReviewAppealSkeletonArgument",
             "followUpOverdueCaseBuilding",
+            "adaFollowUpOverdueCaseBuilding",
             "reviewReasonsForAppeal",
             "followUpOverdueReasonsForAppeal",
             "reviewClarifyingQuestionsAnswers",
             "followUpOverdueClarifyingAnswers",
             "reviewRespondentResponse",
             "followUpOverdueRespondentReview",
+            "adaFollowUpOverdueRespondentReview",
             "reviewHearingRequirements",
             "followUpOverdueHearingRequirements",
             "reviewCmaRequirements",
             "reviewAdditionalHomeOfficeEvidence",
+            "adaReviewAdditionalHomeOfficeEvidence",
             "reviewAdditionalAppellantEvidence",
             "processApplication",
             "adaProcessApplicationToUpdateHearingRequirements",
@@ -84,11 +89,15 @@
             "startDecisionsAndReasons",
             "caseSummaryHearingBundleStartDecision",
             "followUpNoticeOfChange",
+            "adaFollowUpNoticeOfChange",
             "followUpOverdueCmaRequirements",
             "followUpNonStandardDirection",
+            "adaFollowUpNonStandardDirection",
             "decideOnTimeExtension",
             "reviewAdditionalEvidence",
-            "followUpExtendedDirection"</text>
+            "followUpExtendedDirection",
+            "adaFollowUpExtendedDirection",
+            "adaReviewAdditionalEvidence"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0buofva">
           <text></text>
@@ -117,9 +126,10 @@
       </rule>
       <rule id="DecisionRule_1tvtlre">
         <description>Tribunal caseworker task permissions</description>
-        <inputEntry id="UnaryTests_13ukkz6">
-          <text>"reviewTheAppeal","adaReviewTheAppeal","reviewRespondentEvidence","followUpOverdueRespondentEvidence","reviewAppealSkeletonArgument","followUpOverdueCaseBuilding","reviewReasonsForAppeal","followUpOverdueReasonsForAppeal","reviewClarifyingQuestionsAnswers","followUpOverdueClarifyingAnswers","reviewRespondentResponse","followUpOverdueRespondentReview","reviewHearingRequirements","followUpOverdueHearingRequirements","reviewCmaRequirements","caseSummaryHearingBundleStartDecision","processApplication","adaProcessApplicationToUpdateHearingRequirements","adaProcessApplicationToUpdateAppealDetails","adaProcessApplicationToReinstateAnEndedAppeal","adaProcessApplicationToOther","adaLinkUnlinkAppeals","attendCma","startDecisionsAndReasons","followUpNoticeOfChange","followUpOverdueCmaRequirements","followUpNonStandardDirection","decideOnTimeExtension","reviewAdditionalEvidence","reviewAdditionalHomeOfficeEvidence",
-            "followUpExtendedDirection","startDecisionsAndReasonsDocument","createHearingBundle","createCaseSummary"</text>
+        <inputEntry id="UnaryTests_13ukkz6">          
+          <text>"reviewTheAppeal","adaReviewTheAppeal","reviewRespondentEvidence","followUpOverdueRespondentEvidence","adaFollowUpOverdueRespondentEvidence","reviewAppealSkeletonArgument","adaReviewAppealSkeletonArgument","followUpOverdueCaseBuilding","adaFollowUpOverdueCaseBuilding","reviewReasonsForAppeal","followUpOverdueReasonsForAppeal","reviewClarifyingQuestionsAnswers","followUpOverdueClarifyingAnswers","reviewRespondentResponse","followUpOverdueRespondentReview","adaFollowUpOverdueRespondentReview","reviewHearingRequirements","followUpOverdueHearingRequirements","reviewCmaRequirements","caseSummaryHearingBundleStartDecision","processApplication","adaProcessApplicationToUpdateHearingRequirements","adaProcessApplicationToUpdateAppealDetails","adaProcessApplicationToReinstateAnEndedAppeal","adaProcessApplicationToOther","adaLinkUnlinkAppeals","attendCma","startDecisionsAndReasons","followUpNoticeOfChange","adaFollowUpNoticeOfChange","followUpOverdueCmaRequirements","followUpNonStandardDirection","adaFollowUpNonStandardDirection","decideOnTimeExtension","reviewAdditionalEvidence","adaReviewAdditionalEvidence","reviewAdditionalHomeOfficeEvidence","adaReviewAdditionalHomeOfficeEvidence",
+            "followUpExtendedDirection","adaFollowUpExtendedDirection",
+            "startDecisionsAndReasonsDocument","createHearingBundle","createCaseSummary"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_10s330p">
           <text></text>
@@ -154,18 +164,23 @@
             "adaReviewTheAppeal",
             "reviewRespondentEvidence",
             "followUpOverdueRespondentEvidence",
+            "adaFollowUpOverdueRespondentEvidence",
             "reviewAppealSkeletonArgument",
+            "adaReviewAppealSkeletonArgument",
             "followUpOverdueCaseBuilding",
+            "adaFollowUpOverdueCaseBuilding",
             "reviewReasonsForAppeal",
             "followUpOverdueReasonsForAppeal",
             "reviewClarifyingQuestionsAnswers",
             "followUpOverdueClarifyingAnswers",
             "reviewRespondentResponse",
             "followUpOverdueRespondentReview",
+            "adaFollowUpOverdueRespondentReview",
             "reviewHearingRequirements",
             "followUpOverdueHearingRequirements",
             "reviewCmaRequirements",
             "reviewAdditionalHomeOfficeEvidence",
+            "adaReviewAdditionalHomeOfficeEvidence",
             "caseSummaryHearingBundleStartDecision",
             "processApplication",
             "adaProcessApplicationToUpdateHearingRequirements",
@@ -176,11 +191,16 @@
             "attendCma",
             "startDecisionsAndReasons",
             "followUpNoticeOfChange",
+            "adaFollowUpNoticeOfChange",
             "followUpOverdueCmaRequirements",
             "followUpNonStandardDirection",
+            "adaFollowUpNonStandardDirection",
             "decideOnTimeExtension",
             "reviewAdditionalEvidence",
-"startDecisionsAndReasonsDocument","createHearingBundle","createCaseSummary"
+            "adaReviewAdditionalEvidence",
+"startDecisionsAndReasonsDocument","createHearingBundle","createCaseSummary",
+            "followUpExtendedDirection",
+            "adaFollowUpExtendedDirection"
           </text>
         </inputEntry>
         <inputEntry id="UnaryTests_18tqbn3">

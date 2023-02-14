@@ -75,6 +75,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_08pla4f">
+        <inputEntry id="UnaryTests_1u879t2">
+          <text>"markEvidenceAsReviewed"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1e849fc">
+          <text>"adaReviewAdditionalEvidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1jth75k">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1ermjaa">
         <inputEntry id="UnaryTests_10jbxe2">
           <text>"markEvidenceAsReviewed"</text>
@@ -83,6 +94,17 @@
           <text>"reviewAdditionalHomeOfficeEvidence"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0im41fd">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1w3xyeg">
+        <inputEntry id="UnaryTests_0sd4mpr">
+          <text>"markEvidenceAsReviewed"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0yall0j">
+          <text>"adaReviewAdditionalHomeOfficeEvidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1op2oc2">
           <text>"Auto"</text>
         </outputEntry>
       </rule>
@@ -369,6 +391,28 @@
           <text>"adaLinkUnlinkAppeals"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1c26l2b">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>        
+      <rule id="DecisionRule_12f6clj">
+        <inputEntry id="UnaryTests_17pd4ef">
+          <text>"requestRespondentReview"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_17bp7yo">
+          <text>"adaReviewAppealSkeletonArgument"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1nv9lms">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1lqnrrk">
+        <inputEntry id="UnaryTests_09h10kn">
+          <text>"requestCaseEdit"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0z5m642">
+          <text>"adaReviewAppealSkeletonArgument"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0yftvvl">
           <text>"Auto"</text>
         </outputEntry>
       </rule>

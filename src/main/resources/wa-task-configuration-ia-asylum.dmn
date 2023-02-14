@@ -192,7 +192,9 @@
                         "attendCma",
                         "caseSummaryHearingBundleStartDecision",
                         "followUpExtendedDirection",
+                        "adaFollowUpExtendedDirection",
                         "followUpNonStandardDirection",
+                        "adaFollowUpNonStandardDirection",
                         "reviewClarifyingQuestionsAnswers"
                     </text>
         </inputEntry>
@@ -215,19 +217,25 @@
                         "reviewTheAppeal",
                         "adaReviewTheAppeal",
                         "followUpOverdueRespondentEvidence",
+                        "adaFollowUpOverdueRespondentEvidence",
                         "reviewRespondentEvidence",
                         "followUpOverdueCaseBuilding",
+                        "adaFollowUpOverdueCaseBuilding",
                         "reviewAppealSkeletonArgument",
+                        "adaReviewAppealSkeletonArgument",
                         "followUpOverdueReasonsForAppeal",
                         "reviewReasonsForAppeal",
                         "followUpOverdueClarifyingAnswers",
                         "reviewClarifyingAnswers",
                         "followUpOverdueRespondentReview",
+                        "adaFollowUpOverdueRespondentReview",
                         "reviewRespondentResponse",
                         "followUpOverdueCMARequirements",
                         "reviewCmaRequirements",
                         "reviewAdditionalEvidence",
+                        "adaReviewAdditionalEvidence",
                         "reviewAdditionalHomeOfficeEvidence",
+                        "adaReviewAdditionalHomeOfficeEvidence",
                         "reviewAdditionalAppellantEvidence",
                         "reviewAddendumHomeOfficeEvidence",
                         "reviewAddendumAppellantEvidence",
@@ -323,7 +331,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1466etp">
-          <text>"followUpNoticeOfChange", "reviewSpecificAccessRequestJudiciary","reviewSpecificAccessRequestLegalOps","reviewSpecificAccessRequestAdmin","reviewSpecificAccessRequestCTSC"</text>
+          <text>"followUpNoticeOfChange", "adaFollowUpNoticeOfChange", "reviewSpecificAccessRequestJudiciary","reviewSpecificAccessRequestLegalOps","reviewSpecificAccessRequestAdmin","reviewSpecificAccessRequestCTSC"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0bjcvtf">
           <text>"workType"</text>
@@ -369,6 +377,7 @@
                         "decideOnTimeExtension",
                         "reviewRespondentEvidence",
                         "reviewAppealSkeletonArgument",
+                        "adaReviewAppealSkeletonArgument",
                         "reviewReasonsForAppeal",
                         "reviewClarifyingQuestionsAnswers",
                         "reviewCmaRequirements",
@@ -377,19 +386,28 @@
                         "caseSummaryHearingBundleStartDecision",
                         "reviewHearingRequirements",
                         "followUpOverdueRespondentEvidence",
+                        "adaFollowUpOverdueRespondentEvidence",
                         "followUpOverdueCaseBuilding",
+                        "adaFollowUpOverdueCaseBuilding",
                         "followUpOverdueReasonsForAppeal",
                         "followUpOverdueClarifyingAnswers",
                         "followUpOverdueCmaRequirements",
                         "followUpOverdueRespondentReview",
+                        "adaFollowUpOverdueRespondentReview",
                         "followUpOverdueHearingRequirements",
                         "followUpNonStandardDirection",
+                        "adaFollowUpNonStandardDirection",
                         "followUpNoticeOfChange",
+                        "adaFollowUpNoticeOfChange",
                         "reviewAdditionalEvidence",
+                        "adaReviewAdditionalEvidence",
                         "reviewAdditionalHomeOfficeEvidence",
+                        "adaReviewAdditionalHomeOfficeEvidence",
                         "startDecisionsAndReasonsDocument",
                         "createHearingBundle",
-                        "createCaseSummary"
+                        "createCaseSummary",
+                        "followUpExtendedDirection",
+                        "adaFollowUpExtendedDirection"
                     </text>
         </inputEntry>
         <outputEntry id="LiteralExpression_05l5bvs">
@@ -472,6 +490,8 @@
                         then "[Request case building](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestCaseBuilding)&lt;br /&gt;[Send non-standard direction](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDirection)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewAppealSkeletonArgument" or taskType != null and taskType ="reviewAppealSkeletonArgument")
                         then "[Request respondent review](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentReview)&lt;br /&gt;[Request case edit](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestCaseEdit)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "adaReviewAppealSkeletonArgument" or taskType != null and taskType ="adaReviewAppealSkeletonArgument")
+                        then "[Request respondent review](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentReview)&lt;br /&gt;[Request case edit](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestCaseEdit)"
                         else if ((taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewReasonsForAppeal" or taskType != null and taskType ="reviewReasonsForAppeal") and (caseData != null and caseData.journeyType = "aip"))
                         then "[Request respondent review](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentReview)&lt;br /&gt;[Send direction with questions](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDirectionWithQuestions)"
 			                  else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewReasonsForAppeal" or taskType != null and taskType ="reviewReasonsForAppeal")
@@ -490,7 +510,10 @@
                         then "[Review hearing requirements](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/reviewHearingRequirements)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewAdditionalEvidence" or taskType != null and taskType ="reviewAdditionalEvidence")
                         then "[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markEvidenceAsReviewed)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "adaReviewAdditionalEvidence" or taskType != null and taskType ="adaReviewAdditionalEvidence")
+                        then "[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markEvidenceAsReviewed)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewAdditionalHomeOfficeEvidence" or taskType != null and taskType ="reviewAdditionalHomeOfficeEvidence")	 then "[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markEvidenceAsReviewed)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "adaReviewAdditionalHomeOfficeEvidence" or taskType != null and taskType ="adaReviewAdditionalHomeOfficeEvidence")	 then "[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markEvidenceAsReviewed)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "arrangeOfflinePayment" or taskType != null and taskType ="arrangeOfflinePayment") then "[Mark the appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "markCaseAsPaid" or taskType != null and taskType ="markCaseAsPaid") then "[Mark the appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "allocateHearingJudge" or taskType != null and taskType ="allocateHearingJudge") then "[Allocate Hearing Judge](/role-access/allocate-role/allocate?caseId=${[CASE_REFERENCE]}&amp;roleCategory=JUDICIAL&amp;jurisdiction=IA)"

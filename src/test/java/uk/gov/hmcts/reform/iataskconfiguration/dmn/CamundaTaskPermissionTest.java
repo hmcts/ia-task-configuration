@@ -373,17 +373,22 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
     @SuppressWarnings("checkstyle:indentation")
     @ParameterizedTest
     @CsvSource(value = {
-        "reviewRespondentEvidence", "followUpOverdueRespondentEvidence",
-        "followUpOverdueCaseBuilding", "followUpOverdueReasonsForAppeal", "reviewTheAppeal", "adaReviewTheAppeal",
+        "reviewRespondentEvidence", "followUpOverdueRespondentEvidence", "adaFollowUpOverdueRespondentEvidence",
+        "followUpOverdueCaseBuilding", "adaFollowUpOverdueCaseBuilding",
+        "followUpOverdueReasonsForAppeal", "reviewTheAppeal", "adaReviewTheAppeal",
         "reviewClarifyingQuestionsAnswers", "followUpOverdueClarifyingAnswers", "reviewRespondentResponse",
-        "followUpOverdueRespondentReview", "reviewHearingRequirements", "followUpOverdueHearingRequirements",
-        "reviewCmaRequirements", "attendCma", "adaProcessApplicationToUpdateHearingRequirements",
+        "followUpOverdueRespondentReview", "adaFollowUpOverdueRespondentReview", "reviewHearingRequirements",
+        "followUpOverdueHearingRequirements", "reviewCmaRequirements", "attendCma",
+        "adaProcessApplicationToUpdateHearingRequirements",
         "adaProcessApplicationToUpdateAppealDetails", "adaProcessApplicationToReinstateAnEndedAppeal",
         "adaProcessApplicationToOther", "adaLinkUnlinkAppeals", "followUpNoticeOfChange",
         "followUpOverdueCmaRequirements", "followUpNonStandardDirection",
-         "attendCma", "followUpNoticeOfChange", "followUpOverdueCmaRequirements",
-        "followUpNonStandardDirection",
-         "reviewAdditionalEvidence", "reviewAdditionalHomeOfficeEvidence"
+         "attendCma", "adaFollowUpNoticeOfChange", "followUpOverdueCmaRequirements",
+        "adaFollowUpNonStandardDirection",
+         "reviewAdditionalEvidence","adaReviewAdditionalEvidence",
+        "reviewAdditionalHomeOfficeEvidence", "adaReviewAdditionalHomeOfficeEvidence",
+         "adaReviewAppealSkeletonArgument",
+        "followUpExtendedDirection","adaFollowUpExtendedDirection"
     })
     void given_taskType_when_evaluate_dmn_then_it_returns_first_second_and_third_rules(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();

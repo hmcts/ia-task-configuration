@@ -40,7 +40,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
     @ParameterizedTest
     @CsvSource({
-        "followUpNoticeOfChange"
+        "followUpNoticeOfChange", "adaFollowUpNoticeOfChange"
     })
     void when_taskId_then_return_Access_Requests(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
@@ -179,24 +179,32 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("attendCma", routineWork),
             Arguments.of("caseSummaryHearingBundleStartDecision", routineWork),
             Arguments.of("followUpExtendedDirection", routineWork),
+            Arguments.of("adaFollowUpExtendedDirection", routineWork),
             Arguments.of("followUpNonStandardDirection", routineWork),
+            Arguments.of("adaFollowUpNonStandardDirection", routineWork),
             Arguments.of("reviewClarifyingQuestionsAnswers", routineWork),
             Arguments.of("reviewAdditionalEvidence", decisionMakingWork),
+            Arguments.of("adaReviewAdditionalEvidence", decisionMakingWork),
             Arguments.of("reviewTheAppeal", decisionMakingWork),
             Arguments.of("adaReviewTheAppeal", decisionMakingWork),
             Arguments.of("followUpOverdueRespondentEvidence", decisionMakingWork),
+            Arguments.of("adaFollowUpOverdueRespondentEvidence", decisionMakingWork),
             Arguments.of("reviewRespondentEvidence", decisionMakingWork),
             Arguments.of("followUpOverdueCaseBuilding", decisionMakingWork),
+            Arguments.of("adaFollowUpOverdueCaseBuilding", decisionMakingWork),
             Arguments.of("reviewAppealSkeletonArgument", decisionMakingWork),
+            Arguments.of("adaReviewAppealSkeletonArgument", decisionMakingWork),
             Arguments.of("followUpOverdueReasonsForAppeal", decisionMakingWork),
             Arguments.of("reviewReasonsForAppeal", decisionMakingWork),
             Arguments.of("followUpOverdueClarifyingAnswers", decisionMakingWork),
             Arguments.of("reviewClarifyingAnswers", decisionMakingWork),
             Arguments.of("followUpOverdueRespondentReview", decisionMakingWork),
+            Arguments.of("adaFollowUpOverdueRespondentReview", decisionMakingWork),
             Arguments.of("reviewRespondentResponse", decisionMakingWork),
             Arguments.of("followUpOverdueCMARequirements", decisionMakingWork),
             Arguments.of("reviewCmaRequirements", decisionMakingWork),
             Arguments.of("reviewAdditionalHomeOfficeEvidence", decisionMakingWork),
+            Arguments.of("adaReviewAdditionalHomeOfficeEvidence", decisionMakingWork),
             Arguments.of("reviewAdditionalAppellantEvidence", decisionMakingWork),
             Arguments.of("reviewAddendumHomeOfficeEvidence", decisionMakingWork),
             Arguments.of("adaReviewAddendumEvidence", decisionMakingWork),
@@ -371,13 +379,17 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "processApplication","adaProcessApplicationToUpdateHearingRequirements",
         "adaProcessApplicationToUpdateAppealDetails", "adaProcessApplicationToReinstateAnEndedAppeal",
         "adaProcessApplicationToOther", "adaLinkUnlinkAppeals", "reviewTheAppeal","adaReviewTheAppeal",
-        "decideOnTimeExtension", "reviewRespondentEvidence", "reviewAppealSkeletonArgument", "reviewReasonsForAppeal",
+        "decideOnTimeExtension", "reviewRespondentEvidence", "reviewReasonsForAppeal",
+        "reviewAppealSkeletonArgument", "adaReviewAppealSkeletonArgument",
         "reviewClarifyingQuestionsAnswers", "reviewCmaRequirements", "attendCma", "reviewRespondentResponse",
         "caseSummaryHearingBundleStartDecision", "reviewHearingRequirements", "followUpOverdueRespondentEvidence",
+        "adaFollowUpOverdueRespondentEvidence", "adaFollowUpOverdueCaseBuilding", "adaFollowUpOverdueRespondentReview",
+        "adaFollowUpNonStandardDirection", "adaFollowUpNoticeOfChange",
         "followUpOverdueCaseBuilding", "followUpOverdueReasonsForAppeal", "followUpOverdueClarifyingAnswers",
         "followUpOverdueCmaRequirements", "followUpOverdueRespondentReview", "followUpOverdueHearingRequirements",
         "followUpNonStandardDirection", "followUpNoticeOfChange", "reviewAdditionalEvidence",
-        "reviewAdditionalHomeOfficeEvidence"
+        "reviewAdditionalHomeOfficeEvidence","followUpExtendedDirection", "adaFollowUpExtendedDirection",
+        "adaReviewAdditionalEvidence", "adaReviewAdditionalHomeOfficeEvidence"
     })
     void when_taskId_then_return_legal_operations_role_category(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
@@ -648,6 +660,9 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "reviewAppealSkeletonArgument,"
             + "[Request respondent review](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentReview)<br />"
             + "[Request case edit](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestCaseEdit),",
+        "adaReviewAppealSkeletonArgument,"
+            + "[Request respondent review](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentReview)<br />"
+            + "[Request case edit](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestCaseEdit),",
         "reviewReasonsForAppeal,"
             + "[Request respondent review](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentReview)<br />"
             + "[Send direction with questions](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDirectionWithQuestions),"
@@ -675,8 +690,12 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             + "/reviewHearingRequirements),",
         "reviewAdditionalEvidence,[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markEvidence"
             + "AsReviewed),",
+        "adaReviewAdditionalEvidence,[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markEvidence"
+            + "AsReviewed),",
         "reviewAdditionalHomeOfficeEvidence,[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markEvidence"
             + "AsReviewed),",
+        "adaReviewAdditionalHomeOfficeEvidence,[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
+            + "markEvidenceAsReviewed),",
         "arrangeOfflinePayment,[Mark the appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid),",
         "markCaseAsPaid,[Mark the appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid),",
         "allocateHearingJudge," + "[Allocate Hearing Judge](/role-access/allocate-role/allocate?caseId="

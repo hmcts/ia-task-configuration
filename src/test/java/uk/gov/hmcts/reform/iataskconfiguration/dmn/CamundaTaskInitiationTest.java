@@ -664,6 +664,42 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "submitCase",
+                "caseUnderReview",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "No" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewAppealSkeletonArgument",
+                        "name", "Review Appeal Skeleton Argument",
+
+                        "workingDaysAllowed", 2,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "submitCase",
+                "caseUnderReview",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "adaReviewAppealSkeletonArgument",
+                        "name", "ADA-Review Appeal Skeleton Argument",
+
+                        "workingDaysAllowed", 0,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
                 "buildCase",
                 "caseUnderReview",
                 null,
@@ -673,6 +709,42 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Review Appeal Skeleton Argument",
 
                         "workingDaysAllowed", 2,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "buildCase",
+                "caseUnderReview",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "No" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewAppealSkeletonArgument",
+                        "name", "Review Appeal Skeleton Argument",
+
+                        "workingDaysAllowed", 2,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "buildCase",
+                "caseUnderReview",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "adaReviewAppealSkeletonArgument",
+                        "name", "ADA-Review Appeal Skeleton Argument",
+
+                        "workingDaysAllowed", 0,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -1172,6 +1244,342 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "uploadAdditionalEvidence",
+                "caseUnderReview",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "No" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                List.of(
+                    Map.of(
+                        "taskId", "reviewAdditionalEvidence",
+                        "name", "Review additional evidence",
+                        
+                        "workingDaysAllowed", 2,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "uploadAdditionalEvidence",
+                "respondentReview",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "No" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                List.of(
+                    Map.of(
+                        "taskId", "reviewAdditionalEvidence",
+                        "name", "Review additional evidence",
+
+                        "workingDaysAllowed", 2,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "uploadAdditionalEvidence",
+                "submitHearingRequirements",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "No" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                List.of(
+                    Map.of(
+                        "taskId", "reviewAdditionalEvidence",
+                        "name", "Review additional evidence",
+
+                        "workingDaysAllowed", 2,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "uploadAdditionalEvidence",
+                "listing",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "No" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                List.of(
+                    Map.of(
+                        "taskId", "reviewAdditionalEvidence",
+                        "name", "Review additional evidence",
+
+                        "workingDaysAllowed", 2,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "uploadAdditionalEvidence",
+                "prepareForHearing",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "No" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewAdditionalEvidence",
+                        "name", "Review additional evidence",
+
+                        "workingDaysAllowed", 2,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "uploadAdditionalEvidence",
+                "caseUnderReview",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                List.of(
+                    Map.of(
+                        "taskId", "adaReviewAdditionalEvidence",
+                        "name", "ADA-Review additional evidence",
+
+                        "workingDaysAllowed", 0,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "uploadAdditionalEvidence",
+                "respondentReview",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                List.of(
+                    Map.of(
+                        "taskId", "adaReviewAdditionalEvidence",
+                        "name", "ADA-Review additional evidence",
+
+                        "workingDaysAllowed", 0,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "uploadAdditionalEvidence",
+                "prepareForHearing",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "adaReviewAdditionalEvidence",
+                        "name", "ADA-Review additional evidence",
+
+                        "workingDaysAllowed", 0,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "uploadAdditionalEvidenceHomeOffice",
+                "caseBuilding",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "No" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewAdditionalHomeOfficeEvidence",
+                        "name", "Review additional Home Office evidence",
+                        "workingDaysAllowed", 2,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "uploadAdditionalEvidenceHomeOffice",
+                "caseBuilding",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "No" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewAdditionalHomeOfficeEvidence",
+                        "name", "Review additional Home Office evidence",
+                        "workingDaysAllowed", 2,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "uploadAdditionalEvidenceHomeOffice",
+                "caseUnderReview",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "No" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewAdditionalHomeOfficeEvidence",
+                        "name", "Review additional Home Office evidence",
+                        "workingDaysAllowed", 2,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "uploadAdditionalEvidenceHomeOffice",
+                "respondentReview",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "No" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewAdditionalHomeOfficeEvidence",
+                        "name", "Review additional Home Office evidence",
+
+                        "workingDaysAllowed", 2,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "uploadAdditionalEvidenceHomeOffice",
+                "submitHearingRequirements",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "No" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewAdditionalHomeOfficeEvidence",
+                        "name", "Review additional Home Office evidence",
+
+                        "workingDaysAllowed", 2,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "uploadAdditionalEvidenceHomeOffice",
+                "listing",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "No" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewAdditionalHomeOfficeEvidence",
+                        "name", "Review additional Home Office evidence",
+
+                        "workingDaysAllowed", 2,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "uploadAdditionalEvidenceHomeOffice",
+                "prepareForHearing",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "adaReviewAdditionalHomeOfficeEvidence",
+                        "name", "ADA-Review additional Home Office evidence",
+                        "workingDaysAllowed", 0,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "uploadAdditionalEvidenceHomeOffice",
+                "caseBuilding",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "adaReviewAdditionalHomeOfficeEvidence",
+                        "name", "ADA-Review additional Home Office evidence",
+                        "workingDaysAllowed", 0,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "uploadAdditionalEvidenceHomeOffice",
+                "caseUnderReview",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "adaReviewAdditionalHomeOfficeEvidence",
+                        "name", "ADA-Review additional Home Office evidence",
+                        "workingDaysAllowed", 0,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "uploadAdditionalEvidenceHomeOffice",
+                "respondentReview",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "adaReviewAdditionalHomeOfficeEvidence",
+                        "name", "ADA-Review additional Home Office evidence",
+
+                        "workingDaysAllowed", 0,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
                 "unknownEvent",
                 null,
                 null,
@@ -1264,7 +1672,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         inputVariables.putValue("additionalData", mapAdditionalData(additionalData));
         return inputVariables;
     }
-
+ 
     public static Stream<Arguments> makeAnApplicationScenarioProvider() {
         return Stream.of(
             Arguments.of(
@@ -1579,6 +1987,234 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "processCategories", "application"
                     )
                 )
+            ),
+            Arguments.of(
+                "requestRespondentEvidence",
+                "awaitingRespondentEvidence",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "No" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "followUpOverdueRespondentEvidence",
+                        "name", "Follow-up overdue respondent evidence",
+
+                        "workingDaysAllowed", 2,
+                        "delayDuration", 0,
+                        "processCategories", "followUpOverdue"
+                    )
+                )
+            ),
+            Arguments.of(
+                "requestRespondentEvidence",
+                "awaitingRespondentEvidence",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "adaFollowUpOverdueRespondentEvidence",
+                        "name", "ADA-Follow-up overdue respondent evidence",
+
+                        "workingDaysAllowed", 0,
+                        "delayDuration", 0,
+                        "processCategories", "followUpOverdue"
+                    )
+                )
+            ),
+            Arguments.of(
+                "changeDirectionDueDate",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "No" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "followUpExtendedDirection",
+                        "name", "Follow-up extended direction",
+
+                        "workingDaysAllowed", 2,
+                        "delayDuration", 0,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "changeDirectionDueDate",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "adaFollowUpExtendedDirection",
+                        "name", "ADA-Follow-up extended direction",
+
+                        "workingDaysAllowed", 0,
+                        "delayDuration", 0,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "requestCaseBuilding",
+                "caseBuilding",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "No" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "followUpOverdueCaseBuilding",
+                        "name", "Follow-up overdue case building",
+
+                        "workingDaysAllowed", 2,
+                        "delayDuration", 0,
+                        "processCategories", "followUpOverdue"
+                    )
+                )
+            ),
+            Arguments.of(
+                "requestCaseBuilding",
+                "caseBuilding",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "adaFollowUpOverdueCaseBuilding",
+                        "name", "ADA-Follow-up overdue case building",
+
+                        "workingDaysAllowed", 0,
+                        "delayDuration", 0,
+                        "processCategories", "followUpOverdue"
+                    )
+                )
+            ),
+            Arguments.of(
+                "requestRespondentReview",
+                "respondentReview",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "No" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "followUpOverdueRespondentReview",
+                        "name", "Follow-up overdue respondent review",
+
+                        "workingDaysAllowed", 2,
+                        "delayDuration", 0,
+                        "processCategories", "followUpOverdue"
+                    )
+                )
+            ),
+            Arguments.of(
+                "requestRespondentReview",
+                "respondentReview",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "adaFollowUpOverdueRespondentReview",
+                        "name", "ADA-Follow-up overdue respondent review",
+
+                        "workingDaysAllowed", 0,
+                        "delayDuration", 0,
+                        "processCategories", "followUpOverdue"
+                    )
+                )
+            ),
+            Arguments.of(
+                "sendDirection",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "No" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "followUpNonStandardDirection",
+                        "name", "Follow-up non-standard direction",
+
+                        "workingDaysAllowed", 2,
+                        "delayDuration", 0,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "sendDirection",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "adaFollowUpNonStandardDirection",
+                        "name", "ADA-Follow-up non-standard direction",
+
+                        "workingDaysAllowed", 0,
+                        "delayDuration", 0,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "removeRepresentation",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "No" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "followUpNoticeOfChange",
+                        "name", "Follow-up Notice of Change",
+
+                        "workingDaysAllowed", 2,
+                        "processCategories", "followUpOverdue",
+                        "delayDuration", 14
+                    )
+                )
+            ),
+            Arguments.of(
+                "removeRepresentation",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "adaFollowUpNoticeOfChange",
+                        "name", "ADA-Follow-up Notice of Change",
+
+                        "workingDaysAllowed", 0,
+                        "processCategories", "followUpOverdue",
+                        "delayDuration", 14
+                    )
+                )
             )
         );
     }
@@ -1685,7 +2321,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(7));
         assertThat(logic.getOutputs().size(), is(5));
-        assertThat(logic.getRules().size(), is(50));
+        assertThat(logic.getRules().size(), is(59));        
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {
