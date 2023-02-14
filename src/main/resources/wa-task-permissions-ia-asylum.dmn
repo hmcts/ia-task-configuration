@@ -77,6 +77,7 @@
             "followUpOverdueHearingRequirements",
             "reviewCmaRequirements",
             "reviewAdditionalHomeOfficeEvidence",
+            "adaReviewAdditionalHomeOfficeEvidence",
             "reviewAdditionalAppellantEvidence",
             "processApplication",
             "adaProcessApplicationToUpdateHearingRequirements",
@@ -95,7 +96,8 @@
             "decideOnTimeExtension",
             "reviewAdditionalEvidence",
             "followUpExtendedDirection",
-            "adaFollowUpExtendedDirection"</text>
+            "adaFollowUpExtendedDirection",
+            "adaReviewAdditionalEvidence"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0buofva">
           <text></text>
@@ -125,7 +127,7 @@
       <rule id="DecisionRule_1tvtlre">
         <description>Tribunal caseworker task permissions</description>
         <inputEntry id="UnaryTests_13ukkz6">          
-          <text>"reviewTheAppeal","adaReviewTheAppeal","reviewRespondentEvidence","followUpOverdueRespondentEvidence","adaFollowUpOverdueRespondentEvidence","reviewAppealSkeletonArgument","adaReviewAppealSkeletonArgument","followUpOverdueCaseBuilding","adaFollowUpOverdueCaseBuilding","reviewReasonsForAppeal","followUpOverdueReasonsForAppeal","reviewClarifyingQuestionsAnswers","followUpOverdueClarifyingAnswers","reviewRespondentResponse","followUpOverdueRespondentReview","adaFollowUpOverdueRespondentReview","reviewHearingRequirements","followUpOverdueHearingRequirements","reviewCmaRequirements","caseSummaryHearingBundleStartDecision","processApplication","adaProcessApplicationToUpdateHearingRequirements","adaProcessApplicationToUpdateAppealDetails","adaProcessApplicationToReinstateAnEndedAppeal","adaProcessApplicationToOther","adaLinkUnlinkAppeals","attendCma","startDecisionsAndReasons","followUpNoticeOfChange","adaFollowUpNoticeOfChange","followUpOverdueCmaRequirements","followUpNonStandardDirection","adaFollowUpNonStandardDirection","decideOnTimeExtension","reviewAdditionalEvidence","reviewAdditionalHomeOfficeEvidence",
+          <text>"reviewTheAppeal","adaReviewTheAppeal","reviewRespondentEvidence","followUpOverdueRespondentEvidence","adaFollowUpOverdueRespondentEvidence","reviewAppealSkeletonArgument","adaReviewAppealSkeletonArgument","followUpOverdueCaseBuilding","adaFollowUpOverdueCaseBuilding","reviewReasonsForAppeal","followUpOverdueReasonsForAppeal","reviewClarifyingQuestionsAnswers","followUpOverdueClarifyingAnswers","reviewRespondentResponse","followUpOverdueRespondentReview","adaFollowUpOverdueRespondentReview","reviewHearingRequirements","followUpOverdueHearingRequirements","reviewCmaRequirements","caseSummaryHearingBundleStartDecision","processApplication","adaProcessApplicationToUpdateHearingRequirements","adaProcessApplicationToUpdateAppealDetails","adaProcessApplicationToReinstateAnEndedAppeal","adaProcessApplicationToOther","adaLinkUnlinkAppeals","attendCma","startDecisionsAndReasons","followUpNoticeOfChange","adaFollowUpNoticeOfChange","followUpOverdueCmaRequirements","followUpNonStandardDirection","adaFollowUpNonStandardDirection","decideOnTimeExtension","reviewAdditionalEvidence","adaReviewAdditionalEvidence","reviewAdditionalHomeOfficeEvidence","adaReviewAdditionalHomeOfficeEvidence",
             "followUpExtendedDirection","adaFollowUpExtendedDirection",
             "startDecisionsAndReasonsDocument","createHearingBundle","createCaseSummary"</text>
         </inputEntry>
@@ -178,6 +180,7 @@
             "followUpOverdueHearingRequirements",
             "reviewCmaRequirements",
             "reviewAdditionalHomeOfficeEvidence",
+            "adaReviewAdditionalHomeOfficeEvidence",
             "caseSummaryHearingBundleStartDecision",
             "processApplication",
             "adaProcessApplicationToUpdateHearingRequirements",
@@ -194,6 +197,7 @@
             "adaFollowUpNonStandardDirection",
             "decideOnTimeExtension",
             "reviewAdditionalEvidence",
+            "adaReviewAdditionalEvidence",
 "startDecisionsAndReasonsDocument","createHearingBundle","createCaseSummary",
             "followUpExtendedDirection",
             "adaFollowUpExtendedDirection"
