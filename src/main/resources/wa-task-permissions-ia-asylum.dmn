@@ -192,7 +192,9 @@
             "adaFollowUpNonStandardDirection",
             "decideOnTimeExtension",
             "reviewAdditionalEvidence",
-"startDecisionsAndReasonsDocument","createHearingBundle","createCaseSummary"
+"startDecisionsAndReasonsDocument","createHearingBundle","createCaseSummary",
+            "followUpExtendedDirection",
+            "adaFollowUpExtendedDirection"
           </text>
         </inputEntry>
         <inputEntry id="UnaryTests_18tqbn3">
