@@ -232,7 +232,9 @@
                         "followUpOverdueCMARequirements",
                         "reviewCmaRequirements",
                         "reviewAdditionalEvidence",
+                        "adaReviewAdditionalEvidence",
                         "reviewAdditionalHomeOfficeEvidence",
+                        "adaReviewAdditionalHomeOfficeEvidence",
                         "reviewAdditionalAppellantEvidence",
                         "reviewAddendumHomeOfficeEvidence",
                         "reviewAddendumAppellantEvidence",
@@ -395,7 +397,9 @@
                         "followUpNoticeOfChange",
                         "adaFollowUpNoticeOfChange",
                         "reviewAdditionalEvidence",
+                        "adaReviewAdditionalEvidence",
                         "reviewAdditionalHomeOfficeEvidence",
+                        "adaReviewAdditionalHomeOfficeEvidence",
                         "startDecisionsAndReasonsDocument",
                         "createHearingBundle",
                         "createCaseSummary",
@@ -501,7 +505,10 @@
                         then "[Review hearing requirements](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/reviewHearingRequirements)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewAdditionalEvidence" or taskType != null and taskType ="reviewAdditionalEvidence")
                         then "[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markEvidenceAsReviewed)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "adaReviewAdditionalEvidence" or taskType != null and taskType ="adaReviewAdditionalEvidence")
+                        then "[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markEvidenceAsReviewed)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewAdditionalHomeOfficeEvidence" or taskType != null and taskType ="reviewAdditionalHomeOfficeEvidence")	 then "[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markEvidenceAsReviewed)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "adaReviewAdditionalHomeOfficeEvidence" or taskType != null and taskType ="adaReviewAdditionalHomeOfficeEvidence")	 then "[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markEvidenceAsReviewed)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "arrangeOfflinePayment" or taskType != null and taskType ="arrangeOfflinePayment") then "[Mark the appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "markCaseAsPaid" or taskType != null and taskType ="markCaseAsPaid") then "[Mark the appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "allocateHearingJudge" or taskType != null and taskType ="allocateHearingJudge") then "[Allocate Hearing Judge](/role-access/allocate-role/allocate?caseId=${[CASE_REFERENCE]}&amp;roleCategory=JUDICIAL&amp;jurisdiction=IA)"

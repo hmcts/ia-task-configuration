@@ -378,7 +378,8 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         "followUpOverdueCmaRequirements", "followUpNonStandardDirection",
          "attendCma", "adaFollowUpNoticeOfChange", "followUpOverdueCmaRequirements",
         "adaFollowUpNonStandardDirection",
-         "reviewAdditionalEvidence", "reviewAdditionalHomeOfficeEvidence",
+         "reviewAdditionalEvidence","adaReviewAdditionalEvidence",
+        "reviewAdditionalHomeOfficeEvidence", "adaReviewAdditionalHomeOfficeEvidence",
         "followUpExtendedDirection","adaFollowUpExtendedDirection"
     })
     void given_taskType_when_evaluate_dmn_then_it_returns_first_second_and_third_rules(String taskType) {
