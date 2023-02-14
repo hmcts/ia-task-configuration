@@ -663,6 +663,42 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "submitCase",
+                "caseUnderReview",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "No" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewAppealSkeletonArgument",
+                        "name", "Review Appeal Skeleton Argument",
+
+                        "workingDaysAllowed", 2,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "submitCase",
+                "caseUnderReview",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "adaReviewAppealSkeletonArgument",
+                        "name", "ADA-Review Appeal Skeleton Argument",
+
+                        "workingDaysAllowed", 0,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
                 "buildCase",
                 "caseUnderReview",
                 null,
@@ -672,6 +708,42 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Review Appeal Skeleton Argument",
 
                         "workingDaysAllowed", 2,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "buildCase",
+                "caseUnderReview",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "No" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewAppealSkeletonArgument",
+                        "name", "Review Appeal Skeleton Argument",
+
+                        "workingDaysAllowed", 2,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "buildCase",
+                "caseUnderReview",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "adaReviewAppealSkeletonArgument",
+                        "name", "ADA-Review Appeal Skeleton Argument",
+
+                        "workingDaysAllowed", 0,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -2182,7 +2254,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(7));
         assertThat(logic.getOutputs().size(), is(5));
-        assertThat(logic.getRules().size(), is(57));
+        assertThat(logic.getRules().size(), is(58));        
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {

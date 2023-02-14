@@ -193,6 +193,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("followUpOverdueCaseBuilding", decisionMakingWork),
             Arguments.of("adaFollowUpOverdueCaseBuilding", decisionMakingWork),
             Arguments.of("reviewAppealSkeletonArgument", decisionMakingWork),
+            Arguments.of("adaReviewAppealSkeletonArgument", decisionMakingWork),
             Arguments.of("followUpOverdueReasonsForAppeal", decisionMakingWork),
             Arguments.of("reviewReasonsForAppeal", decisionMakingWork),
             Arguments.of("followUpOverdueClarifyingAnswers", decisionMakingWork),
@@ -376,7 +377,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "processApplication","adaProcessApplicationToUpdateHearingRequirements",
         "adaProcessApplicationToUpdateAppealDetails", "adaProcessApplicationToReinstateAnEndedAppeal",
         "adaProcessApplicationToOther", "adaLinkUnlinkAppeals", "reviewTheAppeal","adaReviewTheAppeal",
-        "decideOnTimeExtension", "reviewRespondentEvidence", "reviewAppealSkeletonArgument", "reviewReasonsForAppeal",
+        "decideOnTimeExtension", "reviewRespondentEvidence", "reviewReasonsForAppeal",
+        "reviewAppealSkeletonArgument", "adaReviewAppealSkeletonArgument",
         "reviewClarifyingQuestionsAnswers", "reviewCmaRequirements", "attendCma", "reviewRespondentResponse",
         "caseSummaryHearingBundleStartDecision", "reviewHearingRequirements", "followUpOverdueRespondentEvidence",
         "adaFollowUpOverdueRespondentEvidence", "adaFollowUpOverdueCaseBuilding", "adaFollowUpOverdueRespondentReview",
@@ -654,6 +656,9 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             + "[Request case building](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestCaseBuilding)<br />"
             + "[Send non-standard direction](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDirection),",
         "reviewAppealSkeletonArgument,"
+            + "[Request respondent review](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentReview)<br />"
+            + "[Request case edit](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestCaseEdit),",
+        "adaReviewAppealSkeletonArgument,"
             + "[Request respondent review](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentReview)<br />"
             + "[Request case edit](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestCaseEdit),",
         "reviewReasonsForAppeal,"
