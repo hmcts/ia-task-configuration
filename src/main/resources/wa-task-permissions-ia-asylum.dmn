@@ -406,6 +406,7 @@
           "adaProcessApplicationToWithdraw",
           "adaProcessApplicationToReviewDecision",
           "reviewAddendumEvidence",
+          "adaReviewAddendumEvidence",
           "sendDecisionsAndReasons",
           "prepareDecisionsAndReasons"
 </text>

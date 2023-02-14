@@ -2048,7 +2048,7 @@ else
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_12mpe4o">
-          <text></text>
+          <text>"No"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0nu1njx">
           <text>"reviewAddendumEvidence"</text>
@@ -2063,6 +2063,47 @@ else
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1chu8ia">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_15wre0z">
+        <inputEntry id="UnaryTests_0suzpbs">
+          <text>            "uploadAddendumEvidenceLegalRep",
+            "uploadAddendumEvidence",
+            "uploadAddendumEvidenceHomeOffice",
+            "uploadAddendumEvidenceAdminOfficer"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xeovmv">
+          <text>"preHearing","decision","decided"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0uzsizo">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_18d8kbl">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ywy32i">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0h60avy">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0wijji3">
+          <text>"Yes"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1o6aegv">
+          <text>"adaReviewAddendumEvidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0pb6m66">
+          <text>"ADA-Review addendum evidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1swxpli">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1qbxcl0">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0evna3h">
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
