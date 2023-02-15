@@ -825,7 +825,7 @@ else
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1oxsga7">
-          <text></text>
+          <text>"No"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1f28uac">
           <text>"reviewRespondentEvidence"</text>
@@ -840,6 +840,44 @@ else
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0s3kz5g">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1gmyy0q">
+        <inputEntry id="UnaryTests_0fucpgs">
+          <text>"uploadHomeOfficeBundle"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nsn7qw">
+          <text>"awaitingRespondentEvidence"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_086yjx4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1opluyt">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0wvdqfa">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1bzz8gt">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0uz2m7x">
+          <text>"Yes"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1rsb18k">
+          <text>"adaReviewRespondentEvidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1d1zx9k">
+          <text>"ADA-reviewRespondentEvidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0vybsa6">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ymrzs4">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1e92re4">
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
@@ -2048,7 +2086,7 @@ else
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_12mpe4o">
-          <text>"No"</text>
+          <text>true</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0nu1njx">
           <text>"reviewAddendumEvidence"</text>
@@ -2089,7 +2127,7 @@ else
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0wijji3">
-          <text>"Yes"</text>
+          <text>false</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1o6aegv">
           <text>"adaReviewAddendumEvidence"</text>
