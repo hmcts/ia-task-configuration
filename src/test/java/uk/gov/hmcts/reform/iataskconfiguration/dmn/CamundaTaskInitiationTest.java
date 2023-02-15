@@ -117,7 +117,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"appealType\":\"" + "revocationOfProtection" + "\",\n"
-                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "No" + "\"\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + false + "\"\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -668,7 +668,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "caseUnderReview",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
-                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "No" + "\"\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + false + "\"\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -686,7 +686,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "caseUnderReview",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
-                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -718,7 +718,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "caseUnderReview",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
-                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "No" + "\"\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + false + "\"\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -736,7 +736,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "caseUnderReview",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
-                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -1129,7 +1129,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"appealType\":\"" + "revocationOfProtection" + "\",\n"
-                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -1149,7 +1149,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"appealType\":\"" + "protection" + "\",\n"
-                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -1169,7 +1169,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"appealType\":\"" + "refusalOfEu" + "\",\n"
-                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -1189,7 +1189,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
-                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -1209,7 +1209,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"appealType\":\"" + "deprivation" + "\",\n"
-                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -1229,7 +1229,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -1249,7 +1249,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "No" + "\"\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + false + "\"\n"
                                       + "   }"
                                       + "}"),
                 List.of(
@@ -1268,7 +1268,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "No" + "\"\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + false + "\"\n"
                                       + "   }"
                                       + "}"),
                 List.of(
@@ -1287,7 +1287,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "No" + "\"\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + false + "\"\n"
                                       + "   }"
                                       + "}"),
                 List.of(
@@ -1306,7 +1306,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "No" + "\"\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + false + "\"\n"
                                       + "   }"
                                       + "}"),
                 List.of(
@@ -1325,7 +1325,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "No" + "\"\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + false + "\"\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -1344,7 +1344,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
                                       + "   }"
                                       + "}"),
                 List.of(
@@ -1363,7 +1363,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
                                       + "   }"
                                       + "}"),
                 List.of(
@@ -1382,7 +1382,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -1401,7 +1401,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "No" + "\"\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + false + "\"\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -1419,7 +1419,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "No" + "\"\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + false + "\"\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -1437,7 +1437,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "No" + "\"\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + false + "\"\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -1455,7 +1455,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "No" + "\"\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + false + "\"\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -1474,7 +1474,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "No" + "\"\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + false + "\"\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -1493,7 +1493,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "No" + "\"\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + false + "\"\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -1512,7 +1512,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -1530,7 +1530,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -1548,7 +1548,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -1566,7 +1566,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -1609,18 +1609,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
     @ParameterizedTest
     @CsvSource(value = {
-        "uploadAddendumEvidenceLegalRep, preHearing, No",
-        "uploadAddendumEvidenceLegalRep, decision, No",
-        "uploadAddendumEvidenceLegalRep, decided, No",
-        "uploadAddendumEvidence, preHearing, No",
-        "uploadAddendumEvidence, decision, No",
-        "uploadAddendumEvidence, decided, No",
-        "uploadAddendumEvidenceHomeOffice, preHearing, No",
-        "uploadAddendumEvidenceHomeOffice, decision, No",
-        "uploadAddendumEvidenceHomeOffice, decided, No",
-        "uploadAddendumEvidenceAdminOfficer, preHearing, No",
-        "uploadAddendumEvidenceAdminOfficer, decision, No",
-        "uploadAddendumEvidenceAdminOfficer, decided, No"
+        "uploadAddendumEvidenceLegalRep, preHearing, false",
+        "uploadAddendumEvidenceLegalRep, decision, false",
+        "uploadAddendumEvidenceLegalRep, decided, false",
+        "uploadAddendumEvidence, preHearing, false",
+        "uploadAddendumEvidence, decision, false",
+        "uploadAddendumEvidence, decided, false",
+        "uploadAddendumEvidenceHomeOffice, preHearing, false",
+        "uploadAddendumEvidenceHomeOffice, decision, false",
+        "uploadAddendumEvidenceHomeOffice, decided, false",
+        "uploadAddendumEvidenceAdminOfficer, preHearing, false",
+        "uploadAddendumEvidenceAdminOfficer, decision, false",
+        "uploadAddendumEvidenceAdminOfficer, decided, false"
     })
     void given_addendum_events_with_no_ada_should_evaluate_dmn(String eventId, String postEventState, String isAda) {
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(
@@ -1636,18 +1636,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
     @ParameterizedTest
     @CsvSource(value = {
-        "uploadAddendumEvidenceLegalRep, preHearing, Yes",
-        "uploadAddendumEvidenceLegalRep, decision, Yes",
-        "uploadAddendumEvidenceLegalRep, decided, Yes",
-        "uploadAddendumEvidence, preHearing, Yes",
-        "uploadAddendumEvidence, decision, Yes",
-        "uploadAddendumEvidence, decided, Yes",
-        "uploadAddendumEvidenceHomeOffice, preHearing, Yes",
-        "uploadAddendumEvidenceHomeOffice, decision, Yes",
-        "uploadAddendumEvidenceHomeOffice, decided, Yes",
-        "uploadAddendumEvidenceAdminOfficer, preHearing, Yes",
-        "uploadAddendumEvidenceAdminOfficer, decision, Yes",
-        "uploadAddendumEvidenceAdminOfficer, decided, Yes"
+        "uploadAddendumEvidenceLegalRep, preHearing, true",
+        "uploadAddendumEvidenceLegalRep, decision, true",
+        "uploadAddendumEvidenceLegalRep, decided, true",
+        "uploadAddendumEvidence, preHearing, true",
+        "uploadAddendumEvidence, decision, true",
+        "uploadAddendumEvidence, decided, true",
+        "uploadAddendumEvidenceHomeOffice, preHearing, true",
+        "uploadAddendumEvidenceHomeOffice, decision, true",
+        "uploadAddendumEvidenceHomeOffice, decided, true",
+        "uploadAddendumEvidenceAdminOfficer, preHearing, true",
+        "uploadAddendumEvidenceAdminOfficer, decision, true",
+        "uploadAddendumEvidenceAdminOfficer, decided, true"
     })
     void given_addendum_events_with_yes_ada_should_evaluate_dmn(String eventId, String postEventState, String isAda) {
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(
@@ -1754,7 +1754,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       + "            \"type\" : \"\",\n"
                                       + "            \"decision\" : \"\"\n"
                                       + "          },\n"
-                                      + "           \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "           \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
                                       + "        }\n"
                                       + "      }"),
                 emptyList()
@@ -1768,7 +1768,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       + "            \"type\" : \"Judge's review of application decision\",\n"
                                       + "            \"decision\" : \"\"\n"
                                       + "          },\n"
-                                      + "           \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "           \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
                                       + "        }\n"
                                       + "      }"),
                 singletonList(
@@ -1789,7 +1789,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       + "            \"type\" : \"Adjourn\",\n"
                                       + "            \"decision\" : \"\"\n"
                                       + "          },\n"
-                                      + "           \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "           \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
                                       + "        }\n"
                                       + "      }"),
                 singletonList(
@@ -1810,7 +1810,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       + "            \"type\" : \"Expedite\",\n"
                                       + "            \"decision\" : \"\"\n"
                                       + "          },\n"
-                                      + "           \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "           \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
                                       + "        }\n"
                                       + "      }"),
                 singletonList(
@@ -1831,7 +1831,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       + "            \"type\" : \"Time extension\",\n"
                                       + "            \"decision\" : \"\"\n"
                                       + "          },\n"
-                                      + "           \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "           \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
                                       + "        }\n"
                                       + "      }"),
                 singletonList(
@@ -1852,7 +1852,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       + "            \"type\" : \"Withdraw\",\n"
                                       + "            \"decision\" : \"\"\n"
                                       + "          },\n"
-                                      + "           \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "           \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
                                       + "        }\n"
                                       + "      }"),
                 singletonList(
@@ -1878,7 +1878,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       + "            \"type\" : \"\",\n"
                                       + "            \"decision\" : \"\"\n"
                                       + "          },\n"
-                                      + "           \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "           \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
                                       + "        }\n"
                                       + "      }"),
                 emptyList()
@@ -1892,7 +1892,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       + "            \"type\" : \"Update hearing requirements\",\n"
                                       + "            \"decision\" : \"\"\n"
                                       + "          },\n"
-                                      + "           \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "           \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
                                       + "        }\n"
                                       + "      }"),
                 singletonList(
@@ -1913,7 +1913,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       + "            \"type\" : \"Update appeal details\",\n"
                                       + "            \"decision\" : \"\"\n"
                                       + "          },\n"
-                                      + "           \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "           \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
                                       + "        }\n"
                                       + "      }"),
                 singletonList(
@@ -1934,7 +1934,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       + "            \"type\" : \"Reinstate an ended appeal\",\n"
                                       + "            \"decision\" : \"\"\n"
                                       + "          },\n"
-                                      + "           \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "           \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
                                       + "        }\n"
                                       + "      }"),
                 singletonList(
@@ -1955,7 +1955,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       + "            \"type\" : \"Other\",\n"
                                       + "            \"decision\" : \"\"\n"
                                       + "          },\n"
-                                      + "           \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "           \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
                                       + "        }\n"
                                       + "      }"),
                 singletonList(
@@ -1976,7 +1976,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       + "            \"type\" : \"Link/unlink appeals\",\n"
                                       + "            \"decision\" : \"\"\n"
                                       + "          },\n"
-                                      + "           \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "           \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
                                       + "        }\n"
                                       + "      }"),
                 singletonList(
@@ -1993,7 +1993,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "awaitingRespondentEvidence",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
-                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "No" + "\"\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + false + "\"\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -2012,7 +2012,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "awaitingRespondentEvidence",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
-                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -2031,7 +2031,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 null,
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
-                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "No" + "\"\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + false + "\"\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -2050,7 +2050,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 null,
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
-                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -2069,7 +2069,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "caseBuilding",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
-                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "No" + "\"\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + false + "\"\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -2088,7 +2088,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "caseBuilding",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
-                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -2107,7 +2107,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "respondentReview",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
-                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "No" + "\"\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + false + "\"\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -2126,7 +2126,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "respondentReview",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
-                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -2145,7 +2145,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 null,
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
-                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "No" + "\"\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + false + "\"\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -2164,7 +2164,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 null,
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
-                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -2183,7 +2183,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 null,
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
-                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "No" + "\"\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + false + "\"\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -2202,7 +2202,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 null,
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
-                                      + "      \"isAcceleratedDetainedAppeal\":\"" + "Yes" + "\"\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
