@@ -373,7 +373,8 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
     @SuppressWarnings("checkstyle:indentation")
     @ParameterizedTest
     @CsvSource(value = {
-        "reviewRespondentEvidence", "followUpOverdueRespondentEvidence", "adaFollowUpOverdueRespondentEvidence",
+        "reviewRespondentEvidence", "adaReviewRespondentEvidence",
+        "followUpOverdueRespondentEvidence", "adaFollowUpOverdueRespondentEvidence",
         "followUpOverdueCaseBuilding", "adaFollowUpOverdueCaseBuilding",
         "followUpOverdueReasonsForAppeal", "reviewTheAppeal", "adaReviewTheAppeal",
         "reviewClarifyingQuestionsAnswers", "followUpOverdueClarifyingAnswers", "reviewRespondentResponse",
