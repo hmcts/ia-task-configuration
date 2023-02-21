@@ -1580,6 +1580,20 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "transferOutOfAda",
+                null,
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewCaseTransferredOutOfADA",
+                        "name", "Review Case Transferred Out Of ADA",
+
+                        "workingDaysAllowed", 0,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
                 "unknownEvent",
                 null,
                 null,
@@ -2321,7 +2335,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(7));
         assertThat(logic.getOutputs().size(), is(5));
-        assertThat(logic.getRules().size(), is(59));
+        assertThat(logic.getRules().size(), is(60));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {

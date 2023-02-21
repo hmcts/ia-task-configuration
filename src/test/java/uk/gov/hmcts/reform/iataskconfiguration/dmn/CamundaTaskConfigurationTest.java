@@ -183,6 +183,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("followUpNonStandardDirection", routineWork),
             Arguments.of("adaFollowUpNonStandardDirection", routineWork),
             Arguments.of("reviewClarifyingQuestionsAnswers", routineWork),
+            Arguments.of("reviewCaseTransferredOutOfADA", routineWork),
             Arguments.of("reviewAdditionalEvidence", decisionMakingWork),
             Arguments.of("adaReviewAdditionalEvidence", decisionMakingWork),
             Arguments.of("reviewTheAppeal", decisionMakingWork),
@@ -389,7 +390,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "followUpOverdueCmaRequirements", "followUpOverdueRespondentReview", "followUpOverdueHearingRequirements",
         "followUpNonStandardDirection", "followUpNoticeOfChange", "reviewAdditionalEvidence",
         "reviewAdditionalHomeOfficeEvidence","followUpExtendedDirection", "adaFollowUpExtendedDirection",
-        "adaReviewAdditionalEvidence", "adaReviewAdditionalHomeOfficeEvidence"
+        "adaReviewAdditionalEvidence", "adaReviewAdditionalHomeOfficeEvidence","reviewCaseTransferredOutOfADA"
     })
     void when_taskId_then_return_legal_operations_role_category(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
