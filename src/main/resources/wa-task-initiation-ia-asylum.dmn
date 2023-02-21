@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.2.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.7.0">
   <decision id="wa-task-initiation-ia-asylum" name="Task initiation DMN">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT" biodi:annotationsWidth="400">
       <input id="Input_1" label="Event Id" biodi:width="515" camunda:inputVariable="eventId">
@@ -1440,6 +1440,46 @@ else
           <text>0</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1jk5xo7">
+          <text>"followUpOverdue"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0noq3vs">
+        <inputEntry id="UnaryTests_1hb9e1a">
+          <text>"requestRespondentEvidence"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ovnhlf">
+          <text>"awaitingRespondentEvidence"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1r8n0ie">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15302rw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1gihppu">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_153ckzg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0bta9oa">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_127epoi">
+          <text>"adaListCase"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0mrbfuv">
+          <text>"ADA-List case"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0mxghdl">
+          <text>            if (directionDueDate != null and directionDueDate != "") then
+            (date(directionDueDate) - date(now)).days
+            else 0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1jn8pxh">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0vp1awk">
           <text>"followUpOverdue"</text>
         </outputEntry>
       </rule>
