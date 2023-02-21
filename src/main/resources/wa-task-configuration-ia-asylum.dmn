@@ -220,6 +220,7 @@
                         "followUpOverdueRespondentEvidence",
                         "adaFollowUpOverdueRespondentEvidence",
                         "reviewRespondentEvidence",
+                        "adaReviewRespondentEvidence",
                         "followUpOverdueCaseBuilding",
                         "adaFollowUpOverdueCaseBuilding",
                         "reviewAppealSkeletonArgument",
@@ -379,6 +380,7 @@
                         "adaReviewTheAppeal",
                         "decideOnTimeExtension",
                         "reviewRespondentEvidence",
+                        "adaReviewRespondentEvidence",
                         "reviewAppealSkeletonArgument",
                         "adaReviewAppealSkeletonArgument",
                         "reviewReasonsForAppeal",
@@ -491,6 +493,8 @@
                         else if ((taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewRespondentEvidence" or taskType != null and taskType ="reviewRespondentEvidence") and (caseData != null and caseData.journeyType = "aip"))
                         then "[Request reasons for appeal](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestReasonsForAppeal)&lt;br /&gt;[Send non-standard direction](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDirection)"
 			                  else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewRespondentEvidence" or taskType != null and taskType ="reviewRespondentEvidence")
+                        then "[Request case building](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestCaseBuilding)&lt;br /&gt;[Send non-standard direction](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDirection)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "adaReviewRespondentEvidence" or taskType != null and taskType ="adaReviewRespondentEvidence")
                         then "[Request case building](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestCaseBuilding)&lt;br /&gt;[Send non-standard direction](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDirection)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewAppealSkeletonArgument" or taskType != null and taskType ="reviewAppealSkeletonArgument")
                         then "[Request respondent review](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentReview)&lt;br /&gt;[Request case edit](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestCaseEdit)"
