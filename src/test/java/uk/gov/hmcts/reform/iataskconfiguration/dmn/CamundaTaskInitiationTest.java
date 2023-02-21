@@ -111,6 +111,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "adaDecideAnFTPA",
                         "name", "ADA-Decide an FTPA",
 
+                        "workingDaysAllowed", 0,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -128,6 +129,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "adaDecideAnFTPA",
                         "name", "ADA-Decide an FTPA",
 
+                        "workingDaysAllowed", 0,
                         "processCategories", "caseProgression"
                     )
                 )
