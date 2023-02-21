@@ -1650,6 +1650,20 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "transferOutOfAda",
+                null,
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewCaseTransferredOutOfADA",
+                        "name", "Review Case Transferred Out Of ADA",
+
+                        "workingDaysAllowed", 0,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
                 "unknownEvent",
                 null,
                 null,

@@ -195,7 +195,8 @@
                         "adaFollowUpExtendedDirection",
                         "followUpNonStandardDirection",
                         "adaFollowUpNonStandardDirection",
-                        "reviewClarifyingQuestionsAnswers"
+                        "reviewClarifyingQuestionsAnswers",
+                        "reviewCaseTransferredOutOfADA"
                     </text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0rvgay2">
@@ -407,7 +408,8 @@
                         "createHearingBundle",
                         "createCaseSummary",
                         "followUpExtendedDirection",
-                        "adaFollowUpExtendedDirection"
+                        "adaFollowUpExtendedDirection",
+                        "reviewCaseTransferredOutOfADA"
                     </text>
         </inputEntry>
         <outputEntry id="LiteralExpression_05l5bvs">

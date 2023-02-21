@@ -2451,6 +2451,44 @@ else 0</text>
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1f7yfox">
+        <inputEntry id="UnaryTests_14c3bk6">
+          <text>"transferOutOfAda"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ihcj89">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_052udms">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0dxowmb">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1u0dbne">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0bpiurp">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ueakfw">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0jfk9mu">
+          <text>"reviewCaseTransferredOutOfADA"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0v71eez">
+          <text>"Review Case Transferred Out Of ADA"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_07dxtpf">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_10u1cmf">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0hz1a6a">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
