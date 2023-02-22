@@ -212,6 +212,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("adaReviewAddendumEvidence", decisionMakingWork),
             Arguments.of("decideOnTimeExtension", decisionMakingWork),
             Arguments.of("sendDecisionsAndReasons", decisionMakingWork),
+            Arguments.of("adaSendDecisionsAndReasons", decisionMakingWork),
             Arguments.of("reviewHearingBundle", hearingWork),
             Arguments.of("generateDraftDecisionAndReasons", hearingWork),
             Arguments.of("uploadDecision", hearingWork),
@@ -326,8 +327,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "reviewSpecificAccessRequestLegalOps", "reviewSpecificAccessRequestAdmin","reviewSpecificAccessRequestCTSC",
         "processApplicationToReviewDecision", "adaProcessApplicationToAdjourn", "adaProcessApplicationToExpedite",
         "adaProcessApplicationForTimeExtension", "adaProcessApplicationToWithdraw",
-        "adaProcessApplicationToReviewDecision", "sendDecisionsAndReasons", "prepareDecisionsAndReasons",
-        "decideAnFTPA"
+        "adaProcessApplicationToReviewDecision", "sendDecisionsAndReasons", "adaSendDecisionsAndReasons",
+        "prepareDecisionsAndReasons", "decideAnFTPA"
     })
     void when_taskId_then_return_judicial_role_category(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
@@ -720,6 +721,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "prepareDecisionsAndReasons,[Prepare decisions and reasons](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
             + "generateDecisionAndReasons),",
         "sendDecisionsAndReasons,[Complete decision and reasons](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
+            + "sendDecisionAndReasons),",
+        "adaSendDecisionsAndReasons,[Complete decision and reasons](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
             + "sendDecisionAndReasons),",
         "processApplicationToReviewDecision,[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
             + "decideAnApplication),",

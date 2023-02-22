@@ -2203,7 +2203,7 @@ else
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1vilh0x">
-          <text></text>
+          <text>false</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1tfucqq">
           <text>"sendDecisionsAndReasons"</text>
@@ -2218,6 +2218,44 @@ else
           <text>0</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0m2jpwd">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_00lc3n4">
+        <inputEntry id="UnaryTests_10776qk">
+          <text>"generateDecisionAndReasons"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ov8c1n">
+          <text>"decision"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10cfwv6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04t90ef">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ysrrvs">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1n76sfn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zagpjw">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ku4lo1">
+          <text>"adaSendDecisionsAndReasons"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1w12g0j">
+          <text>"ADA-Send decisions and reasons"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_11eso4n">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1y7msxw">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0izolzz">
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>

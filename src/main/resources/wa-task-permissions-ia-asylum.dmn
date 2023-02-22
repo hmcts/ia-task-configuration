@@ -413,6 +413,7 @@
           "reviewAddendumEvidence",
           "adaReviewAddendumEvidence",
           "sendDecisionsAndReasons",
+          "adaSendDecisionsAndReasons",
           "prepareDecisionsAndReasons"
 </text>
         </inputEntry>
@@ -454,6 +455,7 @@
             "adaProcessApplicationToWithdraw",
             "adaProcessApplicationToReviewDecision",
             "sendDecisionsAndReasons",
+            "adaSendDecisionsAndReasons",
             "decideAnFTPA",
             "prepareDecisionsAndReasons"
             </text>
