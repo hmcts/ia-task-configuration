@@ -368,6 +368,10 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                         "taskType", "sendDecisionsAndReasons",
                         "completionMode", "Auto"
                     ),
+                    Map.of(
+                        "taskType", "adaSendDecisionsAndReasons",
+                        "completionMode", "Auto"
+                    ),
                     Collections.emptyMap()
                 )
             ),
