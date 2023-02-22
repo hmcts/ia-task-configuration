@@ -118,6 +118,16 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "transferOutOfAda",
+                asList(
+                    Map.of(
+                        "taskType", "reviewCaseMarkedUnsuitableForADA",
+                        "completionMode", "Auto"
+                    ),
+                    Collections.emptyMap()
+                )
+            ),
+            Arguments.of(
                 "requestRespondentReview",
                 asList(
                     Map.of(

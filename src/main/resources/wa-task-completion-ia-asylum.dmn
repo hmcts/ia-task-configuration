@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="wa-completion-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.7.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="wa-completion-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.2.0">
   <decision id="wa-task-completion-ia-asylum" name="Task completion DMN">
     <decisionTable id="DecisionTable_01re27m" hitPolicy="COLLECT">
       <input id="eventId" label="Event ID" biodi:width="614">
@@ -393,10 +393,10 @@
         <outputEntry id="LiteralExpression_1c26l2b">
           <text>"Auto"</text>
         </outputEntry>
-      </rule>        
+      </rule>
       <rule id="DecisionRule_12f6clj">
         <inputEntry id="UnaryTests_17pd4ef">
-          <text>"requestRespondentReview"</text>
+          <text>"requestRespondentReview","requestCaseEdit"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_17bp7yo">
           <text>"adaReviewAppealSkeletonArgument"</text>
@@ -405,20 +405,20 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1lqnrrk">
-        <inputEntry id="UnaryTests_09h10kn">
-          <text>"requestCaseEdit"</text>
+      <rule id="DecisionRule_1w33mfq">
+        <inputEntry id="UnaryTests_1n6eu67">
+          <text>"transferOutOfAda"</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_0z5m642">
-          <text>"adaReviewAppealSkeletonArgument"</text>
+        <outputEntry id="LiteralExpression_1g64tmk">
+          <text>"reviewCaseMarkedUnsuitableForADA"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_0yftvvl">
+        <outputEntry id="LiteralExpression_1fxxoov">
           <text>"Auto"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1u3c7sd">
         <inputEntry id="UnaryTests_1dd0p7u">
-          <text>"generateHearingBundle","decisionAndReasonsStarted","updateHearingRequirements","endAppeal","requestRespondentEvidence","requestCaseBuilding","requestReasonsForAppeal","sendDirection","requestRespondentReview","requestCaseEdit","sendDirectionWithQuestions","requestCmaRequirements","markEvidenceAsReviewed","markAddendumEvidenceAsReviewed","reviewCmaRequirements","updateDetailsAfterCma","requestResponseAmend","requestResponseReview","reviewHearingRequirements","changeDirectionDueDate","decideAnApplication","editCaseListing","sendDecisionAndReasons","generateDecisionAndReasons","uploadHearingRecording","leadershipJudgeFtpaDecision","residentJudgeFtpaDecision"</text>
+          <text>"generateHearingBundle","decisionAndReasonsStarted","updateHearingRequirements","endAppeal","requestRespondentEvidence","requestCaseBuilding","requestReasonsForAppeal","sendDirection","requestRespondentReview","requestCaseEdit","sendDirectionWithQuestions","requestCmaRequirements","markEvidenceAsReviewed","markAddendumEvidenceAsReviewed","reviewCmaRequirements","updateDetailsAfterCma","requestResponseAmend","requestResponseReview","reviewHearingRequirements","changeDirectionDueDate","decideAnApplication","editCaseListing","sendDecisionAndReasons","generateDecisionAndReasons","uploadHearingRecording","leadershipJudgeFtpaDecision","residentJudgeFtpaDecision","transferOutOfAda"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1ex7ytl">
           <text></text>
