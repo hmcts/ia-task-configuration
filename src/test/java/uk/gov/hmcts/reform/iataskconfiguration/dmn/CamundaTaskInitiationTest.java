@@ -1921,7 +1921,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData(" {\n"
                                       + "        \"Data\" : {\n"
                                       + "          \"lastModifiedApplication\" : {\n"
-                                      + "            \"type\" : \"Judge's review of application decision\",\n"
+                                      + "            \"type\" : \"Judge's review of Legal Officer decision\",\n"
                                       + "            \"decision\" : \"\"\n"
                                       + "          },\n"
                                       + "           \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
