@@ -60,6 +60,7 @@
             "reviewTheAppeal",
             "adaReviewTheAppeal",
             "reviewRespondentEvidence",
+            "adaReviewRespondentEvidence",
             "followUpOverdueRespondentEvidence",
             "adaFollowUpOverdueRespondentEvidence",
             "reviewAppealSkeletonArgument",
@@ -128,7 +129,7 @@
       <rule id="DecisionRule_1tvtlre">
         <description>Tribunal caseworker task permissions</description>
         <inputEntry id="UnaryTests_13ukkz6">
-          <text>"reviewTheAppeal","adaReviewTheAppeal","reviewRespondentEvidence","followUpOverdueRespondentEvidence","adaFollowUpOverdueRespondentEvidence","reviewAppealSkeletonArgument","adaReviewAppealSkeletonArgument","followUpOverdueCaseBuilding","adaFollowUpOverdueCaseBuilding","reviewReasonsForAppeal","followUpOverdueReasonsForAppeal","reviewClarifyingQuestionsAnswers","followUpOverdueClarifyingAnswers","reviewRespondentResponse","followUpOverdueRespondentReview","adaFollowUpOverdueRespondentReview","reviewHearingRequirements","followUpOverdueHearingRequirements","reviewCmaRequirements","caseSummaryHearingBundleStartDecision","processApplication","adaProcessApplicationToUpdateHearingRequirements","adaProcessApplicationToUpdateAppealDetails","adaProcessApplicationToReinstateAnEndedAppeal","adaProcessApplicationToOther","adaLinkUnlinkAppeals","attendCma","startDecisionsAndReasons","followUpNoticeOfChange","adaFollowUpNoticeOfChange","followUpOverdueCmaRequirements","followUpNonStandardDirection","adaFollowUpNonStandardDirection","decideOnTimeExtension","reviewAdditionalEvidence","adaReviewAdditionalEvidence","reviewAdditionalHomeOfficeEvidence","adaReviewAdditionalHomeOfficeEvidence",
+          <text>"reviewTheAppeal","adaReviewTheAppeal","reviewRespondentEvidence","adaReviewRespondentEvidence","followUpOverdueRespondentEvidence","adaFollowUpOverdueRespondentEvidence","reviewAppealSkeletonArgument","adaReviewAppealSkeletonArgument","followUpOverdueCaseBuilding","adaFollowUpOverdueCaseBuilding","reviewReasonsForAppeal","followUpOverdueReasonsForAppeal","reviewClarifyingQuestionsAnswers","followUpOverdueClarifyingAnswers","reviewRespondentResponse","followUpOverdueRespondentReview","adaFollowUpOverdueRespondentReview","reviewHearingRequirements","followUpOverdueHearingRequirements","reviewCmaRequirements","caseSummaryHearingBundleStartDecision","processApplication","adaProcessApplicationToUpdateHearingRequirements","adaProcessApplicationToUpdateAppealDetails","adaProcessApplicationToReinstateAnEndedAppeal","adaProcessApplicationToOther","adaLinkUnlinkAppeals","attendCma","startDecisionsAndReasons","followUpNoticeOfChange","adaFollowUpNoticeOfChange","followUpOverdueCmaRequirements","followUpNonStandardDirection","adaFollowUpNonStandardDirection","decideOnTimeExtension","reviewAdditionalEvidence","adaReviewAdditionalEvidence","reviewAdditionalHomeOfficeEvidence","adaReviewAdditionalHomeOfficeEvidence",
             "followUpExtendedDirection","adaFollowUpExtendedDirection",
             "startDecisionsAndReasonsDocument","createHearingBundle","createCaseSummary",
             "reviewCaseTransferredOutOfADA"</text>
@@ -165,6 +166,7 @@
             "reviewTheAppeal",
             "adaReviewTheAppeal",
             "reviewRespondentEvidence",
+            "adaReviewRespondentEvidence",
             "followUpOverdueRespondentEvidence",
             "adaFollowUpOverdueRespondentEvidence",
             "reviewAppealSkeletonArgument",

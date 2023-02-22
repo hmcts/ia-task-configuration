@@ -31,6 +31,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1tkhqj8">
+        <inputEntry id="UnaryTests_01i0pif">
+          <text>"requestCaseBuilding","requestReasonsForAppeal","sendDirection"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1bwmu8g">
+          <text>"adaReviewRespondentEvidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12fr7wo">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0x1cjp2">
         <inputEntry id="UnaryTests_1bjqbmz">
           <text>"requestRespondentReview","requestCaseEdit"</text>
