@@ -245,7 +245,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("adaProcessApplicationForTimeExtension", applications),
             Arguments.of("adaProcessApplicationToWithdraw", applications),
             Arguments.of("adaProcessApplicationToReviewDecision", applications),
-            Arguments.of("decideAnFTPA", upperTribunal)
+            Arguments.of("decideAnFTPA", upperTribunal),
+            Arguments.of("adaDecideAnFTPA", upperTribunal)
         );
     }
 
@@ -328,7 +329,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "processApplicationToReviewDecision", "adaProcessApplicationToAdjourn", "adaProcessApplicationToExpedite",
         "adaProcessApplicationForTimeExtension", "adaProcessApplicationToWithdraw",
         "adaProcessApplicationToReviewDecision", "sendDecisionsAndReasons", "adaSendDecisionsAndReasons",
-        "prepareDecisionsAndReasons", "decideAnFTPA"
+        "prepareDecisionsAndReasons", "decideAnFTPA", "adaDecideAnFTPA"
     })
     void when_taskId_then_return_judicial_role_category(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
@@ -716,6 +717,9 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             + "markAddendumEvidenceAsReviewed),",
         "editListing,[Edit case listing](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/editCaseListing),",
         "decideAnFTPA,[Leadership judge FTPA decision](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
+            + "leadershipJudgeFtpaDecision)<br />"
+            + "[Resident judge FTPA decision](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/residentJudgeFtpaDecision),",
+        "adaDecideAnFTPA,[Leadership judge FTPA decision](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
             + "leadershipJudgeFtpaDecision)<br />"
             + "[Resident judge FTPA decision](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/residentJudgeFtpaDecision),",
         "prepareDecisionsAndReasons,[Prepare decisions and reasons](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"

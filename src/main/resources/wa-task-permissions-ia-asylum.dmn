@@ -457,6 +457,7 @@
             "sendDecisionsAndReasons",
             "adaSendDecisionsAndReasons",
             "decideAnFTPA",
+            "adaDecideAnFTPA",
             "prepareDecisionsAndReasons"
             </text>
         </inputEntry>
@@ -488,7 +489,7 @@
       <rule id="DecisionRule_14oarem">
         <description>Judge task permissions</description>
         <inputEntry id="UnaryTests_1lcov8q">
-          <text>"decideAnFTPA"</text>
+          <text>"decideAnFTPA", "adaDecideAnFTPA"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_114aema">
           <text></text>

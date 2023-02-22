@@ -284,6 +284,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0t41akm">
+        <inputEntry id="UnaryTests_0689dtb">
+          <text>"leadershipJudgeFtpaDecision","residentJudgeFtpaDecision"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0tiud1j">
+          <text>"adaDecideAnFTPA"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0l0ks1r">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_00ego89">
         <inputEntry id="UnaryTests_0mupz2m">
           <text>"decideAnApplication"</text>

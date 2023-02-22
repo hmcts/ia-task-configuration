@@ -2357,7 +2357,7 @@ else 0</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0c52jqj">
-          <text></text>
+          <text>false</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0j21h84">
           <text>"decideAnFTPA"</text>
@@ -2372,6 +2372,44 @@ else 0</text>
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_14ng722">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0fwvg96">
+        <inputEntry id="UnaryTests_1x9muiu">
+          <text>"applyForFTPAAppellant", "applyForFTPARespondent"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0x5q6n7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0yfxjku">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fusx6f">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wm9ne2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1sin3za">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0clknj2">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1tb61dp">
+          <text>"adaDecideAnFTPA"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1wokom0">
+          <text>"ADA-Decide an FTPA"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1jp68ow">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0cw1ard">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1kl00yu">
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
