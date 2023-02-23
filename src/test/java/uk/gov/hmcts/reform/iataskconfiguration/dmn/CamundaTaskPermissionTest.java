@@ -138,6 +138,14 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "adaDecideAnFTPA",
+                List.of(
+                    taskSupervisor,
+                    judgePriorityOne,
+                    ftpaJudgePriorityOne
+                )
+            ),
+            Arguments.of(
                 "uploadHearingRecording",
                 List.of(
                     taskSupervisor,
@@ -160,6 +168,14 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "sendDecisionsAndReasons",
+                List.of(
+                    taskSupervisor,
+                    hearingJudgePriorityOne,
+                    judgePriorityOne
+                )
+            ),
+            Arguments.of(
+                "adaSendDecisionsAndReasons",
                 List.of(
                     taskSupervisor,
                     hearingJudgePriorityOne,
@@ -380,7 +396,8 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
     @SuppressWarnings("checkstyle:indentation")
     @ParameterizedTest
     @CsvSource(value = {
-        "reviewRespondentEvidence", "followUpOverdueRespondentEvidence", "adaFollowUpOverdueRespondentEvidence",
+        "reviewRespondentEvidence", "adaReviewRespondentEvidence",
+        "followUpOverdueRespondentEvidence", "adaFollowUpOverdueRespondentEvidence",
         "followUpOverdueCaseBuilding", "adaFollowUpOverdueCaseBuilding",
         "followUpOverdueReasonsForAppeal", "reviewTheAppeal", "adaReviewTheAppeal",
         "reviewClarifyingQuestionsAnswers", "followUpOverdueClarifyingAnswers", "reviewRespondentResponse",
@@ -395,7 +412,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
          "reviewAdditionalEvidence","adaReviewAdditionalEvidence",
         "reviewAdditionalHomeOfficeEvidence", "adaReviewAdditionalHomeOfficeEvidence",
          "adaReviewAppealSkeletonArgument",
-        "followUpExtendedDirection","adaFollowUpExtendedDirection"
+        "followUpExtendedDirection","adaFollowUpExtendedDirection","reviewCaseTransferredOutOfADA"
     })
     void given_taskType_when_evaluate_dmn_then_it_returns_first_second_and_third_rules(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();

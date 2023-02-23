@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="wa-completion-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.7.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="wa-completion-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.2.0">
   <decision id="wa-task-completion-ia-asylum" name="Task completion DMN">
     <decisionTable id="DecisionTable_01re27m" hitPolicy="COLLECT">
       <input id="eventId" label="Event ID" biodi:width="614">
@@ -28,6 +28,17 @@
           <text>"reviewRespondentEvidence"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_15mqpgr">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1tkhqj8">
+        <inputEntry id="UnaryTests_01i0pif">
+          <text>"requestCaseBuilding","requestReasonsForAppeal","sendDirection"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1bwmu8g">
+          <text>"adaReviewRespondentEvidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12fr7wo">
           <text>"Auto"</text>
         </outputEntry>
       </rule>
@@ -229,6 +240,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1snko0a">
+        <inputEntry id="UnaryTests_045l68n">
+          <text>"sendDecisionAndReasons"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_18p7zb8">
+          <text>"adaSendDecisionsAndReasons"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0w6i5ch">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1s2se0d">
         <inputEntry id="UnaryTests_1diis8c">
           <text>"generateDecisionAndReasons"</text>
@@ -259,6 +281,17 @@
           <text>"decideAnFTPA"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_15bi5vb">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0t41akm">
+        <inputEntry id="UnaryTests_0689dtb">
+          <text>"leadershipJudgeFtpaDecision","residentJudgeFtpaDecision"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0tiud1j">
+          <text>"adaDecideAnFTPA"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0l0ks1r">
           <text>"Auto"</text>
         </outputEntry>
       </rule>
@@ -393,7 +426,7 @@
         <outputEntry id="LiteralExpression_1c26l2b">
           <text>"Auto"</text>
         </outputEntry>
-      </rule>        
+      </rule>
       <rule id="DecisionRule_12f6clj">
         <inputEntry id="UnaryTests_17pd4ef">
           <text>"requestRespondentReview"</text>

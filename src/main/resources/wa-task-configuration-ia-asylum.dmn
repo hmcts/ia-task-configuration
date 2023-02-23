@@ -195,7 +195,8 @@
                         "adaFollowUpExtendedDirection",
                         "followUpNonStandardDirection",
                         "adaFollowUpNonStandardDirection",
-                        "reviewClarifyingQuestionsAnswers"
+                        "reviewClarifyingQuestionsAnswers",
+                        "reviewCaseTransferredOutOfADA"
                     </text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0rvgay2">
@@ -219,6 +220,7 @@
                         "followUpOverdueRespondentEvidence",
                         "adaFollowUpOverdueRespondentEvidence",
                         "reviewRespondentEvidence",
+                        "adaReviewRespondentEvidence",
                         "followUpOverdueCaseBuilding",
                         "adaFollowUpOverdueCaseBuilding",
                         "reviewAppealSkeletonArgument",
@@ -242,7 +244,9 @@
                         "reviewAddendumEvidence",
                          "adaReviewAddendumEvidence",
                         "decideOnTimeExtension",
-                        "sendDecisionsAndReasons"</text>
+                        "sendDecisionsAndReasons",
+                        "adaSendDecisionsAndReasons"
+                        </text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0omxasv">
           <text>"workType"</text>
@@ -314,7 +318,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_04wtfxs">
-          <text>"decideAnFTPA"</text>
+          <text>"decideAnFTPA","adaDecideAnFTPA"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1ywf3hm">
           <text>"workType"</text>
@@ -376,6 +380,7 @@
                         "adaReviewTheAppeal",
                         "decideOnTimeExtension",
                         "reviewRespondentEvidence",
+                        "adaReviewRespondentEvidence",
                         "reviewAppealSkeletonArgument",
                         "adaReviewAppealSkeletonArgument",
                         "reviewReasonsForAppeal",
@@ -407,7 +412,8 @@
                         "createHearingBundle",
                         "createCaseSummary",
                         "followUpExtendedDirection",
-                        "adaFollowUpExtendedDirection"
+                        "adaFollowUpExtendedDirection",
+                        "reviewCaseTransferredOutOfADA"
                     </text>
         </inputEntry>
         <outputEntry id="LiteralExpression_05l5bvs">
@@ -442,7 +448,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_15ftuu0">
-          <text>"reviewHearingBundle","generateDraftDecisionAndReasons","uploadDecision","reviewAddendumHomeOfficeEvidence","reviewAddendumAppellantEvidence","reviewAddendumEvidence","adaReviewAddendumEvidence","reviewSpecificAccessRequestJudiciary","reviewSpecificAccessRequestLegalOps","reviewSpecificAccessRequestAdmin","reviewSpecificAccessRequestCTSC","processApplicationToReviewDecision","adaProcessApplicationToAdjourn","adaProcessApplicationToExpedite","adaProcessApplicationForTimeExtension","adaProcessApplicationToWithdraw","adaProcessApplicationToReviewDecision","sendDecisionsAndReasons","prepareDecisionsAndReasons","decideAnFTPA"</text>
+          <text>"reviewHearingBundle","generateDraftDecisionAndReasons","uploadDecision","reviewAddendumHomeOfficeEvidence","reviewAddendumAppellantEvidence","reviewAddendumEvidence","adaReviewAddendumEvidence","reviewSpecificAccessRequestJudiciary","reviewSpecificAccessRequestLegalOps","reviewSpecificAccessRequestAdmin","reviewSpecificAccessRequestCTSC","processApplicationToReviewDecision","adaProcessApplicationToAdjourn","adaProcessApplicationToExpedite","adaProcessApplicationForTimeExtension","adaProcessApplicationToWithdraw","adaProcessApplicationToReviewDecision","sendDecisionsAndReasons","adaSendDecisionsAndReasons","prepareDecisionsAndReasons","decideAnFTPA","adaDecideAnFTPA"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_15nowth">
           <text>"roleCategory"</text>
@@ -488,6 +494,8 @@
                         then "[Request reasons for appeal](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestReasonsForAppeal)&lt;br /&gt;[Send non-standard direction](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDirection)"
 			                  else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewRespondentEvidence" or taskType != null and taskType ="reviewRespondentEvidence")
                         then "[Request case building](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestCaseBuilding)&lt;br /&gt;[Send non-standard direction](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDirection)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "adaReviewRespondentEvidence" or taskType != null and taskType ="adaReviewRespondentEvidence")
+                        then "[Request case building](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestCaseBuilding)&lt;br /&gt;[Send non-standard direction](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDirection)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewAppealSkeletonArgument" or taskType != null and taskType ="reviewAppealSkeletonArgument")
                         then "[Request respondent review](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentReview)&lt;br /&gt;[Request case edit](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestCaseEdit)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "adaReviewAppealSkeletonArgument" or taskType != null and taskType ="adaReviewAppealSkeletonArgument")
@@ -524,7 +532,9 @@
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "editListing" or taskType != null and taskType = "editListing") then "[Edit case listing](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/editCaseListing)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "prepareDecisionsAndReasons" or taskType != null and taskType = "prepareDecisionsAndReasons") then "[Prepare decisions and reasons](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/generateDecisionAndReasons)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "decideAnFTPA" or taskType != null and taskType = "decideAnFTPA") then "[Leadership judge FTPA decision](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/leadershipJudgeFtpaDecision)&lt;br /&gt;[Resident judge FTPA decision](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/residentJudgeFtpaDecision)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "adaDecideAnFTPA" or taskType != null and taskType = "adaDecideAnFTPA") then "[Leadership judge FTPA decision](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/leadershipJudgeFtpaDecision)&lt;br /&gt;[Resident judge FTPA decision](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/residentJudgeFtpaDecision)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "sendDecisionsAndReasons" or taskType != null and taskType = "sendDecisionsAndReasons") then "[Complete decision and reasons](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDecisionAndReasons)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "adaSendDecisionsAndReasons" or taskType != null and taskType = "adaSendDecisionsAndReasons") then "[Complete decision and reasons](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDecisionAndReasons)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "processApplicationToReviewDecision" or taskType != null and taskType = "processApplicationToReviewDecision") then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "adaProcessApplicationToAdjourn" or taskType != null and taskType = "adaProcessApplicationToAdjourn") then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "adaProcessApplicationToExpedite" or taskType != null and taskType = "adaProcessApplicationToExpedite") then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)"
