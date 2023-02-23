@@ -742,8 +742,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             + "decideAnApplication),",
         "adaProcessApplicationToReviewDecision,[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
             + "decideAnApplication),",
-        "reviewCaseMarkedUnsuitableForADA,[Transfer the appeal out of ADA process](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
-            + "transferOutOfAda),",
+        "reviewCaseMarkedUnsuitableForADA,[Transfer the appeal out of the ADA process]"
+            + "(/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/transferOutOfAda),",
         "reviewSpecificAccessRequestJudiciary,[Review Access Request](/role-access/"
             + "${[taskId]}/assignment/${[roleAssignmentId]}/specific-access),",
         "reviewSpecificAccessRequestLegalOps,[Review Access Request](/role-access/"
