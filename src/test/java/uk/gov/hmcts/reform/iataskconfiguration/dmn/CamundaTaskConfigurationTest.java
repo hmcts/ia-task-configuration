@@ -221,6 +221,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("followUpOverdueHearingRequirements", hearingWork),
             Arguments.of("reviewHearingRequirements", hearingWork),
             Arguments.of("allocateHearingJudge", hearingWork),
+            Arguments.of("adaListCase", hearingWork),
             Arguments.of("prepareDecisionsAndReasons", hearingWork),
             Arguments.of("startDecisionsAndReasonsDocument", hearingWork),
             Arguments.of("createHearingBundle", hearingWork),
