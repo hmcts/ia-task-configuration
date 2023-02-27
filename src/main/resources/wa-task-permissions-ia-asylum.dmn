@@ -99,7 +99,8 @@
             "followUpExtendedDirection",
             "adaFollowUpExtendedDirection",
             "adaReviewAdditionalEvidence",
-            "reviewCaseTransferredOutOfADA"</text>
+            "reviewCaseTransferredOutOfADA",
+            "reviewCaseMarkedUnsuitableForADA"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0buofva">
           <text></text>
@@ -132,7 +133,7 @@
           <text>"reviewTheAppeal","adaReviewTheAppeal","reviewRespondentEvidence","adaReviewRespondentEvidence","followUpOverdueRespondentEvidence","adaFollowUpOverdueRespondentEvidence","reviewAppealSkeletonArgument","adaReviewAppealSkeletonArgument","followUpOverdueCaseBuilding","adaFollowUpOverdueCaseBuilding","reviewReasonsForAppeal","followUpOverdueReasonsForAppeal","reviewClarifyingQuestionsAnswers","followUpOverdueClarifyingAnswers","reviewRespondentResponse","followUpOverdueRespondentReview","adaFollowUpOverdueRespondentReview","reviewHearingRequirements","followUpOverdueHearingRequirements","reviewCmaRequirements","caseSummaryHearingBundleStartDecision","processApplication","adaProcessApplicationToUpdateHearingRequirements","adaProcessApplicationToUpdateAppealDetails","adaProcessApplicationToReinstateAnEndedAppeal","adaProcessApplicationToOther","adaLinkUnlinkAppeals","attendCma","startDecisionsAndReasons","followUpNoticeOfChange","adaFollowUpNoticeOfChange","followUpOverdueCmaRequirements","followUpNonStandardDirection","adaFollowUpNonStandardDirection","decideOnTimeExtension","reviewAdditionalEvidence","adaReviewAdditionalEvidence","reviewAdditionalHomeOfficeEvidence","adaReviewAdditionalHomeOfficeEvidence",
             "followUpExtendedDirection","adaFollowUpExtendedDirection",
             "startDecisionsAndReasonsDocument","createHearingBundle","createCaseSummary",
-            "reviewCaseTransferredOutOfADA"</text>
+            "reviewCaseTransferredOutOfADA","reviewCaseMarkedUnsuitableForADA"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_10s330p">
           <text></text>
@@ -205,7 +206,8 @@
 "startDecisionsAndReasonsDocument","createHearingBundle","createCaseSummary",
             "followUpExtendedDirection",
             "adaFollowUpExtendedDirection",
-            "reviewCaseTransferredOutOfADA"
+            "reviewCaseTransferredOutOfADA",
+            "reviewCaseMarkedUnsuitableForADA"
           </text>
         </inputEntry>
         <inputEntry id="UnaryTests_18tqbn3">
