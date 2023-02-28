@@ -185,6 +185,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("reviewClarifyingQuestionsAnswers", routineWork),
             Arguments.of("reviewCaseMarkedUnsuitableForADA", routineWork),
             Arguments.of("reviewCaseTransferredOutOfADA", routineWork),
+            Arguments.of("adaListCase", routineWork),
             Arguments.of("reviewAdditionalEvidence", decisionMakingWork),
             Arguments.of("adaReviewAdditionalEvidence", decisionMakingWork),
             Arguments.of("reviewTheAppeal", decisionMakingWork),
@@ -359,7 +360,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
     @ParameterizedTest
     @CsvSource({
-        "arrangeOfflinePayment", "markCaseAsPaid", "allocateHearingJudge", "uploadHearingRecording", "editListing"
+        "arrangeOfflinePayment", "markCaseAsPaid", "allocateHearingJudge", "uploadHearingRecording", "editListing",
+        "adaListCase"
     })
     void when_taskId_then_return_Admin_role_category(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();

@@ -22,6 +22,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
 
+import static java.util.Arrays.asList;
 import static java.util.Collections.emptyList;
 import static java.util.Collections.singletonList;
 import static org.hamcrest.CoreMatchers.is;
@@ -2206,7 +2207,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       + "      \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
                                       + "   }"
                                       + "}"),
-                singletonList(
+                asList(
                     Map.of(
                         "taskId", "adaFollowUpOverdueRespondentEvidence",
                         "name", "ADA-Follow-up overdue respondent evidence",
@@ -2214,6 +2215,13 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "workingDaysAllowed", 0,
                         "delayDuration", 0,
                         "processCategories", "followUpOverdue"
+                    ),
+                    Map.of(
+                        "taskId", "adaListCase",
+                        "name", "ADA-List case",
+
+                        "workingDaysAllowed", 0,
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
@@ -2512,7 +2520,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(8));
         assertThat(logic.getOutputs().size(), is(5));
-        assertThat(logic.getRules().size(), is(65));
+        assertThat(logic.getRules().size(), is(66));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {

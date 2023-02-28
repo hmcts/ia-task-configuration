@@ -307,7 +307,8 @@
           <text>
             "allocateHearingJudge",
             "uploadHearingRecording",
-            "editListing"
+            "editListing",
+            "adaListCase"
           </text>
         </inputEntry>
         <inputEntry id="UnaryTests_1sw9xpj">

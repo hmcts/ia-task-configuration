@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.2.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.7.0">
   <decision id="wa-task-initiation-ia-asylum" name="Task initiation DMN">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT" biodi:annotationsWidth="400">
       <input id="Input_1" label="Event Id" biodi:width="515" camunda:inputVariable="eventId">
@@ -64,7 +64,7 @@ else
       </input>
       <input id="InputClause_1q1pftc" label="ADA Suitability Review Decision" camunda:inputVariable="suitabilityReviewDecision">
         <inputExpression id="LiteralExpression_0bluyyu" typeRef="string">
-          <text>if(additionalData != null and additionalData.Data != null 
+          <text>if(additionalData != null and additionalData.Data != null
 and additionalData.Data.suitabilityReviewDecision
             != null) then
             additionalData.Data.suitabilityReviewDecision
@@ -1597,6 +1597,47 @@ and additionalData.Data.suitabilityReviewDecision
         </outputEntry>
         <outputEntry id="LiteralExpression_1jk5xo7">
           <text>"followUpOverdue"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_17yufxl">
+        <inputEntry id="UnaryTests_1l6sxh8">
+          <text>"requestRespondentEvidence"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1aoj043">
+          <text>"awaitingRespondentEvidence"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_175kaut">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1eid58d">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qdsgl6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1eib3pa">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1i2ir78">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_098love">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_165az7o">
+          <text>"adaListCase"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1l19fag">
+          <text>"ADA-List case"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1hy7vw4">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ix0xb5">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0zftq0f">
+          <text>"caseProgression"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0j3ds1p">
