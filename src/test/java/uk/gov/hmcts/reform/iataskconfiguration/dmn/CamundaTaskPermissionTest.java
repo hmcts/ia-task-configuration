@@ -307,7 +307,8 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "adaReviewAddendumEvidence",
                 List.of(
                     taskSupervisor,
-                    hearingJudgePriorityOne
+                    hearingJudgePriorityOne,
+                    judgePriorityOne
                 )
             )
         );
