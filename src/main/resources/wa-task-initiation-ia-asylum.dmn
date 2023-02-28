@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.2.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.7.0">
   <decision id="wa-task-initiation-ia-asylum" name="Task initiation DMN">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT" biodi:annotationsWidth="400">
       <input id="Input_1" label="Event Id" biodi:width="515" camunda:inputVariable="eventId">
@@ -64,7 +64,7 @@ else
       </input>
       <input id="InputClause_1q1pftc" label="ADA Suitability Review Decision" camunda:inputVariable="suitabilityReviewDecision">
         <inputExpression id="LiteralExpression_0bluyyu" typeRef="string">
-          <text>if(additionalData != null and additionalData.Data != null 
+          <text>if(additionalData != null and additionalData.Data != null
 and additionalData.Data.suitabilityReviewDecision
             != null) then
             additionalData.Data.suitabilityReviewDecision
@@ -1599,43 +1599,47 @@ and additionalData.Data.suitabilityReviewDecision
           <text>"followUpOverdue"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0noq3vs">
-        <inputEntry id="UnaryTests_1hb9e1a">
+      <rule id="DecisionRule_17yufxl">
+        <inputEntry id="UnaryTests_1l6sxh8">
           <text>"requestRespondentEvidence"</text>
         </inputEntry>
-        <inputEntry id="UnaryTests_0ovnhlf">
+        <inputEntry id="UnaryTests_1aoj043">
           <text>"awaitingRespondentEvidence"</text>
         </inputEntry>
-        <inputEntry id="UnaryTests_1r8n0ie">
+        <inputEntry id="UnaryTests_175kaut">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_15302rw">
+        <inputEntry id="UnaryTests_1eid58d">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_1gihppu">
+        <inputEntry id="UnaryTests_1qdsgl6">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_153ckzg">
+        <inputEntry id="UnaryTests_1eib3pa">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_0bta9oa">
+        <inputEntry id="UnaryTests_1i2ir78">
           <text>true</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_127epoi">
+        <inputEntry id="UnaryTests_098love">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_165az7o">
           <text>"adaListCase"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_0mrbfuv">
+        <outputEntry id="LiteralExpression_1l19fag">
           <text>"ADA-List case"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_0mxghdl">
-          <text>            if (directionDueDate != null and directionDueDate != "") then
+        <outputEntry id="LiteralExpression_1hy7vw4">
+          <text>
+            if (directionDueDate != null and directionDueDate != "") then
             (date(directionDueDate) - date(now)).days
             else 0</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_1jn8pxh">
+        <outputEntry id="LiteralExpression_1ix0xb5">
           <text>0</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_0vp1awk">
+        <outputEntry id="LiteralExpression_0zftq0f">
           <text>"followUpOverdue"</text>
         </outputEntry>
       </rule>
