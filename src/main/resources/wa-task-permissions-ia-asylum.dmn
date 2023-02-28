@@ -451,6 +451,7 @@
           <text>
             "reviewHearingBundle",
             "reviewAddendumEvidence",
+            "adaReviewAddendumEvidence",
             "processApplicationToReviewDecision",
             "adaProcessApplicationToAdjourn",
             "adaProcessApplicationToExpedite",
