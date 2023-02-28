@@ -416,7 +416,8 @@
           "adaReviewAddendumEvidence",
           "sendDecisionsAndReasons",
           "adaSendDecisionsAndReasons",
-          "prepareDecisionsAndReasons"
+          "prepareDecisionsAndReasons",
+          "reviewADASuitability"
 </text>
         </inputEntry>
         <inputEntry id="UnaryTests_19myw41">
@@ -460,7 +461,8 @@
             "adaSendDecisionsAndReasons",
             "decideAnFTPA",
             "adaDecideAnFTPA",
-            "prepareDecisionsAndReasons"
+            "prepareDecisionsAndReasons",
+            "reviewADASuitability"
             </text>
         </inputEntry>
         <inputEntry id="UnaryTests_1sgyxq7">
