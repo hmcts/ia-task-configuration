@@ -1631,16 +1631,13 @@ and additionalData.Data.suitabilityReviewDecision
           <text>"ADA-List case"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1hy7vw4">
-          <text>
-            if (directionDueDate != null and directionDueDate != "") then
-            (date(directionDueDate) - date(now)).days
-            else 0</text>
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1ix0xb5">
           <text>0</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0zftq0f">
-          <text>"followUpOverdue"</text>
+          <text>"caseProgression"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0j3ds1p">

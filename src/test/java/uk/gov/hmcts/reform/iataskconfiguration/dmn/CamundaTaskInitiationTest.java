@@ -2203,8 +2203,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "ADA-List case",
 
                         "workingDaysAllowed", 0,
-                        "delayDuration", 0,
-                        "processCategories", "followUpOverdue"
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
