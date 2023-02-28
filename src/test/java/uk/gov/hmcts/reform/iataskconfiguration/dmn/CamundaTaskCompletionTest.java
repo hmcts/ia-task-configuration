@@ -415,6 +415,16 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "adaSuitabilityReview",
+                asList(
+                    Map.of(
+                        "taskType", "reviewADASuitability",
+                        "completionMode", "Auto"
+                    ),
+                    Collections.emptyMap()
+                )
+            ),
+            Arguments.of(
                 "unknownEvent",
                 emptyList()
             )

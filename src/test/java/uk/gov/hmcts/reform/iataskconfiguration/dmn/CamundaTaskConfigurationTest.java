@@ -215,6 +215,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("decideOnTimeExtension", decisionMakingWork),
             Arguments.of("sendDecisionsAndReasons", decisionMakingWork),
             Arguments.of("adaSendDecisionsAndReasons", decisionMakingWork),
+            Arguments.of("reviewADASuitability", decisionMakingWork),
             Arguments.of("reviewHearingBundle", hearingWork),
             Arguments.of("generateDraftDecisionAndReasons", hearingWork),
             Arguments.of("uploadDecision", hearingWork),
@@ -331,7 +332,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "processApplicationToReviewDecision", "adaProcessApplicationToAdjourn", "adaProcessApplicationToExpedite",
         "adaProcessApplicationForTimeExtension", "adaProcessApplicationToWithdraw",
         "adaProcessApplicationToReviewDecision", "sendDecisionsAndReasons", "adaSendDecisionsAndReasons",
-        "prepareDecisionsAndReasons", "decideAnFTPA", "adaDecideAnFTPA"
+        "prepareDecisionsAndReasons", "decideAnFTPA", "adaDecideAnFTPA","reviewADASuitability"
     })
     void when_taskId_then_return_judicial_role_category(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
@@ -746,6 +747,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             + "decideAnApplication),",
         "reviewCaseMarkedUnsuitableForADA,[Transfer the appeal out of the ADA process]"
             + "(/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/transferOutOfAda),",
+        "reviewADASuitability,[Review ADA suitability](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
+            + "adaSuitabilityReview),",
         "reviewSpecificAccessRequestJudiciary,[Review Access Request](/role-access/"
             + "${[taskId]}/assignment/${[roleAssignmentId]}/specific-access),",
         "reviewSpecificAccessRequestLegalOps,[Review Access Request](/role-access/"

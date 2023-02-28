@@ -1406,7 +1406,7 @@ and additionalData.Data.suitabilityReviewDecision
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_14nvxyv">
-          <text></text>
+          <text>false</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1dyg2xf">
           <text></text>
@@ -2843,6 +2843,47 @@ else 0</text>
           <text>0</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0unnzds">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_09df307">
+        <inputEntry id="UnaryTests_1sbgwvi">
+          <text>"uploadHomeOfficeAppealResponse"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1g9otql">
+          <text>"respondentReview"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10s3dgc">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1uk3ff3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wb4ttc">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zwv55m">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lffl1a">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_070y1nz">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1yt5j3k">
+          <text>"reviewADASuitability"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1l138lg">
+          <text>"Review ADA suitability"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_140ne7t">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_17npbpq">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1w8sqwf">
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
