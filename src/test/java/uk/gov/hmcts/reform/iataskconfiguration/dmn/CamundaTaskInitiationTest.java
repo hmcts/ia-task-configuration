@@ -128,7 +128,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "submitAppeal",
+                "paymentAppeal",
                 "appealSubmitted",
                 mapAdditionalData("{\n"
                                   + "   \"Data\":{\n"
@@ -146,7 +146,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "submitAppeal",
+                "paymentAppeal",
                 "appealSubmitted",
                 mapAdditionalData("{\n"
                                   + "   \"Data\":{\n"
@@ -154,6 +154,24 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                   + "      \"journeyType\":\"" + "aip" + "\"\n"
                                   + "   }"
                                   + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewTheAppeal",
+                        "name", "Review the appeal",
+                        "workingDaysAllowed", 2,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "paymentAppeal",
+                "appealSubmitted",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
+                                      + "      \"journeyType\":\"" + "aip" + "\"\n"
+                                      + "   }"
+                                      + "}"),
                 singletonList(
                     Map.of(
                         "taskId", "reviewTheAppeal",
