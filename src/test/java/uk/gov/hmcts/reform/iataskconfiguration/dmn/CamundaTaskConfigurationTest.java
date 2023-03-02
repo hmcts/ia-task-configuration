@@ -225,6 +225,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("reviewHearingRequirements", hearingWork),
             Arguments.of("allocateHearingJudge", hearingWork),
             Arguments.of("prepareDecisionsAndReasons", hearingWork),
+            Arguments.of("adaPrepareDecisionsAndReasons", hearingWork),
             Arguments.of("startDecisionsAndReasonsDocument", hearingWork),
             Arguments.of("createHearingBundle", hearingWork),
             Arguments.of("createCaseSummary", hearingWork),
@@ -332,7 +333,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "processApplicationToReviewDecision", "adaProcessApplicationToAdjourn", "adaProcessApplicationToExpedite",
         "adaProcessApplicationForTimeExtension", "adaProcessApplicationToWithdraw",
         "adaProcessApplicationToReviewDecision", "sendDecisionsAndReasons", "adaSendDecisionsAndReasons",
-        "prepareDecisionsAndReasons", "decideAnFTPA", "adaDecideAnFTPA","reviewADASuitability"
+        "prepareDecisionsAndReasons", "adaPrepareDecisionsAndReasons", "decideAnFTPA", "adaDecideAnFTPA",
+        "reviewADASuitability"
     })
     void when_taskId_then_return_judicial_role_category(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
@@ -728,6 +730,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             + "leadershipJudgeFtpaDecision)<br />"
             + "[Resident judge FTPA decision](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/residentJudgeFtpaDecision),",
         "prepareDecisionsAndReasons,[Prepare decisions and reasons](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
+            + "generateDecisionAndReasons),",
+        "adaPrepareDecisionsAndReasons,[Prepare decisions and reasons](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
             + "generateDecisionAndReasons),",
         "sendDecisionsAndReasons,[Complete decision and reasons](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
             + "sendDecisionAndReasons),",

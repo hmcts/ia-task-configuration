@@ -2495,7 +2495,7 @@ and additionalData.Data.suitabilityReviewDecision
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_16mf759">
-          <text></text>
+          <text>false</text>
         </inputEntry>
         <inputEntry id="UnaryTests_10sr4lh">
           <text></text>
@@ -2513,6 +2513,47 @@ and additionalData.Data.suitabilityReviewDecision
           <text>0</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1noz57k">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_148aw6i">
+        <inputEntry id="UnaryTests_072dvmm">
+          <text>"decisionAndReasonsStarted"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ov6rnp">
+          <text>"decision"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wmpzmw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zso6jf">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0b0lo2n">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14ps9ku">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1lenp12">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1epbaxb">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_06vc6rr">
+          <text>"adaPrepareDecisionsAndReasons"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_012ch8p">
+          <text>"ADA-Prepare decisions and reasons"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ql7lwo">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0kmaid5">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_185pnxj">
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>

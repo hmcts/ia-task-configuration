@@ -273,6 +273,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0m0gqlg">
+        <inputEntry id="UnaryTests_1epk82b">
+          <text>"generateDecisionAndReasons"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0e81mab">
+          <text>"adaPrepareDecisionsAndReasons"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_03wl1fg">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1fp6ln5">
         <inputEntry id="UnaryTests_15t0pqm">
           <text>"uploadHearingRecording"</text>
