@@ -419,6 +419,7 @@
           "sendDecisionsAndReasons",
           "adaSendDecisionsAndReasons",
           "prepareDecisionsAndReasons",
+          "adaPrepareDecisionsAndReasons",
           "reviewADASuitability"
 </text>
         </inputEntry>
@@ -465,6 +466,7 @@
             "decideAnFTPA",
             "adaDecideAnFTPA",
             "prepareDecisionsAndReasons",
+            "adaPrepareDecisionsAndReasons",
             "reviewADASuitability"
             </text>
         </inputEntry>
