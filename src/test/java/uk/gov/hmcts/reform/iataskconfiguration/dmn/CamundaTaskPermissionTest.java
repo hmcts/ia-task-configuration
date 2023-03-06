@@ -202,6 +202,13 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "adaEditListing",
+                List.of(
+                    taskSupervisor,
+                    hearingCentreAdminPriorityOne
+                )
+            ),
+            Arguments.of(
                 "processApplicationToReviewDecision",
                 List.of(
                     taskSupervisor,
@@ -251,6 +258,14 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "prepareDecisionsAndReasons",
+                List.of(
+                    taskSupervisor,
+                    hearingJudgePriorityOne,
+                    judgePriorityOne
+                )
+            ),
+            Arguments.of(
+                "adaPrepareDecisionsAndReasons",
                 List.of(
                     taskSupervisor,
                     hearingJudgePriorityOne,
@@ -315,6 +330,16 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     taskSupervisor,
                     hearingJudgePriorityOne,
+                    judgePriorityOne
+                )
+            ),
+            Arguments.of(
+                "reviewCaseMarkedUnsuitableForADA",
+                List.of(
+                    taskSupervisor,
+                    caseManager,
+                    tribunalCaseWorkerPriorityOne,
+                    seniorCaseWorkerPriorityOne,
                     judgePriorityOne
                 )
             )
@@ -421,8 +446,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
          "reviewAdditionalEvidence","adaReviewAdditionalEvidence",
         "reviewAdditionalHomeOfficeEvidence", "adaReviewAdditionalHomeOfficeEvidence",
          "adaReviewAppealSkeletonArgument",
-        "followUpExtendedDirection","adaFollowUpExtendedDirection","reviewCaseTransferredOutOfADA",
-        "reviewCaseMarkedUnsuitableForADA"
+        "followUpExtendedDirection","adaFollowUpExtendedDirection","reviewCaseTransferredOutOfADA"
     })
     void given_taskType_when_evaluate_dmn_then_it_returns_first_second_and_third_rules(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();

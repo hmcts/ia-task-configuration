@@ -310,6 +310,7 @@
             "allocateHearingJudge",
             "uploadHearingRecording",
             "editListing",
+            "adaEditListing",
             "adaListCase"
           </text>
         </inputEntry>
@@ -420,6 +421,7 @@
           "sendDecisionsAndReasons",
           "adaSendDecisionsAndReasons",
           "prepareDecisionsAndReasons",
+          "adaPrepareDecisionsAndReasons",
           "reviewADASuitability"
 </text>
         </inputEntry>
@@ -466,7 +468,9 @@
             "decideAnFTPA",
             "adaDecideAnFTPA",
             "prepareDecisionsAndReasons",
-            "reviewADASuitability"
+            "adaPrepareDecisionsAndReasons",
+            "reviewADASuitability",
+            "reviewCaseMarkedUnsuitableForADA"
             </text>
         </inputEntry>
         <inputEntry id="UnaryTests_1sgyxq7">

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.7.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.2.0">
   <decision id="wa-task-initiation-ia-asylum" name="Task initiation DMN">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT" biodi:annotationsWidth="400">
       <input id="Input_1" label="Event Id" biodi:width="515" camunda:inputVariable="eventId">
@@ -599,7 +599,7 @@ and additionalData.Data.suitabilityReviewDecision
           <text>"Granted"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1dw6sql">
-          <text></text>
+          <text>false</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0bgnvgk">
           <text></text>
@@ -617,6 +617,47 @@ and additionalData.Data.suitabilityReviewDecision
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0ebf9sj">
+          <text>"application"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0gqevkl">
+        <inputEntry id="UnaryTests_09i89f9">
+          <text>"decideAnApplication"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0sjc1b8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1iry4b7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1u66p4x">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0aksyoq">
+          <text>"Adjourn","Expedite"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0yl0qf4">
+          <text>"Granted"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_11wt5su">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0my24zo">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_01u43s5">
+          <text>"adaEditListing"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0amitm4">
+          <text>"ADA-Edit Listing"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_126hia2">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ge2cta">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1wk2zjj">
           <text>"application"</text>
         </outputEntry>
       </rule>
@@ -2536,7 +2577,7 @@ and additionalData.Data.suitabilityReviewDecision
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_16mf759">
-          <text></text>
+          <text>false</text>
         </inputEntry>
         <inputEntry id="UnaryTests_10sr4lh">
           <text></text>
@@ -2554,6 +2595,47 @@ and additionalData.Data.suitabilityReviewDecision
           <text>0</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1noz57k">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_148aw6i">
+        <inputEntry id="UnaryTests_072dvmm">
+          <text>"decisionAndReasonsStarted"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ov6rnp">
+          <text>"decision"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wmpzmw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zso6jf">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0b0lo2n">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14ps9ku">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1lenp12">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1epbaxb">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_06vc6rr">
+          <text>"adaPrepareDecisionsAndReasons"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_012ch8p">
+          <text>"ADA-Prepare decisions and reasons"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ql7lwo">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0kmaid5">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_185pnxj">
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
