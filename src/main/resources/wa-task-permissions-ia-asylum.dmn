@@ -309,7 +309,8 @@
             "uploadHearingRecording",
             "editListing",
             "adaEditListing",
-            "adaListCase"
+            "adaListCase",
+            "adaAllocateHearingJudge"
           </text>
         </inputEntry>
         <inputEntry id="UnaryTests_1sw9xpj">

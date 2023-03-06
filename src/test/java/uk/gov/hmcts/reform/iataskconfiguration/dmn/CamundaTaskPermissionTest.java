@@ -160,6 +160,13 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "adaAllocateHearingJudge",
+                List.of(
+                    taskSupervisor,
+                    hearingCentreAdminPriorityOne
+                )
+            ),
+            Arguments.of(
                 "adaListCase",
                 List.of(
                     taskSupervisor,

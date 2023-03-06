@@ -1324,14 +1324,49 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "appealSubmitted",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                List.of(
+                    Map.of(
+                        "taskId", "adaReviewTheAppeal",
+                        "name", "ADA-Review the appeal",
+
+
+                        "workingDaysAllowed", 0,
+                        "processCategories", "caseProgression"
+                    ),
+                    Map.of(
+                        "taskId", "adaAllocateHearingJudge",
+                        "name", "ADA-Allocate Hearing Judge",
+
+
+                        "workingDaysAllowed", 0,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "submitAppeal",
+                "appealSubmitted",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
                                       + "      \"appealType\":\"" + "revocationOfProtection" + "\",\n"
                                       + "      \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
                                       + "   }"
                                       + "}"),
-                singletonList(
+                List.of(
                     Map.of(
                         "taskId", "adaReviewTheAppeal",
                         "name", "ADA-Review the appeal",
+
+
+                        "workingDaysAllowed", 0,
+                        "processCategories", "caseProgression"
+                    ),
+                    Map.of(
+                        "taskId", "adaAllocateHearingJudge",
+                        "name", "ADA-Allocate Hearing Judge",
 
 
                         "workingDaysAllowed", 0,
@@ -1348,10 +1383,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       + "      \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
                                       + "   }"
                                       + "}"),
-                singletonList(
+                List.of(
                     Map.of(
                         "taskId", "adaReviewTheAppeal",
                         "name", "ADA-Review the appeal",
+
+
+                        "workingDaysAllowed", 0,
+                        "processCategories", "caseProgression"
+                    ),
+                    Map.of(
+                        "taskId", "adaAllocateHearingJudge",
+                        "name", "ADA-Allocate Hearing Judge",
 
 
                         "workingDaysAllowed", 0,
@@ -1368,10 +1411,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       + "      \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
                                       + "   }"
                                       + "}"),
-                singletonList(
+                List.of(
                     Map.of(
                         "taskId", "adaReviewTheAppeal",
                         "name", "ADA-Review the appeal",
+
+
+                        "workingDaysAllowed", 0,
+                        "processCategories", "caseProgression"
+                    ),
+                    Map.of(
+                        "taskId", "adaAllocateHearingJudge",
+                        "name", "ADA-Allocate Hearing Judge",
 
 
                         "workingDaysAllowed", 0,
@@ -1388,10 +1439,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       + "      \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
                                       + "   }"
                                       + "}"),
-                singletonList(
+                List.of(
                     Map.of(
                         "taskId", "adaReviewTheAppeal",
                         "name", "ADA-Review the appeal",
+
+
+                        "workingDaysAllowed", 0,
+                        "processCategories", "caseProgression"
+                    ),
+                    Map.of(
+                        "taskId", "adaAllocateHearingJudge",
+                        "name", "ADA-Allocate Hearing Judge",
 
 
                         "workingDaysAllowed", 0,
@@ -1408,10 +1467,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       + "      \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
                                       + "   }"
                                       + "}"),
-                singletonList(
+                List.of(
                     Map.of(
                         "taskId", "adaReviewTheAppeal",
                         "name", "ADA-Review the appeal",
+
+
+                        "workingDaysAllowed", 0,
+                        "processCategories", "caseProgression"
+                    ),
+                    Map.of(
+                        "taskId", "adaAllocateHearingJudge",
+                        "name", "ADA-Allocate Hearing Judge",
 
 
                         "workingDaysAllowed", 0,
@@ -1428,10 +1495,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       + "      \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
                                       + "   }"
                                       + "}"),
-                singletonList(
+                List.of(
                     Map.of(
                         "taskId", "adaReviewTheAppeal",
                         "name", "ADA-Review the appeal",
+
+
+                        "workingDaysAllowed", 0,
+                        "processCategories", "caseProgression"
+                    ),
+                    Map.of(
+                        "taskId", "adaAllocateHearingJudge",
+                        "name", "ADA-Allocate Hearing Judge",
 
 
                         "workingDaysAllowed", 0,
@@ -2585,7 +2660,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(8));
         assertThat(logic.getOutputs().size(), is(5));
-        assertThat(logic.getRules().size(), is(68));
+        assertThat(logic.getRules().size(), is(69));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {
