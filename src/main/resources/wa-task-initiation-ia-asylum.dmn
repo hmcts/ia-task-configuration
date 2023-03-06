@@ -634,7 +634,7 @@ and additionalData.Data.suitabilityReviewDecision
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0aksyoq">
-          <text>"Adjourn","Expedite","Transfer"</text>
+          <text>"Adjourn","Expedite"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0yl0qf4">
           <text>"Granted"</text>
