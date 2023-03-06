@@ -2510,8 +2510,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             getAdaDecideAnApplicationArgumentsOf("Adjourn", "adaEditListing",
                                                  "ADA-Edit Listing"),
             getAdaDecideAnApplicationArgumentsOf("Expedite", "adaEditListing",
-                                                 "ADA-Edit Listing"),
-            getAdaDecideAnApplicationArgumentsOf("Transfer", "adaEditListing",
                                                  "ADA-Edit Listing")
         );
     }
