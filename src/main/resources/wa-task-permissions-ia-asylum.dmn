@@ -467,7 +467,8 @@
             "adaDecideAnFTPA",
             "prepareDecisionsAndReasons",
             "adaPrepareDecisionsAndReasons",
-            "reviewADASuitability"
+            "reviewADASuitability",
+            "reviewCaseMarkedUnsuitableForADA"
             </text>
         </inputEntry>
         <inputEntry id="UnaryTests_1sgyxq7">
