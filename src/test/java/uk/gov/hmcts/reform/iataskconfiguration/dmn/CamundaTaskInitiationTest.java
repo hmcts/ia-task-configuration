@@ -2470,8 +2470,30 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         return Stream.of(
             getDecideAnApplicationArgumentsOf("Adjourn", "editListing", "Edit Listing"),
             getDecideAnApplicationArgumentsOf("Expedite", "editListing", "Edit Listing"),
-            getDecideAnApplicationArgumentsOf("Transfer", "editListing", "Edit Listing")
+            getDecideAnApplicationArgumentsOf("Transfer", "editListing", "Edit Listing"),
+            getAdaDecideAnApplicationArgumentsOf("Adjourn", "adaEditListing",
+                                                 "ADA-Edit Listing"),
+            getAdaDecideAnApplicationArgumentsOf("Expedite", "adaEditListing",
+                                                 "ADA-Edit Listing"),
+            getAdaDecideAnApplicationArgumentsOf("Transfer", "adaEditListing",
+                                                 "ADA-Edit Listing")
         );
+    }
+
+    @ParameterizedTest
+    @MethodSource("decideAnApplicationScenarioProvider")
+    void given_decideAnApplication_should_evaluate_dmn(String eventId,
+                                                       String postEventState,
+                                                       Map<String, Object> additionalData,
+                                                       List<Map<String, String>> expectation) {
+        VariableMap inputVariables = new VariableMapImpl();
+        inputVariables.putValue("eventId", eventId);
+        inputVariables.putValue("postEventState", postEventState);
+        inputVariables.putValue("additionalData", additionalData);
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
     }
 
     private static Arguments getDecideAnApplicationArgumentsOf(String applicationType, String taskId, String name) {
@@ -2498,20 +2520,29 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         );
     }
 
-    @ParameterizedTest
-    @MethodSource("decideAnApplicationScenarioProvider")
-    void given_decideAnApplication_should_evaluate_dmn(String eventId,
-                                                       String postEventState,
-                                                       Map<String, Object> additionalData,
-                                                       List<Map<String, String>> expectation) {
-        VariableMap inputVariables = new VariableMapImpl();
-        inputVariables.putValue("eventId", eventId);
-        inputVariables.putValue("postEventState", postEventState);
-        inputVariables.putValue("additionalData", additionalData);
+    private static Arguments getAdaDecideAnApplicationArgumentsOf(String applicationType, String taskId, String name) {
+        return Arguments.of(
+            "decideAnApplication",
+            null,
+            mapAdditionalData(" {\n"
+                                  + "        \"Data\" : {\n"
+                                  + "          \"lastModifiedApplication\" : {\n"
+                                  + "            \"type\" : \"" + applicationType + "\",\n"
+                              + "                \"decision\":\"" + "Granted" + "\"\n"
+                                  + "          },\n"
+                                  + "           \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
+                                  + "        }\n"
+                                  + "      }"),
+            singletonList(
+                Map.of(
+                    "taskId", taskId,
+                    "name", name,
 
-        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
-
-        assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
+                    "workingDaysAllowed", 0,
+                    "processCategories", "application"
+                )
+            )
+        );
     }
 
     @Test
@@ -2520,7 +2551,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(8));
         assertThat(logic.getOutputs().size(), is(5));
-        assertThat(logic.getRules().size(), is(66));
+        assertThat(logic.getRules().size(), is(67));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {
