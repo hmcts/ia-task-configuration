@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.2.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.7.0">
   <decision id="wa-task-initiation-ia-asylum" name="Task initiation DMN">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT" biodi:annotationsWidth="400">
       <input id="Input_1" label="Event Id" biodi:width="515" camunda:inputVariable="eventId">
@@ -2413,7 +2413,7 @@ and additionalData.Data.suitabilityReviewDecision
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0cfio0v">
-          <text></text>
+          <text>false</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0fdb6ze">
           <text></text>
@@ -2431,6 +2431,47 @@ and additionalData.Data.suitabilityReviewDecision
           <text>0</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1yo5sal">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0dbqsgv">
+        <inputEntry id="UnaryTests_032a59u">
+          <text>"generateHearingBundle", "customiseHearingBundle"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1mwlfmx">
+          <text>"finalBundling"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1iioqt9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16z4j2w">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nqzr1d">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1hud4cr">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0fo764v">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_037z0pw">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0hh3hlj">
+          <text>"adaReviewHearingBundle"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_18dlqmx">
+          <text>"ADA-Review Hearing bundle"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0fpuy73">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ezx1q1">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_03or19e">
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
@@ -2784,7 +2825,7 @@ else 0</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1nvbc9s">
-          <text></text>
+          <text>false</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1ksr6tt">
           <text></text>

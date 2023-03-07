@@ -408,6 +408,7 @@
         <inputEntry id="UnaryTests_1oxh1tt">
           <text>
           "reviewHearingBundle",
+          "adaReviewHearingBundle",
           "processApplicationToReviewDecision",
           "adaProcessApplicationToAdjourn",
           "adaProcessApplicationToExpedite",
@@ -453,6 +454,7 @@
         <inputEntry id="UnaryTests_1099gbv">
           <text>
             "reviewHearingBundle",
+            "adaReviewHearingBundle",
             "reviewAddendumEvidence",
             "adaReviewAddendumEvidence",
             "processApplicationToReviewDecision",
