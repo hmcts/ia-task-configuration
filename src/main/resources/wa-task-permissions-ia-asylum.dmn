@@ -341,6 +341,7 @@
         <inputEntry id="UnaryTests_0vmy0oj">
           <text>
             "reviewHearingBundle",
+            "adaReviewHearingBundle",
             "reviewAddendumEvidence",
             "editListing"
 </text>
@@ -374,6 +375,7 @@
         <inputEntry id="UnaryTests_0co919o">
           <text>
             "reviewHearingBundle",
+            "adaReviewHearingBundle",
             "reviewAddendumEvidence",
             "editListing"
 </text>
