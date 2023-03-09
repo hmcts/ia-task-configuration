@@ -1488,7 +1488,7 @@ and additionalData.Data.suitabilityReviewDecision
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_15z149c">
-          <text></text>
+          <text>false</text>
         </inputEntry>
         <inputEntry id="UnaryTests_06yq0qs">
           <text></text>
@@ -1506,6 +1506,47 @@ and additionalData.Data.suitabilityReviewDecision
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0pumcv9">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0tzgrzh">
+        <inputEntry id="UnaryTests_0nco572">
+          <text>"listCase"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0m7fqy7">
+          <text>"prepareForHearing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0cu1521">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10kyz0d">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19ulx0p">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05vjxg7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0yd5uik">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1lrh2za">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ux0h6a">
+          <text>"adaCaseSummaryHearingBundleStartDecision"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12gmfb5">
+          <text>"ADA-Create Hearing Bundle"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1pd3dh8">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1nzqx3f">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0b44x2j">
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
@@ -2618,7 +2659,7 @@ and additionalData.Data.suitabilityReviewDecision
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_155p0dl">
-          <text></text>
+          <text>false</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1d8g2ff">
           <text></text>
