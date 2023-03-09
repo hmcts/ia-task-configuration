@@ -309,6 +309,7 @@
           <text>
             "allocateHearingJudge",
             "uploadHearingRecording",
+            "adaUploadHearingRecording",
             "editListing",
             "adaEditListing",
             "adaListCase",

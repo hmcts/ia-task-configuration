@@ -2682,6 +2682,49 @@ else 0</text>
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_15tcdz5">
+        <inputEntry id="UnaryTests_1v8kcm2">
+          <text>"listCase"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zf4c13">
+          <text>"awaitingRespondentEvidence"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1kukgbi">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15xdjud">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0532zgj">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_11lv33h">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_13tvjiv">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1s9p2lk">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_03nktyq">
+          <text>"adaUploadHearingRecording"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0fw54hj">
+          <text>"ADA-Upload hearing recording"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0toq88c">
+          <text>if (additionalData != null and additionalData.Data != null and additionalData.Data.listCaseHearingDate != null and additionalData.Data.listCaseHearingDate != "")
+	then (date and time(additionalData.Data.listCaseHearingDate) - date and time(now)).days
+else 0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ealtom">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_09g2snk">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1rvt3fp">
         <inputEntry id="UnaryTests_0pwjwlw">
           <text>"applyForFTPAAppellant", "applyForFTPARespondent"</text>
