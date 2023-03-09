@@ -225,6 +225,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("followUpOverdueHearingRequirements", hearingWork),
             Arguments.of("reviewHearingRequirements", hearingWork),
             Arguments.of("allocateHearingJudge", hearingWork),
+            Arguments.of("adaAllocateHearingJudge", hearingWork),
             Arguments.of("prepareDecisionsAndReasons", hearingWork),
             Arguments.of("adaPrepareDecisionsAndReasons", hearingWork),
             Arguments.of("startDecisionsAndReasonsDocument", hearingWork),
@@ -364,7 +365,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     @ParameterizedTest
     @CsvSource({
         "arrangeOfflinePayment", "markCaseAsPaid", "allocateHearingJudge", "uploadHearingRecording", "editListing",
-        "adaListCase", "adaEditListing"
+        "adaListCase", "adaEditListing", "adaAllocateHearingJudge"
     })
     void when_taskId_then_return_Admin_role_category(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
@@ -714,6 +715,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "arrangeOfflinePayment,[Mark the appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid),",
         "markCaseAsPaid,[Mark the appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid),",
         "allocateHearingJudge," + "[Allocate Hearing Judge](/role-access/allocate-role/allocate?caseId="
+            + "${[CASE_REFERENCE]}&roleCategory=JUDICIAL&jurisdiction=IA),",
+        "adaAllocateHearingJudge," + "[Allocate Hearing Judge](/role-access/allocate-role/allocate?caseId="
             + "${[CASE_REFERENCE]}&roleCategory=JUDICIAL&jurisdiction=IA),",
         "uploadHearingRecording,[Upload the hearing recording](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/upload"
             + "HearingRecording),",
