@@ -311,7 +311,8 @@
             "uploadHearingRecording",
             "editListing",
             "adaEditListing",
-            "adaListCase"
+            "adaListCase",
+            "adaAllocateHearingJudge"
           </text>
         </inputEntry>
         <inputEntry id="UnaryTests_1sw9xpj">
@@ -344,7 +345,8 @@
           <text>
             "reviewHearingBundle",
             "reviewAddendumEvidence",
-            "editListing"
+            "editListing",
+            "adaEditListing"
 </text>
         </inputEntry>
         <inputEntry id="UnaryTests_190pyoc">
@@ -377,7 +379,8 @@
           <text>
             "reviewHearingBundle",
             "reviewAddendumEvidence",
-            "editListing"
+            "editListing",
+            "adaEditListing"
 </text>
         </inputEntry>
         <inputEntry id="UnaryTests_055yime">
