@@ -343,7 +343,8 @@
             "reviewHearingBundle",
             "adaReviewHearingBundle",
             "reviewAddendumEvidence",
-            "editListing"
+            "editListing",
+            "adaEditListing"
 </text>
         </inputEntry>
         <inputEntry id="UnaryTests_190pyoc">
@@ -377,7 +378,8 @@
             "reviewHearingBundle",
             "adaReviewHearingBundle",
             "reviewAddendumEvidence",
-            "editListing"
+            "editListing",
+            "adaEditListing"
 </text>
         </inputEntry>
         <inputEntry id="UnaryTests_055yime">
