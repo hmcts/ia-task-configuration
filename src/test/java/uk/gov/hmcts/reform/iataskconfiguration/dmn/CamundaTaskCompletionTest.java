@@ -288,6 +288,10 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                         "taskType", "caseSummaryHearingBundleStartDecision",
                         "completionMode", "Auto"
                     ),
+                    Map.of(
+                        "taskType", "adaCaseSummaryHearingBundleStartDecision",
+                        "completionMode", "Auto"
+                    ),
                     Collections.emptyMap()
                 )
             ),
@@ -375,7 +379,8 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskType", "adaListCase",
                         "completionMode", "Auto"
-                    )
+                    ),
+                    Collections.emptyMap()
                 )
             ),
             Arguments.of(

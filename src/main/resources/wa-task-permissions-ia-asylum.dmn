@@ -89,6 +89,7 @@
             "attendCma",
             "startDecisionsAndReasons",
             "caseSummaryHearingBundleStartDecision",
+            "adaCaseSummaryHearingBundleStartDecision",
             "followUpNoticeOfChange",
             "adaFollowUpNoticeOfChange",
             "followUpOverdueCmaRequirements",
@@ -130,7 +131,7 @@
       <rule id="DecisionRule_1tvtlre">
         <description>Tribunal caseworker task permissions</description>
         <inputEntry id="UnaryTests_13ukkz6">
-          <text>"reviewTheAppeal","adaReviewTheAppeal","reviewRespondentEvidence","adaReviewRespondentEvidence","followUpOverdueRespondentEvidence","adaFollowUpOverdueRespondentEvidence","reviewAppealSkeletonArgument","adaReviewAppealSkeletonArgument","followUpOverdueCaseBuilding","adaFollowUpOverdueCaseBuilding","reviewReasonsForAppeal","followUpOverdueReasonsForAppeal","reviewClarifyingQuestionsAnswers","followUpOverdueClarifyingAnswers","reviewRespondentResponse","followUpOverdueRespondentReview","adaFollowUpOverdueRespondentReview","reviewHearingRequirements","followUpOverdueHearingRequirements","reviewCmaRequirements","caseSummaryHearingBundleStartDecision","processApplication","adaProcessApplicationToUpdateHearingRequirements","adaProcessApplicationToUpdateAppealDetails","adaProcessApplicationToReinstateAnEndedAppeal","adaProcessApplicationToOther","adaLinkUnlinkAppeals","attendCma","startDecisionsAndReasons","followUpNoticeOfChange","adaFollowUpNoticeOfChange","followUpOverdueCmaRequirements","followUpNonStandardDirection","adaFollowUpNonStandardDirection","decideOnTimeExtension","reviewAdditionalEvidence","adaReviewAdditionalEvidence","reviewAdditionalHomeOfficeEvidence","adaReviewAdditionalHomeOfficeEvidence",
+          <text>"reviewTheAppeal","adaReviewTheAppeal","reviewRespondentEvidence","adaReviewRespondentEvidence","followUpOverdueRespondentEvidence","adaFollowUpOverdueRespondentEvidence","reviewAppealSkeletonArgument","adaReviewAppealSkeletonArgument","followUpOverdueCaseBuilding","adaFollowUpOverdueCaseBuilding","reviewReasonsForAppeal","followUpOverdueReasonsForAppeal","reviewClarifyingQuestionsAnswers","followUpOverdueClarifyingAnswers","reviewRespondentResponse","followUpOverdueRespondentReview","adaFollowUpOverdueRespondentReview","reviewHearingRequirements","followUpOverdueHearingRequirements","reviewCmaRequirements","caseSummaryHearingBundleStartDecision","adaCaseSummaryHearingBundleStartDecision","processApplication","adaProcessApplicationToUpdateHearingRequirements","adaProcessApplicationToUpdateAppealDetails","adaProcessApplicationToReinstateAnEndedAppeal","adaProcessApplicationToOther","adaLinkUnlinkAppeals","attendCma","startDecisionsAndReasons","followUpNoticeOfChange","adaFollowUpNoticeOfChange","followUpOverdueCmaRequirements","followUpNonStandardDirection","adaFollowUpNonStandardDirection","decideOnTimeExtension","reviewAdditionalEvidence","adaReviewAdditionalEvidence","reviewAdditionalHomeOfficeEvidence","adaReviewAdditionalHomeOfficeEvidence",
             "followUpExtendedDirection","adaFollowUpExtendedDirection",
             "startDecisionsAndReasonsDocument","createHearingBundle","createCaseSummary",
             "reviewCaseTransferredOutOfADA","reviewCaseMarkedUnsuitableForADA"</text>
@@ -187,6 +188,7 @@
             "reviewAdditionalHomeOfficeEvidence",
             "adaReviewAdditionalHomeOfficeEvidence",
             "caseSummaryHearingBundleStartDecision",
+            "adaCaseSummaryHearingBundleStartDecision",
             "processApplication",
             "adaProcessApplicationToUpdateHearingRequirements",
             "adaProcessApplicationToUpdateAppealDetails",
@@ -310,7 +312,8 @@
             "adaUploadHearingRecording",
             "editListing",
             "adaEditListing",
-            "adaListCase"
+            "adaListCase",
+            "adaAllocateHearingJudge"
           </text>
         </inputEntry>
         <inputEntry id="UnaryTests_1sw9xpj">
@@ -343,7 +346,8 @@
           <text>
             "reviewHearingBundle",
             "reviewAddendumEvidence",
-            "editListing"
+            "editListing",
+            "adaEditListing"
 </text>
         </inputEntry>
         <inputEntry id="UnaryTests_190pyoc">
@@ -376,7 +380,8 @@
           <text>
             "reviewHearingBundle",
             "reviewAddendumEvidence",
-            "editListing"
+            "editListing",
+            "adaEditListing"
 </text>
         </inputEntry>
         <inputEntry id="UnaryTests_055yime">

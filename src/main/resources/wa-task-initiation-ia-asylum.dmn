@@ -1488,7 +1488,7 @@ and additionalData.Data.suitabilityReviewDecision
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_15z149c">
-          <text></text>
+          <text>false</text>
         </inputEntry>
         <inputEntry id="UnaryTests_06yq0qs">
           <text></text>
@@ -1506,6 +1506,47 @@ and additionalData.Data.suitabilityReviewDecision
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0pumcv9">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0tzgrzh">
+        <inputEntry id="UnaryTests_0nco572">
+          <text>"listCase"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0m7fqy7">
+          <text>"prepareForHearing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0cu1521">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10kyz0d">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19ulx0p">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05vjxg7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0yd5uik">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1lrh2za">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ux0h6a">
+          <text>"adaCaseSummaryHearingBundleStartDecision"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12gmfb5">
+          <text>"ADA-Create Hearing Bundle"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1pd3dh8">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1nzqx3f">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0b44x2j">
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
@@ -2827,7 +2868,7 @@ else 0</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1nvbc9s">
-          <text></text>
+          <text>false</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1ksr6tt">
           <text></text>
@@ -2868,7 +2909,7 @@ else 0</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_11ceyas">
-          <text></text>
+          <text>false</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1607kl0">
           <text></text>
@@ -3009,6 +3050,47 @@ else 0</text>
           <text>0</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1w8sqwf">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_03kw3i5">
+        <inputEntry id="UnaryTests_10ca0to">
+          <text>"submitAppeal"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1r0y45j">
+          <text>"appealSubmitted"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1r2y8la">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_075x2yz">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1q9oqna">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_132ltxd">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ib3kqm">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0h56t2j">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_05fel3x">
+          <text>"adaAllocateHearingJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1j2ap6h">
+          <text>"ADA-Allocate Hearing Judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0rx1tip">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1opcvtj">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_07bbn5u">
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
