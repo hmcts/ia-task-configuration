@@ -1034,7 +1034,13 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       + "\""
                                       + "        }\n"
                                       + "      }"),
-                singletonList(
+                List.of(
+                    Map.of(
+                        "taskId", "adaCaseSummaryHearingBundleStartDecision",
+                        "name", "ADA-Create Hearing Bundle",
+                        "workingDaysAllowed", 0,
+                        "processCategories", "caseProgression"
+                    ),
                     Map.of(
                         "taskId", "adaUploadHearingRecording",
                         "name", "ADA-Upload hearing recording",
@@ -1065,23 +1071,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "uploadHearingRecording",
                         "name", "Upload hearing recording",
                         "delayDuration", 5,
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
-                "listCase",
-                "prepareForHearing",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                List.of(
-                    Map.of(
-                        "taskId", "adaCaseSummaryHearingBundleStartDecision",
-                        "name", "ADA-Create Hearing Bundle",
-                        "workingDaysAllowed", 0,
                         "processCategories", "caseProgression"
                     )
                 )
