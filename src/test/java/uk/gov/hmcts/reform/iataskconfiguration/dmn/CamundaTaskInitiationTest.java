@@ -1307,6 +1307,206 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "changeHearingCentre",
+                "prepareForHearing",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + false + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                List.of(
+                    Map.of(
+                        "taskId", "editListing",
+                        "name", "Edit listing",
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "changeHearingCentre",
+                "finalBundling",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + false + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                List.of(
+                    Map.of(
+                        "taskId", "editListing",
+                        "name", "Edit listing",
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "changeHearingCentre",
+                "preHearing",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + false + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                List.of(
+                    Map.of(
+                        "taskId", "editListing",
+                        "name", "Edit listing",
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "changeHearingCentre",
+                "decision",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + false + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                List.of(
+                    Map.of(
+                        "taskId", "editListing",
+                        "name", "Edit listing",
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "changeHearingCentre",
+                "awaitingRespondentEvidence",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                List.of(
+                    Map.of(
+                        "taskId", "adaEditListing",
+                        "name", "ADA-Edit Listing",
+                        "workingDaysAllowed", 0,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "changeHearingCentre",
+                "caseBuilding",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                List.of(
+                    Map.of(
+                        "taskId", "adaEditListing",
+                        "name", "ADA-Edit Listing",
+                        "workingDaysAllowed", 0,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "changeHearingCentre",
+                "caseUnderReview",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                List.of(
+                    Map.of(
+                        "taskId", "adaEditListing",
+                        "name", "ADA-Edit Listing",
+                        "workingDaysAllowed", 0,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "changeHearingCentre",
+                "respondentReview",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                List.of(
+                    Map.of(
+                        "taskId", "adaEditListing",
+                        "name", "ADA-Edit Listing",
+                        "workingDaysAllowed", 0,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "changeHearingCentre",
+                "prepareForHearing",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                List.of(
+                    Map.of(
+                        "taskId", "adaEditListing",
+                        "name", "ADA-Edit Listing",
+                        "workingDaysAllowed", 0,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "changeHearingCentre",
+                "finalBundling",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                List.of(
+                    Map.of(
+                        "taskId", "adaEditListing",
+                        "name", "ADA-Edit Listing",
+                        "workingDaysAllowed", 0,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "changeHearingCentre",
+                "preHearing",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                List.of(
+                    Map.of(
+                        "taskId", "adaEditListing",
+                        "name", "ADA-Edit Listing",
+                        "workingDaysAllowed", 0,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "changeHearingCentre",
+                "decision",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                List.of(
+                    Map.of(
+                        "taskId", "adaEditListing",
+                        "name", "ADA-Edit Listing",
+                        "workingDaysAllowed", 0,
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
                 "generateHearingBundle",
                 "finalBundling",
                 null,
@@ -2790,7 +2990,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(8));
         assertThat(logic.getOutputs().size(), is(5));
-        assertThat(logic.getRules().size(), is(72));
+        assertThat(logic.getRules().size(), is(73));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {

@@ -2868,7 +2868,7 @@ else 0</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0xj1oc9">
-          <text></text>
+          <text>false</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0z8wiuy">
           <text></text>
@@ -2886,6 +2886,47 @@ else 0</text>
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1n5kme0">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1hwcr1g">
+        <inputEntry id="UnaryTests_1jj7aj1">
+          <text>"changeHearingCentre"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qzra4e">
+          <text>"awaitingRespondentEvidence","caseBuilding","caseUnderReview","respondentReview","prepareForHearing","finalBundling","preHearing","decision"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0pa4wod">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1h2wytb">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rhlpxs">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_18u2p1c">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qewtbv">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1bf6uq2">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1nai1s8">
+          <text>"adaEditListing"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1eokjv5">
+          <text>"ADA-Edit Listing"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_03f8vvi">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1vu9hl7">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0vv5lsh">
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
