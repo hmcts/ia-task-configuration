@@ -242,7 +242,8 @@
         <inputEntry id="UnaryTests_0mzihm0">
           <text>
              "processApplication",
-             "decideOnTimeExtension"
+             "decideOnTimeExtension",
+             "reviewCaseMarkedUnsuitableForADA"
           </text>
         </inputEntry>
         <inputEntry id="UnaryTests_15oy3kp">
@@ -473,8 +474,7 @@
             "adaDecideAnFTPA",
             "prepareDecisionsAndReasons",
             "adaPrepareDecisionsAndReasons",
-            "reviewADASuitability",
-            "reviewCaseMarkedUnsuitableForADA"
+            "reviewADASuitability"
             </text>
         </inputEntry>
         <inputEntry id="UnaryTests_1sgyxq7">
