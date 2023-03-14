@@ -346,6 +346,7 @@
         <inputEntry id="UnaryTests_0vmy0oj">
           <text>
             "reviewHearingBundle",
+            "adaReviewHearingBundle",
             "reviewAddendumEvidence",
             "editListing",
             "adaEditListing"
@@ -380,6 +381,7 @@
         <inputEntry id="UnaryTests_0co919o">
           <text>
             "reviewHearingBundle",
+            "adaReviewHearingBundle",
             "reviewAddendumEvidence",
             "editListing",
             "adaEditListing"
@@ -415,6 +417,7 @@
         <inputEntry id="UnaryTests_1oxh1tt">
           <text>
           "reviewHearingBundle",
+          "adaReviewHearingBundle",
           "processApplicationToReviewDecision",
           "adaProcessApplicationToAdjourn",
           "adaProcessApplicationToExpedite",
@@ -460,6 +463,7 @@
         <inputEntry id="UnaryTests_1099gbv">
           <text>
             "reviewHearingBundle",
+            "adaReviewHearingBundle",
             "reviewAddendumEvidence",
             "adaReviewAddendumEvidence",
             "processApplicationToReviewDecision",
