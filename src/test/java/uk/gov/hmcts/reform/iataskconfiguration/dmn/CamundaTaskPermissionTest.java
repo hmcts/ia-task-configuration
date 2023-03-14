@@ -153,7 +153,21 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "adaUploadHearingRecording",
+                List.of(
+                    taskSupervisor,
+                    hearingCentreAdminPriorityOne
+                )
+            ),
+            Arguments.of(
                 "allocateHearingJudge",
+                List.of(
+                    taskSupervisor,
+                    hearingCentreAdminPriorityOne
+                )
+            ),
+            Arguments.of(
+                "adaAllocateHearingJudge",
                 List.of(
                     taskSupervisor,
                     hearingCentreAdminPriorityOne
@@ -352,7 +366,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     caseManager,
                     tribunalCaseWorkerPriorityOne,
                     seniorCaseWorkerPriorityOne,
-                    judgePriorityOne
+                    judgePriorityTwo
                 )
             )
         );
@@ -497,7 +511,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
     @SuppressWarnings("checkstyle:indentation")
     @ParameterizedTest
     @CsvSource(value = {
-        "caseSummaryHearingBundleStartDecision"
+        "caseSummaryHearingBundleStartDecision", "adaCaseSummaryHearingBundleStartDecision"
     })
     void given_taskType_when_evaluate_dmn_then_it_returns_1st_2nd_3rd_4th_5th_rules(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();

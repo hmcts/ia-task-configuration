@@ -178,6 +178,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("markCaseAsPaid", routineWork),
             Arguments.of("attendCma", routineWork),
             Arguments.of("caseSummaryHearingBundleStartDecision", routineWork),
+            Arguments.of("adaCaseSummaryHearingBundleStartDecision", routineWork),
             Arguments.of("followUpExtendedDirection", routineWork),
             Arguments.of("adaFollowUpExtendedDirection", routineWork),
             Arguments.of("followUpNonStandardDirection", routineWork),
@@ -221,11 +222,13 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("generateDraftDecisionAndReasons", hearingWork),
             Arguments.of("uploadDecision", hearingWork),
             Arguments.of("uploadHearingRecording", hearingWork),
+            Arguments.of("adaUploadHearingRecording", hearingWork),
             Arguments.of("editListing", hearingWork),
             Arguments.of("adaEditListing", hearingWork),
             Arguments.of("followUpOverdueHearingRequirements", hearingWork),
             Arguments.of("reviewHearingRequirements", hearingWork),
             Arguments.of("allocateHearingJudge", hearingWork),
+            Arguments.of("adaAllocateHearingJudge", hearingWork),
             Arguments.of("prepareDecisionsAndReasons", hearingWork),
             Arguments.of("adaPrepareDecisionsAndReasons", hearingWork),
             Arguments.of("startDecisionsAndReasonsDocument", hearingWork),
@@ -366,7 +369,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     @ParameterizedTest
     @CsvSource({
         "arrangeOfflinePayment", "markCaseAsPaid", "allocateHearingJudge", "uploadHearingRecording", "editListing",
-        "adaListCase", "adaEditListing"
+        "adaListCase", "adaEditListing", "adaAllocateHearingJudge", "adaUploadHearingRecording"
     })
     void when_taskId_then_return_Admin_role_category(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
@@ -395,7 +398,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "decideOnTimeExtension", "reviewRespondentEvidence", "adaReviewRespondentEvidence", "reviewReasonsForAppeal",
         "reviewAppealSkeletonArgument", "adaReviewAppealSkeletonArgument",
         "reviewClarifyingQuestionsAnswers", "reviewCmaRequirements", "attendCma", "reviewRespondentResponse",
-        "caseSummaryHearingBundleStartDecision", "reviewHearingRequirements", "followUpOverdueRespondentEvidence",
+        "caseSummaryHearingBundleStartDecision", "adaCaseSummaryHearingBundleStartDecision",
+        "reviewHearingRequirements", "followUpOverdueRespondentEvidence",
         "adaFollowUpOverdueRespondentEvidence", "adaFollowUpOverdueCaseBuilding", "adaFollowUpOverdueRespondentReview",
         "adaFollowUpNonStandardDirection", "adaFollowUpNoticeOfChange",
         "followUpOverdueCaseBuilding", "followUpOverdueReasonsForAppeal", "followUpOverdueClarifyingAnswers",
@@ -717,7 +721,11 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "markCaseAsPaid,[Mark the appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid),",
         "allocateHearingJudge," + "[Allocate Hearing Judge](/role-access/allocate-role/allocate?caseId="
             + "${[CASE_REFERENCE]}&roleCategory=JUDICIAL&jurisdiction=IA),",
+        "adaAllocateHearingJudge," + "[Allocate Hearing Judge](/role-access/allocate-role/allocate?caseId="
+            + "${[CASE_REFERENCE]}&roleCategory=JUDICIAL&jurisdiction=IA),",
         "uploadHearingRecording,[Upload the hearing recording](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/upload"
+            + "HearingRecording),",
+        "adaUploadHearingRecording,[Upload the hearing recording](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/upload"
             + "HearingRecording),",
         "generateDraftDecisionAndReasons,[Generate the draft decisions and reasons document](/case/IA/Asylum"
             + "/${[CASE_REFERENCE]}/trigger/generateDecisionAndReasons),",
