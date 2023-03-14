@@ -2454,7 +2454,7 @@ and additionalData.Data.suitabilityReviewDecision
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0cfio0v">
-          <text></text>
+          <text>false</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0fdb6ze">
           <text></text>
@@ -2472,6 +2472,47 @@ and additionalData.Data.suitabilityReviewDecision
           <text>0</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1yo5sal">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0dbqsgv">
+        <inputEntry id="UnaryTests_032a59u">
+          <text>"generateHearingBundle", "customiseHearingBundle"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1mwlfmx">
+          <text>"finalBundling"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1iioqt9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16z4j2w">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nqzr1d">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1hud4cr">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0fo764v">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_037z0pw">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0hh3hlj">
+          <text>"adaReviewHearingBundle"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_18dlqmx">
+          <text>"ADA-Review Hearing bundle"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0fpuy73">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ezx1q1">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_03or19e">
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>

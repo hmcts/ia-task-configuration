@@ -218,6 +218,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("adaSendDecisionsAndReasons", decisionMakingWork),
             Arguments.of("reviewADASuitability", decisionMakingWork),
             Arguments.of("reviewHearingBundle", hearingWork),
+            Arguments.of("adaReviewHearingBundle", hearingWork),
             Arguments.of("generateDraftDecisionAndReasons", hearingWork),
             Arguments.of("uploadDecision", hearingWork),
             Arguments.of("uploadHearingRecording", hearingWork),
@@ -330,7 +331,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
     @ParameterizedTest
     @CsvSource({
-        "reviewHearingBundle", "generateDraftDecisionAndReasons", "uploadDecision", "reviewAddendumHomeOfficeEvidence",
+        "reviewHearingBundle", "adaReviewHearingBundle",
+        "generateDraftDecisionAndReasons", "uploadDecision", "reviewAddendumHomeOfficeEvidence",
         "reviewAddendumAppellantEvidence", "reviewAddendumEvidence",
         "adaReviewAddendumEvidence", "reviewSpecificAccessRequestJudiciary",
         "reviewSpecificAccessRequestLegalOps", "reviewSpecificAccessRequestAdmin","reviewSpecificAccessRequestCTSC",

@@ -266,7 +266,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1ps3x4j">
-          <text>"reviewHearingBundle","generateDraftDecisionAndReasons","uploadDecision","uploadHearingRecording","editListing","followUpOverdueHearingRequirements","reviewHearingRequirements","allocateHearingJudge","prepareDecisionsAndReasons","adaPrepareDecisionsAndReasons","startDecisionsAndReasonsDocument","createHearingBundle","createCaseSummary","adaEditListing","adaAllocateHearingJudge","adaUploadHearingRecording"</text>
+          <text>"reviewHearingBundle","adaReviewHearingBundle","generateDraftDecisionAndReasons","uploadDecision","uploadHearingRecording","editListing","followUpOverdueHearingRequirements","reviewHearingRequirements","allocateHearingJudge","prepareDecisionsAndReasons","adaPrepareDecisionsAndReasons","startDecisionsAndReasonsDocument","createHearingBundle","createCaseSummary","adaEditListing","adaAllocateHearingJudge","adaUploadHearingRecording"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0c3eia6">
           <text>"workType"</text>
@@ -453,7 +453,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_15ftuu0">
-          <text>"reviewHearingBundle","generateDraftDecisionAndReasons","uploadDecision","reviewAddendumHomeOfficeEvidence","reviewAddendumAppellantEvidence","reviewAddendumEvidence","adaReviewAddendumEvidence","reviewSpecificAccessRequestJudiciary","reviewSpecificAccessRequestLegalOps","reviewSpecificAccessRequestAdmin","reviewSpecificAccessRequestCTSC","processApplicationToReviewDecision","adaProcessApplicationToAdjourn","adaProcessApplicationToExpedite","adaProcessApplicationForTimeExtension","adaProcessApplicationToWithdraw","adaProcessApplicationToReviewDecision","sendDecisionsAndReasons","adaSendDecisionsAndReasons","prepareDecisionsAndReasons","adaPrepareDecisionsAndReasons","decideAnFTPA","adaDecideAnFTPA","reviewADASuitability"</text>
+          <text>"reviewHearingBundle","adaReviewHearingBundle","generateDraftDecisionAndReasons","uploadDecision","reviewAddendumHomeOfficeEvidence","reviewAddendumAppellantEvidence","reviewAddendumEvidence","adaReviewAddendumEvidence","reviewSpecificAccessRequestJudiciary","reviewSpecificAccessRequestLegalOps","reviewSpecificAccessRequestAdmin","reviewSpecificAccessRequestCTSC","processApplicationToReviewDecision","adaProcessApplicationToAdjourn","adaProcessApplicationToExpedite","adaProcessApplicationForTimeExtension","adaProcessApplicationToWithdraw","adaProcessApplicationToReviewDecision","sendDecisionsAndReasons","adaSendDecisionsAndReasons","prepareDecisionsAndReasons","adaPrepareDecisionsAndReasons","decideAnFTPA","adaDecideAnFTPA","reviewADASuitability"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_15nowth">
           <text>"roleCategory"</text>
