@@ -8,7 +8,8 @@ public enum DmnDecisionTable {
     WA_TASK_COMPLETION_IA_ASYLUM("wa-task-completion-ia-asylum", "wa-task-completion-ia-asylum.dmn"),
     WA_TASK_CONFIGURATION_IA_ASYLUM("wa-task-configuration-ia-asylum", "wa-task-configuration-ia-asylum.dmn"),
     WA_TASK_INITIATION_IA_ASYLUM("wa-task-initiation-ia-asylum", "wa-task-initiation-ia-asylum.dmn"),
-    WA_TASK_PERMISSIONS_IA_ASYLUM("wa-task-permissions-ia-asylum", "wa-task-permissions-ia-asylum.dmn");
+    WA_TASK_PERMISSIONS_IA_ASYLUM("wa-task-permissions-ia-asylum", "wa-task-permissions-ia-asylum.dmn"),
+    WA_TASK_TYPES_IA_ASYLUM("wa-task-types-ia-asylum", "wa-task-types-ia-asylum.dmn");
 
     @JsonValue
     private final String key;
