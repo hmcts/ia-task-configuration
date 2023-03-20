@@ -41,11 +41,17 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "applyForFTPAAppellant",
                 null,
                 null,
-                singletonList(
+                List.of(
                     Map.of(
                         "taskId", "decideAnFTPA",
                         "name", "Decide an FTPA",
 
+                        "processCategories", "caseProgression"
+                    ),
+                    Map.of(
+                        "taskId", "assignAFTPAJudge",
+                        "name", "Assign a FTPA Judge",
+                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -54,11 +60,17 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "applyForFTPARespondent",
                 null,
                 null,
-                singletonList(
+                List.of(
                     Map.of(
                         "taskId", "decideAnFTPA",
                         "name", "Decide an FTPA",
 
+                        "processCategories", "caseProgression"
+                    ),
+                    Map.of(
+                        "taskId", "assignAFTPAJudge",
+                        "name", "Assign a FTPA Judge",
+                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -1571,7 +1583,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(7));
         assertThat(logic.getOutputs().size(), is(5));
-        assertThat(logic.getRules().size(), is(40));
+        assertThat(logic.getRules().size(), is(41));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {
