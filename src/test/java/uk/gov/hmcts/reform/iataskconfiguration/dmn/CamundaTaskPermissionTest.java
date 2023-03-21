@@ -144,6 +144,14 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
     public static Stream<Arguments> genericScenarioProvider() {
         return Stream.of(
             Arguments.of(
+                "sendPaymentRequest",
+                List.of(
+                    taskSupervisor,
+                    ctscAdminPriorityOne,
+                    ctscTeamLeaderPriorityOne
+                )
+            ),
+            Arguments.of(
                 "listTheCase",
                 List.of(
                     taskSupervisor,

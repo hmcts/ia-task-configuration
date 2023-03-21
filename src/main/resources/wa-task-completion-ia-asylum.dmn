@@ -273,9 +273,20 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1n7xtcn">
+        <inputEntry id="UnaryTests_0w6zvdf">
+          <text>"markAppealPaid"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0j1vfpb">
+          <text>"sendPaymentRequest"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0x8a1uo">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1u3c7sd">
         <inputEntry id="UnaryTests_1dd0p7u">
-          <text>"generateHearingBundle","decisionAndReasonsStarted","updateHearingRequirements","endAppeal","requestRespondentEvidence","requestCaseBuilding","requestReasonsForAppeal","sendDirection","requestRespondentReview","requestCaseEdit","sendDirectionWithQuestions","requestCmaRequirements","markEvidenceAsReviewed","markAddendumEvidenceAsReviewed","reviewCmaRequirements","updateDetailsAfterCma","requestResponseAmend","requestResponseReview","reviewHearingRequirements","changeDirectionDueDate","decideAnApplication","editCaseListing","sendDecisionAndReasons","generateDecisionAndReasons","uploadHearingRecording","leadershipJudgeFtpaDecision","residentJudgeFtpaDecision","recordRemissionDecision","recordAllocatedJudge","listCase"</text>
+          <text>"generateHearingBundle","decisionAndReasonsStarted","updateHearingRequirements","endAppeal","requestRespondentEvidence","requestCaseBuilding","requestReasonsForAppeal","sendDirection","requestRespondentReview","requestCaseEdit","sendDirectionWithQuestions","requestCmaRequirements","markEvidenceAsReviewed","markAddendumEvidenceAsReviewed","reviewCmaRequirements","updateDetailsAfterCma","requestResponseAmend","requestResponseReview","reviewHearingRequirements","changeDirectionDueDate","decideAnApplication","editCaseListing","sendDecisionAndReasons","generateDecisionAndReasons","uploadHearingRecording","leadershipJudgeFtpaDecision","residentJudgeFtpaDecision","recordRemissionDecision","recordAllocatedJudge","listCase","markAppealPaid"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1ex7ytl">
           <text></text>
