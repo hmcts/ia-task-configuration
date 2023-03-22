@@ -284,6 +284,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0osf2v2">
+        <inputEntry id="UnaryTests_0la4gq6">
+          <text>"markAppealPaid"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_006hou4">
+          <text>"markAsPaid"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1a6ptpc">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1u3c7sd">
         <inputEntry id="UnaryTests_1dd0p7u">
           <text>"generateHearingBundle","decisionAndReasonsStarted","updateHearingRequirements","endAppeal","requestRespondentEvidence","requestCaseBuilding","requestReasonsForAppeal","sendDirection","requestRespondentReview","requestCaseEdit","sendDirectionWithQuestions","requestCmaRequirements","markEvidenceAsReviewed","markAddendumEvidenceAsReviewed","reviewCmaRequirements","updateDetailsAfterCma","requestResponseAmend","requestResponseReview","reviewHearingRequirements","changeDirectionDueDate","decideAnApplication","editCaseListing","sendDecisionAndReasons","generateDecisionAndReasons","uploadHearingRecording","leadershipJudgeFtpaDecision","residentJudgeFtpaDecision","recordRemissionDecision","recordAllocatedJudge","listCase","markAppealPaid"</text>
