@@ -1695,6 +1695,44 @@ else 0</text>
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_001rn0b">
+        <inputEntry id="UnaryTests_11p0tu7">
+          <text>"reviewHearingRequirements"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lcyhdn">
+          <text>"listing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16r11bo">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1yq4mt0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nn17wd">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0yuiqjk">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1p033ru">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_17sbxmn">
+          <text>"listTheCase"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0en2led">
+          <text>"List the case"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0vz9mis">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_090d594">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_16mbma0">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
