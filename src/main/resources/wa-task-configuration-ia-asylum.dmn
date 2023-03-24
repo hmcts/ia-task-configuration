@@ -193,7 +193,8 @@
                         "caseSummaryHearingBundleStartDecision",
                         "followUpExtendedDirection",
                         "followUpNonStandardDirection",
-                        "reviewClarifyingQuestionsAnswers"
+                        "reviewClarifyingQuestionsAnswers",
+                        "reviewRemissionApplication"
                     </text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0rvgay2">
@@ -418,6 +419,23 @@
           <text></text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0ubs7r5">
+        <inputEntry id="UnaryTests_00s1cbq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xh5are">
+          <text>"reviewRemissionApplication"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0vqliz7">
+          <text>"roleCategory"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1lg0gh7">
+          <text>"CTSC"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0mrh555">
+          <text></text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1lny4x5">
         <inputEntry id="UnaryTests_1jpdq6j">
           <text></text>
@@ -472,6 +490,7 @@
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "decideAnFTPA" or taskType != null and taskType = "decideAnFTPA") then "[Leadership judge FTPA decision](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/leadershipJudgeFtpaDecision)&lt;br /&gt;[Resident judge FTPA decision](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/residentJudgeFtpaDecision)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "sendDecisionsAndReasons" or taskType != null and taskType = "sendDecisionsAndReasons") then "[Complete decision and reasons](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDecisionAndReasons)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "processApplicationToReviewDecision" or taskType != null and taskType = "processApplicationToReviewDecision") then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewRemissionApplication" or taskType != null and taskType = "reviewRemissionApplication") then "[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/recordRemissionDecision/recordRemissionDecisionremissionDecision)"
                         else if (taskAttributes != null and taskAttributes.taskId != null and taskAttributes.roleAssignmentId != null) then "[Review Access Request](/role-access/" + taskAttributes.taskId + "/assignment/" + taskAttributes.roleAssignmentId + "/specific-access)"
                         else ""
           </text>
