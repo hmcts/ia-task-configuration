@@ -1436,11 +1436,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       + "      \"remissionDecision\":\"" + "partiallyApproved" + "\"\n"
                                       + "   }"
                                       + "}"),
-                singletonList(
+                List.of(
                     Map.of(
                         "taskId", "sendPaymentRequest",
                         "name", "Send Payment Request",
                         "workingDaysAllowed", 0,
+                        "processCategories", "caseProgression"
+                    ),
+                    Map.of(
+                        "taskId", "markAsPaid",
+                        "name", "Mark as Paid",
+                        "delayDuration", 12,
+                        "workingDaysAllowed", 14,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -1613,7 +1620,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(8));
         assertThat(logic.getOutputs().size(), is(5));
-        assertThat(logic.getRules().size(), is(43));
+        assertThat(logic.getRules().size(), is(44));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {
