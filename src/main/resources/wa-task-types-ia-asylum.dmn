@@ -53,17 +53,6 @@
           <text>"Review the appeal"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1chratc">
-        <inputEntry id="UnaryTests_0lbqe79">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1ug7t5f">
-          <text>"decideOnTimeExtension"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0e6fue2">
-          <text>"Decide On Time Extension"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_1sfjkmg">
         <inputEntry id="UnaryTests_044zyt9">
           <text></text>
@@ -128,28 +117,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_06op58d">
           <text>"Review Clarifying Questions Answers"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0qadif4">
-        <inputEntry id="UnaryTests_02ipyx9">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0uncmx5">
-          <text>"reviewCmaRequirements"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_09m1ynq">
-          <text>"Review Cma Requirements"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_14kzie1">
-        <inputEntry id="UnaryTests_0n2vojp">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1na8l52">
-          <text>"attendCma"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0uhulbh">
-          <text>"Attend Cma"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0mcsgvn">
@@ -238,17 +205,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_11w1nqn">
           <text>"Follow-up overdue clarifying answers"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1hu09cl">
-        <inputEntry id="UnaryTests_0zh6s1i">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1bp9666">
-          <text>"followUpOverdueCmaRequirements"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_09v4h00">
-          <text>"Follow-up overdue CMA requirements"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0brczcx">

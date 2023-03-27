@@ -35,7 +35,6 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
             ),
             Map.of("taskTypeId", "editListing", "taskTypeName", "Edit Listing"),
             Map.of("taskTypeId", "reviewTheAppeal", "taskTypeName", "Review the appeal"),
-            Map.of("taskTypeId", "decideOnTimeExtension", "taskTypeName", "Decide On Time Extension"),
             Map.of("taskTypeId", "reviewRespondentEvidence", "taskTypeName", "Review Respondent Evidence"),
             Map.of("taskTypeId", "reviewAdditionalEvidence", "taskTypeName", "Review additional evidence"),
             Map.of("taskTypeId", "reviewAdditionalHomeOfficeEvidence",
@@ -49,8 +48,6 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                    "taskTypeName",
                    "Review Clarifying Questions Answers"
             ),
-            Map.of("taskTypeId", "reviewCmaRequirements", "taskTypeName", "Review Cma Requirements"),
-            Map.of("taskTypeId", "attendCma", "taskTypeName", "Attend Cma"),
             Map.of("taskTypeId", "reviewRespondentResponse", "taskTypeName", "Review Respondent Response"),
             Map.of("taskTypeId", "caseSummaryHearingBundleStartDecision", "taskTypeName", "Create Hearing Bundle"),
             Map.of("taskTypeId", "reviewHearingRequirements", "taskTypeName", "Review hearing requirements"),
@@ -70,11 +67,6 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                    "followUpOverdueClarifyingAnswers",
                    "taskTypeName",
                    "Follow-up overdue clarifying answers"
-            ),
-            Map.of("taskTypeId",
-                   "followUpOverdueCmaRequirements",
-                   "taskTypeName",
-                   "Follow-up overdue CMA requirements"
             ),
             Map.of("taskTypeId",
                    "followUpOverdueRespondentReview",
@@ -125,7 +117,7 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(1));
         assertThat(logic.getOutputs().size(), is(2));
-        assertThat(logic.getRules().size(), is(38));
+        assertThat(logic.getRules().size(), is(34));
 
     }
 
