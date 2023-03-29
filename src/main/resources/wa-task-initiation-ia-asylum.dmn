@@ -72,7 +72,6 @@
       <output id="Output_1" label="Task Id" name="taskId" typeRef="string" biodi:width="368" />
       <output id="OutputClause_0p5fhhd" label="Name" name="name" typeRef="string" biodi:width="150" />
       <output id="OutputClause_165p3r3" label="Delay Duration" name="delayDuration" typeRef="integer" biodi:width="232" />
-      <output id="OutputClause_0i6c6c2" label="Working Days Allowed" name="workingDaysAllowed" typeRef="integer" biodi:width="199" />
       <output id="OutputClause_10rno4c" label="Process Categories Identifiers" name="processCategories" typeRef="string" biodi:width="268" />
       <rule id="DecisionRule_1fenvxm">
         <inputEntry id="UnaryTests_09nq8bu">
@@ -118,9 +117,6 @@
         <outputEntry id="LiteralExpression_1x6roa1">
           <text></text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_1td2bt7">
-          <text>5</text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_1m76a0d">
           <text>"application"</text>
         </outputEntry>
@@ -159,9 +155,6 @@
         <outputEntry id="LiteralExpression_0ntq0fj">
           <text></text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_0spcrb9">
-          <text>2</text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_1pyp879">
           <text>"application"</text>
         </outputEntry>
@@ -199,9 +192,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0uad2vw">
           <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_12cjht1">
-          <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0ebf9sj">
           <text>"application"</text>
@@ -242,9 +232,6 @@
         <outputEntry id="LiteralExpression_0t06g2j">
           <text></text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_02ctkt2">
-          <text>2</text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_1x4lczj">
           <text>"caseProgression"</text>
         </outputEntry>
@@ -283,9 +270,6 @@
         <outputEntry id="LiteralExpression_16tpxc0">
           <text></text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_1agtyqh">
-          <text>2</text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_1nxkvtt">
           <text>"caseProgression"</text>
         </outputEntry>
@@ -323,9 +307,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_19rxs4w">
           <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_00h6yxb">
-          <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_15xnwvl">
           <text>"caseProgression"</text>
@@ -370,9 +351,6 @@
         <outputEntry id="LiteralExpression_1ddgs5t">
           <text></text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_1ol5505">
-          <text>2</text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_0wnnmif">
           <text>"caseProgression"</text>
         </outputEntry>
@@ -411,9 +389,6 @@
         <outputEntry id="LiteralExpression_0tpiw26">
           <text></text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_16urfvv">
-          <text>2</text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_0zy6a6s">
           <text>"timeExtension"</text>
         </outputEntry>
@@ -451,9 +426,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_1i50q27">
           <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_057kfbi">
-          <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0s3kz5g">
           <text>"caseProgression"</text>
@@ -498,9 +470,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0qlx5fk">
           <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_07faeys">
-          <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_09g5ruk">
           <text>"caseProgression"</text>
@@ -547,9 +516,6 @@
         <outputEntry id="LiteralExpression_0txkmz4">
           <text></text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_13x9dbl">
-          <text>2</text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_1soxij3">
           <text>"caseProgression"</text>
         </outputEntry>
@@ -587,9 +553,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_10nev13">
           <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1qxex0h">
-          <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_147dk2d">
           <text>"caseProgression"</text>
@@ -629,9 +592,6 @@
         <outputEntry id="LiteralExpression_1ym5r20">
           <text></text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_1w4a5dv">
-          <text>2</text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_0bt7ho5">
           <text>"caseProgression"</text>
         </outputEntry>
@@ -669,9 +629,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_00ur2tu">
           <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1ir1zsl">
-          <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1fbcdjg">
           <text>"caseProgression"</text>
@@ -711,9 +668,6 @@
         <outputEntry id="LiteralExpression_0nmzwz6">
           <text></text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_1hxjfjs">
-          <text>2</text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_0zph664">
           <text>"caseProgression"</text>
         </outputEntry>
@@ -751,9 +705,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0xnoa0r">
           <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1umafvm">
-          <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1oy20uf">
           <text>"caseProgression"</text>
@@ -793,9 +744,6 @@
         <outputEntry id="LiteralExpression_14a2upo">
           <text></text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_11qiura">
-          <text>2</text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_0lum3zd">
           <text>"caseProgression"</text>
         </outputEntry>
@@ -834,9 +782,6 @@
         <outputEntry id="LiteralExpression_0wetk4k">
           <text></text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_1m82yii">
-          <text>2</text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_0pumcv9">
           <text>"caseProgression"</text>
         </outputEntry>
@@ -874,9 +819,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_1dbwiwt">
           <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0g9yuhw">
-          <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0jmdde0">
           <text>"caseProgression"</text>
@@ -920,9 +862,6 @@
             else 0
           </text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_184ro7i">
-          <text>2</text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_0yoh9gf">
           <text>"followUpOverdue"</text>
         </outputEntry>
@@ -964,9 +903,6 @@
             (date(directionDueDate) - date(now)).days
             else 0
           </text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_03j4j35">
-          <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0um9t1g">
           <text>"caseProgression"</text>
@@ -1010,9 +946,6 @@
             else 0
           </text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_17t1pof">
-          <text>2</text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_0m9jin9">
           <text>"followUpOverdue"</text>
         </outputEntry>
@@ -1054,9 +987,6 @@
             (date(directionDueDate) - date(now)).days
             else 0
           </text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_19cly21">
-          <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0vyvrgx">
           <text>"followUpOverdue"</text>
@@ -1100,9 +1030,6 @@
             else 0
           </text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_0kqlc9o">
-          <text>2</text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_0u38id9">
           <text>"followUpOverdue"</text>
         </outputEntry>
@@ -1144,9 +1071,6 @@
             (date(directionDueDate) - date(now)).days
             else 0
           </text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_137jbcs">
-          <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_145ayue">
           <text>"followUpOverdue"</text>
@@ -1190,9 +1114,6 @@
             else 0
           </text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_0a21cw2">
-          <text>2</text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_04ubdpr">
           <text>"followUpOverdue"</text>
         </outputEntry>
@@ -1234,9 +1155,6 @@
             (date(directionDueDate) - date(now)).days
             else 0
           </text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_07ijv3r">
-          <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_183pz80">
           <text>"followUpOverdue"</text>
@@ -1280,9 +1198,6 @@
             else 0
           </text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_05d86le">
-          <text>2</text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_12zlwly">
           <text>"caseProgression"</text>
         </outputEntry>
@@ -1320,9 +1235,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0fdvtci">
           <text>14</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1d8tjl9">
-          <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1ydf6vl">
           <text>"followUpOverdue"</text>
@@ -1367,9 +1279,6 @@
         <outputEntry id="LiteralExpression_0g1hn0w">
           <text></text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_1luld57">
-          <text>2</text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_1chu8ia">
           <text>"caseProgression"</text>
         </outputEntry>
@@ -1407,9 +1316,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_05642ga">
           <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0rzyouv">
-          <text>0</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1yo5sal">
           <text>"caseProgression"</text>
@@ -1449,9 +1355,6 @@
         <outputEntry id="LiteralExpression_0uxhsqp">
           <text></text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_0fkgqb1">
-          <text>0</text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_0m2jpwd">
           <text>"caseProgression"</text>
         </outputEntry>
@@ -1489,9 +1392,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_1a2bkyf">
           <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0sosd8q">
-          <text>0</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1noz57k">
           <text>"caseProgression"</text>
@@ -1533,9 +1433,6 @@
 	then (date and time(additionalData.Data.listCaseHearingDate) - date and time(now)).days
 else 0</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_0hz4nyc">
-          <text></text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_0dmehyy">
           <text>"caseProgression"</text>
         </outputEntry>
@@ -1572,9 +1469,6 @@ else 0</text>
           <text>"Decide an FTPA"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0niuaia">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_09yy6kk">
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_14ng722">
@@ -1615,9 +1509,6 @@ else 0</text>
         <outputEntry id="LiteralExpression_1cl36q6">
           <text></text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_19oslkg">
-          <text></text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_1n5kme0">
           <text>"caseProgression"</text>
         </outputEntry>
@@ -1654,9 +1545,6 @@ else 0</text>
           <text>"Allocate Hearing Judge"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0p256tl">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1pijvfs">
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0vzcsec">
@@ -1697,9 +1585,6 @@ else 0</text>
         <outputEntry id="LiteralExpression_0nlmxvs">
           <text></text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_0ze2qn5">
-          <text></text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_0jwwc9l">
           <text>"caseProgression"</text>
         </outputEntry>
@@ -1737,9 +1622,6 @@ else 0</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1l2litd">
           <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_03o94kl">
-          <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_10xkpde">
           <text>"caseProgression"</text>
@@ -1779,9 +1661,6 @@ else 0</text>
         <outputEntry id="LiteralExpression_07z2lse">
           <text></text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_0yy8r8w">
-          <text>2</text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_1xc23od">
           <text>"caseProgression"</text>
         </outputEntry>
@@ -1819,9 +1698,6 @@ else 0</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1wodprd">
           <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1t19b8n">
-          <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0wpvano">
           <text>"caseProgression"</text>
@@ -1861,9 +1737,6 @@ else 0</text>
         <outputEntry id="LiteralExpression_0vz9mis">
           <text></text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_090d594">
-          <text>2</text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_16mbma0">
           <text>"caseProgression"</text>
         </outputEntry>
@@ -1902,9 +1775,6 @@ else 0</text>
         <outputEntry id="LiteralExpression_0951ay4">
           <text></text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_0huuw78">
-          <text>0</text>
-        </outputEntry>
         <outputEntry id="LiteralExpression_0enev5y">
           <text>"caseProgression"</text>
         </outputEntry>
@@ -1942,9 +1812,6 @@ else 0</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0vjiye8">
           <text>12</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1c26bfu">
-          <text>14</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_19ek0da">
           <text>"caseProgression"</text>
