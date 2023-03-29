@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.2.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.2.0">
   <decision id="wa-task-initiation-ia-asylum" name="Task initiation DMN">
+    <informationRequirement id="InformationRequirement_1snq7re">
+      <requiredDecision href="#Decision_05yimli" />
+    </informationRequirement>
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT" biodi:annotationsWidth="400">
       <input id="Input_1" label="Event Id" biodi:width="515" camunda:inputVariable="eventId">
         <inputExpression id="InputExpression_1" typeRef="string">
@@ -71,7 +74,7 @@
       </input>
       <output id="Output_1" label="Task Id" name="taskId" typeRef="string" biodi:width="368" />
       <output id="OutputClause_0p5fhhd" label="Name" name="name" typeRef="string" biodi:width="150" />
-      <output id="OutputClause_165p3r3" label="Delay Duration" name="delayDuration" typeRef="integer" biodi:width="232" />
+      <output id="OutputClause_165p3r3" label="Delay Until" name="delayUntil" typeRef="json" />
       <output id="OutputClause_10rno4c" label="Process Categories Identifiers" name="processCategories" typeRef="string" biodi:width="268" />
       <rule id="DecisionRule_1fenvxm">
         <inputEntry id="UnaryTests_09nq8bu">
@@ -856,11 +859,10 @@
           <text>"Follow-up overdue respondent evidence"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1u0h529">
-          <text>
-            if (directionDueDate != null and directionDueDate != "") then
-            (date(directionDueDate) - date(now)).days
-            else 0
-          </text>
+          <text>{
+delayUntilOrigin: directionDueDate,
+delayUntilIntervalDays: "0"
+}</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0yoh9gf">
           <text>"followUpOverdue"</text>
@@ -898,11 +900,10 @@
           <text>"Follow-up extended direction"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0fcdssf">
-          <text>
-            if (directionDueDate != null and directionDueDate != "") then
-            (date(directionDueDate) - date(now)).days
-            else 0
-          </text>
+          <text>{
+delayUntilOrigin: directionDueDate,
+delayUntilIntervalDays: "0"
+}</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0um9t1g">
           <text>"caseProgression"</text>
@@ -940,11 +941,10 @@
           <text>"Follow-up overdue case building"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_16vucs8">
-          <text>
-            if (directionDueDate != null and directionDueDate != "") then
-            (date(directionDueDate) - date(now)).days
-            else 0
-          </text>
+          <text>{
+delayUntilOrigin: directionDueDate,
+delayUntilIntervalDays: "0"
+}</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0m9jin9">
           <text>"followUpOverdue"</text>
@@ -982,11 +982,10 @@
           <text>"Follow-up overdue reasons for appeal"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1bqrry5">
-          <text>
-            if (directionDueDate != null and directionDueDate != "") then
-            (date(directionDueDate) - date(now)).days
-            else 0
-          </text>
+          <text>{
+delayUntilOrigin: directionDueDate,
+delayUntilIntervalDays: "0"
+}</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0vyvrgx">
           <text>"followUpOverdue"</text>
@@ -1024,11 +1023,10 @@
           <text>"Follow-up overdue clarifying answers"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1dcun57">
-          <text>
-            if (directionDueDate != null and directionDueDate != "") then
-            (date(directionDueDate) - date(now)).days
-            else 0
-          </text>
+          <text>{
+delayUntilOrigin: directionDueDate,
+delayUntilIntervalDays: "0"
+}</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0u38id9">
           <text>"followUpOverdue"</text>
@@ -1066,11 +1064,10 @@
           <text>"Follow-up overdue CMA requirements"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1398afp" expressionLanguage="feel">
-          <text>
-            if (directionDueDate != null and directionDueDate != "") then
-            (date(directionDueDate) - date(now)).days
-            else 0
-          </text>
+          <text>{
+delayUntilOrigin: directionDueDate,
+delayUntilIntervalDays: "0"
+}</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_145ayue">
           <text>"followUpOverdue"</text>
@@ -1108,11 +1105,10 @@
           <text>"Follow-up overdue respondent review"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1a0n0d2">
-          <text>
-            if (directionDueDate != null and directionDueDate != "") then
-            (date(directionDueDate) - date(now)).days
-            else 0
-          </text>
+          <text>{
+delayUntilOrigin: directionDueDate,
+delayUntilIntervalDays: "0"
+}</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_04ubdpr">
           <text>"followUpOverdue"</text>
@@ -1150,11 +1146,10 @@
           <text>"Follow-up overdue hearing requirements"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_08ot9zz">
-          <text>
-            if (directionDueDate != null and directionDueDate != "") then
-            (date(directionDueDate) - date(now)).days
-            else 0
-          </text>
+          <text>{
+delayUntilOrigin: directionDueDate,
+delayUntilIntervalDays: "0"
+}</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_183pz80">
           <text>"followUpOverdue"</text>
@@ -1192,11 +1187,10 @@
           <text>"Follow-up non-standard direction"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0qjgx5e">
-          <text>
-            if (directionDueDate != null and directionDueDate != "") then
-            (date(directionDueDate) - date(now)).days
-            else 0
-          </text>
+          <text>{
+delayUntilOrigin: directionDueDate,
+delayUntilIntervalDays: "0"
+}</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_12zlwly">
           <text>"caseProgression"</text>
@@ -1234,7 +1228,7 @@
           <text>"Follow-up Notice of Change"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0fdvtci">
-          <text>14</text>
+          <text>defaults_14_days</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1ydf6vl">
           <text>"followUpOverdue"</text>
@@ -1429,9 +1423,10 @@
           <text>"Upload hearing recording"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0ay6ciw">
-          <text>if (additionalData != null and additionalData.Data != null and additionalData.Data.listCaseHearingDate != null and additionalData.Data.listCaseHearingDate != "")
-	then (date and time(additionalData.Data.listCaseHearingDate) - date and time(now)).days
-else 0</text>
+          <text>{
+delayUntilOrigin: additionalData.Data.listCaseHearingDate,
+delayUntilIntervalDays: "0"
+}</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0dmehyy">
           <text>"caseProgression"</text>
@@ -1811,10 +1806,34 @@ else 0</text>
           <text>"Mark as Paid"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0vjiye8">
-          <text>12</text>
+          <text>{
+delayUntilOrigin: today(),
+delayUntilNonWorkingCalendar: "https://www.gov.uk/bank-holidays/england-and-wales.json",
+delayUntilIntervalDays: "12"
+}</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_19ek0da">
           <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <decision id="Decision_05yimli" name="Date Calculation Defaults">
+    <decisionTable id="DecisionTable_13f601o" biodi:annotationsWidth="400">
+      <input id="InputClause_0f6o6mo">
+        <inputExpression id="LiteralExpression_1oln8s7" typeRef="string" />
+      </input>
+      <output id="OutputClause_09js4tp" label="defaults_14_days" name="defaults_14_days" typeRef="json" biodi:width="607" />
+      <rule id="DecisionRule_0h1i0mp">
+        <inputEntry id="UnaryTests_1uha651">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1nlag85">
+          <text>{
+delayUntilOrigin: today(),
+delayUntilNonWorkingCalendar: "https://www.gov.uk/bank-holidays/england-and-wales.json",
+delayUntilIntervalDays: "14"
+}</text>
         </outputEntry>
       </rule>
     </decisionTable>
@@ -1823,6 +1842,14 @@ else 0</text>
     <dmndi:DMNDiagram id="DMNDiagram_0b2rkcb">
       <dmndi:DMNShape id="DMNShape_0wc7glt" dmnElementRef="wa-task-initiation-ia-asylum">
         <dc:Bounds height="80" width="180" x="150" y="80" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_0oiwsy7" dmnElementRef="InformationRequirement_1snq7re">
+        <di:waypoint x="240" y="240" />
+        <di:waypoint x="240" y="180" />
+        <di:waypoint x="240" y="160" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_1ew2x0o" dmnElementRef="Decision_05yimli">
+        <dc:Bounds height="80" width="180" x="150" y="240" />
       </dmndi:DMNShape>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>
