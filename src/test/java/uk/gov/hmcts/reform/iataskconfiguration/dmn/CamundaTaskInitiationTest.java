@@ -44,18 +44,20 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         );
         Map<String, Object> delayUntilDirectionDue = Map.of(
             "delayUntilIntervalDays", "0",
-            "delayUntilOrigin", directionDueDate
+            "delayUntil", directionDueDate
         );
         Map<String,Object> delayFor14Days = Map.of(
             "delayUntilIntervalDays", "14",
             "delayUntilNonWorkingCalendar", "https://www.gov.uk/bank-holidays/england-and-wales.json",
-            "delayUntilOrigin", LocalDate.now()
+            "delayUntilOrigin", LocalDate.now(),
+            "delayUntilNonWorkingDaysOfWeek", "SATURDAY,SUNDAY"
         );
 
         Map<String,Object> delayFor12Days = Map.of(
             "delayUntilIntervalDays", "12",
             "delayUntilNonWorkingCalendar", "https://www.gov.uk/bank-holidays/england-and-wales.json",
-            "delayUntilOrigin", LocalDate.now()
+            "delayUntilOrigin", LocalDate.now(),
+            "delayUntilNonWorkingDaysOfWeek", "SATURDAY,SUNDAY"
         );
 
         return Stream.of(
@@ -798,7 +800,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Upload hearing recording",
                         "processCategories", "caseProgression",
                         "delayUntil", Map.of(
-                            "delayUntilOrigin", hearingDate,
+                            "delayUntil", hearingDate,
                             "delayUntilIntervalDays","0"
                         )
                     )

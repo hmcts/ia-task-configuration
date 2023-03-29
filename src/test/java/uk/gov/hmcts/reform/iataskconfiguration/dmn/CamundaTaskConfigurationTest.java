@@ -70,7 +70,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(24));
+        assertThat(logic.getRules().size(), is(29));
     }
 
     @SuppressWarnings("checkstyle:indentation")
@@ -659,6 +659,11 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         if (!Objects.isNull(scenario.getExpectedDueDateIntervalDays())) {
             getExpectedValue(rules, "dueDateIntervalDays", scenario.getExpectedDueDateIntervalDays());
         }
+        getExpectedValue(rules, "majorPriority", String.valueOf(5000));
+        getExpectedValue(rules, "minorPriority", String.valueOf(500));
+        getExpectedValue(rules, "priorityDateOriginRef", "dueDate");
+        getExpectedValue(rules, "dueDateNonWorkingDaysOfWeek", "SATURDAY,SUNDAY");
+        getExpectedValue(rules, "calculatedDates", "nextHearingDate,dueDate,priorityDate");
         return rules;
     }
 
@@ -872,6 +877,44 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("sendPaymentRequest", zeroDays),
             Arguments.of("markAsPaid", fourteenDays)
         );
+    }
+
+    @Test
+    void when_any_task_then_return_expected_priorities_config() {
+        VariableMap inputVariables = new VariableMapImpl();
+
+        inputVariables.putValue("taskAttributes", Map.of("taskType", "processApplication"));
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        assertTrue(dmnDecisionTableResult.getResultList().contains(Map.of(
+            "name", "priorityDateOriginRef",
+            "value", "dueDate"
+        )));
+
+        assertTrue(dmnDecisionTableResult.getResultList().contains(Map.of(
+            "name", "minorPriority",
+            "value", "500"
+        )));
+
+        assertTrue(dmnDecisionTableResult.getResultList().contains(Map.of(
+            "name", "majorPriority",
+            "value", "5000"
+        )));
+    }
+
+    @Test
+    void when_any_task_then_return_expected_non_working_days_of_week_config() {
+        VariableMap inputVariables = new VariableMapImpl();
+
+        inputVariables.putValue("taskAttributes", Map.of("taskType", "processApplication"));
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        assertTrue(dmnDecisionTableResult.getResultList().contains(Map.of(
+            "name", "dueDateNonWorkingDaysOfWeek",
+            "value", "SATURDAY,SUNDAY"
+        )));
     }
 }
 

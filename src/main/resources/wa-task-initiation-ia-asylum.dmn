@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.2.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.2.0">
   <decision id="wa-task-initiation-ia-asylum" name="Task initiation DMN">
-    <informationRequirement id="InformationRequirement_1snq7re">
-      <requiredDecision href="#Decision_05yimli" />
-    </informationRequirement>
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT" biodi:annotationsWidth="400">
       <input id="Input_1" label="Event Id" biodi:width="515" camunda:inputVariable="eventId">
         <inputExpression id="InputExpression_1" typeRef="string">
@@ -860,8 +857,8 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_1u0h529">
           <text>{
-delayUntilOrigin: directionDueDate,
-delayUntilIntervalDays: "0"
+"delayUntil": directionDueDate,
+"delayUntilIntervalDays": "0"
 }</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0yoh9gf">
@@ -901,8 +898,8 @@ delayUntilIntervalDays: "0"
         </outputEntry>
         <outputEntry id="LiteralExpression_0fcdssf">
           <text>{
-delayUntilOrigin: directionDueDate,
-delayUntilIntervalDays: "0"
+"delayUntil": directionDueDate,
+"delayUntilIntervalDays": "0"
 }</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0um9t1g">
@@ -942,8 +939,8 @@ delayUntilIntervalDays: "0"
         </outputEntry>
         <outputEntry id="LiteralExpression_16vucs8">
           <text>{
-delayUntilOrigin: directionDueDate,
-delayUntilIntervalDays: "0"
+"delayUntil": directionDueDate,
+"delayUntilIntervalDays": "0"
 }</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0m9jin9">
@@ -983,8 +980,8 @@ delayUntilIntervalDays: "0"
         </outputEntry>
         <outputEntry id="LiteralExpression_1bqrry5">
           <text>{
-delayUntilOrigin: directionDueDate,
-delayUntilIntervalDays: "0"
+"delayUntil": directionDueDate,
+"delayUntilIntervalDays": "0"
 }</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0vyvrgx">
@@ -1024,8 +1021,8 @@ delayUntilIntervalDays: "0"
         </outputEntry>
         <outputEntry id="LiteralExpression_1dcun57">
           <text>{
-delayUntilOrigin: directionDueDate,
-delayUntilIntervalDays: "0"
+"delayUntil": directionDueDate,
+"delayUntilIntervalDays": "0"
 }</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0u38id9">
@@ -1065,8 +1062,8 @@ delayUntilIntervalDays: "0"
         </outputEntry>
         <outputEntry id="LiteralExpression_1398afp" expressionLanguage="feel">
           <text>{
-delayUntilOrigin: directionDueDate,
-delayUntilIntervalDays: "0"
+"delayUntil": directionDueDate,
+"delayUntilIntervalDays": "0"
 }</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_145ayue">
@@ -1106,8 +1103,8 @@ delayUntilIntervalDays: "0"
         </outputEntry>
         <outputEntry id="LiteralExpression_1a0n0d2">
           <text>{
-delayUntilOrigin: directionDueDate,
-delayUntilIntervalDays: "0"
+"delayUntil": directionDueDate,
+"delayUntilIntervalDays": "0"
 }</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_04ubdpr">
@@ -1147,8 +1144,8 @@ delayUntilIntervalDays: "0"
         </outputEntry>
         <outputEntry id="LiteralExpression_08ot9zz">
           <text>{
-delayUntilOrigin: directionDueDate,
-delayUntilIntervalDays: "0"
+"delayUntil": directionDueDate,
+"delayUntilIntervalDays": "0"
 }</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_183pz80">
@@ -1188,8 +1185,8 @@ delayUntilIntervalDays: "0"
         </outputEntry>
         <outputEntry id="LiteralExpression_0qjgx5e">
           <text>{
-delayUntilOrigin: directionDueDate,
-delayUntilIntervalDays: "0"
+"delayUntil": directionDueDate,
+"delayUntilIntervalDays": "0"
 }</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_12zlwly">
@@ -1228,7 +1225,12 @@ delayUntilIntervalDays: "0"
           <text>"Follow-up Notice of Change"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0fdvtci">
-          <text>defaults_14_days</text>
+          <text>{
+"delayUntilOrigin": today(),
+"delayUntilNonWorkingCalendar": "https://www.gov.uk/bank-holidays/england-and-wales.json",
+"delayUntilNonWorkingDaysOfWeek":"SATURDAY,SUNDAY",
+"delayUntilIntervalDays":"14"
+}</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1ydf6vl">
           <text>"followUpOverdue"</text>
@@ -1424,8 +1426,8 @@ delayUntilIntervalDays: "0"
         </outputEntry>
         <outputEntry id="LiteralExpression_0ay6ciw">
           <text>{
-delayUntilOrigin: additionalData.Data.listCaseHearingDate,
-delayUntilIntervalDays: "0"
+"delayUntil": additionalData.Data.listCaseHearingDate,
+"delayUntilIntervalDays": "0"
 }</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0dmehyy">
@@ -1807,9 +1809,10 @@ delayUntilIntervalDays: "0"
         </outputEntry>
         <outputEntry id="LiteralExpression_0vjiye8">
           <text>{
-delayUntilOrigin: today(),
-delayUntilNonWorkingCalendar: "https://www.gov.uk/bank-holidays/england-and-wales.json",
-delayUntilIntervalDays: "12"
+"delayUntilOrigin": today(),
+"delayUntilNonWorkingCalendar": "https://www.gov.uk/bank-holidays/england-and-wales.json",
+"delayUntilNonWorkingDaysOfWeek":"SATURDAY,SUNDAY",
+"delayUntilIntervalDays":"12"
 }</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_19ek0da">
@@ -1818,38 +1821,10 @@ delayUntilIntervalDays: "12"
       </rule>
     </decisionTable>
   </decision>
-  <decision id="Decision_05yimli" name="Date Calculation Defaults">
-    <decisionTable id="DecisionTable_13f601o" biodi:annotationsWidth="400">
-      <input id="InputClause_0f6o6mo">
-        <inputExpression id="LiteralExpression_1oln8s7" typeRef="string" />
-      </input>
-      <output id="OutputClause_09js4tp" label="defaults_14_days" name="defaults_14_days" typeRef="json" biodi:width="607" />
-      <rule id="DecisionRule_0h1i0mp">
-        <inputEntry id="UnaryTests_1uha651">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1nlag85">
-          <text>{
-delayUntilOrigin: today(),
-delayUntilNonWorkingCalendar: "https://www.gov.uk/bank-holidays/england-and-wales.json",
-delayUntilIntervalDays: "14"
-}</text>
-        </outputEntry>
-      </rule>
-    </decisionTable>
-  </decision>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram id="DMNDiagram_0b2rkcb">
       <dmndi:DMNShape id="DMNShape_0wc7glt" dmnElementRef="wa-task-initiation-ia-asylum">
         <dc:Bounds height="80" width="180" x="150" y="80" />
-      </dmndi:DMNShape>
-      <dmndi:DMNEdge id="DMNEdge_0oiwsy7" dmnElementRef="InformationRequirement_1snq7re">
-        <di:waypoint x="240" y="240" />
-        <di:waypoint x="240" y="180" />
-        <di:waypoint x="240" y="160" />
-      </dmndi:DMNEdge>
-      <dmndi:DMNShape id="DMNShape_1ew2x0o" dmnElementRef="Decision_05yimli">
-        <dc:Bounds height="80" width="180" x="150" y="240" />
       </dmndi:DMNShape>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>

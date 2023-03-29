@@ -639,6 +639,91 @@
           <text></text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_165bqfp">
+        <inputEntry id="UnaryTests_1cy9w2v">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0sk78xf">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1jpp20e">
+          <text>"majorPriority"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0mq5gsr">
+          <text>5000</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1f4fovi">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0d4k7a3">
+        <inputEntry id="UnaryTests_17p5sgb">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0bg2thb">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_07pamwu">
+          <text>"minorPriority"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1un1fpp">
+          <text>500</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1cssjo4">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1iccxzh">
+        <inputEntry id="UnaryTests_1oh593l">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08641k9">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1x7qwr7">
+          <text>"priorityDateOriginRef"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0vpgaux">
+          <text>"dueDate"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_16sccu5">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0n6xlhj">
+        <inputEntry id="UnaryTests_0oe8d4b">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1q7g8iu">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0s6253e">
+          <text>"dueDateNonWorkingDaysOfWeek"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1fuo3hm">
+          <text>"SATURDAY,SUNDAY"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1omikjm">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_11jkcdp">
+        <inputEntry id="UnaryTests_065p43f">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08t14g0">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0nzrd2w">
+          <text>"calculatedDates"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0sbydg2">
+          <text>"nextHearingDate,dueDate,priorityDate"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_102zbyh">
+          <text></text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
