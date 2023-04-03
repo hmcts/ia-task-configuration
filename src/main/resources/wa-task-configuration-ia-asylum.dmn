@@ -506,6 +506,224 @@
           <text></text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_15pnkjv">
+        <inputEntry id="UnaryTests_0cuyrmi">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xqy885">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_17n2o8t">
+          <text>"dueDateOrigin"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1olr8gj">
+          <text>string(now())</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1jfd9es">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1xk0urt">
+        <inputEntry id="UnaryTests_03vtzac">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xz0tmx">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0n2s323">
+          <text>"dueDateNonWorkingCalendar"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_01me67r">
+          <text>"https://www.gov.uk/bank-holidays/england-and-wales.json"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_15rsx8r">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0nwq04c">
+        <inputEntry id="UnaryTests_0dicms7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01h3gvh">
+          <text>"processApplication"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_18mybq6">
+          <text>"dueDateIntervalDays"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ndl97b">
+          <text>5</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1rv7ncp">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_087mjzf">
+        <inputEntry id="UnaryTests_0u9y6os">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12nptxn">
+          <text>"processApplicationToReviewDecision",
+"editListing",
+"reviewTheAppeal",
+"decideOnTimeExtension",
+"reviewRespondentEvidence",
+"reviewAdditionalEvidence",
+"reviewAdditionalHomeOfficeEvidence",
+"reviewAppealSkeletonArgument",
+"reviewReasonsForAppeal",
+"reviewClarifyingQuestionsAnswers",
+"reviewCmaRequirements",
+"attendCma",
+"reviewRespondentResponse",
+"caseSummaryHearingBundleStartDecision",
+"reviewHearingRequirements",
+"followUpOverdueRespondentEvidence",
+"followUpExtendedDirection",
+"followUpOverdueCaseBuilding",
+"followUpOverdueReasonsForAppeal",
+"followUpOverdueClarifyingAnswers",
+"followUpOverdueCmaRequirements",
+"followUpOverdueRespondentReview",
+"followUpOverdueHearingRequirements",
+"followUpNonStandardDirection",
+"followUpNoticeOfChange",
+"reviewAddendumEvidence",
+"reviewRemissionApplication",
+"assignAFTPAJudge",
+"listTheCase"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1kbin0j">
+          <text>"dueDateIntervalDays"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_01i1jmt">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_161g7g1">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_119qnrg">
+        <inputEntry id="UnaryTests_0dlohpc">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1cwkxoe">
+          <text>"reviewHearingBundle",
+"sendDecisionsAndReasons",
+"prepareDecisionsAndReasons",
+"sendPaymentRequest"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ssbj4t">
+          <text>"dueDateIntervalDays"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ftw3ss">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0zkr1zo">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ca9xpl">
+        <inputEntry id="UnaryTests_15bophj">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1aa2bwu">
+          <text>"markAsPaid"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0k6nifs">
+          <text>"dueDateIntervalDays"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1vbgdhh">
+          <text>14</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_11bqayr">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_165bqfp">
+        <inputEntry id="UnaryTests_1cy9w2v">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0sk78xf">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1jpp20e">
+          <text>"majorPriority"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0mq5gsr">
+          <text>5000</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1f4fovi">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0d4k7a3">
+        <inputEntry id="UnaryTests_17p5sgb">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0bg2thb">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_07pamwu">
+          <text>"minorPriority"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1un1fpp">
+          <text>500</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1cssjo4">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1iccxzh">
+        <inputEntry id="UnaryTests_1oh593l">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08641k9">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1x7qwr7">
+          <text>"priorityDateOriginRef"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0vpgaux">
+          <text>"dueDate"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_16sccu5">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0n6xlhj">
+        <inputEntry id="UnaryTests_0oe8d4b">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1q7g8iu">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0s6253e">
+          <text>"dueDateNonWorkingDaysOfWeek"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1fuo3hm">
+          <text>"SATURDAY,SUNDAY"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1omikjm">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_11jkcdp">
+        <inputEntry id="UnaryTests_065p43f">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08t14g0">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0nzrd2w">
+          <text>"calculatedDates"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0sbydg2">
+          <text>"nextHearingDate,dueDate,priorityDate"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_102zbyh">
+          <text></text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
