@@ -15,6 +15,9 @@ import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.platform.commons.util.StringUtils;
 import uk.gov.hmcts.reform.iataskconfiguration.DmnDecisionTableBaseUnitTest;
 
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -32,6 +35,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static uk.gov.hmcts.reform.iataskconfiguration.DmnDecisionTable.WA_TASK_CONFIGURATION_IA_ASYLUM;
 
 class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
+
+    private static final String DEFAULT_CALENDAR = "https://www.gov.uk/bank-holidays/england-and-wales.json";
 
     @BeforeAll
     public static void initialization() {
@@ -65,7 +70,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(18));
+        assertThat(logic.getRules().size(), is(24));
     }
 
     @SuppressWarnings("checkstyle:indentation")
@@ -415,12 +420,25 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         inputVariables.putValue("caseData", scenario.caseData);
         inputVariables.putValue("taskAttributes", scenario.getTaskAttributes());
 
+        List<Map<String, Object>> expected = getExpectedValues(scenario);
+
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
-        assertThat(dmnDecisionTableResult.getResultList(), is(getExpectedValues(scenario)));
+        assertThat(dmnDecisionTableResult.getResultList().size(), is(expected.size()));
+        for (int index = 0; index < expected.size(); index++) {
+            if ("dueDateOrigin".equals(expected.get(index).get("name"))) {
+                assertTrue(validNow(
+                    ZonedDateTime.parse(expected.get(index).get("value").toString()),
+                    parseCamundaTimestamp(dmnDecisionTableResult.getResultList().get(index).get("value").toString())
+                ));
+            } else {
+                assertThat(dmnDecisionTableResult.getResultList().get(index), is(expected.get(index)));
+            }
+        }
     }
 
     private static Stream<Scenario> nameAndValueScenarioProvider() {
+        String dateOrigin = ZonedDateTime.now(ZoneId.of("UTC")).toString();
         Scenario givenCaseDataIsMissedThenDefaultToTaylorHouseScenario = Scenario.builder()
             .caseData(emptyMap())
             .expectedCaseNameValue(null)
@@ -431,6 +449,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             .expectedCaseManagementCategoryValue("")
             .expectedDescriptionValue("")
             .expectedReconfigureValue("true")
+            .expectedDueDateOrigin(dateOrigin)
             .build();
 
         String refusalOfEuLabel = "Refusal of a human rights claim";
@@ -461,6 +480,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             .expectedRoleCategory("ADMIN")
             .expectedDescriptionValue(
                 "[Mark the appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid)")
+            .expectedDueDateOrigin(dateOrigin)
             .build();
 
         Scenario givenSomeCaseDataAndArrangeOfflinePaymentTaskIdThenReturnExpectedNameAndValueScenario =
@@ -497,6 +517,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 .expectedRoleCategory("ADMIN")
                 .expectedDescriptionValue("[Mark the appeal as "
                                               + "paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid)")
+                .expectedDueDateOrigin(dateOrigin)
                 .build();
 
         Scenario givenSomeCaseDataAndTaskTypeIsEmptyThenExpectNoWorkTypeRuleScenario =
@@ -533,6 +554,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 .expectedRoleCategory("ADMIN")
                 .expectedDescriptionValue("[Mark the appeal as "
                                               + "paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid)")
+                .expectedDueDateOrigin(dateOrigin)
                 .build();
 
         Scenario givenNoCaseDataAndSomeTaskTypeThenExpectOnlyTheWorkTypeRuleScenario =
@@ -550,6 +572,26 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 .expectedRoleCategory("ADMIN")
                 .expectedDescriptionValue("[Mark the appeal as "
                                               + "paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid)")
+                .expectedDueDateOrigin(dateOrigin)
+                .build();
+
+        Scenario processApplicationScenario =
+            Scenario.builder()
+                .caseData(emptyMap())
+                .taskAttributes(Map.of("taskType", "processApplication"))
+                .expectedCaseNameValue(null)
+                .expectedAppealTypeValue("")
+                .expectedRegionValue("1")
+                .expectedLocationValue("765324")
+                .expectedLocationNameValue("Taylor House")
+                .expectedCaseManagementCategoryValue("")
+                .expectedWorkType("applications")
+                .expectedReconfigureValue("true")
+                .expectedRoleCategory("LEGAL_OPERATIONS")
+                .expectedDescriptionValue("[Decide an application]"
+                                              + "(/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)")
+                .expectedDueDateOrigin(dateOrigin)
+                .expectedDueDateIntervalDays("5")
                 .build();
 
         return Stream.of(
@@ -557,7 +599,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             givenCaseDataIsPresentThenReturnNameAndValueScenario,
             givenSomeCaseDataAndArrangeOfflinePaymentTaskIdThenReturnExpectedNameAndValueScenario,
             givenSomeCaseDataAndTaskTypeIsEmptyThenExpectNoWorkTypeRuleScenario,
-            givenNoCaseDataAndSomeTaskTypeThenExpectOnlyTheWorkTypeRuleScenario
+            givenNoCaseDataAndSomeTaskTypeThenExpectOnlyTheWorkTypeRuleScenario,
+            processApplicationScenario
         );
     }
 
@@ -576,6 +619,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         String expectedRoleCategory;
         String expectedDescriptionValue;
         String expectedReconfigureValue;
+        String expectedDueDateOrigin;
+        String expectedDueDateIntervalDays;
     }
 
     private List<Map<String, Object>> getExpectedValues(Scenario scenario) {
@@ -609,6 +654,11 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         }
 
         getExpectedValue(rules, "description", scenario.getExpectedDescriptionValue());
+        getExpectedValue(rules, "dueDateOrigin", scenario.getExpectedDueDateOrigin());
+        getExpectedValue(rules, "dueDateNonWorkingCalendar", DEFAULT_CALENDAR);
+        if (!Objects.isNull(scenario.getExpectedDueDateIntervalDays())) {
+            getExpectedValue(rules, "dueDateIntervalDays", scenario.getExpectedDueDateIntervalDays());
+        }
         return rules;
     }
 
@@ -626,6 +676,18 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         rule.put("value", value);
         rule.put("canReconfigure", Boolean.valueOf(reconfigure));
         rules.add(rule);
+    }
+
+    private ZonedDateTime parseCamundaTimestamp(String datetime) {
+        String[] parts = datetime.split("@");
+        return ZonedDateTime.of(LocalDateTime.parse(parts[0]), ZoneId.of(parts[1]));
+    }
+
+    private boolean validNow(ZonedDateTime expected, ZonedDateTime actual) {
+        ZonedDateTime now = ZonedDateTime.now(ZoneId.of("UTC"));
+        return actual != null
+            && (expected.isEqual(actual) || expected.isBefore(actual))
+            && (now.isEqual(actual) || now.isAfter(actual));
     }
 
     @ParameterizedTest
@@ -739,5 +801,77 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
     }
 
+    @ParameterizedTest
+    @MethodSource("dueDateIntervalDaysScenarioProvider")
+    void when_taskId_then_return_dueDateIntervalDays(String taskType, List<Map<String, String>> expected) {
+        VariableMap inputVariables = new VariableMapImpl();
+
+        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        List<Map<String, Object>> dueDateIntervalDaysResultList = dmnDecisionTableResult.getResultList().stream()
+            .filter((r) -> r.containsValue("dueDateIntervalDays"))
+            .collect(Collectors.toList());
+
+        assertEquals(expected, dueDateIntervalDaysResultList);
+    }
+
+    public static Stream<Arguments> dueDateIntervalDaysScenarioProvider() {
+        List<Map<String, String>> fiveDays = List.of(Map.of(
+            "name", "dueDateIntervalDays",
+            "value", "5"
+        ));
+        List<Map<String, String>> twoDays = List.of(Map.of(
+            "name", "dueDateIntervalDays",
+            "value", "2"
+        ));
+        List<Map<String, String>> zeroDays = List.of(Map.of(
+            "name", "dueDateIntervalDays",
+            "value", "0"
+        ));
+        List<Map<String, String>> fourteenDays = List.of(Map.of(
+            "name", "dueDateIntervalDays",
+            "value", "14"
+        ));
+
+        return Stream.of(
+            Arguments.of("processApplication", fiveDays),
+            Arguments.of("processApplicationToReviewDecision", twoDays),
+            Arguments.of("editListing", twoDays),
+            Arguments.of("reviewTheAppeal", twoDays),
+            Arguments.of("decideOnTimeExtension", twoDays),
+            Arguments.of("reviewRespondentEvidence", twoDays),
+            Arguments.of("reviewAdditionalEvidence", twoDays),
+            Arguments.of("reviewAdditionalHomeOfficeEvidence", twoDays),
+            Arguments.of("reviewAppealSkeletonArgument", twoDays),
+            Arguments.of("reviewReasonsForAppeal", twoDays),
+            Arguments.of("reviewClarifyingQuestionsAnswers", twoDays),
+            Arguments.of("reviewCmaRequirements", twoDays),
+            Arguments.of("attendCma", twoDays),
+            Arguments.of("reviewRespondentResponse", twoDays),
+            Arguments.of("caseSummaryHearingBundleStartDecision", twoDays),
+            Arguments.of("reviewHearingRequirements", twoDays),
+            Arguments.of("followUpOverdueRespondentEvidence", twoDays),
+            Arguments.of("followUpExtendedDirection", twoDays),
+            Arguments.of("followUpOverdueCaseBuilding", twoDays),
+            Arguments.of("followUpOverdueReasonsForAppeal", twoDays),
+            Arguments.of("followUpOverdueClarifyingAnswers", twoDays),
+            Arguments.of("followUpOverdueCmaRequirements", twoDays),
+            Arguments.of("followUpOverdueRespondentReview", twoDays),
+            Arguments.of("followUpOverdueHearingRequirements", twoDays),
+            Arguments.of("followUpNonStandardDirection", twoDays),
+            Arguments.of("followUpNoticeOfChange", twoDays),
+            Arguments.of("reviewAddendumEvidence", twoDays),
+            Arguments.of("reviewRemissionApplication", twoDays),
+            Arguments.of("assignAFTPAJudge", twoDays),
+            Arguments.of("listTheCase", twoDays),
+            Arguments.of("reviewHearingBundle", zeroDays),
+            Arguments.of("sendDecisionsAndReasons", zeroDays),
+            Arguments.of("prepareDecisionsAndReasons", zeroDays),
+            Arguments.of("sendPaymentRequest", zeroDays),
+            Arguments.of("markAsPaid", fourteenDays)
+        );
+    }
 }
 
