@@ -684,7 +684,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     }
 
     private ZonedDateTime parseCamundaTimestamp(String datetime) {
-        String[] parts = datetime.split("((?=\\+))");
+        String[] parts = datetime.split("[Z+]");
         String zone = datetime.substring(datetime.indexOf("[") + 1, datetime.lastIndexOf("]"));
         return ZonedDateTime.of(LocalDateTime.parse(parts[0]), ZoneId.of(zone));
     }
