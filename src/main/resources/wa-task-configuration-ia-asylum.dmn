@@ -517,7 +517,7 @@
           <text>"dueDateOrigin"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1olr8gj">
-          <text>string(now())</text>
+          <text>now()</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1jfd9es">
           <text></text>
