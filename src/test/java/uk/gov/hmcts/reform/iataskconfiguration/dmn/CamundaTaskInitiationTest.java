@@ -1229,6 +1229,60 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "submitAppeal",
+                "pendingPayment",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
+                                      + "      \"remissionType\":\"" + "hoWaiverRemission" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewRemissionApplication",
+                        "name", "Review Remission Application",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "submitAppeal",
+                "pendingPayment",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
+                                      + "      \"remissionType\":\"" + "exceptionalCircumstancesRemission" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewRemissionApplication",
+                        "name", "Review Remission Application",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "submitAppeal",
+                "pendingPayment",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
+                                      + "      \"remissionType\":\"" + "helpWithFees" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewRemissionApplication",
+                        "name", "Review Remission Application",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "submitAppeal",
                 "appealSubmitted",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
@@ -1399,6 +1453,60 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
                         "processCategories", "caseProgression"
                     ),
+                    Map.of(
+                        "taskId", "reviewRemissionApplication",
+                        "name", "Review Remission Application",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "submitAppeal",
+                "appealSubmitted",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
+                                      + "      \"remissionType\":\"" + "hoWaiverRemission" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                List.of(
+                    Map.of(
+                        "taskId", "reviewRemissionApplication",
+                        "name", "Review Remission Application",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "submitAppeal",
+                "appealSubmitted",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
+                                      + "      \"remissionType\":\"" + "exceptionalCircumstancesRemission" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                List.of(
+                    Map.of(
+                        "taskId", "reviewRemissionApplication",
+                        "name", "Review Remission Application",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "submitAppeal",
+                "appealSubmitted",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
+                                      + "      \"remissionType\":\"" + "helpWithFees" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                List.of(
                     Map.of(
                         "taskId", "reviewRemissionApplication",
                         "name", "Review Remission Application",

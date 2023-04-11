@@ -1594,7 +1594,7 @@
           <text>"pendingPayment","appealSubmitted"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0vvih2h">
-          <text>"refusalOfHumanRights","refusalOfEu","protection"</text>
+          <text>"refusalOfHumanRights","refusalOfEu","protection","euSettlementScheme"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0bzicnw">
           <text></text>
