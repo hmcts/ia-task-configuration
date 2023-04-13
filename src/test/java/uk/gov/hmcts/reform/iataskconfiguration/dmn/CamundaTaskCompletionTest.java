@@ -342,11 +342,17 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                 asList(
                     Map.of(
                         "completionMode", "Auto",
-                        "taskType", "sendPaymentRequest"
+                        "taskType", "markAsPaid"
                     ),
+                    Collections.emptyMap()
+                )
+            ),
+            Arguments.of(
+                "markPaymentRequestSent",
+                asList(
                     Map.of(
                         "completionMode", "Auto",
-                        "taskType", "markAsPaid"
+                        "taskType", "sendPaymentRequest"
                     ),
                     Collections.emptyMap()
                 )
