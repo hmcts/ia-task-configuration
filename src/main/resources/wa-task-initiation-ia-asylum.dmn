@@ -1702,7 +1702,7 @@
       </rule>
       <rule id="DecisionRule_001rn0b">
         <inputEntry id="UnaryTests_11p0tu7">
-          <text>"reviewHearingRequirements"</text>
+          <text>"reviewHearingRequirements", "listCaseWithoutHearingRequirements"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0lcyhdn">
           <text>"listing"</text>
