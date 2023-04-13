@@ -1540,6 +1540,19 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "listCaseWithoutHearingRequirements",
+                "listing",
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "listTheCase",
+                        "name", "List the case",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
                 "recordRemissionDecision",
                 null,
                 mapAdditionalData("{\n"
