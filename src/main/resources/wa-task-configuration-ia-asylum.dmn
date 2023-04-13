@@ -639,6 +639,23 @@
           <text></text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0jlgetc">
+        <inputEntry id="UnaryTests_1k2ybph">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hyv74b">
+          <text>"markAsPaid"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0tmigm7">
+          <text>"dueDateSkipNonWorkingDays"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0925497">
+          <text>false</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0sztdoj">
+          <text></text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_165bqfp">
         <inputEntry id="UnaryTests_1cy9w2v">
           <text></text>

@@ -70,7 +70,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(29));
+        assertThat(logic.getRules().size(), is(30));
     }
 
     @SuppressWarnings("checkstyle:indentation")
@@ -917,6 +917,29 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             "name", "dueDateNonWorkingDaysOfWeek",
             "value", "SATURDAY,SUNDAY"
         )));
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+        "markAsPaid"
+    })
+    void when_taskId_then_return_due_date_skip_non_working_days_false(String taskType) {
+        VariableMap inputVariables = new VariableMapImpl();
+
+        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        List<Map<String, Object>> dueDateSkipNonWorkingDaysResultList = dmnDecisionTableResult.getResultList().stream()
+            .filter((r) -> r.containsValue("dueDateSkipNonWorkingDays"))
+            .collect(Collectors.toList());
+
+        assertEquals(1, dueDateSkipNonWorkingDaysResultList.size());
+
+        assertEquals(Map.of(
+            "name", "dueDateSkipNonWorkingDays",
+            "value", "false"
+        ), dueDateSkipNonWorkingDaysResultList.get(0));
     }
 }
 
