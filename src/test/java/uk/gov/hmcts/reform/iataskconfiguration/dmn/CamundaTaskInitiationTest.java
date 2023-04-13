@@ -1572,7 +1572,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Mark as Paid",
                         "delayUntil", delayFor12Days,
 
-                        "processCategories", "caseProgression"
+                        "processCategories", "followUpOverdue"
                     )
                 )
             ),
