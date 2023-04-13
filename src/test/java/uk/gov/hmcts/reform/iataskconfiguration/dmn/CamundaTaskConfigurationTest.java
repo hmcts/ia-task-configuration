@@ -767,7 +767,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             + "recordRemissionDecision/recordRemissionDecisionremissionDecision),",
         "assignAFTPAJudge,[Record allocated Judge](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/recordAllocatedJudge),",
         "listTheCase,[List the case](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/listCase),",
-        "sendPaymentRequest,[Mark payment request sent](/cases/case-details/${[CASE_REFERENCE]}#Case%20notes),",
+        "sendPaymentRequest,[Mark payment request sent](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
+            + "markPaymentRequestSent),",
         "markAsPaid,[Mark appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid),",
         "reviewSpecificAccessRequestJudiciary,[Review Access Request](/role-access/"
             + "${[taskId]}/assignment/${[roleAssignmentId]}/specific-access),",
