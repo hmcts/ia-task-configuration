@@ -55,9 +55,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
         Map<String,Object> delayFor12Days = Map.of(
             "delayUntilIntervalDays", "12",
-            "delayUntilNonWorkingCalendar", "https://www.gov.uk/bank-holidays/england-and-wales.json",
-            "delayUntilOrigin", LocalDate.now(),
-            "delayUntilNonWorkingDaysOfWeek", "SATURDAY,SUNDAY"
+            "delayUntilOrigin", LocalDate.now()
         );
 
         return Stream.of(
