@@ -66,7 +66,7 @@
                     </text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1ndtqfy">
-          <text></text>
+          <text>false</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0r3u9cf">
@@ -87,7 +87,7 @@
                     </text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0dwx9qa">
-          <text></text>
+          <text>false</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_06fd9qz">
@@ -178,7 +178,7 @@
                     </text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1oq20o8">
-          <text></text>
+          <text>false</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0ikmf14">
@@ -207,7 +207,7 @@
           <text>"routine_work"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_19npk6t">
-          <text></text>
+          <text>false</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1csczvs">
@@ -245,7 +245,7 @@
           <text>"decision_making_work"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0mhslbm">
-          <text></text>
+          <text>false</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_03n8x3v">
@@ -262,7 +262,7 @@
           <text>"hearing_work"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_02mo95c">
-          <text></text>
+          <text>false</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1mgtmkd">
@@ -290,7 +290,7 @@
           <text>"applications"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1cyayj1">
-          <text></text>
+          <text>false</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_00yasz5">
@@ -307,7 +307,7 @@
           <text>"upper_tribunal"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0bikbnv">
-          <text></text>
+          <text>false</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_00hw86q">
@@ -324,7 +324,7 @@
           <text>"access_requests"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_08zn369">
-          <text></text>
+          <text>false</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_16zvd79">
@@ -341,7 +341,7 @@
           <text>if (taskAttributes !=null and taskAttributes.roleAssignmentId != null) then taskAttributes.roleAssignmentId else "1234"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1q1yppm">
-          <text></text>
+          <text>false</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1dhhpyl">
@@ -385,7 +385,7 @@
           <text>"LEGAL_OPERATIONS"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0cde4ic">
-          <text></text>
+          <text>false</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_01muxrj">
@@ -402,7 +402,7 @@
           <text>"ADMIN"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1exp16h">
-          <text></text>
+          <text>false</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_01cmxvs">
@@ -419,7 +419,7 @@
           <text>"JUDICIAL"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0me2qfr">
-          <text></text>
+          <text>false</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0ubs7r5">
@@ -436,7 +436,7 @@
           <text>"CTSC"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0mrh555">
-          <text></text>
+          <text>false</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1lny4x5">
@@ -503,7 +503,7 @@
           </text>
         </outputEntry>
         <outputEntry id="LiteralExpression_184xf0n">
-          <text></text>
+          <text>false</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_15pnkjv">
@@ -520,7 +520,7 @@
           <text>now()</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1jfd9es">
-          <text></text>
+          <text>false</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1xk0urt">
@@ -537,7 +537,7 @@
           <text>"https://www.gov.uk/bank-holidays/england-and-wales.json"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_15rsx8r">
-          <text></text>
+          <text>false</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0nwq04c">
@@ -554,7 +554,7 @@
           <text>5</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1rv7ncp">
-          <text></text>
+          <text>false</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_087mjzf">
@@ -599,7 +599,7 @@
           <text>2</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_161g7g1">
-          <text></text>
+          <text>false</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_119qnrg">
@@ -619,7 +619,7 @@
           <text>0</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0zkr1zo">
-          <text></text>
+          <text>false</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0ca9xpl">
@@ -636,7 +636,7 @@
           <text>14</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_11bqayr">
-          <text></text>
+          <text>false</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0jlgetc">
@@ -653,7 +653,7 @@
           <text>false</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0sztdoj">
-          <text></text>
+          <text>false</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_165bqfp">
@@ -670,7 +670,7 @@
           <text>5000</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1f4fovi">
-          <text></text>
+          <text>true</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0d4k7a3">
@@ -687,7 +687,7 @@
           <text>500</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1cssjo4">
-          <text></text>
+          <text>true</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1iccxzh">
@@ -704,7 +704,7 @@
           <text>"dueDate"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_16sccu5">
-          <text></text>
+          <text>true</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0n6xlhj">
@@ -721,7 +721,7 @@
           <text>"SATURDAY,SUNDAY"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1omikjm">
-          <text></text>
+          <text>false</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_11jkcdp">
@@ -738,7 +738,7 @@
           <text>"nextHearingDate,dueDate,priorityDate"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_102zbyh">
-          <text></text>
+          <text>false</text>
         </outputEntry>
       </rule>
     </decisionTable>
