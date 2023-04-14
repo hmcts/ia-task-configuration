@@ -62,7 +62,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
         assertEquals(Map.of(
             "name", "workType",
-            "value", "access_requests"
+            "value", "access_requests",
+            "canReconfigure", false
         ), workTypeResultList.get(0));
     }
 
@@ -94,12 +95,14 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
         assertTrue(dmnDecisionTableResult.getResultList().contains(Map.of(
             "name", "appealType",
-            "value", expectedAppealType
+            "value", expectedAppealType,
+            "canReconfigure", false
         )));
 
         assertTrue(dmnDecisionTableResult.getResultList().contains(Map.of(
             "name", "caseManagementCategory",
-            "value", expectedAppealType
+            "value", expectedAppealType,
+            "canReconfigure", false
         )));
     }
 
@@ -151,31 +154,37 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
             assertTrue(dmnDecisionTableResult.getResultList().contains(Map.of(
                 "name", "caseManagementCategory",
-                "value", expectedCaseManagementCategories.get(i)
+                "value", expectedCaseManagementCategories.get(i),
+                "canReconfigure", false
             )));
         }
     }
 
     public static Stream<Arguments> workTypeScenarioProvider() {
-        List<Map<String, String>> routineWork = List.of(Map.of(
+        List<Map<String, Object>> routineWork = List.of(Map.of(
             "name", "workType",
-            "value", "routine_work"
+            "value", "routine_work",
+            "canReconfigure", false
         ));
-        List<Map<String, String>> decisionMakingWork = List.of(Map.of(
+        List<Map<String, Object>> decisionMakingWork = List.of(Map.of(
             "name", "workType",
-            "value", "decision_making_work"
+            "value", "decision_making_work",
+            "canReconfigure", false
         ));
-        List<Map<String, String>> hearingWork = List.of(Map.of(
+        List<Map<String, Object>> hearingWork = List.of(Map.of(
             "name", "workType",
-            "value", "hearing_work"
+            "value", "hearing_work",
+            "canReconfigure", false
         ));
-        List<Map<String, String>> applications = List.of(Map.of(
+        List<Map<String, Object>> applications = List.of(Map.of(
             "name", "workType",
-            "value", "applications"
+            "value", "applications",
+            "canReconfigure", false
         ));
-        List<Map<String, String>> upperTribunal = List.of(Map.of(
+        List<Map<String, Object>> upperTribunal = List.of(Map.of(
             "name", "workType",
-            "value", "upper_tribunal"
+            "value", "upper_tribunal",
+            "canReconfigure", false
         ));
 
         return Stream.of(
@@ -258,7 +267,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
         assertEquals(Map.of(
             "name", "workType",
-            "value", "access_requests"
+            "value", "access_requests",
+            "canReconfigure", false
         ), workTypeResultList.get(0));
     }
 
@@ -285,7 +295,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
         assertTrue(dmnResults.contains(Map.of(
             "name", "additionalProperties_roleAssignmentId",
-            "value", roleAssignmentId
+            "value", roleAssignmentId,
+            "canReconfigure", false
         )));
 
     }
@@ -333,7 +344,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
         assertEquals(Map.of(
             "name", "roleCategory",
-            "value", "JUDICIAL"
+            "value", "JUDICIAL",
+            "canReconfigure", false
         ), workTypeResultList.get(0));
     }
 
@@ -356,7 +368,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
         assertEquals(Map.of(
             "name", "roleCategory",
-            "value", "ADMIN"
+            "value", "ADMIN",
+            "canReconfigure", false
         ), workTypeResultList.get(0));
     }
 
@@ -379,7 +392,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
         assertEquals(Map.of(
             "name", "roleCategory",
-            "value", "CTSC"
+            "value", "CTSC",
+            "canReconfigure", false
         ), workTypeResultList.get(0));
     }
 
@@ -409,7 +423,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
         assertEquals(Map.of(
             "name", "roleCategory",
-            "value", "LEGAL_OPERATIONS"
+            "value", "LEGAL_OPERATIONS",
+            "canReconfigure", false
         ), workTypeResultList.get(0));
     }
 
@@ -659,9 +674,12 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         if (!Objects.isNull(scenario.getExpectedDueDateIntervalDays())) {
             getExpectedValue(rules, "dueDateIntervalDays", scenario.getExpectedDueDateIntervalDays());
         }
-        getExpectedValue(rules, "majorPriority", String.valueOf(5000));
-        getExpectedValue(rules, "minorPriority", String.valueOf(500));
-        getExpectedValue(rules, "priorityDateOriginRef", "dueDate");
+        getExpectedValueWithReconfigure(rules, "majorPriority", String.valueOf(5000),
+                                        scenario.getExpectedReconfigureValue());
+        getExpectedValueWithReconfigure(rules, "minorPriority", String.valueOf(500),
+                                        scenario.getExpectedReconfigureValue());
+        getExpectedValueWithReconfigure(rules, "priorityDateOriginRef", "dueDate",
+                                        scenario.getExpectedReconfigureValue());
         getExpectedValue(rules, "dueDateNonWorkingDaysOfWeek", "SATURDAY,SUNDAY");
         getExpectedValue(rules, "calculatedDates", "nextHearingDate,dueDate,priorityDate");
         return rules;
@@ -671,6 +689,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         Map<String, Object> rule = new HashMap<>();
         rule.put("name", name);
         rule.put("value", value);
+        rule.put("canReconfigure", false);
         rules.add(rule);
     }
 
@@ -803,7 +822,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         assertEquals(Map.of(
             "name", "description",
             "value", expectedDescription
-                .replace("${[roleAssignmentId]}", roleAssignmentId).replace("${[taskId]}", taskId)
+                .replace("${[roleAssignmentId]}", roleAssignmentId).replace("${[taskId]}", taskId),
+            "canReconfigure", false
         ), descriptionList.get(0));
 
     }
@@ -825,21 +845,25 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     }
 
     public static Stream<Arguments> dueDateIntervalDaysScenarioProvider() {
-        List<Map<String, String>> fiveDays = List.of(Map.of(
+        List<Map<String, Object>> fiveDays = List.of(Map.of(
             "name", "dueDateIntervalDays",
-            "value", "5"
+            "value", "5",
+            "canReconfigure", false
         ));
-        List<Map<String, String>> twoDays = List.of(Map.of(
+        List<Map<String, Object>> twoDays = List.of(Map.of(
             "name", "dueDateIntervalDays",
-            "value", "2"
+            "value", "2",
+            "canReconfigure", false
         ));
-        List<Map<String, String>> zeroDays = List.of(Map.of(
+        List<Map<String, Object>> zeroDays = List.of(Map.of(
             "name", "dueDateIntervalDays",
-            "value", "0"
+            "value", "0",
+            "canReconfigure", false
         ));
-        List<Map<String, String>> fourteenDays = List.of(Map.of(
+        List<Map<String, Object>> fourteenDays = List.of(Map.of(
             "name", "dueDateIntervalDays",
-            "value", "14"
+            "value", "14",
+            "canReconfigure", false
         ));
 
         return Stream.of(
@@ -891,17 +915,20 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
         assertTrue(dmnDecisionTableResult.getResultList().contains(Map.of(
             "name", "priorityDateOriginRef",
-            "value", "dueDate"
+            "value", "dueDate",
+            "canReconfigure", true
         )));
 
         assertTrue(dmnDecisionTableResult.getResultList().contains(Map.of(
             "name", "minorPriority",
-            "value", "500"
+            "value", "500",
+            "canReconfigure", true
         )));
 
         assertTrue(dmnDecisionTableResult.getResultList().contains(Map.of(
             "name", "majorPriority",
-            "value", "5000"
+            "value", "5000",
+            "canReconfigure", true
         )));
     }
 
@@ -915,7 +942,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
         assertTrue(dmnDecisionTableResult.getResultList().contains(Map.of(
             "name", "dueDateNonWorkingDaysOfWeek",
-            "value", "SATURDAY,SUNDAY"
+            "value", "SATURDAY,SUNDAY",
+            "canReconfigure", false
         )));
     }
 
@@ -938,7 +966,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
         assertEquals(Map.of(
             "name", "dueDateSkipNonWorkingDays",
-            "value", "false"
+            "value", "false",
+            "canReconfigure", false
         ), dueDateSkipNonWorkingDaysResultList.get(0));
     }
 }
