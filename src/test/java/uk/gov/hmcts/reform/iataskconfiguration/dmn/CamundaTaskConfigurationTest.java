@@ -674,12 +674,9 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         if (!Objects.isNull(scenario.getExpectedDueDateIntervalDays())) {
             getExpectedValue(rules, "dueDateIntervalDays", scenario.getExpectedDueDateIntervalDays());
         }
-        getExpectedValueWithReconfigure(rules, "majorPriority", String.valueOf(5000),
-                                        scenario.getExpectedReconfigureValue());
-        getExpectedValueWithReconfigure(rules, "minorPriority", String.valueOf(500),
-                                        scenario.getExpectedReconfigureValue());
-        getExpectedValueWithReconfigure(rules, "priorityDateOriginRef", "dueDate",
-                                        scenario.getExpectedReconfigureValue());
+        getExpectedValue(rules, "majorPriority", String.valueOf(5000));
+        getExpectedValue(rules, "minorPriority", String.valueOf(500));
+        getExpectedValue(rules, "priorityDateOriginRef", "dueDate");
         getExpectedValue(rules, "dueDateNonWorkingDaysOfWeek", "SATURDAY,SUNDAY");
         getExpectedValue(rules, "calculatedDates", "nextHearingDate,dueDate,priorityDate");
         return rules;
@@ -916,19 +913,19 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         assertTrue(dmnDecisionTableResult.getResultList().contains(Map.of(
             "name", "priorityDateOriginRef",
             "value", "dueDate",
-            "canReconfigure", true
+            "canReconfigure", false
         )));
 
         assertTrue(dmnDecisionTableResult.getResultList().contains(Map.of(
             "name", "minorPriority",
             "value", "500",
-            "canReconfigure", true
+            "canReconfigure", false
         )));
 
         assertTrue(dmnDecisionTableResult.getResultList().contains(Map.of(
             "name", "majorPriority",
             "value", "5000",
-            "canReconfigure", true
+            "canReconfigure", false
         )));
     }
 
