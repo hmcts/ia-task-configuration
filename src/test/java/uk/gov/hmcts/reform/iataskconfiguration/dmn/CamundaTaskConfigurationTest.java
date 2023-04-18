@@ -38,7 +38,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
     private static final String DEFAULT_CALENDAR = "https://www.gov.uk/bank-holidays/england-and-wales.json";
     private static final String EXTRA_TEST_CALENDAR = "https://raw.githubusercontent.com/hmcts/"
-        + "ia-task-configuration/master/src/test/resources/override-working-day-calendar.json";
+        + "ia-task-configuration/master/src/test/resources/extra-non-working-day-calendar.json";
 
     @BeforeAll
     public static void initialization() {
