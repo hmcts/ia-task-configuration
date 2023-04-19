@@ -253,7 +253,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1ps3x4j">
-          <text>"reviewHearingBundle","generateDraftDecisionAndReasons","uploadDecision","uploadHearingRecording","editListing","followUpOverdueHearingRequirements","reviewHearingRequirements","allocateHearingJudge","prepareDecisionsAndReasons","startDecisionsAndReasonsDocument","createHearingBundle","createCaseSummary","listTheCase","editListingChangeHC"</text>
+          <text>"reviewHearingBundle","generateDraftDecisionAndReasons","uploadDecision","uploadHearingRecording","editListing","followUpOverdueHearingRequirements","reviewHearingRequirements","allocateHearingJudge","prepareDecisionsAndReasons","startDecisionsAndReasonsDocument","createHearingBundle","createCaseSummary","listTheCase"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0c3eia6">
           <text>"workType"</text>
@@ -393,7 +393,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1glizm3">
-          <text>"arrangeOfflinePayment","markCaseAsPaid","allocateHearingJudge","uploadHearingRecording","editListing","editListingChangeHC"</text>
+          <text>"arrangeOfflinePayment","markCaseAsPaid","allocateHearingJudge","uploadHearingRecording","editListing"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1131kat">
           <text>"roleCategory"</text>
@@ -489,7 +489,6 @@
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "generateDraftDecisionAndReasons" or taskType != null and taskType = "generateDraftDecisionAndReasons")	then "[Generate the draft decisions and reasons document](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/generateDecisionAndReasons)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewAddendumEvidence" or taskType != null and taskType = "reviewAddendumEvidence") then "[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAddendumEvidenceAsReviewed)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "editListing" or taskType != null and taskType = "editListing") then "[Edit case listing](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/editCaseListing)"
-                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "editListingChangeHC" or taskType != null and taskType = "editListingChangeHC") then "[Edit case listing](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/editCaseListing)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "prepareDecisionsAndReasons" or taskType != null and taskType = "prepareDecisionsAndReasons") then "[Prepare decisions and reasons](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/generateDecisionAndReasons)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "decideAnFTPA" or taskType != null and taskType = "decideAnFTPA") then "[Leadership judge FTPA decision](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/leadershipJudgeFtpaDecision)&lt;br /&gt;[Resident judge FTPA decision](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/residentJudgeFtpaDecision)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "sendDecisionsAndReasons" or taskType != null and taskType = "sendDecisionsAndReasons") then "[Complete decision and reasons](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDecisionAndReasons)"
@@ -611,11 +610,7 @@
           <text>"reviewHearingBundle",
 "sendDecisionsAndReasons",
 "prepareDecisionsAndReasons",
-"sendPaymentRequest",
-"uploadHearingRecording",
-"decideAnFTPA",
-"allocateHearingJudge",
-"editListingChangeHC"</text>
+"sendPaymentRequest"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ssbj4t">
           <text>"dueDateIntervalDays"</text>

@@ -225,7 +225,6 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("uploadDecision", hearingWork),
             Arguments.of("uploadHearingRecording", hearingWork),
             Arguments.of("editListing", hearingWork),
-            Arguments.of("editListingChangeHC", hearingWork),
             Arguments.of("followUpOverdueHearingRequirements", hearingWork),
             Arguments.of("reviewHearingRequirements", hearingWork),
             Arguments.of("allocateHearingJudge", hearingWork),
@@ -354,8 +353,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
     @ParameterizedTest
     @CsvSource({
-        "arrangeOfflinePayment", "markCaseAsPaid", "allocateHearingJudge", "uploadHearingRecording", "editListing",
-        "editListingChangeHC"
+        "arrangeOfflinePayment", "markCaseAsPaid", "allocateHearingJudge", "uploadHearingRecording", "editListing"
     })
     void when_taskId_then_return_Admin_role_category(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
@@ -774,7 +772,6 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "reviewAddendumEvidence,[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
             + "markAddendumEvidenceAsReviewed),",
         "editListing,[Edit case listing](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/editCaseListing),",
-        "editListingChangeHC,[Edit case listing](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/editCaseListing),",
         "decideAnFTPA,[Leadership judge FTPA decision](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
             + "leadershipJudgeFtpaDecision)<br />"
             + "[Resident judge FTPA decision](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/residentJudgeFtpaDecision),",
@@ -903,9 +900,6 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("sendDecisionsAndReasons", zeroDays),
             Arguments.of("prepareDecisionsAndReasons", zeroDays),
             Arguments.of("sendPaymentRequest", zeroDays),
-            Arguments.of("uploadHearingRecording", zeroDays),
-            Arguments.of("decideAnFTPA", zeroDays),
-            Arguments.of("allocateHearingJudge", zeroDays),
             Arguments.of("markAsPaid", fourteenDays)
         );
     }
