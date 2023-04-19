@@ -969,7 +969,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 null,
                 singletonList(
                     Map.of(
-                        "taskId", "editListingChangeHC",
+                        "taskId", "editListing",
                         "name", "Edit listing",
 
                         "processCategories", "caseProgression"
@@ -982,7 +982,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 null,
                 singletonList(
                     Map.of(
-                        "taskId", "editListingChangeHC",
+                        "taskId", "editListing",
                         "name", "Edit listing",
 
                         "processCategories", "caseProgression"
@@ -995,7 +995,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 null,
                 singletonList(
                     Map.of(
-                        "taskId", "editListingChangeHC",
+                        "taskId", "editListing",
                         "name", "Edit listing",
 
                         "processCategories", "caseProgression"
@@ -1008,7 +1008,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 null,
                 List.of(
                     Map.of(
-                        "taskId", "editListingChangeHC",
+                        "taskId", "editListing",
                         "name", "Edit listing",
 
                         "processCategories", "caseProgression"

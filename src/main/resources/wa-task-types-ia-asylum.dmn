@@ -42,17 +42,6 @@
           <text>"Edit Listing"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0cpcwlf">
-        <inputEntry id="UnaryTests_02gdgzt">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0qfaryr">
-          <text>"editListingChangeHC"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1aw6hdq">
-          <text>"Edit Listing"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_1piglun">
         <inputEntry id="UnaryTests_1541sx9">
           <text></text>
