@@ -199,7 +199,8 @@
                         "reviewClarifyingQuestionsAnswers",
                         "reviewCaseTransferredOutOfADA",
                         "reviewCaseMarkedUnsuitableForADA",
-                        "adaListCase"
+                        "adaListCase",
+                        "adaCreateHearingBundle"
                     </text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0rvgay2">
@@ -418,7 +419,8 @@
                         "followUpExtendedDirection",
                         "adaFollowUpExtendedDirection",
                         "reviewCaseTransferredOutOfADA",
-                        "reviewCaseMarkedUnsuitableForADA"
+                        "reviewCaseMarkedUnsuitableForADA",
+                        "adaCreateHearingBundle"
                     </text>
         </inputEntry>
         <outputEntry id="LiteralExpression_05l5bvs">
