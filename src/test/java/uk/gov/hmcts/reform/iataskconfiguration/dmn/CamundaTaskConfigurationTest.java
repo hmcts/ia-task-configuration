@@ -73,7 +73,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(30));
+        assertThat(logic.getRules().size(), is(31));
     }
 
     @SuppressWarnings("checkstyle:indentation")
@@ -849,6 +849,11 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             "value", "5",
             "canReconfigure", false
         ));
+        List<Map<String, Object>> threeDays = List.of(Map.of(
+            "name", "dueDateIntervalDays",
+            "value", "3",
+            "canReconfigure", false
+        ));
         List<Map<String, Object>> twoDays = List.of(Map.of(
             "name", "dueDateIntervalDays",
             "value", "2",
@@ -867,6 +872,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
         return Stream.of(
             Arguments.of("processApplication", fiveDays),
+            Arguments.of("allocateHearingJudge", threeDays),
             Arguments.of("processApplicationToReviewDecision", twoDays),
             Arguments.of("editListing", twoDays),
             Arguments.of("reviewTheAppeal", twoDays),
@@ -900,6 +906,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("sendDecisionsAndReasons", zeroDays),
             Arguments.of("prepareDecisionsAndReasons", zeroDays),
             Arguments.of("sendPaymentRequest", zeroDays),
+            Arguments.of("uploadHearingRecording", zeroDays),
+            Arguments.of("decideAnFTPA", zeroDays),
             Arguments.of("markAsPaid", fourteenDays)
         );
     }

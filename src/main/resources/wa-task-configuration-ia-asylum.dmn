@@ -610,7 +610,9 @@
           <text>"reviewHearingBundle",
 "sendDecisionsAndReasons",
 "prepareDecisionsAndReasons",
-"sendPaymentRequest"</text>
+"sendPaymentRequest",
+"uploadHearingRecording",
+"decideAnFTPA"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ssbj4t">
           <text>"dueDateIntervalDays"</text>
@@ -619,6 +621,23 @@
           <text>0</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0zkr1zo">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1sax75r">
+        <inputEntry id="UnaryTests_1b0k7fa">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ss35tl">
+          <text>"allocateHearingJudge"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0r6yt12">
+          <text>"dueDateIntervalDays"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_01trnsy">
+          <text>3</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04lsvsa">
           <text>false</text>
         </outputEntry>
       </rule>
