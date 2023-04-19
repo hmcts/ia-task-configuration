@@ -34,6 +34,7 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                    "taskTypeName", "Process Application to Review Decision"
             ),
             Map.of("taskTypeId", "editListing", "taskTypeName", "Edit Listing"),
+            Map.of("taskTypeId", "editListingChangeHC", "taskTypeName", "Edit Listing"),
             Map.of("taskTypeId", "reviewTheAppeal", "taskTypeName", "Review the appeal"),
             Map.of("taskTypeId", "reviewRespondentEvidence", "taskTypeName", "Review Respondent Evidence"),
             Map.of("taskTypeId", "reviewAdditionalEvidence", "taskTypeName", "Review additional evidence"),
@@ -117,7 +118,7 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(1));
         assertThat(logic.getOutputs().size(), is(2));
-        assertThat(logic.getRules().size(), is(34));
+        assertThat(logic.getRules().size(), is(35));
 
     }
 

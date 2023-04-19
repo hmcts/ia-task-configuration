@@ -269,9 +269,13 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "editCaseListing",
-                List.of(
+                asList(
                     Map.of(
                         "taskType", "editListing",
+                        "completionMode", "Auto"
+                    ),
+                    Map.of(
+                        "taskType", "editListingChangeHC",
                         "completionMode", "Auto"
                     ),
                     Collections.emptyMap()
@@ -292,16 +296,6 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                 asList(
                     Map.of(
                         "taskType", "prepareDecisionsAndReasons",
-                        "completionMode", "Auto"
-                    ),
-                    Collections.emptyMap()
-                )
-            ),
-            Arguments.of(
-                "editCaseListing",
-                asList(
-                    Map.of(
-                        "taskType", "editListing",
                         "completionMode", "Auto"
                     ),
                     Collections.emptyMap()
@@ -380,7 +374,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
 
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(27));
+        assertThat(logic.getRules().size(), is(28));
 
     }
 

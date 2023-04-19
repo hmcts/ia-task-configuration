@@ -268,7 +268,8 @@
           <text>
             "allocateHearingJudge",
             "uploadHearingRecording",
-            "editListing"
+            "editListing",
+            "editListingChangeHC"
           </text>
         </inputEntry>
         <inputEntry id="UnaryTests_1sw9xpj">
@@ -301,7 +302,8 @@
           <text>
             "reviewHearingBundle",
             "reviewAddendumEvidence",
-            "editListing"
+            "editListing",
+            "editListingChangeHC"
 </text>
         </inputEntry>
         <inputEntry id="UnaryTests_190pyoc">
@@ -334,7 +336,8 @@
           <text>
             "reviewHearingBundle",
             "reviewAddendumEvidence",
-            "editListing"
+            "editListing",
+            "editListingChangeHC"
 </text>
         </inputEntry>
         <inputEntry id="UnaryTests_055yime">

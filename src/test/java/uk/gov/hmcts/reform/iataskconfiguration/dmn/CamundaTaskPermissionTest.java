@@ -233,6 +233,15 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "editListingChangeHC",
+                List.of(
+                    taskSupervisor,
+                    hearingCentreAdminPriorityOne,
+                    tribunalCaseWorkerPriorityTwo,
+                    seniorCaseWorkerPriorityTwo
+                )
+            ),
+            Arguments.of(
                 "processApplicationToReviewDecision",
                 List.of(
                     taskSupervisor,
@@ -422,7 +431,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
     @SuppressWarnings("checkstyle:indentation")
     @ParameterizedTest
     @CsvSource(value = {
-        "editListing"
+        "editListing","editListingChangeHC"
     })
     void given_taskType_when_evaluate_dmn_then_it_returns_expected(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();

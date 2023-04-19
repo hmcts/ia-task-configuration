@@ -185,6 +185,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_05c4a9k">
+        <inputEntry id="UnaryTests_1x2py6v">
+          <text>"editCaseListing"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0olkpmf">
+          <text>"editListingChangeHC"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1395hbw">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0sfe37n">
         <inputEntry id="UnaryTests_1selz0c">
           <text>"sendDecisionAndReasons"</text>
