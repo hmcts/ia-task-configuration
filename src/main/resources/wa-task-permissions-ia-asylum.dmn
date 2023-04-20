@@ -101,7 +101,8 @@
             "adaFollowUpExtendedDirection",
             "adaReviewAdditionalEvidence",
             "reviewCaseTransferredOutOfADA",
-            "reviewCaseMarkedUnsuitableForADA"</text>
+            "reviewCaseMarkedUnsuitableForADA",
+            "adaCreateHearingBundle"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0buofva">
           <text></text>
@@ -134,7 +135,7 @@
           <text>"reviewTheAppeal","adaReviewTheAppeal","reviewRespondentEvidence","adaReviewRespondentEvidence","followUpOverdueRespondentEvidence","adaFollowUpOverdueRespondentEvidence","reviewAppealSkeletonArgument","adaReviewAppealSkeletonArgument","followUpOverdueCaseBuilding","adaFollowUpOverdueCaseBuilding","reviewReasonsForAppeal","followUpOverdueReasonsForAppeal","reviewClarifyingQuestionsAnswers","followUpOverdueClarifyingAnswers","reviewRespondentResponse","followUpOverdueRespondentReview","adaFollowUpOverdueRespondentReview","reviewHearingRequirements","followUpOverdueHearingRequirements","reviewCmaRequirements","caseSummaryHearingBundleStartDecision","adaCaseSummaryHearingBundleStartDecision","processApplication","adaProcessApplicationToUpdateHearingRequirements","adaProcessApplicationToUpdateAppealDetails","adaProcessApplicationToReinstateAnEndedAppeal","adaProcessApplicationToOther","adaLinkUnlinkAppeals","attendCma","startDecisionsAndReasons","followUpNoticeOfChange","adaFollowUpNoticeOfChange","followUpOverdueCmaRequirements","followUpNonStandardDirection","adaFollowUpNonStandardDirection","decideOnTimeExtension","reviewAdditionalEvidence","adaReviewAdditionalEvidence","reviewAdditionalHomeOfficeEvidence","adaReviewAdditionalHomeOfficeEvidence",
             "followUpExtendedDirection","adaFollowUpExtendedDirection",
             "startDecisionsAndReasonsDocument","createHearingBundle","createCaseSummary",
-            "reviewCaseTransferredOutOfADA","reviewCaseMarkedUnsuitableForADA"</text>
+            "reviewCaseTransferredOutOfADA","reviewCaseMarkedUnsuitableForADA","adaCreateHearingBundle"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_10s330p">
           <text></text>
@@ -209,7 +210,8 @@
             "followUpExtendedDirection",
             "adaFollowUpExtendedDirection",
             "reviewCaseTransferredOutOfADA",
-            "reviewCaseMarkedUnsuitableForADA"
+            "reviewCaseMarkedUnsuitableForADA",
+            "adaCreateHearingBundle"
           </text>
         </inputEntry>
         <inputEntry id="UnaryTests_18tqbn3">

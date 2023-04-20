@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.7.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.2.0">
   <decision id="wa-task-initiation-ia-asylum" name="Task initiation DMN">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT" biodi:annotationsWidth="400">
       <input id="Input_1" label="Event Id" biodi:width="515" camunda:inputVariable="eventId">
@@ -3173,6 +3173,47 @@ else 0</text>
           <text>0</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_07bbn5u">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1etm66m">
+        <inputEntry id="UnaryTests_176kxpw">
+          <text>"adaSuitabilityReview"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1f9i4wz">
+          <text>"prepareForHearing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fwct0d">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_02l9e5u">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0pwydyq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qn6cff">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0soabcu">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1mo59b0">
+          <text>"suitable"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0jqz8uh">
+          <text>"adaCreateHearingBundle"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ucgy2k">
+          <text>"ADA-Create Hearing Bundle"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1apn0as">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ovp75v">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1trxofx">
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
