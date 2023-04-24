@@ -3217,6 +3217,47 @@ else 0</text>
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1p8yunm">
+        <inputEntry id="UnaryTests_0d5r0cy">
+          <text>"applyForFTPAAppellant", "applyForFTPARespondent"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_155l3b4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_151bcni">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10gcnx1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nxvbas">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0oh2wad">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_02y9x53">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_02f5ofr">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0z6b2nt">
+          <text>"adaAllocateFTPAJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0bvbm7p">
+          <text>"ADA-allocateFTPAJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_16nffn7">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_11h87wn">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0e0yyas">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

@@ -267,7 +267,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1ps3x4j">
-          <text>"reviewHearingBundle","adaReviewHearingBundle","generateDraftDecisionAndReasons","uploadDecision","uploadHearingRecording","editListing","followUpOverdueHearingRequirements","reviewHearingRequirements","allocateHearingJudge","prepareDecisionsAndReasons","adaPrepareDecisionsAndReasons","startDecisionsAndReasonsDocument","createHearingBundle","createCaseSummary","adaEditListing","adaAllocateHearingJudge","adaUploadHearingRecording"</text>
+          <text>"reviewHearingBundle","adaReviewHearingBundle","generateDraftDecisionAndReasons","uploadDecision","uploadHearingRecording","editListing","followUpOverdueHearingRequirements","reviewHearingRequirements","allocateHearingJudge","prepareDecisionsAndReasons","adaPrepareDecisionsAndReasons","startDecisionsAndReasonsDocument","createHearingBundle","createCaseSummary","adaEditListing","adaAllocateHearingJudge","adaUploadHearingRecording","adaAllocateFTPAJudge"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0c3eia6">
           <text>"workType"</text>
@@ -420,7 +420,8 @@
                         "adaFollowUpExtendedDirection",
                         "reviewCaseTransferredOutOfADA",
                         "reviewCaseMarkedUnsuitableForADA",
-                        "adaCreateHearingBundle"
+                        "adaCreateHearingBundle",
+                        "adaAllocateFTPAJudge"
                     </text>
         </inputEntry>
         <outputEntry id="LiteralExpression_05l5bvs">
@@ -555,6 +556,7 @@
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "adaProcessApplicationToReviewDecision" or taskType != null and taskType = "adaProcessApplicationToReviewDecision") then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewCaseMarkedUnsuitableForADA" or taskType != null and taskType = "reviewCaseMarkedUnsuitableForADA") then "[Transfer the appeal out of the ADA process](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/transferOutOfAda)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewADASuitability" or taskType != null and taskType = "reviewADASuitability") then "[Review ADA suitability](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/adaSuitabilityReview)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "adaAllocateFTPAJudge" or taskType != null and taskType ="adaAllocateFTPAJudge") then "[Allocate FTPA Judge](/role-access/allocate-role/allocate?caseId=${[CASE_REFERENCE]}&amp;roleCategory=JUDICIAL&amp;jurisdiction=IA)"
                         else if (taskAttributes != null and taskAttributes.taskId != null and taskAttributes.roleAssignmentId != null) then "[Review Access Request](/role-access/" + taskAttributes.taskId + "/assignment/" + taskAttributes.roleAssignmentId + "/specific-access)"
                         else ""
           </text>

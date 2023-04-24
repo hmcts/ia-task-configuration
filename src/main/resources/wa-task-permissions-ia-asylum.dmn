@@ -102,7 +102,8 @@
             "adaReviewAdditionalEvidence",
             "reviewCaseTransferredOutOfADA",
             "reviewCaseMarkedUnsuitableForADA",
-            "adaCreateHearingBundle"</text>
+            "adaCreateHearingBundle",
+            "adaAllocateFTPAJudge"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0buofva">
           <text></text>
@@ -135,7 +136,7 @@
           <text>"reviewTheAppeal","adaReviewTheAppeal","reviewRespondentEvidence","adaReviewRespondentEvidence","followUpOverdueRespondentEvidence","adaFollowUpOverdueRespondentEvidence","reviewAppealSkeletonArgument","adaReviewAppealSkeletonArgument","followUpOverdueCaseBuilding","adaFollowUpOverdueCaseBuilding","reviewReasonsForAppeal","followUpOverdueReasonsForAppeal","reviewClarifyingQuestionsAnswers","followUpOverdueClarifyingAnswers","reviewRespondentResponse","followUpOverdueRespondentReview","adaFollowUpOverdueRespondentReview","reviewHearingRequirements","followUpOverdueHearingRequirements","reviewCmaRequirements","caseSummaryHearingBundleStartDecision","adaCaseSummaryHearingBundleStartDecision","processApplication","adaProcessApplicationToUpdateHearingRequirements","adaProcessApplicationToUpdateAppealDetails","adaProcessApplicationToReinstateAnEndedAppeal","adaProcessApplicationToOther","adaLinkUnlinkAppeals","attendCma","startDecisionsAndReasons","followUpNoticeOfChange","adaFollowUpNoticeOfChange","followUpOverdueCmaRequirements","followUpNonStandardDirection","adaFollowUpNonStandardDirection","decideOnTimeExtension","reviewAdditionalEvidence","adaReviewAdditionalEvidence","reviewAdditionalHomeOfficeEvidence","adaReviewAdditionalHomeOfficeEvidence",
             "followUpExtendedDirection","adaFollowUpExtendedDirection",
             "startDecisionsAndReasonsDocument","createHearingBundle","createCaseSummary",
-            "reviewCaseTransferredOutOfADA","reviewCaseMarkedUnsuitableForADA","adaCreateHearingBundle"</text>
+            "reviewCaseTransferredOutOfADA","reviewCaseMarkedUnsuitableForADA","adaCreateHearingBundle","adaAllocateFTPAJudge"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_10s330p">
           <text></text>
@@ -211,7 +212,8 @@
             "adaFollowUpExtendedDirection",
             "reviewCaseTransferredOutOfADA",
             "reviewCaseMarkedUnsuitableForADA",
-            "adaCreateHearingBundle"
+            "adaCreateHearingBundle",
+            "adaAllocateFTPAJudge"
           </text>
         </inputEntry>
         <inputEntry id="UnaryTests_18tqbn3">
