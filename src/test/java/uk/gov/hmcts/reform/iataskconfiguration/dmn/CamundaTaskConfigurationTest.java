@@ -224,6 +224,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("uploadDecision", hearingWork),
             Arguments.of("uploadHearingRecording", hearingWork),
             Arguments.of("adaUploadHearingRecording", hearingWork),
+            Arguments.of("adaAllocateFTPAJudge", hearingWork),
             Arguments.of("editListing", hearingWork),
             Arguments.of("adaEditListing", hearingWork),
             Arguments.of("followUpOverdueHearingRequirements", hearingWork),
@@ -408,7 +409,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "followUpNonStandardDirection", "followUpNoticeOfChange", "reviewAdditionalEvidence",
         "reviewAdditionalHomeOfficeEvidence","followUpExtendedDirection", "adaFollowUpExtendedDirection",
         "adaReviewAdditionalEvidence", "adaReviewAdditionalHomeOfficeEvidence","reviewCaseTransferredOutOfADA",
-        "reviewCaseMarkedUnsuitableForADA","adaCreateHearingBundle"
+        "reviewCaseMarkedUnsuitableForADA","adaCreateHearingBundle","adaAllocateFTPAJudge"
     })
     void when_taskId_then_return_legal_operations_role_category(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
@@ -766,6 +767,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             + "(/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/transferOutOfAda),",
         "reviewADASuitability,[Review ADA suitability](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
             + "adaSuitabilityReview),",
+        "adaAllocateFTPAJudge," + "[Allocate FTPA Judge](/role-access/allocate-role/allocate?caseId="
+            + "${[CASE_REFERENCE]}&roleCategory=JUDICIAL&jurisdiction=IA),",
         "reviewSpecificAccessRequestJudiciary,[Review Access Request](/role-access/"
             + "${[taskId]}/assignment/${[roleAssignmentId]}/specific-access),",
         "reviewSpecificAccessRequestLegalOps,[Review Access Request](/role-access/"
