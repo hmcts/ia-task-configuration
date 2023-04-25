@@ -7,6 +7,13 @@
       "notes": "",
       "bunting": true,
       "working_day": false
+    },
+    {
+      "title": "Test non working day 2",
+      "date": "2023-04-27",
+      "notes": "",
+      "bunting": true,
+      "working_day": false
     }
   ]
 }
