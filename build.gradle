@@ -237,24 +237,12 @@ repositories {
 }
 
 def versions = [
-  junit           : '5.8.2',
-  junitPlatform   : '1.7.2',
   reformLogging   : '5.1.7',
   springfoxSwagger: '2.9.2',
   camunda         : '7.15.0',
   pitest          : '1.5.2',
   sonarPitest     : '0.5',
   log4j           : '2.17.1'
-]
-
-ext.libraries = [
-  junit5: [
-    "org.junit.jupiter:junit-jupiter-api:${versions.junit}",
-    "org.junit.jupiter:junit-jupiter-engine:${versions.junit}",
-    "org.junit.jupiter:junit-jupiter-params:${versions.junit}",
-    "org.junit.platform:junit-platform-commons:${versions.junitPlatform}",
-    "org.junit.platform:junit-platform-engine:${versions.junitPlatform}"
-  ]
 ]
 
 dependencies {
@@ -275,13 +263,8 @@ dependencies {
   testCompile group: 'org.pitest', name: 'pitest', version: versions.pitest
   testCompile 'info.solidsoft.gradle.pitest:gradle-pitest-plugin:1.5.2'
 
-  testCompile "org.junit.vintage:junit-vintage-engine:${versions.junit}"
   testCompile group: 'org.codehaus.sonar-plugins', name: 'sonar-pitest-plugin', version: versions.sonarPitest
-  testImplementation libraries.junit5
-  testImplementation group: 'org.springframework.boot', name: 'spring-boot-starter-test', {
-    exclude group: 'junit', module: 'junit'
-    exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-  }
+  testImplementation group: 'org.springframework.boot', name: 'spring-boot-starter-test'
 
   testImplementation group: 'org.camunda.bpm.dmn', name: 'camunda-engine-dmn', version: versions.camunda
   testImplementation group: 'org.camunda.bpm.assert', name: 'camunda-bpm-assert', version: '8.0.0'
