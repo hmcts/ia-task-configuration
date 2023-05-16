@@ -122,6 +122,20 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         "value", "Read,Own,Claim,Cancel"
     );
 
+    private static final Map<String, Serializable> ctscAdminPriorityOne = Map.of(
+        "autoAssignable", false,
+        "name", "ctsc",
+        "roleCategory", "CTSC",
+        "value", "Read,Own,Claim,Manage,Unassign,Assign,Complete,Cancel"
+    );
+
+    private static final Map<String, Serializable> ctscTeamLeaderPriorityOne = Map.of(
+        "autoAssignable", false,
+        "name", "ctsc-team-leader",
+        "roleCategory", "CTSC",
+        "value", "Read,Own,Claim,Manage,Unassign,Assign,Complete,Cancel"
+    );
+
     @BeforeAll
     public static void initialization() {
         CURRENT_DMN_DECISION_TABLE = WA_TASK_PERMISSIONS_IA_ASYLUM;
@@ -129,6 +143,46 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
 
     public static Stream<Arguments> genericScenarioProvider() {
         return Stream.of(
+            Arguments.of(
+                "markAsPaid",
+                List.of(
+                    taskSupervisor,
+                    ctscAdminPriorityOne,
+                    ctscTeamLeaderPriorityOne
+                )
+            ),
+            Arguments.of(
+                "sendPaymentRequest",
+                List.of(
+                    taskSupervisor,
+                    ctscAdminPriorityOne,
+                    ctscTeamLeaderPriorityOne
+                )
+            ),
+            Arguments.of(
+                "listTheCase",
+                List.of(
+                    taskSupervisor,
+                    ctscAdminPriorityOne,
+                    ctscTeamLeaderPriorityOne
+                )
+            ),
+            Arguments.of(
+                "assignAFTPAJudge",
+                List.of(
+                    taskSupervisor,
+                    ctscAdminPriorityOne,
+                    ctscTeamLeaderPriorityOne
+                )
+            ),
+            Arguments.of(
+                "reviewRemissionApplication",
+                List.of(
+                    taskSupervisor,
+                    ctscAdminPriorityOne,
+                    ctscTeamLeaderPriorityOne
+                )
+            ),
             Arguments.of(
                 "decideAnFTPA",
                 List.of(
@@ -492,7 +546,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         assertThat(logic.getOutputs().size(), is(7));
         assertThatOutputContainInOrder(outputColumnIds, logic.getOutputs());
         //Rules
-        assertThat(logic.getRules().size(), is(15));
+        assertThat(logic.getRules().size(), is(17));
     }
 
     private void assertThatInputContainInOrder(List<String> inputColumnIds, List<DmnDecisionTableInputImpl> inputs) {
