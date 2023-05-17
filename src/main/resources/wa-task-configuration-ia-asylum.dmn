@@ -104,7 +104,7 @@
           <text>
                         if (caseData.caseManagementLocation != null and caseData.caseManagementLocation.baseLocation !=
                         null) then
-                        caseData.caseManagementLocation.baseLocation else "765324"
+                        caseData.caseManagementLocation.baseLocation else "227101"
                     </text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1wrzh5i">
@@ -125,7 +125,7 @@
           <text>
                         if (caseData.caseManagementLocation != null and caseData.caseManagementLocation.baseLocation !=
                         null and caseData.staffLocation != null) then
-                        caseData.staffLocation else "Taylor House"
+                        caseData.staffLocation else "Newport"
                     </text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1la2dkb">
