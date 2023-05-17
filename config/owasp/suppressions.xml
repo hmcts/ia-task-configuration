@@ -8,27 +8,6 @@
     <cpe>cpe:/a:gradle:gradle</cpe>
   </suppress>
   <suppress>
-    <notes><![CDATA[
-   file name: h2-1.4.200.jar
-   ]]></notes>
-    <packageUrl regex="true">^pkg:maven/com\.h2database/h2@.*$</packageUrl>
-    <cpe>cpe:/a:h2database:h2</cpe>
-  </suppress>
-  <suppress>
-    <notes><![CDATA[
-   file name: h2-1.4.200.jar
-   ]]></notes>
-    <packageUrl regex="true">^pkg:maven/com\.h2database/h2@.*$</packageUrl>
-    <vulnerabilityName>CVE-2021-23463</vulnerabilityName>
-  </suppress>
-  <suppress>
-    <notes><![CDATA[
-   file name: h2-1.4.200.jar
-   ]]></notes>
-    <packageUrl regex="true">^pkg:maven/com\.h2database/h2@.*$</packageUrl>
-    <vulnerabilityName>CWE-94: Improper Control of Generation of Code ('Code Injection')</vulnerabilityName>
-  </suppress>
-  <suppress>
     <cve>CVE-2016-1000027</cve>
   </suppress>
   <suppress>
