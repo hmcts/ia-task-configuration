@@ -523,6 +523,8 @@
           <text>"adaCreateHearingBundle"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1tixgjh">
+          <text>"Auto"</text>
+        </outputEntry>
       </rule>
       <rule id="DecisionRule_0qvo1uk">
         <inputEntry id="UnaryTests_1rkzeus">
