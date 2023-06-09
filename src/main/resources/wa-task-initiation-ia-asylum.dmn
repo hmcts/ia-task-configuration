@@ -4029,53 +4029,6 @@ and additionalData.Data.suitabilityReviewDecision
           <text>"followUpOverdue"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0dt16xr">
-        <inputEntry id="UnaryTests_0wba1el">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0j00k1d">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0s5w0e9">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1kmru5o">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1a34mg2">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0n4os73">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1aibrk9">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0v6r5sh">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0aygpw2">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_00oqkyo">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_17e1j76">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1my9la0">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1nqvvbj">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0yxyxwa">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0p8qjrz">
-          <text></text>
-        </outputEntry>
-      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
