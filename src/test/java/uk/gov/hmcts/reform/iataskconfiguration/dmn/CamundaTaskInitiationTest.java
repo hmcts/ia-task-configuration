@@ -111,10 +111,16 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       + "      \"isAcceleratedDetainedAppeal\":\"" + false + "\"\n"
                                       + "   }"
                                       + "}"),
-                singletonList(
+                List.of(
                     Map.of(
                         "taskId", "decideAnFTPA",
                         "name", "Decide an FTPA",
+
+                        "processCategories", "caseProgression"
+                    ),
+                    Map.of(
+                        "taskId", "assignAFTPAJudge",
+                        "name", "Assign a FTPA Judge",
 
                         "processCategories", "caseProgression"
                     )
@@ -128,10 +134,16 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       + "      \"isAcceleratedDetainedAppeal\":\"" + false + "\"\n"
                                       + "   }"
                                       + "}"),
-                singletonList(
+                List.of(
                     Map.of(
                         "taskId", "decideAnFTPA",
                         "name", "Decide an FTPA",
+
+                        "processCategories", "caseProgression"
+                    ),
+                    Map.of(
+                        "taskId", "assignAFTPAJudge",
+                        "name", "Assign a FTPA Judge",
 
                         "processCategories", "caseProgression"
                     )
@@ -325,7 +337,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "paymentAppeal",
+                "submitAppeal",
                 "appealSubmitted",
                 mapAdditionalData("{\n"
                                   + "   \"Data\":{\n"
@@ -343,7 +355,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "paymentAppeal",
+                "submitAppeal",
                 "appealSubmitted",
                 mapAdditionalData("{\n"
                                   + "   \"Data\":{\n"
@@ -361,7 +373,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "paymentAppeal",
+                "submitAppeal",
                 "appealSubmitted",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
@@ -1069,9 +1081,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData(" {\n"
                                       + "        \"Data\" : {\n"
                                       + "        \"isAcceleratedDetainedAppeal\":\"" + true + "\",\n"
-                                      + "          \"listCaseHearingDate\" : \""
-                                      + LocalDateTime.now().plusDays(5).format(DateTimeFormatter.ISO_LOCAL_DATE_TIME)
-                                      + "\""
+                                      + "          \"listCaseHearingDate\" : \"" + hearingDate + "\""
                                       + "        }\n"
                                       + "      }"),
                 List.of(
@@ -1083,33 +1093,11 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "adaUploadHearingRecording",
                         "name", "ADA-Upload hearing recording",
-                        "delayDuration", 5,
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
-                "listCase",
-                "prepareForHearing",
-                mapAdditionalData(" {\n"
-                                      + "        \"Data\" : {\n"
-                                      + "          \"listCaseHearingDate\" : \""
-                                      + LocalDateTime.now().plusDays(5).format(DateTimeFormatter.ISO_LOCAL_DATE_TIME)
-                                      + "\",\n"
-                                      + "      \"isAcceleratedDetainedAppeal\":\"" + false + "\"\n"
-                                      + "        }\n"
-                                      + "      }"),
-                List.of(
-                    Map.of(
-                        "taskId", "caseSummaryHearingBundleStartDecision",
-                        "name", "Create Hearing Bundle",
-                        "processCategories", "caseProgression"
-                    ),
-                    Map.of(
-                        "taskId", "uploadHearingRecording",
-                        "name", "Upload hearing recording",
                         "processCategories", "caseProgression",
-                        "delayUntil", delayFor5Days
+                        "delayUntil", Map.of(
+                            "delayUntil", hearingDate,
+                            "delayUntilIntervalDays","0"
+                        )
                     )
                 )
             ),
@@ -2178,8 +2166,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         inputVariables.putValue("postEventState", postEventState);
         inputVariables.putValue("now", LocalDateTime.now().minusMinutes(10)
             .format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
-        inputVariables.putValue("additionalData", map);
-
+        inputVariables.putAll(map);
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
         assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
@@ -2245,7 +2232,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         inputVariables.putValue("postEventState", postEventState);
         inputVariables.putValue("now", LocalDateTime.now().minusMinutes(10)
             .format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
-        inputVariables.putValue("additionalData", mapAdditionalData(additionalData));
+        inputVariables.putAll(mapAdditionalData(additionalData));
         return inputVariables;
     }
 
@@ -2437,9 +2424,19 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     }
 
     public static Stream<Arguments> adaMakeAnApplicationLoScenarioProvider() {
+        LocalDateTime directionDueDate = LocalDateTime.now().plusDays(5);
+        Map<String, LocalDateTime> variablesDirectionDueDate = Map.of(
+            "directionDueDate", directionDueDate
+        );
+        Map<String, Object> delayUntilDirectionDue = Map.of(
+            "delayUntilIntervalDays", "0",
+            "delayUntil", directionDueDate
+        );
+
         return Stream.of(
             Arguments.of(
                 "makeAnApplication",
+                null,
                 null,
                 mapAdditionalData(" {\n"
                                       + "        \"Data\" : {\n"
@@ -2454,6 +2451,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "makeAnApplication",
+                null,
                 null,
                 mapAdditionalData(" {\n"
                                       + "        \"Data\" : {\n"
@@ -2475,6 +2473,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "makeAnApplication",
                 null,
+                null,
                 mapAdditionalData(" {\n"
                                       + "        \"Data\" : {\n"
                                       + "          \"lastModifiedApplication\" : {\n"
@@ -2494,6 +2493,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "makeAnApplication",
+                null,
                 null,
                 mapAdditionalData(" {\n"
                                       + "        \"Data\" : {\n"
@@ -2515,6 +2515,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "makeAnApplication",
                 null,
+                null,
                 mapAdditionalData(" {\n"
                                       + "        \"Data\" : {\n"
                                       + "          \"lastModifiedApplication\" : {\n"
@@ -2534,6 +2535,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "makeAnApplication",
+                null,
                 null,
                 mapAdditionalData(" {\n"
                                       + "        \"Data\" : {\n"
@@ -2555,6 +2557,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "requestRespondentEvidence",
                 "awaitingRespondentEvidence",
+                variablesDirectionDueDate,
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"isAcceleratedDetainedAppeal\":\"" + false + "\"\n"
@@ -2564,13 +2567,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "followUpOverdueRespondentEvidence",
                         "name", "Follow-up overdue respondent evidence",
-                        "processCategories", "followUpOverdue"
+                        "processCategories", "followUpOverdue",
+                        "delayUntil", delayUntilDirectionDue
                     )
                 )
             ),
             Arguments.of(
                 "requestRespondentEvidence",
                 "awaitingRespondentEvidence",
+                variablesDirectionDueDate,
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
@@ -2580,7 +2585,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "adaFollowUpOverdueRespondentEvidence",
                         "name", "ADA-Follow-up overdue respondent evidence",
-                        "processCategories", "followUpOverdue"
+                        "processCategories", "followUpOverdue",
+                        "delayUntil", delayUntilDirectionDue
                     ),
                     Map.of(
                         "taskId", "adaListCase",
@@ -2592,6 +2598,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "changeDirectionDueDate",
                 null,
+                variablesDirectionDueDate,
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"isAcceleratedDetainedAppeal\":\"" + false + "\"\n"
@@ -2601,13 +2608,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "followUpExtendedDirection",
                         "name", "Follow-up extended direction",
-                        "processCategories", "caseProgression"
+                        "processCategories", "caseProgression",
+                        "delayUntil", delayUntilDirectionDue
                     )
                 )
             ),
             Arguments.of(
                 "changeDirectionDueDate",
                 null,
+                variablesDirectionDueDate,
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
@@ -2617,13 +2626,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "adaFollowUpExtendedDirection",
                         "name", "ADA-Follow-up extended direction",
-                        "processCategories", "caseProgression"
+                        "processCategories", "caseProgression",
+                        "delayUntil", delayUntilDirectionDue
                     )
                 )
             ),
             Arguments.of(
                 "requestCaseBuilding",
                 "caseBuilding",
+                variablesDirectionDueDate,
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"isAcceleratedDetainedAppeal\":\"" + false + "\"\n"
@@ -2633,13 +2644,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "followUpOverdueCaseBuilding",
                         "name", "Follow-up overdue case building",
-                        "processCategories", "followUpOverdue"
+                        "processCategories", "followUpOverdue",
+                        "delayUntil", delayUntilDirectionDue
                     )
                 )
             ),
             Arguments.of(
                 "requestCaseBuilding",
                 "caseBuilding",
+                variablesDirectionDueDate,
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
@@ -2649,13 +2662,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "adaFollowUpOverdueCaseBuilding",
                         "name", "ADA-Follow-up overdue case building",
-                        "processCategories", "followUpOverdue"
+                        "processCategories", "followUpOverdue",
+                        "delayUntil", delayUntilDirectionDue
                     )
                 )
             ),
             Arguments.of(
                 "requestRespondentReview",
                 "respondentReview",
+                variablesDirectionDueDate,
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"isAcceleratedDetainedAppeal\":\"" + false + "\"\n"
@@ -2665,13 +2680,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "followUpOverdueRespondentReview",
                         "name", "Follow-up overdue respondent review",
-                        "processCategories", "followUpOverdue"
+                        "processCategories", "followUpOverdue",
+                        "delayUntil", delayUntilDirectionDue
                     )
                 )
             ),
             Arguments.of(
                 "requestRespondentReview",
                 "respondentReview",
+                variablesDirectionDueDate,
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
@@ -2681,13 +2698,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "adaFollowUpOverdueRespondentReview",
                         "name", "ADA-Follow-up overdue respondent review",
-                        "processCategories", "followUpOverdue"
+                        "processCategories", "followUpOverdue",
+                        "delayUntil", delayUntilDirectionDue
                     )
                 )
             ),
             Arguments.of(
                 "sendDirection",
                 null,
+                variablesDirectionDueDate,
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"isAcceleratedDetainedAppeal\":\"" + false + "\"\n"
@@ -2697,13 +2716,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "followUpNonStandardDirection",
                         "name", "Follow-up non-standard direction",
-                        "processCategories", "caseProgression"
+                        "processCategories", "caseProgression",
+                        "delayUntil", delayUntilDirectionDue
                     )
                 )
             ),
             Arguments.of(
                 "sendDirection",
                 null,
+                variablesDirectionDueDate,
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
@@ -2713,13 +2734,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "adaFollowUpNonStandardDirection",
                         "name", "ADA-Follow-up non-standard direction",
-                        "processCategories", "caseProgression"
+                        "processCategories", "caseProgression",
+                        "delayUntil", delayUntilDirectionDue
                     )
                 )
             ),
             Arguments.of(
                 "removeRepresentation",
                 null,
+                variablesDirectionDueDate,
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"isAcceleratedDetainedAppeal\":\"" + false + "\"\n"
@@ -2742,6 +2765,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "removeRepresentation",
                 null,
+                variablesDirectionDueDate,
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"isAcceleratedDetainedAppeal\":\"" + true + "\"\n"
@@ -2790,7 +2814,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         VariableMap inputVariables = new VariableMapImpl();
         inputVariables.putValue("eventId", eventId);
         inputVariables.putValue("postEventState", postEventState);
-        inputVariables.putValue("additionalData", additionalData);
+        inputVariables.putAll( additionalData);
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
@@ -2801,13 +2825,14 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     @MethodSource("adaMakeAnApplicationLoScenarioProvider")
     void given_ada_makeAnApplication_LO_should_evaluate_dmn(String eventId,
                                                          String postEventState,
+                                                         Map<String, Object> directionDueDateMap,
                                                          Map<String, Object> additionalData,
                                                          List<Map<String, String>> expectation) {
         VariableMap inputVariables = new VariableMapImpl();
         inputVariables.putValue("eventId", eventId);
         inputVariables.putValue("postEventState", postEventState);
-        inputVariables.putValue("additionalData", additionalData);
-
+        inputVariables.putAll(directionDueDateMap);
+        inputVariables.putAll(additionalData);
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
         assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
@@ -2834,7 +2859,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         VariableMap inputVariables = new VariableMapImpl();
         inputVariables.putValue("eventId", eventId);
         inputVariables.putValue("postEventState", postEventState);
-        inputVariables.putValue("additionalData", additionalData);
+        inputVariables.putAll(additionalData);
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
