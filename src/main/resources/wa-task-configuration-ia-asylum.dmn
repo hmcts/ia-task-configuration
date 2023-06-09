@@ -66,7 +66,7 @@
                     </text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1ndtqfy">
-          <text></text>
+          <text>false</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0r3u9cf">
@@ -87,7 +87,7 @@
                     </text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0dwx9qa">
-          <text></text>
+          <text>false</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_06fd9qz">
@@ -104,7 +104,7 @@
           <text>
                         if (caseData.caseManagementLocation != null and caseData.caseManagementLocation.baseLocation !=
                         null) then
-                        caseData.caseManagementLocation.baseLocation else "765324"
+                        caseData.caseManagementLocation.baseLocation else "227101"
                     </text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1wrzh5i">
@@ -125,7 +125,7 @@
           <text>
                         if (caseData.caseManagementLocation != null and caseData.caseManagementLocation.baseLocation !=
                         null and caseData.staffLocation != null) then
-                        caseData.staffLocation else "Taylor House"
+                        caseData.staffLocation else "Newport"
                     </text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1la2dkb">
@@ -178,7 +178,7 @@
                     </text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1oq20o8">
-          <text></text>
+          <text>false</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0ikmf14">
@@ -200,7 +200,12 @@
                         "reviewCaseTransferredOutOfADA",
                         "reviewCaseMarkedUnsuitableForADA",
                         "adaListCase",
-                        "adaCreateHearingBundle"
+                        "adaCreateHearingBundle",
+                        "reviewClarifyingQuestionsAnswers",
+                        "reviewRemissionApplication",
+                        "assignAFTPAJudge",
+                        "sendPaymentRequest",
+                        "markAsPaid"
                     </text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0rvgay2">
@@ -210,7 +215,7 @@
           <text>"routine_work"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_19npk6t">
-          <text></text>
+          <text>false</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1csczvs">
@@ -259,7 +264,7 @@
           <text>"decision_making_work"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0mhslbm">
-          <text></text>
+          <text>false</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_03n8x3v">
@@ -267,7 +272,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1ps3x4j">
-          <text>"reviewHearingBundle","adaReviewHearingBundle","generateDraftDecisionAndReasons","uploadDecision","uploadHearingRecording","editListing","followUpOverdueHearingRequirements","reviewHearingRequirements","allocateHearingJudge","prepareDecisionsAndReasons","adaPrepareDecisionsAndReasons","startDecisionsAndReasonsDocument","createHearingBundle","createCaseSummary","adaEditListing","adaAllocateHearingJudge","adaUploadHearingRecording","adaAllocateFTPAJudge"</text>
+          <text>"reviewHearingBundle","adaReviewHearingBundle","generateDraftDecisionAndReasons","uploadDecision","uploadHearingRecording","editListing","followUpOverdueHearingRequirements","reviewHearingRequirements","allocateHearingJudge","prepareDecisionsAndReasons","adaPrepareDecisionsAndReasons","startDecisionsAndReasonsDocument","createHearingBundle","createCaseSummary","adaEditListing","adaAllocateHearingJudge","adaUploadHearingRecording","adaAllocateFTPAJudge","listTheCase"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0c3eia6">
           <text>"workType"</text>
@@ -276,7 +281,7 @@
           <text>"hearing_work"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_02mo95c">
-          <text></text>
+          <text>false</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1mgtmkd">
@@ -314,7 +319,7 @@
           <text>"applications"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1cyayj1">
-          <text></text>
+          <text>false</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_00yasz5">
@@ -331,7 +336,7 @@
           <text>"upper_tribunal"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0bikbnv">
-          <text></text>
+          <text>false</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_00hw86q">
@@ -348,7 +353,7 @@
           <text>"access_requests"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_08zn369">
-          <text></text>
+          <text>false</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_16zvd79">
@@ -365,7 +370,7 @@
           <text>if (taskAttributes !=null and taskAttributes.roleAssignmentId != null) then taskAttributes.roleAssignmentId else "1234"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1q1yppm">
-          <text></text>
+          <text>false</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1dhhpyl">
@@ -431,7 +436,7 @@
           <text>"LEGAL_OPERATIONS"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0cde4ic">
-          <text></text>
+          <text>false</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_01muxrj">
@@ -448,7 +453,7 @@
           <text>"ADMIN"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1exp16h">
-          <text></text>
+          <text>false</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_01cmxvs">
@@ -465,7 +470,24 @@
           <text>"JUDICIAL"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0me2qfr">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ubs7r5">
+        <inputEntry id="UnaryTests_00s1cbq">
           <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xh5are">
+          <text>"reviewRemissionApplication","assignAFTPAJudge","listTheCase","sendPaymentRequest","markAsPaid"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0vqliz7">
+          <text>"roleCategory"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1lg0gh7">
+          <text>"CTSC"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0mrh555">
+          <text>false</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1lny4x5">
@@ -557,12 +579,308 @@
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewCaseMarkedUnsuitableForADA" or taskType != null and taskType = "reviewCaseMarkedUnsuitableForADA") then "[Transfer the appeal out of the ADA process](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/transferOutOfAda)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewADASuitability" or taskType != null and taskType = "reviewADASuitability") then "[Review ADA suitability](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/adaSuitabilityReview)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "adaAllocateFTPAJudge" or taskType != null and taskType ="adaAllocateFTPAJudge") then "[Allocate FTPA Judge](/role-access/allocate-role/allocate?caseId=${[CASE_REFERENCE]}&amp;roleCategory=JUDICIAL&amp;jurisdiction=IA)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewRemissionApplication" or taskType != null and taskType = "reviewRemissionApplication") then "[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/recordRemissionDecision/recordRemissionDecisionremissionDecision)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "assignAFTPAJudge" or taskType != null and taskType = "assignAFTPAJudge") then "[Record allocated Judge](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/recordAllocatedJudge)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "listTheCase" or taskType != null and taskType = "listTheCase") then "[List the case](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/listCase)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "sendPaymentRequest" or taskType != null and taskType = "sendPaymentRequest") then "[Mark payment request sent](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markPaymentRequestSent)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "markAsPaid" or taskType != null and taskType = "markAsPaid") then "[Mark appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid)"
                         else if (taskAttributes != null and taskAttributes.taskId != null and taskAttributes.roleAssignmentId != null) then "[Review Access Request](/role-access/" + taskAttributes.taskId + "/assignment/" + taskAttributes.roleAssignmentId + "/specific-access)"
                         else ""
           </text>
         </outputEntry>
         <outputEntry id="LiteralExpression_184xf0n">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_15pnkjv">
+        <inputEntry id="UnaryTests_0cuyrmi">
           <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xqy885">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_17n2o8t">
+          <text>"dueDateOrigin"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1olr8gj">
+          <text>now()</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1jfd9es">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1xk0urt">
+        <inputEntry id="UnaryTests_03vtzac">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xz0tmx">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0n2s323">
+          <text>"dueDateNonWorkingCalendar"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_01me67r">
+          <text>"https://www.gov.uk/bank-holidays/england-and-wales.json, https://raw.githubusercontent.com/hmcts/ia-task-configuration/master/src/test/resources/extra-non-working-day-calendar.json"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_15rsx8r">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0nwq04c">
+        <inputEntry id="UnaryTests_0dicms7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01h3gvh">
+          <text>"processApplication"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_18mybq6">
+          <text>"dueDateIntervalDays"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ndl97b">
+          <text>5</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1rv7ncp">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_087mjzf">
+        <inputEntry id="UnaryTests_0u9y6os">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12nptxn">
+          <text>"processApplicationToReviewDecision",
+"editListing",
+"reviewTheAppeal",
+"decideOnTimeExtension",
+"reviewRespondentEvidence",
+"reviewAdditionalEvidence",
+"reviewAdditionalHomeOfficeEvidence",
+"reviewAppealSkeletonArgument",
+"reviewReasonsForAppeal",
+"reviewClarifyingQuestionsAnswers",
+"reviewCmaRequirements",
+"attendCma",
+"reviewRespondentResponse",
+"caseSummaryHearingBundleStartDecision",
+"reviewHearingRequirements",
+"followUpOverdueRespondentEvidence",
+"followUpExtendedDirection",
+"followUpOverdueCaseBuilding",
+"followUpOverdueReasonsForAppeal",
+"followUpOverdueClarifyingAnswers",
+"followUpOverdueCmaRequirements",
+"followUpOverdueRespondentReview",
+"followUpOverdueHearingRequirements",
+"followUpNonStandardDirection",
+"followUpNoticeOfChange",
+"reviewAddendumEvidence",
+"reviewRemissionApplication",
+"assignAFTPAJudge",
+"listTheCase"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1kbin0j">
+          <text>"dueDateIntervalDays"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_01i1jmt">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_161g7g1">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_119qnrg">
+        <inputEntry id="UnaryTests_0dlohpc">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1cwkxoe">
+          <text>"reviewHearingBundle",
+"sendDecisionsAndReasons",
+"prepareDecisionsAndReasons",
+"sendPaymentRequest",
+"uploadHearingRecording",
+"decideAnFTPA",
+"adaProcessApplicationToAdjourn",
+"adaProcessApplicationToExpedite",
+"adaProcessApplicationForTimeExtension",
+"adaProcessApplicationToWithdraw",
+"adaProcessApplicationToReviewDecision",
+"adaProcessApplicationToUpdateHearingRequirements",
+"adaProcessApplicationToUpdateAppealDetails",
+"adaProcessApplicationToReinstateAnEndedAppeal",
+"adaProcessApplicationToOther",
+"adaLinkUnlinkAppeals",
+"adaEditListing",
+"adaReviewTheAppeal",
+"adaReviewRespondentEvidence",
+"adaReviewAdditionalEvidence",
+"adaReviewAdditionalHomeOfficeEvidence",
+"adaReviewAppealSkeletonArgument",
+"adaCaseSummaryHearingBundleStartDecision",
+"adaFollowUpOverdueRespondentEvidence",
+"adaListCase",
+"adaFollowUpExtendedDirection",
+"adaFollowUpOverdueCaseBuilding",
+"adaFollowUpOverdueRespondentReview",
+"adaFollowUpNonStandardDirection",
+"adaFollowUpNoticeOfChange",
+"adaReviewAddendumEvidence",
+"adaReviewHearingBundle",
+"adaSendDecisionsAndReasons",
+"adaPrepareDecisionsAndReasons",
+"adaUploadHearingRecording",
+"adaDecideAnFTPA",
+"adaEditListing",
+"reviewCaseTransferredOutOfADA",
+"reviewCaseMarkedUnsuitableForADA",
+"reviewADASuitability",
+"adaAllocateHearingJudge",
+"adaCreateHearingBundle",
+"adaAllocateFTPAJudge"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ssbj4t">
+          <text>"dueDateIntervalDays"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ftw3ss">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0zkr1zo">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1sax75r">
+        <inputEntry id="UnaryTests_1b0k7fa">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ss35tl">
+          <text>"allocateHearingJudge"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0r6yt12">
+          <text>"dueDateIntervalDays"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_01trnsy">
+          <text>3</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04lsvsa">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ca9xpl">
+        <inputEntry id="UnaryTests_15bophj">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1aa2bwu">
+          <text>"markAsPaid"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0k6nifs">
+          <text>"dueDateIntervalDays"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1vbgdhh">
+          <text>14</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_11bqayr">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0jlgetc">
+        <inputEntry id="UnaryTests_1k2ybph">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hyv74b">
+          <text>"markAsPaid"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0tmigm7">
+          <text>"dueDateSkipNonWorkingDays"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0925497">
+          <text>false</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0sztdoj">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_165bqfp">
+        <inputEntry id="UnaryTests_1cy9w2v">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0sk78xf">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1jpp20e">
+          <text>"majorPriority"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0mq5gsr">
+          <text>5000</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1f4fovi">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0d4k7a3">
+        <inputEntry id="UnaryTests_17p5sgb">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0bg2thb">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_07pamwu">
+          <text>"minorPriority"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1un1fpp">
+          <text>500</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1cssjo4">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1iccxzh">
+        <inputEntry id="UnaryTests_1oh593l">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08641k9">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1x7qwr7">
+          <text>"priorityDateOriginRef"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0vpgaux">
+          <text>"dueDate"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_16sccu5">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0n6xlhj">
+        <inputEntry id="UnaryTests_0oe8d4b">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1q7g8iu">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0s6253e">
+          <text>"dueDateNonWorkingDaysOfWeek"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1fuo3hm">
+          <text>"SATURDAY,SUNDAY"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1omikjm">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_11jkcdp">
+        <inputEntry id="UnaryTests_065p43f">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08t14g0">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0nzrd2w">
+          <text>"calculatedDates"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0sbydg2">
+          <text>"nextHearingDate,dueDate,priorityDate"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_102zbyh">
+          <text>false</text>
         </outputEntry>
       </rule>
     </decisionTable>
