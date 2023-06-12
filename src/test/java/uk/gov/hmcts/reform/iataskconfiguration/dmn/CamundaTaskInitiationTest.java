@@ -14,7 +14,6 @@ import org.junit.jupiter.params.provider.MethodSource;
 import uk.gov.hmcts.reform.iataskconfiguration.DmnDecisionTableBaseUnitTest;
 
 import java.io.IOException;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
@@ -35,44 +34,17 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         CURRENT_DMN_DECISION_TABLE = WA_TASK_INITIATION_IA_ASYLUM;
     }
 
-    private static String hearingDate = LocalDateTime.now().plusDays(5).format(DateTimeFormatter.ISO_LOCAL_DATE_TIME);
-
     static Stream<Arguments> scenarioProvider() {
-        LocalDateTime directionDueDate = LocalDateTime.now().plusDays(5);
-        Map<String, LocalDateTime> variablesDirectionDueDate = Map.of(
-            "directionDueDate", directionDueDate
-        );
-        Map<String, Object> delayUntilDirectionDue = Map.of(
-            "delayUntilIntervalDays", "0",
-            "delayUntil", directionDueDate
-        );
-        Map<String,Object> delayFor14Days = Map.of(
-            "delayUntilIntervalDays", "14",
-            "delayUntilNonWorkingCalendar", "https://www.gov.uk/bank-holidays/england-and-wales.json",
-            "delayUntilOrigin", LocalDate.now(),
-            "delayUntilNonWorkingDaysOfWeek", "SATURDAY,SUNDAY"
-        );
-
-        Map<String,Object> delayFor12Days = Map.of(
-            "delayUntilIntervalDays", "12",
-            "delayUntilOrigin", LocalDate.now()
-        );
 
         return Stream.of(
             Arguments.of(
                 "applyForFTPAAppellant",
                 null,
                 null,
-                List.of(
+                singletonList(
                     Map.of(
                         "taskId", "decideAnFTPA",
                         "name", "Decide an FTPA",
-
-                        "processCategories", "caseProgression"
-                    ),
-                    Map.of(
-                        "taskId", "assignAFTPAJudge",
-                        "name", "Assign a FTPA Judge",
 
                         "processCategories", "caseProgression"
                     )
@@ -82,16 +54,10 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "applyForFTPARespondent",
                 null,
                 null,
-                List.of(
+                singletonList(
                     Map.of(
                         "taskId", "decideAnFTPA",
                         "name", "Decide an FTPA",
-
-                        "processCategories", "caseProgression"
-                    ),
-                    Map.of(
-                        "taskId", "assignAFTPAJudge",
-                        "name", "Assign a FTPA Judge",
 
                         "processCategories", "caseProgression"
                     )
@@ -106,7 +72,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "sendDecisionsAndReasons",
                         "name", "Send decisions and reasons",
 
-
+                        "workingDaysAllowed", 0,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -120,7 +86,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "prepareDecisionsAndReasons",
                         "name", "Prepare decisions and reasons",
 
-
+                        "workingDaysAllowed", 0,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -139,7 +105,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Review the appeal",
 
 
-
+                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -156,13 +122,13 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
-
+                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
             ),
             Arguments.of(
-                "paymentAppeal",
+                "submitAppeal",
                 "appealSubmitted",
                 mapAdditionalData("{\n"
                                   + "   \"Data\":{\n"
@@ -174,13 +140,13 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
-
+                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
             ),
             Arguments.of(
-                "paymentAppeal",
+                "submitAppeal",
                 "appealSubmitted",
                 mapAdditionalData("{\n"
                                   + "   \"Data\":{\n"
@@ -192,25 +158,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
-                "paymentAppeal",
-                "appealSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                                      + "      \"journeyType\":\"" + "aip" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewTheAppeal",
-                        "name", "Review the appeal",
-
+                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -228,7 +176,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
-
+                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -245,7 +193,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
-
+                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -263,7 +211,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
-
+                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -280,7 +228,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
-
+                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -298,7 +246,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
 
-
+                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -316,7 +264,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
 
-
+                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -334,7 +282,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
 
-
+                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -352,7 +300,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
 
-
+                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -370,7 +318,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
 
-
+                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -388,7 +336,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
 
-
+                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -406,7 +354,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
 
-
+                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -424,7 +372,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
 
-
+                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -442,7 +390,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
 
-
+                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -460,7 +408,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
 
-
+                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -478,7 +426,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
 
-
+                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -496,7 +444,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
 
-
+                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -510,7 +458,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "decideOnTimeExtension",
                         "name", "Decide On Time Extension",
 
-
+                        "workingDaysAllowed", 2,
                         "processCategories", "timeExtension"
                     )
                 )
@@ -524,7 +472,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "reviewRespondentEvidence",
                         "name", "Review Respondent Evidence",
 
-
+                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -538,7 +486,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "reviewAdditionalEvidence",
                         "name", "Review additional evidence",
 
-
+                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -552,7 +500,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "reviewAdditionalEvidence",
                         "name", "Review additional evidence",
 
-
+                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -566,7 +514,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "reviewAdditionalEvidence",
                         "name", "Review additional evidence",
 
-
+                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -580,7 +528,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "reviewAdditionalEvidence",
                         "name", "Review additional evidence",
 
-
+                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -594,7 +542,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "reviewAdditionalEvidence",
                         "name", "Review additional evidence",
 
-
+                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -607,7 +555,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewAdditionalHomeOfficeEvidence",
                         "name", "Review additional Home Office evidence",
-
+                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -620,7 +568,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewAdditionalHomeOfficeEvidence",
                         "name", "Review additional Home Office evidence",
-
+                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -633,7 +581,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewAdditionalHomeOfficeEvidence",
                         "name", "Review additional Home Office evidence",
-
+                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -647,7 +595,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "reviewAdditionalHomeOfficeEvidence",
                         "name", "Review additional Home Office evidence",
 
-
+                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -661,7 +609,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "reviewAdditionalHomeOfficeEvidence",
                         "name", "Review additional Home Office evidence",
 
-
+                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -675,7 +623,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "reviewAdditionalHomeOfficeEvidence",
                         "name", "Review additional Home Office evidence",
 
-
+                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -689,7 +637,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "reviewAppealSkeletonArgument",
                         "name", "Review Appeal Skeleton Argument",
 
-
+                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -703,7 +651,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "reviewAppealSkeletonArgument",
                         "name", "Review Appeal Skeleton Argument",
 
-
+                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -717,7 +665,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "reviewReasonsForAppeal",
                         "name", "Review Reasons For Appeal",
 
-
+                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -731,7 +679,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "reviewClarifyingQuestionsAnswers",
                         "name", "Review Clarifying Questions Answers",
 
-
+                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -745,7 +693,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "reviewCmaRequirements",
                         "name", "Review Cma Requirements",
 
-
+                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -759,7 +707,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "attendCma",
                         "name", "Attend Cma",
 
-
+                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -773,7 +721,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "reviewRespondentResponse",
                         "name", "Review Respondent Response",
 
-
+                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -783,24 +731,23 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "prepareForHearing",
                 mapAdditionalData(" {\n"
                                       + "        \"Data\" : {\n"
-                                      + "          \"listCaseHearingDate\" : \"" + hearingDate + "\""
+                                      + "          \"listCaseHearingDate\" : \""
+                                      + LocalDateTime.now().plusDays(5).format(DateTimeFormatter.ISO_LOCAL_DATE_TIME)
+                                      + "\""
                                       + "        }\n"
                                       + "      }"),
                 List.of(
                     Map.of(
                         "taskId", "caseSummaryHearingBundleStartDecision",
                         "name", "Create Hearing Bundle",
-
+                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     ),
                     Map.of(
                         "taskId", "uploadHearingRecording",
                         "name", "Upload hearing recording",
-                        "processCategories", "caseProgression",
-                        "delayUntil", Map.of(
-                            "delayUntil", hearingDate,
-                            "delayUntilIntervalDays","0"
-                        )
+                        "delayDuration", 5,
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
@@ -813,7 +760,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "reviewHearingRequirements",
                         "name", "Review hearing requirements",
 
-
+                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -821,117 +768,135 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "requestRespondentEvidence",
                 "awaitingRespondentEvidence",
-                variablesDirectionDueDate,
+                null,
                 singletonList(
                     Map.of(
                         "taskId", "followUpOverdueRespondentEvidence",
                         "name", "Follow-up overdue respondent evidence",
-                        "processCategories", "followUpOverdue",
-                        "delayUntil", delayUntilDirectionDue
+
+                        "workingDaysAllowed", 2,
+                        "delayDuration", 0,
+                        "processCategories", "followUpOverdue"
                     )
                 )
             ),
             Arguments.of(
                 "changeDirectionDueDate",
                 null,
-                variablesDirectionDueDate,
+                null,
                 singletonList(
                     Map.of(
                         "taskId", "followUpExtendedDirection",
                         "name", "Follow-up extended direction",
-                        "processCategories", "caseProgression",
-                        "delayUntil", delayUntilDirectionDue
+
+                        "workingDaysAllowed", 2,
+                        "delayDuration", 0,
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
             Arguments.of(
                 "requestCaseBuilding",
                 "caseBuilding",
-                variablesDirectionDueDate,
+                null,
                 singletonList(
                     Map.of(
                         "taskId", "followUpOverdueCaseBuilding",
                         "name", "Follow-up overdue case building",
-                        "processCategories", "followUpOverdue",
-                        "delayUntil", delayUntilDirectionDue
+
+                        "workingDaysAllowed", 2,
+                        "delayDuration", 0,
+                        "processCategories", "followUpOverdue"
                     )
                 )
             ),
             Arguments.of(
                 "requestReasonsForAppeal",
                 "awaitingReasonsForAppeal",
-                variablesDirectionDueDate,
+                null,
                 singletonList(
                     Map.of(
                         "taskId", "followUpOverdueReasonsForAppeal",
                         "name", "Follow-up overdue reasons for appeal",
-                        "processCategories", "followUpOverdue",
-                        "delayUntil", delayUntilDirectionDue
+
+                        "workingDaysAllowed", 2,
+                        "delayDuration", 0,
+                        "processCategories", "followUpOverdue"
                     )
                 )
             ),
             Arguments.of(
                 "sendDirectionWithQuestions",
                 "awaitingClarifyingQuestionsAnswers",
-                variablesDirectionDueDate,
+                null,
                 singletonList(
                     Map.of(
                         "taskId", "followUpOverdueClarifyingAnswers",
                         "name", "Follow-up overdue clarifying answers",
-                        "processCategories", "followUpOverdue",
-                        "delayUntil", delayUntilDirectionDue
+
+                        "workingDaysAllowed", 2,
+                        "delayDuration", 0,
+                        "processCategories", "followUpOverdue"
                     )
                 )
             ),
             Arguments.of(
                 "requestCmaRequirements",
                 "awaitingCmaRequirements",
-                variablesDirectionDueDate,
+                null,
                 singletonList(
                     Map.of(
                         "taskId", "followUpOverdueCmaRequirements",
                         "name", "Follow-up overdue CMA requirements",
-                        "processCategories", "followUpOverdue",
-                        "delayUntil", delayUntilDirectionDue
+
+                        "workingDaysAllowed", 2,
+                        "delayDuration", 0,
+                        "processCategories", "followUpOverdue"
                     )
                 )
             ),
             Arguments.of(
                 "requestRespondentReview",
                 "respondentReview",
-                variablesDirectionDueDate,
+                null,
                 singletonList(
                     Map.of(
                         "taskId", "followUpOverdueRespondentReview",
                         "name", "Follow-up overdue respondent review",
-                        "processCategories", "followUpOverdue",
-                        "delayUntil", delayUntilDirectionDue
+
+                        "workingDaysAllowed", 2,
+                        "delayDuration", 0,
+                        "processCategories", "followUpOverdue"
                     )
                 )
             ),
             Arguments.of(
                 "requestHearingRequirementsFeature",
                 "submitHearingRequirements",
-                variablesDirectionDueDate,
+                null,
                 singletonList(
                     Map.of(
                         "taskId", "followUpOverdueHearingRequirements",
                         "name", "Follow-up overdue hearing requirements",
-                        "processCategories", "followUpOverdue",
-                        "delayUntil", delayUntilDirectionDue
+
+                        "workingDaysAllowed", 2,
+                        "delayDuration", 0,
+                        "processCategories", "followUpOverdue"
                     )
                 )
             ),
             Arguments.of(
                 "sendDirection",
                 null,
-                variablesDirectionDueDate,
+                null,
                 singletonList(
                     Map.of(
                         "taskId", "followUpNonStandardDirection",
                         "name", "Follow-up non-standard direction",
-                        "processCategories", "caseProgression",
-                        "delayUntil", delayUntilDirectionDue
+
+                        "workingDaysAllowed", 2,
+                        "delayDuration", 0,
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
@@ -943,8 +908,10 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "followUpNoticeOfChange",
                         "name", "Follow-up Notice of Change",
+
+                        "workingDaysAllowed", 2,
                         "processCategories", "followUpOverdue",
-                        "delayUntil", delayFor14Days
+                        "delayDuration", 14
                     )
                 )
             ),
@@ -957,9 +924,9 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "followUpNoticeOfChange",
                         "name", "Follow-up Notice of Change",
 
-
+                        "workingDaysAllowed", 2,
                         "processCategories", "followUpOverdue",
-                        "delayUntil", delayFor14Days
+                        "delayDuration", 14
                     )
                 )
             ),
@@ -1023,7 +990,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewHearingBundle",
                         "name", "Review Hearing bundle",
-
+                        "workingDaysAllowed", 0,
                         "processCategories", "caseProgression"
                     ),
                     Map.of(
@@ -1041,7 +1008,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewHearingBundle",
                         "name", "Review Hearing bundle",
-
+                        "workingDaysAllowed", 0,
                         "processCategories", "caseProgression"
                     ),
                     Map.of(
@@ -1064,548 +1031,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "submitAppeal",
-                "pendingPayment",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
-                                      + "      \"remissionType\":\"" + "hoWaiverRemission" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
-                "submitAppeal",
-                "pendingPayment",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
-                                      + "      \"remissionType\":\"" + "exceptionalCircumstancesRemission" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
-                "submitAppeal",
-                "pendingPayment",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
-                                      + "      \"remissionType\":\"" + "helpWithFees" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
-                "submitAppeal",
-                "pendingPayment",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "refusalOfEu" + "\",\n"
-                                      + "      \"remissionType\":\"" + "hoWaiverRemission" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
-                "submitAppeal",
-                "pendingPayment",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "refusalOfEu" + "\",\n"
-                                      + "      \"remissionType\":\"" + "exceptionalCircumstancesRemission" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            getArgumentOf("Adjourn","processApplicationAdjourn","Process Adjourn Application"),
-            getArgumentOf("Expedite","processApplicationExpedite","Process Expedite Application"),
-            getArgumentOf("Time extension","processApplicationTimeExtension","Process Time Extension Application"),
-            getArgumentOf("Transfer","processApplicationTransfer","Process Transfer Application"),
-            getArgumentOf("Withdraw","processApplicationWithdraw","Process Withdraw Application"),
-            getArgumentOf("Update hearing requirements","processApplicationUpdateHearingRequirements",
-                          "Process Update Hearing Requirements Application"),
-            getArgumentOf("Update appeal details","processApplicationUpdateAppealDetails",
-                          "Process Update Appeal Details Application"),
-            getArgumentOf("Reinstate an ended appeal","processApplicationReinstateAnEndedAppeal",
-                          "Process Reinstate An Ended Appeal Application"),
-            getArgumentOf("Other","processApplicationOther","Process Other Application"),
-            getArgumentOf("Link/unlink appeals","link/unlinkAppeals","Process Link/Unlink Appeals Application"),
-            Arguments.of(
-                "submitAppeal",
-                "pendingPayment",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "refusalOfEu" + "\",\n"
-                                      + "      \"remissionType\":\"" + "helpWithFees" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            )
-        );
-    }
-
-    private static Arguments getArgumentOf(String applicationType, String taskId, String taskName) {
-            ),
-            Arguments.of(
-                "submitAppeal",
-                "pendingPayment",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "protection" + "\",\n"
-                                      + "      \"remissionType\":\"" + "hoWaiverRemission" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
-                "submitAppeal",
-                "pendingPayment",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "protection" + "\",\n"
-                                      + "      \"remissionType\":\"" + "exceptionalCircumstancesRemission" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
-                "submitAppeal",
-                "pendingPayment",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "protection" + "\",\n"
-                                      + "      \"remissionType\":\"" + "helpWithFees" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
-                "submitAppeal",
-                "pendingPayment",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                                      + "      \"remissionType\":\"" + "hoWaiverRemission" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
-                "submitAppeal",
-                "pendingPayment",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                                      + "      \"remissionType\":\"" + "exceptionalCircumstancesRemission" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
-                "submitAppeal",
-                "pendingPayment",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                                      + "      \"remissionType\":\"" + "helpWithFees" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
-                "submitAppeal",
-                "appealSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
-                                      + "      \"remissionType\":\"" + "hoWaiverRemission" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                List.of(
-                    Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
-                "submitAppeal",
-                "appealSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
-                                      + "      \"remissionType\":\"" + "exceptionalCircumstancesRemission" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                List.of(
-                    Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
-                "submitAppeal",
-                "appealSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
-                                      + "      \"remissionType\":\"" + "helpWithFees" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                List.of(
-                    Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
-                "submitAppeal",
-                "appealSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "refusalOfEu" + "\",\n"
-                                      + "      \"remissionType\":\"" + "hoWaiverRemission" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                List.of(
-                    Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
-                "submitAppeal",
-                "appealSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "refusalOfEu" + "\",\n"
-                                      + "      \"remissionType\":\"" + "exceptionalCircumstancesRemission" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                List.of(
-                    Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
-                "submitAppeal",
-                "appealSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "refusalOfEu" + "\",\n"
-                                      + "      \"remissionType\":\"" + "helpWithFees" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                List.of(
-                    Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
-                "submitAppeal",
-                "appealSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "protection" + "\",\n"
-                                      + "      \"remissionType\":\"" + "hoWaiverRemission" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                List.of(
-                    Map.of(
-                        "taskId", "reviewTheAppeal",
-                        "name", "Review the appeal",
-
-                        "processCategories", "caseProgression"
-                    ),
-                    Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
-                "submitAppeal",
-                "appealSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "protection" + "\",\n"
-                                      + "      \"remissionType\":\"" + "exceptionalCircumstancesRemission" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                List.of(
-                    Map.of(
-                        "taskId", "reviewTheAppeal",
-                        "name", "Review the appeal",
-
-                        "processCategories", "caseProgression"
-                    ),
-                    Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
-                "submitAppeal",
-                "appealSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "protection" + "\",\n"
-                                      + "      \"remissionType\":\"" + "helpWithFees" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                List.of(
-                    Map.of(
-                        "taskId", "reviewTheAppeal",
-                        "name", "Review the appeal",
-
-                        "processCategories", "caseProgression"
-                    ),
-                    Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
-                "submitAppeal",
-                "appealSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                                      + "      \"remissionType\":\"" + "hoWaiverRemission" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                List.of(
-                    Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
-                "submitAppeal",
-                "appealSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                                      + "      \"remissionType\":\"" + "exceptionalCircumstancesRemission" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                List.of(
-                    Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
-                "submitAppeal",
-                "appealSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                                      + "      \"remissionType\":\"" + "helpWithFees" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                List.of(
-                    Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
-                "requestFeeRemission",
-                null,
-                null,
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
-                "reviewHearingRequirements",
-                "listing",
-                null,
-                singletonList(
-                    Map.of(
-                        "taskId", "listTheCase",
-                        "name", "List the case",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
-                "listCaseWithoutHearingRequirements",
-                "listing",
-                null,
-                singletonList(
-                    Map.of(
-                        "taskId", "listTheCase",
-                        "name", "List the case",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
-                "recordRemissionDecision",
-                null,
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"remissionDecision\":\"" + "partiallyApproved" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                List.of(
-                    Map.of(
-                        "taskId", "sendPaymentRequest",
-                        "name", "Send Payment Request",
-
-                        "processCategories", "caseProgression"
-                    ),
-                    Map.of(
-                        "taskId", "markAsPaid",
-                        "name", "Mark as Paid",
-                        "delayUntil", delayFor12Days,
-
-                        "processCategories", "followUpOverdue"
-                    )
-                )
-            ),
-            Arguments.of(
-                "recordRemissionDecision",
-                null,
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"remissionDecision\":\"" + "partiallyApproved" + "\",\n"
-                                      + "      \"paymentStatus\":\"" + "Paid" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                emptyList()
-            ),
-            Arguments.of(
                 "unknownEvent",
                 null,
                 null,
@@ -1619,14 +1044,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     void given_multiple_event_ids_should_evaluate_dmn(String eventId,
                                                       String postEventState,
                                                       Map<String, Object> map,
-                                                      List<Map<String, Object>> expectation) {
+                                                      List<Map<String, String>> expectation) {
 
         VariableMap inputVariables = new VariableMapImpl();
         inputVariables.putValue("eventId", eventId);
         inputVariables.putValue("postEventState", postEventState);
         inputVariables.putValue("now", LocalDateTime.now().minusMinutes(10)
             .format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
-        inputVariables.putAll(map);
+        inputVariables.putValue("additionalData", map);
+
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
         assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
@@ -1647,6 +1073,19 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       + "      }"),
                 emptyList()
             ),
+            getArgumentOf("Adjourn","processApplicationAdjourn","Process Adjourn Application"),
+            getArgumentOf("Expedite","processApplicationExpedite","Process Expedite Application"),
+            getArgumentOf("Time extension","processApplicationTimeExtension","Process Time Extension Application"),
+            getArgumentOf("Transfer","processApplicationTransfer","Process Transfer Application"),
+            getArgumentOf("Withdraw","processApplicationWithdraw","Process Withdraw Application"),
+            getArgumentOf("Update hearing requirements","processApplicationUpdateHearingRequirements",
+                          "Process Update Hearing Requirements Application"),
+            getArgumentOf("Update appeal details","processApplicationUpdateAppealDetails",
+                          "Process Update Appeal Details Application"),
+            getArgumentOf("Reinstate an ended appeal","processApplicationReinstateAnEndedAppeal",
+                          "Process Reinstate An Ended Appeal Application"),
+            getArgumentOf("Other","processApplicationOther","Process Other Application"),
+            getArgumentOf("Link/unlink appeals","link/unlinkAppeals","Process Link/Unlink Appeals Application"),
             Arguments.of(
                 "makeAnApplication",
                 null,
@@ -1662,24 +1101,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "processApplicationToReviewDecision",
                         "name", "Process Application to Review Decision",
-
+                        "workingDaysAllowed", 2,
                         "processCategories", "application"
                     )
                 )
-            ),
-            getArgumentOf("Adjourn"),
-            getArgumentOf("Expedite"),
-            getArgumentOf("Time extension"),
-            getArgumentOf("Transfer"),
-            getArgumentOf("Withdraw"),
-            getArgumentOf("Update appeal details"),
-            getArgumentOf("Reinstate an ended appeal"),
-            getArgumentOf("Other"),
-            getArgumentOf("Link/unlink appeals")
+            )
         );
     }
 
-    private static Arguments getArgumentOf(String applicationType) {
+    private static Arguments getArgumentOf(String applicationType, String taskId, String taskName) {
         return Arguments.of(
             "makeAnApplication",
             null,
@@ -1711,7 +1141,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         VariableMap inputVariables = new VariableMapImpl();
         inputVariables.putValue("eventId", eventId);
         inputVariables.putValue("postEventState", postEventState);
-        inputVariables.putAll(additionalData);
+        inputVariables.putValue("additionalData", additionalData);
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
@@ -1743,7 +1173,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     "taskId", taskId,
                     "name", name,
 
-
+                    "workingDaysAllowed", 2,
                     "processCategories", "application"
                 )
             )
@@ -1759,7 +1189,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         VariableMap inputVariables = new VariableMapImpl();
         inputVariables.putValue("eventId", eventId);
         inputVariables.putValue("postEventState", postEventState);
-        inputVariables.putAll(additionalData);
+        inputVariables.putValue("additionalData", additionalData);
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
@@ -1784,7 +1214,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewAddendumEvidence",
                         "name", "Review Addendum Evidence",
-
+                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -1796,7 +1226,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewAddendumEvidence",
                         "name", "Review Addendum Evidence",
-
+                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -1808,7 +1238,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewAddendumEvidence",
                         "name", "Review Addendum Evidence",
-
+                        "workingDaysAllowed", 2,
                         "processCategories", "caseProgression"
                     )
                 )
@@ -1837,7 +1267,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         try {
             TypeReference<HashMap<String, Object>> typeRef = new TypeReference<>() {
             };
-            return Map.of("additionalData", mapper.readValue(additionalData, typeRef));
+            return mapper.readValue(additionalData, typeRef);
         } catch (IOException exp) {
             return null;
         }
