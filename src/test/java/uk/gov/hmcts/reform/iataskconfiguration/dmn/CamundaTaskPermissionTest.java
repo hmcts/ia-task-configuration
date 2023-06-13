@@ -405,31 +405,31 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         MatcherAssert.assertThat(dmnDecisionTableResult.getResultList(), is(List.of(
             Map.of(
                 "name", "task-supervisor",
-                "value", "Read,Refer,Execute,Manage,Cancel",
+                "value", "Read,Execute,Claim,Manage,Unassign,Assign,Complete,Cancel",
                 "autoAssignable", false
             ), Map.of(
                 "name", "case-manager",
-                "value", "Read,Refer,Own,Cancel",
+                "value", "Read,Own,Claim,Cancel",
                 "roleCategory", "LEGAL_OPERATIONS",
                 "autoAssignable", true
             ),
             Map.of(
                 "name", "tribunal-caseworker",
-                "value", "Read,Refer,Own,Manage,Cancel",
+                "value", "Read,Own,Claim,Manage,Unassign,Assign,Complete,Cancel",
                 "roleCategory", "LEGAL_OPERATIONS",
                 "assignmentPriority", 1,
                 "autoAssignable", false
             ),
             Map.of(
                 "name", "senior-tribunal-caseworker",
-                "value", "Read,Refer,Own,Manage,Cancel",
+                "value", "Read,Own,Claim,Manage,Unassign,Assign,Complete,Cancel",
                 "roleCategory", "LEGAL_OPERATIONS",
                 "assignmentPriority", 1,
                 "autoAssignable", false
             ),
             Map.of(
                 "name", "judge",
-                "value", "Read,Refer,Execute,Manage,Cancel",
+                "value", "Read,Execute,Claim,Manage,Unassign,Assign,Complete,Cancel",
                 "roleCategory", "JUDICIAL",
                 "assignmentPriority", 2,
                 "authorisations", "373",
@@ -437,7 +437,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
             ),
             Map.of(
                 "name", "hearing-judge",
-                "value", "Read,Refer,Execute,Cancel",
+                "value", "Read,Execute,Claim,Cancel",
                 "roleCategory", "JUDICIAL",
                 "assignmentPriority", 2,
                 "autoAssignable", false
