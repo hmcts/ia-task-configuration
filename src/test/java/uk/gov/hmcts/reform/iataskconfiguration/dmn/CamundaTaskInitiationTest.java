@@ -22,6 +22,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
 
+import static com.microsoft.applicationinsights.boot.dependencies.apachecommons.lang3.text.WordUtils.capitalizeFully;
 import static java.util.Collections.emptyList;
 import static java.util.Collections.singletonList;
 import static org.hamcrest.CoreMatchers.is;
@@ -1675,9 +1676,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                   + "      }"),
             singletonList(
                 Map.of(
-                    "taskId", "processApplication",
-                    "name", "Process Application",
-
+                    "taskId", "processApplication" + capitalizeFully(applicationType).replaceAll("\\s+",""),
+                    "name", "Process " + capitalizeFully(applicationType) + " Application",
                     "processCategories", "application"
                 )
             )
@@ -1724,8 +1724,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 Map.of(
                     "taskId", taskId,
                     "name", name,
-
-
                     "processCategories", "application"
                 )
             )
@@ -1754,7 +1752,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(9));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(44));
+        assertThat(logic.getRules().size(), is(52));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {
