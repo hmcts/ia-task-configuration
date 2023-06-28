@@ -3638,7 +3638,7 @@ and additionalData.Data.suitabilityReviewDecision
           <text>"suitable"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0jqz8uh">
-          <text>"adaCreateHearingBundle"</text>
+          <text>"adaCaseSummaryHearingBundleStartDecision"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0ucgy2k">
           <text>"ADA-Create Hearing Bundle"</text>

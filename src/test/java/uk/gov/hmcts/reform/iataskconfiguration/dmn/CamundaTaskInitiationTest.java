@@ -2134,7 +2134,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       + "}"),
                 List.of(
                     Map.of(
-                        "taskId", "adaCreateHearingBundle",
+                        "taskId", "adaCaseSummaryHearingBundleStartDecision",
                         "name", "ADA-Create Hearing Bundle",
                         "processCategories", "caseProgression"
                     )

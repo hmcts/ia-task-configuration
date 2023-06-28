@@ -515,17 +515,6 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0dj8ofh">
-        <inputEntry id="UnaryTests_0t15tzm">
-          <text>"decisionAndReasonsStarted"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0t4zfgd">
-          <text>"adaCreateHearingBundle"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1tixgjh">
-          <text>"Auto"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_0qvo1uk">
         <inputEntry id="UnaryTests_1rkzeus">
           <text>"recordRemissionDecision"</text>

@@ -200,7 +200,6 @@
                         "reviewCaseTransferredOutOfADA",
                         "reviewCaseMarkedUnsuitableForADA",
                         "adaListCase",
-                        "adaCreateHearingBundle",
                         "reviewClarifyingQuestionsAnswers",
                         "reviewRemissionApplication",
                         "assignAFTPAJudge",
@@ -425,7 +424,6 @@
                         "adaFollowUpExtendedDirection",
                         "reviewCaseTransferredOutOfADA",
                         "reviewCaseMarkedUnsuitableForADA",
-                        "adaCreateHearingBundle",
                         "adaAllocateFTPAJudge"
                     </text>
         </inputEntry>
@@ -734,7 +732,6 @@
 "reviewCaseMarkedUnsuitableForADA",
 "reviewADASuitability",
 "adaAllocateHearingJudge",
-"adaCreateHearingBundle",
 "adaAllocateFTPAJudge"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ssbj4t">
