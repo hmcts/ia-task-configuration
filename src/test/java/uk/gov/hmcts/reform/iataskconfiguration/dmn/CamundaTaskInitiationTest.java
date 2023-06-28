@@ -164,8 +164,9 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "processCategories", "caseProgression"
                     ),
                     Map.of(
-                        "taskId", "adaAllocateFTPAJudge",
-                        "name", "ADA-allocateFTPAJudge",
+                        "taskId", "adaAssignAFTPAJudge",
+                        "name", "ADA-Assign a FTPA Judge",
+
                         "processCategories", "caseProgression"
                     )
                 )
@@ -185,8 +186,9 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "processCategories", "caseProgression"
                     ),
                     Map.of(
-                        "taskId", "adaAllocateFTPAJudge",
-                        "name", "ADA-allocateFTPAJudge",
+                        "taskId", "adaAssignAFTPAJudge",
+                        "name", "ADA-Assign a FTPA Judge",
+
                         "processCategories", "caseProgression"
                     )
                 )
