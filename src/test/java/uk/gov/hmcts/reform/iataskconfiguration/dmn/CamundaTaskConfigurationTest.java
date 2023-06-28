@@ -205,6 +205,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("adaListCase", routineWork),
             Arguments.of("reviewRemissionApplication", routineWork),
             Arguments.of("assignAFTPAJudge", routineWork),
+            Arguments.of("adaAssignAFTPAJudge", routineWork),
             Arguments.of("sendPaymentRequest", routineWork),
             Arguments.of("markAsPaid", routineWork),
             Arguments.of("reviewAdditionalEvidence", decisionMakingWork),
@@ -243,7 +244,6 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("uploadDecision", hearingWork),
             Arguments.of("uploadHearingRecording", hearingWork),
             Arguments.of("adaUploadHearingRecording", hearingWork),
-            Arguments.of("adaAllocateFTPAJudge", hearingWork),
             Arguments.of("editListing", hearingWork),
             Arguments.of("adaEditListing", hearingWork),
             Arguments.of("followUpOverdueHearingRequirements", hearingWork),
@@ -418,7 +418,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
     @ParameterizedTest
     @CsvSource({
-        "reviewRemissionApplication","assignAFTPAJudge","listTheCase","sendPaymentRequest","markAsPaid"
+        "reviewRemissionApplication","assignAFTPAJudge","listTheCase","sendPaymentRequest","markAsPaid",
+        "adaAssignAFTPAJudge"
     })
     void when_taskId_then_return_Ctsc_role_category(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
@@ -457,7 +458,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "followUpNonStandardDirection", "followUpNoticeOfChange", "reviewAdditionalEvidence",
         "reviewAdditionalHomeOfficeEvidence","followUpExtendedDirection", "adaFollowUpExtendedDirection",
         "adaReviewAdditionalEvidence", "adaReviewAdditionalHomeOfficeEvidence","reviewCaseTransferredOutOfADA",
-        "reviewCaseMarkedUnsuitableForADA","adaAllocateFTPAJudge"
+        "reviewCaseMarkedUnsuitableForADA"
     })
     void when_taskId_then_return_legal_operations_role_category(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
@@ -880,8 +881,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             + "(/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/transferOutOfAda),",
         "reviewADASuitability,[Review ADA suitability](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
             + "adaSuitabilityReview),",
-        "adaAllocateFTPAJudge," + "[Allocate FTPA Judge](/role-access/allocate-role/allocate?caseId="
-            + "${[CASE_REFERENCE]}&roleCategory=JUDICIAL&jurisdiction=IA),",
+        "adaAssignAFTPAJudge,[Record allocated Judge](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
+            + "recordAllocatedJudge),",
         "reviewRemissionApplication,[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/"
             + "recordRemissionDecision/recordRemissionDecisionremissionDecision),",
         "assignAFTPAJudge,[Record allocated Judge](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/recordAllocatedJudge),",
@@ -1045,7 +1046,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("reviewCaseMarkedUnsuitableForADA", zeroDays),
             Arguments.of("reviewADASuitability", zeroDays),
             Arguments.of("adaAllocateHearingJudge", zeroDays),
-            Arguments.of("adaAllocateFTPAJudge", zeroDays),
+            Arguments.of("adaAssignAFTPAJudge", zeroDays),
             Arguments.of("markAsPaid", fourteenDays)
         );
     }

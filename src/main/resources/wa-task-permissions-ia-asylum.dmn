@@ -101,8 +101,7 @@
             "adaFollowUpExtendedDirection",
             "adaReviewAdditionalEvidence",
             "reviewCaseTransferredOutOfADA",
-            "reviewCaseMarkedUnsuitableForADA",
-            "adaAllocateFTPAJudge"</text>
+            "reviewCaseMarkedUnsuitableForADA"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0buofva">
           <text></text>
@@ -135,7 +134,7 @@
           <text>"reviewTheAppeal","adaReviewTheAppeal","reviewRespondentEvidence","adaReviewRespondentEvidence","followUpOverdueRespondentEvidence","adaFollowUpOverdueRespondentEvidence","reviewAppealSkeletonArgument","adaReviewAppealSkeletonArgument","followUpOverdueCaseBuilding","adaFollowUpOverdueCaseBuilding","reviewReasonsForAppeal","followUpOverdueReasonsForAppeal","reviewClarifyingQuestionsAnswers","followUpOverdueClarifyingAnswers","reviewRespondentResponse","followUpOverdueRespondentReview","adaFollowUpOverdueRespondentReview","reviewHearingRequirements","followUpOverdueHearingRequirements","reviewCmaRequirements","caseSummaryHearingBundleStartDecision","adaCaseSummaryHearingBundleStartDecision","processApplication","adaProcessApplicationToUpdateHearingRequirements","adaProcessApplicationToUpdateAppealDetails","adaProcessApplicationToReinstateAnEndedAppeal","adaProcessApplicationToOther","adaLinkUnlinkAppeals","attendCma","startDecisionsAndReasons","followUpNoticeOfChange","adaFollowUpNoticeOfChange","followUpOverdueCmaRequirements","followUpNonStandardDirection","adaFollowUpNonStandardDirection","decideOnTimeExtension","reviewAdditionalEvidence","adaReviewAdditionalEvidence","reviewAdditionalHomeOfficeEvidence","adaReviewAdditionalHomeOfficeEvidence",
             "followUpExtendedDirection","adaFollowUpExtendedDirection",
             "startDecisionsAndReasonsDocument","createHearingBundle","createCaseSummary",
-            "reviewCaseTransferredOutOfADA","reviewCaseMarkedUnsuitableForADA","adaAllocateFTPAJudge"</text>
+            "reviewCaseTransferredOutOfADA","reviewCaseMarkedUnsuitableForADA"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_10s330p">
           <text></text>
@@ -210,8 +209,7 @@
             "followUpExtendedDirection",
             "adaFollowUpExtendedDirection",
             "reviewCaseTransferredOutOfADA",
-            "reviewCaseMarkedUnsuitableForADA",
-            "adaAllocateFTPAJudge"
+            "reviewCaseMarkedUnsuitableForADA"
           </text>
         </inputEntry>
         <inputEntry id="UnaryTests_18tqbn3">
@@ -629,7 +627,7 @@
       <rule id="DecisionRule_05nq60d">
         <description>CTSC Admin task permissions</description>
         <inputEntry id="UnaryTests_1q2j4ix">
-          <text>"reviewRemissionApplication","assignAFTPAJudge","listTheCase","sendPaymentRequest","markAsPaid"</text>
+          <text>"reviewRemissionApplication","assignAFTPAJudge","listTheCase","sendPaymentRequest","markAsPaid","adaAssignAFTPAJudge"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1p44stw">
           <text></text>
@@ -659,7 +657,7 @@
       <rule id="DecisionRule_155ah64">
         <description>CTSC Team Leader task permissions</description>
         <inputEntry id="UnaryTests_08panx7">
-          <text>"reviewRemissionApplication","assignAFTPAJudge","listTheCase","sendPaymentRequest","markAsPaid"</text>
+          <text>"reviewRemissionApplication","assignAFTPAJudge","listTheCase","sendPaymentRequest","markAsPaid","adaAssignAFTPAJudge"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0njeznv">
           <text></text>
