@@ -355,7 +355,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
     @ParameterizedTest
     @CsvSource({
-        "reviewHearingBundle", "adaReviewHearingBundle",
+        "reviewHearingBundle",
         "generateDraftDecisionAndReasons", "uploadDecision", "reviewAddendumHomeOfficeEvidence",
         "reviewAddendumAppellantEvidence", "reviewAddendumEvidence",
         "adaReviewAddendumEvidence", "reviewSpecificAccessRequestJudiciary",
@@ -458,7 +458,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "followUpNonStandardDirection", "followUpNoticeOfChange", "reviewAdditionalEvidence",
         "reviewAdditionalHomeOfficeEvidence","followUpExtendedDirection", "adaFollowUpExtendedDirection",
         "adaReviewAdditionalEvidence", "adaReviewAdditionalHomeOfficeEvidence","reviewCaseTransferredOutOfADA",
-        "reviewCaseMarkedUnsuitableForADA"
+        "reviewCaseMarkedUnsuitableForADA", "adaReviewHearingBundle"
     })
     void when_taskId_then_return_legal_operations_role_category(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();

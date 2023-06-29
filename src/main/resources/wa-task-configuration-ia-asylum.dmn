@@ -424,7 +424,8 @@
                         "followUpExtendedDirection",
                         "adaFollowUpExtendedDirection",
                         "reviewCaseTransferredOutOfADA",
-                        "reviewCaseMarkedUnsuitableForADA"
+                        "reviewCaseMarkedUnsuitableForADA",
+                        "adaReviewHearingBundle"
                     </text>
         </inputEntry>
         <outputEntry id="LiteralExpression_05l5bvs">
@@ -459,7 +460,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_15ftuu0">
-          <text>"reviewHearingBundle","adaReviewHearingBundle","generateDraftDecisionAndReasons","uploadDecision","reviewAddendumHomeOfficeEvidence","reviewAddendumAppellantEvidence","reviewAddendumEvidence","adaReviewAddendumEvidence","reviewSpecificAccessRequestJudiciary","reviewSpecificAccessRequestLegalOps","reviewSpecificAccessRequestAdmin","reviewSpecificAccessRequestCTSC","processApplicationToReviewDecision","adaProcessApplicationToAdjourn","adaProcessApplicationToExpedite","adaProcessApplicationForTimeExtension","adaProcessApplicationToWithdraw","adaProcessApplicationToReviewDecision","sendDecisionsAndReasons","adaSendDecisionsAndReasons","prepareDecisionsAndReasons","adaPrepareDecisionsAndReasons","decideAnFTPA","adaDecideAnFTPA","reviewADASuitability"</text>
+          <text>"reviewHearingBundle","generateDraftDecisionAndReasons","uploadDecision","reviewAddendumHomeOfficeEvidence","reviewAddendumAppellantEvidence","reviewAddendumEvidence","adaReviewAddendumEvidence","reviewSpecificAccessRequestJudiciary","reviewSpecificAccessRequestLegalOps","reviewSpecificAccessRequestAdmin","reviewSpecificAccessRequestCTSC","processApplicationToReviewDecision","adaProcessApplicationToAdjourn","adaProcessApplicationToExpedite","adaProcessApplicationForTimeExtension","adaProcessApplicationToWithdraw","adaProcessApplicationToReviewDecision","sendDecisionsAndReasons","adaSendDecisionsAndReasons","prepareDecisionsAndReasons","adaPrepareDecisionsAndReasons","decideAnFTPA","adaDecideAnFTPA","reviewADASuitability"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_15nowth">
           <text>"roleCategory"</text>
