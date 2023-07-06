@@ -383,6 +383,391 @@
           <text>"Mark as Paid"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_01d7x1h">
+        <inputEntry id="UnaryTests_03grx9p">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_04694yi">
+          <text>"adaProcessApplicationToAdjourn"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_07cjalv">
+          <text>"ADA-Process Application to Adjourn"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_163ipo9">
+        <inputEntry id="UnaryTests_0jyxqiz">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0dy7bhh">
+          <text>"adaProcessApplicationToExpedite"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_01x959m">
+          <text>"ADA-Process Application to Expedite"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0s4yvu5">
+        <inputEntry id="UnaryTests_08msf9t">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0qmuc2e">
+          <text>"adaProcessApplicationForTimeExtension"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0bnj3u9">
+          <text>"ADA-Process Application for Time Extension"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_16aurh8">
+        <inputEntry id="UnaryTests_07v7h63">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_09wvrqu">
+          <text>"adaProcessApplicationToWithdraw"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ulhci0">
+          <text>"ADA-Process Application to Expedite"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1dy7ih6">
+        <inputEntry id="UnaryTests_1srw3hj">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0bg367f">
+          <text>"adaProcessApplicationToReviewDecision"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_10jz0nm">
+          <text>"ADA-Process Application to Review Decision"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0z18e4s">
+        <inputEntry id="UnaryTests_0oz3isn">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1b32w4l">
+          <text>"adaProcessApplicationToUpdateHearingRequirements"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1q9cjde">
+          <text>"ADA-Process Application to Update Hearing Requirements"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0gf5a2w">
+        <inputEntry id="UnaryTests_0bhb9jt">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1pju1h5">
+          <text>"adaProcessApplicationToUpdateAppealDetails"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0c055oy">
+          <text>"ADA-Process Application to Update Appeal Details"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_052brf2">
+        <inputEntry id="UnaryTests_0y06qo0">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_12ae257">
+          <text>"adaProcessApplicationToReinstateAnEndedAppeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0qalp2v">
+          <text>"ADA-Process Application to Reinstate An Appeal"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_11qzah2">
+        <inputEntry id="UnaryTests_01gjoha">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_147x8mx">
+          <text>"adaProcessApplicationToOther"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_13rkxbd">
+          <text>"ADA-Process Other Application"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0fo0vap">
+        <inputEntry id="UnaryTests_16a2rfj">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_139szmb">
+          <text>"adaLinkUnlinkAppeals"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ze2463">
+          <text>"ADA-Process Application to Link/Unlink Appeals"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1y327ph">
+        <inputEntry id="UnaryTests_1sd0aa6">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1voif03">
+          <text>"adaEditListing"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_14vh2yp">
+          <text>"ADA-Edit Listing"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1o7ljw7">
+        <inputEntry id="UnaryTests_1geur24">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0bcr1i4">
+          <text>"adaReviewTheAppeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1xxl6ja">
+          <text>"ADA-Review the appeal"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1xccydr">
+        <inputEntry id="UnaryTests_0512872">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1rntpbr">
+          <text>"adaReviewRespondentEvidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0tipu6g">
+          <text>"ADA-Review Respondent Evidence"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0hlx9sk">
+        <inputEntry id="UnaryTests_1vygr1v">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_13pra5f">
+          <text>"adaReviewAdditionalEvidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1pgiw18">
+          <text>"ADA-Review additional evidence"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0hq4ale">
+        <inputEntry id="UnaryTests_141q7l4">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0j2jwtq">
+          <text>"adaReviewAdditionalHomeOfficeEvidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1aejktj">
+          <text>"ADA-Review additional Home Office evidence"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0rwezy5">
+        <inputEntry id="UnaryTests_060pvvn">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1onyxv0">
+          <text>"adaReviewAppealSkeletonArgument"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1bcq3xj">
+          <text>"ADA-Review Appeal Skeleton Argument"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1dsuq4u">
+        <inputEntry id="UnaryTests_0sff4sh">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0v327qe">
+          <text>"adaCaseSummaryHearingBundleStartDecision"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04w7pa2">
+          <text>"ADA-Create Hearing Bundle"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_09r48ne">
+        <inputEntry id="UnaryTests_1cyjxte">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0jrrqly">
+          <text>"adaFollowUpOverdueRespondentEvidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ualdx2">
+          <text>"ADA-Follow-up overdue respondent evidence"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1mxyzjs">
+        <inputEntry id="UnaryTests_1sk1zvb">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_013dl9l">
+          <text>"adaListCase"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0az9t17">
+          <text>"ADA-List case"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0bxwn8g">
+        <inputEntry id="UnaryTests_0yh27w4">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_09lxnwt">
+          <text>"adaFollowUpExtendedDirection"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12zxohm">
+          <text>"ADA-Follow-up extended direction"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0f8gxcb">
+        <inputEntry id="UnaryTests_1w8nr75">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0d949rz">
+          <text>"adaFollowUpOverdueCaseBuilding"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ckc9k5">
+          <text>"ADA-Follow-up overdue case building"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_19q8jtf">
+        <inputEntry id="UnaryTests_0tdlyur">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_19wo3h8">
+          <text>"adaFollowUpOverdueRespondentReview"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0vrcmb7">
+          <text>"ADA-Follow-up overdue respondent review"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0gjhol7">
+        <inputEntry id="UnaryTests_0xhtxip">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0otjukm">
+          <text>"adaFollowUpNonStandardDirection"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0zghnyj">
+          <text>"ADA-Follow-up non-standard direction"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0gd7q0v">
+        <inputEntry id="UnaryTests_0tqfdzw">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0e5zltv">
+          <text>"adaFollowUpNoticeOfChange"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0mo62a4">
+          <text>"ADA-Follow-up Notice of Change"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1wv06xf">
+        <inputEntry id="UnaryTests_0fo8rpg">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_06xnw4m">
+          <text>"adaReviewAddendumEvidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0pm92ed">
+          <text>"ADA-Review addendum evidence"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_00pubxy">
+        <inputEntry id="UnaryTests_04wy4yz">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0rzksex">
+          <text>"adaReviewHearingBundle"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0hnlnhi">
+          <text>"ADA-Review Hearing bundle"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1pae1vy">
+        <inputEntry id="UnaryTests_0oy2dq8">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0uvhyxc">
+          <text>"adaSendDecisionsAndReasons"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0asg4hp">
+          <text>"ADA-Send decisions and reasons"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1006vle">
+        <inputEntry id="UnaryTests_0fdz6x8">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0bc01od">
+          <text>"adaPrepareDecisionsAndReasons"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1mndj51">
+          <text>"ADA-Prepare decisions and reasons"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1dlpv0z">
+        <inputEntry id="UnaryTests_184te8e">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1qi9ggr">
+          <text>"adaUploadHearingRecording"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0oti8vz">
+          <text>"adaUploadHearingRecording"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1538awc">
+        <inputEntry id="UnaryTests_12erkge">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1812n9b">
+          <text>"adaDecideAnFTPA"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12bd5vg">
+          <text>"ADA-Decide an FTPA"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0br01if">
+        <inputEntry id="UnaryTests_1tes39g">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0mxrygh">
+          <text>"reviewCaseTransferredOutOfADA"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_00yq6gp">
+          <text>"Review Case Transferred Out Of ADA"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1m8ch0u">
+        <inputEntry id="UnaryTests_0givsd9">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1k8b588">
+          <text>"reviewCaseMarkedUnsuitableForADA"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0tpzipz">
+          <text>"Review Case Marked Unsuitable For ADA"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_09giqgg">
+        <inputEntry id="UnaryTests_1yb9jxw">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0rywlst">
+          <text>"reviewADASuitability"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_09y1o42">
+          <text>"Review ADA suitability"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0eawyn9">
+        <inputEntry id="UnaryTests_085j5bt">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_04freuf">
+          <text>"adaAllocateHearingJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0yrw6ii">
+          <text>"ADA-Allocate Hearing Judge"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ssdp5q">
+        <inputEntry id="UnaryTests_1eo11sg">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_12f9stb">
+          <text>"adaAssignAFTPAJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1thykkz">
+          <text>"ADA-Assign a FTPA Judge"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
