@@ -3890,7 +3890,7 @@ and additionalData.Data.suitabilityReviewDecision
           <text>"recordRemissionDecision"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_09614y2">
-          <text>"partiallyApproved"</text>
+          <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1hmo6ll">
           <text></text>
@@ -3908,7 +3908,7 @@ and additionalData.Data.suitabilityReviewDecision
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_05ptr17">
-          <text></text>
+          <text>"partiallyApproved"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0b9ub2p">
           <text>false</text>
@@ -3937,7 +3937,7 @@ and additionalData.Data.suitabilityReviewDecision
           <text>"recordRemissionDecision"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0c0sc9t">
-          <text>"partiallyApproved"</text>
+          <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1r2ugra">
           <text></text>
@@ -3955,7 +3955,7 @@ and additionalData.Data.suitabilityReviewDecision
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0lqtlme">
-          <text></text>
+          <text>"partiallyApproved"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_06qmmpi">
           <text>false</text>

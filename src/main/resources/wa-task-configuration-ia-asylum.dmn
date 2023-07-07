@@ -728,7 +728,6 @@
 "adaPrepareDecisionsAndReasons",
 "adaUploadHearingRecording",
 "adaDecideAnFTPA",
-"adaEditListing",
 "reviewCaseTransferredOutOfADA",
 "reviewCaseMarkedUnsuitableForADA",
 "reviewADASuitability",
