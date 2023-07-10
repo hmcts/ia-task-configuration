@@ -424,7 +424,7 @@
           <text>"adaProcessApplicationToWithdraw"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1ulhci0">
-          <text>"ADA-Process Application to Expedite"</text>
+          <text>"ADA-Process Application to Withdraw"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1dy7ih6">
@@ -699,7 +699,7 @@
           <text>"adaUploadHearingRecording"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0oti8vz">
-          <text>"adaUploadHearingRecording"</text>
+          <text>"ADA-Upload hearing recording"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1538awc">
