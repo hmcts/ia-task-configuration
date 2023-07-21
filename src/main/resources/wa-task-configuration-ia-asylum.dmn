@@ -253,7 +253,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1ps3x4j">
-          <text>"reviewHearingBundle","generateDraftDecisionAndReasons","uploadDecision","uploadHearingRecording","editListing","followUpOverdueHearingRequirements","reviewHearingRequirements","allocateHearingJudge","prepareDecisionsAndReasons","startDecisionsAndReasonsDocument","createHearingBundle","createCaseSummary","listTheCase"</text>
+          <text>"reviewHearingBundle","generateDraftDecisionAndReasons","uploadDecision","uploadHearingRecording","postHearingAttendeesDurationAndRecording","editListing","followUpOverdueHearingRequirements","reviewHearingRequirements","allocateHearingJudge","prepareDecisionsAndReasons","startDecisionsAndReasonsDocument","createHearingBundle","createCaseSummary","listTheCase"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0c3eia6">
           <text>"workType"</text>
@@ -393,7 +393,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1glizm3">
-          <text>"arrangeOfflinePayment","markCaseAsPaid","allocateHearingJudge","uploadHearingRecording","editListing"</text>
+          <text>"arrangeOfflinePayment","markCaseAsPaid","allocateHearingJudge","uploadHearingRecording","postHearingAttendeesDurationAndRecording","editListing"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1131kat">
           <text>"roleCategory"</text>
