@@ -243,9 +243,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "prepareDecisionsAndReasons",
                 List.of(
-                    taskSupervisor,
-                    hearingJudgePriorityOne,
-                    judgePriorityOne
+                    taskSupervisor
                 )
             )
         );
