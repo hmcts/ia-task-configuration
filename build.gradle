@@ -246,7 +246,7 @@ repositories {
 }
 
 def versions = [
-  reformLogging   : '5.1.7',
+  reformLogging   : '6.0.1',
   springfoxSwagger: '3.0.0',
   camunda         : '7.15.0',
   pitest          : '1.9.11',
