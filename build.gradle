@@ -9,15 +9,16 @@ plugins {
   id 'org.owasp.dependencycheck' version '8.2.1'
   id 'org.sonarqube' version '3.2.0'
   id 'info.solidsoft.pitest' version '1.9.11'
-  id 'io.freefair.lombok' version '5.3.0'
+  id 'io.freefair.lombok' version '6.2.0'
 }
 
 group = 'uk.gov.hmcts.reform'
 version = '0.0.1'
 
-allprojects {
-  sourceCompatibility = '11'
-  targetCompatibility = '11'
+java {
+  toolchain {
+    languageVersion = JavaLanguageVersion.of(17)
+  }
 }
 
 lombok {
@@ -53,6 +54,14 @@ sourceSets {
     }
     resources.srcDir file('src/smokeTest/resources')
   }
+}
+
+processFunctionalTestResources {
+  duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
+processIntegrationTestResources {
+  duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
 
 tasks.withType(JavaCompile) {
@@ -100,7 +109,7 @@ task tests {
 
 checkstyle {
   maxWarnings = 0
-  toolVersion = '8.29'
+  toolVersion = '10.12.0'
   getConfigDirectory().set(new File(rootDir, 'config/checkstyle'))
 }
 
@@ -124,9 +133,9 @@ jacocoTestCoverageVerification {
 jacocoTestReport {
   executionData(test, integration)
   reports {
-    xml.enabled = true
-    csv.enabled = false
-    xml.destination file("${buildDir}/reports/jacoco/test/jacocoTestReport.xml")
+    xml.required = true
+    csv.required = false
+    xml.getOutputLocation().set(file("${buildDir}/reports/jacoco/test/jacocoTestReport.xml"))
   }
 }
 
@@ -260,17 +269,17 @@ dependencies {
   implementation group: 'org.apache.logging.log4j', name: 'log4j-api', version: versions.log4j
   implementation group: 'org.apache.logging.log4j', name: 'log4j-to-slf4j', version: versions.log4j
 
-  testCompile group: 'org.pitest', name: 'pitest', version: versions.pitest
-  testCompile group: 'info.solidsoft.gradle.pitest', name:'gradle-pitest-plugin', version: versions.pitest
+  testImplementation group: 'org.pitest', name: 'pitest', version: versions.pitest
+  testImplementation group: 'info.solidsoft.gradle.pitest', name:'gradle-pitest-plugin', version: versions.pitest
 
-  testCompile group: 'org.codehaus.sonar-plugins', name: 'sonar-pitest-plugin', version: versions.sonarPitest
+  testImplementation group: 'org.codehaus.sonar-plugins', name: 'sonar-pitest-plugin', version: versions.sonarPitest
   testImplementation group: 'org.springframework.boot', name: 'spring-boot-starter-test'
 
   testImplementation group: 'org.camunda.bpm.dmn', name: 'camunda-engine-dmn', version: versions.camunda
   testImplementation group: 'org.camunda.bpm.assert', name: 'camunda-bpm-assert', version: '8.0.0'
   testImplementation group: 'org.camunda.bpm', name: 'camunda-engine', version: versions.camunda
 
-  testCompile group: 'org.apiguardian', name: 'apiguardian-api', version: '1.1.2'
+  testImplementation group: 'org.apiguardian', name: 'apiguardian-api', version: '1.1.2'
 
   integrationTestImplementation sourceSets.main.runtimeClasspath
   integrationTestImplementation sourceSets.test.runtimeClasspath
