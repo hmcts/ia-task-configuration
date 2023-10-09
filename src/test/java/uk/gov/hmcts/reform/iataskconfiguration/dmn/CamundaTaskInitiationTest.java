@@ -780,8 +780,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "processCategories", "caseProgression"
                     ),
                     Map.of(
-                        "taskId", "uploadHearingRecording",
-                        "name", "Upload hearing recording",
+                        "taskId", "postHearingAttendeesDurationAndRecording",
+                        "name", "Post hearing – attendees, duration and recording",
                         "processCategories", "caseProgression",
                         "delayUntil", Map.of(
                             "delayUntil", hearingDate,

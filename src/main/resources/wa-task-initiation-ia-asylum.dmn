@@ -1490,10 +1490,10 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0x7a3uk">
-          <text>"uploadHearingRecording"</text>
+          <text>"postHearingAttendeesDurationAndRecording"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_118gmru">
-          <text>"Upload hearing recording"</text>
+          <text>"Post hearing – attendees, duration and recording"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0ay6ciw">
           <text>{
