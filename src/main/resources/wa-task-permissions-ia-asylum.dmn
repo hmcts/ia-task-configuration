@@ -367,8 +367,7 @@
         <description>Hearing judge task permissions</description>
         <inputEntry id="UnaryTests_1oxh1tt">
           <text>
-          "reviewHearingBundle",
-          "processApplicationToReviewDecision",
+           "processApplicationToReviewDecision",
           "reviewAddendumEvidence",
           "sendDecisionsAndReasons",
           "prepareDecisionsAndReasons"
@@ -403,8 +402,7 @@
         <description>Judge task permissions</description>
         <inputEntry id="UnaryTests_1099gbv">
           <text>
-            "reviewHearingBundle",
-            "reviewAddendumEvidence",
+             "reviewAddendumEvidence",
             "processApplicationToReviewDecision",
             "sendDecisionsAndReasons",
             "decideAnFTPA",
