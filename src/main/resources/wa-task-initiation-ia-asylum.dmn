@@ -2277,6 +2277,47 @@
           <text>"followUpOverdue"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_023ahoj">
+        <inputEntry id="UnaryTests_1j4wfu8">
+          <text>"handleHearingException"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1madz5k">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_027zeex">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1avtxbj">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fdm90u">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0gh0vty">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14ztt7j">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19u2kje">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19msecx">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1g3az0t">
+          <text>"hearingException"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1968il4">
+          <text>"Hearing exception"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0k16xpn">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_17n0qw5">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
