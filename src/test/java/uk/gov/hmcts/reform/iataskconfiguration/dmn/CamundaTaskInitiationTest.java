@@ -3438,7 +3438,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getInputs().size(), is(11));
+        assertThat(logic.getInputs().size(), is(12));
         assertThat(logic.getOutputs().size(), is(4));
         assertThat(logic.getRules().size(), is(80));
     }
@@ -3511,4 +3511,57 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         }
     }
 
+    @ParameterizedTest(name = "event id: {0} post event state: {1} additional data: {2}")
+    @MethodSource("scenarioProvider")
+    void given_multiple_event_ids_should_evaluate_dmn_to_not_create_task_if_notification_turned_off(String eventId,
+                                                      String postEventState,
+                                                      Map<String, HashMap<String, HashMap<String, Object>>> map,
+                                                      List<Map<String, String>> expectation) {
+
+        VariableMap inputVariables = new VariableMapImpl();
+        inputVariables.putValue("eventId", eventId);
+        inputVariables.putValue("postEventState", postEventState);
+        inputVariables.putValue("now", LocalDateTime.now().minusMinutes(10)
+            .format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
+
+        addNotificationMapping(inputVariables, map, true);
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        assertThat(dmnDecisionTableResult.getResultList(), is(emptyList()));
+    }
+
+    @ParameterizedTest(name = "event id: {0} post event state: {1} additional data: {2}")
+    @MethodSource("scenarioProvider")
+    void given_multiple_event_ids_should_evaluate_dmn_to_create_task_if_notification_turned_on(String eventId,
+                                                                         String postEventState,
+                                                                         Map<String, HashMap<String, HashMap<String, Object>>> map,
+                                                                         List<Map<String, String>> expectation) {
+
+        VariableMap inputVariables = new VariableMapImpl();
+        inputVariables.putValue("eventId", eventId);
+        inputVariables.putValue("postEventState", postEventState);
+        inputVariables.putValue("now", LocalDateTime.now().minusMinutes(10)
+                .format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
+
+        addNotificationMapping(inputVariables, map, false);
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
+    }
+
+    private static void addNotificationMapping(VariableMap inputVariables,
+                                               Map<String, HashMap<String, HashMap<String, Object>>> map,
+                                               boolean isNotificationTurnedOff) {
+        if (map != null && map.containsKey("additionalData")) {
+            HashMap<String, HashMap<String, Object>> additionalDataMap = map.get("additionalData");
+            HashMap<String, Object> dataMap = additionalDataMap.get("Data");
+            dataMap.put("isNotificationTurnedOff", isNotificationTurnedOff);
+        } else {
+            String additionalData = "{\"Data\":{\"isNotificationTurnedOff\":\"" + isNotificationTurnedOff + "\"}}";
+            inputVariables.putAll(mapAdditionalData(additionalData));
+        }
+        inputVariables.putAll(map);
+    }
 }
