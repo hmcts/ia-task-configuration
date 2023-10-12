@@ -794,8 +794,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "processCategories", "caseProgression"
                     ),
                     Map.of(
-                        "taskId", "postHearingAttendeesDurationAndRecording",
-                        "name", "Post hearing – attendees, duration and recording",
+                        "taskId", "uploadHearingRecording",
+                        "name", "Upload hearing recording",
                         "processCategories", "caseProgression",
                         "delayUntil", Map.of(
                             "delayUntil", hearingDate,
@@ -1649,19 +1649,40 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     )
                 )
             ),
-            getArgumentOf("Adjourn"),
-            getArgumentOf("Expedite"),
-            getArgumentOf("Time extension"),
-            getArgumentOf("Transfer"),
-            getArgumentOf("Withdraw"),
-            getArgumentOf("Update appeal details"),
-            getArgumentOf("Reinstate an ended appeal"),
-            getArgumentOf("Other"),
-            getArgumentOf("Link/unlink appeals")
+            getArgumentOf("Adjourn",
+                          "processApplicationAdjourn",
+                          "Process Adjourn Application"),
+            getArgumentOf("Expedite",
+                          "processApplicationExpedite",
+                          "Process Expedite Application"),
+            getArgumentOf("Time extension",
+                          "processApplicationTimeExtension",
+                          "Process Time Extension Application"),
+            getArgumentOf("Transfer",
+                          "processApplicationTransfer",
+                          "Process Transfer Application"),
+            getArgumentOf("Withdraw",
+                          "processApplicationWithdraw",
+                          "Process Withdraw Application"),
+            getArgumentOf("Update hearing requirements",
+                          "processApplicationUpdateHearingRequirements",
+                          "Process Update Hearing Requirements Application"),
+            getArgumentOf("Update appeal details",
+                          "processApplicationUpdateAppealDetails",
+                          "Process Update Appeal Details Application"),
+            getArgumentOf("Reinstate an ended appeal",
+                          "processApplicationReinstateAnEndedAppeal",
+                          "Process Reinstate An Ended Appeal Application"),
+            getArgumentOf("Other",
+                          "processApplicationOther",
+                          "Process Other Application"),
+            getArgumentOf("Link/unlink appeals",
+                          "processApplicationLink/UnlinkAppeals",
+                          "Process Link/Unlink Appeals Application")
         );
     }
 
-    private static Arguments getArgumentOf(String applicationType) {
+    private static Arguments getArgumentOf(String applicationType, String taskId, String taskName) {
         return Arguments.of(
             "makeAnApplication",
             null,
@@ -1675,8 +1696,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                   + "      }"),
             singletonList(
                 Map.of(
-                    "taskId", "processApplication",
-                    "name", "Process Application",
+                    "taskId", taskId,
+                    "name", taskName,
 
                     "processCategories", "application"
                 )
@@ -1754,7 +1775,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(9));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(44));
+        assertThat(logic.getRules().size(), is(53));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {

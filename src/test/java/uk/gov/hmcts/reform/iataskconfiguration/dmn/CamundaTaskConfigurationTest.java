@@ -24,7 +24,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.UUID;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static java.util.Collections.emptyMap;
@@ -58,7 +57,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
         List<Map<String, Object>> workTypeResultList = dmnDecisionTableResult.getResultList().stream()
             .filter((r) -> r.containsValue("workType"))
-            .collect(Collectors.toList());
+            .toList();
 
         assertEquals(1, workTypeResultList.size());
 
@@ -224,7 +223,6 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("generateDraftDecisionAndReasons", hearingWork),
             Arguments.of("uploadDecision", hearingWork),
             Arguments.of("uploadHearingRecording", hearingWork),
-            Arguments.of("postHearingAttendeesDurationAndRecording", hearingWork),
             Arguments.of("editListing", hearingWork),
             Arguments.of("followUpOverdueHearingRequirements", hearingWork),
             Arguments.of("reviewHearingRequirements", hearingWork),
@@ -234,7 +232,16 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("createHearingBundle", hearingWork),
             Arguments.of("createCaseSummary", hearingWork),
             Arguments.of("listTheCase", hearingWork),
-            Arguments.of("processApplication", applications),
+            Arguments.of("processApplicationAdjourn", applications),
+            Arguments.of("processApplicationExpedite", applications),
+            Arguments.of("processApplicationTimeExtension", applications),
+            Arguments.of("processApplicationTransfer", applications),
+            Arguments.of("processApplicationWithdraw", applications),
+            Arguments.of("processApplicationUpdateHearingRequirements", applications),
+            Arguments.of("processApplicationUpdateAppealDetails", applications),
+            Arguments.of("processApplicationReinstateAnEndedAppeal", applications),
+            Arguments.of("processApplicationOther", applications),
+            Arguments.of("processApplicationLink/UnlinkAppeals", applications),
             Arguments.of("processHearingRequirementsApplication", applications),
             Arguments.of("processHearingCentreApplication", applications),
             Arguments.of("processApplicationToExpedite", applications),
@@ -264,7 +271,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
         List<Map<String, Object>> workTypeResultList = dmnDecisionTableResult.getResultList().stream()
             .filter((r) -> r.containsValue("workType"))
-            .collect(Collectors.toList());
+            .toList();
 
         assertEquals(1, workTypeResultList.size());
 
@@ -292,7 +299,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
         List<Map<String, Object>> dmnResults = dmnDecisionTableResult.getResultList().stream()
             .filter((r) -> r.containsValue("additionalProperties_roleAssignmentId"))
-            .collect(Collectors.toList());
+            .toList();
 
         assertThat(dmnResults.size(), is(1));
 
@@ -315,7 +322,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
         List<Map<String, Object>> workTypeResultList = dmnDecisionTableResult.getResultList().stream()
             .filter((r) -> r.containsValue("workType"))
-            .collect(Collectors.toList());
+            .toList();
 
         assertEquals(expected, workTypeResultList);
     }
@@ -341,7 +348,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
         List<Map<String, Object>> workTypeResultList = dmnDecisionTableResult.getResultList().stream()
             .filter((r) -> r.containsValue("roleCategory"))
-            .collect(Collectors.toList());
+            .toList();
 
         assertEquals(1, workTypeResultList.size());
 
@@ -354,8 +361,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
     @ParameterizedTest
     @CsvSource({
-        "arrangeOfflinePayment", "markCaseAsPaid", "allocateHearingJudge", "uploadHearingRecording",
-        "postHearingAttendeesDurationAndRecording", "editListing"
+        "arrangeOfflinePayment", "markCaseAsPaid", "allocateHearingJudge", "uploadHearingRecording", "editListing"
     })
     void when_taskId_then_return_Admin_role_category(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
@@ -366,7 +372,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
         List<Map<String, Object>> workTypeResultList = dmnDecisionTableResult.getResultList().stream()
             .filter((r) -> r.containsValue("roleCategory"))
-            .collect(Collectors.toList());
+            .toList();
 
         assertEquals(1, workTypeResultList.size());
 
@@ -390,7 +396,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
         List<Map<String, Object>> workTypeResultList = dmnDecisionTableResult.getResultList().stream()
             .filter((r) -> r.containsValue("roleCategory"))
-            .collect(Collectors.toList());
+            .toList();
 
         assertEquals(1, workTypeResultList.size());
 
@@ -403,7 +409,10 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
     @ParameterizedTest
     @CsvSource({
-        "processApplication", "reviewTheAppeal", "decideOnTimeExtension", "reviewRespondentEvidence",
+        "processApplicationAdjourn", "processApplicationExpedite", "processApplicationTimeExtension",
+        "processApplicationTransfer", "processApplicationWithdraw", "processApplicationUpdateHearingRequirements",
+        "processApplicationUpdateAppealDetails", "processApplicationReinstateAnEndedAppeal", "processApplicationOther",
+        "processApplicationLink/UnlinkAppeals", "reviewTheAppeal", "decideOnTimeExtension", "reviewRespondentEvidence",
         "reviewAppealSkeletonArgument", "reviewReasonsForAppeal", "reviewClarifyingQuestionsAnswers",
         "reviewCmaRequirements", "attendCma", "reviewRespondentResponse", "caseSummaryHearingBundleStartDecision",
         "reviewHearingRequirements", "followUpOverdueRespondentEvidence",
@@ -421,7 +430,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
         List<Map<String, Object>> workTypeResultList = dmnDecisionTableResult.getResultList().stream()
             .filter((r) -> r.containsValue("roleCategory"))
-            .collect(Collectors.toList());
+            .toList();
 
         assertEquals(1, workTypeResultList.size());
 
@@ -594,10 +603,181 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 .expectedDueDateOrigin(dateOrigin)
                 .build();
 
-        Scenario processApplicationScenario =
+        Scenario processApplicationAdjournScenario =
             Scenario.builder()
                 .caseData(emptyMap())
-                .taskAttributes(Map.of("taskType", "processApplication"))
+                .taskAttributes(Map.of("taskType", "processApplicationAdjourn"))
+                .expectedCaseNameValue(null)
+                .expectedAppealTypeValue("")
+                .expectedRegionValue("1")
+                .expectedLocationValue("227101")
+                .expectedLocationNameValue("Newport")
+                .expectedCaseManagementCategoryValue("")
+                .expectedWorkType("applications")
+                .expectedReconfigureValue("true")
+                .expectedRoleCategory("LEGAL_OPERATIONS")
+                .expectedDescriptionValue("[Decide an application]"
+                                              + "(/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)")
+                .expectedDueDateOrigin(dateOrigin)
+                .expectedDueDateIntervalDays("5")
+                .build();
+
+        Scenario processApplicationExpediteScenario =
+            Scenario.builder()
+                .caseData(emptyMap())
+                .taskAttributes(Map.of("taskType", "processApplicationExpedite"))
+                .expectedCaseNameValue(null)
+                .expectedAppealTypeValue("")
+                .expectedRegionValue("1")
+                .expectedLocationValue("227101")
+                .expectedLocationNameValue("Newport")
+                .expectedCaseManagementCategoryValue("")
+                .expectedWorkType("applications")
+                .expectedReconfigureValue("true")
+                .expectedRoleCategory("LEGAL_OPERATIONS")
+                .expectedDescriptionValue("[Decide an application]"
+                                              + "(/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)")
+                .expectedDueDateOrigin(dateOrigin)
+                .expectedDueDateIntervalDays("5")
+                .build();
+
+        Scenario processApplicationTimeExtensionScenario =
+            Scenario.builder()
+                .caseData(emptyMap())
+                .taskAttributes(Map.of("taskType", "processApplicationTimeExtension"))
+                .expectedCaseNameValue(null)
+                .expectedAppealTypeValue("")
+                .expectedRegionValue("1")
+                .expectedLocationValue("227101")
+                .expectedLocationNameValue("Newport")
+                .expectedCaseManagementCategoryValue("")
+                .expectedWorkType("applications")
+                .expectedReconfigureValue("true")
+                .expectedRoleCategory("LEGAL_OPERATIONS")
+                .expectedDescriptionValue("[Decide an application]"
+                                              + "(/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)")
+                .expectedDueDateOrigin(dateOrigin)
+                .expectedDueDateIntervalDays("5")
+                .build();
+
+        Scenario processApplicationTransferScenario =
+            Scenario.builder()
+                .caseData(emptyMap())
+                .taskAttributes(Map.of("taskType", "processApplicationTransfer"))
+                .expectedCaseNameValue(null)
+                .expectedAppealTypeValue("")
+                .expectedRegionValue("1")
+                .expectedLocationValue("227101")
+                .expectedLocationNameValue("Newport")
+                .expectedCaseManagementCategoryValue("")
+                .expectedWorkType("applications")
+                .expectedReconfigureValue("true")
+                .expectedRoleCategory("LEGAL_OPERATIONS")
+                .expectedDescriptionValue("[Decide an application]"
+                                              + "(/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)")
+                .expectedDueDateOrigin(dateOrigin)
+                .expectedDueDateIntervalDays("5")
+                .build();
+
+        Scenario processApplicationWithdrawScenario =
+            Scenario.builder()
+                .caseData(emptyMap())
+                .taskAttributes(Map.of("taskType", "processApplicationWithdraw"))
+                .expectedCaseNameValue(null)
+                .expectedAppealTypeValue("")
+                .expectedRegionValue("1")
+                .expectedLocationValue("227101")
+                .expectedLocationNameValue("Newport")
+                .expectedCaseManagementCategoryValue("")
+                .expectedWorkType("applications")
+                .expectedReconfigureValue("true")
+                .expectedRoleCategory("LEGAL_OPERATIONS")
+                .expectedDescriptionValue("[Decide an application]"
+                                              + "(/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)")
+                .expectedDueDateOrigin(dateOrigin)
+                .expectedDueDateIntervalDays("5")
+                .build();
+
+        Scenario processApplicationUpdateHearingRequirementsScenario =
+            Scenario.builder()
+                .caseData(emptyMap())
+                .taskAttributes(Map.of("taskType", "processApplicationUpdateHearingRequirements"))
+                .expectedCaseNameValue(null)
+                .expectedAppealTypeValue("")
+                .expectedRegionValue("1")
+                .expectedLocationValue("227101")
+                .expectedLocationNameValue("Newport")
+                .expectedCaseManagementCategoryValue("")
+                .expectedWorkType("applications")
+                .expectedReconfigureValue("true")
+                .expectedRoleCategory("LEGAL_OPERATIONS")
+                .expectedDescriptionValue("[Decide an application]"
+                                              + "(/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)")
+                .expectedDueDateOrigin(dateOrigin)
+                .expectedDueDateIntervalDays("5")
+                .build();
+
+        Scenario processApplicationUpdateAppealDetailsScenario =
+            Scenario.builder()
+                .caseData(emptyMap())
+                .taskAttributes(Map.of("taskType", "processApplicationUpdateAppealDetails"))
+                .expectedCaseNameValue(null)
+                .expectedAppealTypeValue("")
+                .expectedRegionValue("1")
+                .expectedLocationValue("227101")
+                .expectedLocationNameValue("Newport")
+                .expectedCaseManagementCategoryValue("")
+                .expectedWorkType("applications")
+                .expectedReconfigureValue("true")
+                .expectedRoleCategory("LEGAL_OPERATIONS")
+                .expectedDescriptionValue("[Decide an application]"
+                                              + "(/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)")
+                .expectedDueDateOrigin(dateOrigin)
+                .expectedDueDateIntervalDays("5")
+                .build();
+
+        Scenario processApplicationReinstateAnEndedAppealScenario =
+            Scenario.builder()
+                .caseData(emptyMap())
+                .taskAttributes(Map.of("taskType", "processApplicationReinstateAnEndedAppeal"))
+                .expectedCaseNameValue(null)
+                .expectedAppealTypeValue("")
+                .expectedRegionValue("1")
+                .expectedLocationValue("227101")
+                .expectedLocationNameValue("Newport")
+                .expectedCaseManagementCategoryValue("")
+                .expectedWorkType("applications")
+                .expectedReconfigureValue("true")
+                .expectedRoleCategory("LEGAL_OPERATIONS")
+                .expectedDescriptionValue("[Decide an application]"
+                                              + "(/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)")
+                .expectedDueDateOrigin(dateOrigin)
+                .expectedDueDateIntervalDays("5")
+                .build();
+
+        Scenario processApplicationOtherScenario =
+            Scenario.builder()
+                .caseData(emptyMap())
+                .taskAttributes(Map.of("taskType", "processApplicationOther"))
+                .expectedCaseNameValue(null)
+                .expectedAppealTypeValue("")
+                .expectedRegionValue("1")
+                .expectedLocationValue("227101")
+                .expectedLocationNameValue("Newport")
+                .expectedCaseManagementCategoryValue("")
+                .expectedWorkType("applications")
+                .expectedReconfigureValue("true")
+                .expectedRoleCategory("LEGAL_OPERATIONS")
+                .expectedDescriptionValue("[Decide an application]"
+                                              + "(/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)")
+                .expectedDueDateOrigin(dateOrigin)
+                .expectedDueDateIntervalDays("5")
+                .build();
+
+        Scenario linkUnlinkAppealsScenario =
+            Scenario.builder()
+                .caseData(emptyMap())
+                .taskAttributes(Map.of("taskType", "processApplicationLink/UnlinkAppeals"))
                 .expectedCaseNameValue(null)
                 .expectedAppealTypeValue("")
                 .expectedRegionValue("1")
@@ -619,7 +799,16 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             givenSomeCaseDataAndArrangeOfflinePaymentTaskIdThenReturnExpectedNameAndValueScenario,
             givenSomeCaseDataAndTaskTypeIsEmptyThenExpectNoWorkTypeRuleScenario,
             givenNoCaseDataAndSomeTaskTypeThenExpectOnlyTheWorkTypeRuleScenario,
-            processApplicationScenario
+            processApplicationAdjournScenario,
+            processApplicationExpediteScenario,
+            processApplicationTimeExtensionScenario,
+            processApplicationTransferScenario,
+            processApplicationWithdrawScenario,
+            processApplicationUpdateHearingRequirementsScenario,
+            processApplicationUpdateAppealDetailsScenario,
+            processApplicationReinstateAnEndedAppealScenario,
+            processApplicationOtherScenario,
+            linkUnlinkAppealsScenario
         );
     }
 
@@ -718,7 +907,25 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
     @ParameterizedTest
     @CsvSource({
-        "processApplication,"
+        "processApplicationAdjourn,"
+            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),",
+        "processApplicationExpedite,"
+            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),",
+        "processApplicationTimeExtension,"
+            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),",
+        "processApplicationTransfer,"
+            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),",
+        "processApplicationWithdraw,"
+            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),",
+        "processApplicationUpdateHearingRequirements,"
+            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),",
+        "processApplicationUpdateAppealDetails,"
+            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),",
+        "processApplicationReinstateAnEndedAppeal,"
+            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),",
+        "processApplicationOther,"
+            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),",
+        "processApplicationLink/UnlinkAppeals,"
             + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),",
         "reviewTheAppeal,[Request respondent evidence]"
             + "(/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentEvidence),",
@@ -816,7 +1023,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
         List<Map<String, Object>> descriptionList = dmnDecisionTableResult.getResultList().stream()
             .filter((r) -> r.containsValue("description"))
-            .collect(Collectors.toList());
+            .toList();
 
         assertEquals(1, descriptionList.size());
 
@@ -840,7 +1047,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
         List<Map<String, Object>> dueDateIntervalDaysResultList = dmnDecisionTableResult.getResultList().stream()
             .filter((r) -> r.containsValue("dueDateIntervalDays"))
-            .collect(Collectors.toList());
+            .toList();
 
         assertEquals(expected, dueDateIntervalDaysResultList);
     }
@@ -873,7 +1080,16 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         ));
 
         return Stream.of(
-            Arguments.of("processApplication", fiveDays),
+            Arguments.of("processApplicationAdjourn", fiveDays),
+            Arguments.of("processApplicationExpedite", fiveDays),
+            Arguments.of("processApplicationTimeExtension", fiveDays),
+            Arguments.of("processApplicationTransfer", fiveDays),
+            Arguments.of("processApplicationWithdraw", fiveDays),
+            Arguments.of("processApplicationUpdateHearingRequirements", fiveDays),
+            Arguments.of("processApplicationUpdateAppealDetails", fiveDays),
+            Arguments.of("processApplicationReinstateAnEndedAppeal", fiveDays),
+            Arguments.of("processApplicationOther", fiveDays),
+            Arguments.of("processApplicationLink/UnlinkAppeals", fiveDays),
             Arguments.of("allocateHearingJudge", threeDays),
             Arguments.of("processApplicationToReviewDecision", twoDays),
             Arguments.of("editListing", twoDays),
@@ -918,7 +1134,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     void when_any_task_then_return_expected_priorities_config() {
         VariableMap inputVariables = new VariableMapImpl();
 
-        inputVariables.putValue("taskAttributes", Map.of("taskType", "processApplication"));
+        inputVariables.putValue("taskAttributes", Map.of("taskType", "processApplicationAdjourn"));
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
@@ -945,7 +1161,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     void when_any_task_then_return_expected_non_working_days_of_week_config() {
         VariableMap inputVariables = new VariableMapImpl();
 
-        inputVariables.putValue("taskAttributes", Map.of("taskType", "processApplication"));
+        inputVariables.putValue("taskAttributes", Map.of("taskType", "processApplicationAdjourn"));
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
@@ -969,7 +1185,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
         List<Map<String, Object>> dueDateSkipNonWorkingDaysResultList = dmnDecisionTableResult.getResultList().stream()
             .filter((r) -> r.containsValue("dueDateSkipNonWorkingDays"))
-            .collect(Collectors.toList());
+            .toList();
 
         assertEquals(1, dueDateSkipNonWorkingDaysResultList.size());
 
