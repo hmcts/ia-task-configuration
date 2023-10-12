@@ -390,6 +390,70 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
     @SuppressWarnings("checkstyle:indentation")
     @ParameterizedTest
     @CsvSource(value = {
+        "processApplicationAdjourn",
+        "processApplicationExpedite",
+        "processApplicationTimeExtension",
+        "processApplicationTransfer",
+        "processApplicationWithdraw",
+        "processApplicationUpdateHearingRequirements",
+        "processApplicationUpdateAppealDetails",
+        "processApplicationReinstateAnEndedAppeal",
+        "processApplicationOther",
+        "processApplicationLink/UnlinkAppeals"
+    })
+
+    void given_taskType_when_evaluate_dmn_then_it_returns_1st_2nd_3rd_4th_5th_6th(String taskType) {
+        VariableMap inputVariables = new VariableMapImpl();
+        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        MatcherAssert.assertThat(dmnDecisionTableResult.getResultList(), is(List.of(
+            Map.of(
+                "name", "task-supervisor",
+                "value", "Read,Execute,Claim,Manage,Unassign,Assign,Complete,Cancel",
+                "autoAssignable", false
+            ), Map.of(
+                "name", "case-manager",
+                "value", "Read,Own,Claim,Cancel",
+                "roleCategory", "LEGAL_OPERATIONS",
+                "autoAssignable", true
+            ),
+            Map.of(
+                "name", "tribunal-caseworker",
+                "value", "Read,Own,Claim,Manage,Unassign,Assign,Complete,Cancel",
+                "roleCategory", "LEGAL_OPERATIONS",
+                "assignmentPriority", 1,
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "senior-tribunal-caseworker",
+                "value", "Read,Own,Claim,Manage,Unassign,Assign,Complete,Cancel",
+                "roleCategory", "LEGAL_OPERATIONS",
+                "assignmentPriority", 1,
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "judge",
+                "value", "Read,Execute,Claim,Manage,Unassign,Assign,Complete,Cancel",
+                "roleCategory", "JUDICIAL",
+                "assignmentPriority", 2,
+                "authorisations", "373",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "hearing-judge",
+                "value", "Read,Execute,Claim,Cancel",
+                "roleCategory", "JUDICIAL",
+                "assignmentPriority", 2,
+                "autoAssignable", false
+            )
+        )));
+    }
+
+    @SuppressWarnings("checkstyle:indentation")
+    @ParameterizedTest
+    @CsvSource(value = {
         "caseSummaryHearingBundleStartDecision"
     })
     void given_taskType_when_evaluate_dmn_then_it_returns_1st_2nd_3rd_4th_5th_rules(String taskType) {

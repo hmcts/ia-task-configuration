@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.13.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.14.0">
   <decision id="wa-task-initiation-ia-asylum" name="Task initiation DMN">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT" biodi:annotationsWidth="400">
       <input id="Input_1" label="Event Id" biodi:width="515" camunda:inputVariable="eventId">
@@ -80,7 +80,7 @@
         </inputExpression>
       </input>
       <output id="Output_1" label="Task Id" name="taskId" typeRef="string" biodi:width="368" />
-      <output id="OutputClause_0p5fhhd" label="Name" name="name" typeRef="string" biodi:width="150" />
+      <output id="OutputClause_0p5fhhd" label="Name" name="name" typeRef="string" biodi:width="345" />
       <output id="OutputClause_165p3r3" label="Delay Until" name="delayUntil" typeRef="json" />
       <output id="OutputClause_10rno4c" label="Process Categories Identifiers" name="processCategories" typeRef="string" biodi:width="268" />
       <rule id="DecisionRule_1fenvxm">
@@ -97,17 +97,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1gkkvta">
-          <text>
-            "Adjourn",
-            "Expedite",
-            "Time extension",
-            "Transfer",
-            "Withdraw",
-            "Update hearing requirements",
-            "Update appeal details",
-            "Reinstate an ended appeal",
-            "Other","Link/unlink appeals"
-          </text>
+          <text>"Adjourn"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1sr2i4d">
           <text></text>
@@ -122,15 +112,384 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0tbxmk0">
-          <text>"processApplication"</text>
+          <text>"processApplicationAdjourn"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_02t95m8">
-          <text>"Process Application"</text>
+          <text>"Process Adjourn Application"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1x6roa1">
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1m76a0d">
+          <text>"application"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0pmlu67">
+        <inputEntry id="UnaryTests_1t5n9o0">
+          <text>"makeAnApplication"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1e9xkot">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08s8xp8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0g35348">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1gdii8l">
+          <text>"Expedite"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_18b1qy8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1v522g8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1114j1r">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0k6ca5f">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1wjrauo">
+          <text>"processApplicationExpedite"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0qgfbtr">
+          <text>"Process Expedite Application"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_17e77zm">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_02ey0l6">
+          <text>"application"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0a7esef">
+        <inputEntry id="UnaryTests_0towzi9">
+          <text>"makeAnApplication"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0sdzvjs">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zudlez">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ni2e9u">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_013djhq">
+          <text>"Time extension"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xeya4y">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vggqtq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qbxiws">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15gh49f">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1jf18gu">
+          <text>"processApplicationTimeExtension"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1oyp17t">
+          <text>"Process Time Extension Application"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12dtg3o">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_10wg9da">
+          <text>"application"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0afgy9u">
+        <inputEntry id="UnaryTests_1l15ffe">
+          <text>"makeAnApplication"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07c1c6k">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0w7exeh">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01cjta3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08p75y8">
+          <text>"Transfer"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qrgb4s">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_199opcx">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0wzr3eh">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jxgaek">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0pv5o5s">
+          <text>"processApplicationTransfer"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0qy13uq">
+          <text>"Process Transfer Application"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0uawmi6">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_03rjvwa">
+          <text>"application"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_12enkge">
+        <inputEntry id="UnaryTests_0ldsxr1">
+          <text>"makeAnApplication"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1litvrt">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vpci9p">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_098ffxm">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wfa0o5">
+          <text>"Withdraw"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nnvgpm">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tuc6u5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0mbilxc">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1mpfrsv">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0jvscf1">
+          <text>"processApplicationWithdraw"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_05yik94">
+          <text>"Process Withdraw Application"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0uheauc">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1r3qidx">
+          <text>"application"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_02vynoz">
+        <inputEntry id="UnaryTests_1dg187g">
+          <text>"makeAnApplication"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1bmmkq6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0soj0ji">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vez4ms">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0bew9q8">
+          <text>"Update hearing requirements"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0h56i1p">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1dsems2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0fabc3t">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0fkhba6">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0wdw0cp">
+          <text>"processApplicationUpdateHearingRequirements"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1eid9ct">
+          <text>"Process Update Hearing Requirements Application"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_01i7h8i">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1hcviwl">
+          <text>"application"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0zc5a63">
+        <inputEntry id="UnaryTests_1ok3chb">
+          <text>"makeAnApplication"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0wg14j8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1m6ybt8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1l7jfw5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_11obd4s">
+          <text>"Update appeal details"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1193sjq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0c8fct9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_11p37mk">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1untfxt">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_04r0q7l">
+          <text>"processApplicationUpdateAppealDetails"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0w7mpww">
+          <text>"Process Update Appeal Details Application"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0xuber9">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1nlroqh">
+          <text>"application"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0wr81zb">
+        <inputEntry id="UnaryTests_1l0j3bg">
+          <text>"makeAnApplication"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0wafpjq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1884uly">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_069t1s1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_11t99ym">
+          <text>"Reinstate an ended appeal"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xxqri5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ytxfcj">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1t6y1tw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16e1fg9">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1t8wxoi">
+          <text>"processApplicationReinstateAnEndedAppeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0yhf8g9">
+          <text>"Process Reinstate An Ended Appeal Application"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1c378cx">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_14ol3fa">
+          <text>"application"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0qlcf4v">
+        <inputEntry id="UnaryTests_06plu48">
+          <text>"makeAnApplication"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0bsljd7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0f0htq5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0pd9sil">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1438r8t">
+          <text>"Other"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fgtesr">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jdnkt8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07r2phn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0em1bsg">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_01vkmgy">
+          <text>"processApplicationOther"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1onjg95">
+          <text>"Process Other Application"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_09xk0ad">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0vgnf9z">
+          <text>"application"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_09fw1gw">
+        <inputEntry id="UnaryTests_1yw9gr9">
+          <text>"makeAnApplication"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1hf16ec">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06sepn0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vmxdot">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1mxk2oj">
+          <text>"Link/unlink appeals"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1lga3at">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1lplaol">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1la95tq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1g0l3dj">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0kzs3yv">
+          <text>"processApplicationLink/UnlinkAppeals"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_07rjyw3">
+          <text>"Process Link/Unlink Appeals Application"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_166e95u">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1f3cy79">
           <text>"application"</text>
         </outputEntry>
       </rule>
