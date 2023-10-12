@@ -223,12 +223,12 @@ dependencyManagement {
       entry 'jackson-dataformat-yaml'
     }
 
-    dependencySet(group: 'com.fasterxml.jackson.datatype', version: '2.15.0') {
+    dependencySet(group: 'com.fasterxml.jackson.datatype', version: '2.15.2') {
       entry 'jackson-datatype-jsr310'
       entry 'jackson-datatype-jdk8'
     }
 
-    dependencySet(group: 'com.fasterxml.jackson.datatype', version: '2.15.0') {
+    dependencySet(group: 'com.fasterxml.jackson.datatype', version: '2.15.2') {
       entry 'jackson-datatype-jsr310'
       entry 'jackson-datatype-jdk8'
     }
