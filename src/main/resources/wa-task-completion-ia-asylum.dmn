@@ -168,9 +168,108 @@
           <text>"decideAnApplication"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_16t2jen">
-          <text>"processApplication"</text>
+          <text>"processApplicationAdjourn"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1mv1jjs">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0aus3e2">
+        <inputEntry id="UnaryTests_1s3qpyu">
+          <text>"decideAnApplication"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0r59b7j">
+          <text>"processApplicationExpedite"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1kmsszx">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0hp33tg">
+        <inputEntry id="UnaryTests_1h6q15e">
+          <text>"decideAnApplication"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_16tojh9">
+          <text>"processApplicationTimeExtension"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1g1ttmk">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1vd34gg">
+        <inputEntry id="UnaryTests_0nk5b1t">
+          <text>"decideAnApplication"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0s7lwwh">
+          <text>"processApplicationTransfer"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1oprr3f">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_15qz40a">
+        <inputEntry id="UnaryTests_1m3dl6a">
+          <text>"decideAnApplication"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1yu1odw">
+          <text>"processApplicationWithdraw"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_06mw2yu">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1y60zro">
+        <inputEntry id="UnaryTests_1cm3fwh">
+          <text>"decideAnApplication"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0xnfif5">
+          <text>"processApplicationUpdateHearingRequirements"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_07l270s">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0fiqjtz">
+        <inputEntry id="UnaryTests_06lo5ma">
+          <text>"decideAnApplication"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0p5eymb">
+          <text>"processApplicationUpdateAppealDetails"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0lnrazy">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0zo2gko">
+        <inputEntry id="UnaryTests_1jb2itq">
+          <text>"decideAnApplication"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_19p09ia">
+          <text>"processApplicationReinstateAnEndedAppeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1k41is3">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_00udig5">
+        <inputEntry id="UnaryTests_1rv3zn5">
+          <text>"decideAnApplication"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ci1de1">
+          <text>"processApplicationOther"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0x34n2r">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_07ktvf3">
+        <inputEntry id="UnaryTests_0u3nh0f">
+          <text>"decideAnApplication"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ipuztm">
+          <text>"processApplicationLink/UnlinkAppeals"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_08ss9xj">
           <text>"Auto"</text>
         </outputEntry>
       </rule>

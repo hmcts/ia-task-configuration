@@ -210,6 +210,11 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                    "Upload hearing recording"
             ),
             Map.of("taskTypeId",
+                   "postHearingAttendeesDurationAndRecording",
+                   "taskTypeName",
+                   "Post hearing – attendees, duration and recording"
+            ),
+            Map.of("taskTypeId",
                    "decideAnFTPA",
                    "taskTypeName",
                    "Decide an FTPA"
@@ -270,7 +275,7 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(1));
         assertThat(logic.getOutputs().size(), is(2));
-        assertThat(logic.getRules().size(), is(43));
+        assertThat(logic.getRules().size(), is(44));
 
     }
 }
