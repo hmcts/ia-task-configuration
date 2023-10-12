@@ -218,7 +218,7 @@ dependencyManagement {
       entry 'jackson-annotations'
     }
 
-    dependencySet(group: 'com.fasterxml.jackson.dataformat', version: '2.15.0') {
+    dependencySet(group: 'com.fasterxml.jackson.dataformat', version: '2.15.2') {
       entry 'jackson-dataformat-csv'
       entry 'jackson-dataformat-yaml'
     }
