@@ -1461,47 +1461,6 @@
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1bimueq">
-        <inputEntry id="UnaryTests_1vfhoge">
-          <text>"decisionAndReasonsStarted"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1htn81a">
-          <text>"decision"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0bwcpq9">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_00jnyfu">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0yc1tqg">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1xwxekj">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_00a8znd">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1yziwcw">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1alh8o1">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0bj5ofm">
-          <text>"prepareDecisionsAndReasons"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0kcf3dg">
-          <text>"Prepare decisions and reasons"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1a2bkyf">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1noz57k">
-          <text>"caseProgression"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_1tbyeho">
         <inputEntry id="UnaryTests_0vcdk3d">
           <text>"listCase"</text>
