@@ -1574,6 +1574,19 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 emptyList()
             ),
             Arguments.of(
+                "handleHearingException",
+                null,
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "hearingException",
+                        "name", "Hearing exception",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
                 "unknownEvent",
                 null,
                 null,
@@ -1761,7 +1774,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(9));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(52));
+        assertThat(logic.getRules().size(), is(53));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {

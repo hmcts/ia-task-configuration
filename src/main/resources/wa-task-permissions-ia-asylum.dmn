@@ -342,7 +342,7 @@
             "allocateHearingJudge",
             "uploadHearingRecording",
             "postHearingAttendeesDurationAndRecording",
-            "editListing"
+            "editListing","hearingException"
           </text>
         </inputEntry>
         <inputEntry id="UnaryTests_1sw9xpj">
@@ -375,8 +375,7 @@
           <text>
             "reviewHearingBundle",
             "reviewAddendumEvidence",
-            "editListing"
-</text>
+            "editListing"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_190pyoc">
           <text></text>
@@ -686,6 +685,35 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0imsgkl">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0050bd1">
+        <inputEntry id="UnaryTests_0u57aly">
+          <text>"hearingException"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06w51yi">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0625l99">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0e73u4f">
+          <text>"tribunal-caseworker"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ikla1a">
+          <text>"Read,Own,Claim,Manage,Unassign,Assign,Complete,Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1l32spv">
+          <text>"LEGAL_OPERATIONS"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ryd02z">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1yi0ul7">
+          <text>2</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0vlccaz">
           <text>false</text>
         </outputEntry>
       </rule>

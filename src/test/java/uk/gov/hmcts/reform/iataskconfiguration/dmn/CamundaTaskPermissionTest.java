@@ -62,6 +62,13 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         "roleCategory", "LEGAL_OPERATIONS",
         "value", "Read,Execute,Claim,Manage,Unassign,Assign,Complete,Cancel"
     );
+    private static final Map<String, Serializable> tribunalCaseWorkerPriorityTwoOwn = Map.of(
+        "autoAssignable", false,
+        "assignmentPriority", 2,
+        "name", "tribunal-caseworker",
+        "roleCategory", "LEGAL_OPERATIONS",
+        "value", "Read,Own,Claim,Manage,Unassign,Assign,Complete,Cancel"
+    );
     private static final Map<String, Serializable> seniorCaseWorkerPriorityOne = Map.of(
         "autoAssignable", false,
         "assignmentPriority", 1,
@@ -253,6 +260,14 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     taskSupervisor,
                     hearingJudgePriorityOne,
                     judgePriorityOne
+                )
+            ),
+            Arguments.of(
+                "hearingException",
+                List.of(
+                    taskSupervisor,
+                    hearingCentreAdminPriorityOne,
+                    tribunalCaseWorkerPriorityTwoOwn
                 )
             )
         );
@@ -617,7 +632,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         assertThat(logic.getOutputs().size(), is(7));
         assertThatOutputContainInOrder(outputColumnIds, logic.getOutputs());
         //Rules
-        assertThat(logic.getRules().size(), is(17));
+        assertThat(logic.getRules().size(), is(18));
     }
 
     private void assertThatInputContainInOrder(List<String> inputColumnIds, List<DmnDecisionTableInputImpl> inputs) {
