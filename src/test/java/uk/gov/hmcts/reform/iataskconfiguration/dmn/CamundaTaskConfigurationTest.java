@@ -233,6 +233,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("createHearingBundle", hearingWork),
             Arguments.of("createCaseSummary", hearingWork),
             Arguments.of("listTheCase", hearingWork),
+            Arguments.of("hearingException", hearingWork),
             Arguments.of("processApplicationAdjourn", applications),
             Arguments.of("processApplicationExpedite", applications),
             Arguments.of("processApplicationTimeExtension", applications),
@@ -363,7 +364,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     @ParameterizedTest
     @CsvSource({
         "arrangeOfflinePayment", "markCaseAsPaid", "allocateHearingJudge", "uploadHearingRecording",
-        "postHearingAttendeesDurationAndRecording", "editListing"
+        "postHearingAttendeesDurationAndRecording", "editListing", "hearingException"
     })
     void when_taskId_then_return_Admin_role_category(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
@@ -999,6 +1000,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "sendPaymentRequest,[Mark payment request sent](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
             + "markPaymentRequestSent),",
         "markAsPaid,[Mark appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid),",
+        "hearingException,[Go to case](cases/case-details/${[CASE_REFERENCE]}/hearings),",
         "reviewSpecificAccessRequestJudiciary,[Review Access Request](/role-access/"
             + "${[taskId]}/assignment/${[roleAssignmentId]}/specific-access),",
         "reviewSpecificAccessRequestLegalOps,[Review Access Request](/role-access/"

@@ -248,6 +248,11 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                    "markAsPaid",
                    "taskTypeName",
                    "Mark as Paid"
+            ),
+            Map.of("taskTypeId",
+                   "hearingException",
+                   "taskTypeName",
+                   "Hearing exception"
             )
         );
         return Stream.of(
@@ -275,7 +280,7 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(1));
         assertThat(logic.getOutputs().size(), is(2));
-        assertThat(logic.getRules().size(), is(44));
+        assertThat(logic.getRules().size(), is(45));
 
     }
 }
