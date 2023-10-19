@@ -208,6 +208,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("adaAssignAFTPAJudge", routineWork),
             Arguments.of("sendPaymentRequest", routineWork),
             Arguments.of("markAsPaid", routineWork),
+            Arguments.of("reviewTransferredS82AAppeal", routineWork),
             Arguments.of("reviewAdditionalEvidence", decisionMakingWork),
             Arguments.of("adaReviewAdditionalEvidence", decisionMakingWork),
             Arguments.of("reviewTheAppeal", decisionMakingWork),
@@ -458,7 +459,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "followUpNonStandardDirection", "followUpNoticeOfChange", "reviewAdditionalEvidence",
         "reviewAdditionalHomeOfficeEvidence","followUpExtendedDirection", "adaFollowUpExtendedDirection",
         "adaReviewAdditionalEvidence", "adaReviewAdditionalHomeOfficeEvidence","reviewCaseTransferredOutOfADA",
-        "reviewCaseMarkedUnsuitableForADA", "adaReviewHearingBundle"
+        "reviewCaseMarkedUnsuitableForADA", "adaReviewHearingBundle","reviewTransferredS82AAppeal"
     })
     void when_taskId_then_return_legal_operations_role_category(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
@@ -890,6 +891,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "sendPaymentRequest,[Mark payment request sent](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
             + "markPaymentRequestSent),",
         "markAsPaid,[Mark appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid),",
+        "reviewTransferredS82AAppeal,[Turn on notification](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
+            + "turnOnNotifications),",
         "reviewSpecificAccessRequestJudiciary,[Review Access Request](/role-access/"
             + "${[taskId]}/assignment/${[roleAssignmentId]}/specific-access),",
         "reviewSpecificAccessRequestLegalOps,[Review Access Request](/role-access/"
@@ -1003,6 +1006,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("reviewAddendumEvidence", twoDays),
             Arguments.of("reviewRemissionApplication", twoDays),
             Arguments.of("assignAFTPAJudge", twoDays),
+            Arguments.of("reviewTransferredS82AAppeal", twoDays),
             Arguments.of("listTheCase", twoDays),
             Arguments.of("reviewHearingBundle", zeroDays),
             Arguments.of("sendDecisionsAndReasons", zeroDays),
