@@ -17,6 +17,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -1722,13 +1723,28 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
     public static Stream<Arguments> decideAnApplicationScenarioProvider() {
         return Stream.of(
-            getDecideAnApplicationArgumentsOf("Adjourn", "editListing", "Edit Listing"),
-            getDecideAnApplicationArgumentsOf("Expedite", "editListing", "Edit Listing"),
-            getDecideAnApplicationArgumentsOf("Transfer", "editListing", "Edit Listing")
+            getDecideAnApplicationArgumentsOf("Adjourn", false),
+            getDecideAnApplicationArgumentsOf("Expedite", false),
+            getDecideAnApplicationArgumentsOf("Transfer", false),
+            getDecideAnApplicationArgumentsOf("Adjourn", true),
+            getDecideAnApplicationArgumentsOf("Expedite", true),
+            getDecideAnApplicationArgumentsOf("Transfer", true)
         );
     }
 
-    private static Arguments getDecideAnApplicationArgumentsOf(String applicationType, String taskId, String name) {
+    private static Arguments getDecideAnApplicationArgumentsOf(
+        String applicationType, boolean isIntegrated) {
+        List<Map<String, String>> expected = isIntegrated
+            ? Collections.emptyList()
+            : singletonList(
+            Map.of(
+                "taskId", "editListing",
+                "name", "Edit Listing",
+
+
+                "processCategories", "application"
+            )
+        );
         return Arguments.of(
             "decideAnApplication",
             null,
@@ -1736,19 +1752,12 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                   + "        \"Data\" : {\n"
                                   + "          \"lastModifiedApplication\" : {\n"
                                   + "            \"type\" : \"" + applicationType + "\",\n"
-                                  + "            \"decision\" : \"Granted\"\n"
-                                  + "          }\n"
+                                  + "            \"decision\" : \"Granted\" \n"
+                                  + "          },\n"
+                                  + "          \"isIntegrated\" : " + isIntegrated + "\n"
                                   + "        }\n"
                                   + "      }"),
-            singletonList(
-                Map.of(
-                    "taskId", taskId,
-                    "name", name,
-
-
-                    "processCategories", "application"
-                )
-            )
+            expected
         );
     }
 
@@ -1772,7 +1781,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getInputs().size(), is(9));
+        assertThat(logic.getInputs().size(), is(10));
         assertThat(logic.getOutputs().size(), is(4));
         assertThat(logic.getRules().size(), is(53));
     }
