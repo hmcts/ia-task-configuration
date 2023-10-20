@@ -212,7 +212,7 @@ dependencyManagement {
     //CVE-2021-29425
     dependency group: 'commons-io', name: 'commons-io', version: '2.7'
 
-    dependencySet(group: 'com.fasterxml.jackson.core', version: '2.15.2') {
+    dependencySet(group: 'com.fasterxml.jackson.core', version: '2.15.3') {
       entry 'jackson-databind'
       entry 'jackson-core'
       entry 'jackson-annotations'
