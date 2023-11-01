@@ -1,4 +1,4 @@
-name: Does PR title match RIA-nnnn, SNI-nnnn or DIA-nnn?
+name: Does PR title match RIA-nnnn, SNI-nnnn or DIAC-nnn?
 on:
   pull_request:
     types:
