@@ -3534,9 +3534,9 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     @ParameterizedTest(name = "event id: {0} post event state: {1} additional data: {2}")
     @MethodSource("scenarioProvider")
     void given_multiple_event_ids_should_evaluate_dmn_to_create_task_if_notification_turned_on(String eventId,
-                                                                         String postEventState,
-                                                                         Map<String, HashMap<String, HashMap<String, Object>>> map,
-                                                                         List<Map<String, String>> expectation) {
+                                                             String postEventState,
+                                                             Map<String, HashMap<String, HashMap<String, Object>>> map,
+                                                             List<Map<String, String>> expectation) {
 
         VariableMap inputVariables = new VariableMapImpl();
         inputVariables.putValue("eventId", eventId);
