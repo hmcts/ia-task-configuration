@@ -532,7 +532,8 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
          "reviewAdditionalEvidence","adaReviewAdditionalEvidence",
         "reviewAdditionalHomeOfficeEvidence", "adaReviewAdditionalHomeOfficeEvidence",
          "adaReviewAppealSkeletonArgument",
-        "followUpExtendedDirection","adaFollowUpExtendedDirection","reviewCaseTransferredOutOfADA"
+        "followUpExtendedDirection","adaFollowUpExtendedDirection","reviewCaseTransferredOutOfADA",
+        "reviewTransferredS82AAppeal"
     })
     void given_taskType_when_evaluate_dmn_then_it_returns_first_second_and_third_rules(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();

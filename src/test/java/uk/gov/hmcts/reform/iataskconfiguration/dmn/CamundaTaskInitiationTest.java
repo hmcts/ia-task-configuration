@@ -3438,9 +3438,9 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getInputs().size(), is(12));
+        assertThat(logic.getInputs().size(), is(13));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(80));
+        assertThat(logic.getRules().size(), is(81));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {
@@ -3534,9 +3534,10 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     @ParameterizedTest(name = "event id: {0} post event state: {1} additional data: {2}")
     @MethodSource("scenarioProvider")
     void given_multiple_event_ids_should_evaluate_dmn_to_create_task_if_notification_turned_on(String eventId,
-                                                             String postEventState,
-                                                             Map<String, HashMap<String, HashMap<String, Object>>> map,
-                                                             List<Map<String, String>> expectation) {
+                                                                         String postEventState,
+                                                                         Map<String, HashMap<String,
+                                                                             HashMap<String, Object>>> map,
+                                                                         List<Map<String, String>> expectation) {
 
         VariableMap inputVariables = new VariableMapImpl();
         inputVariables.putValue("eventId", eventId);
@@ -3563,5 +3564,44 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             inputVariables.putAll(mapAdditionalData(additionalData));
         }
         inputVariables.putAll(map);
+    }
+
+    static Stream<Arguments> ejpScenarioProvider() {
+        return Stream.of(
+            Arguments.of(
+                "submitAppeal",
+                "appealSubmitted",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isEjp\":\"" + true + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewTransferredS82AAppeal",
+                        "name", "Review transferred S82A appeal",
+                        "processCategories", "caseProgression"
+                    )
+                )
+            )
+        );
+    }
+
+    @ParameterizedTest(name = "event id: {0} post event state: {1} additional data: {2}")
+    @MethodSource("ejpScenarioProvider")
+    void given_multiple_event_ids_should_evaluate_ejp_dmn(String eventId,
+                                                      String postEventState,
+                                                      Map<String, Object> map,
+                                                      List<Map<String, String>> expectation) {
+
+        VariableMap inputVariables = new VariableMapImpl();
+        inputVariables.putValue("eventId", eventId);
+        inputVariables.putValue("postEventState", postEventState);
+        inputVariables.putValue("now", LocalDateTime.now().minusMinutes(10)
+            .format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
+        inputVariables.putAll(map);
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
     }
 }
