@@ -386,6 +386,7 @@
                         "followUpOverdueClarifyingAnswers",
                         "followUpOverdueCmaRequirements",
                         "followUpOverdueRespondentReview",
+                        "followUpExtendedDirection",
                         "followUpOverdueHearingRequirements",
                         "followUpNonStandardDirection",
                         "followUpNoticeOfChange",
