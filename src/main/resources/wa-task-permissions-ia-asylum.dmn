@@ -442,7 +442,6 @@
           <text>
           "reviewHearingBundle",
           "processApplicationToReviewDecision",
-          "reviewAddendumEvidence",
           "sendDecisionsAndReasons",
           "prepareDecisionsAndReasons"
 </text>
@@ -477,7 +476,6 @@
         <inputEntry id="UnaryTests_1099gbv">
           <text>
             "reviewHearingBundle",
-            "reviewAddendumEvidence",
             "processApplicationToReviewDecision",
             "sendDecisionsAndReasons",
             "decideAnFTPA",
