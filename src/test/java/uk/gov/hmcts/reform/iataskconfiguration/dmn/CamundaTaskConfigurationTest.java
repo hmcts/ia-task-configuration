@@ -219,7 +219,6 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("reviewAddendumHomeOfficeEvidence", decisionMakingWork),
             Arguments.of("decideOnTimeExtension", decisionMakingWork),
             Arguments.of("sendDecisionsAndReasons", decisionMakingWork),
-            Arguments.of("reviewHearingBundle", hearingWork),
             Arguments.of("generateDraftDecisionAndReasons", hearingWork),
             Arguments.of("uploadDecision", hearingWork),
             Arguments.of("uploadHearingRecording", hearingWork),
@@ -330,7 +329,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
     @ParameterizedTest
     @CsvSource({
-        "reviewHearingBundle", "generateDraftDecisionAndReasons", "uploadDecision", "reviewAddendumHomeOfficeEvidence",
+        "generateDraftDecisionAndReasons", "uploadDecision", "reviewAddendumHomeOfficeEvidence",
         "reviewAddendumAppellantEvidence", "reviewSpecificAccessRequestJudiciary",
         "reviewSpecificAccessRequestLegalOps", "reviewSpecificAccessRequestAdmin","reviewSpecificAccessRequestCTSC",
         "processApplicationToReviewDecision", "sendDecisionsAndReasons", "prepareDecisionsAndReasons", "decideAnFTPA"
@@ -1122,7 +1121,6 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("reviewRemissionApplication", twoDays),
             Arguments.of("assignAFTPAJudge", twoDays),
             Arguments.of("listTheCase", twoDays),
-            Arguments.of("reviewHearingBundle", zeroDays),
             Arguments.of("sendDecisionsAndReasons", zeroDays),
             Arguments.of("prepareDecisionsAndReasons", zeroDays),
             Arguments.of("sendPaymentRequest", zeroDays),
