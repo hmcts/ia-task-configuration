@@ -266,7 +266,7 @@ dependencies {
 
   // Adding for CVE errors
   implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-core', version: '9.0.81'
-  implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-websocket', version: '9.0.81'
+  implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-websocket', version: '9.0.83'
 
   testImplementation group: 'org.pitest', name: 'pitest', version: versions.pitest
   testImplementation group: 'info.solidsoft.gradle.pitest', name:'gradle-pitest-plugin', version: versions.pitest
