@@ -373,7 +373,6 @@
       <rule id="DecisionRule_0spqww2">
         <inputEntry id="UnaryTests_0vmy0oj">
           <text>
-            "reviewHearingBundle",
             "reviewAddendumEvidence",
             "editListing"
 </text>
@@ -406,7 +405,6 @@
       <rule id="DecisionRule_1wd5okj">
         <inputEntry id="UnaryTests_0co919o">
           <text>
-            "reviewHearingBundle",
             "reviewAddendumEvidence",
             "editListing"
 </text>
@@ -440,7 +438,6 @@
         <description>Hearing judge task permissions</description>
         <inputEntry id="UnaryTests_1oxh1tt">
           <text>
-          "reviewHearingBundle",
           "processApplicationToReviewDecision",
           "sendDecisionsAndReasons",
           "prepareDecisionsAndReasons"
@@ -475,7 +472,6 @@
         <description>Judge task permissions</description>
         <inputEntry id="UnaryTests_1099gbv">
           <text>
-            "reviewHearingBundle",
             "processApplicationToReviewDecision",
             "sendDecisionsAndReasons",
             "decideAnFTPA",

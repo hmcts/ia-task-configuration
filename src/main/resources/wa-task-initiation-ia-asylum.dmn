@@ -1738,47 +1738,6 @@
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0zahy0c">
-        <inputEntry id="UnaryTests_1rco0qt">
-          <text>"generateHearingBundle", "customiseHearingBundle"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0bjc5ai">
-          <text>"finalBundling"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0y0jbut">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0eemnj1">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1e5dten">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0jyeo9e">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1r0iy9b">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0q7hbie">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_01ix220">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0sp23qg">
-          <text>"reviewHearingBundle"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_145h90s">
-          <text>"Review Hearing bundle"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_05642ga">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1yo5sal">
-          <text>"caseProgression"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_1ahjdac">
         <inputEntry id="UnaryTests_06mn0dx">
           <text>"generateDecisionAndReasons"</text>
