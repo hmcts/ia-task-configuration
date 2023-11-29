@@ -1007,12 +1007,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 null,
                 List.of(
                     Map.of(
-                        "taskId", "reviewHearingBundle",
-                        "name", "Review Hearing bundle",
-
-                        "processCategories", "caseProgression"
-                    ),
-                    Map.of(
                         "taskId", "allocateHearingJudge",
                         "name", "Allocate Hearing Judge",
                         "processCategories", "caseProgression"
@@ -1024,12 +1018,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "finalBundling",
                 null,
                 List.of(
-                    Map.of(
-                        "taskId", "reviewHearingBundle",
-                        "name", "Review Hearing bundle",
-
-                        "processCategories", "caseProgression"
-                    ),
                     Map.of(
                         "taskId", "allocateHearingJudge",
                         "name", "Allocate Hearing Judge",
@@ -1761,7 +1749,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(9));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(52));
+        assertThat(logic.getRules().size(), is(51));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {

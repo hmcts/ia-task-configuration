@@ -361,17 +361,6 @@
           <text>"Review Addendum Evidence"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0x1if0n">
-        <inputEntry id="UnaryTests_0g76wvx">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_11fdren">
-          <text>"reviewHearingBundle"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1qz7hyq">
-          <text>"Review Hearing bundle"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_1xabmqc">
         <inputEntry id="UnaryTests_10rzbiv">
           <text></text>
