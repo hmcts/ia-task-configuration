@@ -1588,7 +1588,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "handleCmrUpdated",
+                "triggerCmrUpdated",
                 null,
                 null,
                 singletonList(

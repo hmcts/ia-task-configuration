@@ -2874,7 +2874,7 @@
       </rule>
       <rule id="DecisionRule_11ovwda">
         <inputEntry id="UnaryTests_1bn07rn">
-          <text>"handleCmrUpdated"</text>
+          <text>"triggerCmrUpdated"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1g17a0s">
           <text></text>
