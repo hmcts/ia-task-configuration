@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.14.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.17.0">
   <decision id="wa-task-configuration-ia-asylum" name="Task configuration DMN">
     <decisionTable id="DecisionTable_14cx079" hitPolicy="COLLECT">
       <input id="InputClause_1gxyo7f" label="CCD Case Data" camunda:inputVariable="caseData">
@@ -253,7 +253,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1ps3x4j">
-          <text>"reviewHearingBundle","generateDraftDecisionAndReasons","uploadDecision","uploadHearingRecording","postHearingAttendeesDurationAndRecording","editListing","followUpOverdueHearingRequirements","reviewHearingRequirements","allocateHearingJudge","prepareDecisionsAndReasons","startDecisionsAndReasonsDocument","createHearingBundle","createCaseSummary","listTheCase","hearingException"</text>
+          <text>"reviewHearingBundle","generateDraftDecisionAndReasons","uploadDecision","uploadHearingRecording","postHearingAttendeesDurationAndRecording","editListing","followUpOverdueHearingRequirements","reviewHearingRequirements","allocateHearingJudge","prepareDecisionsAndReasons","startDecisionsAndReasonsDocument","createHearingBundle","createCaseSummary","listTheCase","hearingException","cmrListed"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0c3eia6">
           <text>"workType"</text>
@@ -411,7 +411,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1glizm3">
-          <text>"arrangeOfflinePayment","markCaseAsPaid","allocateHearingJudge","uploadHearingRecording","postHearingAttendeesDurationAndRecording","editListing","hearingException"</text>
+          <text>"arrangeOfflinePayment","markCaseAsPaid","allocateHearingJudge","uploadHearingRecording","postHearingAttendeesDurationAndRecording","editListing","hearingException","cmrListed"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1131kat">
           <text>"roleCategory"</text>
@@ -536,6 +536,7 @@
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "markAsPaid" or taskType != null and taskType = "markAsPaid") then "[Mark appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "hearingException" or taskType != null and taskType = "hearingException") then "[Go to case](cases/case-details/${[CASE_REFERENCE]}/hearings)"
                         else if (taskAttributes != null and taskAttributes.taskId != null and taskAttributes.roleAssignmentId != null) then "[Review Access Request](/role-access/" + taskAttributes.taskId + "/assignment/" + taskAttributes.roleAssignmentId + "/specific-access)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "cmrListed" or taskType != null and taskType = "cmrListed") then "A Case Management Review has been listed for this case. You must issue the hearing notices to the parties. [View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings)"
                         else ""
           </text>
         </outputEntry>
