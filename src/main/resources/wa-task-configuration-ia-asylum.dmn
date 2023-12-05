@@ -386,17 +386,12 @@
                         "followUpOverdueClarifyingAnswers",
                         "followUpOverdueCmaRequirements",
                         "followUpOverdueRespondentReview",
-                        "followUpExtendedDirection",
                         "followUpOverdueHearingRequirements",
                         "followUpNonStandardDirection",
                         "followUpNoticeOfChange",
                         "reviewAdditionalEvidence",
                         "reviewAdditionalHomeOfficeEvidence",
-                        "startDecisionsAndReasonsDocument",
-                        "createHearingBundle",
-                        "createCaseSummary",
-                        "reviewAddendumEvidence"
-                    </text>
+                        "startDecisionsAndReasonsDocument"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_05l5bvs">
           <text>"roleCategory"</text>
@@ -406,6 +401,28 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0cde4ic">
           <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_00emsux">
+        <inputEntry id="UnaryTests_1102935">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0je9679">
+          <text>
+                        "followUpExtendedDirection",
+                        "createHearingBundle",
+                        "createCaseSummary",
+                        "reviewAddendumEvidence"
+                    </text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0z7iapq">
+          <text>"roleCategory"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0cs7vxm">
+          <text>"LEGAL_OPERATIONS"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0rnzyup">
+          <text>true</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_01muxrj">
