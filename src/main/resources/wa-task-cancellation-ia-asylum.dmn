@@ -459,29 +459,6 @@
           <text></text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_17z22bf">
-        <inputEntry id="UnaryTests_04qmt6u">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0faa6j3">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1mosc2a">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1mr5y58">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_035wezb">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_06grgvm">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0whmigg">
-          <text></text>
-        </outputEntry>
-      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
