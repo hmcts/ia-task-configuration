@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.16.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.17.0">
   <decision id="wa-task-initiation-ia-asylum" name="Task initiation DMN">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT" biodi:annotationsWidth="400">
       <input id="Input_1" label="Event Id" biodi:width="515" camunda:inputVariable="eventId">
@@ -2869,6 +2869,56 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0rh35gl">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_17089si">
+        <inputEntry id="UnaryTests_0uor1tz">
+          <text>"updateCmrNotification"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1incxan">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1sd8k6h">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0myl9dq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0cmmqd8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xzf2ad">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1j4zya8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nwxqtq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01ukt1g">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xgjq3z">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0pm2wic">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qdm0sv">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1n3tugt">
+          <text>"cmrListed"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0tt1bol">
+          <text>"Send CMR notification"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_18rjlnm">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0kdv6sd">
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
