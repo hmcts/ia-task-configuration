@@ -255,6 +255,11 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                    "Hearing exception"
             ),
             Map.of("taskTypeId",
+                "cmrListed",
+                "taskTypeName",
+                "Send CMR notification"
+            ),
+            Map.of("taskTypeId",
                    "cmrUpdated",
                    "taskTypeName",
                    "Update CMR notification"
@@ -285,7 +290,7 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(1));
         assertThat(logic.getOutputs().size(), is(2));
-        assertThat(logic.getRules().size(), is(46));
+        assertThat(logic.getRules().size(), is(47));
 
     }
 }
