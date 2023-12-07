@@ -1621,7 +1621,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "updateCmrNotification",
+                "triggerCmrListed",
                 null,
                 null,
                 singletonList(
