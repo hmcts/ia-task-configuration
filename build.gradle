@@ -210,7 +210,7 @@ dependencyManagement {
     dependency group: 'org.glassfish', name: 'jakarta.el', version: '4.0.2'
 
     //CVE-2021-29425
-    dependency group: 'commons-io', name: 'commons-io', version: '2.15.0'
+    dependency group: 'commons-io', name: 'commons-io', version: '2.15.1'
 
     dependencySet(group: 'com.fasterxml.jackson.core', version: '2.16.0') {
       entry 'jackson-databind'
@@ -267,6 +267,9 @@ dependencies {
   // Adding for CVE errors
   implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-core', version: '9.0.83'
   implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-websocket', version: '9.0.83'
+
+  implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.13'
+  implementation group: 'ch.qos.logback', name: 'logback-core', version: '1.2.13'
 
   testImplementation group: 'org.pitest', name: 'pitest', version: versions.pitest
   testImplementation group: 'info.solidsoft.gradle.pitest', name:'gradle-pitest-plugin', version: versions.pitest
