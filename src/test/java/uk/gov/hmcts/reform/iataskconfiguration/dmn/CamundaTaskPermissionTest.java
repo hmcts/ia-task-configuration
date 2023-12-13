@@ -276,6 +276,19 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     taskSupervisor,
                     seniorCaseWorkerPriorityOne,
                     hearingCentreAdminPriorityOne,
+                    ctscAdminPriorityOne,
+                    ctscTeamLeaderPriorityOne,
+                    tribunalCaseWorkerPriorityTwoOwn
+                )
+            ),
+            Arguments.of(
+                "cmrUpdated",
+                List.of(
+                    taskSupervisor,
+                    seniorCaseWorkerPriorityOne,
+                    hearingCentreAdminPriorityOne,
+                    ctscAdminPriorityOne,
+                    ctscTeamLeaderPriorityOne,
                     tribunalCaseWorkerPriorityTwoOwn
                 )
             )
