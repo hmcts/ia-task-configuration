@@ -1003,10 +1003,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             + "markPaymentRequestSent),",
         "markAsPaid,[Mark appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid),",
         "hearingException,[Go to case](cases/case-details/${[CASE_REFERENCE]}/hearings),",
-        "cmrListed,A Case Management Review has been listed for this case. You must issue the hearing notices to the "
-            + "parties. [View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),",
-        "cmrUpdated,A Case Management Review has been updated for this case. You must inform all parties"
-            + " of the change. [View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),",
+        "cmrListed,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),",
+        "cmrUpdated,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),",
         "reviewSpecificAccessRequestJudiciary,[Review Access Request](/role-access/"
             + "${[taskId]}/assignment/${[roleAssignmentId]}/specific-access),",
         "reviewSpecificAccessRequestLegalOps,[Review Access Request](/role-access/"
