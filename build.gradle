@@ -196,7 +196,7 @@ dependencyCheck {
 
 dependencyManagement {
   dependencies {
-    dependency group: 'org.bouncycastle', name: 'bcpkix-jdk15on', version: '1.68'
+    dependency group: 'org.bouncycastle', name: 'bcpkix-jdk15on', version: '1.70'
 
     dependencySet(group: 'com.google.guava', version: '32.1.2-jre') {
       entry 'guava'
@@ -218,17 +218,17 @@ dependencyManagement {
       entry 'jackson-annotations'
     }
 
-    dependencySet(group: 'com.fasterxml.jackson.dataformat', version: '2.15.2') {
+    dependencySet(group: 'com.fasterxml.jackson.dataformat', version: '2.16.0') {
       entry 'jackson-dataformat-csv'
       entry 'jackson-dataformat-yaml'
     }
 
-    dependencySet(group: 'com.fasterxml.jackson.datatype', version: '2.15.2') {
+    dependencySet(group: 'com.fasterxml.jackson.datatype', version: '2.16.0') {
       entry 'jackson-datatype-jsr310'
       entry 'jackson-datatype-jdk8'
     }
 
-    dependencySet(group: 'com.fasterxml.jackson.module', version: '2.15.2') {
+    dependencySet(group: 'com.fasterxml.jackson.module', version: '2.16.0') {
       entry 'jackson-module-parameter-names'
     }
   }
@@ -241,12 +241,12 @@ repositories {
 }
 
 def versions = [
-  reformLogging   : '5.1.7',
+  reformLogging   : '5.1.9',
   springfoxSwagger: '3.0.0',
-  camunda         : '7.15.0',
+  camunda         : '7.20.0',
   pitest          : '1.9.11',
   sonarPitest     : '0.5',
-  log4j           : '2.17.1'
+  log4j           : '2.22.0'
 ]
 
 dependencies {
@@ -264,6 +264,13 @@ dependencies {
   implementation group: 'org.apache.logging.log4j', name: 'log4j-api', version: versions.log4j
   implementation group: 'org.apache.logging.log4j', name: 'log4j-to-slf4j', version: versions.log4j
 
+    // Adding for CVE errors
+  implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-core', version: '9.0.83'
+  implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-websocket', version: '9.0.83'
+
+  implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.13'
+  implementation group: 'ch.qos.logback', name: 'logback-core', version: '1.2.13'
+  
   testImplementation group: 'org.pitest', name: 'pitest', version: versions.pitest
   testImplementation group: 'info.solidsoft.gradle.pitest', name:'gradle-pitest-plugin', version: versions.pitest
 
