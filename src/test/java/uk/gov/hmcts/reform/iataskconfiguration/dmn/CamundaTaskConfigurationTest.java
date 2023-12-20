@@ -913,108 +913,111 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     @ParameterizedTest
     @CsvSource({
         "processApplicationAdjourn,"
-            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),",
+            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),,",
         "processApplicationExpedite,"
-            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),",
+            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),,",
         "processApplicationTimeExtension,"
-            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),",
+            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),,",
         "processApplicationTransfer,"
-            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),",
+            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),,",
         "processApplicationWithdraw,"
-            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),",
+            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),,",
         "processApplicationUpdateHearingRequirements,"
-            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),",
+            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),,",
         "processApplicationUpdateAppealDetails,"
-            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),",
+            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),,",
         "processApplicationReinstateAnEndedAppeal,"
-            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),",
+            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),,",
         "processApplicationOther,"
-            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),",
+            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),,",
         "processApplicationLink/UnlinkAppeals,"
-            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),",
+            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),,",
         "reviewTheAppeal,[Request respondent evidence]"
-            + "(/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentEvidence),",
+            + "(/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentEvidence),,",
         "decideOnTimeExtension,"
-            + "[Change the direction due date](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/changeDirectionDueDate),",
+            + "[Change the direction due date](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/changeDirectionDueDate),,",
         "reviewRespondentEvidence,"
             + "[Request reasons for appeal](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestReasonsForAppeal)<br />"
             + "[Send non-standard direction](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDirection),"
-            + "aip",
+            + "aip,",
         "reviewRespondentEvidence,"
             + "[Request case building](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestCaseBuilding)<br />"
-            + "[Send non-standard direction](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDirection),",
+            + "[Send non-standard direction](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDirection),,",
         "reviewAppealSkeletonArgument,"
             + "[Request respondent review](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentReview)<br />"
-            + "[Request case edit](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestCaseEdit),",
+            + "[Request case edit](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestCaseEdit),,",
         "reviewReasonsForAppeal,"
             + "[Request respondent review](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentReview)<br />"
-            + "[Send direction with questions](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDirectionWithQuestions),"
-            + "aip",
+            + "[Send direction with questions]"
+            + "(/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDirectionWithQuestions),"
+            + "aip,",
         "reviewReasonsForAppeal,"
             + "[Request respondent review](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentReview)<br />"
-            + "[Request CMA requirements](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestCmaRequirements),",
+            + "[Request CMA requirements](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestCmaRequirements),,",
         "reviewCmaRequirements,"
-            + "[Review CMA Requirements](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/reviewCmaRequirements),",
+            + "[Review CMA Requirements](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/reviewCmaRequirements),,",
         "attendCma,"
-            + "[Update case details after CMA](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/updateDetailsAfterCma),",
+            + "[Update case details after CMA](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/updateDetailsAfterCma),,",
         "reviewRespondentResponse,"
             + "[Review Home Office response](/case/IA/Asylum/${[CASE_REFERENCE]}/"
             + "trigger/requestResponseReview)<br />[Amend appeal response](/case/IA/Asylum/${[CASE_REFERENCE]}/"
-            + "trigger/requestResponseAmend),",
+            + "trigger/requestResponseAmend),,",
         "createHearingBundle,"
             + "[Generate the hearing bundle](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger"
             + "/generateHearingBundle)<br />"
-            + "[Customise the hearing bundle](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/customiseHearingBundle),",
+            + "[Customise the hearing bundle](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/customiseHearingBundle),,",
         "startDecisionsAndReasonsDocument,"
             + "[Start decision and reasons document](/case/IA/Asylum/${[CASE_REFERENCE]}"
-            + "/trigger/decisionAndReasonsStarted/decisionAndReasonsStartedcaseIntroduction),",
+            + "/trigger/decisionAndReasonsStarted/decisionAndReasonsStartedcaseIntroduction),,",
         "reviewHearingRequirements,"
             + "[Review hearing requirements](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger"
-            + "/reviewHearingRequirements),",
+            + "/reviewHearingRequirements),,",
         "reviewAdditionalEvidence,[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markEvidence"
-            + "AsReviewed),",
+            + "AsReviewed),,",
         "reviewAdditionalHomeOfficeEvidence,[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markEvidence"
-            + "AsReviewed),",
-        "arrangeOfflinePayment,[Mark the appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid),",
-        "markCaseAsPaid,[Mark the appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid),",
+            + "AsReviewed),,",
+        "arrangeOfflinePayment,[Mark the appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid),,",
+        "markCaseAsPaid,[Mark the appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid),,",
         "allocateHearingJudge," + "[Allocate Hearing Judge](/role-access/allocate-role/allocate?caseId="
-            + "${[CASE_REFERENCE]}&roleCategory=JUDICIAL&jurisdiction=IA),",
+            + "${[CASE_REFERENCE]}&roleCategory=JUDICIAL&jurisdiction=IA),,",
         "uploadHearingRecording,[Upload the hearing recording](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/upload"
-            + "HearingRecording),",
+            + "HearingRecording),,",
         "generateDraftDecisionAndReasons,[Generate the draft decisions and reasons document](/case/IA/Asylum"
-            + "/${[CASE_REFERENCE]}/trigger/generateDecisionAndReasons),",
+            + "/${[CASE_REFERENCE]}/trigger/generateDecisionAndReasons),,",
         "reviewAddendumEvidence,[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
-            + "markAddendumEvidenceAsReviewed),",
-        "editListing,[Edit case listing](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/editCaseListing),",
+            + "markAddendumEvidenceAsReviewed),,",
+        "editListing,[Edit case listing](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/editCaseListing),,",
         "decideAnFTPA,[Leadership judge FTPA decision](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
             + "leadershipJudgeFtpaDecision)<br />"
-            + "[Resident judge FTPA decision](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/residentJudgeFtpaDecision),",
+            + "[Resident judge FTPA decision](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/residentJudgeFtpaDecision),,",
         "prepareDecisionsAndReasons,[Prepare decisions and reasons](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
-            + "generateDecisionAndReasons),",
+            + "generateDecisionAndReasons),,",
         "sendDecisionsAndReasons,[Complete decision and reasons](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
-            + "sendDecisionAndReasons),",
+            + "sendDecisionAndReasons),,",
         "processApplicationToReviewDecision,[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
-            + "decideAnApplication),",
+            + "decideAnApplication),,",
         "reviewRemissionApplication,[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/"
-            + "recordRemissionDecision/recordRemissionDecisionremissionDecision),",
-        "assignAFTPAJudge,[Record allocated Judge](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/recordAllocatedJudge),",
-        "listTheCase,[List the case](cases/case-details/${[CASE_REFERENCE]}/hearings),",
+            + "recordRemissionDecision/recordRemissionDecisionremissionDecision),,",
+        "assignAFTPAJudge,[Record allocated Judge](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/recordAllocatedJudge),,",
+        "listTheCase,[List the case](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/listCase),,false",
+        "listTheCase,[List the case](cases/case-details/${[CASE_REFERENCE]}/hearings),,true",
         "sendPaymentRequest,[Mark payment request sent](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
-            + "markPaymentRequestSent),",
-        "markAsPaid,[Mark appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid),",
-        "hearingException,[Go to case](cases/case-details/${[CASE_REFERENCE]}/hearings),",
-        "cmrListed,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),",
-        "cmrUpdated,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),",
+            + "markPaymentRequestSent),,",
+        "markAsPaid,[Mark appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid),,",
+        "hearingException,[Go to case](cases/case-details/${[CASE_REFERENCE]}/hearings),,",
+        "cmrListed,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,",
+        "cmrUpdated,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,",
         "reviewSpecificAccessRequestJudiciary,[Review Access Request](/role-access/"
-            + "${[taskId]}/assignment/${[roleAssignmentId]}/specific-access),",
+            + "${[taskId]}/assignment/${[roleAssignmentId]}/specific-access),,",
         "reviewSpecificAccessRequestLegalOps,[Review Access Request](/role-access/"
-            + "${[taskId]}/assignment/${[roleAssignmentId]}/specific-access),",
+            + "${[taskId]}/assignment/${[roleAssignmentId]}/specific-access),,",
         "reviewSpecificAccessRequestAdmin,[Review Access Request](/role-access/"
-            + "${[taskId]}/assignment/${[roleAssignmentId]}/specific-access),",
+            + "${[taskId]}/assignment/${[roleAssignmentId]}/specific-access),,",
         "reviewSpecificAccessRequestCTSC,[Review Access Request](/role-access/"
-            + "${[taskId]}/assignment/${[roleAssignmentId]}/specific-access),"
+            + "${[taskId]}/assignment/${[roleAssignmentId]}/specific-access),,"
     })
-    void should_return_a_200_description_property(String taskType, String expectedDescription, String journeyType) {
+    void should_return_a_200_description_property(String taskType, String expectedDescription, String journeyType,
+                                                  Boolean isIntegrated) {
         VariableMap inputVariables = new VariableMapImpl();
 
         String roleAssignmentId = UUID.randomUUID().toString();
@@ -1025,6 +1028,9 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         inputVariables.putValue("taskAttributes", taskAttributes);
         if (journeyType != null) {
             inputVariables.putValue("caseData", Map.of("journeyType", journeyType));
+        }
+        if (isIntegrated != null) {
+            inputVariables.putValue("caseData", Map.of("isIntegrated", isIntegrated));
         }
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
