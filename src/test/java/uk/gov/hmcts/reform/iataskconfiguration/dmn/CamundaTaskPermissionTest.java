@@ -291,6 +291,15 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     ctscTeamLeaderPriorityOne,
                     tribunalCaseWorkerPriorityTwoOwn
                 )
+            ),
+            Arguments.of(
+                "relistCase",
+                List.of(
+                    taskSupervisor,
+                    seniorCaseWorkerPriorityOne,
+                    hearingCentreAdminPriorityOne,
+                    tribunalCaseWorkerPriorityTwoOwn
+                )
             )
         );
     }
