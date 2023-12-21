@@ -1653,6 +1653,19 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "triggerReviewInterpreterBookingTask",
+                null,
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewInterpreters",
+                        "name", "Review interpreter booking",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
                 "unknownEvent",
                 null,
                 null,

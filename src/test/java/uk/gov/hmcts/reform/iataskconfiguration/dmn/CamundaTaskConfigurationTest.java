@@ -236,6 +236,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("hearingException", hearingWork),
             Arguments.of("cmrListed", hearingWork),
             Arguments.of("cmrUpdated", hearingWork),
+            Arguments.of("reviewInterpreters", hearingWork),
             Arguments.of("processApplicationAdjourn", applications),
             Arguments.of("processApplicationExpedite", applications),
             Arguments.of("processApplicationTimeExtension", applications),
@@ -366,7 +367,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     @ParameterizedTest
     @CsvSource({
         "arrangeOfflinePayment", "markCaseAsPaid", "allocateHearingJudge", "uploadHearingRecording",
-        "postHearingAttendeesDurationAndRecording", "editListing", "hearingException", "cmrListed", "cmrUpdated"
+        "postHearingAttendeesDurationAndRecording", "editListing", "hearingException", "cmrListed", "cmrUpdated", "reviewInterpreters"
     })
     void when_taskId_then_return_Admin_role_category(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
@@ -1007,6 +1008,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "hearingException,[Go to case](cases/case-details/${[CASE_REFERENCE]}/hearings),,",
         "cmrListed,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,",
         "cmrUpdated,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,",
+        "reviewInterpreters,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,",
         "reviewSpecificAccessRequestJudiciary,[Review Access Request](/role-access/"
             + "${[taskId]}/assignment/${[roleAssignmentId]}/specific-access),,",
         "reviewSpecificAccessRequestLegalOps,[Review Access Request](/role-access/"
