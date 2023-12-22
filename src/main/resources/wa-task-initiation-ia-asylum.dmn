@@ -3255,59 +3255,6 @@
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1flcc3d">
-        <inputEntry id="UnaryTests_01nmj12">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1qwfkcn">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1n6lxlc">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_07yejkt">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1ae2374">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0xfnlvx">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0qf0566">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0gte19s">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1it55ck">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0rsbx7w">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1gsc98c">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0ezx8yj">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_09f8gg1">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0b6vm7q">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0lp7k5x">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1wac0u9">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1vjda97">
-          <text></text>
-        </outputEntry>
-      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
