@@ -1008,7 +1008,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "hearingException,[Go to case](cases/case-details/${[CASE_REFERENCE]}/hearings),,",
         "cmrListed,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,",
         "cmrUpdated,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,",
-        "relistCase,[Relist the case](cases/case-details/${[CASE_REFERENCE]}/hearings),,",
+        "relistCase,[Relist the hearing](cases/case-details/${[CASE_REFERENCE]}/hearings),,",
         "reviewSpecificAccessRequestJudiciary,[Review Access Request](/role-access/"
             + "${[taskId]}/assignment/${[roleAssignmentId]}/specific-access),,",
         "reviewSpecificAccessRequestLegalOps,[Review Access Request](/role-access/"
