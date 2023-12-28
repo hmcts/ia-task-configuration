@@ -1601,6 +1601,23 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "restoreStateFromAdjourn",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "          \"isIntegrated\" : " + true + "\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "relistCase",
+                        "name", "Relist the case",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
                 "recordAdjournmentDetails",
                 null,
                 mapAdditionalData("{\n"
@@ -1848,7 +1865,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(13));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(57));
+        assertThat(logic.getRules().size(), is(58));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {

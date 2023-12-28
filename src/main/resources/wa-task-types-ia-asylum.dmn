@@ -526,6 +526,17 @@
           <text>"Update CMR notification"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0sof8lx">
+        <inputEntry id="UnaryTests_1v4i6g4">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_02o5rlq">
+          <text>"relistCase"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0sdu5ql">
+          <text>"Relist the case"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
