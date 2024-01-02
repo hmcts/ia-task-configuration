@@ -3202,6 +3202,59 @@
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1uipszr">
+        <inputEntry id="UnaryTests_1m31y70">
+          <text>"restoreStateFromAdjourn"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0kcn6yn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1gmyx54">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1cul75y">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jxlcxr">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07gz657">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09xq383">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1nild2l">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1dt2sjc">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_02o3b6x">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0i13lab">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_188lxro">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1s9ywhg">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1uhnvp6">
+          <text>"relistCase"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_120m77p">
+          <text>"Relist the case"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1n7rdfg">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1khadyp">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_00tr0db">
         <inputEntry id="UnaryTests_12lpz6d">
           <text>"triggerReviewInterpreterBookingTask"</text>

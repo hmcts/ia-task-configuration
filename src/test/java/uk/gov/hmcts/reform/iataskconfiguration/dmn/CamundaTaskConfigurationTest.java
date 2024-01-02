@@ -236,6 +236,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("hearingException", hearingWork),
             Arguments.of("cmrListed", hearingWork),
             Arguments.of("cmrUpdated", hearingWork),
+            Arguments.of("relistCase", hearingWork),
             Arguments.of("reviewInterpreters", hearingWork),
             Arguments.of("processApplicationAdjourn", applications),
             Arguments.of("processApplicationExpedite", applications),
@@ -1009,6 +1010,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "hearingException,[Go to case](cases/case-details/${[CASE_REFERENCE]}/hearings),,",
         "cmrListed,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,",
         "cmrUpdated,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,",
+        "relistCase,[Relist the hearing](cases/case-details/${[CASE_REFERENCE]}/hearings),,",
         "reviewInterpreters,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,",
         "reviewSpecificAccessRequestJudiciary,[Review Access Request](/role-access/"
             + "${[taskId]}/assignment/${[roleAssignmentId]}/specific-access),,",
