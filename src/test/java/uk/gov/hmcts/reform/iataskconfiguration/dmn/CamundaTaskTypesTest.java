@@ -265,14 +265,14 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                    "Update CMR notification"
             ),
             Map.of("taskTypeId",
-                   "relistCase",
-                   "taskTypeName",
-                   "Relist the case"
-            ),
-            Map.of("taskTypeId",
                 "reviewInterpreters",
                 "taskTypeName",
                 "Review interpreter booking"
+            ),
+            Map.of("taskTypeId",
+                   "relistCase",
+                   "taskTypeName",
+                   "Relist the case"
             )
         );
         return Stream.of(
