@@ -1516,7 +1516,11 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "reviewHearingRequirements",
                 "listing",
-                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "          \"isIntegrated\" : " + false + "\n"
+                                      + "   }"
+                                      + "}"),
                 singletonList(
                     Map.of(
                         "taskId", "listTheCase",
@@ -1529,7 +1533,11 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "listCaseWithoutHearingRequirements",
                 "listing",
-                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "          \"isIntegrated\" : " + false + "\n"
+                                      + "   }"
+                                      + "}"),
                 singletonList(
                     Map.of(
                         "taskId", "listTheCase",
@@ -1655,7 +1663,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "decision",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
-                                      + "      \"listCaseHearingCentre\":\"" + "decisionWithoutHearing" + "\"\n"
+                                      + "      \"listCaseHearingCentre\":\"" + "decisionWithoutHearing" + "\",\n"
+                                      + "      \"isIntegrated\" : " + false + "\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
