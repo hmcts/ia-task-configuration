@@ -1002,8 +1002,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "reviewRemissionApplication,[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/"
             + "recordRemissionDecision/recordRemissionDecisionremissionDecision),,",
         "assignAFTPAJudge,[Record allocated Judge](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/recordAllocatedJudge),,",
-        "listTheCase,[List the case](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/listCase),,false",
-        "listTheCase,[List the case](cases/case-details/${[CASE_REFERENCE]}/hearings),,true",
+        "listTheCase,[List the case](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/listCase),,No",
+        "listTheCase,[List the case](cases/case-details/${[CASE_REFERENCE]}/hearings),,Yes",
         "sendPaymentRequest,[Mark payment request sent](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
             + "markPaymentRequestSent),,",
         "markAsPaid,[Mark appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid),,",
@@ -1022,7 +1022,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             + "${[taskId]}/assignment/${[roleAssignmentId]}/specific-access),,"
     })
     void should_return_a_200_description_property(String taskType, String expectedDescription, String journeyType,
-                                                  Boolean isIntegrated) {
+                                                  String isIntegrated) {
         VariableMap inputVariables = new VariableMapImpl();
 
         String roleAssignmentId = UUID.randomUUID().toString();
