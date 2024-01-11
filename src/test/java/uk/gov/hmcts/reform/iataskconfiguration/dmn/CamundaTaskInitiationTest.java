@@ -1535,7 +1535,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "listing",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
-                                      + "          \"isIntegrated\" : " + "\"No\"" + ",\n"
+                                      + "          \"isIntegrated\":" + "\"No\"" + ",\n"
                                       + "          \"autoHearingRequestEnabled\":" + "\"Yes\"" + "\n"
                                       + "   }"
                                       + "}"),
@@ -1570,7 +1570,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "listing",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
-                                      + "          \"isIntegrated\" : " + "\"No\"" + ",\n"
+                                      + "          \"isIntegrated\":" + "\"No\"" + ",\n"
                                       + "          \"autoHearingRequestEnabled\":" + "\"Yes\"" + "\n"
                                       + "   }"
                                       + "}"),

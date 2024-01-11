@@ -63,7 +63,7 @@
       <input id="InputClause_1atibg2" label="Auto Hearing Request Enabled" biodi:width="337" camunda:inputVariable="autoHearingRequestEnabled">
         <inputExpression id="LiteralExpression_1fp3z4w" typeRef="boolean">
           <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.autoHearingRequestEnabled
-            != null and additionalData.Data.autoHearingRequestEnabled= "Yes") then
+            != null and additionalData.Data.autoHearingRequestEnabled = "Yes") then
             true
             else
             false</text>
@@ -99,7 +99,7 @@
       <input id="InputClause_19exsng" label="Relist Case Immediately" biodi:width="232" camunda:inputVariable="relistCaseImmediately">
         <inputExpression id="LiteralExpression_0hzvvkt" typeRef="boolean">
           <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.relistCaseImmediately
-            != null and additionalData.Data.relistCaseImmediately= "Yes") then
+            != null and additionalData.Data.relistCaseImmediately = "Yes") then
             true
             else
             false</text>
@@ -3194,16 +3194,16 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0yo1aqv">
-          <text></text>
+          <text>"listTheCase"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_116xdeb">
-          <text></text>
+          <text>"List the case"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_18ngu7m">
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0o2e7io">
-          <text></text>
+          <text>"caseProgression"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0idglns">
