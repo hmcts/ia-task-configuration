@@ -277,6 +277,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("adaProcessApplicationForTimeExtension", applications),
             Arguments.of("adaProcessApplicationToWithdraw", applications),
             Arguments.of("adaProcessApplicationToReviewDecision", applications),
+            Arguments.of("reviewCosts", applications),
             Arguments.of("decideAnFTPA", upperTribunal),
             Arguments.of("adaDecideAnFTPA", upperTribunal)
         );
@@ -365,7 +366,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "adaProcessApplicationForTimeExtension", "adaProcessApplicationToWithdraw",
         "adaProcessApplicationToReviewDecision", "sendDecisionsAndReasons", "adaSendDecisionsAndReasons",
         "prepareDecisionsAndReasons", "adaPrepareDecisionsAndReasons", "decideAnFTPA", "adaDecideAnFTPA",
-        "reviewADASuitability"
+        "reviewADASuitability", "reviewCosts"
     })
     void when_taskId_then_return_judicial_role_category(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
@@ -459,7 +460,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "followUpNonStandardDirection", "followUpNoticeOfChange", "reviewAdditionalEvidence",
         "reviewAdditionalHomeOfficeEvidence","followUpExtendedDirection", "adaFollowUpExtendedDirection",
         "adaReviewAdditionalEvidence", "adaReviewAdditionalHomeOfficeEvidence","reviewCaseTransferredOutOfADA",
-        "reviewCaseMarkedUnsuitableForADA", "adaReviewHearingBundle","reviewTransferredS82AAppeal"
+        "reviewCaseMarkedUnsuitableForADA", "adaReviewHearingBundle","reviewTransferredS82AAppeal",
     })
     void when_taskId_then_return_legal_operations_role_category(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
@@ -1051,7 +1052,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("reviewADASuitability", zeroDays),
             Arguments.of("adaAllocateHearingJudge", zeroDays),
             Arguments.of("adaAssignAFTPAJudge", zeroDays),
-            Arguments.of("markAsPaid", fourteenDays)
+            Arguments.of("markAsPaid", fourteenDays),
+            Arguments.of("reviewCosts", fourteenDays)
         );
     }
 

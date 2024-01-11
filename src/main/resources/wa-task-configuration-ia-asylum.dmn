@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.14.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.18.0">
   <decision id="wa-task-configuration-ia-asylum" name="Task configuration DMN">
     <decisionTable id="DecisionTable_14cx079" hitPolicy="COLLECT">
       <input id="InputClause_1gxyo7f" label="CCD Case Data" camunda:inputVariable="caseData">
@@ -7,7 +7,7 @@
           <text></text>
         </inputExpression>
       </input>
-      <input id="InputClause_1gmuynt" label="Task type" biodi:width="415" camunda:inputVariable="taskType">
+      <input id="InputClause_1gmuynt" label="Task type" biodi:width="820" camunda:inputVariable="taskType">
         <inputExpression id="LiteralExpression_06iiuqg" typeRef="string">
           <text>if(taskAttributes != null and taskAttributes.taskType != null) then
                         taskAttributes. taskType
@@ -18,6 +18,11 @@
                     </text>
         </inputExpression>
       </input>
+      <input id="InputClause_1lmn2ph">
+        <inputExpression id="LiteralExpression_0btrjyi" typeRef="string">
+          <text></text>
+        </inputExpression>
+      </input>
       <output id="Output_1" label="Name" name="name" typeRef="string" />
       <output id="OutputClause_021y3bb" label="Value" name="value" typeRef="string" biodi:width="803" />
       <output id="OutputClause_06m3ktt" label="Can Reconfigure?" name="canReconfigure" typeRef="boolean" biodi:width="192" />
@@ -26,6 +31,9 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_03q2nz0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0l6txx7">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0nkps91">
@@ -43,6 +51,9 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1esseck">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0cj5hcw">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0selern">
@@ -76,6 +87,9 @@
         <inputEntry id="UnaryTests_0wxfevs">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_1ayjwld">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_0etwrk3">
           <text>"region"</text>
         </outputEntry>
@@ -95,6 +109,9 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1u21xrs">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03cafpm">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0kun6mv">
@@ -118,6 +135,9 @@
         <inputEntry id="UnaryTests_1ssoq5v">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_0add9zi">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_1lvlmxm">
           <text>"locationName"</text>
         </outputEntry>
@@ -137,6 +157,9 @@
           <text>-</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0nmr895">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1mwiz92">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_04r7w97">
@@ -186,8 +209,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1y3kj1v">
-          <text>
-                        "arrangeOfflinePayment",
+          <text>                        "arrangeOfflinePayment",
                         "markCaseAsPaid",
                         "attendCma",
                         "caseSummaryHearingBundleStartDecision",
@@ -206,8 +228,10 @@
                         "sendPaymentRequest",
                         "markAsPaid",
                         "adaAssignAFTPAJudge",
-                        "reviewTransferredS82AAppeal"
-                    </text>
+                        "reviewTransferredS82AAppeal"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_18887x7">
+          <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0rvgay2">
           <text>"workType"</text>
@@ -224,8 +248,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1gm06lg">
-          <text>
-                        "reviewTheAppeal",
+          <text>                        "reviewTheAppeal",
                         "adaReviewTheAppeal",
                         "followUpOverdueRespondentEvidence",
                         "adaFollowUpOverdueRespondentEvidence",
@@ -258,6 +281,9 @@
                         "adaSendDecisionsAndReasons",
                         "reviewADASuitability"</text>
         </inputEntry>
+        <inputEntry id="UnaryTests_01hjogi">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_0omxasv">
           <text>"workType"</text>
         </outputEntry>
@@ -275,6 +301,9 @@
         <inputEntry id="UnaryTests_1ps3x4j">
           <text>"reviewHearingBundle","adaReviewHearingBundle","generateDraftDecisionAndReasons","uploadDecision","uploadHearingRecording","editListing","followUpOverdueHearingRequirements","reviewHearingRequirements","allocateHearingJudge","prepareDecisionsAndReasons","adaPrepareDecisionsAndReasons","startDecisionsAndReasonsDocument","createHearingBundle","createCaseSummary","adaEditListing","adaAllocateHearingJudge","adaUploadHearingRecording","listTheCase"</text>
         </inputEntry>
+        <inputEntry id="UnaryTests_0rnxmse">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_0c3eia6">
           <text>"workType"</text>
         </outputEntry>
@@ -290,8 +319,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0uoqs4p">
-          <text>
-                        "processApplication",
+          <text>                        "processApplication",
                         "adaProcessApplicationToUpdateHearingRequirements",
                         "adaProcessApplicationToUpdateAppealDetails",
                         "adaProcessApplicationToReinstateAnEndedAppeal",
@@ -310,8 +338,11 @@
                         "adaProcessApplicationToExpedite",
                         "adaProcessApplicationForTimeExtension",
                         "adaProcessApplicationToWithdraw",
-                        "adaProcessApplicationToReviewDecision"
-                    </text>
+                        "adaProcessApplicationToReviewDecision",
+                        "reviewCosts"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_18ni78k">
+          <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1qi2rsb">
           <text>"workType"</text>
@@ -330,6 +361,9 @@
         <inputEntry id="UnaryTests_04wtfxs">
           <text>"decideAnFTPA","adaDecideAnFTPA"</text>
         </inputEntry>
+        <inputEntry id="UnaryTests_1dmgzoo">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_1ywf3hm">
           <text>"workType"</text>
         </outputEntry>
@@ -346,6 +380,9 @@
         </inputEntry>
         <inputEntry id="UnaryTests_1466etp">
           <text>"followUpNoticeOfChange", "adaFollowUpNoticeOfChange", "reviewSpecificAccessRequestJudiciary","reviewSpecificAccessRequestLegalOps","reviewSpecificAccessRequestAdmin","reviewSpecificAccessRequestCTSC"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rqvcfg">
+          <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0bjcvtf">
           <text>"workType"</text>
@@ -364,6 +401,9 @@
         <inputEntry id="UnaryTests_0b3q932">
           <text>"reviewSpecificAccessRequestJudiciary","reviewSpecificAccessRequestLegalOps","reviewSpecificAccessRequestAdmin","reviewSpecificAccessRequestCTSC"</text>
         </inputEntry>
+        <inputEntry id="UnaryTests_0b7qxkz">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_1hrei14">
           <text>"additionalProperties_roleAssignmentId"</text>
         </outputEntry>
@@ -379,8 +419,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_10f3uas">
-          <text>
-                        "processApplication",
+          <text>                        "processApplication",
                         "adaProcessApplicationToUpdateHearingRequirements",
                         "adaProcessApplicationToUpdateAppealDetails",
                         "adaProcessApplicationToReinstateAnEndedAppeal",
@@ -427,8 +466,10 @@
                         "reviewCaseTransferredOutOfADA",
                         "reviewCaseMarkedUnsuitableForADA",
                         "adaReviewHearingBundle",
-                        "reviewTransferredS82AAppeal"
-                    </text>
+                        "reviewTransferredS82AAppeal"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1cb2fo9">
+          <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_05l5bvs">
           <text>"roleCategory"</text>
@@ -447,6 +488,9 @@
         <inputEntry id="UnaryTests_1glizm3">
           <text>"arrangeOfflinePayment","markCaseAsPaid","allocateHearingJudge","uploadHearingRecording","editListing","adaListCase","adaEditListing","adaAllocateHearingJudge","adaUploadHearingRecording"</text>
         </inputEntry>
+        <inputEntry id="UnaryTests_1x1iqj8">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_1131kat">
           <text>"roleCategory"</text>
         </outputEntry>
@@ -462,7 +506,10 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_15ftuu0">
-          <text>"reviewHearingBundle","generateDraftDecisionAndReasons","uploadDecision","reviewAddendumHomeOfficeEvidence","reviewAddendumAppellantEvidence","reviewAddendumEvidence","adaReviewAddendumEvidence","reviewSpecificAccessRequestJudiciary","reviewSpecificAccessRequestLegalOps","reviewSpecificAccessRequestAdmin","reviewSpecificAccessRequestCTSC","processApplicationToReviewDecision","adaProcessApplicationToAdjourn","adaProcessApplicationToExpedite","adaProcessApplicationForTimeExtension","adaProcessApplicationToWithdraw","adaProcessApplicationToReviewDecision","sendDecisionsAndReasons","adaSendDecisionsAndReasons","prepareDecisionsAndReasons","adaPrepareDecisionsAndReasons","decideAnFTPA","adaDecideAnFTPA","reviewADASuitability"</text>
+          <text>"reviewHearingBundle","generateDraftDecisionAndReasons","uploadDecision","reviewAddendumHomeOfficeEvidence","reviewAddendumAppellantEvidence","reviewAddendumEvidence","adaReviewAddendumEvidence","reviewSpecificAccessRequestJudiciary","reviewSpecificAccessRequestLegalOps","reviewSpecificAccessRequestAdmin","reviewSpecificAccessRequestCTSC","processApplicationToReviewDecision","adaProcessApplicationToAdjourn","adaProcessApplicationToExpedite","adaProcessApplicationForTimeExtension","adaProcessApplicationToWithdraw","adaProcessApplicationToReviewDecision","sendDecisionsAndReasons","adaSendDecisionsAndReasons","prepareDecisionsAndReasons","adaPrepareDecisionsAndReasons","decideAnFTPA","adaDecideAnFTPA","reviewADASuitability","reviewCosts"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wpbrba">
+          <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_15nowth">
           <text>"roleCategory"</text>
@@ -481,6 +528,9 @@
         <inputEntry id="UnaryTests_0xh5are">
           <text>"reviewRemissionApplication","assignAFTPAJudge","listTheCase","sendPaymentRequest","markAsPaid","adaAssignAFTPAJudge"</text>
         </inputEntry>
+        <inputEntry id="UnaryTests_1n40zpz">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_0vqliz7">
           <text>"roleCategory"</text>
         </outputEntry>
@@ -496,6 +546,9 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1hpq8zy">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1tskunr">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0omo7uu">
@@ -601,6 +654,9 @@
         <inputEntry id="UnaryTests_1xqy885">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_1itk90o">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_17n2o8t">
           <text>"dueDateOrigin"</text>
         </outputEntry>
@@ -616,6 +672,9 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0xz0tmx">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1uar43c">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0n2s323">
@@ -634,6 +693,9 @@
         </inputEntry>
         <inputEntry id="UnaryTests_01h3gvh">
           <text>"processApplication"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09o48lf">
+          <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_18mybq6">
           <text>"dueDateIntervalDays"</text>
@@ -681,6 +743,9 @@
 "listTheCase",
 "reviewTransferredS82AAppeal"</text>
         </inputEntry>
+        <inputEntry id="UnaryTests_1u6f94g">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_1kbin0j">
           <text>"dueDateIntervalDays"</text>
         </outputEntry>
@@ -696,47 +761,10 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1cwkxoe">
-          <text>"reviewHearingBundle",
-"sendDecisionsAndReasons",
-"prepareDecisionsAndReasons",
-"sendPaymentRequest",
-"uploadHearingRecording",
-"decideAnFTPA",
-"adaProcessApplicationToAdjourn",
-"adaProcessApplicationToExpedite",
-"adaProcessApplicationForTimeExtension",
-"adaProcessApplicationToWithdraw",
-"adaProcessApplicationToReviewDecision",
-"adaProcessApplicationToUpdateHearingRequirements",
-"adaProcessApplicationToUpdateAppealDetails",
-"adaProcessApplicationToReinstateAnEndedAppeal",
-"adaProcessApplicationToOther",
-"adaLinkUnlinkAppeals",
-"adaEditListing",
-"adaReviewTheAppeal",
-"adaReviewRespondentEvidence",
-"adaReviewAdditionalEvidence",
-"adaReviewAdditionalHomeOfficeEvidence",
-"adaReviewAppealSkeletonArgument",
-"adaCaseSummaryHearingBundleStartDecision",
-"adaFollowUpOverdueRespondentEvidence",
-"adaListCase",
-"adaFollowUpExtendedDirection",
-"adaFollowUpOverdueCaseBuilding",
-"adaFollowUpOverdueRespondentReview",
-"adaFollowUpNonStandardDirection",
-"adaFollowUpNoticeOfChange",
-"adaReviewAddendumEvidence",
-"adaReviewHearingBundle",
-"adaSendDecisionsAndReasons",
-"adaPrepareDecisionsAndReasons",
-"adaUploadHearingRecording",
-"adaDecideAnFTPA",
-"reviewCaseTransferredOutOfADA",
-"reviewCaseMarkedUnsuitableForADA",
-"reviewADASuitability",
-"adaAllocateHearingJudge",
-"adaAssignAFTPAJudge"</text>
+          <text>"reviewHearingBundle","sendDecisionsAndReasons","prepareDecisionsAndReasons","sendPaymentRequest","uploadHearingRecording","decideAnFTPA","adaProcessApplicationToAdjourn","adaProcessApplicationToExpedite","adaProcessApplicationForTimeExtension","adaProcessApplicationToWithdraw","adaProcessApplicationToReviewDecision","adaProcessApplicationToUpdateHearingRequirements","adaProcessApplicationToUpdateAppealDetails","adaProcessApplicationToReinstateAnEndedAppeal","adaProcessApplicationToOther","adaLinkUnlinkAppeals","adaEditListing","adaReviewTheAppeal","adaReviewRespondentEvidence","adaReviewAdditionalEvidence","adaReviewAdditionalHomeOfficeEvidence","adaReviewAppealSkeletonArgument","adaCaseSummaryHearingBundleStartDecision","adaFollowUpOverdueRespondentEvidence","adaListCase","adaFollowUpExtendedDirection","adaFollowUpOverdueCaseBuilding","adaFollowUpOverdueRespondentReview","adaFollowUpNonStandardDirection","adaFollowUpNoticeOfChange","adaReviewAddendumEvidence","adaReviewHearingBundle","adaSendDecisionsAndReasons","adaPrepareDecisionsAndReasons","adaUploadHearingRecording","adaDecideAnFTPA","reviewCaseTransferredOutOfADA","reviewCaseMarkedUnsuitableForADA","reviewADASuitability","adaAllocateHearingJudge","adaAssignAFTPAJudge"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ut93nh">
+          <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ssbj4t">
           <text>"dueDateIntervalDays"</text>
@@ -755,6 +783,9 @@
         <inputEntry id="UnaryTests_0ss35tl">
           <text>"allocateHearingJudge"</text>
         </inputEntry>
+        <inputEntry id="UnaryTests_0cj49d7">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_0r6yt12">
           <text>"dueDateIntervalDays"</text>
         </outputEntry>
@@ -770,7 +801,10 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1aa2bwu">
-          <text>"markAsPaid"</text>
+          <text>"markAsPaid", "reviewCosts"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nhvwuz">
+          <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0k6nifs">
           <text>"dueDateIntervalDays"</text>
@@ -789,6 +823,9 @@
         <inputEntry id="UnaryTests_0hyv74b">
           <text>"markAsPaid"</text>
         </inputEntry>
+        <inputEntry id="UnaryTests_0lue87r">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_0tmigm7">
           <text>"dueDateSkipNonWorkingDays"</text>
         </outputEntry>
@@ -804,6 +841,9 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0sk78xf">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fhqi84">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1jpp20e">
@@ -823,6 +863,9 @@
         <inputEntry id="UnaryTests_0bg2thb">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_1hvr4co">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_07pamwu">
           <text>"minorPriority"</text>
         </outputEntry>
@@ -838,6 +881,9 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_08641k9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1kd7iof">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1x7qwr7">
@@ -857,6 +903,9 @@
         <inputEntry id="UnaryTests_1q7g8iu">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_1htdzx4">
+          <text></text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_0s6253e">
           <text>"dueDateNonWorkingDaysOfWeek"</text>
         </outputEntry>
@@ -872,6 +921,9 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_08t14g0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0mgjw5s">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0nzrd2w">

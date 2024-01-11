@@ -3440,7 +3440,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(13));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(81));
+        assertThat(logic.getRules().size(), is(82));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {
@@ -3600,6 +3600,39 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         inputVariables.putValue("now", LocalDateTime.now().minusMinutes(10)
             .format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
         inputVariables.putAll(map);
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
+    }
+
+    static Stream<Arguments> applyForCostsScenarioProvider() {
+        Map<String,Object> delayFor14Days = Map.of(
+            "delayUntilIntervalDays", "14",
+            "delayUntilOrigin", LocalDate.now()
+        );
+
+        return Stream.of(
+            Arguments.of(
+                "applyForCosts",
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewCosts",
+                        "name", "Review costs",
+                        "processCategories", "caseProgression"
+                    )
+                )
+            )
+        );
+    }
+
+    @ParameterizedTest(name = "event id: {0} post event state: {1} additional data: {2}")
+    @MethodSource("applyForCostsScenarioProvider")
+    void given_apply_for_costs_should_evaluate__dmn(String eventId, List<Map<String, String>> expectation) {
+
+        VariableMap inputVariables = new VariableMapImpl();
+        inputVariables.putValue("eventId", eventId);
+        inputVariables.putValue("now", LocalDateTime.now().minusMinutes(10)
+            .format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
         assertThat(dmnDecisionTableResult.getResultList(), is(expectation));

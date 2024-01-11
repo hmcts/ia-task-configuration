@@ -428,6 +428,14 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     seniorCaseWorkerPriorityOne,
                     judgePriorityTwo
                 )
+            ),
+            Arguments.of(
+                "reviewCosts",
+                List.of(
+                    taskSupervisor,
+                    hearingJudgePriorityOne,
+                    judgePriorityOne
+                )
             )
         );
     }
@@ -533,7 +541,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         "reviewAdditionalHomeOfficeEvidence", "adaReviewAdditionalHomeOfficeEvidence",
          "adaReviewAppealSkeletonArgument",
         "followUpExtendedDirection","adaFollowUpExtendedDirection","reviewCaseTransferredOutOfADA",
-        "reviewTransferredS82AAppeal"
+        "reviewTransferredS82AAppeal",
     })
     void given_taskType_when_evaluate_dmn_then_it_returns_first_second_and_third_rules(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
