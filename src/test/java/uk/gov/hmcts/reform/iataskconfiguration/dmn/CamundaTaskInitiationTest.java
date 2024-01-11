@@ -1518,7 +1518,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "listing",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
-                                      + "          \"autoHearingRequestEnabled\":" + false + "\n"
+                                      + "          \"autoHearingRequestEnabled\":" + "\"No\"" + "\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -1535,8 +1535,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "listing",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
-                                      + "          \"isIntegrated\" : " + false + ",\n"
-                                      + "          \"autoHearingRequestEnabled\":" + true + "\n"
+                                      + "          \"isIntegrated\" : " + "\"No\"" + ",\n"
+                                      + "          \"autoHearingRequestEnabled\":" + "\"Yes\"" + "\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -1553,7 +1553,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "listing",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
-                                      + "          \"autoHearingRequestEnabled\":" + false + "\n"
+                                      + "          \"autoHearingRequestEnabled\":" + "\"No\"" + "\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -1570,8 +1570,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "listing",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
-                                      + "          \"isIntegrated\" : " + false + ",\n"
-                                      + "          \"autoHearingRequestEnabled\":" + true + "\n"
+                                      + "          \"isIntegrated\" : " + "\"No\"" + ",\n"
+                                      + "          \"autoHearingRequestEnabled\":" + "\"Yes\"" + "\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -1667,8 +1667,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"hearingAdjournmentWhen\":\"" + "onHearingDate" + "\",\n"
-                                      + "      \"relistCaseImmediately\":" + true + ",\n"
-                                      + "      \"autoHearingRequestEnabled\":" + false + "\n"
+                                      + "      \"relistCaseImmediately\":" + "\"Yes\"" + ",\n"
+                                      + "      \"autoHearingRequestEnabled\":" + "\"No\"" + "\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -1702,7 +1702,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       + "   \"Data\":{\n"
                                       + "      \"listCaseHearingCentre\":\"" + "decisionWithoutHearing" + "\",\n"
                                       + "      \"isIntegrated\": " + "\"Yes\""  + ",\n"
-                                      + "      \"autoHearingRequestEnabled\":" + false + "\n"
+                                      + "      \"autoHearingRequestEnabled\":" + "\"No\"" + "\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -1939,9 +1939,9 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getInputs().size(), is(14));
+        assertThat(logic.getInputs().size(), is(15));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(60));
+        assertThat(logic.getRules().size(), is(61));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {
