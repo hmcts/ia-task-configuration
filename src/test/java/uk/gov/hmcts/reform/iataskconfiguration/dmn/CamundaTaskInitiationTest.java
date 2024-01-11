@@ -1605,7 +1605,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 null,
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
-                                      + "          \"isIntegrated\" : " + true + "\n"
+                                      + "          \"isIntegrated\":\"" + "Yes" + "\"\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -1656,7 +1656,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"listCaseHearingCentre\":\"" + "decisionWithoutHearing" + "\",\n"
-                                      + "      \"isIntegrated\": " + true + "\n"
+                                      + "      \"isIntegrated\": " + "\"Yes\""  + "\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -1806,18 +1806,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
     public static Stream<Arguments> decideAnApplicationScenarioProvider() {
         return Stream.of(
-            getDecideAnApplicationArgumentsOf("Adjourn", false),
-            getDecideAnApplicationArgumentsOf("Expedite", false),
-            getDecideAnApplicationArgumentsOf("Transfer", false),
-            getDecideAnApplicationArgumentsOf("Adjourn", true),
-            getDecideAnApplicationArgumentsOf("Expedite", true),
-            getDecideAnApplicationArgumentsOf("Transfer", true)
+            getDecideAnApplicationArgumentsOf("Adjourn", "No"),
+            getDecideAnApplicationArgumentsOf("Expedite", "No"),
+            getDecideAnApplicationArgumentsOf("Transfer", "No"),
+            getDecideAnApplicationArgumentsOf("Adjourn", "Yes"),
+            getDecideAnApplicationArgumentsOf("Expedite", "Yes"),
+            getDecideAnApplicationArgumentsOf("Transfer", "Yes")
         );
     }
 
     private static Arguments getDecideAnApplicationArgumentsOf(
-        String applicationType, boolean isIntegrated) {
-        List<Map<String, String>> expected = isIntegrated
+        String applicationType, String isIntegrated) {
+        List<Map<String, String>> expected = isIntegrated.equals("Yes")
             ? Collections.emptyList()
             : singletonList(
             Map.of(
@@ -1837,7 +1837,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                   + "            \"type\" : \"" + applicationType + "\",\n"
                                   + "            \"decision\" : \"Granted\" \n"
                                   + "          },\n"
-                                  + "          \"isIntegrated\" : " + isIntegrated + "\n"
+                                  + "          \"isIntegrated\" : \"" + isIntegrated + "\"\n"
                                   + "        }\n"
                                   + "      }"),
             expected
