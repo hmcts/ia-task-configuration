@@ -526,6 +526,17 @@
           <text>"Update CMR notification"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_192qhif">
+        <inputEntry id="UnaryTests_0srvbqx">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0zqp3zc">
+          <text>"reviewInterpreters"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0anq4l8">
+          <text>"Review interpreter booking"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0sof8lx">
         <inputEntry id="UnaryTests_1v4i6g4">
           <text></text>
