@@ -788,11 +788,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                             "delayUntil", hearingDate,
                             "delayUntilIntervalDays","0"
                         )
-                    ),
-                    Map.of(
-                        "taskId", "reviewInterpreters",
-                        "name", "Review interpreter booking",
-                        "processCategories", "caseProgression"
                     )
                 )
             ),
@@ -1900,7 +1895,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(14));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(61));
+        assertThat(logic.getRules().size(), is(60));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {
