@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.14.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.18.0">
   <decision id="wa-task-initiation-ia-asylum" name="Task initiation DMN">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT" biodi:annotationsWidth="400">
       <input id="Input_1" label="Event Id" biodi:width="282" camunda:inputVariable="eventId">
@@ -4534,6 +4534,59 @@ else
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0usph6z">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0swwy9a">
+        <inputEntry id="UnaryTests_04c2dtm">
+          <text>"applyForCosts"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0m5f4om">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1y3fzt7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1y1v637">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jlznn6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_11lr3ib">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0e97l2j">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12ep199">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0osmogh">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ko3n5g">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1khvivt">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0yynumu">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1kn84wm">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1wdmqnt">
+          <text>"reviewCosts"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0c46amz">
+          <text>"Review costs"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0my6yyf">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0quq6iz">
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
