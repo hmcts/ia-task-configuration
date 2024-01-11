@@ -788,6 +788,11 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                             "delayUntil", hearingDate,
                             "delayUntilIntervalDays","0"
                         )
+                    ),
+                    Map.of(
+                        "taskId", "reviewInterpreters",
+                        "name", "Review interpreter booking",
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
@@ -1685,22 +1690,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "editCaseListing",
-                null,
-                mapAdditionalData("{\n"
-                    + "   \"Data\":{\n"
-                    + "      \"shouldTriggerReviewInterpreterTask\":\"" + "Yes" + "\"\n"
-                    + "   }"
-                    + "}"),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewInterpreters",
-                        "name", "Review interpreter booking",
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
-                "listCase",
                 null,
                 mapAdditionalData("{\n"
                     + "   \"Data\":{\n"
