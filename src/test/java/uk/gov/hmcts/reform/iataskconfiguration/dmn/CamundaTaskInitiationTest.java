@@ -1655,7 +1655,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "decision",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
-                                      + "      \"listCaseHearingCentre\":\"" + "decisionWithoutHearing" + "\"\n"
+                                      + "      \"listCaseHearingCentre\":\"" + "decisionWithoutHearing" + "\",\n"
+                                      + "      \"isIntegrated\": " + true + "\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
