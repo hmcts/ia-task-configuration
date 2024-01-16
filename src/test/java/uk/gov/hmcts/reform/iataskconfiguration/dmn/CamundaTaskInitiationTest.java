@@ -1535,7 +1535,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "listing",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
-                                      + "          \"isIntegrated\":" + "\"No\"" + ",\n"
+                                      + "          \"isIntegrated\" : " + false + "\n"
                                       + "          \"autoHearingRequestEnabled\":" + "\"Yes\"" + "\n"
                                       + "   }"
                                       + "}"),
@@ -1570,7 +1570,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "listing",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
-                                      + "          \"isIntegrated\":" + "\"No\"" + ",\n"
+                                      + "          \"isIntegrated\" : " + false + "\n"
                                       + "          \"autoHearingRequestEnabled\":" + "\"Yes\"" + "\n"
                                       + "   }"
                                       + "}"),
@@ -1649,7 +1649,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 null,
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
-                                      + "          \"isIntegrated\":\"" + "Yes" + "\"\n"
+                                      + "          \"isIntegrated\" : " + true + "\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -1701,7 +1701,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"listCaseHearingCentre\":\"" + "decisionWithoutHearing" + "\",\n"
-                                      + "      \"isIntegrated\": " + "\"Yes\""  + ",\n"
+                                      + "          \"isIntegrated\" : " + true + ",\n"
                                       + "      \"autoHearingRequestEnabled\":" + "\"No\"" + "\n"
                                       + "   }"
                                       + "}"),
@@ -1881,18 +1881,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
     public static Stream<Arguments> decideAnApplicationScenarioProvider() {
         return Stream.of(
-            getDecideAnApplicationArgumentsOf("Adjourn", "No"),
-            getDecideAnApplicationArgumentsOf("Expedite", "No"),
-            getDecideAnApplicationArgumentsOf("Transfer", "No"),
-            getDecideAnApplicationArgumentsOf("Adjourn", "Yes"),
-            getDecideAnApplicationArgumentsOf("Expedite", "Yes"),
-            getDecideAnApplicationArgumentsOf("Transfer", "Yes")
+            getDecideAnApplicationArgumentsOf("Adjourn", false),
+            getDecideAnApplicationArgumentsOf("Expedite", false),
+            getDecideAnApplicationArgumentsOf("Transfer", false),
+            getDecideAnApplicationArgumentsOf("Adjourn", true),
+            getDecideAnApplicationArgumentsOf("Expedite", true),
+            getDecideAnApplicationArgumentsOf("Transfer", true)
         );
     }
 
     private static Arguments getDecideAnApplicationArgumentsOf(
-        String applicationType, String isIntegrated) {
-        List<Map<String, String>> expected = isIntegrated.equals("Yes")
+        String applicationType, boolean isIntegrated) {
+        List<Map<String, String>> expected = isIntegrated
             ? Collections.emptyList()
             : singletonList(
             Map.of(

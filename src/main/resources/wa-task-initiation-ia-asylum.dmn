@@ -54,8 +54,8 @@
       <input id="InputClause_1f8t8k6" label="Is integrated" camunda:inputVariable="isIntegrated">
         <inputExpression id="LiteralExpression_1cbsahx" typeRef="boolean">
           <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.isIntegrated
-            != null and additionalData.Data.isIntegrated = "Yes") then
-            true
+            != null) then
+            additionalData.Data.isIntegrated
             else
             false</text>
         </inputExpression>
