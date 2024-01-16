@@ -63,8 +63,8 @@
       <input id="InputClause_1atibg2" label="Auto Hearing Request Enabled" biodi:width="337" camunda:inputVariable="autoHearingRequestEnabled">
         <inputExpression id="LiteralExpression_1fp3z4w" typeRef="boolean">
           <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.autoHearingRequestEnabled
-            != null and additionalData.Data.autoHearingRequestEnabled = "Yes") then
-            true
+            != null) then
+            additionalData.Data.autoHearingRequestEnabled
             else
             false</text>
         </inputExpression>
@@ -127,9 +127,8 @@
       <input id="InputClause_18ekkrd" label="Should Trigger Review Interpreter Task" camunda:inputVariable="shouldTriggerReviewInterpreterTask">
         <inputExpression id="LiteralExpression_12gctnu" typeRef="boolean">
           <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.shouldTriggerReviewInterpreterTask
-            != null and additionalData.Data.shouldTriggerReviewInterpreterTask
-            = "Yes") then
-            true
+            != null) then
+            additionalData.Data.shouldTriggerReviewInterpreterTask
             else
             false</text>
         </inputExpression>

@@ -1518,7 +1518,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "listing",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
-                                      + "          \"autoHearingRequestEnabled\":" + "\"No\"" + "\n"
+                                      + "          \"autoHearingRequestEnabled\" : " + false + "\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -1536,7 +1536,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "          \"isIntegrated\" : " + false + "\n"
-                                      + "          \"autoHearingRequestEnabled\":" + "\"Yes\"" + "\n"
+                                      + "          \"autoHearingRequestEnabled\" : " + true + "\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -1553,7 +1553,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "listing",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
-                                      + "          \"autoHearingRequestEnabled\":" + "\"No\"" + "\n"
+                                      + "          \"autoHearingRequestEnabled\" : " + false + "\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -1571,7 +1571,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "          \"isIntegrated\" : " + false + "\n"
-                                      + "          \"autoHearingRequestEnabled\":" + "\"Yes\"" + "\n"
+                                      + "          \"autoHearingRequestEnabled\" : " + true + "\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -1668,7 +1668,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       + "   \"Data\":{\n"
                                       + "      \"hearingAdjournmentWhen\":\"" + "onHearingDate" + "\",\n"
                                       + "      \"relistCaseImmediately\":" + "\"Yes\"" + ",\n"
-                                      + "      \"autoHearingRequestEnabled\":" + "\"No\"" + "\n"
+                                      + "      \"autoHearingRequestEnabled\" : " + false + "\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -1702,7 +1702,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       + "   \"Data\":{\n"
                                       + "      \"listCaseHearingCentre\":\"" + "decisionWithoutHearing" + "\",\n"
                                       + "          \"isIntegrated\" : " + true + ",\n"
-                                      + "      \"autoHearingRequestEnabled\":" + "\"No\"" + "\n"
+                                      + "      \"autoHearingRequestEnabled\" : " + false + "\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -1734,7 +1734,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 null,
                 mapAdditionalData("{\n"
                     + "   \"Data\":{\n"
-                    + "      \"shouldTriggerReviewInterpreterTask\":\"" + "Yes" + "\"\n"
+                    + "      \"shouldTriggerReviewInterpreterTask\" : \"" + true + "\"\n"
                     + "   }"
                     + "}"),
                 singletonList(
