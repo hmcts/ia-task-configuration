@@ -1787,26 +1787,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       + "      }"),
                 emptyList()
             ),
-            Arguments.of(
-                "makeAnApplication",
-                null,
-                mapAdditionalData(" {\n"
-                                      + "        \"Data\" : {\n"
-                                      + "          \"lastModifiedApplication\" : {\n"
-                                      + "            \"type\" : \"Judge's review of application decision\",\n"
-                                      + "            \"decision\" : \"\"\n"
-                                      + "          }\n"
-                                      + "        }\n"
-                                      + "      }"),
-                singletonList(
-                    Map.of(
-                        "taskId", "processApplicationToReviewDecision",
-                        "name", "Process Application to Review Decision",
-
-                        "processCategories", "application"
-                    )
-                )
-            ),
             getArgumentOf("Adjourn",
                           "processApplicationAdjourn",
                           "Process Adjourn Application"),
@@ -1836,7 +1816,13 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                           "Process Other Application"),
             getArgumentOf("Link/unlink appeals",
                           "processApplicationLink/UnlinkAppeals",
-                          "Process Link/Unlink Appeals Application")
+                          "Process Link/Unlink Appeals Application"),
+            getArgumentOf("Judge's review of application decision",
+                          "processApplicationToReviewDecision",
+                          "Process Application to Review Decision"),
+            getArgumentOf("Change hearing type",
+                          "processApplicationChangeHearingType",
+                          "Process Change Hearing Type Application")
         );
     }
 
@@ -1941,7 +1927,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(15));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(61));
+        assertThat(logic.getRules().size(), is(62));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {

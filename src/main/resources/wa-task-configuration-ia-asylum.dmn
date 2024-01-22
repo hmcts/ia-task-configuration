@@ -270,27 +270,28 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0uoqs4p">
-          <text>
-		        "processApplicationAdjourn",
-		        "processApplicationExpedite",
-		        "processApplicationTimeExtension",
-		        "processApplicationTransfer",
-		        "processApplicationWithdraw",
-		        "processApplicationUpdateHearingRequirements",
-		        "processApplicationUpdateAppealDetails",
-		        "processApplicationReinstateAnEndedAppeal",
-		        "processApplicationOther",
-		        "processApplicationLink/UnlinkAppeals",
-                        "processHearingRequirementsApplication",
-                        "processHearingCentreApplication",
-                        "processApplicationToExpedite",
-                        "processApplicationToTransfer",
-                        "processApplicationForTimeExtension",
-                        "processApplicationToWithdraw",
-                        "processAppealDetailsApplication",
-                        "processReinstatementApplication",
-                        "processApplicationToReviewDecision"
-                    </text>
+        <text>
+          "processApplicationAdjourn",
+          "processApplicationExpedite",
+          "processApplicationTimeExtension",
+          "processApplicationTransfer",
+          "processApplicationWithdraw",
+          "processApplicationUpdateHearingRequirements",
+          "processApplicationUpdateAppealDetails",
+          "processApplicationReinstateAnEndedAppeal",
+          "processApplicationOther",
+          "processApplicationLink/UnlinkAppeals",
+          "processHearingRequirementsApplication",
+          "processHearingCentreApplication",
+          "processApplicationToExpedite",
+          "processApplicationToTransfer",
+          "processApplicationForTimeExtension",
+          "processApplicationToWithdraw",
+          "processAppealDetailsApplication",
+          "processReinstatementApplication",
+          "processApplicationToReviewDecision",
+          "processApplicationChangeHearingType"
+        </text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1qi2rsb">
           <text>"workType"</text>
@@ -358,43 +359,44 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_10f3uas">
-          <text>
-		        "processApplicationAdjourn",
-		        "processApplicationExpedite",
-		        "processApplicationTimeExtension",
-		        "processApplicationTransfer",
-		        "processApplicationWithdraw",
-		        "processApplicationUpdateHearingRequirements",
-		        "processApplicationUpdateAppealDetails",
-		        "processApplicationReinstateAnEndedAppeal",
-		        "processApplicationOther",
-		        "processApplicationLink/UnlinkAppeals",
-                        "reviewTheAppeal",
-                        "decideOnTimeExtension",
-                        "reviewRespondentEvidence",
-                        "reviewAppealSkeletonArgument",
-                        "reviewReasonsForAppeal",
-                        "reviewClarifyingQuestionsAnswers",
-                        "reviewCmaRequirements",
-                        "attendCma",
-                        "reviewRespondentResponse",
-                        "caseSummaryHearingBundleStartDecision",
-                        "reviewHearingRequirements",
-                        "followUpOverdueRespondentEvidence",
-                        "followUpOverdueCaseBuilding",
-                        "followUpOverdueReasonsForAppeal",
-                        "followUpOverdueClarifyingAnswers",
-                        "followUpOverdueCmaRequirements",
-                        "followUpOverdueRespondentReview",
-                        "followUpOverdueHearingRequirements",
-                        "followUpNonStandardDirection",
-                        "followUpNoticeOfChange",
-                        "reviewAdditionalEvidence",
-                        "reviewAdditionalHomeOfficeEvidence",
-                        "startDecisionsAndReasonsDocument",
-                        "createHearingBundle",
-                        "createCaseSummary"
-                    </text>
+        <text>
+          "processApplicationAdjourn",
+          "processApplicationExpedite",
+          "processApplicationTimeExtension",
+          "processApplicationTransfer",
+          "processApplicationWithdraw",
+          "processApplicationUpdateHearingRequirements",
+          "processApplicationUpdateAppealDetails",
+          "processApplicationReinstateAnEndedAppeal",
+          "processApplicationOther",
+          "processApplicationLink/UnlinkAppeals",
+          "processApplicationChangeHearingType",
+          "reviewTheAppeal",
+          "decideOnTimeExtension",
+          "reviewRespondentEvidence",
+          "reviewAppealSkeletonArgument",
+          "reviewReasonsForAppeal",
+          "reviewClarifyingQuestionsAnswers",
+          "reviewCmaRequirements",
+          "attendCma",
+          "reviewRespondentResponse",
+          "caseSummaryHearingBundleStartDecision",
+          "reviewHearingRequirements",
+          "followUpOverdueRespondentEvidence",
+          "followUpOverdueCaseBuilding",
+          "followUpOverdueReasonsForAppeal",
+          "followUpOverdueClarifyingAnswers",
+          "followUpOverdueCmaRequirements",
+          "followUpOverdueRespondentReview",
+          "followUpOverdueHearingRequirements",
+          "followUpNonStandardDirection",
+          "followUpNoticeOfChange",
+          "reviewAdditionalEvidence",
+          "reviewAdditionalHomeOfficeEvidence",
+          "startDecisionsAndReasonsDocument",
+          "createHearingBundle",
+          "createCaseSummary"
+        </text>
         </inputEntry>
         <outputEntry id="LiteralExpression_05l5bvs">
           <text>"roleCategory"</text>
@@ -487,6 +489,8 @@
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "processApplicationOther" or taskType != null and taskType = "processApplicationOther")
                         then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "processApplicationLink/UnlinkAppeals" or taskType != null and taskType = "processApplicationLink/UnlinkAppeals")
+                        then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "processApplicationChangeHearingType" or taskType != null and taskType = "processApplicationChangeHearingType")
                         then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewTheAppeal" or taskType != null and taskType = "reviewTheAppeal")
                         then "[Request respondent evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentEvidence)"

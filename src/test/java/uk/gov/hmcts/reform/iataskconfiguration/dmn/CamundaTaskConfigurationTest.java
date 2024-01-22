@@ -257,6 +257,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("processAppealDetailsApplication", applications),
             Arguments.of("processReinstatementApplication", applications),
             Arguments.of("processApplicationToReviewDecision", applications),
+            Arguments.of("processApplicationChangeHearingType", applications),
             Arguments.of("decideAnFTPA", upperTribunal)
         );
     }
@@ -420,14 +421,14 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "processApplicationAdjourn", "processApplicationExpedite", "processApplicationTimeExtension",
         "processApplicationTransfer", "processApplicationWithdraw", "processApplicationUpdateHearingRequirements",
         "processApplicationUpdateAppealDetails", "processApplicationReinstateAnEndedAppeal", "processApplicationOther",
-        "processApplicationLink/UnlinkAppeals", "reviewTheAppeal", "decideOnTimeExtension", "reviewRespondentEvidence",
-        "reviewAppealSkeletonArgument", "reviewReasonsForAppeal", "reviewClarifyingQuestionsAnswers",
+        "processApplicationLink/UnlinkAppeals", "processApplicationChangeHearingType", "reviewTheAppeal",
+        "decideOnTimeExtension", "reviewRespondentEvidence", "reviewAppealSkeletonArgument", "reviewReasonsForAppeal",
+        "reviewClarifyingQuestionsAnswers", "reviewAdditionalHomeOfficeEvidence",
         "reviewCmaRequirements", "attendCma", "reviewRespondentResponse", "caseSummaryHearingBundleStartDecision",
         "reviewHearingRequirements", "followUpOverdueRespondentEvidence",
         "followUpOverdueCaseBuilding", "followUpOverdueReasonsForAppeal", "followUpOverdueClarifyingAnswers",
         "followUpOverdueCmaRequirements", "followUpOverdueRespondentReview", "followUpOverdueHearingRequirements",
-        "followUpNonStandardDirection", "followUpNoticeOfChange", "reviewAdditionalEvidence",
-        "reviewAdditionalHomeOfficeEvidence"
+        "followUpNonStandardDirection", "followUpNoticeOfChange", "reviewAdditionalEvidence"
     })
     void when_taskId_then_return_legal_operations_role_category(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
@@ -801,6 +802,24 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 .expectedDueDateIntervalDays("5")
                 .build();
 
+        Scenario processApplicationChangeHearingTypeScenario =
+            Scenario.builder()
+                .caseData(emptyMap())
+                .taskAttributes(Map.of("taskType", "processApplicationChangeHearingType"))
+                .expectedCaseNameValue(null)
+                .expectedAppealTypeValue("")
+                .expectedRegionValue("1")
+                .expectedLocationValue("227101")
+                .expectedLocationNameValue("Newport")
+                .expectedCaseManagementCategoryValue("")
+                .expectedWorkType("applications")
+                .expectedReconfigureValue("true")
+                .expectedRoleCategory("LEGAL_OPERATIONS")
+                .expectedDescriptionValue("[Decide an application]"
+                                          + "(/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)")
+                .expectedDueDateOrigin(dateOrigin)
+                .build();
+
         return Stream.of(
             givenCaseDataIsMissedThenDefaultToTaylorHouseScenario,
             givenCaseDataIsPresentThenReturnNameAndValueScenario,
@@ -816,7 +835,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             processApplicationUpdateAppealDetailsScenario,
             processApplicationReinstateAnEndedAppealScenario,
             processApplicationOtherScenario,
-            processApplicationLinkUnlinkAppealsScenario
+            processApplicationLinkUnlinkAppealsScenario,
+            processApplicationChangeHearingTypeScenario
         );
     }
 
@@ -934,6 +954,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "processApplicationOther,"
             + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),,",
         "processApplicationLink/UnlinkAppeals,"
+            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),,",
+        "processApplicationChangeHearingType,"
             + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),,",
         "reviewTheAppeal,[Request respondent evidence]"
             + "(/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentEvidence),,",
