@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.7.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.12.0">
   <decision id="wa-task-initiation-ia-asylum" name="Task initiation DMN">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT" biodi:annotationsWidth="400">
       <input id="Input_1" label="Event Id" biodi:width="515" camunda:inputVariable="eventId">
@@ -44,7 +44,8 @@
       <input id="InputClause_10uivrc" label="Last modified application decision" biodi:width="266" camunda:inputVariable="lastModifiedApplicationDecision">
         <inputExpression id="LiteralExpression_1gqrajz" typeRef="string">
           <text>if(additionalData != null and additionalData.Data != null and
-            additionalData.Data.lastModifiedApplication != null) then
+            additionalData.Data.lastModifiedApplication != null and
+            additionalData.Data.lastModifiedApplication.decision != null) then
             additionalData.Data.lastModifiedApplication.decision
             else
             null
@@ -783,6 +784,65 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1pyp879">
+          <text>"application"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_02rlubs">
+        <inputEntry id="UnaryTests_1grgyoo">
+          <text>"makeAnApplication"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jjjano">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rusl1q">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0keixsi">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0gfov29">
+          <text>"Change hearing type"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1av63k7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1spsr43">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0i1jpxn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0cpv0f3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0f88xo5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rf1z11">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_11zs384">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1c7r29k">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rp8j70">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0yqi3us">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0pdbns9">
+          <text>"processApplicationChangeHearingType"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1al6bwj">
+          <text>"Process Change Hearing Type Application"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1pxg5c4">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1wfz8ck">
           <text>"application"</text>
         </outputEntry>
       </rule>
