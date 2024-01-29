@@ -1549,6 +1549,42 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "reviewHearingRequirements",
+                "listing",
+                mapAdditionalData("{\n"
+                                  + "   \"Data\":{\n"
+                                  + "          \"isIntegrated\" : " + true + "\n"
+                                  + "          \"isPanelRequired\" : " + true + "\n"
+                                  + "   }"
+                                  + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "listTheCase",
+                        "name", "List the case",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "listCaseWithoutHearingRequirements",
+                "listing",
+                mapAdditionalData("{\n"
+                                  + "   \"Data\":{\n"
+                                  + "          \"isIntegrated\" : " + true + "\n"
+                                  + "          \"isPanelRequired\" : " + true + "\n"
+                                  + "   }"
+                                  + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "listTheCase",
+                        "name", "List the case",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
                 "listCaseWithoutHearingRequirements",
                 "listing",
                 mapAdditionalData("{\n"
