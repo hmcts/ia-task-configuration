@@ -70,9 +70,13 @@
             false</text>
         </inputExpression>
       </input>
-      <input id="InputClause_002ghi1" label="Is Panel Required">
-        <inputExpression id="LiteralExpression_19yz7m8" typeRef="string">
-          <text></text>
+      <input id="InputClause_002ghi1" label="Is Panel Required" camunda:inputVariable="isPanelRequired">
+        <inputExpression id="LiteralExpression_19yz7m8" typeRef="boolean">
+          <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.isPanelRequired
+            != null) then
+            additionalData.Data.isPanelRequired
+            else
+            false</text>
         </inputExpression>
       </input>
       <input id="InputClause_10x4tr2" label="Remission Type" camunda:inputVariable="remissionType">
@@ -3384,7 +3388,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_02eabhi">
-          <text></text>
+          <text>true</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0wr7m0b">
           <text>-</text>
