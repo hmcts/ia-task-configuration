@@ -1549,6 +1549,42 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "reviewHearingRequirements",
+                "listing",
+                mapAdditionalData("{\n"
+                                  + "   \"Data\":{\n"
+                                  + "          \"isIntegrated\" : " + true + "\n"
+                                  + "          \"isPanelRequired\" : " + true + "\n"
+                                  + "   }"
+                                  + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "listTheCase",
+                        "name", "List the case",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "listCaseWithoutHearingRequirements",
+                "listing",
+                mapAdditionalData("{\n"
+                                  + "   \"Data\":{\n"
+                                  + "          \"isIntegrated\" : " + true + "\n"
+                                  + "          \"isPanelRequired\" : " + true + "\n"
+                                  + "   }"
+                                  + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "listTheCase",
+                        "name", "List the case",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
                 "listCaseWithoutHearingRequirements",
                 "listing",
                 mapAdditionalData("{\n"
@@ -1925,9 +1961,9 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getInputs().size(), is(15));
+        assertThat(logic.getInputs().size(), is(16));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(62));
+        assertThat(logic.getRules().size(), is(63));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {
