@@ -444,7 +444,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
     @ParameterizedTest
     @CsvSource({
-        "followUpExtendedDirection", "createHearingBundle", "createCaseSummary", "reviewAddendumEvidence"
+        "followUpExtendedDirection", "createHearingBundle", "createCaseSummary"
     })
     void when_taskId_then_return_legal_operations_role_category_can_reconfigure(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
@@ -462,6 +462,31 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         assertEquals(Map.of(
             "name", "roleCategory",
             "value", "LEGAL_OPERATIONS",
+            "canReconfigure", true
+        ), workTypeResultList.get(0));
+    }
+
+
+    @ParameterizedTest
+    @CsvSource({
+        "reviewAddendumEvidence"
+    })
+    void when_taskId_then_return_legal_operations_role_category_can_reconfigure(String taskType) {
+        VariableMap inputVariables = new VariableMapImpl();
+
+        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        List<Map<String, Object>> workTypeResultList = dmnDecisionTableResult.getResultList().stream()
+            .filter((r) -> r.containsValue("roleCategory"))
+            .toList();
+
+        assertEquals(1, workTypeResultList.size());
+
+        assertEquals(Map.of(
+            "name", "roleCategory",
+            "value", "JUDICIAL",
             "canReconfigure", true
         ), workTypeResultList.get(0));
     }
