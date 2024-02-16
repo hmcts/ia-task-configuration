@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1kep5qz" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.14.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.0.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1kep5qz" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.7.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.0.0">
   <decision id="wa-task-types-ia-asylum" name="Task Types DMN">
     <decisionTable id="DecisionTable_17knzal" hitPolicy="COLLECT">
       <input id="Input_1">
@@ -480,6 +480,28 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_1e8jmtf">
           <text>"Mark as Paid"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ftcyil">
+        <inputEntry id="UnaryTests_1u8ttie">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1acgrqi">
+          <text>"reviewSetAsideDecisionApplication"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_03zogra">
+          <text>"Review set aside decision application"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_025fgdp">
+        <inputEntry id="UnaryTests_0cxnjun">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0o9aj63">
+          <text>"followUpSetAsideDecision"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_09ca8oe">
+          <text>"Follow up set aside decision"</text>
         </outputEntry>
       </rule>
     </decisionTable>

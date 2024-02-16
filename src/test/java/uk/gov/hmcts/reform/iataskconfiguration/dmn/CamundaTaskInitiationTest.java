@@ -1652,7 +1652,10 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                           "Process Other Application"),
             getArgumentOf("Link/unlink appeals",
                           "processApplicationLink/UnlinkAppeals",
-                          "Process Link/Unlink Appeals Application")
+                          "Process Link/Unlink Appeals Application"),
+            getArgumentOf("Application under rule 31 or rule 32",
+                          "reviewSetAsideDecisionApplication",
+                          "Review set aside decision application")
         );
     }
 
@@ -1696,14 +1699,44 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     }
 
     public static Stream<Arguments> decideAnApplicationScenarioProvider() {
+        Map<String,Object> delayFor5Days = Map.of(
+            "delayUntilIntervalDays", "5",
+            "delayUntilNonWorkingCalendar", "https://www.gov.uk/bank-holidays/england-and-wales.json",
+            "delayUntilOrigin", LocalDate.now(),
+            "delayUntilNonWorkingDaysOfWeek", "SATURDAY,SUNDAY"
+        );
+
         return Stream.of(
-            getDecideAnApplicationArgumentsOf("Adjourn", "editListing", "Edit Listing"),
-            getDecideAnApplicationArgumentsOf("Expedite", "editListing", "Edit Listing"),
-            getDecideAnApplicationArgumentsOf("Transfer", "editListing", "Edit Listing")
+            getDecideAnApplicationArgumentsOf("Adjourn", "editListing",
+                    "Edit Listing", "application", null),
+            getDecideAnApplicationArgumentsOf("Expedite", "editListing",
+                    "Edit Listing", "application", null),
+            getDecideAnApplicationArgumentsOf("Transfer", "editListing",
+                    "Edit Listing", "application", null),
+            getDecideAnApplicationArgumentsOf("Application under rule 31 or rule 32",
+                    "followUpSetAsideDecision",
+                    "Follow up set aside decision",
+                    "followUpOverdue",
+                    delayFor5Days)
         );
     }
 
-    private static Arguments getDecideAnApplicationArgumentsOf(String applicationType, String taskId, String name) {
+    private static Arguments getDecideAnApplicationArgumentsOf(String applicationType,
+                                                               String taskId,
+                                                               String name,
+                                                               String processCategories,
+                                                               Map<String,Object> delayUntil) {
+        Map<String, Object> map = new HashMap<String, Object>() {
+            {
+                put("taskId", taskId);
+                put("name", name);
+                put("processCategories", processCategories);
+                if (delayUntil != null) {
+                    put("delayUntil", delayUntil);
+                }
+            }
+        };
+
         return Arguments.of(
             "decideAnApplication",
             null,
@@ -1715,15 +1748,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                   + "          }\n"
                                   + "        }\n"
                                   + "      }"),
-            singletonList(
-                Map.of(
-                    "taskId", taskId,
-                    "name", name,
-
-
-                    "processCategories", "application"
-                )
-            )
+            singletonList(map)
         );
     }
 
@@ -1749,7 +1774,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(9));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(51));
+        assertThat(logic.getRules().size(), is(53));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {
