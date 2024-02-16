@@ -231,7 +231,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 null,
-                "reTriggerWaTask",
+                "reTriggerWaTasks",
                 null,
                 singletonList(
                     Map.of(
