@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="wa-completion-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.17.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="wa-completion-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.2.0">
   <decision id="wa-task-completion-ia-asylum" name="Task completion DMN">
     <decisionTable id="DecisionTable_01re27m" hitPolicy="COLLECT">
       <input id="eventId" label="Event ID" biodi:width="614">
@@ -273,6 +273,28 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0kb4vvj">
+        <inputEntry id="UnaryTests_0gly88z">
+          <text>"decideAnApplication"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0qy77o7">
+          <text>"processApplicationChangeHearingType"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1vyzn93">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1fp6ln5">
+        <inputEntry id="UnaryTests_15t0pqm">
+          <text>"uploadHearingRecording"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1rgpu50">
+          <text>"uploadHearingRecording"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0g3rcaw">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1wt9cac">
         <inputEntry id="UnaryTests_0cpyxmg">
           <text>"editCaseListing"</text>
@@ -303,17 +325,6 @@
           <text>"prepareDecisionsAndReasons"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_04anh91">
-          <text>"Auto"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1fp6ln5">
-        <inputEntry id="UnaryTests_15t0pqm">
-          <text>"uploadHearingRecording"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1rgpu50">
-          <text>"uploadHearingRecording"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0g3rcaw">
           <text>"Auto"</text>
         </outputEntry>
       </rule>

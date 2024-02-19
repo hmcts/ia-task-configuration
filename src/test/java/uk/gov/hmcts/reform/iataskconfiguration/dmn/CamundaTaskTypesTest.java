@@ -273,6 +273,11 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                    "relistCase",
                    "taskTypeName",
                    "Relist the case"
+            ),
+            Map.of("taskTypeId",
+                   "processApplicationChangeHearingType",
+                   "taskTypeName",
+                   "Process Change Hearing Type Application"
             )
         );
         return Stream.of(
@@ -300,7 +305,7 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(1));
         assertThat(logic.getOutputs().size(), is(2));
-        assertThat(logic.getRules().size(), is(49));
+        assertThat(logic.getRules().size(), is(50));
 
     }
 }
