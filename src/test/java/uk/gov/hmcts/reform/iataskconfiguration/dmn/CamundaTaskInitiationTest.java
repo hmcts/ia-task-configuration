@@ -59,6 +59,11 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             "delayUntilOrigin", LocalDate.now()
         );
 
+        Map<String,Object> delayFor2Days = Map.of(
+            "delayUntilIntervalDays", "2",
+            "delayUntilOrigin", LocalDate.now()
+        );
+
         return Stream.of(
             Arguments.of(
                 "applyForFTPAAppellant",
@@ -1675,6 +1680,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "cmrUpdated",
                         "name", "Update CMR notification",
+                        "delayUntil", delayFor2Days,
 
                         "processCategories", "caseProgression"
                     )
@@ -1726,6 +1732,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "cmrListed",
                         "name", "Send CMR notification",
+                        "delayUntil", delayFor2Days,
 
                         "processCategories", "caseProgression"
                     )
