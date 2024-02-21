@@ -197,7 +197,8 @@
                         "reviewRemissionApplication",
                         "assignAFTPAJudge",
                         "sendPaymentRequest",
-                        "markAsPaid"
+                        "markAsPaid",
+                       "reviewAppealSetAsideUnderRule35" 
                     </text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0rvgay2">
@@ -395,7 +396,8 @@
                         "reviewAdditionalHomeOfficeEvidence",
                         "startDecisionsAndReasonsDocument",
                         "createHearingBundle",
-                        "createCaseSummary"
+                        "createCaseSummary",
+                        "reviewAppealSetAsideUnderRule35"
                     </text>
         </inputEntry>
         <outputEntry id="LiteralExpression_05l5bvs">
@@ -592,7 +594,8 @@
 "processApplicationUpdateAppealDetails",
 "processApplicationReinstateAnEndedAppeal",
 "processApplicationOther",
-"processApplicationLink/UnlinkAppeals"</text>
+"processApplicationLink/UnlinkAppeals",
+"reviewAppealSetAsideUnderRule35"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_18mybq6">
           <text>"dueDateIntervalDays"</text>
