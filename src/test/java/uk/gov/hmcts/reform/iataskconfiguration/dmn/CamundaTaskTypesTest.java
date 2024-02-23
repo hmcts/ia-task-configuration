@@ -258,6 +258,11 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                    "reviewAppealSetAsideUnderRule35",
                    "taskTypeName",
                    "Review appeal set aside under rule 35"
+            ),
+            Map.of("taskTypeId",
+                   "reviewAppealSetAsideUnderRule32",
+                   "taskTypeName",
+                   "Review appeal set aside under rule 32"
             )
         );
         return Stream.of(
@@ -285,7 +290,7 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(1));
         assertThat(logic.getOutputs().size(), is(2));
-        assertThat(logic.getRules().size(), is(46));
+        assertThat(logic.getRules().size(), is(47));
 
     }
 }

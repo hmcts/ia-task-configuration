@@ -1598,6 +1598,23 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "updateTribunalDecision",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"updateTribunalDecisionList\":\"" + "underRule32" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewAppealSetAsideUnderRule32",
+                        "name", "Review appeal set aside under rule 32",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
                 "unknownEvent",
                 null,
                 null,
@@ -1808,9 +1825,9 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getInputs().size(), is(12));
+        assertThat(logic.getInputs().size(), is(13));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(55));
+        assertThat(logic.getRules().size(), is(56));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {
