@@ -92,7 +92,8 @@
             "decideOnTimeExtension",
             "reviewAdditionalEvidence",
             "followUpExtendedDirection",
-            "reviewAppealSetAsideUnderRule35"</text>
+            "reviewAppealSetAsideUnderRule35",
+            "reviewAppealSetAsideUnderRule32"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0buofva">
           <text></text>
@@ -160,7 +161,8 @@
             "startDecisionsAndReasonsDocument",
             "createHearingBundle",
             "createCaseSummary",
-            "reviewAppealSetAsideUnderRule35"
+            "reviewAppealSetAsideUnderRule35",
+            "reviewAppealSetAsideUnderRule32"
           </text>
         </inputEntry>
         <inputEntry id="UnaryTests_10s330p">
@@ -228,7 +230,8 @@
             "startDecisionsAndReasonsDocument",
             "createHearingBundle",
             "createCaseSummary",
-            "reviewAppealSetAsideUnderRule35"
+            "reviewAppealSetAsideUnderRule35",
+            "reviewAppealSetAsideUnderRule32"
           </text>
         </inputEntry>
         <inputEntry id="UnaryTests_18tqbn3">

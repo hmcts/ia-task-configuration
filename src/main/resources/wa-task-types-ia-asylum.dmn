@@ -515,6 +515,17 @@
           <text>"Review appeal set aside under rule 35"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0ge23hb">
+        <inputEntry id="UnaryTests_1ww54xr">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0empd12">
+          <text>"reviewAppealSetAsideUnderRule32"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1bejypy">
+          <text>"Review appeal set aside under rule 32"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
