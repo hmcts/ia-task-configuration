@@ -471,7 +471,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     @CsvSource({
         "reviewAddendumEvidence"
     })
-    void when_taskId_then_return_legal_operations_role_category_can_reconfigure(String taskType) {
+    void when_taskId_then_return_judicial_role_category_can_reconfigure(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
 
         inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
