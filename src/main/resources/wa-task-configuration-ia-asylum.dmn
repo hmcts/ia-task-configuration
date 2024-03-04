@@ -391,10 +391,7 @@
                         "followUpNoticeOfChange",
                         "reviewAdditionalEvidence",
                         "reviewAdditionalHomeOfficeEvidence",
-                        "startDecisionsAndReasonsDocument",
-                        "createHearingBundle",
-                        "createCaseSummary"
-                    </text>
+                        "startDecisionsAndReasonsDocument"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_05l5bvs">
           <text>"roleCategory"</text>
@@ -404,6 +401,44 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0cde4ic">
           <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0aad6uv">
+        <inputEntry id="UnaryTests_065pfh7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qhpx10">
+          <text>                        "reviewAddendumEvidence"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0r0xz3v">
+          <text>"roleCategory"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_17qktqb">
+          <text>"JUDICIAL"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0oputxf">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_00emsux">
+        <inputEntry id="UnaryTests_1102935">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0je9679">
+          <text>
+                        "followUpExtendedDirection",
+                        "createHearingBundle",
+                        "createCaseSummary"
+                    </text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0z7iapq">
+          <text>"roleCategory"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0cs7vxm">
+          <text>"LEGAL_OPERATIONS"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0rnzyup">
+          <text>true</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_01muxrj">
