@@ -3799,10 +3799,7 @@
           <text>"Send CMR notification"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_18rjlnm">
-          <text>{
-"delayUntilOrigin": today(),
-"delayUntilIntervalDays":"2"
-}</text>
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0kdv6sd">
           <text>"caseProgression"</text>
@@ -3864,10 +3861,7 @@
           <text>"Update CMR notification"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0m0f9jh">
-          <text>{
-"delayUntilOrigin": today(),
-"delayUntilIntervalDays":"2"
-}</text>
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1ovuvug">
           <text>"caseProgression"</text>
