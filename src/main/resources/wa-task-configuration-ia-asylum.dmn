@@ -645,7 +645,9 @@
 "reviewAddendumEvidence",
 "reviewRemissionApplication",
 "assignAFTPAJudge",
-"listTheCase"</text>
+"listTheCase",
+"cmrListed",
+"cmrUpdated"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1kbin0j">
           <text>"dueDateIntervalDays"</text>

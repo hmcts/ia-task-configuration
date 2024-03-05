@@ -1167,7 +1167,9 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("sendPaymentRequest", zeroDays),
             Arguments.of("uploadHearingRecording", zeroDays),
             Arguments.of("decideAnFTPA", zeroDays),
-            Arguments.of("markAsPaid", fourteenDays)
+            Arguments.of("markAsPaid", fourteenDays),
+            Arguments.of("cmrListed", twoDays),
+            Arguments.of("cmrUpdated", twoDays)
         );
     }
 
