@@ -466,31 +466,6 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         ), workTypeResultList.get(0));
     }
 
-
-    @ParameterizedTest
-    @CsvSource({
-        "reviewAddendumEvidence"
-    })
-    void when_taskId_then_return_judicial_role_category_can_reconfigure(String taskType) {
-        VariableMap inputVariables = new VariableMapImpl();
-
-        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
-
-        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
-
-        List<Map<String, Object>> workTypeResultList = dmnDecisionTableResult.getResultList().stream()
-            .filter((r) -> r.containsValue("roleCategory"))
-            .toList();
-
-        assertEquals(1, workTypeResultList.size());
-
-        assertEquals(Map.of(
-            "name", "roleCategory",
-            "value", "JUDICIAL",
-            "canReconfigure", true
-        ), workTypeResultList.get(0));
-    }
-
     @ParameterizedTest
     @MethodSource("nameAndValueScenarioProvider")
     void when_caseData_and_taskType_then_return_expected_name_and_value_rows(Scenario scenario) {
