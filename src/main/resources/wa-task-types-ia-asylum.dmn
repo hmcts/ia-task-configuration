@@ -537,6 +537,17 @@
           <text>"Review remitted appeal"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_059s8pz">
+        <inputEntry id="UnaryTests_1o25vct">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1d81rk9">
+          <text>"reviewDraftAppeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0dp0y0z">
+          <text>"Review draft appeal"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

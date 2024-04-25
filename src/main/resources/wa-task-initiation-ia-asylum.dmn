@@ -3207,6 +3207,62 @@
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1se66gn">
+        <inputEntry id="UnaryTests_1mypjm5">
+          <text>"startAppeal"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0kt5wme">
+          <text>"appealStartedByAdmin"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0m2zog0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tn721z">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15fbhfk">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0uj28ce">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1atw9ao">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1x1f546">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pvi3mq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1a6rif8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19yg38q">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1iixsvu">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_174pzjt">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_094soto">
+          <text>"reviewDraftAppeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_044w0tm">
+          <text>"Review draft appeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_17c7ard">
+          <text>{
+"delayUntilOrigin": today(),
+"delayUntilIntervalDays":"14"
+}</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1lu1k2b">
+          <text>"followUpOverdue"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

@@ -46,7 +46,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             "delayUntilIntervalDays", "0",
             "delayUntil", directionDueDate
         );
-        Map<String,Object> delayFor14Days = Map.of(
+        Map<String,Object> delayFor14DaysExcludingBankHolidays = Map.of(
             "delayUntilIntervalDays", "14",
             "delayUntilNonWorkingCalendar", "https://www.gov.uk/bank-holidays/england-and-wales.json",
             "delayUntilOrigin", LocalDate.now(),
@@ -55,6 +55,10 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
         Map<String,Object> delayFor12Days = Map.of(
             "delayUntilIntervalDays", "12",
+            "delayUntilOrigin", LocalDate.now()
+        );
+        Map<String,Object> delayFor14Days = Map.of(
+            "delayUntilIntervalDays", "14",
             "delayUntilOrigin", LocalDate.now()
         );
 
@@ -930,7 +934,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "followUpNoticeOfChange",
                         "name", "Follow-up Notice of Change",
                         "processCategories", "followUpOverdue",
-                        "delayUntil", delayFor14Days
+                        "delayUntil", delayFor14DaysExcludingBankHolidays
                     )
                 )
             ),
@@ -945,7 +949,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
 
                         "processCategories", "followUpOverdue",
-                        "delayUntil", delayFor14Days
+                        "delayUntil", delayFor14DaysExcludingBankHolidays
                     )
                 )
             ),
@@ -1628,6 +1632,19 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "startAppeal",
+                "appealStartedByAdmin",
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewDraftAppeal",
+                        "name", "Review draft appeal",
+                        "delayUntil", delayFor14Days,
+                        "processCategories", "followUpOverdue"
+                    )
+                )
+            ),
+            Arguments.of(
                 "unknownEvent",
                 null,
                 null,
@@ -1840,7 +1857,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(13));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(57));
+        assertThat(logic.getRules().size(), is(58));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {
