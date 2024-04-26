@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.22.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.14.0">
   <decision id="wa-task-initiation-ia-asylum" name="Task initiation DMN">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT" biodi:annotationsWidth="400">
       <input id="Input_1" label="Event Id" biodi:width="515" camunda:inputVariable="eventId">
@@ -3441,6 +3441,65 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_1wwt2ok">
           <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0b2v725">
+        <inputEntry id="UnaryTests_1pxzd17">
+          <text>"startAppeal"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0k12n7s">
+          <text>"appealStartedByAdmin"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12wrlg2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qjx4ye">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1u9wbpn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rzp4ps">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01bqf1x">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05yaf4x">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1kbh8vz">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1mp2z32">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ckjmd7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ymjhyw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0t4q4ag">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_170txxg">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_04en6gk">
+          <text>"reviewDraftAppeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_19tr1gc">
+          <text>"Review draft appeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1hhd335">
+          <text>{
+"delayUntilOrigin": today(),
+"delayUntilIntervalDays":"14"
+}</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0m5ke13">
+          <text>"followUpOverdue"</text>
         </outputEntry>
       </rule>
     </decisionTable>
