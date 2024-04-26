@@ -105,11 +105,11 @@
             null</text>
         </inputExpression>
       </input>
-      <input id="InputClause_0930dyw" label="Fee update Tribunal Action" camunda:inputVariable="feeUpdateTribunalActions">
+      <input id="InputClause_0930dyw" label="Fee update Tribunal Action" camunda:inputVariable="feeUpdateTribunalAction">
         <inputExpression id="LiteralExpression_00c4nsi" typeRef="string">
-          <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.feeUpdateTribunalActions
+          <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.feeUpdateTribunalAction
             != null) then
-            additionalData.Data.feeUpdateTribunalActions
+            additionalData.Data.feeUpdateTribunalAction
             else
             null</text>
         </inputExpression>
