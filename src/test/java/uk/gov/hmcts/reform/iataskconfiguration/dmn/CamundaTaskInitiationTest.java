@@ -1619,7 +1619,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 null,
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
-                                      + "      \"feeUpdateTribunalActions\":\"" + "refund" + "\"\n"
+                                      + "      \"feeUpdateTribunalAction\":\"" + "refund" + "\"\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
