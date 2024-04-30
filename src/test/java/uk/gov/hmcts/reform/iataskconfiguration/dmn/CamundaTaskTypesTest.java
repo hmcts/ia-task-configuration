@@ -278,6 +278,11 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                    "reviewDraftAppeal",
                    "taskTypeName",
                    "Review draft appeal"
+            ),
+            Map.of("taskTypeId",
+                   "printAndSendHoBundle",
+                   "taskTypeName",
+                   "Print and send HO bundle and appeal reasons form"
             )
         );
         return Stream.of(
@@ -305,7 +310,7 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(1));
         assertThat(logic.getOutputs().size(), is(2));
-        assertThat(logic.getRules().size(), is(50));
+        assertThat(logic.getRules().size(), is(51));
 
     }
 }
