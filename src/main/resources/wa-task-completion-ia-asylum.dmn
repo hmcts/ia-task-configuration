@@ -438,9 +438,20 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_07uafuy">
+        <inputEntry id="UnaryTests_0umxrk2">
+          <text>"submitAppeal","endAppeal" </text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_00fp9vr">
+          <text>"reviewDraftAppeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1asu7yr">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1u3c7sd">
         <inputEntry id="UnaryTests_1dd0p7u">
-          <text>"generateHearingBundle","decisionAndReasonsStarted","updateHearingRequirements","endAppeal","requestRespondentEvidence","requestCaseBuilding","requestReasonsForAppeal","sendDirection","requestRespondentReview","requestCaseEdit","sendDirectionWithQuestions","requestCmaRequirements","markEvidenceAsReviewed","markAddendumEvidenceAsReviewed","reviewCmaRequirements","updateDetailsAfterCma","requestResponseAmend","requestResponseReview","reviewHearingRequirements","changeDirectionDueDate","decideAnApplication","editCaseListing","sendDecisionAndReasons","generateDecisionAndReasons","uploadHearingRecording","postHearingAttendeesDurationAndRecording","decideFtpaApplication","recordRemissionDecision","recordAllocatedJudge","listCase","markAppealPaid","markPaymentRequestSent","requestNewHearingRequirements"</text>
+          <text>"generateHearingBundle","decisionAndReasonsStarted","updateHearingRequirements","endAppeal","requestRespondentEvidence","requestCaseBuilding","requestReasonsForAppeal","sendDirection","requestRespondentReview","requestCaseEdit","sendDirectionWithQuestions","requestCmaRequirements","markEvidenceAsReviewed","markAddendumEvidenceAsReviewed","reviewCmaRequirements","updateDetailsAfterCma","requestResponseAmend","requestResponseReview","reviewHearingRequirements","changeDirectionDueDate","decideAnApplication","editCaseListing","sendDecisionAndReasons","generateDecisionAndReasons","uploadHearingRecording","postHearingAttendeesDurationAndRecording","decideFtpaApplication","recordRemissionDecision","recordAllocatedJudge","listCase","markAppealPaid","markPaymentRequestSent","requestNewHearingRequirements","submitAppeal"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1ex7ytl">
           <text></text>

@@ -199,6 +199,17 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                     )
             ),
             Arguments.of(
+                null,
+                "submitAppeal",
+                null,
+                singletonList(
+                    Map.of(
+                        "action", "Cancel",
+                        "processCategories", "followUpOverdue"
+                    )
+                )
+            ),
+            Arguments.of(
                 "unknownState",
                 null,
                 null,
@@ -229,7 +240,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(3));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(19));
+        assertThat(logic.getRules().size(), is(20));
 
     }
 }

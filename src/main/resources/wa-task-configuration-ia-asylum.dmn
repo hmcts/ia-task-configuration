@@ -200,7 +200,8 @@
                         "markAsPaid",
                        "reviewAppealSetAsideUnderRule35",
                        "reviewAppealSetAsideUnderRule32",
-                       "reviewRemittedAppeal", "processFeeRefund"
+                       "reviewRemittedAppeal", "processFeeRefund",
+                       "reviewDraftAppeal"
                     </text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0rvgay2">
@@ -453,7 +454,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0xh5are">
-          <text>"reviewRemissionApplication","assignAFTPAJudge","listTheCase","sendPaymentRequest","markAsPaid","processFeeRefund"</text>
+          <text>"reviewRemissionApplication","assignAFTPAJudge","listTheCase","sendPaymentRequest","markAsPaid","processFeeRefund","reviewDraftAppeal"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0vqliz7">
           <text>"roleCategory"</text>
@@ -601,7 +602,8 @@
 "processApplicationLink/UnlinkAppeals",
 "reviewAppealSetAsideUnderRule35",
 "reviewAppealSetAsideUnderRule32",
-"reviewRemittedAppeal","processFeeRefund"</text>
+"reviewRemittedAppeal","processFeeRefund",
+"reviewDraftAppeal"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_18mybq6">
           <text>"dueDateIntervalDays"</text>
