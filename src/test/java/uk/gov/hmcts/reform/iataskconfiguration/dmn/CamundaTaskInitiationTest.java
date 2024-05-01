@@ -1726,7 +1726,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         );
     }
 
-    @ParameterizedTest(name = "event id: {0} post event state: {1} additional map: {2} additional data: {3} expectation data: {4}")
+    @ParameterizedTest(name = "event id: {0} post event state: {1} " +
+        "additional map: {2} additional data: {3} expectation data: {4}")
     @MethodSource("multipleMapScenarioProvider")
     void given_multiple_data_map_should_evaluate_dmn(String eventId,
                                                      String postEventState,
