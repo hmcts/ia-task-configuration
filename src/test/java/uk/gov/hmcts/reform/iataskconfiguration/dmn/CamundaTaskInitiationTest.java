@@ -1706,7 +1706,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             getArgumentOf("Link/unlink appeals",
                           "processApplicationLink/UnlinkAppeals",
                           "Process Link/Unlink Appeals Application"),
-            getArgumentOf("Application under rule 31 or rule 32",
+            getArgumentOf("Set aside a decision",
                           "reviewSetAsideDecisionApplication",
                           "Review set aside decision application")
         );
@@ -1766,7 +1766,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     "Edit Listing", "application", null),
             getDecideAnApplicationArgumentsOf("Transfer", "editListing",
                     "Edit Listing", "application", null),
-            getDecideAnApplicationArgumentsOf("Application under rule 31 or rule 32",
+            getDecideAnApplicationArgumentsOf("Set aside a decision",
                     "followUpSetAsideDecision",
                     "Follow up set aside decision",
                     "followUpOverdue",
