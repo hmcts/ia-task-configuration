@@ -701,7 +701,8 @@
         <description>National Business Centre admin task permissions</description>
         <inputEntry id="UnaryTests_0mxjoht">
           <text>
-            "printAndSendHoBundle"
+            "printAndSendHoBundle",
+            "printAndSendHoResponse"
           </text>
         </inputEntry>
         <inputEntry id="UnaryTests_0pgtpjy">
