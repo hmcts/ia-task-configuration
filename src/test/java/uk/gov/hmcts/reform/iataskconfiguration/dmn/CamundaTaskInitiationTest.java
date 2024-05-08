@@ -1688,6 +1688,63 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
     }
 
+    public static Stream<Arguments> multipleMapScenarioProvider() {
+        LocalDateTime directionDueDate = LocalDateTime.now().plusDays(5);
+        Map<String, LocalDateTime> variablesDirectionDueDate = Map.of(
+            "directionDueDate", directionDueDate
+        );
+        Map<String, Object> delayUntilDirectionDue = Map.of(
+            "delayUntilIntervalDays", "0",
+            "delayUntil", directionDueDate
+        );
+
+        return Stream.of(
+            Arguments.of(
+                "requestCaseBuilding",
+                "caseBuilding",
+                variablesDirectionDueDate,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAdmin\":\"" + true + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                List.of(
+                    Map.of(
+                        "taskId", "followUpOverdueCaseBuilding",
+                        "name", "Follow-up overdue case building",
+                        "processCategories", "followUpOverdue",
+                        "delayUntil", delayUntilDirectionDue
+                    ),
+                    Map.of(
+                        "taskId", "printAndSendHoBundle",
+                        "name", "Print and send HO bundle and appeal reasons form",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            )
+        );
+    }
+
+    @ParameterizedTest(name = "event id: {0} post event state: {1} "
+        + "additional map: {2} additional data: {3} expectation data: {4}")
+    @MethodSource("multipleMapScenarioProvider")
+    void given_multiple_data_map_should_evaluate_dmn(String eventId,
+                                                     String postEventState,
+                                                     Map<String, Object> additionalMap,
+                                                     Map<String, Object> additionalData,
+                                                     List<Map<String, String>> expectation) {
+        VariableMap inputVariables = new VariableMapImpl();
+        inputVariables.putValue("eventId", eventId);
+        inputVariables.putValue("postEventState", postEventState);
+        inputVariables.putAll(additionalMap);
+        inputVariables.putAll(additionalData);
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
+    }
+
+
     public static Stream<Arguments> makeAnApplicationScenarioProvider() {
         return Stream.of(
             Arguments.of(
@@ -1872,9 +1929,9 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getInputs().size(), is(14));
+        assertThat(logic.getInputs().size(), is(15));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(59));
+        assertThat(logic.getRules().size(), is(60));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {

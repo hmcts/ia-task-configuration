@@ -559,6 +559,17 @@
           <text>"Review draft appeal"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1ogn3q8">
+        <inputEntry id="UnaryTests_04idbou">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0add13s">
+          <text>"printAndSendHoBundle"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0rx4zbm">
+          <text>"Print and send HO bundle and appeal reasons form"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
