@@ -411,7 +411,8 @@
           <text>
                         "followUpExtendedDirection",
                         "createHearingBundle",
-                        "createCaseSummary"
+                        "createCaseSummary",
+                        "reviewAddendumEvidence"
                     </text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0z7iapq">

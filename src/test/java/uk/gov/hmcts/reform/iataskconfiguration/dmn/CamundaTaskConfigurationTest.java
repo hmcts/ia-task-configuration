@@ -444,7 +444,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
     @ParameterizedTest
     @CsvSource({
-        "followUpExtendedDirection", "createHearingBundle", "createCaseSummary"
+        "followUpExtendedDirection", "createHearingBundle", "createCaseSummary", "reviewAddendumEvidence"
     })
     void when_taskId_then_return_legal_operations_role_category_can_reconfigure(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
