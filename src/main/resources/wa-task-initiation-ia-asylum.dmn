@@ -3807,6 +3807,65 @@
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1tdw5uz">
+        <inputEntry id="UnaryTests_0rxhu70">
+          <text>"requestResponseReview"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zj7kfa">
+          <text>"respondentReview"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0huwwug">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09cms81">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1cnzsmj">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vmiywi">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1r0fxdn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1bg6d83">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ucgfv8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1byxvtc">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1odhwuf">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tmsmlu">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1johujb">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0duff76">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xlswfs">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_02h2ayv">
+          <text>"printAndSendHoResponse"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0tjc60y">
+          <text>"Print and send HO response"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_020uuu1">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0tiib7n">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

@@ -203,6 +203,7 @@
                        "reviewRemittedAppeal", "processFeeRefund",
                        "reviewDraftAppeal",
                        "printAndSendHoBundle",
+                       "printAndSendHoResponse",
                        "printAndSendHearingRequirements"
                     </text>
         </inputEntry>
@@ -422,7 +423,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1glizm3">
-          <text>"arrangeOfflinePayment","markCaseAsPaid","allocateHearingJudge","uploadHearingRecording","postHearingAttendeesDurationAndRecording","editListing","followUpSetAsideDecision","printAndSendHoBundle","printAndSendHearingRequirements"</text>
+          <text>"arrangeOfflinePayment","markCaseAsPaid","allocateHearingJudge","uploadHearingRecording","postHearingAttendeesDurationAndRecording","editListing","followUpSetAsideDecision","printAndSendHoBundle","printAndSendHoResponse","printAndSendHearingRequirements"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1131kat">
           <text>"roleCategory"</text>
@@ -675,6 +676,7 @@
 "postHearingAttendeesDurationAndRecording",
 "decideAnFTPA",
 "printAndSendHoBundle",
+"printAndSendHoResponse",
 "printAndSendHearingRequirements"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ssbj4t">

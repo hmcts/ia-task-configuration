@@ -581,6 +581,17 @@
           <text>"Print and send hearing requirements form"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1p5yflx">
+        <inputEntry id="UnaryTests_0c5xfon">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ex23jt">
+          <text>"printAndSendHoResponse"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1swetm1">
+          <text>"Print and send HO response"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
