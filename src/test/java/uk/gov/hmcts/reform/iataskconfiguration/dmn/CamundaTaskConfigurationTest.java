@@ -206,6 +206,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("processFeeRefund", routineWork),
             Arguments.of("reviewDraftAppeal", routineWork),
             Arguments.of("printAndSendHoBundle", routineWork),
+            Arguments.of("printAndSendHoResponse", routineWork),
             Arguments.of("reviewAdditionalEvidence", decisionMakingWork),
             Arguments.of("reviewTheAppeal", decisionMakingWork),
             Arguments.of("followUpOverdueRespondentEvidence", decisionMakingWork),
@@ -371,7 +372,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     @ParameterizedTest
     @CsvSource({
         "arrangeOfflinePayment", "markCaseAsPaid", "allocateHearingJudge", "uploadHearingRecording",
-        "postHearingAttendeesDurationAndRecording", "editListing", "followUpSetAsideDecision", "printAndSendHoBundle"
+        "postHearingAttendeesDurationAndRecording", "editListing", "followUpSetAsideDecision", "printAndSendHoBundle",
+        "printAndSendHoResponse"
     })
     void when_taskId_then_return_Admin_role_category(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
@@ -1142,6 +1144,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("uploadHearingRecording", zeroDays),
             Arguments.of("decideAnFTPA", zeroDays),
             Arguments.of("printAndSendHoBundle", zeroDays),
+            Arguments.of("printAndSendHoResponse", zeroDays),
             Arguments.of("markAsPaid", fourteenDays)
         );
     }
