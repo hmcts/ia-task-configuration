@@ -1662,7 +1662,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "requestHearingRequirements",
+                "requestHearingRequirementsFeature",
                 "listing",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
