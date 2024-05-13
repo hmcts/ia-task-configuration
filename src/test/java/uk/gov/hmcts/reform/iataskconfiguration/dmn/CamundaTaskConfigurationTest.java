@@ -482,7 +482,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             .filter((r) -> r.containsValue("roleCategory"))
             .toList();
 
-        assertEquals(1, workTypeResultList.size());
+        assertEquals(2, workTypeResultList.size());
 
         assertEquals(Map.of(
             "name", "roleCategory",
