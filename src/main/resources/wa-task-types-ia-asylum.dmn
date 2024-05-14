@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1kep5qz" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.14.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.0.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1kep5qz" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.22.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.0.0">
   <decision id="wa-task-types-ia-asylum" name="Task Types DMN">
     <decisionTable id="DecisionTable_17knzal" hitPolicy="COLLECT">
       <input id="Input_1">
@@ -7,7 +7,7 @@
           <text></text>
         </inputExpression>
       </input>
-      <output id="Output_1" name="taskTypeId" typeRef="string" biodi:width="281" />
+      <output id="Output_1" name="taskTypeId" typeRef="string" biodi:width="321" />
       <output id="OutputClause_0aeuwfu" name="taskTypeName" typeRef="string" biodi:width="323" />
       <rule id="DecisionRule_0eon7b4">
         <inputEntry id="UnaryTests_1w5kf9n">
@@ -570,15 +570,26 @@
           <text>"Print and send HO bundle and appeal reasons form"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1mbay7q">
+        <inputEntry id="UnaryTests_1rty61r">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1u0w832">
+          <text>"printAndSendHoResponse"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0fxnlcf">
+          <text>"Print and send HO response"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1p5yflx">
         <inputEntry id="UnaryTests_0c5xfon">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ex23jt">
-          <text>"printAndSendHoResponse"</text>
+          <text>"printAndSendHearingRequirements"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1swetm1">
-          <text>"Print and send HO response"</text>
+          <text>"Print and send hearing requirements form"</text>
         </outputEntry>
       </rule>
     </decisionTable>
