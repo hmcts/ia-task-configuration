@@ -298,6 +298,13 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "printAndSendHearingRequirements",
+                List.of(
+                    taskSupervisor,
+                    nationalBusinessCentreAdminPriorityOne
+                )
+            ),
+            Arguments.of(
                 "printAndSendHearingBundle",
                 List.of(
                     taskSupervisor,

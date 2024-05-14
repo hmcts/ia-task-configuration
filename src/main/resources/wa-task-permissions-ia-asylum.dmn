@@ -703,6 +703,7 @@
           <text>
             "printAndSendHoBundle",
             "printAndSendHoResponse",
+            "printAndSendHearingRequirements",
             "printAndSendHearingBundle"
           </text>
         </inputEntry>

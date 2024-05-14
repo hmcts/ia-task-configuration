@@ -3748,6 +3748,65 @@
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0pjq6cy">
+        <inputEntry id="UnaryTests_0mpynjv">
+          <text>"requestHearingRequirementsFeature"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_143m3ie">
+          <text>"listing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_11a9j7j">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0cwfprb">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nu7hvj">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0fmh0sf">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0i6dejh">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1tvxqb2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1opfg39">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12acohw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0s8atjh">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1hno8rf">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0da6scr">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_055shpl">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0cbrnnv">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1y0f62u">
+          <text>"printAndSendHearingRequirements"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0qj30lx">
+          <text>"Print and send hearing requirements form"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1obkkpj">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_185zihf">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1tdw5uz">
         <inputEntry id="UnaryTests_0rxhu70">
           <text>"requestResponseReview"</text>
