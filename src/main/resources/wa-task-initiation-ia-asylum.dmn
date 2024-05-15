@@ -3868,7 +3868,7 @@
       </rule>
       <rule id="DecisionRule_0jvkz7e">
         <inputEntry id="UnaryTests_1xlvoo7">
-          <text>"generateHearingBundle"</text>
+          <text>"asyncStitchingComplete"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0zet58l">
           <text>"finalBundling"</text>

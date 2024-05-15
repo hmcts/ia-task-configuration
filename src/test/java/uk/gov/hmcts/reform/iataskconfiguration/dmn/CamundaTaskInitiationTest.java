@@ -1696,6 +1696,23 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "asyncStitchingComplete",
+                "finalBundling",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAdmin\":\"" + true + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "printAndSendHearingBundle",
+                        "name", "Print and send Hearing Bundle",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
                 "unknownEvent",
                 null,
                 null,
@@ -1770,11 +1787,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "allocateHearingJudge",
                         "name", "Allocate Hearing Judge",
-                        "processCategories", "caseProgression"
-                    ),
-                    Map.of(
-                        "taskId", "printAndSendHearingBundle",
-                        "name", "Print and send Hearing Bundle",
                         "processCategories", "caseProgression"
                     )
                 )
@@ -1987,7 +1999,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(15));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(62));
+        assertThat(logic.getRules().size(), is(63));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {
