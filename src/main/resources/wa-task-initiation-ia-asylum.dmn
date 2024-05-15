@@ -2236,6 +2236,47 @@
           <text>"followUpOverdue"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1ds7wf5">
+        <inputEntry id="UnaryTests_0tjzdlu">
+          <text>"markAppealAsRemitted"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0c6gx5k">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1dau9fh">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1sfr0bf">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hafl0q">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qh216y">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0bsfiek">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_144v5qs">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_176bxkp">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ggl3y2">
+          <text>"reviewRemittedAppeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1dtsahb">
+          <text>"Review remitted appeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_05j7qse">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_01g2c1w">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

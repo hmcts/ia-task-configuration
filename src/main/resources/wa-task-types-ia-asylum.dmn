@@ -482,6 +482,17 @@
           <text>"Mark as Paid"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_050b1ps">
+        <inputEntry id="UnaryTests_13oclum">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0n8arpe">
+          <text>"reviewRemittedAppeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0fbza0p">
+          <text>"Review remitted appeal"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

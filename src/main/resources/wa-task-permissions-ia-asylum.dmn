@@ -91,7 +91,8 @@
             "followUpNonStandardDirection",
             "decideOnTimeExtension",
             "reviewAdditionalEvidence",
-            "followUpExtendedDirection"</text>
+            "followUpExtendedDirection",
+            "reviewRemittedAppeal"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0buofva">
           <text></text>
@@ -158,8 +159,8 @@
             "followUpExtendedDirection",
             "startDecisionsAndReasonsDocument",
             "createHearingBundle",
-            "createCaseSummary"
-          </text>
+            "createCaseSummary",
+            "reviewRemittedAppeal"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_10s330p">
           <text></text>
@@ -223,7 +224,8 @@
             "followUpNonStandardDirection",
             "decideOnTimeExtension",
             "reviewAdditionalEvidence",
-"startDecisionsAndReasonsDocument","createHearingBundle","createCaseSummary"
+"startDecisionsAndReasonsDocument","createHearingBundle","createCaseSummary",
+            "reviewRemittedAppeal"
           </text>
         </inputEntry>
         <inputEntry id="UnaryTests_18tqbn3">
