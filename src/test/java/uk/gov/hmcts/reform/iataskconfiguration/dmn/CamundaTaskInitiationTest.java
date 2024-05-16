@@ -1706,7 +1706,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 singletonList(
                     Map.of(
                         "taskId", "printAndSendHearingBundle",
-                        "name", "Print and send Hearing Bundle",
+                        "name", "Print and send hearing bundle",
 
                         "processCategories", "caseProgression"
                     )
