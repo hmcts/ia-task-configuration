@@ -1697,7 +1697,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "asyncStitchingComplete",
-                "finalBundling",
+                "preHearing",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"isAdmin\":\"" + true + "\"\n"
@@ -1770,23 +1770,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "printAndSendHoBundle",
                         "name", "Print and send HO bundle and appeal reasons form",
 
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
-                "generateHearingBundle",
-                "finalBundling",
-                null,
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"isAdmin\":\"" + true + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                List.of(
-                    Map.of(
-                        "taskId", "allocateHearingJudge",
-                        "name", "Allocate Hearing Judge",
                         "processCategories", "caseProgression"
                     )
                 )
