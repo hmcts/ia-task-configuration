@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.22.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.23.0">
   <decision id="wa-task-initiation-ia-asylum" name="Task initiation DMN">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT" biodi:annotationsWidth="400">
       <input id="Input_1" label="Event Id" biodi:width="515" camunda:inputVariable="eventId">
@@ -3863,6 +3863,65 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0tiib7n">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0jvkz7e">
+        <inputEntry id="UnaryTests_1xlvoo7">
+          <text>"asyncStitchingComplete"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zet58l">
+          <text>"preHearing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vd2fwx">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15pbivg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0wdcj1h">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1mg4jqv">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0a40haq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0y1ifvx">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0p4d1xg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1upwjnh">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1nbatnc">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03ag57i">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ftsn80">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tsvny3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0vudg83">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0bipqcc">
+          <text>"printAndSendHearingBundle"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0gh24ep">
+          <text>"Print and send hearing bundle"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0so9mr2">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0alkb2s">
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>

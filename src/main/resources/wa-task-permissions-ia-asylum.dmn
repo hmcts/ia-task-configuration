@@ -703,7 +703,8 @@
           <text>
             "printAndSendHoBundle",
             "printAndSendHoResponse",
-            "printAndSendHearingRequirements"
+            "printAndSendHearingRequirements",
+            "printAndSendHearingBundle"
           </text>
         </inputEntry>
         <inputEntry id="UnaryTests_0pgtpjy">
