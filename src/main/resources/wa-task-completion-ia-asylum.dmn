@@ -273,6 +273,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0ttvih8">
+        <inputEntry id="UnaryTests_1ko4std">
+          <text>"decideAnApplication"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0xc63do">
+          <text>"reviewSetAsideDecisionApplication"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_00p0ka1">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1wt9cac">
         <inputEntry id="UnaryTests_0cpyxmg">
           <text>"editCaseListing"</text>
@@ -319,7 +330,7 @@
       </rule>
       <rule id="DecisionRule_1rbsgo2">
         <inputEntry id="UnaryTests_01uvi4d">
-          <text>"leadershipJudgeFtpaDecision","residentJudgeFtpaDecision"</text>
+          <text>"decideFtpaApplication"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_094ixtz">
           <text>"decideAnFTPA"</text>
@@ -405,9 +416,31 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1ey9r2b">
+        <inputEntry id="UnaryTests_0apqp13">
+          <text>"requestNewHearingRequirements"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0bpec33">
+          <text>"reviewAppealSetAsideUnderRule35"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ba4pra">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1i7s04n">
+        <inputEntry id="UnaryTests_180jta8">
+          <text>"requestNewHearingRequirements"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_199ndan">
+          <text>"reviewAppealSetAsideUnderRule32"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0m8hozz">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1u3c7sd">
         <inputEntry id="UnaryTests_1dd0p7u">
-          <text>"generateHearingBundle","decisionAndReasonsStarted","updateHearingRequirements","endAppeal","requestRespondentEvidence","requestCaseBuilding","requestReasonsForAppeal","sendDirection","requestRespondentReview","requestCaseEdit","sendDirectionWithQuestions","requestCmaRequirements","markEvidenceAsReviewed","markAddendumEvidenceAsReviewed","reviewCmaRequirements","updateDetailsAfterCma","requestResponseAmend","requestResponseReview","reviewHearingRequirements","changeDirectionDueDate","decideAnApplication","editCaseListing","sendDecisionAndReasons","generateDecisionAndReasons","uploadHearingRecording","postHearingAttendeesDurationAndRecording","leadershipJudgeFtpaDecision","residentJudgeFtpaDecision","recordRemissionDecision","recordAllocatedJudge","listCase","markAppealPaid","markPaymentRequestSent","requestNewHearingRequirements"</text>
+          <text>"generateHearingBundle","decisionAndReasonsStarted","updateHearingRequirements","endAppeal","requestRespondentEvidence","requestCaseBuilding","requestReasonsForAppeal","sendDirection","requestRespondentReview","requestCaseEdit","sendDirectionWithQuestions","requestCmaRequirements","markEvidenceAsReviewed","markAddendumEvidenceAsReviewed","reviewCmaRequirements","updateDetailsAfterCma","requestResponseAmend","requestResponseReview","reviewHearingRequirements","changeDirectionDueDate","decideAnApplication","editCaseListing","sendDecisionAndReasons","generateDecisionAndReasons","uploadHearingRecording","postHearingAttendeesDurationAndRecording","decideFtpaApplication","recordRemissionDecision","recordAllocatedJudge","listCase","markAppealPaid","markPaymentRequestSent","requestNewHearingRequirements"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1ex7ytl">
           <text></text>
