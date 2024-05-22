@@ -197,7 +197,8 @@
                         "reviewRemissionApplication",
                         "assignAFTPAJudge",
                         "sendPaymentRequest",
-                        "markAsPaid"
+                        "markAsPaid",
+                        "reviewRemittedAppeal"
                     </text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0rvgay2">
@@ -391,7 +392,8 @@
                         "followUpNoticeOfChange",
                         "reviewAdditionalEvidence",
                         "reviewAdditionalHomeOfficeEvidence",
-                        "startDecisionsAndReasonsDocument"</text>
+                        "startDecisionsAndReasonsDocument",
+                        "reviewRemittedAppeal"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_05l5bvs">
           <text>"roleCategory"</text>
@@ -609,7 +611,8 @@
 "processApplicationUpdateAppealDetails",
 "processApplicationReinstateAnEndedAppeal",
 "processApplicationOther",
-"processApplicationLink/UnlinkAppeals"</text>
+"processApplicationLink/UnlinkAppeals",
+"reviewRemittedAppeal"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_18mybq6">
           <text>"dueDateIntervalDays"</text>
