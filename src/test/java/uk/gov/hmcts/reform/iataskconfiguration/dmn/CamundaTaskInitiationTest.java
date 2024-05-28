@@ -1575,6 +1575,59 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "decideFtpaApplication",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"ftpaAppellantRjDecisionOutcomeType\":\"" + "reheardRule35" + "\",\n"
+                                      + "      \"ftpaApplicantType\":\"" + "appellant" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewAppealSetAsideUnderRule35",
+                        "name", "Review appeal set aside under rule 35",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "decideFtpaApplication",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"ftpaRespondentRjDecisionOutcomeType\":\"" + "reheardRule35" + "\",\n"
+                                      + "      \"ftpaApplicantType\":\"" + "respondent" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewAppealSetAsideUnderRule35",
+                        "name", "Review appeal set aside under rule 35",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "updateTribunalDecision",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"updateTribunalDecisionList\":\"" + "underRule32" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewAppealSetAsideUnderRule32",
+                        "name", "Review appeal set aside under rule 32",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
                 "unknownEvent",
                 null,
                 null,
@@ -1665,7 +1718,10 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                           "Process Other Application"),
             getArgumentOf("Link/unlink appeals",
                           "processApplicationLink/UnlinkAppeals",
-                          "Process Link/Unlink Appeals Application")
+                          "Process Link/Unlink Appeals Application"),
+            getArgumentOf("Set aside a decision",
+                          "reviewSetAsideDecisionApplication",
+                          "Review set aside decision application")
         );
     }
 
@@ -1709,14 +1765,44 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     }
 
     public static Stream<Arguments> decideAnApplicationScenarioProvider() {
+        Map<String,Object> delayFor5Days = Map.of(
+            "delayUntilIntervalDays", "5",
+            "delayUntilNonWorkingCalendar", "https://www.gov.uk/bank-holidays/england-and-wales.json",
+            "delayUntilOrigin", LocalDate.now(),
+            "delayUntilNonWorkingDaysOfWeek", "SATURDAY,SUNDAY"
+        );
+
         return Stream.of(
-            getDecideAnApplicationArgumentsOf("Adjourn", "editListing", "Edit Listing"),
-            getDecideAnApplicationArgumentsOf("Expedite", "editListing", "Edit Listing"),
-            getDecideAnApplicationArgumentsOf("Transfer", "editListing", "Edit Listing")
+            getDecideAnApplicationArgumentsOf("Adjourn", "editListing",
+                                              "Edit Listing", "application", null),
+            getDecideAnApplicationArgumentsOf("Expedite", "editListing",
+                                              "Edit Listing", "application", null),
+            getDecideAnApplicationArgumentsOf("Transfer", "editListing",
+                                              "Edit Listing", "application", null),
+            getDecideAnApplicationArgumentsOf("Set aside a decision",
+                                              "followUpSetAsideDecision",
+                                              "Follow up set aside decision",
+                                              "followUpOverdue",
+                                              delayFor5Days)
         );
     }
 
-    private static Arguments getDecideAnApplicationArgumentsOf(String applicationType, String taskId, String name) {
+    private static Arguments getDecideAnApplicationArgumentsOf(String applicationType,
+                                                               String taskId,
+                                                               String name,
+                                                               String processCategories,
+                                                               Map<String,Object> delayUntil) {
+        Map<String, Object> map = new HashMap<String, Object>() {
+            {
+                put("taskId", taskId);
+                put("name", name);
+                put("processCategories", processCategories);
+                if (delayUntil != null) {
+                    put("delayUntil", delayUntil);
+                }
+            }
+        };
+
         return Arguments.of(
             "decideAnApplication",
             null,
@@ -1728,15 +1814,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                   + "          }\n"
                                   + "        }\n"
                                   + "      }"),
-            singletonList(
-                Map.of(
-                    "taskId", taskId,
-                    "name", name,
-
-
-                    "processCategories", "application"
-                )
-            )
+            singletonList(map)
         );
     }
 
@@ -1760,9 +1838,9 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getInputs().size(), is(9));
+        assertThat(logic.getInputs().size(), is(13));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(52));
+        assertThat(logic.getRules().size(), is(57));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {

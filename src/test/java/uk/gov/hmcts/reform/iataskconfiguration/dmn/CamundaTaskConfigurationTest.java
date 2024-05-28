@@ -198,6 +198,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("reviewClarifyingQuestionsAnswers", routineWork),
             Arguments.of("reviewRemissionApplication", routineWork),
             Arguments.of("assignAFTPAJudge", routineWork),
+            Arguments.of("reviewAppealSetAsideUnderRule35", routineWork),
+            Arguments.of("reviewAppealSetAsideUnderRule32", routineWork),
             Arguments.of("sendPaymentRequest", routineWork),
             Arguments.of("markAsPaid", routineWork),
             Arguments.of("reviewRemittedAppeal", routineWork),
@@ -252,6 +254,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("processAppealDetailsApplication", applications),
             Arguments.of("processReinstatementApplication", applications),
             Arguments.of("processApplicationToReviewDecision", applications),
+            Arguments.of("reviewSetAsideDecisionApplication", applications),
+            Arguments.of("followUpSetAsideDecision", applications),
             Arguments.of("decideAnFTPA", upperTribunal)
         );
     }
@@ -333,7 +337,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "generateDraftDecisionAndReasons", "uploadDecision", "reviewAddendumHomeOfficeEvidence",
         "reviewAddendumAppellantEvidence", "reviewSpecificAccessRequestJudiciary",
         "reviewSpecificAccessRequestLegalOps", "reviewSpecificAccessRequestAdmin","reviewSpecificAccessRequestCTSC",
-        "processApplicationToReviewDecision", "sendDecisionsAndReasons", "prepareDecisionsAndReasons", "decideAnFTPA"
+        "processApplicationToReviewDecision", "sendDecisionsAndReasons", "prepareDecisionsAndReasons", "decideAnFTPA",
+        "reviewSetAsideDecisionApplication"
     })
     void when_taskId_then_return_judicial_role_category(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
@@ -363,7 +368,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     @ParameterizedTest
     @CsvSource({
         "arrangeOfflinePayment", "markCaseAsPaid", "allocateHearingJudge", "uploadHearingRecording",
-        "postHearingAttendeesDurationAndRecording", "editListing"
+        "postHearingAttendeesDurationAndRecording", "editListing", "followUpSetAsideDecision"
     })
     void when_taskId_then_return_Admin_role_category(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
@@ -421,7 +426,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "followUpOverdueCaseBuilding", "followUpOverdueReasonsForAppeal", "followUpOverdueClarifyingAnswers",
         "followUpOverdueCmaRequirements", "followUpOverdueRespondentReview", "followUpOverdueHearingRequirements",
         "followUpNonStandardDirection", "followUpNoticeOfChange", "reviewAdditionalEvidence",
-        "reviewAdditionalHomeOfficeEvidence", "reviewRemittedAppeal"
+        "reviewAdditionalHomeOfficeEvidence", "reviewRemittedAppeal", "reviewAppealSetAsideUnderRule35",
+        "reviewAppealSetAsideUnderRule32"
     })
     void when_taskId_then_return_legal_operations_role_category(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
@@ -1007,9 +1013,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "reviewAddendumEvidence,[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
             + "markAddendumEvidenceAsReviewed),",
         "editListing,[Edit case listing](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/editCaseListing),",
-        "decideAnFTPA,[Leadership judge FTPA decision](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
-            + "leadershipJudgeFtpaDecision)<br />"
-            + "[Resident judge FTPA decision](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/residentJudgeFtpaDecision),",
+        "decideAnFTPA,[Decide FTPA application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideFtpaApplication),",
         "prepareDecisionsAndReasons,[Prepare decisions and reasons](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
             + "generateDecisionAndReasons),",
         "sendDecisionsAndReasons,[Complete decision and reasons](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
@@ -1117,6 +1121,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("processApplicationOther", fiveDays),
             Arguments.of("processApplicationLink/UnlinkAppeals", fiveDays),
             Arguments.of("reviewRemittedAppeal", fiveDays),
+            Arguments.of("reviewAppealSetAsideUnderRule35", fiveDays),
+            Arguments.of("reviewAppealSetAsideUnderRule32", fiveDays),
             Arguments.of("allocateHearingJudge", threeDays),
             Arguments.of("processApplicationToReviewDecision", twoDays),
             Arguments.of("editListing", twoDays),
@@ -1147,6 +1153,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("reviewRemissionApplication", twoDays),
             Arguments.of("assignAFTPAJudge", twoDays),
             Arguments.of("listTheCase", twoDays),
+            Arguments.of("reviewSetAsideDecisionApplication", twoDays),
             Arguments.of("sendDecisionsAndReasons", zeroDays),
             Arguments.of("prepareDecisionsAndReasons", zeroDays),
             Arguments.of("sendPaymentRequest", zeroDays),
