@@ -614,6 +614,17 @@
           <text>"Print and send decision corrected under rule 31"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_17n6ods">
+        <inputEntry id="UnaryTests_0osnt0c">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1c82h8s">
+          <text>"printAndSendDecisionCorrectedRule32"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1tr31zz">
+          <text>"Print and send decision corrected under rule 32"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

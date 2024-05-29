@@ -3984,6 +3984,65 @@
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1o6m63q">
+        <inputEntry id="UnaryTests_1ym4p4l">
+          <text>"updateTribunalDecision"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17m9e3u">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0pg8cuu">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0r6v9qr">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xz7mh1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0orbpu1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_13xufjy">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vyh5gf">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1tu23k4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1cd25lp">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xn3tvj">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1hrzmx2">
+          <text>"underRule32"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ysn6zs">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10j2ljg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_078zs4e">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0u282ly">
+          <text>"printAndSendDecisionCorrectedRule32"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1vspnrt">
+          <text>"Print and send decision corrected under rule 32"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0w51elc">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1xj0gpw">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

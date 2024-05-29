@@ -1731,6 +1731,30 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "updateTribunalDecision",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAdmin\":\"" + true + "\",\n"
+                                      + "      \"updateTribunalDecisionList\":\"" + "underRule32" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                List.of(
+                    Map.of(
+                        "taskId", "reviewAppealSetAsideUnderRule32",
+                        "name", "Review appeal set aside under rule 32",
+
+                        "processCategories", "caseProgression"
+                    ),
+                    Map.of(
+                        "taskId", "printAndSendDecisionCorrectedRule32",
+                        "name", "Print and send decision corrected under rule 32",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
                 "unknownEvent",
                 null,
                 null,
@@ -2000,7 +2024,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(15));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(64));
+        assertThat(logic.getRules().size(), is(65));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {
