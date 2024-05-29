@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.23.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.14.0">
   <decision id="wa-task-initiation-ia-asylum" name="Task initiation DMN">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT" biodi:annotationsWidth="400">
       <input id="Input_1" label="Event Id" biodi:width="515" camunda:inputVariable="eventId">
@@ -3922,6 +3922,65 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0alkb2s">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1t27kre">
+        <inputEntry id="UnaryTests_1wqxoqa">
+          <text>"updateTribunalDecision"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0buv5w1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1dow54a">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qtjj4q">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1uui21a">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0taxe08">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0bqsbqy">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ik9am5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1s8lvo4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08xly4v">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0a7l3vl">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0twwf4b">
+          <text>"underRule31"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0oyk9oc">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0o3n7uf">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_13acjdy">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_113duw1">
+          <text>"printAndSendDecisionCorrectedRule31"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1a3vqe8">
+          <text>"Print and send decision corrected under rule 31"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0jp41wa">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_06ezt1c">
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>

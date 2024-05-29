@@ -298,6 +298,11 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                    "printAndSendHearingBundle",
                    "taskTypeName",
                    "Print and send hearing bundle"
+            ),
+            Map.of("taskTypeId",
+                   "printAndSendDecisionCorrectedRule31",
+                   "taskTypeName",
+                   "Print and send decision corrected under rule 31"
             )
         );
         return Stream.of(
@@ -325,7 +330,7 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(1));
         assertThat(logic.getOutputs().size(), is(2));
-        assertThat(logic.getRules().size(), is(54));
+        assertThat(logic.getRules().size(), is(55));
 
     }
 }
