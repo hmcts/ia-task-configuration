@@ -324,6 +324,13 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     taskSupervisor,
                     nationalBusinessCentreAdminPriorityOne
                 )
+            ),
+            Arguments.of(
+                "printAndSendHoApplication",
+                List.of(
+                    taskSupervisor,
+                    nationalBusinessCentreAdminPriorityOne
+                )
             )
         );
     }
