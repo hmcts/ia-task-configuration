@@ -91,7 +91,10 @@
             "followUpNonStandardDirection",
             "decideOnTimeExtension",
             "reviewAdditionalEvidence",
-            "followUpExtendedDirection"</text>
+            "followUpExtendedDirection",
+            "reviewRemittedAppeal",
+            "reviewAppealSetAsideUnderRule35",
+            "reviewAppealSetAsideUnderRule32"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0buofva">
           <text></text>
@@ -158,8 +161,10 @@
             "followUpExtendedDirection",
             "startDecisionsAndReasonsDocument",
             "createHearingBundle",
-            "createCaseSummary"
-          </text>
+            "createCaseSummary",
+            "reviewRemittedAppeal",
+            "reviewAppealSetAsideUnderRule35",
+            "reviewAppealSetAsideUnderRule32"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_10s330p">
           <text></text>
@@ -223,7 +228,10 @@
             "followUpNonStandardDirection",
             "decideOnTimeExtension",
             "reviewAdditionalEvidence",
-"startDecisionsAndReasonsDocument","createHearingBundle","createCaseSummary"
+"startDecisionsAndReasonsDocument","createHearingBundle","createCaseSummary",
+            "reviewRemittedAppeal",
+            "reviewAppealSetAsideUnderRule35",
+            "reviewAppealSetAsideUnderRule32"
           </text>
         </inputEntry>
         <inputEntry id="UnaryTests_18tqbn3">
@@ -342,7 +350,8 @@
             "allocateHearingJudge",
             "uploadHearingRecording",
             "postHearingAttendeesDurationAndRecording",
-            "editListing"
+            "editListing",
+            "followUpSetAsideDecision"
           </text>
         </inputEntry>
         <inputEntry id="UnaryTests_1sw9xpj">
@@ -440,7 +449,8 @@
           <text>
           "processApplicationToReviewDecision",
           "sendDecisionsAndReasons",
-          "prepareDecisionsAndReasons"
+          "prepareDecisionsAndReasons",
+          "reviewSetAsideDecisionApplication"
 </text>
         </inputEntry>
         <inputEntry id="UnaryTests_19myw41">
@@ -475,7 +485,8 @@
             "processApplicationToReviewDecision",
             "sendDecisionsAndReasons",
             "decideAnFTPA",
-            "prepareDecisionsAndReasons"
+            "prepareDecisionsAndReasons",
+            "reviewSetAsideDecisionApplication"
             </text>
         </inputEntry>
         <inputEntry id="UnaryTests_1sgyxq7">

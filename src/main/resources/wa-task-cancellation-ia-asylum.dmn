@@ -459,6 +459,29 @@
           <text></text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0c9dabt">
+        <inputEntry id="UnaryTests_01vprbg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rqyb08">
+          <text>"updateTribunalDecision"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rt72k8">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1eg7x67">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1wo61af">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1x8rg1o">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_157g42n">
+          <text>"followUpOverdue"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

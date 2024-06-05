@@ -482,6 +482,61 @@
           <text>"Mark as Paid"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_050b1ps">
+        <inputEntry id="UnaryTests_13oclum">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0n8arpe">
+          <text>"reviewRemittedAppeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0fbza0p">
+          <text>"Review remitted appeal"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_12nxngl">
+        <inputEntry id="UnaryTests_14hns51">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1gq9obo">
+          <text>"reviewSetAsideDecisionApplication"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1w5itrh">
+          <text>"Review set aside decision application"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_078ei4r">
+        <inputEntry id="UnaryTests_1ruqa70">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0nz6wbh">
+          <text>"followUpSetAsideDecision"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_14gunbp">
+          <text>"Follow up set aside decision"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0myowc6">
+        <inputEntry id="UnaryTests_1yugqdi">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_16f6him">
+          <text>"reviewAppealSetAsideUnderRule35"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1pvoghz">
+          <text>"Review appeal set aside under rule 35"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ciree7">
+        <inputEntry id="UnaryTests_1mwcghd">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ln2l97">
+          <text>"reviewAppealSetAsideUnderRule32"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0w51h3m">
+          <text>"Review appeal set aside under rule 32"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
