@@ -308,6 +308,11 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                    "printAndSendDecisionCorrectedRule32",
                    "taskTypeName",
                    "Print and send decision corrected under rule 32"
+            ),
+            Map.of("taskTypeId",
+                   "printAndSendHoApplication",
+                   "taskTypeName",
+                   "Print and send HO application"
             )
         );
         return Stream.of(
@@ -335,7 +340,7 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(1));
         assertThat(logic.getOutputs().size(), is(2));
-        assertThat(logic.getRules().size(), is(56));
+        assertThat(logic.getRules().size(), is(57));
 
     }
 }

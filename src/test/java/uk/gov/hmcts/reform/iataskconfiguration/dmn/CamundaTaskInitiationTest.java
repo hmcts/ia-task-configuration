@@ -1756,6 +1756,34 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "makeAnApplication",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAdmin\":\"" + true + "\",\n"
+                                      + "      \"lastModifiedApplication\" : {\n"
+                                      + "            \"type\" : \"Judge's review of application decision\",\n"
+                                      + "            \"decision\" : \"\",\n"
+                                      + "            \"applicant\":\"" + "Respondent" + "\"\n"
+                                      + "          }\n"
+                                      + "   }"
+                                      + "}"),
+                List.of(
+                    Map.of(
+                        "taskId", "processApplicationToReviewDecision",
+                        "name", "Process Application to Review Decision",
+
+                        "processCategories", "application"
+                    ),
+                    Map.of(
+                        "taskId", "printAndSendHoApplication",
+                        "name", "Print and send HO application",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
                 "unknownEvent",
                 null,
                 null,
@@ -1848,7 +1876,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       + "        \"Data\" : {\n"
                                       + "          \"lastModifiedApplication\" : {\n"
                                       + "            \"type\" : \"\",\n"
-                                      + "            \"decision\" : \"\"\n"
+                                      + "            \"decision\" : \"\",\n"
+                                      + "            \"applicant\" : \"\"\n"
                                       + "          }\n"
                                       + "        }\n"
                                       + "      }"),
@@ -1861,7 +1890,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       + "        \"Data\" : {\n"
                                       + "          \"lastModifiedApplication\" : {\n"
                                       + "            \"type\" : \"Judge's review of application decision\",\n"
-                                      + "            \"decision\" : \"\"\n"
+                                      + "            \"decision\" : \"\",\n"
+                                      + "            \"applicant\" : \"\"\n"
                                       + "          }\n"
                                       + "        }\n"
                                       + "      }"),
@@ -1918,7 +1948,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                   + "        \"Data\" : {\n"
                                   + "          \"lastModifiedApplication\" : {\n"
                                   + "            \"type\" : \"" + applicationType + "\",\n"
-                                  + "            \"decision\" : \"\"\n"
+                                  + "            \"decision\" : \"\",\n"
+                                  + "            \"applicant\" : \"\"\n"
                                   + "          }\n"
                                   + "        }\n"
                                   + "      }"),
@@ -1995,7 +2026,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                   + "        \"Data\" : {\n"
                                   + "          \"lastModifiedApplication\" : {\n"
                                   + "            \"type\" : \"" + applicationType + "\",\n"
-                                  + "            \"decision\" : \"Granted\"\n"
+                                  + "            \"decision\" : \"Granted\",\n"
+                                  + "            \"applicant\" : \"\"\n"
                                   + "          }\n"
                                   + "        }\n"
                                   + "      }"),
@@ -2023,9 +2055,9 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getInputs().size(), is(16));
+        assertThat(logic.getInputs().size(), is(17));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(65));
+        assertThat(logic.getRules().size(), is(66));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {
