@@ -707,7 +707,8 @@
             "printAndSendHearingBundle",
             "printAndSendDecisionCorrectedRule31",
             "printAndSendDecisionCorrectedRule32",
-            "printAndSendHoApplication"
+            "printAndSendHoApplication",
+            "printAndSendHoEvidence"
           </text>
         </inputEntry>
         <inputEntry id="UnaryTests_0pgtpjy">

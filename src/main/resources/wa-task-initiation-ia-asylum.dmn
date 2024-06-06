@@ -4518,6 +4518,72 @@
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_09iq72f">
+        <inputEntry id="UnaryTests_03gy44d">
+          <text>"uploadAdditionalEvidenceHomeOffice",
+"uploadAddendumEvidenceHomeOffice"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1s1if6s">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0dxvfjp">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0g1igzt">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1cgcp78">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16i6rka">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01ap780">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lj295n">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0oeiqfi">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ria9ba">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_058xn4e">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1sof02v">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0m4e7p1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16qsp0m">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_182yj9n">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jpihj4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14e8lx4">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0mst1wt">
+          <text>"printAndSendHoEvidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_08kmhw0">
+          <text>"Print and send new HO evidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0olxi8q">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0e1wnr8">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
