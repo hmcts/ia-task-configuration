@@ -1818,6 +1818,23 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "sendDecisionAndReasons",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAdmin\":\"" + true + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "printAndSendAppealDecision",
+                        "name", "Print and send appeal decision and FTPA form",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
                 "unknownEvent",
                 null,
                 null,
@@ -2091,7 +2108,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(17));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(67));
+        assertThat(logic.getRules().size(), is(68));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {

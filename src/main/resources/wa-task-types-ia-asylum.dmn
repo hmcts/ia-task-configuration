@@ -647,6 +647,17 @@
           <text>"Print and send new HO evidence"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_14v5tqe">
+        <inputEntry id="UnaryTests_0nh4nxr">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1infqtu">
+          <text>"printAndSendAppealDecision"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1dt5rdy">
+          <text>"Print and send appeal decision and FTPA form"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
