@@ -636,6 +636,17 @@
           <text>"Print and send HO application"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_15yyoo1">
+        <inputEntry id="UnaryTests_0oikcjp">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1lxp89z">
+          <text>"printAndSendHoEvidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_17f1zca">
+          <text>"Print and send new HO evidence"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
