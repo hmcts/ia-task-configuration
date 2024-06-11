@@ -4649,6 +4649,71 @@
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_04uerl8">
+        <inputEntry id="UnaryTests_1vpemk9">
+          <text>"decideFtpaApplication"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jddmhk">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0bf3yzt">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jk036v">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0i4ct54">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0k1ja7e">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1i8z1xa">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ywcx6f">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_13mgd0d">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0dbg0mk">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_00dgmkq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ccw14c">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1mm2ueo">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xo2xsp">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0yp4ltf">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0x5g2e9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rwam48">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0jfdgjx">
+          <text>"printAndSendFTPADecision"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1gjwvn7">
+          <text>"Print and send FTPA decision"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0eidjmr">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1nytjie">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

@@ -709,7 +709,8 @@
             "printAndSendDecisionCorrectedRule32",
             "printAndSendHoApplication",
             "printAndSendHoEvidence",
-            "printAndSendAppealDecision"
+            "printAndSendAppealDecision",
+            "printAndSendFTPADecision"
           </text>
         </inputEntry>
         <inputEntry id="UnaryTests_0pgtpjy">
