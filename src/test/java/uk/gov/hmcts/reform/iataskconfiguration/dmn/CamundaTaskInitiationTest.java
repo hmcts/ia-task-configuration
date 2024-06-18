@@ -1679,23 +1679,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "requestHearingRequirementsFeature",
-                "listing",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"isAdmin\":\"" + true + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                singletonList(
-                    Map.of(
-                        "taskId", "printAndSendHearingRequirements",
-                        "name", "Print and send hearing requirements form",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
                 "asyncStitchingComplete",
                 "preHearing",
                 mapAdditionalData("{\n"
@@ -1908,6 +1891,30 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "printAndSendHoBundle",
                         "name", "Print and send HO bundle and appeal reasons form",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "requestHearingRequirementsFeature",
+                "submitHearingRequirements",
+                variablesDirectionDueDate,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAdmin\":\"" + true + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                List.of(
+                    Map.of(
+                        "taskId", "followUpOverdueHearingRequirements",
+                        "name", "Follow-up overdue hearing requirements",
+                        "processCategories", "followUpOverdue",
+                        "delayUntil", delayUntilDirectionDue
+                    ),
+                    Map.of(
+                        "taskId", "printAndSendHearingRequirements",
+                        "name", "Print and send hearing requirements form",
 
                         "processCategories", "caseProgression"
                     )
