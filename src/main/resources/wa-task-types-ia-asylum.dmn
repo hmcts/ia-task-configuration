@@ -658,6 +658,17 @@
           <text>"Print and send appeal decision and FTPA form"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0nk5dmq">
+        <inputEntry id="UnaryTests_1e6ie5p">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_053hsar">
+          <text>"printAndSendFTPADecision"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_08f5l55">
+          <text>"Print and send FTPA decision"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
