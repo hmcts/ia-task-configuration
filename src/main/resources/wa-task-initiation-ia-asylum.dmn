@@ -4714,6 +4714,71 @@
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_026gxp8">
+        <inputEntry id="UnaryTests_0c4eg84">
+          <text>"requestNewHearingRequirements"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1g8b5vn">
+          <text>"submitHearingRequirements"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17t2n1w">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0sdcy5f">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16br92x">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1yrff8n">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xv0fdo">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04tla0r">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0kgdqq1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0amw56z">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1mxaugn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1mmhr6h">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_13evek6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_13unz1p">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_063zvxh">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_125b97v">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lxd5z7">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1v7qwba">
+          <text>"printAndSendReheardHearingRequirements"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ka4ogh">
+          <text>"Print and send reheard appeal hearing requirements form"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1u7ub5h">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04orkkj">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

@@ -669,6 +669,17 @@
           <text>"Print and send FTPA decision"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1lpughb">
+        <inputEntry id="UnaryTests_1wnw46k">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ekzd6h">
+          <text>"printAndSendReheardHearingRequirements"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1u6voun">
+          <text>"Print and send reheard appeal hearing requirements form"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
