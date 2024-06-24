@@ -38,6 +38,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     private static final String DEFAULT_CALENDAR = "https://www.gov.uk/bank-holidays/england-and-wales.json";
     private static final String EXTRA_TEST_CALENDAR = "https://raw.githubusercontent.com/hmcts/"
         + "ia-task-configuration/master/src/test/resources/extra-non-working-day-calendar.json";
+    private static final String CURRENT_DATE_TIME = LocalDateTime.now().toString();
 
     @BeforeAll
     public static void initialization() {
@@ -72,7 +73,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(31));
+        assertThat(logic.getRules().size(), is(33));
     }
 
     @SuppressWarnings("checkstyle:indentation")
@@ -159,6 +160,46 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 "canReconfigure", false
             )));
         }
+    }
+
+    @ParameterizedTest
+    @CsvSource(value = {
+        "false, false, false, false",
+        "true, true, false, false",
+        "true, true, true, true"
+    })
+    void nextHearingId_and_nextHearingDate_should_be_set_correctly(
+        boolean caseDataSet, boolean nextHearingDetailsSet, boolean nextHearingIdAndDateSet, boolean expected) {
+        VariableMap inputVariables = new VariableMapImpl();
+        Map<String, Object> caseData = caseDataSet ? new HashMap<>() : null;
+        Map<String, Object> nextHearingDetails = nextHearingDetailsSet ? new HashMap<>() : null;
+        if (nextHearingIdAndDateSet && nextHearingDetailsSet) {
+            nextHearingDetails.put("hearingId", "123Id");
+            nextHearingDetails.put("hearingDateTime", CURRENT_DATE_TIME);
+        }
+        if (caseDataSet && nextHearingDetailsSet) {
+            caseData.put("nextHearingDetails", nextHearingDetails);
+        }
+        if (caseDataSet) {
+            inputVariables.putValue("caseData", caseData);
+        }
+
+        String nextHearingDate = expected ? CURRENT_DATE_TIME : "";
+        String nextHearingId = expected ? "123Id" : "";
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        assertTrue(dmnDecisionTableResult.getResultList().contains(Map.of(
+            "name", "nextHearingId",
+            "value", nextHearingId,
+            "canReconfigure", true
+        )));
+
+        assertTrue(dmnDecisionTableResult.getResultList().contains(Map.of(
+            "name", "nextHearingDate",
+            "value", nextHearingDate,
+            "canReconfigure", true
+        )));
     }
 
     public static Stream<Arguments> workTypeScenarioProvider() {
@@ -857,6 +898,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         String expectedReconfigureValue;
         String expectedDueDateOrigin;
         String expectedDueDateIntervalDays;
+        String expectedHearingId;
+        String expectedHearingDate;
     }
 
     private List<Map<String, Object>> getExpectedValues(Scenario scenario) {
@@ -900,6 +943,18 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         getExpectedValue(rules, "priorityDateOriginRef", "dueDate");
         getExpectedValue(rules, "dueDateNonWorkingDaysOfWeek", "SATURDAY,SUNDAY");
         getExpectedValue(rules, "calculatedDates", "nextHearingDate,dueDate,priorityDate");
+        getExpectedValueWithReconfigure(
+            rules,
+            "nextHearingId",
+            "",
+            "true"
+        );
+        getExpectedValueWithReconfigure(
+            rules,
+            "nextHearingDate",
+            "",
+            "true"
+        );
         return rules;
     }
 
