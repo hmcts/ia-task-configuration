@@ -710,7 +710,8 @@
             "printAndSendHoApplication",
             "printAndSendHoEvidence",
             "printAndSendAppealDecision",
-            "printAndSendFTPADecision"
+            "printAndSendFTPADecision",
+            "printAndSendReheardHearingRequirements"
           </text>
         </inputEntry>
         <inputEntry id="UnaryTests_0pgtpjy">

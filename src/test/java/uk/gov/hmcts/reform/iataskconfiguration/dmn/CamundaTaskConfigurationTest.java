@@ -215,6 +215,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("printAndSendHoEvidence", routineWork),
             Arguments.of("printAndSendAppealDecision", routineWork),
             Arguments.of("printAndSendFTPADecision", routineWork),
+            Arguments.of("printAndSendReheardHearingRequirements", routineWork),
             Arguments.of("reviewAdditionalEvidence", decisionMakingWork),
             Arguments.of("reviewTheAppeal", decisionMakingWork),
             Arguments.of("followUpOverdueRespondentEvidence", decisionMakingWork),
@@ -383,7 +384,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "postHearingAttendeesDurationAndRecording", "editListing", "followUpSetAsideDecision", "printAndSendHoBundle",
         "printAndSendHoResponse","printAndSendHearingRequirements","printAndSendHearingBundle",
         "printAndSendDecisionCorrectedRule31","printAndSendDecisionCorrectedRule32","printAndSendHoApplication",
-        "printAndSendHoEvidence","printAndSendAppealDecision","printAndSendFTPADecision"
+        "printAndSendHoEvidence","printAndSendAppealDecision","printAndSendFTPADecision",
+        "printAndSendReheardHearingRequirements"
     })
     void when_taskId_then_return_Admin_role_category(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
@@ -1163,6 +1165,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("printAndSendHoEvidence", zeroDays),
             Arguments.of("printAndSendAppealDecision", zeroDays),
             Arguments.of("printAndSendFTPADecision", zeroDays),
+            Arguments.of("printAndSendReheardHearingRequirements", zeroDays),
             Arguments.of("markAsPaid", fourteenDays)
         );
     }
