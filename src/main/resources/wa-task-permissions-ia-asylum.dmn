@@ -640,7 +640,7 @@
       <rule id="DecisionRule_05nq60d">
         <description>CTSC Admin task permissions</description>
         <inputEntry id="UnaryTests_1q2j4ix">
-          <text>"reviewRemissionApplication","assignAFTPAJudge","listTheCase","sendPaymentRequest","markAsPaid","processFeeRefund"</text>
+          <text>"reviewRemissionApplication","assignAFTPAJudge","listTheCase","sendPaymentRequest","markAsPaid","processFeeRefund","reviewDraftAppeal"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1p44stw">
           <text></text>
@@ -670,7 +670,7 @@
       <rule id="DecisionRule_155ah64">
         <description>CTSC Team Leader task permissions</description>
         <inputEntry id="UnaryTests_08panx7">
-          <text>"reviewRemissionApplication","assignAFTPAJudge","listTheCase","sendPaymentRequest","markAsPaid","processFeeRefund"</text>
+          <text>"reviewRemissionApplication","assignAFTPAJudge","listTheCase","sendPaymentRequest","markAsPaid","processFeeRefund","reviewDraftAppeal"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0njeznv">
           <text></text>
@@ -694,6 +694,48 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0imsgkl">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1gp4839">
+        <description>National Business Centre admin task permissions</description>
+        <inputEntry id="UnaryTests_0mxjoht">
+          <text>
+            "printAndSendHoBundle",
+            "printAndSendHoResponse",
+            "printAndSendHearingRequirements",
+            "printAndSendHearingBundle",
+            "printAndSendDecisionCorrectedRule31",
+            "printAndSendDecisionCorrectedRule32",
+            "printAndSendHoApplication",
+            "printAndSendHoEvidence",
+            "printAndSendAppealDecision",
+            "printAndSendFTPADecision",
+            "printAndSendReheardHearingRequirements"
+          </text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0pgtpjy">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0nqn053">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0c8n5g1">
+          <text>"national-business-centre"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0g1no29">
+          <text>"Read,Own,Claim,Manage,Unassign,Assign,Complete,Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1pgnlv6">
+          <text>"ADMIN"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_18ux6t9">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1rsyx3y">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_10jhn5f">
           <text>false</text>
         </outputEntry>
       </rule>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1kep5qz" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.22.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.0.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1kep5qz" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.14.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.0.0">
   <decision id="wa-task-types-ia-asylum" name="Task Types DMN">
     <decisionTable id="DecisionTable_17knzal" hitPolicy="COLLECT">
       <input id="Input_1">
@@ -7,7 +7,7 @@
           <text></text>
         </inputExpression>
       </input>
-      <output id="Output_1" name="taskTypeId" typeRef="string" biodi:width="281" />
+      <output id="Output_1" name="taskTypeId" typeRef="string" biodi:width="321" />
       <output id="OutputClause_0aeuwfu" name="taskTypeName" typeRef="string" biodi:width="323" />
       <rule id="DecisionRule_0eon7b4">
         <inputEntry id="UnaryTests_1w5kf9n">
@@ -546,6 +546,138 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_1u97rli">
           <text>"Process fee refund"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1qdqh9k">
+        <inputEntry id="UnaryTests_0z8gfvu">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1boqni1">
+          <text>"reviewDraftAppeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0pah0pc">
+          <text>"Review draft appeal"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ogn3q8">
+        <inputEntry id="UnaryTests_04idbou">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0add13s">
+          <text>"printAndSendHoBundle"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0rx4zbm">
+          <text>"Print and send HO bundle and appeal reasons form"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1mbay7q">
+        <inputEntry id="UnaryTests_1rty61r">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1u0w832">
+          <text>"printAndSendHoResponse"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0fxnlcf">
+          <text>"Print and send HO response"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1p5yflx">
+        <inputEntry id="UnaryTests_0c5xfon">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ex23jt">
+          <text>"printAndSendHearingRequirements"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1swetm1">
+          <text>"Print and send hearing requirements form"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ytl25p">
+        <inputEntry id="UnaryTests_194gzc1">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0qbnnx3">
+          <text>"printAndSendHearingBundle"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0mn4jc4">
+          <text>"Print and send hearing bundle"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0s685o0">
+        <inputEntry id="UnaryTests_14u89fx">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0dgs689">
+          <text>"printAndSendDecisionCorrectedRule31"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0zum3td">
+          <text>"Print and send decision corrected under rule 31"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_17n6ods">
+        <inputEntry id="UnaryTests_0osnt0c">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1c82h8s">
+          <text>"printAndSendDecisionCorrectedRule32"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1tr31zz">
+          <text>"Print and send decision corrected under rule 32"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0zxt71a">
+        <inputEntry id="UnaryTests_1ja395o">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1hgy3fq">
+          <text>"printAndSendHoApplication"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0k7ah3k">
+          <text>"Print and send HO application"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_15yyoo1">
+        <inputEntry id="UnaryTests_0oikcjp">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1lxp89z">
+          <text>"printAndSendHoEvidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_17f1zca">
+          <text>"Print and send new HO evidence"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_14v5tqe">
+        <inputEntry id="UnaryTests_0nh4nxr">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1infqtu">
+          <text>"printAndSendAppealDecision"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1dt5rdy">
+          <text>"Print and send appeal decision and FTPA form"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0nk5dmq">
+        <inputEntry id="UnaryTests_1e6ie5p">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_053hsar">
+          <text>"printAndSendFTPADecision"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_08f5l55">
+          <text>"Print and send FTPA decision"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1lpughb">
+        <inputEntry id="UnaryTests_1wnw46k">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ekzd6h">
+          <text>"printAndSendReheardHearingRequirements"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1u6voun">
+          <text>"Print and send reheard appeal hearing requirements form"</text>
         </outputEntry>
       </rule>
     </decisionTable>
