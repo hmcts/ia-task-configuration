@@ -174,7 +174,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         Map<String, Object> caseData = caseDataSet ? new HashMap<>() : null;
         Map<String, Object> nextHearingDetails = nextHearingDetailsSet ? new HashMap<>() : null;
         if (nextHearingIdAndDateSet && nextHearingDetailsSet) {
-            nextHearingDetails.put("hearingId", "123Id");
+            nextHearingDetails.put("hearingID", "123Id");
             nextHearingDetails.put("hearingDateTime", CURRENT_DATE_TIME);
         }
         if (caseDataSet && nextHearingDetailsSet) {
