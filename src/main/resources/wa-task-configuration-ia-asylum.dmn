@@ -829,7 +829,7 @@
           <text>"nextHearingId"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1fre2dc">
-          <text>if (caseData != null and caseData.nextHearingDetails != null and caseData.nextHearingDetails.hearingId != null) then caseData.nextHearingDetails.hearingId else ""</text>
+          <text>if (caseData != null and caseData.nextHearingDetails != null and caseData.nextHearingDetails.hearingID != null) then caseData.nextHearingDetails.hearingID else ""</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_01ps4zs">
           <text>true</text>
