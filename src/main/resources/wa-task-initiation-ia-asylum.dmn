@@ -107,7 +107,7 @@
         </inputExpression>
       </input>
       <input id="InputClause_1fkhlxd" label="Relist Case Immedialtely" camunda:inputVariable="relistCaseImmediately ">
-        <inputExpression id="LiteralExpression_1h0w5in" typeRef="string">
+        <inputExpression id="LiteralExpression_1h0w5in" typeRef="boolean">
           <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.relistCaseImmediately
             != null and additionalData.Data.relistCaseImmediately = "Yes") then
             true
@@ -3120,7 +3120,7 @@
           <text>"removeRepresentation","removeLegalRepresentative"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_07mp222">
-          <text>"finalBundling"</text>
+          <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1iagxb5">
           <text></text>
@@ -5125,7 +5125,7 @@
           <text>"listTheCase"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0wk2j8w">
-          <text>"List The Case"</text>
+          <text>"List the case"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0pfhtwe">
           <text></text>

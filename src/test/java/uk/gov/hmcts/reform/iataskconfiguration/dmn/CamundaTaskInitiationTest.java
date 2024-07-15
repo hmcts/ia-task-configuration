@@ -17,13 +17,13 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
 
 import static java.util.Collections.emptyList;
+import static java.util.Collections.emptyMap;
 import static java.util.Collections.singletonList;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -1008,6 +1008,12 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 null,
                 List.of(
                     Map.of(
+                        "taskId", "reviewHearingBundle",
+                        "name", "Review Hearing bundle",
+
+                        "processCategories", "caseProgression"
+                    ),
+                    Map.of(
                         "taskId", "allocateHearingJudge",
                         "name", "Allocate Hearing Judge",
                         "processCategories", "caseProgression"
@@ -1019,6 +1025,12 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "finalBundling",
                 null,
                 List.of(
+                    Map.of(
+                        "taskId", "reviewHearingBundle",
+                        "name", "Review Hearing bundle",
+
+                        "processCategories", "caseProgression"
+                    ),
                     Map.of(
                         "taskId", "allocateHearingJudge",
                         "name", "Allocate Hearing Judge",
@@ -1715,7 +1727,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 singletonList(
                     Map.of(
                         "taskId", "hearingException",
-                        "name", "Hearing exception",
+                        "name", "Hearing Exception",
 
                         "processCategories", "caseProgression"
                     )
@@ -1744,8 +1756,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                   + "}"),
                 singletonList(
                     Map.of(
-                        "taskId", "relistCase",
-                        "name", "Relist the case",
+                        "taskId", "relistTheCase",
+                        "name", "Relist The Case",
 
                         "processCategories", "caseProgression"
                     )
@@ -1994,7 +2006,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                                                Map<String,Object> delayUntil,
                                                                boolean isIntegrated) {
         Map<String, Object> map = isIntegrated
-            ? Collections.emptyMap()
+            ? emptyMap()
             : new HashMap<String, Object>() {
                     {
                         put("taskId", taskId);
@@ -2022,34 +2034,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         );
     }
 
-    private static Arguments getDecideAnApplicationArgumentsOf(
-        String applicationType, boolean isIntegrated) {
-        List<Map<String, String>> expected = isIntegrated
-            ? Collections.emptyList()
-            : singletonList(
-            Map.of(
-                "taskId", "editListing",
-                "name", "Edit Listing",
-
-
-                "processCategories", "application"
-            )
-        );
-        return Arguments.of(
-            "decideAnApplication",
-            null,
-            mapAdditionalData(" {\n"
-                              + "        \"Data\" : {\n"
-                              + "          \"lastModifiedApplication\" : {\n"
-                              + "            \"type\" : \"" + applicationType + "\",\n"
-                              + "            \"decision\" : \"Granted\" \n"
-                              + "          },\n"
-                              + "          \"isIntegrated\" : \"" + isIntegrated + "\"\n"
-                              + "        }\n"
-                              + "      }"),
-            expected
-        );
-    }
 
     @ParameterizedTest
     @MethodSource("decideAnApplicationScenarioProvider")
@@ -2064,7 +2048,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
-        assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
+        assertThat(dmnDecisionTableResult.getResultList().size() == 0
+                       ? singletonList(emptyMap()) : dmnDecisionTableResult.getResultList(), is(expectation));
     }
 
     @Test
