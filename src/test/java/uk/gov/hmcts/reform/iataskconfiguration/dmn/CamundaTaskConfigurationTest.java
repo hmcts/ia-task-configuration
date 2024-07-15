@@ -417,7 +417,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     @CsvSource({
         "arrangeOfflinePayment", "markCaseAsPaid", "allocateHearingJudge", "uploadHearingRecording",
         "postHearingAttendeesDurationAndRecording", "editListing", "followUpSetAsideDecision",
-        "hearingException", "cmrListed", "cmrUpdated",
+        "hearingException", "cmrListed", "cmrUpdated","relistCase",
         "reviewInterpreters"
     })
     void when_taskId_then_return_Admin_role_category(String taskType) {
