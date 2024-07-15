@@ -1,4 +1,34 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["local>hmcts/.github:renovate-config"]
+  "extends": ["local>hmcts/.github:renovate-config"],
+  "labels": ["dependencies"],
+  "ignoreDeps": [
+    "ch.qos.logback:logback-core",
+    "ch.qos.logback:logback-classic",
+    "org.apache.logging.log4j:log4j-to-slf4j",
+    "org.apache.logging.log4j:log4j-api",
+    "checkstyle"
+  ],
+  "packageRules": [
+    {
+      "matchPackagePatterns": [
+        "*"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "groupName": "all non-major dependencies",
+      "groupSlug": "all-minor-patch",
+      "automerge": false
+    },
+    {
+      "matchUpdateTypes": ["major"],
+      "enabled": false
+    }
+  ],
+  "timezone": "Europe/London",
+  "schedule": [
+    "before 3am every weekday"
+  ]
 }

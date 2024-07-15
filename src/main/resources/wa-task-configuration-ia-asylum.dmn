@@ -197,7 +197,10 @@
                         "reviewRemissionApplication",
                         "assignAFTPAJudge",
                         "sendPaymentRequest",
-                        "markAsPaid"
+                        "markAsPaid",
+                        "reviewRemittedAppeal",
+                        "reviewAppealSetAsideUnderRule35",
+                        "reviewAppealSetAsideUnderRule32"
                     </text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0rvgay2">
@@ -271,27 +274,29 @@
         </inputEntry>
         <inputEntry id="UnaryTests_0uoqs4p">
           <text>
-          "processApplicationAdjourn",
-          "processApplicationExpedite",
-          "processApplicationTimeExtension",
-          "processApplicationTransfer",
-          "processApplicationWithdraw",
-          "processApplicationUpdateHearingRequirements",
-          "processApplicationUpdateAppealDetails",
-          "processApplicationReinstateAnEndedAppeal",
-          "processApplicationOther",
-          "processApplicationLink/UnlinkAppeals",
-          "processHearingRequirementsApplication",
-          "processHearingCentreApplication",
-          "processApplicationToExpedite",
-          "processApplicationToTransfer",
-          "processApplicationForTimeExtension",
-          "processApplicationToWithdraw",
-          "processAppealDetailsApplication",
-          "processReinstatementApplication",
-          "processApplicationToReviewDecision",
-          "processApplicationChangeHearingType"
-        </text>
+		        "processApplicationAdjourn",
+		        "processApplicationExpedite",
+		        "processApplicationTimeExtension",
+		        "processApplicationTransfer",
+		        "processApplicationWithdraw",
+		        "processApplicationUpdateHearingRequirements",
+		        "processApplicationUpdateAppealDetails",
+		        "processApplicationReinstateAnEndedAppeal",
+		        "processApplicationOther",
+		        "processApplicationLink/UnlinkAppeals",
+                        "processHearingRequirementsApplication",
+                        "processHearingCentreApplication",
+                        "processApplicationToExpedite",
+                        "processApplicationToTransfer",
+                        "processApplicationForTimeExtension",
+                        "processApplicationToWithdraw",
+                        "processAppealDetailsApplication",
+                        "processReinstatementApplication",
+                        "processApplicationToReviewDecision",
+                        "reviewSetAsideDecisionApplication",
+                        "followUpSetAsideDecision",
+"processApplicationChangeHearingType"
+ </text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1qi2rsb">
           <text>"workType"</text>
@@ -360,43 +365,42 @@
         </inputEntry>
         <inputEntry id="UnaryTests_10f3uas">
           <text>
-          "processApplicationAdjourn",
-          "processApplicationExpedite",
-          "processApplicationTimeExtension",
-          "processApplicationTransfer",
-          "processApplicationWithdraw",
-          "processApplicationUpdateHearingRequirements",
-          "processApplicationUpdateAppealDetails",
-          "processApplicationReinstateAnEndedAppeal",
-          "processApplicationOther",
-          "processApplicationLink/UnlinkAppeals",
-          "processApplicationChangeHearingType",
-          "reviewTheAppeal",
-          "decideOnTimeExtension",
-          "reviewRespondentEvidence",
-          "reviewAppealSkeletonArgument",
-          "reviewReasonsForAppeal",
-          "reviewClarifyingQuestionsAnswers",
-          "reviewCmaRequirements",
-          "attendCma",
-          "reviewRespondentResponse",
-          "caseSummaryHearingBundleStartDecision",
-          "reviewHearingRequirements",
-          "followUpOverdueRespondentEvidence",
-          "followUpOverdueCaseBuilding",
-          "followUpOverdueReasonsForAppeal",
-          "followUpOverdueClarifyingAnswers",
-          "followUpOverdueCmaRequirements",
-          "followUpOverdueRespondentReview",
-          "followUpOverdueHearingRequirements",
-          "followUpNonStandardDirection",
-          "followUpNoticeOfChange",
-          "reviewAdditionalEvidence",
-          "reviewAdditionalHomeOfficeEvidence",
-          "startDecisionsAndReasonsDocument",
-          "createHearingBundle",
-          "createCaseSummary"
-        </text>
+		        "processApplicationAdjourn",
+		        "processApplicationExpedite",
+		        "processApplicationTimeExtension",
+		        "processApplicationTransfer",
+		        "processApplicationWithdraw",
+		        "processApplicationUpdateHearingRequirements",
+		        "processApplicationUpdateAppealDetails",
+		        "processApplicationReinstateAnEndedAppeal",
+		        "processApplicationOther",
+		        "processApplicationLink/UnlinkAppeals",           "processApplicationChangeHearingType",
+                        "reviewTheAppeal",
+                        "decideOnTimeExtension",
+                        "reviewRespondentEvidence",
+                        "reviewAppealSkeletonArgument",
+                        "reviewReasonsForAppeal",
+                        "reviewClarifyingQuestionsAnswers",
+                        "reviewCmaRequirements",
+                        "attendCma",
+                        "reviewRespondentResponse",
+                        "caseSummaryHearingBundleStartDecision",
+                        "reviewHearingRequirements",
+                        "followUpOverdueRespondentEvidence",
+                        "followUpOverdueCaseBuilding",
+                        "followUpOverdueReasonsForAppeal",
+                        "followUpOverdueClarifyingAnswers",
+                        "followUpOverdueCmaRequirements",
+                        "followUpOverdueRespondentReview",
+                        "followUpOverdueHearingRequirements",
+                        "followUpNonStandardDirection",
+                        "followUpNoticeOfChange",
+                        "reviewAdditionalEvidence",
+                        "reviewAdditionalHomeOfficeEvidence",
+                        "startDecisionsAndReasonsDocument",
+                        "reviewRemittedAppeal",
+                        "reviewAppealSetAsideUnderRule35",
+                        "reviewAppealSetAsideUnderRule32"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_05l5bvs">
           <text>"roleCategory"</text>
@@ -406,6 +410,28 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0cde4ic">
           <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_00emsux">
+        <inputEntry id="UnaryTests_1102935">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0je9679">
+          <text>
+                        "followUpExtendedDirection",
+                        "createHearingBundle",
+                        "createCaseSummary",
+                        "reviewAddendumEvidence"
+                    </text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0z7iapq">
+          <text>"roleCategory"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0cs7vxm">
+          <text>"LEGAL_OPERATIONS"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0rnzyup">
+          <text>true</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_01muxrj">
@@ -430,7 +456,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_15ftuu0">
-          <text>"reviewHearingBundle","generateDraftDecisionAndReasons","uploadDecision","reviewAddendumHomeOfficeEvidence","reviewAddendumAppellantEvidence","reviewAddendumEvidence","reviewSpecificAccessRequestJudiciary","reviewSpecificAccessRequestLegalOps","reviewSpecificAccessRequestAdmin","reviewSpecificAccessRequestCTSC","processApplicationToReviewDecision","sendDecisionsAndReasons","prepareDecisionsAndReasons","decideAnFTPA"</text>
+          <text>"generateDraftDecisionAndReasons","uploadDecision","reviewAddendumHomeOfficeEvidence","reviewAddendumAppellantEvidence","reviewSpecificAccessRequestJudiciary","reviewSpecificAccessRequestLegalOps","reviewSpecificAccessRequestAdmin","reviewSpecificAccessRequestCTSC","processApplicationToReviewDecision","sendDecisionsAndReasons","prepareDecisionsAndReasons","decideAnFTPA","reviewSetAsideDecisionApplication"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_15nowth">
           <text>"roleCategory"</text>
@@ -489,7 +515,7 @@
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "processApplicationOther" or taskType != null and taskType = "processApplicationOther")
                         then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "processApplicationLink/UnlinkAppeals" or taskType != null and taskType = "processApplicationLink/UnlinkAppeals")
-                        then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)"
+                        then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)" 
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "processApplicationChangeHearingType" or taskType != null and taskType = "processApplicationChangeHearingType")
                         then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewTheAppeal" or taskType != null and taskType = "reviewTheAppeal")
@@ -498,13 +524,13 @@
                         then "[Change the direction due date](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/changeDirectionDueDate)"
                         else if ((taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewRespondentEvidence" or taskType != null and taskType ="reviewRespondentEvidence") and (caseData != null and caseData.journeyType = "aip"))
                         then "[Request reasons for appeal](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestReasonsForAppeal)&lt;br /&gt;[Send non-standard direction](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDirection)"
-                              else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewRespondentEvidence" or taskType != null and taskType ="reviewRespondentEvidence")
+			                  else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewRespondentEvidence" or taskType != null and taskType ="reviewRespondentEvidence")
                         then "[Request case building](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestCaseBuilding)&lt;br /&gt;[Send non-standard direction](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDirection)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewAppealSkeletonArgument" or taskType != null and taskType ="reviewAppealSkeletonArgument")
                         then "[Request respondent review](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentReview)&lt;br /&gt;[Request case edit](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestCaseEdit)"
                         else if ((taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewReasonsForAppeal" or taskType != null and taskType ="reviewReasonsForAppeal") and (caseData != null and caseData.journeyType = "aip"))
                         then "[Request respondent review](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentReview)&lt;br /&gt;[Send direction with questions](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDirectionWithQuestions)"
-                              else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewReasonsForAppeal" or taskType != null and taskType ="reviewReasonsForAppeal")
+			                  else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewReasonsForAppeal" or taskType != null and taskType ="reviewReasonsForAppeal")
                         then "[Request respondent review](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentReview)&lt;br /&gt;[Request CMA requirements](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestCmaRequirements)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewCmaRequirements" or taskType != null and taskType = "reviewCmaRequirements")
                         then "[Review CMA Requirements](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/reviewCmaRequirements)"
@@ -520,17 +546,17 @@
                         then "[Review hearing requirements](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/reviewHearingRequirements)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewAdditionalEvidence" or taskType != null and taskType ="reviewAdditionalEvidence")
                         then "[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markEvidenceAsReviewed)"
-                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewAdditionalHomeOfficeEvidence" or taskType != null and taskType ="reviewAdditionalHomeOfficeEvidence")   then "[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markEvidenceAsReviewed)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewAdditionalHomeOfficeEvidence" or taskType != null and taskType ="reviewAdditionalHomeOfficeEvidence")	 then "[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markEvidenceAsReviewed)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "arrangeOfflinePayment" or taskType != null and taskType ="arrangeOfflinePayment") then "[Mark the appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "markCaseAsPaid" or taskType != null and taskType ="markCaseAsPaid") then "[Mark the appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "allocateHearingJudge" or taskType != null and taskType ="allocateHearingJudge") then "[Allocate Hearing Judge](/role-access/allocate-role/allocate?caseId=${[CASE_REFERENCE]}&amp;roleCategory=JUDICIAL&amp;jurisdiction=IA)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "uploadHearingRecording" or taskType != null and taskType = "uploadHearingRecording") then "[Upload the hearing recording](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/uploadHearingRecording)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "postHearingAttendeesDurationAndRecording" or taskType != null and taskType = "postHearingAttendeesDurationAndRecording") then "[Post hearing – attendees, duration and recording](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/uploadHearingRecording)"
-                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "generateDraftDecisionAndReasons" or taskType != null and taskType = "generateDraftDecisionAndReasons")   then "[Generate the draft decisions and reasons document](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/generateDecisionAndReasons)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "generateDraftDecisionAndReasons" or taskType != null and taskType = "generateDraftDecisionAndReasons")	then "[Generate the draft decisions and reasons document](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/generateDecisionAndReasons)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewAddendumEvidence" or taskType != null and taskType = "reviewAddendumEvidence") then "[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAddendumEvidenceAsReviewed)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "editListing" or taskType != null and taskType = "editListing") then "[Edit case listing](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/editCaseListing)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "prepareDecisionsAndReasons" or taskType != null and taskType = "prepareDecisionsAndReasons") then "[Prepare decisions and reasons](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/generateDecisionAndReasons)"
-                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "decideAnFTPA" or taskType != null and taskType = "decideAnFTPA") then "[Leadership judge FTPA decision](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/leadershipJudgeFtpaDecision)&lt;br /&gt;[Resident judge FTPA decision](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/residentJudgeFtpaDecision)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "decideAnFTPA" or taskType != null and taskType = "decideAnFTPA") then "[Decide FTPA application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideFtpaApplication)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "sendDecisionsAndReasons" or taskType != null and taskType = "sendDecisionsAndReasons") then "[Complete decision and reasons](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDecisionAndReasons)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "processApplicationToReviewDecision" or taskType != null and taskType = "processApplicationToReviewDecision") then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewRemissionApplication" or taskType != null and taskType = "reviewRemissionApplication") then "[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/recordRemissionDecision/recordRemissionDecisionremissionDecision)"
@@ -539,7 +565,7 @@
                         else if ((taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "listTheCase" or taskType != null and taskType = "listTheCase") and (caseData != null and caseData.isIntegrated = "Yes")) then "[List the case](cases/case-details/${[CASE_REFERENCE]}/hearings)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "sendPaymentRequest" or taskType != null and taskType = "sendPaymentRequest") then "[Mark payment request sent](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markPaymentRequestSent)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "markAsPaid" or taskType != null and taskType = "markAsPaid") then "[Mark appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid)"
-                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "hearingException" or taskType != null and taskType = "hearingException") then "[Go to case](cases/case-details/${[CASE_REFERENCE]}/hearings)"
+ else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "hearingException" or taskType != null and taskType = "hearingException") then "[Go to case](cases/case-details/${[CASE_REFERENCE]}/hearings)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "cmrListed" or taskType != null and taskType = "cmrListed") then "[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "cmrUpdated" or taskType != null and taskType = "cmrUpdated") then "[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "relistCase" or taskType != null and taskType = "relistCase") then "[Relist the hearing](cases/case-details/${[CASE_REFERENCE]}/hearings)"
@@ -600,7 +626,10 @@
 "processApplicationUpdateAppealDetails",
 "processApplicationReinstateAnEndedAppeal",
 "processApplicationOther",
-"processApplicationLink/UnlinkAppeals"</text>
+"processApplicationLink/UnlinkAppeals",
+"reviewRemittedAppeal",
+"reviewAppealSetAsideUnderRule35",
+"reviewAppealSetAsideUnderRule32"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_18mybq6">
           <text>"dueDateIntervalDays"</text>
@@ -646,6 +675,7 @@
 "reviewRemissionApplication",
 "assignAFTPAJudge",
 "listTheCase",
+"reviewSetAsideDecisionApplication",
 "cmrListed",
 "cmrUpdated"</text>
         </inputEntry>
@@ -664,8 +694,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1cwkxoe">
-          <text>"reviewHearingBundle",
-"sendDecisionsAndReasons",
+          <text>"sendDecisionsAndReasons",
 "prepareDecisionsAndReasons",
 "sendPaymentRequest",
 "uploadHearingRecording",
@@ -818,37 +847,37 @@
           <text>false</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1xcch78">
-        <inputEntry id="UnaryTests_15rv6rn">
-          <text>-</text>
+      <rule id="DecisionRule_0vtarsw">
+        <inputEntry id="UnaryTests_1aroypd">
+          <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_0pfvrwc">
-          <text>-</text>
+        <inputEntry id="UnaryTests_190yqaw">
+          <text></text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_0lgcacs">
+        <outputEntry id="LiteralExpression_0y4vw5v">
           <text>"nextHearingId"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_1fre2dc">
+        <outputEntry id="LiteralExpression_1u6jl9v">
           <text>if (caseData != null and caseData.nextHearingDetails != null and caseData.nextHearingDetails.hearingID != null) then caseData.nextHearingDetails.hearingID else ""</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_01ps4zs">
+        <outputEntry id="LiteralExpression_0861nag">
           <text>true</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_09qiou2">
-        <inputEntry id="UnaryTests_1qwiz5d">
-          <text>-</text>
+      <rule id="DecisionRule_0tqahkx">
+        <inputEntry id="UnaryTests_0sml83s">
+          <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_0ncbvy7">
-          <text>-</text>
+        <inputEntry id="UnaryTests_0tn3ahk">
+          <text></text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_1fzqghr">
+        <outputEntry id="LiteralExpression_03m6m1g">
           <text>"nextHearingDate"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_0hirovk">
+        <outputEntry id="LiteralExpression_0tttra8">
           <text>if (caseData != null and caseData.nextHearingDetails != null and caseData.nextHearingDetails.hearingDateTime != null) then caseData.nextHearingDetails.hearingDateTime else ""</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_0g5mejr">
+        <outputEntry id="LiteralExpression_02y8ncm">
           <text>true</text>
         </outputEntry>
       </rule>

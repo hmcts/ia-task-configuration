@@ -231,16 +231,6 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "reviewHearingBundle",
-                List.of(
-                    taskSupervisor,
-                    tribunalCaseWorkerPriorityTwo,
-                    seniorCaseWorkerPriorityTwo,
-                    hearingJudgePriorityOne,
-                    judgePriorityOne
-                )
-            ),
-            Arguments.of(
                 "editListing",
                 List.of(
                     taskSupervisor,
@@ -266,7 +256,22 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "hearingException",
+                "reviewSetAsideDecisionApplication",
+                List.of(
+                    taskSupervisor,
+                    hearingJudgePriorityOne,
+                    judgePriorityOne
+                )
+            ),
+            Arguments.of(
+                "followUpSetAsideDecision",
+                List.of(
+                    taskSupervisor,
+                    hearingCentreAdminPriorityOne
+                )
+            ),
+            Arguments.of(
+            "hearingException",
                 List.of(
                     taskSupervisor,
                     hearingCentreAdminPriorityOne,
@@ -411,7 +416,8 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         "followUpNoticeOfChange", "followUpOverdueCmaRequirements", "followUpNonStandardDirection",
          "attendCma", "followUpNoticeOfChange", "followUpOverdueCmaRequirements",
         "followUpNonStandardDirection",
-         "reviewAdditionalEvidence", "reviewAdditionalHomeOfficeEvidence"
+         "reviewAdditionalEvidence", "reviewAdditionalHomeOfficeEvidence", "reviewRemittedAppeal",
+        "reviewAppealSetAsideUnderRule35", "reviewAppealSetAsideUnderRule32"
     })
     void given_taskType_when_evaluate_dmn_then_it_returns_first_second_and_third_rules(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();

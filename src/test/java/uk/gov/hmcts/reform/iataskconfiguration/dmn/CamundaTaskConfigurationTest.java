@@ -239,8 +239,11 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("reviewClarifyingQuestionsAnswers", routineWork),
             Arguments.of("reviewRemissionApplication", routineWork),
             Arguments.of("assignAFTPAJudge", routineWork),
+            Arguments.of("reviewAppealSetAsideUnderRule35", routineWork),
+            Arguments.of("reviewAppealSetAsideUnderRule32", routineWork),
             Arguments.of("sendPaymentRequest", routineWork),
             Arguments.of("markAsPaid", routineWork),
+            Arguments.of("reviewRemittedAppeal", routineWork),
             Arguments.of("reviewAdditionalEvidence", decisionMakingWork),
             Arguments.of("reviewTheAppeal", decisionMakingWork),
             Arguments.of("followUpOverdueRespondentEvidence", decisionMakingWork),
@@ -260,7 +263,6 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("reviewAddendumHomeOfficeEvidence", decisionMakingWork),
             Arguments.of("decideOnTimeExtension", decisionMakingWork),
             Arguments.of("sendDecisionsAndReasons", decisionMakingWork),
-            Arguments.of("reviewHearingBundle", hearingWork),
             Arguments.of("generateDraftDecisionAndReasons", hearingWork),
             Arguments.of("uploadDecision", hearingWork),
             Arguments.of("uploadHearingRecording", hearingWork),
@@ -298,8 +300,11 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("processAppealDetailsApplication", applications),
             Arguments.of("processReinstatementApplication", applications),
             Arguments.of("processApplicationToReviewDecision", applications),
-            Arguments.of("processApplicationChangeHearingType", applications),
-            Arguments.of("decideAnFTPA", upperTribunal)
+            Arguments.of("reviewSetAsideDecisionApplication", applications),
+            Arguments.of("followUpSetAsideDecision", applications),
+            Arguments.of("decideAnFTPA", upperTribunal),
+            Arguments.of("processApplicationChangeHearingType", applications)
+
         );
     }
 
@@ -377,10 +382,11 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
     @ParameterizedTest
     @CsvSource({
-        "reviewHearingBundle", "generateDraftDecisionAndReasons", "uploadDecision", "reviewAddendumHomeOfficeEvidence",
-        "reviewAddendumAppellantEvidence", "reviewAddendumEvidence", "reviewSpecificAccessRequestJudiciary",
+        "generateDraftDecisionAndReasons", "uploadDecision", "reviewAddendumHomeOfficeEvidence",
+        "reviewAddendumAppellantEvidence", "reviewSpecificAccessRequestJudiciary",
         "reviewSpecificAccessRequestLegalOps", "reviewSpecificAccessRequestAdmin","reviewSpecificAccessRequestCTSC",
-        "processApplicationToReviewDecision", "sendDecisionsAndReasons", "prepareDecisionsAndReasons", "decideAnFTPA"
+        "processApplicationToReviewDecision", "sendDecisionsAndReasons", "prepareDecisionsAndReasons", "decideAnFTPA",
+        "reviewSetAsideDecisionApplication"
     })
     void when_taskId_then_return_judicial_role_category(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
@@ -410,7 +416,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     @ParameterizedTest
     @CsvSource({
         "arrangeOfflinePayment", "markCaseAsPaid", "allocateHearingJudge", "uploadHearingRecording",
-        "postHearingAttendeesDurationAndRecording", "editListing", "hearingException", "cmrListed", "cmrUpdated",
+        "postHearingAttendeesDurationAndRecording", "editListing", "followUpSetAsideDecision",
+        "hearingException", "cmrListed", "cmrUpdated",
         "reviewInterpreters"
     })
     void when_taskId_then_return_Admin_role_category(String taskType) {
@@ -469,7 +476,9 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "reviewHearingRequirements", "followUpOverdueRespondentEvidence",
         "followUpOverdueCaseBuilding", "followUpOverdueReasonsForAppeal", "followUpOverdueClarifyingAnswers",
         "followUpOverdueCmaRequirements", "followUpOverdueRespondentReview", "followUpOverdueHearingRequirements",
-        "followUpNonStandardDirection", "followUpNoticeOfChange", "reviewAdditionalEvidence"
+        "followUpNonStandardDirection", "followUpNoticeOfChange", "reviewAdditionalEvidence",
+        "reviewAdditionalHomeOfficeEvidence", "reviewRemittedAppeal", "reviewAppealSetAsideUnderRule35",
+        "reviewAppealSetAsideUnderRule32"
     })
     void when_taskId_then_return_legal_operations_role_category(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
@@ -488,6 +497,30 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             "name", "roleCategory",
             "value", "LEGAL_OPERATIONS",
             "canReconfigure", false
+        ), workTypeResultList.get(0));
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+        "followUpExtendedDirection", "createHearingBundle", "createCaseSummary", "reviewAddendumEvidence"
+    })
+    void when_taskId_then_return_legal_operations_role_category_can_reconfigure(String taskType) {
+        VariableMap inputVariables = new VariableMapImpl();
+
+        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        List<Map<String, Object>> workTypeResultList = dmnDecisionTableResult.getResultList().stream()
+            .filter((r) -> r.containsValue("roleCategory"))
+            .toList();
+
+        assertEquals(1, workTypeResultList.size());
+
+        assertEquals(Map.of(
+            "name", "roleCategory",
+            "value", "LEGAL_OPERATIONS",
+            "canReconfigure", true
         ), workTypeResultList.get(0));
     }
 
@@ -1186,6 +1219,9 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("processApplicationReinstateAnEndedAppeal", fiveDays),
             Arguments.of("processApplicationOther", fiveDays),
             Arguments.of("processApplicationLink/UnlinkAppeals", fiveDays),
+            Arguments.of("reviewRemittedAppeal", fiveDays),
+            Arguments.of("reviewAppealSetAsideUnderRule35", fiveDays),
+            Arguments.of("reviewAppealSetAsideUnderRule32", fiveDays),
             Arguments.of("allocateHearingJudge", threeDays),
             Arguments.of("processApplicationToReviewDecision", twoDays),
             Arguments.of("editListing", twoDays),
@@ -1216,7 +1252,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("reviewRemissionApplication", twoDays),
             Arguments.of("assignAFTPAJudge", twoDays),
             Arguments.of("listTheCase", twoDays),
-            Arguments.of("reviewHearingBundle", zeroDays),
+            Arguments.of("reviewSetAsideDecisionApplication", twoDays),
             Arguments.of("sendDecisionsAndReasons", zeroDays),
             Arguments.of("prepareDecisionsAndReasons", zeroDays),
             Arguments.of("sendPaymentRequest", zeroDays),
