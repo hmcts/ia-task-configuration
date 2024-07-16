@@ -1756,7 +1756,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                   + "}"),
                 singletonList(
                     Map.of(
-                        "taskId", "relistTheCase",
+                        "taskId", "relistCase",
                         "name", "Relist The Case",
 
                         "processCategories", "caseProgression"

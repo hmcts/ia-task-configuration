@@ -292,7 +292,7 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
             Map.of("taskTypeId",
                 "relistCase",
                 "taskTypeName",
-                "Relist the case"
+                "Relist The Case"
             ),
             Map.of("taskTypeId",
                 "processApplicationChangeHearingType",
