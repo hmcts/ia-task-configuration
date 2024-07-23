@@ -38,6 +38,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     private static final String DEFAULT_CALENDAR = "https://www.gov.uk/bank-holidays/england-and-wales.json";
     private static final String EXTRA_TEST_CALENDAR = "https://raw.githubusercontent.com/hmcts/"
         + "ia-task-configuration/master/src/test/resources/extra-non-working-day-calendar.json";
+    private static final String CURRENT_DATE_TIME = LocalDateTime.now().toString();
 
     @BeforeAll
     public static void initialization() {
@@ -72,7 +73,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(32));
+        assertThat(logic.getRules().size(), is(34));
     }
 
     @SuppressWarnings("checkstyle:indentation")
@@ -161,6 +162,46 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         }
     }
 
+    @ParameterizedTest
+    @CsvSource(value = {
+        "false, false, false, false",
+        "true, true, false, false",
+        "true, true, true, true"
+    })
+    void nextHearingId_and_nextHearingDate_should_be_set_correctly(
+        boolean caseDataSet, boolean nextHearingDetailsSet, boolean nextHearingIdAndDateSet, boolean expected) {
+        VariableMap inputVariables = new VariableMapImpl();
+        Map<String, Object> caseData = caseDataSet ? new HashMap<>() : null;
+        Map<String, Object> nextHearingDetails = nextHearingDetailsSet ? new HashMap<>() : null;
+        if (nextHearingIdAndDateSet && nextHearingDetailsSet) {
+            nextHearingDetails.put("hearingID", "123Id");
+            nextHearingDetails.put("hearingDateTime", CURRENT_DATE_TIME);
+        }
+        if (caseDataSet && nextHearingDetailsSet) {
+            caseData.put("nextHearingDetails", nextHearingDetails);
+        }
+        if (caseDataSet) {
+            inputVariables.putValue("caseData", caseData);
+        }
+
+        String nextHearingDate = expected ? CURRENT_DATE_TIME : "";
+        String nextHearingId = expected ? "123Id" : "";
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        assertTrue(dmnDecisionTableResult.getResultList().contains(Map.of(
+            "name", "nextHearingId",
+            "value", nextHearingId,
+            "canReconfigure", true
+        )));
+
+        assertTrue(dmnDecisionTableResult.getResultList().contains(Map.of(
+            "name", "nextHearingDate",
+            "value", nextHearingDate,
+            "canReconfigure", true
+        )));
+    }
+
     public static Stream<Arguments> workTypeScenarioProvider() {
         List<Map<String, Object>> routineWork = List.of(Map.of(
             "name", "workType",
@@ -235,6 +276,11 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("createHearingBundle", hearingWork),
             Arguments.of("createCaseSummary", hearingWork),
             Arguments.of("listTheCase", hearingWork),
+            Arguments.of("hearingException", hearingWork),
+            Arguments.of("cmrListed", hearingWork),
+            Arguments.of("cmrUpdated", hearingWork),
+            Arguments.of("relistCase", hearingWork),
+            Arguments.of("reviewInterpreters", hearingWork),
             Arguments.of("processApplicationAdjourn", applications),
             Arguments.of("processApplicationExpedite", applications),
             Arguments.of("processApplicationTimeExtension", applications),
@@ -256,7 +302,9 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("processApplicationToReviewDecision", applications),
             Arguments.of("reviewSetAsideDecisionApplication", applications),
             Arguments.of("followUpSetAsideDecision", applications),
-            Arguments.of("decideAnFTPA", upperTribunal)
+            Arguments.of("decideAnFTPA", upperTribunal),
+            Arguments.of("processApplicationChangeHearingType", applications)
+
         );
     }
 
@@ -368,7 +416,9 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     @ParameterizedTest
     @CsvSource({
         "arrangeOfflinePayment", "markCaseAsPaid", "allocateHearingJudge", "uploadHearingRecording",
-        "postHearingAttendeesDurationAndRecording", "editListing", "followUpSetAsideDecision"
+        "postHearingAttendeesDurationAndRecording", "editListing", "followUpSetAsideDecision",
+        "hearingException", "cmrListed", "cmrUpdated","relistCase",
+        "reviewInterpreters"
     })
     void when_taskId_then_return_Admin_role_category(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
@@ -419,8 +469,9 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "processApplicationAdjourn", "processApplicationExpedite", "processApplicationTimeExtension",
         "processApplicationTransfer", "processApplicationWithdraw", "processApplicationUpdateHearingRequirements",
         "processApplicationUpdateAppealDetails", "processApplicationReinstateAnEndedAppeal", "processApplicationOther",
-        "processApplicationLink/UnlinkAppeals", "reviewTheAppeal", "decideOnTimeExtension", "reviewRespondentEvidence",
-        "reviewAppealSkeletonArgument", "reviewReasonsForAppeal", "reviewClarifyingQuestionsAnswers",
+        "processApplicationLink/UnlinkAppeals", "processApplicationChangeHearingType", "reviewTheAppeal",
+        "decideOnTimeExtension", "reviewRespondentEvidence", "reviewAppealSkeletonArgument", "reviewReasonsForAppeal",
+        "reviewClarifyingQuestionsAnswers", "reviewAdditionalHomeOfficeEvidence",
         "reviewCmaRequirements", "attendCma", "reviewRespondentResponse", "caseSummaryHearingBundleStartDecision",
         "reviewHearingRequirements", "followUpOverdueRespondentEvidence",
         "followUpOverdueCaseBuilding", "followUpOverdueReasonsForAppeal", "followUpOverdueClarifyingAnswers",
@@ -825,6 +876,24 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 .expectedDueDateIntervalDays("5")
                 .build();
 
+        Scenario processApplicationChangeHearingTypeScenario =
+            Scenario.builder()
+                .caseData(emptyMap())
+                .taskAttributes(Map.of("taskType", "processApplicationChangeHearingType"))
+                .expectedCaseNameValue(null)
+                .expectedAppealTypeValue("")
+                .expectedRegionValue("1")
+                .expectedLocationValue("227101")
+                .expectedLocationNameValue("Newport")
+                .expectedCaseManagementCategoryValue("")
+                .expectedWorkType("applications")
+                .expectedReconfigureValue("true")
+                .expectedRoleCategory("LEGAL_OPERATIONS")
+                .expectedDescriptionValue("[Decide an application]"
+                                          + "(/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)")
+                .expectedDueDateOrigin(dateOrigin)
+                .build();
+
         return Stream.of(
             givenCaseDataIsMissedThenDefaultToTaylorHouseScenario,
             givenCaseDataIsPresentThenReturnNameAndValueScenario,
@@ -840,7 +909,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             processApplicationUpdateAppealDetailsScenario,
             processApplicationReinstateAnEndedAppealScenario,
             processApplicationOtherScenario,
-            processApplicationLinkUnlinkAppealsScenario
+            processApplicationLinkUnlinkAppealsScenario,
+            processApplicationChangeHearingTypeScenario
         );
     }
 
@@ -861,6 +931,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         String expectedReconfigureValue;
         String expectedDueDateOrigin;
         String expectedDueDateIntervalDays;
+        String expectedHearingId;
+        String expectedHearingDate;
     }
 
     private List<Map<String, Object>> getExpectedValues(Scenario scenario) {
@@ -904,6 +976,18 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         getExpectedValue(rules, "priorityDateOriginRef", "dueDate");
         getExpectedValue(rules, "dueDateNonWorkingDaysOfWeek", "SATURDAY,SUNDAY");
         getExpectedValue(rules, "calculatedDates", "nextHearingDate,dueDate,priorityDate");
+        getExpectedValueWithReconfigure(
+            rules,
+            "nextHearingId",
+            "",
+            "true"
+        );
+        getExpectedValueWithReconfigure(
+            rules,
+            "nextHearingDate",
+            "",
+            "true"
+        );
         return rules;
     }
 
@@ -940,103 +1024,113 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     @ParameterizedTest
     @CsvSource({
         "processApplicationAdjourn,"
-            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),",
+            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),,",
         "processApplicationExpedite,"
-            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),",
+            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),,",
         "processApplicationTimeExtension,"
-            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),",
+            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),,",
         "processApplicationTransfer,"
-            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),",
+            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),,",
         "processApplicationWithdraw,"
-            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),",
+            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),,",
         "processApplicationUpdateHearingRequirements,"
-            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),",
+            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),,",
         "processApplicationUpdateAppealDetails,"
-            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),",
+            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),,",
         "processApplicationReinstateAnEndedAppeal,"
-            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),",
+            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),,",
         "processApplicationOther,"
-            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),",
+            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),,",
         "processApplicationLink/UnlinkAppeals,"
-            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),",
+            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),,",
+        "processApplicationChangeHearingType,"
+            + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),,",
         "reviewTheAppeal,[Request respondent evidence]"
-            + "(/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentEvidence),",
+            + "(/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentEvidence),,",
         "decideOnTimeExtension,"
-            + "[Change the direction due date](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/changeDirectionDueDate),",
+            + "[Change the direction due date](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/changeDirectionDueDate),,",
         "reviewRespondentEvidence,"
             + "[Request reasons for appeal](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestReasonsForAppeal)<br />"
             + "[Send non-standard direction](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDirection),"
-            + "aip",
+            + "aip,",
         "reviewRespondentEvidence,"
             + "[Request case building](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestCaseBuilding)<br />"
-            + "[Send non-standard direction](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDirection),",
+            + "[Send non-standard direction](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDirection),,",
         "reviewAppealSkeletonArgument,"
             + "[Request respondent review](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentReview)<br />"
-            + "[Request case edit](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestCaseEdit),",
+            + "[Request case edit](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestCaseEdit),,",
         "reviewReasonsForAppeal,"
             + "[Request respondent review](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentReview)<br />"
-            + "[Send direction with questions](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDirectionWithQuestions),"
-            + "aip",
+            + "[Send direction with questions]"
+            + "(/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDirectionWithQuestions),"
+            + "aip,",
         "reviewReasonsForAppeal,"
             + "[Request respondent review](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentReview)<br />"
-            + "[Request CMA requirements](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestCmaRequirements),",
+            + "[Request CMA requirements](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestCmaRequirements),,",
         "reviewCmaRequirements,"
-            + "[Review CMA Requirements](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/reviewCmaRequirements),",
+            + "[Review CMA Requirements](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/reviewCmaRequirements),,",
         "attendCma,"
-            + "[Update case details after CMA](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/updateDetailsAfterCma),",
+            + "[Update case details after CMA](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/updateDetailsAfterCma),,",
         "reviewRespondentResponse,"
             + "[Review Home Office response](/case/IA/Asylum/${[CASE_REFERENCE]}/"
             + "trigger/requestResponseReview)<br />[Amend appeal response](/case/IA/Asylum/${[CASE_REFERENCE]}/"
-            + "trigger/requestResponseAmend),",
+            + "trigger/requestResponseAmend),,",
         "createHearingBundle,"
             + "[Generate the hearing bundle](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger"
             + "/generateHearingBundle)<br />"
-            + "[Customise the hearing bundle](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/customiseHearingBundle),",
+            + "[Customise the hearing bundle](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/customiseHearingBundle),,",
         "startDecisionsAndReasonsDocument,"
             + "[Start decision and reasons document](/case/IA/Asylum/${[CASE_REFERENCE]}"
-            + "/trigger/decisionAndReasonsStarted/decisionAndReasonsStartedcaseIntroduction),",
+            + "/trigger/decisionAndReasonsStarted/decisionAndReasonsStartedcaseIntroduction),,",
         "reviewHearingRequirements,"
             + "[Review hearing requirements](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger"
-            + "/reviewHearingRequirements),",
+            + "/reviewHearingRequirements),,",
         "reviewAdditionalEvidence,[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markEvidence"
-            + "AsReviewed),",
+            + "AsReviewed),,",
         "reviewAdditionalHomeOfficeEvidence,[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markEvidence"
-            + "AsReviewed),",
-        "arrangeOfflinePayment,[Mark the appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid),",
-        "markCaseAsPaid,[Mark the appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid),",
+            + "AsReviewed),,",
+        "arrangeOfflinePayment,[Mark the appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid),,",
+        "markCaseAsPaid,[Mark the appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid),,",
         "allocateHearingJudge," + "[Allocate Hearing Judge](/role-access/allocate-role/allocate?caseId="
-            + "${[CASE_REFERENCE]}&roleCategory=JUDICIAL&jurisdiction=IA),",
+            + "${[CASE_REFERENCE]}&roleCategory=JUDICIAL&jurisdiction=IA),,",
         "uploadHearingRecording,[Upload the hearing recording](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/upload"
-            + "HearingRecording),",
+            + "HearingRecording),,",
         "generateDraftDecisionAndReasons,[Generate the draft decisions and reasons document](/case/IA/Asylum"
-            + "/${[CASE_REFERENCE]}/trigger/generateDecisionAndReasons),",
+            + "/${[CASE_REFERENCE]}/trigger/generateDecisionAndReasons),,",
         "reviewAddendumEvidence,[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
-            + "markAddendumEvidenceAsReviewed),",
-        "editListing,[Edit case listing](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/editCaseListing),",
-        "decideAnFTPA,[Decide FTPA application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideFtpaApplication),",
+            + "markAddendumEvidenceAsReviewed),,",
+        "editListing,[Edit case listing](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/editCaseListing),,",
+        "decideAnFTPA,[Decide FTPA application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideFtpaApplication),,",
         "prepareDecisionsAndReasons,[Prepare decisions and reasons](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
-            + "generateDecisionAndReasons),",
+            + "generateDecisionAndReasons),,",
         "sendDecisionsAndReasons,[Complete decision and reasons](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
-            + "sendDecisionAndReasons),",
+            + "sendDecisionAndReasons),,",
         "processApplicationToReviewDecision,[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
-            + "decideAnApplication),",
+            + "decideAnApplication),,",
         "reviewRemissionApplication,[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/"
-            + "recordRemissionDecision/recordRemissionDecisionremissionDecision),",
-        "assignAFTPAJudge,[Record allocated Judge](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/recordAllocatedJudge),",
-        "listTheCase,[List the case](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/listCase),",
+            + "recordRemissionDecision/recordRemissionDecisionremissionDecision),,",
+        "assignAFTPAJudge,[Record allocated Judge](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/recordAllocatedJudge),,",
+        "listTheCase,[List the case](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/listCase),,No",
+        "listTheCase,[List the case](cases/case-details/${[CASE_REFERENCE]}/hearings),,Yes",
         "sendPaymentRequest,[Mark payment request sent](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
-            + "markPaymentRequestSent),",
-        "markAsPaid,[Mark appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid),",
+            + "markPaymentRequestSent),,",
+        "markAsPaid,[Mark appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid),,",
+        "hearingException,[Go to case](cases/case-details/${[CASE_REFERENCE]}/hearings),,",
+        "cmrListed,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,",
+        "cmrUpdated,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,",
+        "relistCase,[Relist the hearing](cases/case-details/${[CASE_REFERENCE]}/hearings),,",
+        "reviewInterpreters,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,",
         "reviewSpecificAccessRequestJudiciary,[Review Access Request](/role-access/"
-            + "${[taskId]}/assignment/${[roleAssignmentId]}/specific-access),",
+            + "${[taskId]}/assignment/${[roleAssignmentId]}/specific-access),,",
         "reviewSpecificAccessRequestLegalOps,[Review Access Request](/role-access/"
-            + "${[taskId]}/assignment/${[roleAssignmentId]}/specific-access),",
+            + "${[taskId]}/assignment/${[roleAssignmentId]}/specific-access),,",
         "reviewSpecificAccessRequestAdmin,[Review Access Request](/role-access/"
-            + "${[taskId]}/assignment/${[roleAssignmentId]}/specific-access),",
+            + "${[taskId]}/assignment/${[roleAssignmentId]}/specific-access),,",
         "reviewSpecificAccessRequestCTSC,[Review Access Request](/role-access/"
-            + "${[taskId]}/assignment/${[roleAssignmentId]}/specific-access),"
+            + "${[taskId]}/assignment/${[roleAssignmentId]}/specific-access),,"
     })
-    void should_return_a_200_description_property(String taskType, String expectedDescription, String journeyType) {
+    void should_return_a_200_description_property(String taskType, String expectedDescription, String journeyType,
+                                                  String isIntegrated) {
         VariableMap inputVariables = new VariableMapImpl();
 
         String roleAssignmentId = UUID.randomUUID().toString();
@@ -1047,6 +1141,9 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         inputVariables.putValue("taskAttributes", taskAttributes);
         if (journeyType != null) {
             inputVariables.putValue("caseData", Map.of("journeyType", journeyType));
+        }
+        if (isIntegrated != null) {
+            inputVariables.putValue("caseData", Map.of("isIntegrated", isIntegrated));
         }
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
@@ -1159,7 +1256,9 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("sendPaymentRequest", zeroDays),
             Arguments.of("uploadHearingRecording", zeroDays),
             Arguments.of("decideAnFTPA", zeroDays),
-            Arguments.of("markAsPaid", fourteenDays)
+            Arguments.of("markAsPaid", fourteenDays),
+            Arguments.of("cmrListed", twoDays),
+            Arguments.of("cmrUpdated", twoDays)
         );
     }
 

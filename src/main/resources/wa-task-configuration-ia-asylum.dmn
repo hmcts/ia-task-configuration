@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.14.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.12.0">
   <decision id="wa-task-configuration-ia-asylum" name="Task configuration DMN">
     <decisionTable id="DecisionTable_14cx079" hitPolicy="COLLECT">
       <input id="InputClause_1gxyo7f" label="CCD Case Data" camunda:inputVariable="caseData">
@@ -256,7 +256,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1ps3x4j">
-          <text>"generateDraftDecisionAndReasons","uploadDecision","uploadHearingRecording","postHearingAttendeesDurationAndRecording","editListing","followUpOverdueHearingRequirements","reviewHearingRequirements","allocateHearingJudge","prepareDecisionsAndReasons","startDecisionsAndReasonsDocument","createHearingBundle","createCaseSummary","listTheCase"</text>
+          <text>"reviewHearingBundle","generateDraftDecisionAndReasons","uploadDecision","uploadHearingRecording","postHearingAttendeesDurationAndRecording","editListing","followUpOverdueHearingRequirements","reviewHearingRequirements","allocateHearingJudge","prepareDecisionsAndReasons","startDecisionsAndReasonsDocument","createHearingBundle","createCaseSummary","listTheCase","hearingException","cmrListed","cmrUpdated","relistCase","reviewInterpreters"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0c3eia6">
           <text>"workType"</text>
@@ -294,8 +294,9 @@
                         "processReinstatementApplication",
                         "processApplicationToReviewDecision",
                         "reviewSetAsideDecisionApplication",
-                        "followUpSetAsideDecision"
-                    </text>
+                        "followUpSetAsideDecision",
+"processApplicationChangeHearingType"
+ </text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1qi2rsb">
           <text>"workType"</text>
@@ -373,7 +374,7 @@
 		        "processApplicationUpdateAppealDetails",
 		        "processApplicationReinstateAnEndedAppeal",
 		        "processApplicationOther",
-		        "processApplicationLink/UnlinkAppeals",
+		        "processApplicationLink/UnlinkAppeals",           "processApplicationChangeHearingType",
                         "reviewTheAppeal",
                         "decideOnTimeExtension",
                         "reviewRespondentEvidence",
@@ -438,7 +439,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1glizm3">
-          <text>"arrangeOfflinePayment","markCaseAsPaid","allocateHearingJudge","uploadHearingRecording","postHearingAttendeesDurationAndRecording","editListing","followUpSetAsideDecision"</text>
+          <text>"arrangeOfflinePayment","markCaseAsPaid","allocateHearingJudge","uploadHearingRecording","postHearingAttendeesDurationAndRecording","editListing","followUpSetAsideDecision","hearingException","cmrListed","cmrUpdated","relistCase","reviewInterpreters"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1131kat">
           <text>"roleCategory"</text>
@@ -514,6 +515,8 @@
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "processApplicationOther" or taskType != null and taskType = "processApplicationOther")
                         then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "processApplicationLink/UnlinkAppeals" or taskType != null and taskType = "processApplicationLink/UnlinkAppeals")
+                        then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)" 
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "processApplicationChangeHearingType" or taskType != null and taskType = "processApplicationChangeHearingType")
                         then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewTheAppeal" or taskType != null and taskType = "reviewTheAppeal")
                         then "[Request respondent evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentEvidence)"
@@ -558,9 +561,15 @@
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "processApplicationToReviewDecision" or taskType != null and taskType = "processApplicationToReviewDecision") then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewRemissionApplication" or taskType != null and taskType = "reviewRemissionApplication") then "[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/recordRemissionDecision/recordRemissionDecisionremissionDecision)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "assignAFTPAJudge" or taskType != null and taskType = "assignAFTPAJudge") then "[Record allocated Judge](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/recordAllocatedJudge)"
-                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "listTheCase" or taskType != null and taskType = "listTheCase") then "[List the case](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/listCase)"
+                        else if ((taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "listTheCase" or taskType != null and taskType = "listTheCase") and (caseData != null and caseData.isIntegrated = null or caseData != null and caseData.isIntegrated = "No")) then "[List the case](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/listCase)"
+                        else if ((taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "listTheCase" or taskType != null and taskType = "listTheCase") and (caseData != null and caseData.isIntegrated = "Yes")) then "[List the case](cases/case-details/${[CASE_REFERENCE]}/hearings)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "sendPaymentRequest" or taskType != null and taskType = "sendPaymentRequest") then "[Mark payment request sent](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markPaymentRequestSent)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "markAsPaid" or taskType != null and taskType = "markAsPaid") then "[Mark appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid)"
+ else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "hearingException" or taskType != null and taskType = "hearingException") then "[Go to case](cases/case-details/${[CASE_REFERENCE]}/hearings)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "cmrListed" or taskType != null and taskType = "cmrListed") then "[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "cmrUpdated" or taskType != null and taskType = "cmrUpdated") then "[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "relistCase" or taskType != null and taskType = "relistCase") then "[Relist the hearing](cases/case-details/${[CASE_REFERENCE]}/hearings)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewInterpreters" or taskType != null and taskType = "reviewInterpreters") then "[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings)"
                         else if (taskAttributes != null and taskAttributes.taskId != null and taskAttributes.roleAssignmentId != null) then "[Review Access Request](/role-access/" + taskAttributes.taskId + "/assignment/" + taskAttributes.roleAssignmentId + "/specific-access)"
                         else ""
           </text>
@@ -666,7 +675,9 @@
 "reviewRemissionApplication",
 "assignAFTPAJudge",
 "listTheCase",
-"reviewSetAsideDecisionApplication"</text>
+"reviewSetAsideDecisionApplication",
+"cmrListed",
+"cmrUpdated"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1kbin0j">
           <text>"dueDateIntervalDays"</text>
@@ -834,6 +845,40 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_102zbyh">
           <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0vtarsw">
+        <inputEntry id="UnaryTests_1aroypd">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_190yqaw">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0y4vw5v">
+          <text>"nextHearingId"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1u6jl9v">
+          <text>if (caseData != null and caseData.nextHearingDetails != null and caseData.nextHearingDetails.hearingID != null) then caseData.nextHearingDetails.hearingID else ""</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0861nag">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0tqahkx">
+        <inputEntry id="UnaryTests_0sml83s">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tn3ahk">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_03m6m1g">
+          <text>"nextHearingDate"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0tttra8">
+          <text>if (caseData != null and caseData.nextHearingDetails != null and caseData.nextHearingDetails.hearingDateTime != null) then caseData.nextHearingDetails.hearingDateTime else ""</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_02y8ncm">
+          <text>true</text>
         </outputEntry>
       </rule>
     </decisionTable>

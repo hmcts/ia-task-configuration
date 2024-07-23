@@ -23,6 +23,7 @@ import java.util.Map;
 import java.util.stream.Stream;
 
 import static java.util.Collections.emptyList;
+import static java.util.Collections.emptyMap;
 import static java.util.Collections.singletonList;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -1007,6 +1008,12 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 null,
                 List.of(
                     Map.of(
+                        "taskId", "reviewHearingBundle",
+                        "name", "Review Hearing bundle",
+
+                        "processCategories", "caseProgression"
+                    ),
+                    Map.of(
                         "taskId", "allocateHearingJudge",
                         "name", "Allocate Hearing Judge",
                         "processCategories", "caseProgression"
@@ -1018,6 +1025,12 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "finalBundling",
                 null,
                 List.of(
+                    Map.of(
+                        "taskId", "reviewHearingBundle",
+                        "name", "Review Hearing bundle",
+
+                        "processCategories", "caseProgression"
+                    ),
                     Map.of(
                         "taskId", "allocateHearingJudge",
                         "name", "Allocate Hearing Judge",
@@ -1503,7 +1516,47 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "reviewHearingRequirements",
                 "listing",
-                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "          \"autoHearingRequestEnabled\" : " + false + "\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "listTheCase",
+                        "name", "List the case",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "reviewHearingRequirements",
+                "listing",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "          \"isIntegrated\" : " + false + "\n"
+                                      + "          \"autoHearingRequestEnabled\" : " + true + "\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "listTheCase",
+                        "name", "List the case",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "reviewHearingRequirements",
+                "listing",
+                mapAdditionalData("{\n"
+                                  + "   \"Data\":{\n"
+                                  + "          \"isIntegrated\" : " + true + "\n"
+                                  + "          \"isPanelRequired\" : " + true + "\n"
+                                  + "   }"
+                                  + "}"),
                 singletonList(
                     Map.of(
                         "taskId", "listTheCase",
@@ -1516,7 +1569,47 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "listCaseWithoutHearingRequirements",
                 "listing",
-                null,
+                mapAdditionalData("{\n"
+                                  + "   \"Data\":{\n"
+                                  + "          \"isIntegrated\" : " + true + "\n"
+                                  + "          \"isPanelRequired\" : " + true + "\n"
+                                  + "   }"
+                                  + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "listTheCase",
+                        "name", "List the case",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "listCaseWithoutHearingRequirements",
+                "listing",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "          \"autoHearingRequestEnabled\" : " + false + "\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "listTheCase",
+                        "name", "List the case",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "listCaseWithoutHearingRequirements",
+                "listing",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "          \"isIntegrated\" : " + false + "\n"
+                                      + "          \"autoHearingRequestEnabled\" : " + true + "\n"
+                                      + "   }"
+                                      + "}"),
                 singletonList(
                     Map.of(
                         "taskId", "listTheCase",
@@ -1578,11 +1671,11 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "decideFtpaApplication",
                 null,
                 mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"ftpaAppellantRjDecisionOutcomeType\":\"" + "reheardRule35" + "\",\n"
-                                      + "      \"ftpaApplicantType\":\"" + "appellant" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                                  + "   \"Data\":{\n"
+                                  + "      \"ftpaAppellantRjDecisionOutcomeType\":\"" + "reheardRule35" + "\",\n"
+                                  + "      \"ftpaApplicantType\":\"" + "appellant" + "\"\n"
+                                  + "   }"
+                                  + "}"),
                 singletonList(
                     Map.of(
                         "taskId", "reviewAppealSetAsideUnderRule35",
@@ -1596,11 +1689,11 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "decideFtpaApplication",
                 null,
                 mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"ftpaRespondentRjDecisionOutcomeType\":\"" + "reheardRule35" + "\",\n"
-                                      + "      \"ftpaApplicantType\":\"" + "respondent" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                                  + "   \"Data\":{\n"
+                                  + "      \"ftpaRespondentRjDecisionOutcomeType\":\"" + "reheardRule35" + "\",\n"
+                                  + "      \"ftpaApplicantType\":\"" + "respondent" + "\"\n"
+                                  + "   }"
+                                  + "}"),
                 singletonList(
                     Map.of(
                         "taskId", "reviewAppealSetAsideUnderRule35",
@@ -1614,15 +1707,142 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "updateTribunalDecision",
                 null,
                 mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"updateTribunalDecisionList\":\"" + "underRule32" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                                  + "   \"Data\":{\n"
+                                  + "      \"updateTribunalDecisionList\":\"" + "underRule32" + "\"\n"
+                                  + "   }"
+                                  + "}"),
                 singletonList(
                     Map.of(
                         "taskId", "reviewAppealSetAsideUnderRule32",
                         "name", "Review appeal set aside under rule 32",
 
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "handleHearingException",
+                null,
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "hearingException",
+                        "name", "Hearing Exception",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "triggerCmrUpdated",
+                null,
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "cmrUpdated",
+                        "name", "Update CMR notification",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "restoreStateFromAdjourn",
+                null,
+                mapAdditionalData("{\n"
+                                  + "   \"Data\":{\n"
+                                  + "          \"isIntegrated\" : " + true + "\n"
+                                  + "   }"
+                                  + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "relistCase",
+                        "name", "Relist The Case",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "recordAdjournmentDetails",
+                null,
+                mapAdditionalData("{\n"
+                                  + "   \"Data\":{\n"
+                                  + "      \"hearingAdjournmentWhen\":\"" + "onHearingDate" + "\",\n"
+                                  + "      \"relistCaseImmediately\":" + "\"Yes\"" + ",\n"
+                                  + "      \"autoHearingRequestEnabled\" : " + false + "\n"
+                                  + "   }"
+                                  + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "listTheCase",
+                        "name", "List the case",
+
+
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "triggerCmrListed",
+                null,
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "cmrListed",
+                        "name", "Send CMR notification",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "decisionAndReasonsStarted",
+                "decision",
+                mapAdditionalData("{\n"
+                                  + "   \"Data\":{\n"
+                                  + "      \"listCaseHearingCentre\":\"" + "decisionWithoutHearing" + "\",\n"
+                                  + "          \"isIntegrated\" : " + true + ",\n"
+                                  + "      \"autoHearingRequestEnabled\" : " + false + "\n"
+                                  + "   }"
+                                  + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "listTheCase",
+                        "name", "List the case",
+
+
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "triggerReviewInterpreterBookingTask",
+                null,
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewInterpreters",
+                        "name", "Review interpreter booking",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "editCaseListing",
+                null,
+                mapAdditionalData("{\n"
+                                  + "   \"Data\":{\n"
+                                  + "      \"shouldTriggerReviewInterpreterTask\" : \"" + true + "\"\n"
+                                  + "   }"
+                                  + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewInterpreters",
+                        "name", "Review interpreter booking",
                         "processCategories", "caseProgression"
                     )
                 )
@@ -1669,26 +1889,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       + "      }"),
                 emptyList()
             ),
-            Arguments.of(
-                "makeAnApplication",
-                null,
-                mapAdditionalData(" {\n"
-                                      + "        \"Data\" : {\n"
-                                      + "          \"lastModifiedApplication\" : {\n"
-                                      + "            \"type\" : \"Judge's review of application decision\",\n"
-                                      + "            \"decision\" : \"\"\n"
-                                      + "          }\n"
-                                      + "        }\n"
-                                      + "      }"),
-                singletonList(
-                    Map.of(
-                        "taskId", "processApplicationToReviewDecision",
-                        "name", "Process Application to Review Decision",
-
-                        "processCategories", "application"
-                    )
-                )
-            ),
             getArgumentOf("Adjourn",
                           "processApplicationAdjourn",
                           "Process Adjourn Application"),
@@ -1721,7 +1921,13 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                           "Process Link/Unlink Appeals Application"),
             getArgumentOf("Set aside a decision",
                           "reviewSetAsideDecisionApplication",
-                          "Review set aside decision application")
+                          "Review set aside decision application"),
+            getArgumentOf("Judge's review of application decision",
+                          "processApplicationToReviewDecision",
+                          "Process Application to Review Decision"),
+            getArgumentOf("Change hearing type",
+                          "processApplicationChangeHearingType",
+                          "Process Change Hearing Type Application")
         );
     }
 
@@ -1774,16 +1980,22 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
         return Stream.of(
             getDecideAnApplicationArgumentsOf("Adjourn", "editListing",
-                                              "Edit Listing", "application", null),
+                                              "Edit Listing", "application", null, false),
             getDecideAnApplicationArgumentsOf("Expedite", "editListing",
-                                              "Edit Listing", "application", null),
+                                              "Edit Listing", "application", null, false),
             getDecideAnApplicationArgumentsOf("Transfer", "editListing",
-                                              "Edit Listing", "application", null),
+                                              "Edit Listing", "application", null, false),
+            getDecideAnApplicationArgumentsOf("Adjourn", "editListing",
+                                              "Edit Listing", "application", null, true),
+            getDecideAnApplicationArgumentsOf("Expedite", "editListing",
+                                              "Edit Listing", "application", null, true),
+            getDecideAnApplicationArgumentsOf("Transfer", "editListing",
+                                              "Edit Listing", "application", null, true),
             getDecideAnApplicationArgumentsOf("Set aside a decision",
                                               "followUpSetAsideDecision",
                                               "Follow up set aside decision",
                                               "followUpOverdue",
-                                              delayFor5Days)
+                                              delayFor5Days, false)
         );
     }
 
@@ -1791,32 +2003,37 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                                                String taskId,
                                                                String name,
                                                                String processCategories,
-                                                               Map<String,Object> delayUntil) {
-        Map<String, Object> map = new HashMap<String, Object>() {
-            {
-                put("taskId", taskId);
-                put("name", name);
-                put("processCategories", processCategories);
-                if (delayUntil != null) {
-                    put("delayUntil", delayUntil);
-                }
-            }
-        };
+                                                               Map<String,Object> delayUntil,
+                                                               boolean isIntegrated) {
+        Map<String, Object> map = isIntegrated
+            ? emptyMap()
+            : new HashMap<String, Object>() {
+                    {
+                        put("taskId", taskId);
+                        put("name", name);
+                        put("processCategories", processCategories);
+                        if (delayUntil != null) {
+                            put("delayUntil", delayUntil);
+                        }
+                    }
+            };
 
         return Arguments.of(
             "decideAnApplication",
             null,
             mapAdditionalData(" {\n"
-                                  + "        \"Data\" : {\n"
-                                  + "          \"lastModifiedApplication\" : {\n"
-                                  + "            \"type\" : \"" + applicationType + "\",\n"
-                                  + "            \"decision\" : \"Granted\"\n"
-                                  + "          }\n"
-                                  + "        }\n"
-                                  + "      }"),
+                              + "        \"Data\" : {\n"
+                              + "          \"lastModifiedApplication\" : {\n"
+                              + "            \"type\" : \"" + applicationType + "\",\n"
+                              + "            \"decision\" : \"Granted\"\n"
+                              + "          },\n"
+                              + "          \"isIntegrated\" : \"" + isIntegrated + "\"\n"
+                              + "        }\n"
+                              + "      }"),
             singletonList(map)
         );
     }
+
 
     @ParameterizedTest
     @MethodSource("decideAnApplicationScenarioProvider")
@@ -1831,16 +2048,17 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
-        assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
+        assertThat(dmnDecisionTableResult.getResultList().size() == 0
+                       ? singletonList(emptyMap()) : dmnDecisionTableResult.getResultList(), is(expectation));
     }
 
     @Test
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getInputs().size(), is(13));
+        assertThat(logic.getInputs().size(), is(20));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(57));
+        assertThat(logic.getRules().size(), is(69));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {

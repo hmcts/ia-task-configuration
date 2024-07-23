@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1kep5qz" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.14.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.0.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1kep5qz" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.12.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.0.0">
   <decision id="wa-task-types-ia-asylum" name="Task Types DMN">
     <decisionTable id="DecisionTable_17knzal" hitPolicy="COLLECT">
       <input id="Input_1">
@@ -535,6 +535,72 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0w51h3m">
           <text>"Review appeal set aside under rule 32"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0oznosm">
+        <inputEntry id="UnaryTests_1byv6wo">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0yckhds">
+          <text>"hearingException"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1geobef">
+          <text>"Hearing exception"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ppqz55">
+        <inputEntry id="UnaryTests_0rxjkiy">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1lgtvgg">
+          <text>"cmrListed"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_133eiai">
+          <text>"Send CMR notification"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1wipzfb">
+        <inputEntry id="UnaryTests_0un5rbj">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1m9ioaj">
+          <text>"cmrUpdated"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04ofhz1">
+          <text>"Update CMR notification"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1n5djgj">
+        <inputEntry id="UnaryTests_1jgj621">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1sp32iv">
+          <text>"reviewInterpreters"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1faxwvi">
+          <text>"Review interpreter booking"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_14bajdq">
+        <inputEntry id="UnaryTests_0xk1bu5">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1qhmmxd">
+          <text>"relistCase"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_08t3ww1">
+          <text>"Relist The Case"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_11oe6df">
+        <inputEntry id="UnaryTests_064b9k1">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1qup7nf">
+          <text>"processApplicationChangeHearingType"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1xlgjdt">
+          <text>"Process Change Hearing Type Application"</text>
         </outputEntry>
       </rule>
     </decisionTable>

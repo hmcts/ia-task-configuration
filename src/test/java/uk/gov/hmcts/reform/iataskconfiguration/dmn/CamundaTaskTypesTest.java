@@ -268,6 +268,36 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                    "reviewAppealSetAsideUnderRule32",
                    "taskTypeName",
                    "Review appeal set aside under rule 32"
+            ),
+            Map.of("taskTypeId",
+                "hearingException",
+                "taskTypeName",
+                "Hearing exception"
+            ),
+            Map.of("taskTypeId",
+                "cmrListed",
+                "taskTypeName",
+                "Send CMR notification"
+            ),
+            Map.of("taskTypeId",
+                "cmrUpdated",
+                "taskTypeName",
+                "Update CMR notification"
+            ),
+            Map.of("taskTypeId",
+                "reviewInterpreters",
+                "taskTypeName",
+                "Review interpreter booking"
+            ),
+            Map.of("taskTypeId",
+                "relistCase",
+                "taskTypeName",
+                "Relist The Case"
+            ),
+            Map.of("taskTypeId",
+                "processApplicationChangeHearingType",
+                "taskTypeName",
+                "Process Change Hearing Type Application"
             )
         );
         return Stream.of(
@@ -295,7 +325,7 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(1));
         assertThat(logic.getOutputs().size(), is(2));
-        assertThat(logic.getRules().size(), is(48));
+        assertThat(logic.getRules().size(), is(54));
 
     }
 }
