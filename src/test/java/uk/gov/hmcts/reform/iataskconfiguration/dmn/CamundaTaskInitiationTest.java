@@ -1645,6 +1645,23 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "refundConfirmation",
+                null,
+                mapAdditionalData("{\n"
+                                  + "   \"Data\":{\n"
+                                  + "      \"feeUpdateTribunalAction\":\"" + "refund" + "\"\n"
+                                  + "   }"
+                                  + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "processFeeRefund",
+                        "name", "Process fee refund",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
                 "unknownEvent",
                 null,
                 null,
@@ -1857,7 +1874,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(14));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(58));
+        assertThat(logic.getRules().size(), is(59));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {
