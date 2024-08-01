@@ -3443,62 +3443,6 @@
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_025slkr">
-        <inputEntry id="UnaryTests_1uomthx">
-          <text>"refundConfirmation"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1mvdsgs">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1x1wrcv">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0l6486e">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1kqr7dx">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_08jc43i">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0o4rvis">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1qulrc0">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0euu1gp">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1czoj3g">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1i4qi84">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_18u66fd">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0uwqv53">
-          <text>"refund"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0wgffj3">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0rjpc5l">
-          <text>"processFeeRefund"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1xumpew">
-          <text>"Process fee refund"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1c161aa">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1qzqi9q">
-          <text>"caseProgression"</text>
-        </outputEntry>
-      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
