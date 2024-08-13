@@ -200,7 +200,8 @@
                         "markAsPaid",
                         "reviewRemittedAppeal",
                         "reviewAppealSetAsideUnderRule35",
-                        "reviewAppealSetAsideUnderRule32"
+                        "reviewAppealSetAsideUnderRule32",
+                        "processFeeRefund"
                     </text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0rvgay2">
@@ -473,7 +474,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0xh5are">
-          <text>"reviewRemissionApplication","assignAFTPAJudge","listTheCase","sendPaymentRequest","markAsPaid"</text>
+          <text>"reviewRemissionApplication","assignAFTPAJudge","listTheCase","sendPaymentRequest","markAsPaid","processFeeRefund"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0vqliz7">
           <text>"roleCategory"</text>
@@ -515,7 +516,7 @@
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "processApplicationOther" or taskType != null and taskType = "processApplicationOther")
                         then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "processApplicationLink/UnlinkAppeals" or taskType != null and taskType = "processApplicationLink/UnlinkAppeals")
-                        then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)" 
+                        then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "processApplicationChangeHearingType" or taskType != null and taskType = "processApplicationChangeHearingType")
                         then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewTheAppeal" or taskType != null and taskType = "reviewTheAppeal")
@@ -629,7 +630,8 @@
 "processApplicationLink/UnlinkAppeals",
 "reviewRemittedAppeal",
 "reviewAppealSetAsideUnderRule35",
-"reviewAppealSetAsideUnderRule32"</text>
+"reviewAppealSetAsideUnderRule32",
+"processFeeRefund"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_18mybq6">
           <text>"dueDateIntervalDays"</text>
