@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.12.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.14.0">
   <decision id="wa-task-initiation-ia-asylum" name="Task initiation DMN">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT" biodi:annotationsWidth="400">
       <input id="Input_1" label="Event Id" biodi:width="515" camunda:inputVariable="eventId">
@@ -5279,6 +5279,80 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1y6rwjw">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0hb7wy4">
+        <inputEntry id="UnaryTests_0mqdtr5">
+          <text>"ariaCreateCase"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1y6ue3o">
+          <text>"migrated"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_059dsn0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0r69bcx">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0cbm3rm">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wkevja">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0h25ml2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0wa1n7g">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0l1bguo">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1raqgwx">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_027c48i">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jyho9e">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_004b7so">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0wbx5c6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08o91ty">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_00tke8t">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08uywuv">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ew8mtn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1lzx14d">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0up1dmo">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0vdf3hr">
+          <text>"createMigratedCase"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_17ahsrs">
+          <text>"Create migrated case"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_140fjpk">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0y0vb9q">
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>

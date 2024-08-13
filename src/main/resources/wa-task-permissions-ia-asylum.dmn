@@ -360,7 +360,8 @@
             "postHearingAttendeesDurationAndRecording",
             "editListing",
             "followUpSetAsideDecision",
-"hearingException","cmrListed","cmrUpdated","relistCase","listTheCase","reviewInterpreters"          </text>
+"hearingException","cmrListed","cmrUpdated","relistCase","listTheCase","reviewInterpreters",
+"createMigratedCase"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1sw9xpj">
           <text></text>
