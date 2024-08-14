@@ -361,7 +361,7 @@
             "editListing",
             "followUpSetAsideDecision",
 "hearingException","cmrListed","cmrUpdated","relistCase","listTheCase","reviewInterpreters",
-"createMigratedCase"</text>
+"reviewMigratedCase"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1sw9xpj">
           <text></text>

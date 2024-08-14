@@ -201,7 +201,7 @@
                         "reviewRemittedAppeal",
                         "reviewAppealSetAsideUnderRule35",
                         "reviewAppealSetAsideUnderRule32",
-                        "ariaCreateCase"</text>
+                        "reviewMigratedCase"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0rvgay2">
           <text>"workType"</text>
@@ -439,7 +439,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1glizm3">
-          <text>"arrangeOfflinePayment","markCaseAsPaid","allocateHearingJudge","uploadHearingRecording","postHearingAttendeesDurationAndRecording","editListing","followUpSetAsideDecision","hearingException","cmrListed","cmrUpdated","relistCase","reviewInterpreters","createMigratedCase"</text>
+          <text>"arrangeOfflinePayment","markCaseAsPaid","allocateHearingJudge","uploadHearingRecording","postHearingAttendeesDurationAndRecording","editListing","followUpSetAsideDecision","hearingException","cmrListed","cmrUpdated","relistCase","reviewInterpreters","reviewMigratedCase"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1131kat">
           <text>"roleCategory"</text>
@@ -565,7 +565,8 @@
                         else if ((taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "listTheCase" or taskType != null and taskType = "listTheCase") and (caseData != null and caseData.isIntegrated = "Yes")) then "[List the case](cases/case-details/${[CASE_REFERENCE]}/hearings)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "sendPaymentRequest" or taskType != null and taskType = "sendPaymentRequest") then "[Mark payment request sent](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markPaymentRequestSent)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "markAsPaid" or taskType != null and taskType = "markAsPaid") then "[Mark appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid)"
- else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "hearingException" or taskType != null and taskType = "hearingException") then "[Go to case](cases/case-details/${[CASE_REFERENCE]}/hearings)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewMigratedCase" or taskType != null and taskType = "reviewMigratedCase") then "[Review migrated case](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/progressMigratedCase)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "hearingException" or taskType != null and taskType = "hearingException") then "[Go to case](cases/case-details/${[CASE_REFERENCE]}/hearings)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "cmrListed" or taskType != null and taskType = "cmrListed") then "[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "cmrUpdated" or taskType != null and taskType = "cmrUpdated") then "[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "relistCase" or taskType != null and taskType = "relistCase") then "[Relist the hearing](cases/case-details/${[CASE_REFERENCE]}/hearings)"
@@ -750,13 +751,13 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_11yqpax">
-          <text>"createMigratedCase"</text>
+          <text>"reviewMigratedCase"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0rpuy0z">
           <text>"dueDateIntervalDays"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0jfelrx">
-          <text>if (caseData != null and caseData.ariaMigrationTaskDueDays != null) then caseData.ariaMigrationTaskDueDays else "0"</text>
+          <text>if (caseData != null and caseData.ariaMigrationTaskDueDays != null) then caseData.ariaMigrationTaskDueDays else "1"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1xvptid">
           <text></text>

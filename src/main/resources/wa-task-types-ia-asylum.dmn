@@ -608,10 +608,10 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_19kplsm">
-          <text>"ariaCreateCase"</text>
+          <text>"reviewMigratedCase"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0x1covy">
-          <text>"Create migrated case"</text>
+          <text>"Review migrated case"</text>
         </outputEntry>
       </rule>
     </decisionTable>
