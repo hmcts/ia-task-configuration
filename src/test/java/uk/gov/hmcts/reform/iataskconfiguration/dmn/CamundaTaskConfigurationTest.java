@@ -73,7 +73,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(34));
+        assertThat(logic.getRules().size(), is(35));
     }
 
     @SuppressWarnings("checkstyle:indentation")
@@ -244,6 +244,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("sendPaymentRequest", routineWork),
             Arguments.of("markAsPaid", routineWork),
             Arguments.of("reviewRemittedAppeal", routineWork),
+            Arguments.of("reviewMigratedCase", routineWork),
             Arguments.of("reviewAdditionalEvidence", decisionMakingWork),
             Arguments.of("reviewTheAppeal", decisionMakingWork),
             Arguments.of("followUpOverdueRespondentEvidence", decisionMakingWork),
@@ -418,7 +419,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "arrangeOfflinePayment", "markCaseAsPaid", "allocateHearingJudge", "uploadHearingRecording",
         "postHearingAttendeesDurationAndRecording", "editListing", "followUpSetAsideDecision",
         "hearingException", "cmrListed", "cmrUpdated","relistCase",
-        "reviewInterpreters"
+        "reviewInterpreters", "reviewMigratedCase"
     })
     void when_taskId_then_return_Admin_role_category(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
@@ -1115,6 +1116,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "sendPaymentRequest,[Mark payment request sent](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
             + "markPaymentRequestSent),,",
         "markAsPaid,[Mark appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid),,",
+        "reviewMigratedCase,[Review migrated case](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/progressMigratedCase),,",
         "hearingException,[Go to case](cases/case-details/${[CASE_REFERENCE]}/hearings),,",
         "cmrListed,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,",
         "cmrUpdated,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,",
@@ -1326,6 +1328,32 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             "value", "false",
             "canReconfigure", false
         ), dueDateSkipNonWorkingDaysResultList.get(0));
+    }
+
+    @ParameterizedTest
+    @MethodSource("customDueDateIntervalDaysScenarioProvider")
+    void when_taskId_then_return_customDueDateIntervalDays(String taskType, String fieldName, String dueDays) {
+        VariableMap inputVariables = new VariableMapImpl();
+        Map<String, Object> caseData = new HashMap<>();
+
+        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
+        caseData.put(fieldName, dueDays);
+        inputVariables.putValue("caseData", caseData);
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        assertTrue(dmnDecisionTableResult.getResultList().contains(Map.of(
+            "name", "dueDateIntervalDays",
+            "value", dueDays,
+            "canReconfigure", false
+        )));
+    }
+
+    public static Stream<Arguments> customDueDateIntervalDaysScenarioProvider() {
+
+        return Stream.of(
+            Arguments.of("reviewMigratedCase", "ariaMigrationTaskDueDays", "10")
+        );
     }
 }
 
