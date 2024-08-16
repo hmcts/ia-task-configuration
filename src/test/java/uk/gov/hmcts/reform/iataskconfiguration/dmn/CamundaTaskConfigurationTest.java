@@ -1116,7 +1116,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "sendPaymentRequest,[Mark payment request sent](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
             + "markPaymentRequestSent),,",
         "markAsPaid,[Mark appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid),,",
-        "reviewMigratedCase,[Review migrated case](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/progressMigratedCase),,",
+        "reviewMigratedCase,[Progress migrated case](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
+            + "progressMigratedCase),,",
         "hearingException,[Go to case](cases/case-details/${[CASE_REFERENCE]}/hearings),,",
         "cmrListed,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,",
         "cmrUpdated,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,",
