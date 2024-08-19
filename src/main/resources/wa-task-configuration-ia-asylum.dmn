@@ -757,7 +757,7 @@
           <text>"dueDateIntervalDays"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0jfelrx">
-          <text>if (caseData != null and caseData.ariaMigrationTaskDueDays != null) then caseData.ariaMigrationTaskDueDays else "1"</text>
+          <text>caseData.ariaMigrationTaskDueDays</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1xvptid">
           <text>false</text>
