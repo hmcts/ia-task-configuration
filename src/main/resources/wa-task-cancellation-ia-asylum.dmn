@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="wa-cancellation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.14.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="wa-cancellation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.17.0">
   <decision id="wa-task-cancellation-ia-asylum" name="Task cancellation DMN">
     <decisionTable id="DecisionTable_0z3jx1g" hitPolicy="COLLECT">
       <input id="Input_1" label="From State">
@@ -480,6 +480,29 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_157g42n">
           <text>"followUpOverdue"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1vcqfbn">
+        <inputEntry id="UnaryTests_0v8qdxm">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1df0qij">
+          <text>"updateNextHearingInfo"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ak5zpr">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1o90cf0">
+          <text>"Reconfigure"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_145vvyw">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_116019e">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_11zwpdu">
+          <text></text>
         </outputEntry>
       </rule>
     </decisionTable>
