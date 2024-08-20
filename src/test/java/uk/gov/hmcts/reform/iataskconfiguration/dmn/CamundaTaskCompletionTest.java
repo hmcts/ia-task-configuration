@@ -410,6 +410,16 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "progressMigratedCase",
+                asList(
+                    Map.of(
+                        "completionMode", "Auto",
+                        "taskType", "reviewMigratedCase"
+                    ),
+                    Collections.emptyMap()
+                )
+            ),
+            Arguments.of(
                 "unknownEvent",
                 emptyList()
             )
@@ -432,7 +442,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
 
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(41));
+        assertThat(logic.getRules().size(), is(42));
 
     }
 
