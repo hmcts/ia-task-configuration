@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="wa-cancellation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.17.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="wa-cancellation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.23.0">
   <decision id="wa-task-cancellation-ia-asylum" name="Task cancellation DMN">
     <decisionTable id="DecisionTable_0z3jx1g" hitPolicy="COLLECT">
       <input id="Input_1" label="From State">
@@ -502,6 +502,98 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_11zwpdu">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0qhxotx">
+        <inputEntry id="UnaryTests_1b31fvq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ng3ore">
+          <text>"cmrListing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_168vxwn">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0wqunbk">
+          <text>"Reconfigure"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0zm6os6">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_10bjfl8">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1rextfn">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0k1ix6d">
+        <inputEntry id="UnaryTests_0vw6yd8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_11ro51s">
+          <text>"cmrReListing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05bfy3l">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1eih3cq">
+          <text>"Reconfigure"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1dviqkm">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0lmml7j">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0zuiwo6">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1s29ofo">
+        <inputEntry id="UnaryTests_07b3qph">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0flkfaw">
+          <text>"hearingCancelled"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12k3fbj">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0il9mok">
+          <text>"Reconfigure"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1rhlzao">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1hna72u">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0lmev7g">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0fjqt42">
+        <inputEntry id="UnaryTests_0tnrlh3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14dvc5o">
+          <text>"listCase"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ywf5v7">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_03zkp5h">
+          <text>"Reconfigure"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_02wrxru">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0j7koys">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0dprwvw">
           <text></text>
         </outputEntry>
       </rule>
