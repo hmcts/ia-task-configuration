@@ -597,6 +597,29 @@
           <text></text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0zzsez4">
+        <inputEntry id="UnaryTests_1emr3fh">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qyacq4">
+          <text>"adjournHearingWithoutDate"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jjg5od">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_00h4vda">
+          <text>"Reconfigure"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1bbeaf1">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_00f19yj">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_127x3nu">
+          <text></text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
