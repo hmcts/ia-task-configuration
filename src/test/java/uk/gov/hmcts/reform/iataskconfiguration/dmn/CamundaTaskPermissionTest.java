@@ -326,6 +326,13 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     taskSupervisor,
                     hearingCentreAdminPriorityOne
                 )
+            ),
+            Arguments.of(
+                "reviewAriaRemissionApplication",
+                List.of(
+                    taskSupervisor,
+                    hearingCentreAdminPriorityOne
+                )
             )
         );
     }

@@ -201,7 +201,8 @@
                         "reviewRemittedAppeal",
                         "reviewAppealSetAsideUnderRule35",
                         "reviewAppealSetAsideUnderRule32",
-                        "reviewMigratedCase"</text>
+                        "reviewMigratedCase",
+                        "reviewAriaRemissionApplication"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0rvgay2">
           <text>"workType"</text>
@@ -439,7 +440,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1glizm3">
-          <text>"arrangeOfflinePayment","markCaseAsPaid","allocateHearingJudge","uploadHearingRecording","postHearingAttendeesDurationAndRecording","editListing","followUpSetAsideDecision","hearingException","cmrListed","cmrUpdated","relistCase","reviewInterpreters","reviewMigratedCase"</text>
+          <text>"arrangeOfflinePayment","markCaseAsPaid","allocateHearingJudge","uploadHearingRecording","postHearingAttendeesDurationAndRecording","editListing","followUpSetAsideDecision","hearingException","cmrListed","cmrUpdated","relistCase","reviewInterpreters","reviewMigratedCase","reviewAriaRemissionApplication"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1131kat">
           <text>"roleCategory"</text>
@@ -678,7 +679,8 @@
 "listTheCase",
 "reviewSetAsideDecisionApplication",
 "cmrListed",
-"cmrUpdated"</text>
+"cmrUpdated",
+"reviewAriaRemissionApplication"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1kbin0j">
           <text>"dueDateIntervalDays"</text>
