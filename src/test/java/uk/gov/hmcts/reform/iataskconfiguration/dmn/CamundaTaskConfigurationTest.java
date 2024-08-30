@@ -73,7 +73,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(35));
+        assertThat(logic.getRules().size(), is(36));
     }
 
     @SuppressWarnings("checkstyle:indentation")
@@ -228,6 +228,11 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             "value", "upper_tribunal",
             "canReconfigure", false
         ));
+        List<Map<String, Object>> reviewCase = List.of(Map.of(
+            "name", "workType",
+            "value", "review_case",
+            "canReconfigure", false
+        ));
 
         return Stream.of(
             Arguments.of("arrangeOfflinePayment", routineWork),
@@ -244,7 +249,6 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("sendPaymentRequest", routineWork),
             Arguments.of("markAsPaid", routineWork),
             Arguments.of("reviewRemittedAppeal", routineWork),
-            Arguments.of("reviewMigratedCase", routineWork),
             Arguments.of("reviewAriaRemissionApplication", routineWork),
             Arguments.of("reviewAdditionalEvidence", decisionMakingWork),
             Arguments.of("reviewTheAppeal", decisionMakingWork),
@@ -305,7 +309,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("reviewSetAsideDecisionApplication", applications),
             Arguments.of("followUpSetAsideDecision", applications),
             Arguments.of("decideAnFTPA", upperTribunal),
-            Arguments.of("processApplicationChangeHearingType", applications)
+            Arguments.of("processApplicationChangeHearingType", applications),
+            Arguments.of("reviewMigratedCase", reviewCase)
 
         );
     }
