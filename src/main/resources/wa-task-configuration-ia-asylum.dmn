@@ -201,7 +201,6 @@
                         "reviewRemittedAppeal",
                         "reviewAppealSetAsideUnderRule35",
                         "reviewAppealSetAsideUnderRule32",
-                        "reviewMigratedCase",
                         "reviewAriaRemissionApplication"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0rvgay2">
@@ -340,6 +339,23 @@
           <text>"access_requests"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_08zn369">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1jvi31e">
+        <inputEntry id="UnaryTests_1ae1kaa">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1g8j5k3">
+          <text>"reviewMigratedCase"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_08pavof">
+          <text>"workType"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0429ti8">
+          <text>"review_case"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1efp1zj">
           <text>false</text>
         </outputEntry>
       </rule>
