@@ -143,6 +143,13 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         "value", "Read,Own,Claim,Manage,Unassign,Assign,Complete,Cancel"
     );
 
+    private static final Map<String, Serializable> nationalBusinessCentreAdminPriorityOne = Map.of(
+        "autoAssignable", false,
+        "name", "national-business-centre",
+        "value", "Read,Own,Claim,Manage,Unassign,Assign,Complete,Cancel",
+        "roleCategory", "ADMIN"
+    );
+
     @BeforeAll
     public static void initialization() {
         CURRENT_DMN_DECISION_TABLE = WA_TASK_PERMISSIONS_IA_ASYLUM;
@@ -187,6 +194,14 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "reviewRemissionApplication",
+                List.of(
+                    taskSupervisor,
+                    ctscAdminPriorityOne,
+                    ctscTeamLeaderPriorityOne
+                )
+            ),
+            Arguments.of(
+                "reviewDraftAppeal",
                 List.of(
                     taskSupervisor,
                     ctscAdminPriorityOne,
@@ -332,6 +347,83 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     taskSupervisor,
                     hearingCentreAdminPriorityOne
+                )
+            ),
+            Arguments.of(
+                "printAndSendHoBundle",
+                List.of(
+                    taskSupervisor,
+                    nationalBusinessCentreAdminPriorityOne
+                )
+            ),
+            Arguments.of(
+                "printAndSendHoResponse",
+                List.of(
+                    taskSupervisor,
+                    nationalBusinessCentreAdminPriorityOne
+                )
+            ),
+            Arguments.of(
+                "printAndSendHearingRequirements",
+                List.of(
+                    taskSupervisor,
+                    nationalBusinessCentreAdminPriorityOne
+                )
+            ),
+            Arguments.of(
+                "printAndSendHearingBundle",
+                List.of(
+                    taskSupervisor,
+                    nationalBusinessCentreAdminPriorityOne
+                )
+            ),
+            Arguments.of(
+                "printAndSendDecisionCorrectedRule31",
+                List.of(
+                    taskSupervisor,
+                    nationalBusinessCentreAdminPriorityOne
+                )
+            ),
+            Arguments.of(
+                "printAndSendDecisionCorrectedRule32",
+                List.of(
+                    taskSupervisor,
+                    nationalBusinessCentreAdminPriorityOne
+                )
+            ),
+            Arguments.of(
+                "printAndSendHoApplication",
+                List.of(
+                    taskSupervisor,
+                    nationalBusinessCentreAdminPriorityOne
+                )
+            ),
+            Arguments.of(
+                "printAndSendHoEvidence",
+                List.of(
+                    taskSupervisor,
+                    nationalBusinessCentreAdminPriorityOne
+                )
+            ),
+            Arguments.of(
+                "printAndSendAppealDecision",
+                List.of(
+                    taskSupervisor,
+                    nationalBusinessCentreAdminPriorityOne
+                )
+            ),
+            Arguments.of(
+                "printAndSendFTPADecision",
+                List.of(
+                    taskSupervisor,
+                    nationalBusinessCentreAdminPriorityOne
+                )
+            ),
+            Arguments.of(
+                "printAndSendReheardHearingRequirements",
+                List.of(
+                    taskSupervisor,
+                    nationalBusinessCentreAdminPriorityOne
                 )
             )
         );
@@ -748,7 +840,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         assertThat(logic.getOutputs().size(), is(7));
         assertThatOutputContainInOrder(outputColumnIds, logic.getOutputs());
         //Rules
-        assertThat(logic.getRules().size(), is(18));
+        assertThat(logic.getRules().size(), is(19));
     }
 
     private void assertThatInputContainInOrder(List<String> inputColumnIds, List<DmnDecisionTableInputImpl> inputs) {

@@ -201,7 +201,19 @@
                         "reviewRemittedAppeal",
                         "reviewAppealSetAsideUnderRule35",
                         "reviewAppealSetAsideUnderRule32",
-                        "reviewAriaRemissionApplication"</text>
+                        "reviewAriaRemissionApplication",
+                        "reviewDraftAppeal",
+                        "printAndSendHoBundle",
+                        "printAndSendHoResponse",
+                        "printAndSendHearingRequirements",
+                        "printAndSendHearingBundle",
+                        "printAndSendDecisionCorrectedRule31",
+                        "printAndSendDecisionCorrectedRule32",
+                        "printAndSendHoApplication",
+                        "printAndSendHoEvidence",
+                        "printAndSendAppealDecision",
+                        "printAndSendFTPADecision",
+                        "printAndSendReheardHearingRequirements"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0rvgay2">
           <text>"workType"</text>
@@ -456,7 +468,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1glizm3">
-          <text>"arrangeOfflinePayment","markCaseAsPaid","allocateHearingJudge","uploadHearingRecording","postHearingAttendeesDurationAndRecording","editListing","followUpSetAsideDecision","hearingException","cmrListed","cmrUpdated","relistCase","reviewInterpreters","reviewMigratedCase","reviewAriaRemissionApplication"</text>
+          <text>"arrangeOfflinePayment","markCaseAsPaid","allocateHearingJudge","uploadHearingRecording","postHearingAttendeesDurationAndRecording","editListing","followUpSetAsideDecision","hearingException","cmrListed","cmrUpdated","relistCase","reviewInterpreters","reviewMigratedCase","reviewAriaRemissionApplication","printAndSendHoBundle","printAndSendHoResponse","printAndSendHearingRequirements","printAndSendHearingBundle","printAndSendDecisionCorrectedRule31","printAndSendDecisionCorrectedRule32","printAndSendHoApplication","printAndSendHoEvidence","printAndSendAppealDecision","printAndSendFTPADecision","printAndSendReheardHearingRequirements"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1131kat">
           <text>"roleCategory"</text>
@@ -490,7 +502,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0xh5are">
-          <text>"reviewRemissionApplication","assignAFTPAJudge","listTheCase","sendPaymentRequest","markAsPaid"</text>
+          <text>"reviewRemissionApplication","assignAFTPAJudge","listTheCase","sendPaymentRequest","markAsPaid","reviewDraftAppeal"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0vqliz7">
           <text>"roleCategory"</text>
@@ -647,7 +659,8 @@
 "processApplicationLink/UnlinkAppeals",
 "reviewRemittedAppeal",
 "reviewAppealSetAsideUnderRule35",
-"reviewAppealSetAsideUnderRule32"</text>
+"reviewAppealSetAsideUnderRule32",
+"reviewDraftAppeal"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_18mybq6">
           <text>"dueDateIntervalDays"</text>
@@ -718,7 +731,18 @@
 "sendPaymentRequest",
 "uploadHearingRecording",
 "postHearingAttendeesDurationAndRecording",
-"decideAnFTPA"</text>
+"decideAnFTPA",
+"printAndSendHoBundle",
+"printAndSendHoResponse",
+"printAndSendHearingRequirements",
+"printAndSendHearingBundle",
+"printAndSendDecisionCorrectedRule31",
+"printAndSendDecisionCorrectedRule32",
+"printAndSendHoApplication",
+"printAndSendHoEvidence",
+"printAndSendAppealDecision",
+"printAndSendFTPADecision",
+"printAndSendReheardHearingRequirements"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ssbj4t">
           <text>"dueDateIntervalDays"</text>

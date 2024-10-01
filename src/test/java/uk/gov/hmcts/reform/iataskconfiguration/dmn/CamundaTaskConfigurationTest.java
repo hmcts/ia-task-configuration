@@ -250,6 +250,18 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("markAsPaid", routineWork),
             Arguments.of("reviewRemittedAppeal", routineWork),
             Arguments.of("reviewAriaRemissionApplication", routineWork),
+            Arguments.of("reviewDraftAppeal", routineWork),
+            Arguments.of("printAndSendHoBundle", routineWork),
+            Arguments.of("printAndSendHoResponse", routineWork),
+            Arguments.of("printAndSendHearingRequirements", routineWork),
+            Arguments.of("printAndSendHearingBundle", routineWork),
+            Arguments.of("printAndSendDecisionCorrectedRule31", routineWork),
+            Arguments.of("printAndSendDecisionCorrectedRule32", routineWork),
+            Arguments.of("printAndSendHoApplication", routineWork),
+            Arguments.of("printAndSendHoEvidence", routineWork),
+            Arguments.of("printAndSendAppealDecision", routineWork),
+            Arguments.of("printAndSendFTPADecision", routineWork),
+            Arguments.of("printAndSendReheardHearingRequirements", routineWork),
             Arguments.of("reviewAdditionalEvidence", decisionMakingWork),
             Arguments.of("reviewTheAppeal", decisionMakingWork),
             Arguments.of("followUpOverdueRespondentEvidence", decisionMakingWork),
@@ -428,7 +440,11 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "arrangeOfflinePayment", "markCaseAsPaid", "allocateHearingJudge", "uploadHearingRecording",
         "postHearingAttendeesDurationAndRecording", "editListing", "followUpSetAsideDecision",
         "hearingException", "cmrListed", "cmrUpdated","relistCase",
-        "reviewInterpreters", "reviewMigratedCase", "reviewAriaRemissionApplication"
+        "reviewInterpreters", "reviewMigratedCase", "reviewAriaRemissionApplication",
+        "printAndSendHoBundle","printAndSendHoResponse","printAndSendHearingRequirements",
+        "printAndSendHearingBundle", "printAndSendDecisionCorrectedRule31","printAndSendDecisionCorrectedRule32",
+        "printAndSendHoApplication", "printAndSendHoEvidence","printAndSendAppealDecision","printAndSendFTPADecision",
+        "printAndSendReheardHearingRequirements"
     })
     void when_taskId_then_return_Admin_role_category(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
@@ -455,7 +471,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
     @ParameterizedTest
     @CsvSource({
-        "reviewRemissionApplication","assignAFTPAJudge","listTheCase","sendPaymentRequest","markAsPaid"
+        "reviewRemissionApplication","assignAFTPAJudge","listTheCase","sendPaymentRequest","markAsPaid",
+        "reviewDraftAppeal"
     })
     void when_taskId_then_return_Ctsc_role_category(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
@@ -1240,6 +1257,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("reviewRemittedAppeal", fiveDays),
             Arguments.of("reviewAppealSetAsideUnderRule35", fiveDays),
             Arguments.of("reviewAppealSetAsideUnderRule32", fiveDays),
+            Arguments.of("reviewDraftAppeal", fiveDays),
             Arguments.of("allocateHearingJudge", threeDays),
             Arguments.of("processApplicationToReviewDecision", twoDays),
             Arguments.of("editListing", twoDays),
@@ -1277,6 +1295,17 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("sendPaymentRequest", zeroDays),
             Arguments.of("uploadHearingRecording", zeroDays),
             Arguments.of("decideAnFTPA", zeroDays),
+            Arguments.of("printAndSendHoBundle", zeroDays),
+            Arguments.of("printAndSendHoResponse", zeroDays),
+            Arguments.of("printAndSendHearingRequirements", zeroDays),
+            Arguments.of("printAndSendHearingBundle", zeroDays),
+            Arguments.of("printAndSendDecisionCorrectedRule31", zeroDays),
+            Arguments.of("printAndSendDecisionCorrectedRule32", zeroDays),
+            Arguments.of("printAndSendHoApplication", zeroDays),
+            Arguments.of("printAndSendHoEvidence", zeroDays),
+            Arguments.of("printAndSendAppealDecision", zeroDays),
+            Arguments.of("printAndSendFTPADecision", zeroDays),
+            Arguments.of("printAndSendReheardHearingRequirements", zeroDays),
             Arguments.of("markAsPaid", fourteenDays),
             Arguments.of("cmrListed", twoDays),
             Arguments.of("cmrUpdated", twoDays)
