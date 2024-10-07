@@ -648,7 +648,7 @@
       <rule id="DecisionRule_05nq60d">
         <description>CTSC Admin task permissions</description>
         <inputEntry id="UnaryTests_1q2j4ix">
-          <text>"reviewRemissionApplication","assignAFTPAJudge","listTheCase","sendPaymentRequest","markAsPaid","cmrListed","cmrUpdated","reviewInterpreters","reviewDraftAppeal"</text>
+          <text>"reviewRemissionApplication","assignAFTPAJudge","listTheCase","sendPaymentRequest","markAsPaid","cmrListed","cmrUpdated","reviewInterpreters","processFeeRefund","reviewDraftAppeal"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1p44stw">
           <text></text>
@@ -678,7 +678,7 @@
       <rule id="DecisionRule_155ah64">
         <description>CTSC Team Leader task permissions</description>
         <inputEntry id="UnaryTests_08panx7">
-          <text>"reviewRemissionApplication","assignAFTPAJudge","listTheCase","sendPaymentRequest","markAsPaid","cmrListed","cmrUpdated","reviewInterpreters","reviewDraftAppeal"</text>
+          <text>"reviewRemissionApplication","assignAFTPAJudge","listTheCase","sendPaymentRequest","markAsPaid","cmrListed","cmrUpdated","reviewInterpreters","reviewDraftAppeal","processFeeRefund"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0njeznv">
           <text></text>
