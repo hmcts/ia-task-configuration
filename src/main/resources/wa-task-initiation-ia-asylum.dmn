@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.17.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.14.0">
+
   <decision id="wa-task-initiation-ia-asylum" name="Task initiation DMN" camunda:historyTimeToLive="P90D">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT" biodi:annotationsWidth="400">
       <input id="Input_1" label="Event Id" biodi:width="515" camunda:inputVariable="eventId">
@@ -179,8 +180,8 @@
             null</text>
         </inputExpression>
       </input>
-      <input id="InputClause_1r2yrvq" label="Fee Update Tribunal Action" camunda:inputVariable="feeUpdateTribunalAction">
-        <inputExpression id="LiteralExpression_1nvcscm" typeRef="string">
+      <input id="InputClause_1i8a7op" label="Fee Update Tribunal Action" camunda:inputVariable="feeUpdateTribunalAction">
+        <inputExpression id="LiteralExpression_0dm3eng" typeRef="string">
           <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.feeUpdateTribunalAction
             != null) then
             additionalData.Data.feeUpdateTribunalAction
@@ -2375,7 +2376,6 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_190h4w8">
-          <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0li58ot">
           <text>"reviewClarifyingQuestionsAnswers"</text>
