@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-allowed-days-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.2.0">
-  <decision id="wa-task-allowed-days-ia-asylum" name="Task allowed days DMN" camunda:historyTimeToLive="P90D">
+  <decision id="wa-task-allowed-days-ia-asylum" name="Task allowed days DMN">
     <decisionTable id="DecisionTable_1xl6av1" hitPolicy="FIRST">
       <input id="Input_1" label="Task Id" camunda:inputVariable="taskId">
         <inputExpression id="InputExpression_1" typeRef="string">
