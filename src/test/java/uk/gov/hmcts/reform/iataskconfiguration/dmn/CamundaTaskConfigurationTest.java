@@ -262,6 +262,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("printAndSendAppealDecision", routineWork),
             Arguments.of("printAndSendFTPADecision", routineWork),
             Arguments.of("printAndSendReheardHearingRequirements", routineWork),
+            Arguments.of("processFeeRefund", routineWork),
             Arguments.of("reviewAdditionalEvidence", decisionMakingWork),
             Arguments.of("reviewTheAppeal", decisionMakingWork),
             Arguments.of("followUpOverdueRespondentEvidence", decisionMakingWork),
@@ -472,7 +473,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     @ParameterizedTest
     @CsvSource({
         "reviewRemissionApplication","assignAFTPAJudge","listTheCase","sendPaymentRequest","markAsPaid",
-        "reviewDraftAppeal"
+        "processFeeRefund", "reviewDraftAppeal"
     })
     void when_taskId_then_return_Ctsc_role_category(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
@@ -1258,6 +1259,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("reviewAppealSetAsideUnderRule35", fiveDays),
             Arguments.of("reviewAppealSetAsideUnderRule32", fiveDays),
             Arguments.of("reviewDraftAppeal", fiveDays),
+            Arguments.of("processFeeRefund", fiveDays),
             Arguments.of("allocateHearingJudge", threeDays),
             Arguments.of("processApplicationToReviewDecision", twoDays),
             Arguments.of("editListing", twoDays),
