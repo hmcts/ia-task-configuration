@@ -300,6 +300,11 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                 "Process Change Hearing Type Application"
             ),
             Map.of("taskTypeId",
+                   "processFeeRefund",
+                   "taskTypeName",
+                   "Process fee refund"
+            ),
+            Map.of("taskTypeId",
                    "reviewMigratedCase",
                    "taskTypeName",
                    "Review migrated case"
@@ -395,7 +400,7 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(1));
         assertThat(logic.getOutputs().size(), is(2));
-        assertThat(logic.getRules().size(), is(68));
+        assertThat(logic.getRules().size(), is(69));
 
     }
 }
