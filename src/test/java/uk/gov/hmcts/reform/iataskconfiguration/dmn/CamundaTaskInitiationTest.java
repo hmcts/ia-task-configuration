@@ -47,7 +47,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             "delayUntilIntervalDays", "0",
             "delayUntil", directionDueDate
         );
-        Map<String,Object> delayFor14Days = Map.of(
+        Map<String,Object> delayFor14DaysExcludingBankHolidays = Map.of(
             "delayUntilIntervalDays", "14",
             "delayUntilNonWorkingCalendar", "https://www.gov.uk/bank-holidays/england-and-wales.json",
             "delayUntilOrigin", LocalDate.now(),
@@ -56,6 +56,11 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
         Map<String,Object> delayFor12Days = Map.of(
             "delayUntilIntervalDays", "12",
+            "delayUntilOrigin", LocalDate.now()
+        );
+
+        Map<String,Object> delayFor14Days = Map.of(
+            "delayUntilIntervalDays", "14",
             "delayUntilOrigin", LocalDate.now()
         );
 
@@ -931,7 +936,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "followUpNoticeOfChange",
                         "name", "Follow-up Notice of Change",
                         "processCategories", "followUpOverdue",
-                        "delayUntil", delayFor14Days
+                        "delayUntil", delayFor14DaysExcludingBankHolidays
                     )
                 )
             ),
@@ -946,7 +951,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
 
                         "processCategories", "followUpOverdue",
-                        "delayUntil", delayFor14Days
+                        "delayUntil", delayFor14DaysExcludingBankHolidays
                     )
                 )
             ),
@@ -1853,6 +1858,246 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "ariaCreateCase",
+                "migrated",
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewMigratedCase",
+                        "name", "Review migrated case",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "ariaCreateCase",
+                "migrated",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
+                                      + "      \"remissionType\":\"" + "hoWaiverRemission" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                List.of(
+                    Map.of(
+                        "taskId", "reviewMigratedCase",
+                        "name", "Review migrated case",
+
+                        "processCategories", "caseProgression"
+                    ),
+                    Map.of(
+                        "taskId", "reviewAriaRemissionApplication",
+                        "name", "Review Remission Application",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "startAppeal",
+                "appealStartedByAdmin",
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewDraftAppeal",
+                        "name", "Review draft appeal",
+                        "delayUntil", delayFor14Days,
+                        "processCategories", "followUpOverdue"
+                    )
+                )
+            ),
+            Arguments.of(
+                "requestResponseReview",
+                "respondentReview",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAdmin\":\"" + true + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "printAndSendHoResponse",
+                        "name", "Print and send HO response",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "asyncStitchingComplete",
+                "preHearing",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAdmin\":\"" + true + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "printAndSendHearingBundle",
+                        "name", "Print and send hearing bundle",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "updateTribunalDecision",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAdmin\":\"" + true + "\",\n"
+                                      + "      \"isDecisionRule31Changed\":\"" + true + "\",\n"
+                                      + "      \"updateTribunalDecisionList\":\"" + "underRule31" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "printAndSendDecisionCorrectedRule31",
+                        "name", "Print and send decision corrected under rule 31",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "updateTribunalDecision",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAdmin\":\"" + true + "\",\n"
+                                      + "      \"updateTribunalDecisionList\":\"" + "underRule32" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                List.of(
+                    Map.of(
+                        "taskId", "reviewAppealSetAsideUnderRule32",
+                        "name", "Review appeal set aside under rule 32",
+
+                        "processCategories", "caseProgression"
+                    ),
+                    Map.of(
+                        "taskId", "printAndSendDecisionCorrectedRule32",
+                        "name", "Print and send decision corrected under rule 32",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "makeAnApplication",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAdmin\":\"" + true + "\",\n"
+                                      + "      \"lastModifiedApplication\" : {\n"
+                                      + "            \"type\" : \"Judge's review of application decision\",\n"
+                                      + "            \"decision\" : \"\",\n"
+                                      + "            \"applicant\":\"" + "Respondent" + "\"\n"
+                                      + "          }\n"
+                                      + "   }"
+                                      + "}"),
+                List.of(
+                    Map.of(
+                        "taskId", "processApplicationToReviewDecision",
+                        "name", "Process Application to Review Decision",
+
+                        "processCategories", "application"
+                    ),
+                    Map.of(
+                        "taskId", "printAndSendHoApplication",
+                        "name", "Print and send HO application",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "uploadAdditionalEvidenceHomeOffice",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAdmin\":\"" + true + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "printAndSendHoEvidence",
+                        "name", "Print and send new HO evidence",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "uploadAddendumEvidenceHomeOffice",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAdmin\":\"" + true + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "printAndSendHoEvidence",
+                        "name", "Print and send new HO evidence",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "sendDecisionAndReasons",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAdmin\":\"" + true + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "printAndSendAppealDecision",
+                        "name", "Print and send appeal decision and FTPA form",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "decideFtpaApplication",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAdmin\":\"" + true + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "printAndSendFTPADecision",
+                        "name", "Print and send FTPA decision",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "requestNewHearingRequirements",
+                "submitHearingRequirements",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAdmin\":\"" + true + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "printAndSendReheardHearingRequirements",
+                        "name", "Print and send reheard appeal hearing requirements form",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
                 "unknownEvent",
                 null,
                 null,
@@ -1879,6 +2124,87 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
     }
 
+    public static Stream<Arguments> multipleMapScenarioProvider() {
+        LocalDateTime directionDueDate = LocalDateTime.now().plusDays(5);
+        Map<String, LocalDateTime> variablesDirectionDueDate = Map.of(
+            "directionDueDate", directionDueDate
+        );
+        Map<String, Object> delayUntilDirectionDue = Map.of(
+            "delayUntilIntervalDays", "0",
+            "delayUntil", directionDueDate
+        );
+
+        return Stream.of(
+            Arguments.of(
+                "requestCaseBuilding",
+                "caseBuilding",
+                variablesDirectionDueDate,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAdmin\":\"" + true + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                List.of(
+                    Map.of(
+                        "taskId", "followUpOverdueCaseBuilding",
+                        "name", "Follow-up overdue case building",
+                        "processCategories", "followUpOverdue",
+                        "delayUntil", delayUntilDirectionDue
+                    ),
+                    Map.of(
+                        "taskId", "printAndSendHoBundle",
+                        "name", "Print and send HO bundle and appeal reasons form",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "requestHearingRequirementsFeature",
+                "submitHearingRequirements",
+                variablesDirectionDueDate,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAdmin\":\"" + true + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                List.of(
+                    Map.of(
+                        "taskId", "followUpOverdueHearingRequirements",
+                        "name", "Follow-up overdue hearing requirements",
+                        "processCategories", "followUpOverdue",
+                        "delayUntil", delayUntilDirectionDue
+                    ),
+                    Map.of(
+                        "taskId", "printAndSendHearingRequirements",
+                        "name", "Print and send hearing requirements form",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            )
+        );
+    }
+
+    @ParameterizedTest(name = "event id: {0} post event state: {1} "
+        + "additional map: {2} additional data: {3} expectation data: {4}")
+    @MethodSource("multipleMapScenarioProvider")
+    void given_multiple_data_map_should_evaluate_dmn(String eventId,
+                                                     String postEventState,
+                                                     Map<String, Object> additionalMap,
+                                                     Map<String, Object> additionalData,
+                                                     List<Map<String, String>> expectation) {
+        VariableMap inputVariables = new VariableMapImpl();
+        inputVariables.putValue("eventId", eventId);
+        inputVariables.putValue("postEventState", postEventState);
+        inputVariables.putAll(additionalMap);
+        inputVariables.putAll(additionalData);
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
+    }
+
+
     public static Stream<Arguments> makeAnApplicationScenarioProvider() {
         return Stream.of(
             Arguments.of(
@@ -1888,7 +2214,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       + "        \"Data\" : {\n"
                                       + "          \"lastModifiedApplication\" : {\n"
                                       + "            \"type\" : \"\",\n"
-                                      + "            \"decision\" : \"\"\n"
+                                      + "            \"decision\" : \"\",\n"
+                                      + "            \"applicant\" : \"\"\n"
                                       + "          }\n"
                                       + "        }\n"
                                       + "      }"),
@@ -1944,7 +2271,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                   + "        \"Data\" : {\n"
                                   + "          \"lastModifiedApplication\" : {\n"
                                   + "            \"type\" : \"" + applicationType + "\",\n"
-                                  + "            \"decision\" : \"\"\n"
+                                  + "            \"decision\" : \"\",\n"
+                                  + "            \"applicant\" : \"\"\n"
                                   + "          }\n"
                                   + "        }\n"
                                   + "      }"),
@@ -2030,7 +2358,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                               + "        \"Data\" : {\n"
                               + "          \"lastModifiedApplication\" : {\n"
                               + "            \"type\" : \"" + applicationType + "\",\n"
-                              + "            \"decision\" : \"Granted\"\n"
+                              + "            \"decision\" : \"Granted\",\n"
+                              + "            \"applicant\" : \"\"\n"
                               + "          },\n"
                               + "          \"isIntegrated\" : \"" + isIntegrated + "\"\n"
                               + "        }\n"
@@ -2061,9 +2390,9 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getInputs().size(), is(21));
+        assertThat(logic.getInputs().size(), is(24));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(69));
+        assertThat(logic.getRules().size(), is(83));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {
