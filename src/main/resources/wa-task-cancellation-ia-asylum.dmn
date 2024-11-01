@@ -482,29 +482,6 @@
           <text>"followUpOverdue"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0bi5xm6">
-        <inputEntry id="UnaryTests_0eyresj">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0qw84wb">
-          <text>"submitAppeal"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1qjdaj2">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1dw8hca">
-          <text>"Cancel"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1qkauga">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0ad3f3r">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0hx6g5u">
-          <text>"followUpOverdue"</text>
-        </outputEntry>
-      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
