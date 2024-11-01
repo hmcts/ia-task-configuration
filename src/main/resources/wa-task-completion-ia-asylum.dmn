@@ -449,39 +449,6 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_03o6lzy">
-        <inputEntry id="UnaryTests_0btxaat">
-          <text>"progressMigratedCase"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_07ybw3k">
-          <text>"reviewMigratedCase"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0kuafu5">
-          <text>"Auto"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1uai2ba">
-        <inputEntry id="UnaryTests_0qbzfw6">
-          <text>"recordRemissionDecision"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0jymbyo">
-          <text>"reviewAriaRemissionApplication"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1czemnt">
-          <text>"Auto"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_03m1t7q">
-        <inputEntry id="UnaryTests_1bvbvz6">
-          <text>"submitAppeal","endAppeal" </text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1q41ycu">
-          <text>"reviewDraftAppeal"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0qpel3e">
-          <text>"Auto"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_1drcgy9">
         <inputEntry id="UnaryTests_0owczza">
           <text>"refundConfirmation"</text>
@@ -495,7 +462,7 @@
       </rule>
       <rule id="DecisionRule_1u3c7sd">
         <inputEntry id="UnaryTests_1dd0p7u">
-          <text>"generateHearingBundle","decisionAndReasonsStarted","updateHearingRequirements","endAppeal","requestRespondentEvidence","requestCaseBuilding","requestReasonsForAppeal","sendDirection","requestRespondentReview","requestCaseEdit","sendDirectionWithQuestions","requestCmaRequirements","markEvidenceAsReviewed","markAddendumEvidenceAsReviewed","reviewCmaRequirements","updateDetailsAfterCma","requestResponseAmend","requestResponseReview","reviewHearingRequirements","changeDirectionDueDate","decideAnApplication","editCaseListing","sendDecisionAndReasons","generateDecisionAndReasons","uploadHearingRecording","postHearingAttendeesDurationAndRecording","decideFtpaApplication","recordRemissionDecision","recordAllocatedJudge","listCase","markAppealPaid","markPaymentRequestSent","requestNewHearingRequirements","refundConfirmation","progressMigratedCase","submitAppeal"</text>
+          <text>"generateHearingBundle","decisionAndReasonsStarted","updateHearingRequirements","endAppeal","requestRespondentEvidence","requestCaseBuilding","requestReasonsForAppeal","sendDirection","requestRespondentReview","requestCaseEdit","sendDirectionWithQuestions","requestCmaRequirements","markEvidenceAsReviewed","markAddendumEvidenceAsReviewed","reviewCmaRequirements","updateDetailsAfterCma","requestResponseAmend","requestResponseReview","reviewHearingRequirements","changeDirectionDueDate","decideAnApplication","editCaseListing","sendDecisionAndReasons","generateDecisionAndReasons","uploadHearingRecording","postHearingAttendeesDurationAndRecording","decideFtpaApplication","recordRemissionDecision","recordAllocatedJudge","listCase","markAppealPaid","markPaymentRequestSent","requestNewHearingRequirements","refundConfirmation"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1ex7ytl">
           <text></text>
