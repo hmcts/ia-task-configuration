@@ -170,7 +170,7 @@
             null</text>
         </inputExpression>
       </input>
-      <input id="InputClause_14eytf1" label="Updating Tribunal Decision Reason" camunda:inputVariable="updateTribunalDecisionList">
+      <input id="InputClause_14eytf1" label="Updating Tribunal Decision Reason" biodi:width="277" camunda:inputVariable="updateTribunalDecisionList">
         <inputExpression id="LiteralExpression_1lih0do" typeRef="string">
           <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.updateTribunalDecisionList
             != null) then
@@ -217,7 +217,7 @@
             null</text>
         </inputExpression>
       </input>
-      <input id="InputClause_0c3am0h" label="Reviewed Hearing Requirements" camunda:inputVariable="reviewedHearingRequirements">
+      <input id="InputClause_0c3am0h" label="Reviewed Hearing Requirements" biodi:width="390" camunda:inputVariable="reviewedHearingRequirements">
         <inputExpression id="LiteralExpression_10ob503" typeRef="boolean">
           <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.reviewedHearingRequirements
             != null) then
@@ -1716,7 +1716,7 @@
       </rule>
       <rule id="DecisionRule_1neox9h">
         <inputEntry id="UnaryTests_0s4uzvv">
-          <text>"paymentAppeal"</text>
+          <text>"paymentAppeal", "progressMigratedCase"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0lz3uxd">
           <text>"appealSubmitted"</text>
