@@ -1873,22 +1873,11 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "ariaCreateCase",
                 "migrated",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
-                                      + "      \"remissionType\":\"" + "hoWaiverRemission" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                null,
                 List.of(
                     Map.of(
                         "taskId", "reviewMigratedCase",
                         "name", "Review migrated case",
-
-                        "processCategories", "caseProgression"
-                    ),
-                    Map.of(
-                        "taskId", "reviewAriaRemissionApplication",
-                        "name", "Review Remission Application",
 
                         "processCategories", "caseProgression"
                     )
@@ -2755,7 +2744,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(26));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(89));
+        assertThat(logic.getRules().size(), is(88));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {
