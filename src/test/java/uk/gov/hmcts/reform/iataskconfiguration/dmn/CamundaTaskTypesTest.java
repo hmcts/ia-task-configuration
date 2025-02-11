@@ -298,6 +298,81 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                 "processApplicationChangeHearingType",
                 "taskTypeName",
                 "Process Change Hearing Type Application"
+            ),
+            Map.of("taskTypeId",
+                   "processFeeRefund",
+                   "taskTypeName",
+                   "Process fee refund"
+            ),
+            Map.of("taskTypeId",
+                   "reviewMigratedCase",
+                   "taskTypeName",
+                   "Review migrated case"
+            ),
+            Map.of("taskTypeId",
+                   "reviewAriaRemissionApplication",
+                   "taskTypeName",
+                   "Review Remission Application"
+            ),
+            Map.of("taskTypeId",
+                   "reviewDraftAppeal",
+                   "taskTypeName",
+                   "Review draft appeal"
+            ),
+            Map.of("taskTypeId",
+                   "printAndSendHoBundle",
+                   "taskTypeName",
+                   "Print and send HO bundle and appeal reasons form"
+            ),
+            Map.of("taskTypeId",
+                   "printAndSendHoResponse",
+                   "taskTypeName",
+                   "Print and send HO response"
+            ),
+            Map.of("taskTypeId",
+                   "printAndSendHearingRequirements",
+                   "taskTypeName",
+                   "Print and send hearing requirements form"
+            ),
+            Map.of("taskTypeId",
+                   "printAndSendHearingBundle",
+                   "taskTypeName",
+                   "Print and send hearing bundle"
+            ),
+            Map.of("taskTypeId",
+                   "printAndSendDecisionCorrectedRule31",
+                   "taskTypeName",
+                   "Print and send decision corrected under rule 31"
+            ),
+            Map.of("taskTypeId",
+                   "printAndSendDecisionCorrectedRule32",
+                   "taskTypeName",
+                   "Print and send decision corrected under rule 32"
+            ),
+            Map.of("taskTypeId",
+                   "printAndSendHoApplication",
+                   "taskTypeName",
+                   "Print and send HO application"
+            ),
+            Map.of("taskTypeId",
+                   "printAndSendHoEvidence",
+                   "taskTypeName",
+                   "Print and send new HO evidence"
+            ),
+            Map.of("taskTypeId",
+                   "printAndSendAppealDecision",
+                   "taskTypeName",
+                   "Print and send appeal decision and FTPA form"
+            ),
+            Map.of("taskTypeId",
+                   "printAndSendFTPADecision",
+                   "taskTypeName",
+                   "Print and send FTPA decision"
+            ),
+            Map.of("taskTypeId",
+                   "printAndSendReheardHearingRequirements",
+                   "taskTypeName",
+                   "Print and send reheard appeal hearing requirements form"
             )
         );
         return Stream.of(
@@ -325,7 +400,6 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(1));
         assertThat(logic.getOutputs().size(), is(2));
-        assertThat(logic.getRules().size(), is(54));
-
+        assertThat(logic.getRules().size(), is(69));
     }
 }
