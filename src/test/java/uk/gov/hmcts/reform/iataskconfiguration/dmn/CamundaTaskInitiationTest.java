@@ -1602,6 +1602,23 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "requestFeeRemission",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"journeyType\":\"" + "aip" + "\",\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewRemissionApplication",
+                        "name", "Review Remission Application",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
                 "reviewHearingRequirements",
                 "listing",
                 mapAdditionalData("{\n"
