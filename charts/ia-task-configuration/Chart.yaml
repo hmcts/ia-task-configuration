@@ -3,10 +3,10 @@ appVersion: "1.0"
 description: A Helm chart for ia-task-configuration
 name: ia-task-configuration
 home: https://github.com/hmcts/ia-task-configuration
-version: 0.0.7
+version: 0.0.8
 maintainers:
   - name: HMCTS IA team
 dependencies:
   - name: java
-    version: 5.2.1
-    repository: '@hmctspublic'
+    version: 5.3.0
+    repository: 'oci://hmctspublic.azurecr.io/helm'
