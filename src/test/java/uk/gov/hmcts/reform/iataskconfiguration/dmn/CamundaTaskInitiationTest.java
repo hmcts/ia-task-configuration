@@ -1852,6 +1852,19 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "cmrReListing",
+                null,
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "cmrUpdated",
+                        "name", "Update CMR notification",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
                 "restoreStateFromAdjourn",
                 null,
                 mapAdditionalData("{\n"
@@ -1891,6 +1904,19 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "triggerCmrListed",
+                null,
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "cmrListed",
+                        "name", "Send CMR notification",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "cmrListing",
                 null,
                 null,
                 singletonList(
@@ -2856,7 +2882,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(27));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(90));
+        assertThat(logic.getRules().size(), is(92));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {
