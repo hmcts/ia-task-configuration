@@ -254,7 +254,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData("{\n"
                                   + "   \"Data\":{\n"
                                   + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
-                                  + "      \"journeyType\":\"" + "aip" + "\"\n"
+                                  + "      \"journeyType\":\"" + "aip" + "\",\n"
+                                  + "      \"paymentStatus\":\"" + "Paid" + "\"\n"
                                   + "   }"
                                   + "}"),
                 singletonList(
@@ -272,7 +273,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData("{\n"
                                   + "   \"Data\":{\n"
                                   + "      \"appealType\":\"" + "refusalOfEu" + "\",\n"
-                                  + "      \"journeyType\":\"" + "aip" + "\"\n"
+                                  + "      \"journeyType\":\"" + "aip" + "\",\n"
+                                  + "      \"paymentStatus\":\"" + "Paid" + "\"\n"
                                   + "   }"
                                   + "}"),
                 singletonList(
@@ -290,7 +292,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                                      + "      \"journeyType\":\"" + "aip" + "\"\n"
+                                      + "      \"journeyType\":\"" + "aip" + "\",\n"
+                                      + "      \"paymentStatus\":\"" + "Paid" + "\"\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
