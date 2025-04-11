@@ -7065,6 +7065,101 @@
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0eu2gzx">
+        <inputEntry id="UnaryTests_064y61l">
+          <text>"hearingCancelled"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qawz7a">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1n9frug">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1mignqh">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01wefpd">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15x1sgc">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1z08roa">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1bemu2f">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_145ieyj">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1v25rhc">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17en690">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1t4vtvx">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jiqpp4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ct2oi2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16jhbx1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1gvwi45">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07y7r3m">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0y9tc9b">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1cotswo">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0axdi32">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0pqbxtq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17hbo70">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0egdf8e">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09pmvoi">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_13tspx5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0mwzo4l">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1s3z1gd">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_16a8qji">
+          <text>"reviewInterpreters"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1b11edo">
+          <text>"Review interpreter booking"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_061nirc">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1y0j6xw">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1bha34g">
         <inputEntry id="UnaryTests_0lnb0fq">
           <text>"editCaseListing"</text>
