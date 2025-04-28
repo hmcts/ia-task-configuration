@@ -359,7 +359,7 @@
             "allocateHearingJudge",
             "uploadHearingRecording",
             "postHearingAttendeesDurationAndRecording",
-            "editListing","detainedEditListing"
+            "editListing","detainedEditListing",
             "followUpSetAsideDecision",
 "hearingException","cmrListed","cmrUpdated","relistCase","listTheCase","reviewInterpreters",
 "reviewMigratedCase",
@@ -394,7 +394,7 @@
         <inputEntry id="UnaryTests_0vmy0oj">
           <text>
             "reviewAddendumEvidence",
-            "editListing","reviewEditListing"
+            "editListing","reviewEditListing","detainedEditListing"
 </text>
         </inputEntry>
         <inputEntry id="UnaryTests_190pyoc">

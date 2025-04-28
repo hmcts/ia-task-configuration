@@ -834,7 +834,7 @@
           <text>true</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1781t2e">
-          <text>"detainedprocessApplicationTimeExtension"</text>
+          <text>"detainedProcessApplicationTimeExtension"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_16tk8rz">
           <text>"Detained Process Time Extension Application"</text>
@@ -2598,7 +2598,7 @@
           <text>true</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0dn3bh4">
-          <text>"detainedPeviewSetAsideDecisionApplication"</text>
+          <text>"detainedReviewSetAsideDecisionApplication"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1j0tata">
           <text>"Detained Review set aside decision application"</text>
