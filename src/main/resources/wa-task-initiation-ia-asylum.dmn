@@ -244,12 +244,12 @@
             false</text>
         </inputExpression>
       </input>
-      <input id="InputClause_0q7azho" label="Is Detained Appellant" camunda:inputVariable="appellaintIn">
+      <input id="InputClause_0q7azho" label="Is Detained Appellant" camunda:inputVariable="appellaintInDetention">
         <inputExpression id="LiteralExpression_1pn86xg" typeRef="boolean">
           <text>if(additionalData != null
           and additionalData.Data != null
-          and additionalData.Data.isAppellantDetained != null) then
-          additionalData.Data.isAppellantDetained
+          and additionalData.Data.appellantInDetention != null) then
+          additionalData.Data.appellantInDetention
           else
           false</text>
         </inputExpression>
