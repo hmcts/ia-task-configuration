@@ -2683,6 +2683,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       + "            \"type\" : \"\",\n"
                                       + "            \"decision\" : \"\",\n"
                                       + "            \"applicant\" : \"\"\n"
+                                      + "            \"appellantInDetention\" : \"\"\n"
                                       + "          }\n"
                                       + "        }\n"
                                       + "      }"),
@@ -2779,6 +2780,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                   + "            \"type\" : \"" + applicationType + "\",\n"
                                   + "            \"decision\" : \"\",\n"
                                   + "            \"applicant\" : \"\"\n"
+                                  + "            \"appellantInDetention\" : \"\"\n"
                                   + "          }\n"
                                   + "        }\n"
                                   + "      }"),
@@ -2880,7 +2882,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     void given_decideAnApplication_should_evaluate_dmn(String eventId,
                                                        String postEventState,
                                                        Map<String, Object> additionalData,
-                                                       List<Map<String, String>> expectation) {
+                                                       List<Map<String, String>> expectation,
+                                                       boolean isIntegrated) {
         VariableMap inputVariables = new VariableMapImpl();
         inputVariables.putValue("eventId", eventId);
         inputVariables.putValue("postEventState", postEventState);
