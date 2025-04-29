@@ -843,6 +843,14 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "autoAssignable", false
             ),
             Map.of(
+                "name", "judge",
+                "value", "Read,Execute,Claim,Manage,Unassign,Assign,Complete,Cancel",
+                "roleCategory", "JUDICIAL",
+                "assignmentPriority", 2,
+                "authorisations", "373",
+                "autoAssignable", false
+            ),
+            Map.of(
                 "name", "hearing-judge",
                 "value", "Read,Execute,Claim,Cancel",
                 "roleCategory", "JUDICIAL",
@@ -850,12 +858,12 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "autoAssignable", false
             ),
             Map.of(
-                "autoAssignable", false,
+                "name", "judge",
+                "value", "Read,Own,Claim,Manage,Unassign,Assign,Complete,Cancel",
+                "roleCategory", "JUDICIAL",
                 "assignmentPriority", 1,
                 "authorisations", "373",
-                "name", "judge",
-                "roleCategory", "JUDICIAL",
-                "value", "Read,Own,Claim,Manage,Unassign,Assign,Complete,Cancel"
+                "autoAssignable", false
             )
         )));
     }
@@ -894,6 +902,14 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "autoAssignable", false
             ),
             Map.of(
+                "name", "judge",
+                "value", "Read,Execute,Claim,Manage,Unassign,Assign,Complete,Cancel",
+                "roleCategory", "JUDICIAL",
+                "assignmentPriority", 2,
+                "authorisations", "373",
+                "autoAssignable", false
+            ),
+            Map.of(
                 "name", "hearing-judge",
                 "value", "Read,Execute,Claim,Cancel",
                 "roleCategory", "JUDICIAL",
@@ -901,12 +917,12 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "autoAssignable", false
             ),
             Map.of(
-                "autoAssignable", false,
+                "name", "judge",
+                "value", "Read,Own,Claim,Manage,Unassign,Assign,Complete,Cancel",
+                "roleCategory", "JUDICIAL",
                 "assignmentPriority", 1,
                 "authorisations", "373",
-                "name", "judge",
-                "roleCategory", "JUDICIAL",
-                "value", "Read,Own,Claim,Manage,Unassign,Assign,Complete,Cancel"
+                "autoAssignable", false
             )
         )));
     }
