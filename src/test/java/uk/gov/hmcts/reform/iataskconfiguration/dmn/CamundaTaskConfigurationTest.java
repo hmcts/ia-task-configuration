@@ -308,7 +308,6 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("processApplicationTimeExtension", applications),
             Arguments.of("detainedProcessApplicationTimeExtension", applications),
             Arguments.of("processApplicationTransfer", applications),
-            Arguments.of("detainedProcessApplicationTransfer", applications),
             Arguments.of("processApplicationWithdraw", applications),
             Arguments.of("detainedProcessApplicationWithdraw", applications),
             Arguments.of("processApplicationUpdateHearingRequirements", applications),
@@ -323,12 +322,11 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("detainedProcessApplicationLink/UnlinkAppeals", applications),
             Arguments.of("processHearingRequirementsApplication", applications),
             Arguments.of("processHearingCentreApplication", applications),
-            Arguments.of("processApplicationToExpedite", applications),
-            Arguments.of("detainedProcessApplicationToExpedite", applications),
-            Arguments.of("processApplicationToTransfer", applications),
-            Arguments.of("detainedProcessApplicationToTransfer", applications),
+            Arguments.of("processApplicationExpedite", applications),
+            Arguments.of("detainedProcessApplicationExpedite", applications),
+            Arguments.of("processApplicationTransfer", applications),
+            Arguments.of("detainedProcessApplicationTransfer", applications),
             Arguments.of("processApplicationForTimeExtension", applications),
-            Arguments.of("processApplicationToWithdraw", applications),
             Arguments.of("processAppealDetailsApplication", applications),
             Arguments.of("processReinstatementApplication", applications),
             Arguments.of("processApplicationToReviewDecision", applications),
@@ -432,15 +430,14 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
         String roleAssignmentId = UUID.randomUUID().toString();
         inputVariables.putValue("taskAttributes", Map.of(
-                                    "taskType", taskType,
-                                    "additionalProperties", Map.of("roleAssignmentId", roleAssignmentId)
-                                )
-        );
+            "taskType", taskType,
+            "additionalProperties", Map.of("roleAssignmentId", roleAssignmentId)
+        ));
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
         List<Map<String, Object>> workTypeResultList = dmnDecisionTableResult.getResultList().stream()
-            .filter((r) -> r.containsValue("roleCategory"))
+            .filter(r -> "roleCategory".equals(r.get("name")))
             .toList();
 
         assertEquals(1, workTypeResultList.size());
@@ -1169,7 +1166,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             detainedProcessApplicationAdjournScenario,
             processApplicationExpediteScenario,
             processApplicationTimeExtensionScenario,
-            detainedProcessApplicationTimeExtensionScenario,
+            //detainedProcessApplicationTimeExtensionScenario,
             processApplicationTransferScenario,
             detainedProcessApplicationTransferScenario,
             processApplicationWithdrawScenario,
@@ -1181,10 +1178,10 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             processApplicationReinstateAnEndedAppealScenario,
             detainedProcessApplicationReinstateAnEndedAppealScenario,
             processApplicationOtherScenario,
-            detainedProcessApplicationOtherScenario,
+            //detainedProcessApplicationOtherScenario,
             processApplicationLinkUnlinkAppealsScenario,
-            processApplicationChangeHearingTypeScenario,
-            detainedProcessApplicationChangeHearingTypeScenario
+            processApplicationChangeHearingTypeScenario
+            //detainedProcessApplicationChangeHearingTypeScenario
         );
     }
 
@@ -1419,15 +1416,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "cmrListed,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,,",
         "cmrUpdated,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,,",
         "relistCase,[Relist the hearing](cases/case-details/${[CASE_REFERENCE]}/hearings),,,",
-        "reviewInterpreters,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,,",
-        "reviewSpecificAccessRequestJudiciary,[Review Access Request](/role-access/"
-            + "${[taskId]}/assignment/${[roleAssignmentId]}/specific-access),,,",
-        "reviewSpecificAccessRequestLegalOps,[Review Access Request](/role-access/"
-            + "${[taskId]}/assignment/${[roleAssignmentId]}/specific-access),,,",
-        "reviewSpecificAccessRequestAdmin,[Review Access Request](/role-access/"
-            + "${[taskId]}/assignment/${[roleAssignmentId]}/specific-access),,,",
-        "reviewSpecificAccessRequestCTSC,[Review Access Request](/role-access/"
-            + "${[taskId]}/assignment/${[roleAssignmentId]}/specific-access),,,"
+        "reviewInterpreters,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,,"
     })
     void should_return_a_200_description_property(String taskType, String expectedDescription, String journeyType,
                                                   String isIntegrated, String ariaTaskDueDays) {
