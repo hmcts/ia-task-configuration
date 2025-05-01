@@ -422,7 +422,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "generateDraftDecisionAndReasons", "uploadDecision", "reviewAddendumHomeOfficeEvidence",
         "reviewAddendumAppellantEvidence", "reviewSpecificAccessRequestJudiciary",
         "reviewSpecificAccessRequestLegalOps", "reviewSpecificAccessRequestAdmin","reviewSpecificAccessRequestCTSC",
-        "processApplicationToReviewDecision", "detainedProcessApplicationToReviewDecision", "sendDecisionsAndReasons", "prepareDecisionsAndReasons", "decideAnFTPA",
+        "processApplicationToReviewDecision", "detainedProcessApplicationToReviewDecision",
+        "sendDecisionsAndReasons", "prepareDecisionsAndReasons", "decideAnFTPA",
         "reviewSetAsideDecisionApplication", "detainedReviewSetAsideDecisionApplication"
     })
     void when_taskId_then_return_judicial_role_category(String taskType) {
@@ -510,10 +511,18 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
     @ParameterizedTest
     @CsvSource({
-        "processApplicationAdjourn", "detainedProcessApplicationAdjourn", "processApplicationExpedite", "detainedProcessApplicationExpedite","processApplicationTimeExtension","detainedProcessApplicationTimeExtension",
-        "processApplicationTransfer", "detainedProcessApplicationTransfer", "processApplicationWithdraw","detainedProcessApplicationWithdraw", "processApplicationUpdateHearingRequirements", "detainedProcessApplicationUpdateHearingRequirements",
-        "processApplicationUpdateAppealDetails", "detainedProcessApplicationUpdateAppealDetails", "processApplicationReinstateAnEndedAppeal", "detainedProcessApplicationReinstateAnEndedAppeal", "processApplicationOther", "detainedProcessApplicationOther",
-        "processApplicationLink/UnlinkAppeals", "detainedProcessApplicationLink/UnlinkAppeals", "processApplicationChangeHearingType", "detainedProcessApplicationChangeHearingType", "reviewTheAppeal",
+        "processApplicationAdjourn", "detainedProcessApplicationAdjourn", "processApplicationExpedite",
+        "detainedProcessApplicationExpedite","processApplicationTimeExtension",
+        "detainedProcessApplicationTimeExtension",
+        "processApplicationTransfer", "detainedProcessApplicationTransfer", "processApplicationWithdraw",
+        "detainedProcessApplicationWithdraw", "processApplicationUpdateHearingRequirements",
+        "detainedProcessApplicationUpdateHearingRequirements",
+        "processApplicationUpdateAppealDetails", "detainedProcessApplicationUpdateAppealDetails",
+        "processApplicationReinstateAnEndedAppeal", "detainedProcessApplicationReinstateAnEndedAppeal",
+        "processApplicationOther",
+        "detainedProcessApplicationOther",
+        "processApplicationLink/UnlinkAppeals", "detainedProcessApplicationLink/UnlinkAppeals",
+        "processApplicationChangeHearingType", "detainedProcessApplicationChangeHearingType", "reviewTheAppeal",
         "decideOnTimeExtension", "reviewRespondentEvidence", "reviewAppealSkeletonArgument", "reviewReasonsForAppeal",
         "reviewClarifyingQuestionsAnswers", "reviewAdditionalHomeOfficeEvidence",
         "reviewCmaRequirements", "attendCma", "reviewRespondentResponse", "caseSummaryHearingBundleStartDecision",
@@ -1391,7 +1400,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "reviewAddendumEvidence,[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
             + "markAddendumEvidenceAsReviewed),,,",
         "editListing,[Edit case listing](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/editCaseListing),,,",
-        "detainedEditListing,[Edit case listing](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/detainedEditCaseListing),,,",
+        "detainedEditListing,[Edit case listing](/case/IA/Asylum/${[CASE_REFERENCE]}"
+            + "/trigger/detainedEditCaseListing),,,",
         "decideAnFTPA,[Decide FTPA application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideFtpaApplication),,,",
         "prepareDecisionsAndReasons,[Prepare decisions and reasons](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
             + "generateDecisionAndReasons),,,",
@@ -1399,7 +1409,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             + "sendDecisionAndReasons),,,",
         "processApplicationToReviewDecision,[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
             + "decideAnApplication),,,",
-        "detainedProcessApplicationToReviewDecision,[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
+        "detainedProcessApplicationToReviewDecision,[Decide an application]"
+            + "(/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
             + "decideAnApplication),,,",
         "reviewRemissionApplication,[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/"
             + "recordRemissionDecision/recordRemissionDecisionremissionDecision),,,",

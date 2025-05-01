@@ -2797,7 +2797,10 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         );
     }
 
-    private static Arguments getArgumentOf(String applicationType, String taskId, String taskName, boolean appellantInDetention) {
+    private static Arguments getArgumentOf(String applicationType,
+                                           String taskId,
+                                           String taskName,
+                                           boolean appellantInDetention) {
         return Arguments.of(
             "makeAnApplication",
             null,
