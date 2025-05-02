@@ -1582,8 +1582,7 @@
         <inputEntry id="UnaryTests_116xfi4">
           <text>"submitAppeal",
 "payAndSubmitAppeal",
-"progressMigratedCase",
-"migrateCase"</text>
+"progressMigratedCase"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_07uxcvq">
           <text>"appealSubmitted"</text>
