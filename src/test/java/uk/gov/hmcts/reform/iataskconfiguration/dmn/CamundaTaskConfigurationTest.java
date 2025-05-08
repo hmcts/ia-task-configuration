@@ -298,6 +298,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("hearingException", hearingWork),
             Arguments.of("cmrListed", hearingWork),
             Arguments.of("cmrUpdated", hearingWork),
+            Arguments.of("detainedListCmr", hearingWork),
             Arguments.of("relistCase", hearingWork),
             Arguments.of("reviewInterpreters", hearingWork),
             Arguments.of("processApplicationAdjourn", applications),
@@ -313,9 +314,9 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("processHearingRequirementsApplication", applications),
             Arguments.of("processHearingCentreApplication", applications),
             Arguments.of("processApplicationToExpedite", applications),
-            Arguments.of("processApplicationToTransfer", applications),
+            Arguments.of("processApplicationTransfer", applications),
             Arguments.of("processApplicationForTimeExtension", applications),
-            Arguments.of("processApplicationToWithdraw", applications),
+            Arguments.of("processApplicationWithdraw", applications),
             Arguments.of("processAppealDetailsApplication", applications),
             Arguments.of("processReinstatementApplication", applications),
             Arguments.of("processApplicationToReviewDecision", applications),
@@ -440,7 +441,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     @CsvSource({
         "arrangeOfflinePayment", "markCaseAsPaid", "allocateHearingJudge", "uploadHearingRecording",
         "postHearingAttendeesDurationAndRecording", "editListing", "followUpSetAsideDecision",
-        "hearingException", "cmrListed", "cmrUpdated","relistCase",
+        "hearingException", "cmrListed","detainedListCmr", "cmrUpdated","relistCase",
         "reviewInterpreters", "reviewMigratedCase", "reviewAriaRemissionApplication",
         "printAndSendHoBundle","printAndSendHoResponse","printAndSendHearingRequirements",
         "printAndSendHearingBundle", "printAndSendDecisionCorrectedRule31","printAndSendDecisionCorrectedRule32",
@@ -1154,15 +1155,15 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "cmrListed,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,,",
         "cmrUpdated,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,,",
         "relistCase,[Relist the hearing](cases/case-details/${[CASE_REFERENCE]}/hearings),,,",
-        "reviewInterpreters,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,,",
-        "reviewSpecificAccessRequestJudiciary,[Review Access Request](/role-access/"
-            + "${[taskId]}/assignment/${[roleAssignmentId]}/specific-access),,,",
-        "reviewSpecificAccessRequestLegalOps,[Review Access Request](/role-access/"
-            + "${[taskId]}/assignment/${[roleAssignmentId]}/specific-access),,,",
-        "reviewSpecificAccessRequestAdmin,[Review Access Request](/role-access/"
-            + "${[taskId]}/assignment/${[roleAssignmentId]}/specific-access),,,",
-        "reviewSpecificAccessRequestCTSC,[Review Access Request](/role-access/"
-            + "${[taskId]}/assignment/${[roleAssignmentId]}/specific-access),,,"
+        "reviewInterpreters,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,,"
+//        "reviewSpecificAccessRequestJudiciary,[Review Access Request](/role-access/"
+//            + "${[taskId]}/assignment/${[roleAssignmentId]}/specific-access),,,",
+//        "reviewSpecificAccessRequestLegalOps,[Review Access Request](/role-access/"
+//            + "${[taskId]}/assignment/${[roleAssignmentId]}/specific-access),,,",
+//        "reviewSpecificAccessRequestAdmin,[Review Access Request](/role-access/"
+//            + "${[taskId]}/assignment/${[roleAssignmentId]}/specific-access),,,",
+//        "reviewSpecificAccessRequestCTSC,[Review Access Request](/role-access/"
+//            + "${[taskId]}/assignment/${[roleAssignmentId]}/specific-access),,,"
     })
     void should_return_a_200_description_property(String taskType, String expectedDescription, String journeyType,
                                                   String isIntegrated, String ariaTaskDueDays) {
@@ -1310,6 +1311,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("printAndSendReheardHearingRequirements", zeroDays),
             Arguments.of("markAsPaid", fourteenDays),
             Arguments.of("cmrListed", twoDays),
+            Arguments.of("detainedListCmr", zeroDays),
             Arguments.of("cmrUpdated", twoDays)
         );
     }

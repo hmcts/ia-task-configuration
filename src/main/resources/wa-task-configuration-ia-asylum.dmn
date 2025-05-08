@@ -533,8 +533,7 @@
                         then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "sendPaymentRequest" or taskType != null and taskType = "sendPaymentRequest") then "[Mark payment request sent](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markPaymentRequestSent)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "markAsPaid" or taskType != null and taskType = "markAsPaid") then "[Mark appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid)"
-                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewMigratedCase" or taskType != null and taskType = "reviewMigratedCase") then "[Progress migrated case](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/progressMigratedCase)"
-                        else if(taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "detainedListCmr" or taskType != null and taskType = "detainedListCmr") then "[List CMR](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/generateCmr)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewMigratedCase" or taskType != null and taskType = "reviewMigratedCase") then "[Progress migrated case](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/progressMigratedCase)" else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "detainedListCmr" or taskType != null and taskType = "detainedListCmr") then "[List CMR](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/generateCmr)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "hearingException" or taskType != null and taskType = "hearingException") then "[Go to case](cases/case-details/${[CASE_REFERENCE]}/hearings)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "cmrListed" or taskType != null and taskType = "cmrListed") then "[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "cmrUpdated" or taskType != null and taskType = "cmrUpdated") then "[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings)"
@@ -750,7 +749,7 @@
 "printAndSendHoEvidence",
 "printAndSendAppealDecision",
 "printAndSendFTPADecision",
-"printAndSendReheardHearingRequirements"</text>
+"printAndSendReheardHearingRequirements","detainedListCmr"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ssbj4t">
           <text>"dueDateIntervalDays"</text>
