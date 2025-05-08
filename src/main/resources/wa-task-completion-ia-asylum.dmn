@@ -495,10 +495,10 @@
       </rule>
       <rule id="DecisionRule_09obgia">
         <inputEntry id="UnaryTests_1kqrdov">
-          <text>"listCmr"</text>
+          <text>"generateListCmr"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1u66h8s">
-          <text>"cmrListed"</text>
+          <text>"detainedListCmr"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_01h8apm">
           <text>"Auto"</text>
