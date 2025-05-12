@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="Definitions_1kep5qz" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.27.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.0.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="Definitions_1kep5qz" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.34.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.0.0">
   <decision id="wa-task-types-ia-asylum" name="Task Types DMN" camunda:historyTimeToLive="P90D">
     <decisionTable id="DecisionTable_17knzal" hitPolicy="COLLECT">
       <input id="Input_1">
@@ -20,6 +20,17 @@
           <text>"Process Adjourn Application"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1jyielq">
+        <inputEntry id="UnaryTests_0ercdv6">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_057zxif">
+          <text>"detainedProcessApplicationAdjourn"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0iymmlb">
+          <text>"Detained Process Adjourn Application"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1m0z59q">
         <inputEntry id="UnaryTests_0s5qt4o">
           <text></text>
@@ -29,6 +40,17 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_11elhjp">
           <text>"Process Expedite Application"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1m77ucv">
+        <inputEntry id="UnaryTests_15dpu20">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ajadcx">
+          <text>"detainedProcessApplicationExpedite"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0xvocin">
+          <text>"Detained Process Expedite Application"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_18d4ohk">
@@ -42,6 +64,17 @@
           <text>"Process Time Extension Application"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1kajjxh">
+        <inputEntry id="UnaryTests_06skk7t">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1khzhrm">
+          <text>"detainedProcessApplicationTimeExtension"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_07nt4pg">
+          <text>"Detained Process Time Extension Application"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_02icg4x">
         <inputEntry id="UnaryTests_17rk2ji">
           <text></text>
@@ -53,15 +86,26 @@
           <text>"Process Transfer Application"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_13g75i5">
+        <inputEntry id="UnaryTests_1499vdc">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1qrh06a">
+          <text>"detainedProcessApplicationTransfer"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0n8hq5b">
+          <text>"Detained Process Transfer Application"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_13b78zg">
         <inputEntry id="UnaryTests_0jyq8vk">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0eiif03">
-          <text>"processApplicationWithdraw"</text>
+          <text>"detainedProcessApplicationWithdraw"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1es9p8g">
-          <text>"Process Withdraw Application"</text>
+          <text>"Detained Process Withdraw Application"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_11fpcla">
@@ -75,6 +119,17 @@
           <text>"Process Update Hearing Requirements Application"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_160eyrh">
+        <inputEntry id="UnaryTests_0uazdg8">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0uxz414">
+          <text>"detainedProcessApplicationUpdateHearingRequirements"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1jzzq6e">
+          <text>"Detained Process Update Hearing Requirements Application"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0fv2v8w">
         <inputEntry id="UnaryTests_1b55ws8">
           <text></text>
@@ -84,6 +139,17 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_1gteptr">
           <text>"Process Update Appeal Details Application"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_06sw4wb">
+        <inputEntry id="UnaryTests_1wkjkri">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_06l1cwp">
+          <text>"detainedProcessApplicationUpdateAppealDetails"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0k5g652">
+          <text>"Detained Process Update Appeal Details Application"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_18uau7u">
@@ -97,6 +163,17 @@
           <text>"Process Reinstate An Ended Appeal Application"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1r3yn8o">
+        <inputEntry id="UnaryTests_1lza39d">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1viixn5">
+          <text>"detainedProcessApplicationReinstateAnEndedAppeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0xls340">
+          <text>"Detained Process Reinstate An Ended Appeal Application"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0jimf71">
         <inputEntry id="UnaryTests_089ei0r">
           <text></text>
@@ -106,6 +183,17 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_184kcdq">
           <text>"Process Other Application"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1685f7e">
+        <inputEntry id="UnaryTests_13nv676">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0adcq10">
+          <text>"detainedProcessApplicationOther"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ijpwqn">
+          <text>"Detained Process Other Application"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1wb8yhw">
@@ -119,6 +207,17 @@
           <text>"Process Link/Unlink Appeals Application"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0zu1dwt">
+        <inputEntry id="UnaryTests_0q8pqbp">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_08axfo9">
+          <text>"detainedProcessApplicationLink/UnlinkAppeals"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_09x2rj8">
+          <text>"detainedProcess Link/Unlink Appeals Application"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1a2nbis">
         <inputEntry id="UnaryTests_1qesqb9">
           <text></text>
@@ -130,6 +229,28 @@
           <text>"Process Application to Review Decision"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0qd1qnw">
+        <inputEntry id="UnaryTests_1e21c8v">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ivdd9d">
+          <text>"detainedProcessApplicationToReviewDecision"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0dzyp5b">
+          <text>"Detained Process Application to Review Decision"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1sd4syy">
+        <inputEntry id="UnaryTests_0uvkw9v">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_00nmny0">
+          <text>"detainedProcessApplicationChangeHearingType"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0vqn5na">
+          <text>"Detained Process Change Hearing Type Application"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0aenrnf">
         <inputEntry id="UnaryTests_0m29qlf">
           <text></text>
@@ -139,6 +260,17 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_18he837">
           <text>"Edit Listing"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_13gnm9i">
+        <inputEntry id="UnaryTests_101hk0d">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0nk4i0m">
+          <text>"detainedEditListing"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1e3mfxp">
+          <text>"Detained Edit Listing"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1piglun">
