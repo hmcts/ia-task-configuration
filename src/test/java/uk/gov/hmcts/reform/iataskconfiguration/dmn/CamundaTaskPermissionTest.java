@@ -521,15 +521,13 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
     @SuppressWarnings("checkstyle:indentation")
     @ParameterizedTest
     @CsvSource(value = {
-        "reviewRespondentEvidence", "followUpOverdueRespondentEvidence",
-        "followUpOverdueCaseBuilding", "followUpOverdueReasonsForAppeal", "reviewTheAppeal",
+        "reviewRespondentEvidence", "followUpOverdueRespondentEvidence","detainedFollowUpOverdueRespondentEvidence",
+        "followUpOverdueCaseBuilding","detainedFollowUpOverdueRespondentReview", "followUpOverdueReasonsForAppeal", "reviewTheAppeal",
         "reviewClarifyingQuestionsAnswers", "followUpOverdueClarifyingAnswers", "reviewRespondentResponse",
-        "followUpOverdueRespondentReview", "reviewHearingRequirements", "followUpOverdueHearingRequirements",
+        "followUpOverdueRespondentReview","detainedFollowUpOverdueRespondentReview", "reviewHearingRequirements", "followUpOverdueHearingRequirements",
         "reviewCmaRequirements",
-        "attendCma",
-        "followUpNoticeOfChange", "followUpOverdueCmaRequirements", "followUpNonStandardDirection",
-         "attendCma", "followUpNoticeOfChange", "followUpOverdueCmaRequirements",
-        "followUpNonStandardDirection",
+        "attendCma", "followUpOverdueCmaRequirements", "followUpNonStandardDirection","detainedFollowUpNonStandardDirection",
+         "attendCma", "followUpNoticeOfChange","detainedFollowUpNoticeOfChange", "followUpOverdueCmaRequirements",
          "reviewAdditionalEvidence", "reviewAdditionalHomeOfficeEvidence", "reviewRemittedAppeal",
         "reviewAppealSetAsideUnderRule35", "reviewAppealSetAsideUnderRule32"
     })

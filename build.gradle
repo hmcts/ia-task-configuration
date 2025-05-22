@@ -11,8 +11,10 @@ plugins {
   id 'info.solidsoft.pitest' version '1.9.11'
   id 'io.freefair.lombok' version '6.6.3'
 }
-
-group = 'uk.gov.hmcts.reform'
+repositories {
+  mavenCentral()
+}
+  group = 'uk.gov.hmcts.reform'
 version = '0.0.1'
 
 java {
@@ -149,7 +151,6 @@ pitest {
 
 project.tasks['pitest'].group = "Verification"
 
-
 project.tasks['sonarqube'].dependsOn test, integration, jacocoTestReport
 
 sonarqube {
@@ -246,6 +247,14 @@ def versions = [
 
 dependencies {
 
+  configurations.all {
+    resolutionStrategy {
+      force 'org.hamcrest:hamcrest:2.2'
+    }
+  }
+
+  testImplementation 'org.hamcrest:hamcrest:2.2'
+  testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.0'
   implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web'
   implementation group: 'org.springframework.boot', name: 'spring-boot-starter-actuator'
   implementation group: 'org.springframework.boot', name: 'spring-boot-starter-aop'

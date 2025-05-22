@@ -417,7 +417,7 @@
                         "reviewRespondentResponse",
                         "caseSummaryHearingBundleStartDecision",
                         "reviewHearingRequirements",
-                        "followUpOverdueRespondentEvidence",
+                        "followUpOverdueRespondentEvidence","detainedFollowUpOverdueRespondentEvidence",
                         "followUpOverdueCaseBuilding","detainedFollowUpOverdueCaseBuilding",
                         "followUpOverdueReasonsForAppeal",
                         "followUpOverdueClarifyingAnswers",

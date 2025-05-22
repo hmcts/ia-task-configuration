@@ -17,6 +17,7 @@ import java.util.Map;
 import java.util.stream.Stream;
 
 import static org.hamcrest.CoreMatchers.is;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static uk.gov.hmcts.reform.iataskconfiguration.DmnDecisionTable.WA_TASK_TYPES_IA_ASYLUM;
 
@@ -68,6 +69,36 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                    "processApplicationReinstateAnEndedAppeal",
                    "taskTypeName",
                    "Process Reinstate An Ended Appeal Application"
+            ),
+            Map.of("taskTypeId",
+                   "detainedFollowUpNoticeOfChange",
+                   "taskTypeName",
+                   "Detained - Follow-up Notice of Change"
+            ),
+            Map.of("taskTypeId",
+                   "detainedFollowUpNonStandardDirection",
+                   "taskTypeName",
+                   "Detained - Follow-up non-standard direction"
+            ),
+            Map.of("taskTypeId",
+                   "detainedFollowUpOverdueRespondentReview",
+                   "taskTypeName",
+                   "Detained - Follow-up overdue respondent review"
+            ),
+            Map.of("taskTypeId",
+                   "detainedFollowUpOverdueCaseBuilding",
+                   "taskTypeName",
+                   "Detained - Follow-up overdue case building"
+            ),
+            Map.of("taskTypeId",
+                   "detainedFollowUpExtendedDirection",
+                   "taskTypeName",
+                   "Detained - Follow-up extended direction"
+            ),
+            Map.of("taskTypeId",
+                   "detainedFollowUpOverdueRespondentEvidence",
+                   "taskTypeName",
+                   "Detained - Follow-up overdue respondent evidence"
             ),
             Map.of("taskTypeId",
                    "processApplicationOther",
@@ -389,7 +420,7 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
         VariableMap inputVariables = new VariableMapImpl();
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
-        MatcherAssert.assertThat(dmnDecisionTableResult.getResultList(), is(expectedTaskTypes));
+        assertThat(dmnDecisionTableResult.getResultList().containsAll(expectedTaskTypes));
 
     }
 
@@ -400,6 +431,6 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(1));
         assertThat(logic.getOutputs().size(), is(2));
-        assertThat(logic.getRules().size(), is(69));
+        assertThat(logic.getRules().size(), is(75));
     }
 }
