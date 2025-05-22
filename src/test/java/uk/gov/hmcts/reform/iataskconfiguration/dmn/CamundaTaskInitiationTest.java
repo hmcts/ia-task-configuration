@@ -2638,6 +2638,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
         assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
     }
+
     @SafeVarargs
     @SuppressWarnings("unchecked")
     private static Map<String, Object> merge(Map<String, ?>... maps) {

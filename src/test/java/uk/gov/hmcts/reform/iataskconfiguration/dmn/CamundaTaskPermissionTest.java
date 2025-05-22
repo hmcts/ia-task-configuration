@@ -522,11 +522,14 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
     @ParameterizedTest
     @CsvSource(value = {
         "reviewRespondentEvidence", "followUpOverdueRespondentEvidence","detainedFollowUpOverdueRespondentEvidence",
-        "followUpOverdueCaseBuilding","detainedFollowUpOverdueRespondentReview", "followUpOverdueReasonsForAppeal", "reviewTheAppeal",
+        "followUpOverdueCaseBuilding","detainedFollowUpOverdueRespondentReview",
+        "followUpOverdueReasonsForAppeal", "reviewTheAppeal",
         "reviewClarifyingQuestionsAnswers", "followUpOverdueClarifyingAnswers", "reviewRespondentResponse",
-        "followUpOverdueRespondentReview","detainedFollowUpOverdueRespondentReview", "reviewHearingRequirements", "followUpOverdueHearingRequirements",
+        "followUpOverdueRespondentReview","detainedFollowUpOverdueRespondentReview", "reviewHearingRequirements",
+        "followUpOverdueHearingRequirements",
         "reviewCmaRequirements",
-        "attendCma", "followUpOverdueCmaRequirements", "followUpNonStandardDirection","detainedFollowUpNonStandardDirection",
+        "attendCma", "followUpOverdueCmaRequirements", "followUpNonStandardDirection",
+        "detainedFollowUpNonStandardDirection",
          "attendCma", "followUpNoticeOfChange","detainedFollowUpNoticeOfChange", "followUpOverdueCmaRequirements",
          "reviewAdditionalEvidence", "reviewAdditionalHomeOfficeEvidence", "reviewRemittedAppeal",
         "reviewAppealSetAsideUnderRule35", "reviewAppealSetAsideUnderRule32"
