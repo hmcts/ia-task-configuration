@@ -2683,6 +2683,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       + "            \"type\" : \"\",\n"
                                       + "            \"decision\" : \"\",\n"
                                       + "            \"applicant\" : \"\"\n"
+                                      + "            \"appellantInDetention\" : \"\"\n"
                                       + "          }\n"
                                       + "        }\n"
                                       + "      }"),
@@ -2690,47 +2691,116 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             ),
             getArgumentOf("Adjourn",
                           "processApplicationAdjourn",
-                          "Process Adjourn Application"),
+                          "Process Adjourn Application",
+                          false),
+
+            getArgumentOf("Adjourn",
+                          "detainedProcessApplicationAdjourn",
+                          "Detained Process Adjourn Application",
+                          true),
             getArgumentOf("Expedite",
                           "processApplicationExpedite",
-                          "Process Expedite Application"),
+                          "Process Expedite Application",
+                          false),
+            getArgumentOf("Expedite",
+                          "detainedProcessApplicationExpedite",
+                          "Detained Process Expedite Application",
+                          true),
             getArgumentOf("Time extension",
                           "processApplicationTimeExtension",
-                          "Process Time Extension Application"),
+                          "Process Time Extension Application",
+                          false),
+            getArgumentOf("Time extension",
+                          "detainedProcessApplicationTimeExtension",
+                          "Detained Process Time Extension Application",
+                          true),
             getArgumentOf("Transfer",
                           "processApplicationTransfer",
-                          "Process Transfer Application"),
+                          "Process Transfer Application",
+                          false),
+            getArgumentOf("Transfer",
+                          "detainedProcessApplicationTransfer",
+                          "Detained Process Transfer Application",
+                          true),
             getArgumentOf("Withdraw",
                           "processApplicationWithdraw",
-                          "Process Withdraw Application"),
+                          "Process Withdraw Application",
+                          false),
+            getArgumentOf("Withdraw",
+                          "detainedProcessApplicationWithdraw",
+                          "Detained Process Withdraw Application",
+                          true),
             getArgumentOf("Update hearing requirements",
                           "processApplicationUpdateHearingRequirements",
-                          "Process Update Hearing Requirements Application"),
+                          "Process Update Hearing Requirements Application",
+                          false),
+            getArgumentOf("Update hearing requirements",
+                          "detainedProcessApplicationUpdateHearingRequirements",
+                          "Detained Process Update Hearing Requirements Application",
+                          true),
             getArgumentOf("Update appeal details",
                           "processApplicationUpdateAppealDetails",
-                          "Process Update Appeal Details Application"),
+                          "Process Update Appeal Details Application",
+                          false),
+            getArgumentOf("Update appeal details",
+                          "detainedProcessApplicationUpdateAppealDetails",
+                          "Detained Process Update Appeal Details Application",
+                          true),
             getArgumentOf("Reinstate an ended appeal",
                           "processApplicationReinstateAnEndedAppeal",
-                          "Process Reinstate An Ended Appeal Application"),
+                          "Process Reinstate An Ended Appeal Application",
+                          false),
+            getArgumentOf("Reinstate an ended appeal",
+                          "detainedProcessApplicationReinstateAnEndedAppeal",
+                          "Detained Process Reinstate An Ended Appeal Application",
+                          true),
             getArgumentOf("Other",
                           "processApplicationOther",
-                          "Process Other Application"),
+                          "Process Other Application",
+                          false),
+            getArgumentOf("Other",
+                          "detainedProcessApplicationOther",
+                          "Detained Process Other Application",
+                          true),
             getArgumentOf("Link/unlink appeals",
                           "processApplicationLink/UnlinkAppeals",
-                          "Process Link/Unlink Appeals Application"),
+                          "Process Link/Unlink Appeals Application",
+                          false),
+            getArgumentOf("Link/unlink appeals",
+                          "detainedProcessApplicationLink/UnlinkAppeals",
+                          "Detained Process Link/Unlink Appeals Application",
+                          true),
             getArgumentOf("Set aside a decision",
                           "reviewSetAsideDecisionApplication",
-                          "Review set aside decision application"),
+                          "Review set aside decision application",
+                          false),
+            getArgumentOf("Set aside a decision",
+                          "detainedReviewSetAsideDecisionApplication",
+                          "Detained Review set aside decision application",
+                          true),
             getArgumentOf("Judge's review of application decision",
                           "processApplicationToReviewDecision",
-                          "Process Application to Review Decision"),
+                          "Process Application to Review Decision",
+                          false),
+            getArgumentOf("Judge's review of application decision",
+                          "detainedProcessApplicationToReviewDecision",
+                          "Detained Process Application to Review Decision",
+                          true),
             getArgumentOf("Change hearing type",
                           "processApplicationChangeHearingType",
-                          "Process Change Hearing Type Application")
+                          "Process Change Hearing Type Application",
+                          false),
+            getArgumentOf("Change hearing type",
+                          "detainedProcessApplicationChangeHearingType",
+                          "Detained Process Change Hearing Type Application",
+                          true)
         );
     }
 
-    private static Arguments getArgumentOf(String applicationType, String taskId, String taskName) {
+    private static Arguments getArgumentOf(String applicationType,
+                                           String taskId,
+                                           String taskName,
+                                           boolean appellantInDetention) {
         return Arguments.of(
             "makeAnApplication",
             null,
@@ -2740,7 +2810,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                   + "            \"type\" : \"" + applicationType + "\",\n"
                                   + "            \"decision\" : \"\",\n"
                                   + "            \"applicant\" : \"\"\n"
-                                  + "          }\n"
+                                  + "          },\n"
+                                  + "          \"appellantInDetention\" : \"" + appellantInDetention + "\"\n"
                                   + "        }\n"
                                   + "      }"),
             singletonList(
@@ -2857,9 +2928,9 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getInputs().size(), is(27));
+        assertThat(logic.getInputs().size(), is(28));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(90));
+        assertThat(logic.getRules().size(), is(105));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {

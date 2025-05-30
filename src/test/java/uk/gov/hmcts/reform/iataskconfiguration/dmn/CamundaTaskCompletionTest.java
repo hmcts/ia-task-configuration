@@ -251,7 +251,15 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                         "completionMode", "Auto"
                     ),
                     Map.of(
+                        "taskType", "detainedProcessApplicationAdjourn",
+                        "completionMode", "Auto"
+                    ),
+                    Map.of(
                         "taskType", "processApplicationExpedite",
+                        "completionMode", "Auto"
+                    ),
+                    Map.of(
+                        "taskType", "detainedProcessApplicationExpedite",
                         "completionMode", "Auto"
                     ),
                     Map.of(
@@ -259,7 +267,16 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                         "completionMode", "Auto"
                     ),
                     Map.of(
+                        "taskType", "detainedProcessApplicationTimeExtension",
+                        "completionMode", "Auto"
+                    ),
+
+                    Map.of(
                         "taskType", "processApplicationTransfer",
+                        "completionMode", "Auto"
+                    ),
+                    Map.of(
+                        "taskType", "detainedProcessApplicationTransfer",
                         "completionMode", "Auto"
                     ),
                     Map.of(
@@ -267,7 +284,15 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                         "completionMode", "Auto"
                     ),
                     Map.of(
+                        "taskType", "detainedProcessApplicationWithdraw",
+                        "completionMode", "Auto"
+                    ),
+                    Map.of(
                         "taskType", "processApplicationUpdateHearingRequirements",
+                        "completionMode", "Auto"
+                    ),
+                    Map.of(
+                        "taskType", "detainedProcessApplicationUpdateHearingRequirements",
                         "completionMode", "Auto"
                     ),
                     Map.of(
@@ -275,7 +300,15 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                         "completionMode", "Auto"
                     ),
                     Map.of(
+                        "taskType", "detainedProcessApplicationUpdateAppealDetails",
+                        "completionMode", "Auto"
+                    ),
+                    Map.of(
                         "taskType", "processApplicationReinstateAnEndedAppeal",
+                        "completionMode", "Auto"
+                    ),
+                    Map.of(
+                        "taskType", "detainedProcessApplicationReinstateAnEndedAppeal",
                         "completionMode", "Auto"
                     ),
                     Map.of(
@@ -283,7 +316,15 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                         "completionMode", "Auto"
                     ),
                     Map.of(
+                        "taskType", "detainedProcessApplicationOther",
+                        "completionMode", "Auto"
+                    ),
+                    Map.of(
                         "taskType", "processApplicationLink/UnlinkAppeals",
+                        "completionMode", "Auto"
+                    ),
+                    Map.of(
+                        "taskType", "detainedProcessApplicationLink/UnlinkAppeals",
                         "completionMode", "Auto"
                     ),
                     Map.of(
@@ -291,11 +332,23 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                         "completionMode", "Auto"
                     ),
                     Map.of(
+                        "taskType", "detainedReviewSetAsideDecisionApplication",
+                        "completionMode", "Auto"
+                    ),
+                    Map.of(
                         "taskType", "processApplicationChangeHearingType",
                         "completionMode", "Auto"
                     ),
                     Map.of(
+                        "taskType", "detainedProcessApplicationChangeHearingType",
+                        "completionMode", "Auto"
+                    ),
+                    Map.of(
                         "taskType", "processApplicationToReviewDecision",
+                        "completionMode", "Auto"
+                    ),
+                    Map.of(
+                        "taskType", "detainedProcessApplicationToReviewDecision",
                         "completionMode", "Auto"
                     ),
                     Collections.emptyMap()
@@ -306,6 +359,10 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     Map.of(
                         "taskType", "editListing",
+                        "completionMode", "Auto"
+                    ),
+                    Map.of(
+                        "taskType", "detainedEditListing",
                         "completionMode", "Auto"
                     ),
                     Collections.emptyMap()
@@ -326,16 +383,6 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                 asList(
                     Map.of(
                         "taskType", "prepareDecisionsAndReasons",
-                        "completionMode", "Auto"
-                    ),
-                    Collections.emptyMap()
-                )
-            ),
-            Arguments.of(
-                "editCaseListing",
-                asList(
-                    Map.of(
-                        "taskType", "editListing",
                         "completionMode", "Auto"
                     ),
                     Collections.emptyMap()
@@ -466,7 +513,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
 
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(45));
+        assertThat(logic.getRules().size(), is(59));
     }
 
 
