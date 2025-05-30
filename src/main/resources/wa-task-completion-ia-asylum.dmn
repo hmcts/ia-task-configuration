@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-completion-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.34.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-completion-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.14.0">
   <decision id="wa-task-completion-ia-asylum" name="Task completion DMN" camunda:historyTimeToLive="P90D">
     <decisionTable id="DecisionTable_01re27m" hitPolicy="COLLECT">
       <input id="eventId" label="Event ID" biodi:width="614">
@@ -174,17 +174,6 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1buvzdr">
-        <inputEntry id="UnaryTests_035f4be">
-          <text>"decideAnApplication"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1qn24ot">
-          <text>"detainedProcessApplicationAdjourn"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1ebx7q8">
-          <text>"Auto"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_0aus3e2">
         <inputEntry id="UnaryTests_1s3qpyu">
           <text>"decideAnApplication"</text>
@@ -193,17 +182,6 @@
           <text>"processApplicationExpedite"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1kmsszx">
-          <text>"Auto"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1kol15s">
-        <inputEntry id="UnaryTests_1rda86v">
-          <text>"decideAnApplication"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0mmsqoc">
-          <text>"detainedProcessApplicationExpedite"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1p143ph">
           <text>"Auto"</text>
         </outputEntry>
       </rule>
@@ -218,17 +196,6 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1siqton">
-        <inputEntry id="UnaryTests_1m76h4c">
-          <text>"decideAnApplication"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0myrt5w">
-          <text>"detainedProcessApplicationTimeExtension"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_01yec20">
-          <text>"Auto"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_1vd34gg">
         <inputEntry id="UnaryTests_0nk5b1t">
           <text>"decideAnApplication"</text>
@@ -237,17 +204,6 @@
           <text>"processApplicationTransfer"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1oprr3f">
-          <text>"Auto"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0amvsep">
-        <inputEntry id="UnaryTests_1ew08k9">
-          <text>"decideAnApplication"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1cgy0ea">
-          <text>"detainedProcessApplicationTransfer"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1xvqupk">
           <text>"Auto"</text>
         </outputEntry>
       </rule>
@@ -262,17 +218,6 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_065pwii">
-        <inputEntry id="UnaryTests_04mmn7r">
-          <text>"decideAnApplication"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0czycng">
-          <text>"detainedProcessApplicationWithdraw"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0oi3j1o">
-          <text>"Auto"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_1y60zro">
         <inputEntry id="UnaryTests_1cm3fwh">
           <text>"decideAnApplication"</text>
@@ -281,17 +226,6 @@
           <text>"processApplicationUpdateHearingRequirements"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_07l270s">
-          <text>"Auto"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0i0y611">
-        <inputEntry id="UnaryTests_15bq3ui">
-          <text>"decideAnApplication"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1my7zzk">
-          <text>"detainedProcessApplicationUpdateHearingRequirements"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0tgbxuf">
           <text>"Auto"</text>
         </outputEntry>
       </rule>
@@ -306,17 +240,6 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0819qz4">
-        <inputEntry id="UnaryTests_0svbvc5">
-          <text>"decideAnApplication"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0718ttr">
-          <text>"detainedProcessApplicationUpdateAppealDetails"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0b20uo4">
-          <text>"Auto"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_0zo2gko">
         <inputEntry id="UnaryTests_1jb2itq">
           <text>"decideAnApplication"</text>
@@ -325,17 +248,6 @@
           <text>"processApplicationReinstateAnEndedAppeal"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1k41is3">
-          <text>"Auto"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_006w07e">
-        <inputEntry id="UnaryTests_0xen3gi">
-          <text>"decideAnApplication"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1xknic0">
-          <text>"detainedProcessApplicationReinstateAnEndedAppeal"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1vqvpz5">
           <text>"Auto"</text>
         </outputEntry>
       </rule>
@@ -350,17 +262,6 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0p7i412">
-        <inputEntry id="UnaryTests_0t2z3t1">
-          <text>"decideAnApplication"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0tnt7nw">
-          <text>"detainedProcessApplicationOther"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0d69j1e">
-          <text>"Auto"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_07ktvf3">
         <inputEntry id="UnaryTests_0u3nh0f">
           <text>"decideAnApplication"</text>
@@ -369,17 +270,6 @@
           <text>"processApplicationLink/UnlinkAppeals"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_08ss9xj">
-          <text>"Auto"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_14th6fb">
-        <inputEntry id="UnaryTests_0mhflx1">
-          <text>"decideAnApplication"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0fpy4tr">
-          <text>"detainedProcessApplicationLink/UnlinkAppeals"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_08f82gr">
           <text>"Auto"</text>
         </outputEntry>
       </rule>
@@ -394,17 +284,6 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1mxpu38">
-        <inputEntry id="UnaryTests_05golpw">
-          <text>"decideAnApplication"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1csng45">
-          <text>"detainedReviewSetAsideDecisionApplication"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_113jp02">
-          <text>"Auto"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_0v9xkuc">
         <inputEntry id="UnaryTests_0i4sax8">
           <text>"decideAnApplication"</text>
@@ -413,17 +292,6 @@
           <text>"processApplicationChangeHearingType"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0dy0ha9">
-          <text>"Auto"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1rdgx7z">
-        <inputEntry id="UnaryTests_1rrgb7l">
-          <text>"decideAnApplication"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_14nswna">
-          <text>"detainedProcessApplicationChangeHearingType"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1m7wlg1">
           <text>"Auto"</text>
         </outputEntry>
       </rule>
@@ -446,17 +314,6 @@
           <text>"editListing"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0d6jpu5">
-          <text>"Auto"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0g0xxrf">
-        <inputEntry id="UnaryTests_03qohyi">
-          <text>"editCaseListing"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_08wwuwa">
-          <text>"detainedEditListing"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_057q2rb">
           <text>"Auto"</text>
         </outputEntry>
       </rule>
@@ -501,17 +358,6 @@
           <text>"processApplicationToReviewDecision"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1tkxwpo">
-          <text>"Auto"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1hhhvah">
-        <inputEntry id="UnaryTests_01sjpc0">
-          <text>"decideAnApplication"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1p6mk9k">
-          <text>"detainedProcessApplicationToReviewDecision"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0vev74z">
           <text>"Auto"</text>
         </outputEntry>
       </rule>
