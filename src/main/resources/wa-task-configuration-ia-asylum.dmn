@@ -534,6 +534,7 @@
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "sendPaymentRequest" or taskType != null and taskType = "sendPaymentRequest") then "[Mark payment request sent](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markPaymentRequestSent)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "markAsPaid" or taskType != null and taskType = "markAsPaid") then "[Mark appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewMigratedCase" or taskType != null and taskType = "reviewMigratedCase") then "[Progress migrated case](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/progressMigratedCase)" else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "detainedListCmr" or taskType != null and taskType = "detainedListCmr") then "[List CMR](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/generateCmr)"
+
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "hearingException" or taskType != null and taskType = "hearingException") then "[Go to case](cases/case-details/${[CASE_REFERENCE]}/hearings)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "cmrListed" or taskType != null and taskType = "cmrListed") then "[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "cmrUpdated" or taskType != null and taskType = "cmrUpdated") then "[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings)"
@@ -563,7 +564,9 @@
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewAdditionalEvidence" or taskType != null and taskType ="reviewAdditionalEvidence")
                         then "[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markEvidenceAsReviewed)" else if
                          (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewCmaRequirements" or taskType != null and taskType = "reviewCmaRequirements")
+
                         then "[Review CMA Requirements](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/reviewCmaRequirements)"
+
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewRespondentResponse" or taskType != null and taskType = "reviewRespondentResponse")
                         then "[Review Home Office response](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestResponseReview)&lt;br /&gt;[Amend appeal response](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestResponseAmend)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "createHearingBundle" or taskType != null and taskType = "createHearingBundle")
