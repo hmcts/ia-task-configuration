@@ -72,7 +72,7 @@
           <text>"detainedProcessApplicationTimeExtension"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1i07mca">
-          <text>"DetainedProcess Time Extension Application"</text>
+          <text>"Detained Process Time Extension Application"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_02icg4x">
@@ -179,7 +179,7 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0at39eh">
-          <text>"detainedprocessApplicationReinstateAnEndedAppeal"</text>
+          <text>"detainedProcessApplicationReinstateAnEndedAppeal"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0ro48ft">
           <text>"Detained Process Reinstate An Ended Appeal Application"</text>

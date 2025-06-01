@@ -2879,15 +2879,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         Map<String, Object> map = isIntegrated
             ? emptyMap()
             : new HashMap<String, Object>() {
-            {
-                put("taskId", taskId);
-                put("name", name);
-                put("processCategories", processCategories);
-                if (delayUntil != null) {
-                    put("delayUntil", delayUntil);
+                {
+                    put("taskId", taskId);
+                    put("name", name);
+                    put("processCategories", processCategories);
+                    if (delayUntil != null) {
+                        put("delayUntil", delayUntil);
+                    }
                 }
-            }
-        };
+            };
 
         return Arguments.of(
             "decideAnApplication",
