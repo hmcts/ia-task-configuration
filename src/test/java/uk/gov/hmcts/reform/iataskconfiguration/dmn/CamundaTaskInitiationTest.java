@@ -2879,15 +2879,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         Map<String, Object> map = isIntegrated
             ? emptyMap()
             : new HashMap<String, Object>() {
-                {
-                    put("taskId", taskId);
-                    put("name", name);
-                    put("processCategories", processCategories);
-                    if (delayUntil != null) {
-                        put("delayUntil", delayUntil);
-                    }
+            {
+                put("taskId", taskId);
+                put("name", name);
+                put("processCategories", processCategories);
+                if (delayUntil != null) {
+                    put("delayUntil", delayUntil);
                 }
-            };
+            }
+        };
 
         return Arguments.of(
             "decideAnApplication",
@@ -2930,7 +2930,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(28));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(105));
+        assertThat(logic.getRules().size(), is(107));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {
