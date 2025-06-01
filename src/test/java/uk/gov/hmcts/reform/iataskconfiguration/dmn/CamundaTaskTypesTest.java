@@ -373,6 +373,11 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                    "printAndSendReheardHearingRequirements",
                    "taskTypeName",
                    "Print and send reheard appeal hearing requirements form"
+            ),
+            Map.of("taskTypeId",
+                    "detainedListCmr",
+                    "taskTypeName",
+                    "Detained List Cmr"
             )
         );
         return Stream.of(
@@ -389,7 +394,8 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
         VariableMap inputVariables = new VariableMapImpl();
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
-        MatcherAssert.assertThat(dmnDecisionTableResult.getResultList(), is(expectedTaskTypes));
+        assertThat(dmnDecisionTableResult.getResultList().toArray(),
+                   containsInAnyOrder(expectedTaskTypes.toArray()));
 
     }
 
@@ -400,6 +406,6 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(1));
         assertThat(logic.getOutputs().size(), is(2));
-        assertThat(logic.getRules().size(), is(69));
+        assertThat(logic.getRules().size(), is(82));
     }
 }
