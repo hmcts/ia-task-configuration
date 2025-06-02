@@ -363,7 +363,7 @@
             "followUpSetAsideDecision",
 "hearingException","cmrListed","cmrUpdated","relistCase","listTheCase","reviewInterpreters",
 "reviewMigratedCase",
-"reviewAriaRemissionApplication"</text>
+"reviewAriaRemissionApplication","detainedListCmr"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1sw9xpj">
           <text></text>
@@ -589,7 +589,7 @@
       <rule id="DecisionRule_0ks3xbb">
         <description>Default Senior Tribunal caseworker task permissions</description>
         <inputEntry id="UnaryTests_1k8ldgj">
-          <text>"r1"</text>
+          <text>"r1","detainedListCmr"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0yw7wdu">
           <text></text>
@@ -679,7 +679,7 @@
       <rule id="DecisionRule_155ah64">
         <description>CTSC Team Leader task permissions</description>
         <inputEntry id="UnaryTests_08panx7">
-          <text>"reviewRemissionApplication","assignAFTPAJudge","listTheCase","sendPaymentRequest","markAsPaid","cmrListed","cmrUpdated","reviewInterpreters","processFeeRefund","reviewDraftAppeal"</text>
+          <text>"reviewRemissionApplication","assignAFTPAJudge","listTheCase","sendPaymentRequest","markAsPaid","cmrListed","cmrUpdated","reviewInterpreters","processFeeRefund","reviewDraftAppeal","detainedListCmr"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0njeznv">
           <text></text>
@@ -708,7 +708,7 @@
       </rule>
       <rule id="DecisionRule_0xfd7pt">
         <inputEntry id="UnaryTests_141gjoe">
-          <text>"hearingException","cmrListed","cmrUpdated","relistCase","listTheCase","reviewInterpreters"</text>
+          <text>"hearingException","cmrListed","cmrUpdated","relistCase","listTheCase","reviewInterpreters","detainedListCmr"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0otzt6m">
           <text></text>
