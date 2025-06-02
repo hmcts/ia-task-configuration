@@ -481,6 +481,16 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "generateListCmrTask",
+                asList(
+                    Map.of(
+                        "completionMode", "Auto",
+                        "taskType", "generateListCmrTask"
+                    ),
+                    Collections.emptyMap()
+                )
+            ),
+            Arguments.of(
                 "endAppeal",
                 asList(
                     Map.of(
