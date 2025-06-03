@@ -35,9 +35,19 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                    "Process Adjourn Application"
             ),
             Map.of("taskTypeId",
+                     "detainedProcessApplicationAdjourn",
+                     "taskTypeName",
+                     "Detained Process Adjourn Application"
+            ),
+            Map.of("taskTypeId",
                    "processApplicationExpedite",
                    "taskTypeName",
                    "Process Expedite Application"
+            ),
+            Map.of("taskTypeId",
+                   "detainedProcessApplicationExpedite",
+                   "taskTypeName",
+                   "Detained Process Expedite Application"
             ),
             Map.of("taskTypeId",
                    "processApplicationTimeExtension",
@@ -45,9 +55,19 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                    "Process Time Extension Application"
             ),
             Map.of("taskTypeId",
+                   "detainedProcessApplicationTimeExtension",
+                   "taskTypeName",
+                   "Detained Process Time Extension Application"
+            ),
+            Map.of("taskTypeId",
                    "processApplicationTransfer",
                    "taskTypeName",
                    "Process Transfer Application"
+            ),
+            Map.of("taskTypeId",
+                   "detainedProcessApplicationTransfer",
+                   "taskTypeName",
+                   "Detained Process Transfer Application"
             ),
             Map.of("taskTypeId",
                    "processApplicationWithdraw",
@@ -55,14 +75,29 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                    "Process Withdraw Application"
             ),
             Map.of("taskTypeId",
+                   "detainedProcessApplicationWithdraw",
+                   "taskTypeName",
+                   "Detained Process Withdraw Application"
+            ),
+            Map.of("taskTypeId",
                    "processApplicationUpdateHearingRequirements",
                    "taskTypeName",
                    "Process Update Hearing Requirements Application"
             ),
             Map.of("taskTypeId",
+                   "detainedProcessApplicationUpdateHearingRequirements",
+                   "taskTypeName",
+                   "Detained Process Update Hearing Requirements Application"
+            ),
+            Map.of("taskTypeId",
                    "processApplicationUpdateAppealDetails",
                    "taskTypeName",
                    "Process Update Appeal Details Application"
+            ),
+            Map.of("taskTypeId",
+                   "detainedProcessApplicationUpdateAppealDetails",
+                   "taskTypeName",
+                   "Detained Process Update Appeal Details Application"
             ),
             Map.of("taskTypeId",
                    "processApplicationReinstateAnEndedAppeal",
@@ -98,6 +133,12 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                    "detainedFollowUpOverdueRespondentEvidence",
                    "taskTypeName",
                    "Detained - Follow-up overdue respondent evidence"
+
+            Map.of("taskTypeId",
+                   "detainedProcessApplicationReinstateAnEndedAppeal",
+                   "taskTypeName",
+                   "Detained Process Reinstate An Ended Appeal Application"
+
             ),
             Map.of("taskTypeId",
                    "processApplicationOther",
@@ -105,9 +146,19 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                    "Process Other Application"
             ),
             Map.of("taskTypeId",
+                   "detainedProcessApplicationOther",
+                   "taskTypeName",
+                   "Detained Process Other Application"
+            ),
+            Map.of("taskTypeId",
                    "processApplicationLink/UnlinkAppeals",
                    "taskTypeName",
                    "Process Link/Unlink Appeals Application"
+            ),
+            Map.of("taskTypeId",
+                   "detainedProcessApplicationLink/UnlinkAppeals",
+                   "taskTypeName",
+                   "Detained Process Link/Unlink Appeals Application"
             ),
             Map.of("taskTypeId",
                    "processApplicationToReviewDecision",
@@ -115,9 +166,19 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                    "Process Application to Review Decision"
             ),
             Map.of("taskTypeId",
+                   "detainedProcessApplicationToReviewDecision",
+                   "taskTypeName",
+                   "Detained Process Application to Review Decision"
+            ),
+            Map.of("taskTypeId",
                    "editListing",
                    "taskTypeName",
                    "Edit Listing"
+            ),
+            Map.of("taskTypeId",
+                   "detainedEditListing",
+                   "taskTypeName",
+                   "Detained Edit Listing"
             ),
             Map.of("taskTypeId",
                    "reviewTheAppeal",
@@ -403,6 +464,11 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                    "printAndSendReheardHearingRequirements",
                    "taskTypeName",
                    "Print and send reheard appeal hearing requirements form"
+            ),
+            Map.of("taskTypeId",
+                    "detainedListCmr",
+                    "taskTypeName",
+                    "Detained List Cmr"
             )
         );
         return Stream.of(
@@ -421,6 +487,7 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
 
         assertThat(dmnDecisionTableResult.getResultList().containsAll(expectedTaskTypes));
 
+
     }
 
     @Test
@@ -430,6 +497,6 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(1));
         assertThat(logic.getOutputs().size(), is(2));
-        assertThat(logic.getRules().size(), is(75));
+        assertThat(logic.getRules().size(), is(82));
     }
 }

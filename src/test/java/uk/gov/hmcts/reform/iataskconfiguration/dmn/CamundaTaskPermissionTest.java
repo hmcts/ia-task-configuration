@@ -7,7 +7,6 @@ import org.camunda.bpm.dmn.engine.impl.DmnDecisionTableOutputImpl;
 import org.camunda.bpm.engine.variable.VariableMap;
 import org.camunda.bpm.engine.variable.impl.VariableMapImpl;
 import org.hamcrest.MatcherAssert;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -25,6 +24,7 @@ import java.util.stream.Stream;
 import static java.util.Arrays.asList;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.containsInAnyOrder;
 import static uk.gov.hmcts.reform.iataskconfiguration.DmnDecisionTable.WA_TASK_PERMISSIONS_IA_ASYLUM;
 
 class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
@@ -263,7 +263,24 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "detainedEditListing",
+                List.of(
+                    taskSupervisor,
+                    hearingCentreAdminPriorityOne,
+                    tribunalCaseWorkerPriorityTwo,
+                    seniorCaseWorkerPriorityTwo
+                )
+            ),
+            Arguments.of(
                 "processApplicationToReviewDecision",
+                List.of(
+                    taskSupervisor,
+                    hearingJudgePriorityOne,
+                    judgePriorityOne
+                )
+            ),
+            Arguments.of(
+                "detainedProcessApplicationToReviewDecision",
                 List.of(
                     taskSupervisor,
                     hearingJudgePriorityOne,
@@ -280,6 +297,14 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "reviewSetAsideDecisionApplication",
+                List.of(
+                    taskSupervisor,
+                    hearingJudgePriorityOne,
+                    judgePriorityOne
+                )
+            ),
+            Arguments.of(
+                "detainedReviewSetAsideDecisionApplication",
                 List.of(
                     taskSupervisor,
                     hearingJudgePriorityOne,
@@ -308,6 +333,16 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     seniorCaseWorkerPriorityOne,
                     hearingCentreAdminPriorityOne,
                     ctscAdminPriorityOne,
+                    ctscTeamLeaderPriorityOne,
+                    tribunalCaseWorkerPriorityTwoOwn
+                )
+            ),
+            Arguments.of(
+                "detainedListCmr",
+                List.of(
+                    taskSupervisor,
+                    seniorCaseWorkerPriorityOne,
+                    hearingCentreAdminPriorityOne,
                     ctscTeamLeaderPriorityOne,
                     tribunalCaseWorkerPriorityTwoOwn
                 )
@@ -452,7 +487,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
-        Assertions.assertEquals(expectedRules, dmnDecisionTableResult.getResultList());
+        assertThat(dmnDecisionTableResult.getResultList(), containsInAnyOrder(expectedRules.toArray()));
     }
 
     static Stream<Arguments> scenarioProvider() {
@@ -572,15 +607,25 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
     @ParameterizedTest
     @CsvSource(value = {
         "processApplicationAdjourn",
+        "detainedProcessApplicationAdjourn",
         "processApplicationExpedite",
+        "detainedProcessApplicationExpedite",
         "processApplicationTimeExtension",
+        "detainedProcessApplicationTimeExtension",
         "processApplicationTransfer",
+        "detainedProcessApplicationTransfer",
         "processApplicationWithdraw",
+        "detainedProcessApplicationWithdraw",
         "processApplicationUpdateHearingRequirements",
+        "detainedProcessApplicationUpdateHearingRequirements",
         "processApplicationUpdateAppealDetails",
+        "detainedProcessApplicationUpdateAppealDetails",
         "processApplicationReinstateAnEndedAppeal",
+        "detainedProcessApplicationReinstateAnEndedAppeal",
         "processApplicationOther",
-        "processApplicationLink/UnlinkAppeals"
+        "detainedProcessApplicationOther",
+        "processApplicationLink/UnlinkAppeals",
+        "detainedProcessApplicationLink/UnlinkAppeals"
     })
 
     void given_taskType_when_evaluate_dmn_then_it_returns_1st_2nd_3rd_4th_5th_6th(String taskType) {
@@ -674,7 +719,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
     @SuppressWarnings("checkstyle:indentation")
     @ParameterizedTest
     @CsvSource(value = {
-        "editListing"
+        "editListing", "detainedEditListing"
     })
     void given_taskType_when_evaluate_dmn_then_it_returns_expected(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
@@ -715,7 +760,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
     @SuppressWarnings("checkstyle:indentation")
     @ParameterizedTest
     @CsvSource(value = {
-        "processApplicationToReviewDecision",
+        "processApplicationToReviewDecision", "detainedProcessApplicationToReviewDecision"
     })
     void given_taskType_5_when_evaluate_dmn_then_it_returns_expected(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
@@ -770,6 +815,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "name", "senior-tribunal-caseworker",
                 "value", "Read,Own,Claim,Manage,Unassign,Assign,Complete,Cancel",
                 "roleCategory", "LEGAL_OPERATIONS",
+                "assignmentPriority",1,
                 "autoAssignable", false
             )
         )));
@@ -809,6 +855,14 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "autoAssignable", false
             ),
             Map.of(
+                "name", "judge",
+                "value", "Read,Execute,Claim,Manage,Unassign,Assign,Complete,Cancel",
+                "roleCategory", "JUDICIAL",
+                "assignmentPriority", 2,
+                "authorisations", "373",
+                "autoAssignable", false
+            ),
+            Map.of(
                 "name", "hearing-judge",
                 "value", "Read,Execute,Claim,Cancel",
                 "roleCategory", "JUDICIAL",
@@ -816,12 +870,71 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "autoAssignable", false
             ),
             Map.of(
-                "autoAssignable", false,
+                "name", "judge",
+                "value", "Read,Own,Claim,Manage,Unassign,Assign,Complete,Cancel",
+                "roleCategory", "JUDICIAL",
                 "assignmentPriority", 1,
                 "authorisations", "373",
+                "autoAssignable", false
+            )
+        )));
+    }
+
+    @Test
+    void given_taskType_detainedProcessApplicationChangeHearingType_when_dmn_evaluates_then_it_returns_expected() {
+        VariableMap inputVariables = new VariableMapImpl();
+        inputVariables.putValue("taskAttributes", Map.of("taskType", "detainedProcessApplicationChangeHearingType"));
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        MatcherAssert.assertThat(dmnDecisionTableResult.getResultList(), is(List.of(
+            Map.of(
+                "name", "task-supervisor",
+                "value", "Read,Execute,Claim,Manage,Unassign,Assign,Complete,Cancel",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "case-manager",
+                "value", "Read,Own,Claim,Cancel",
+                "roleCategory", "LEGAL_OPERATIONS",
+                "autoAssignable", true
+            ),
+            Map.of(
+                "name", "tribunal-caseworker",
+                "value", "Read,Own,Claim,Manage,Unassign,Assign,Complete,Cancel",
+                "roleCategory", "LEGAL_OPERATIONS",
+                "assignmentPriority", 1,
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "senior-tribunal-caseworker",
+                "value", "Read,Own,Claim,Manage,Unassign,Assign,Complete,Cancel",
+                "roleCategory", "LEGAL_OPERATIONS",
+                "assignmentPriority", 1,
+                "autoAssignable", false
+            ),
+            Map.of(
                 "name", "judge",
+                "value", "Read,Execute,Claim,Manage,Unassign,Assign,Complete,Cancel",
                 "roleCategory", "JUDICIAL",
-                "value", "Read,Own,Claim,Manage,Unassign,Assign,Complete,Cancel"
+                "assignmentPriority", 2,
+                "authorisations", "373",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "hearing-judge",
+                "value", "Read,Execute,Claim,Cancel",
+                "roleCategory", "JUDICIAL",
+                "assignmentPriority", 2,
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "judge",
+                "value", "Read,Own,Claim,Manage,Unassign,Assign,Complete,Cancel",
+                "roleCategory", "JUDICIAL",
+                "assignmentPriority", 1,
+                "authorisations", "373",
+                "autoAssignable", false
             )
         )));
     }

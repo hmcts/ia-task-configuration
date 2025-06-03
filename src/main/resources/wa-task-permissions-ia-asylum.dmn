@@ -73,17 +73,17 @@
             "reviewCmaRequirements",
             "reviewAdditionalHomeOfficeEvidence",
             "reviewAdditionalAppellantEvidence",
-            "processApplicationAdjourn",
-            "processApplicationExpedite",
-            "processApplicationTimeExtension",
-            "processApplicationTransfer",
-            "processApplicationWithdraw",
-            "processApplicationUpdateHearingRequirements",
-            "processApplicationUpdateAppealDetails",
-            "processApplicationReinstateAnEndedAppeal",
-            "processApplicationOther",
-            "processApplicationLink/UnlinkAppeals",
-"processApplicationChangeHearingType",
+            "processApplicationAdjourn","detainedProcessApplicationAdjourn",
+            "processApplicationExpedite","detainedProcessApplicationExpedite",
+            "processApplicationTimeExtension","detainedProcessApplicationTimeExtension",
+            "processApplicationTransfer","detainedProcessApplicationTransfer",
+            "processApplicationWithdraw","detainedProcessApplicationWithdraw",
+            "processApplicationUpdateHearingRequirements","detainedProcessApplicationUpdateHearingRequirements",
+            "processApplicationUpdateAppealDetails","detainedProcessApplicationUpdateAppealDetails",
+            "processApplicationReinstateAnEndedAppeal","detainedProcessApplicationReinstateAnEndedAppeal",
+            "processApplicationOther","detainedProcessApplicationOther",
+            "processApplicationLink/UnlinkAppeals","detainedProcessApplicationLink/UnlinkAppeals",
+            "processApplicationChangeHearingType","detainedProcessApplicationChangeHearingType",
             "attendCma",
             "startDecisionsAndReasons",
             "caseSummaryHearingBundleStartDecision",
@@ -140,17 +140,17 @@
             "followUpOverdueHearingRequirements",
             "reviewCmaRequirements",
             "caseSummaryHearingBundleStartDecision",
-            "processApplicationAdjourn",
-            "processApplicationExpedite",
-            "processApplicationTimeExtension",
-            "processApplicationTransfer",
-            "processApplicationWithdraw",
-            "processApplicationUpdateHearingRequirements",
-            "processApplicationUpdateAppealDetails",
-            "processApplicationReinstateAnEndedAppeal",
-            "processApplicationOther",
-            "processApplicationLink/UnlinkAppeals",
-"processApplicationChangeHearingType",
+            "processApplicationAdjourn","detainedProcessApplicationAdjourn",
+            "processApplicationExpedite","detainedProcessApplicationExpedite",
+            "processApplicationTimeExtension","detainedProcessApplicationTimeExtension",
+            "processApplicationTransfer","detainedProcessApplicationTransfer",
+            "processApplicationWithdraw","detainedProcessApplicationWithdraw",
+            "processApplicationUpdateHearingRequirements","detainedProcessApplicationUpdateHearingRequirements",
+            "processApplicationUpdateAppealDetails","detainedProcessApplicationUpdateAppealDetails",
+            "processApplicationReinstateAnEndedAppeal","detainedProcessApplicationReinstateAnEndedAppeal",
+            "processApplicationOther","detainedProcessApplicationOther",
+            "processApplicationLink/UnlinkAppeals","detainedProcessApplicationLink/UnlinkAppeals",
+            "processApplicationChangeHearingType","detainedProcessApplicationChangeHearingType",
             "attendCma",
             "startDecisionsAndReasons",
             "followUpNoticeOfChange","detainedFollowUpNoticeOfChange",
@@ -212,17 +212,17 @@
             "reviewCmaRequirements",
             "reviewAdditionalHomeOfficeEvidence",
             "caseSummaryHearingBundleStartDecision",
-            "processApplicationAdjourn",
-            "processApplicationExpedite",
-            "processApplicationTimeExtension",
-            "processApplicationTransfer",
-            "processApplicationWithdraw",
-            "processApplicationUpdateHearingRequirements",
-            "processApplicationUpdateAppealDetails",
-            "processApplicationReinstateAnEndedAppeal",
-            "processApplicationOther",
-            "processApplicationLink/UnlinkAppeals",
-"processApplicationChangeHearingType",
+            "processApplicationAdjourn","detainedProcessApplicationAdjourn",
+            "processApplicationExpedite","detainedProcessApplicationExpedite",
+            "processApplicationTimeExtension","detainedProcessApplicationTimeExtension",
+            "processApplicationTransfer","detainedProcessApplicationTransfer",
+            "processApplicationWithdraw","detainedProcessApplicationWithdraw",
+            "processApplicationUpdateHearingRequirements","detainedProcessApplicationUpdateHearingRequirements",
+            "processApplicationUpdateAppealDetails","detainedProcessApplicationUpdateAppealDetails",
+            "processApplicationReinstateAnEndedAppeal","detainedProcessApplicationReinstateAnEndedAppeal",
+            "processApplicationOther","detainedProcessApplicationOther",
+            "processApplicationLink/UnlinkAppeals","detainedProcessApplicationLink/UnlinkAppeals",
+            "processApplicationChangeHearingType","detainedProcessApplicationChangeHearingType",
             "attendCma",
             "startDecisionsAndReasons",
             "followUpNoticeOfChange","detainedFollowUpNoticeOfChange",
@@ -269,16 +269,17 @@
         <description>Judge task permissions</description>
         <inputEntry id="UnaryTests_0mzihm0">
           <text>
-            "processApplicationAdjourn",
-            "processApplicationExpedite",
-            "processApplicationTimeExtension",
-            "processApplicationTransfer",
-            "processApplicationWithdraw",
-            "processApplicationUpdateHearingRequirements",
-            "processApplicationUpdateAppealDetails",
-            "processApplicationReinstateAnEndedAppeal",
-            "processApplicationOther",
-            "processApplicationLink/UnlinkAppeals",
+            "processApplicationAdjourn","detainedProcessApplicationAdjourn",
+            "processApplicationExpedite","detainedProcessApplicationExpedite",
+            "processApplicationTimeExtension","detainedProcessApplicationTimeExtension",
+            "processApplicationTransfer","detainedProcessApplicationTransfer",
+            "processApplicationWithdraw","detainedProcessApplicationWithdraw",
+            "processApplicationUpdateHearingRequirements","detainedProcessApplicationUpdateHearingRequirements",
+            "processApplicationUpdateAppealDetails","detainedProcessApplicationUpdateAppealDetails",
+            "processApplicationReinstateAnEndedAppeal","detainedProcessApplicationReinstateAnEndedAppeal",
+            "processApplicationOther","detainedProcessApplicationOther",
+            "processApplicationLink/UnlinkAppeals","detainedProcessApplicationLink/UnlinkAppeals",
+            "processApplicationChangeHearingType","detainedProcessApplicationChangeHearingType",
             "decideOnTimeExtension"
           </text>
         </inputEntry>
@@ -311,17 +312,17 @@
         <description>Judge task permissions</description>
         <inputEntry id="UnaryTests_10vg6mj">
           <text>
-            "processApplicationAdjourn",
-            "processApplicationExpedite",
-            "processApplicationTimeExtension",
-            "processApplicationTransfer",
-            "processApplicationWithdraw",
-            "processApplicationUpdateHearingRequirements",
-            "processApplicationUpdateAppealDetails",
-            "processApplicationReinstateAnEndedAppeal",
-            "processApplicationOther",
-            "processApplicationLink/UnlinkAppeals",
-            "processApplicationChangeHearingType",
+            "processApplicationAdjourn","detainedProcessApplicationAdjourn",
+            "processApplicationExpedite","detainedProcessApplicationExpedite",
+            "processApplicationTimeExtension","detainedProcessApplicationTimeExtension",
+            "processApplicationTransfer","detainedProcessApplicationTransfer",
+            "processApplicationWithdraw","detainedProcessApplicationWithdraw",
+            "processApplicationUpdateHearingRequirements","detainedProcessApplicationUpdateHearingRequirements",
+            "processApplicationUpdateAppealDetails","detainedProcessApplicationUpdateAppealDetails",
+            "processApplicationReinstateAnEndedAppeal","detainedProcessApplicationReinstateAnEndedAppeal",
+            "processApplicationOther","detainedProcessApplicationOther",
+            "processApplicationLink/UnlinkAppeals","detainedProcessApplicationLink/UnlinkAppeals",
+            "processApplicationChangeHearingType","detainedProcessApplicationChangeHearingType",
             "decideOnTimeExtension"
           </text>
         </inputEntry>
@@ -357,11 +358,11 @@
             "allocateHearingJudge",
             "uploadHearingRecording",
             "postHearingAttendeesDurationAndRecording",
-            "editListing",
+            "editListing","detainedEditListing",
             "followUpSetAsideDecision",
 "hearingException","cmrListed","cmrUpdated","relistCase","listTheCase","reviewInterpreters",
 "reviewMigratedCase",
-"reviewAriaRemissionApplication"</text>
+"reviewAriaRemissionApplication","detainedListCmr"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1sw9xpj">
           <text></text>
@@ -392,7 +393,7 @@
         <inputEntry id="UnaryTests_0vmy0oj">
           <text>
             "reviewAddendumEvidence",
-            "editListing"
+            "editListing","reviewEditListing","detainedEditListing"
 </text>
         </inputEntry>
         <inputEntry id="UnaryTests_190pyoc">
@@ -424,7 +425,7 @@
         <inputEntry id="UnaryTests_0co919o">
           <text>
             "reviewAddendumEvidence",
-            "editListing"
+            "editListing","detainedEditListing"
 </text>
         </inputEntry>
         <inputEntry id="UnaryTests_055yime">
@@ -456,10 +457,10 @@
         <description>Hearing judge task permissions</description>
         <inputEntry id="UnaryTests_1oxh1tt">
           <text>
-          "processApplicationToReviewDecision",
+          "processApplicationToReviewDecision","detainedProcessApplicationToReviewDecision",
           "sendDecisionsAndReasons",
           "prepareDecisionsAndReasons",
-          "reviewSetAsideDecisionApplication"
+          "reviewSetAsideDecisionApplication","detainedReviewSetAsideDecisionApplication"
 </text>
         </inputEntry>
         <inputEntry id="UnaryTests_19myw41">
@@ -491,12 +492,12 @@
         <description>Judge task permissions</description>
         <inputEntry id="UnaryTests_1099gbv">
           <text>
-            "processApplicationToReviewDecision",
+            "processApplicationToReviewDecision","detainedProcessApplicationToReviewDecision",
             "sendDecisionsAndReasons",
             "decideAnFTPA",
             "prepareDecisionsAndReasons",
-            "reviewSetAsideDecisionApplication",
-            "processApplicationChangeHearingType"
+            "reviewSetAsideDecisionApplication","detainedReviewSetAsideDecisionApplication",
+            "processApplicationChangeHearingType","detainedProcessApplicationChangeHearingType"
             </text>
         </inputEntry>
         <inputEntry id="UnaryTests_1sgyxq7">
@@ -587,7 +588,7 @@
       <rule id="DecisionRule_0ks3xbb">
         <description>Default Senior Tribunal caseworker task permissions</description>
         <inputEntry id="UnaryTests_1k8ldgj">
-          <text>"r1"</text>
+          <text>"r1","detainedListCmr"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0yw7wdu">
           <text></text>
@@ -608,7 +609,7 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0ymzlmg">
-          <text></text>
+          <text>1</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1r4jwp2">
           <text>false</text>
@@ -677,7 +678,7 @@
       <rule id="DecisionRule_155ah64">
         <description>CTSC Team Leader task permissions</description>
         <inputEntry id="UnaryTests_08panx7">
-          <text>"reviewRemissionApplication","assignAFTPAJudge","listTheCase","sendPaymentRequest","markAsPaid","cmrListed","cmrUpdated","reviewInterpreters","processFeeRefund","reviewDraftAppeal"</text>
+          <text>"reviewRemissionApplication","assignAFTPAJudge","listTheCase","sendPaymentRequest","markAsPaid","cmrListed","cmrUpdated","reviewInterpreters","processFeeRefund","reviewDraftAppeal","detainedListCmr"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0njeznv">
           <text></text>
@@ -706,7 +707,7 @@
       </rule>
       <rule id="DecisionRule_0xfd7pt">
         <inputEntry id="UnaryTests_141gjoe">
-          <text>"hearingException","cmrListed","cmrUpdated","relistCase","listTheCase","reviewInterpreters"</text>
+          <text>"hearingException","cmrListed","cmrUpdated","relistCase","listTheCase","reviewInterpreters","detainedListCmr"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0otzt6m">
           <text></text>
