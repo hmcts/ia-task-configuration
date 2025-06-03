@@ -7,7 +7,6 @@ import org.camunda.bpm.dmn.engine.impl.DmnDecisionTableOutputImpl;
 import org.camunda.bpm.engine.variable.VariableMap;
 import org.camunda.bpm.engine.variable.impl.VariableMapImpl;
 import org.hamcrest.MatcherAssert;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -25,6 +24,7 @@ import java.util.stream.Stream;
 import static java.util.Arrays.asList;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.containsInAnyOrder;
 import static uk.gov.hmcts.reform.iataskconfiguration.DmnDecisionTable.WA_TASK_PERMISSIONS_IA_ASYLUM;
 
 class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
@@ -338,6 +338,16 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "detainedListCmr",
+                List.of(
+                    taskSupervisor,
+                    seniorCaseWorkerPriorityOne,
+                    hearingCentreAdminPriorityOne,
+                    ctscTeamLeaderPriorityOne,
+                    tribunalCaseWorkerPriorityTwoOwn
+                )
+            ),
+            Arguments.of(
                 "cmrUpdated",
                 List.of(
                     taskSupervisor,
@@ -477,7 +487,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
-        Assertions.assertEquals(expectedRules, dmnDecisionTableResult.getResultList());
+        assertThat(dmnDecisionTableResult.getResultList(), containsInAnyOrder(expectedRules.toArray()));
     }
 
     static Stream<Arguments> scenarioProvider() {
@@ -804,6 +814,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "name", "senior-tribunal-caseworker",
                 "value", "Read,Own,Claim,Manage,Unassign,Assign,Complete,Cancel",
                 "roleCategory", "LEGAL_OPERATIONS",
+                "assignmentPriority",1,
                 "autoAssignable", false
             )
         )));
