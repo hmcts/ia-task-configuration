@@ -191,7 +191,7 @@
                         "markCaseAsPaid",
                         "attendCma",
                         "caseSummaryHearingBundleStartDecision",
-                        "followUpExtendedDirection",
+                        "followUpExtendedDirection","detainedFollowUpExtendedDirection",
                         "followUpNonStandardDirection","detainedFollowUpNonStandardDirection",
                         "reviewClarifyingQuestionsAnswers",
                         "reviewRemissionApplication",
