@@ -73,6 +73,17 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                     Collections.emptyMap()
                 )
             ),
+
+            Arguments.of(
+                "requestCaseBuilding",
+                asList(
+                    Map.of(
+                        "taskType", "detainedReviewRespondentEvidence",
+                        "completionMode", "Auto"
+                    ),
+                    Collections.emptyMap()
+                )
+            ),
             Arguments.of(
                 "requestReasonsForAppeal",
                 asList(
@@ -168,6 +179,21 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                     ),
                     Map.of(
                         "taskType", "reviewAdditionalHomeOfficeEvidence",
+                        "completionMode", "Auto"
+                    ),
+                    Collections.emptyMap()
+                )
+            ),
+
+            Arguments.of(
+                "markEvidenceAsReviewed",
+                asList(
+                    Map.of(
+                        "taskType", "detainedReviewAdditionalEvidence",
+                        "completionMode", "Auto"
+                    ),
+                    Map.of(
+                        "taskType", "detainedReviewAdditionalHomeOfficeEvidence",
                         "completionMode", "Auto"
                     ),
                     Collections.emptyMap()
