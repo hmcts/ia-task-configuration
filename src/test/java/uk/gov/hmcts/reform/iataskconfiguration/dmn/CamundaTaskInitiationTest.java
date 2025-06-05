@@ -2831,16 +2831,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             "delayUntilIntervalDays", "0",
             "delayUntil", directionDueDate
         );
-        Map<String, Object> appellantInDetention = mapAdditionalData("{\n"
-                                                                         + "   \"Data\":{\n"
-                                                                         + "      \"appellantInDetention\": true\n"
-                                                                         + "   }\n"
-                                                                         + "}");
-        Map<String, Object> hOBundle = mapAdditionalData("{\n"
-                                                                         + "   \"Data\":{\n"
-                                                                         + "      \"uploadHomeOfficeBundleAvailable\": true\n"
-                                                                         + "   }\n"
-                                                                         + "}");
 
         return Stream.of(
             Arguments.of(
