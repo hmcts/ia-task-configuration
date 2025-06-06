@@ -11444,6 +11444,107 @@
           <text>"followUpOverdue"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0mdgka5">
+        <inputEntry id="UnaryTests_08rakip">
+          <text>"progressMigratedCase"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0gwk6v7">
+          <text>"awaitingRespondentEvidence"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1yyd8h4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0v8w9f6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1l8j8ed">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0c3zwsb">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0d4yfnd">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_140cy6y">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1m2orwj">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ohtpyo">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1bhvenj">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07olmcx">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nga1lp">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_00w1cxe">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nus0o3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1moevz7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1gl6p53">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05844od">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1onedm0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01f1gyi">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_11egthf">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ld01xk">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1u7klpj">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ywjwrn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1lv9kfj">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_13xshjq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1hpupat">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_11p6qmm">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_15z457q">
+          <text>"detainedFollowUpOverdueRespondentEvidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0quv1xk">
+          <text>"Follow-up overdue respondent evidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0d01o9u">
+          <text>{
+"delayUntil": directionDueDate,
+"delayUntilIntervalDays": "0"
+}</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ryg0t3">
+          <text>"followUpOverdue"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1kkh0tf">
         <inputEntry id="UnaryTests_1u6vjot">
           <text>"progressMigratedCase"</text>

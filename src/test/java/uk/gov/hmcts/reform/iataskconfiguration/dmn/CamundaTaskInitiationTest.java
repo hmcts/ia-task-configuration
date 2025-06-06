@@ -2888,9 +2888,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData(
                     "{\n"
                         + "   \"Data\":{\n"
-                        + "      \"uploadHomeOfficeBundleAvailable\": false\n"
-                        + "   }\n"
-                        + "      \"appellantInDetention\": false\n"
+                        + "      \"uploadHomeOfficeBundleAvailable\":\"" +  false +"\",\n"
+                        + "      \"appellantInDetention\":\"" +  false +"\"\n"
                         + "   }\n"
                         + "}"),
                 List.of(
@@ -2907,11 +2906,31 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "awaitingRespondentEvidence",
                 variablesDirectionDueDate,
                 mapAdditionalData(
-                "{\n"
-                    + "   \"Data\":{\n"
-                    + "      \"uploadHomeOfficeBundleAvailable\": true\n"
-                    + "   }\n"
-                    + "}"),
+                    "{\n"
+                        + "   \"Data\":{\n"
+                        + "      \"uploadHomeOfficeBundleAvailable\":\"" +  false +"\",\n"
+                        + "      \"appellantInDetention\":\"" +  true +"\"\n"
+                        + "   }\n"
+                        + "}"),
+                List.of(
+                    Map.of(
+                        "taskId", "detainedFollowUpOverdueRespondentEvidence",
+                        "name", "Detained - Follow-up overdue respondent evidence",
+                        "processCategories", "followUpOverdue",
+                        "delayUntil", delayUntilDirectionDue
+                    )
+                )
+            ),
+            Arguments.of(
+                "progressMigratedCase",
+                "awaitingRespondentEvidence",
+                variablesDirectionDueDate,
+                mapAdditionalData(
+                    "{\n"
+                        + "   \"Data\":{\n"
+                        + "      \"uploadHomeOfficeBundleAvailable\": true\n"
+                        + "      \"appellantInDetention\": false\n"
+                        + "}"),
                 List.of(
                     Map.of(
                         "taskId", "reviewRespondentEvidence",
@@ -2928,9 +2947,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     "{\n"
                         + "   \"Data\":{\n"
                         + "      \"uploadHomeOfficeBundleAvailable\": true\n"
-                        + "   }\n"
                         + "      \"appellantInDetention\": true\n"
-                        + "   }\n"
                         + "}"),
                 List.of(
                     Map.of(
