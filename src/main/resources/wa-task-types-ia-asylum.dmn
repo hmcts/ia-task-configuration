@@ -394,6 +394,17 @@
           <text>"Follow-up overdue respondent evidence"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_11fm08l">
+        <inputEntry id="UnaryTests_1v28n6o">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_03eftxs">
+          <text>"detainedFollowUpOverdueRespondentEvidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1igpyie">
+          <text>"Detained - Follow-up overdue respondent evidence"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0bwe98c">
         <inputEntry id="UnaryTests_0ix26xo">
           <text></text>
@@ -405,6 +416,17 @@
           <text>"Follow-up extended direction"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1e34wvy">
+        <inputEntry id="UnaryTests_1fnk1lu">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0oage5p">
+          <text>"detainedFollowUpExtendedDirection"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0quj9s3">
+          <text>"Detained - Follow-up extended direction"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1vx3zl1">
         <inputEntry id="UnaryTests_0yh0mqn">
           <text></text>
@@ -414,6 +436,17 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_1kk2ac5">
           <text>"Follow-up overdue case building"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0yv5t6g">
+        <inputEntry id="UnaryTests_0siidib">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1isrhqt">
+          <text>"detainedFollowUpOverdueCaseBuilding"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1k5eiwg">
+          <text>"Detained - Follow-up overdue case building"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1gsr1x2">
@@ -449,6 +482,17 @@
           <text>"Follow-up overdue respondent review"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0ykly8a">
+        <inputEntry id="UnaryTests_0drgz01">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1cgnggp">
+          <text>"detainedFollowUpOverdueRespondentReview"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_19brr64">
+          <text>"Detained - Follow-up overdue respondent review"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1ev1q5r">
         <inputEntry id="UnaryTests_1rfoml3">
           <text></text>
@@ -471,6 +515,17 @@
           <text>"Follow-up non-standard direction"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_13rtxdm">
+        <inputEntry id="UnaryTests_0if9wv5">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1qo1d4b">
+          <text>"detainedFollowUpNonStandardDirection"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0lybanz">
+          <text>"Detained - Follow-up non-standard direction"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0g29q95">
         <inputEntry id="UnaryTests_1gy5cn4">
           <text></text>
@@ -480,6 +535,17 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0l01ztk">
           <text>"Follow-up Notice of Change"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1w1ckx2">
+        <inputEntry id="UnaryTests_15oe0eb">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ajf41j">
+          <text>"detainedFollowUpNoticeOfChange"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0kgk4qv">
+          <text>"Detained - Follow-up Notice of Change"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_11t8uck">

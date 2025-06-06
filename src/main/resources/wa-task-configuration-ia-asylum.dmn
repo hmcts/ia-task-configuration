@@ -191,8 +191,8 @@
                         "markCaseAsPaid",
                         "attendCma",
                         "caseSummaryHearingBundleStartDecision",
-                        "followUpExtendedDirection",
-                        "followUpNonStandardDirection",
+                        "followUpExtendedDirection","detainedFollowUpExtendedDirection",
+                        "followUpNonStandardDirection","detainedFollowUpNonStandardDirection",
                         "reviewClarifyingQuestionsAnswers",
                         "reviewRemissionApplication",
                         "assignAFTPAJudge",
@@ -234,15 +234,15 @@
         <inputEntry id="UnaryTests_1gm06lg">
           <text>
                         "reviewTheAppeal",
-                        "followUpOverdueRespondentEvidence",
+                        "followUpOverdueRespondentEvidence","detainedFollowUpOverdueRespondentEvidence",
                         "reviewRespondentEvidence",
-                        "followUpOverdueCaseBuilding",
+                        "followUpOverdueCaseBuilding","detainedFollowUpOverdueCaseBuilding",
                         "reviewAppealSkeletonArgument",
                         "followUpOverdueReasonsForAppeal",
                         "reviewReasonsForAppeal",
                         "followUpOverdueClarifyingAnswers",
                         "reviewClarifyingAnswers",
-                        "followUpOverdueRespondentReview",
+                        "followUpOverdueRespondentReview","detainedFollowUpOverdueRespondentReview",
                         "reviewRespondentResponse",
                         "followUpOverdueCMARequirements",
                         "reviewCmaRequirements",
@@ -343,7 +343,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1466etp">
-          <text>"followUpNoticeOfChange", "reviewSpecificAccessRequestJudiciary","reviewSpecificAccessRequestLegalOps","reviewSpecificAccessRequestAdmin","reviewSpecificAccessRequestCTSC"</text>
+          <text>"followUpNoticeOfChange","detainedFollowUpNoticeOfChange","reviewSpecificAccessRequestJudiciary","reviewSpecificAccessRequestLegalOps","reviewSpecificAccessRequestAdmin","reviewSpecificAccessRequestCTSC"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0bjcvtf">
           <text>"workType"</text>
@@ -416,15 +416,15 @@
                         "reviewRespondentResponse",
                         "caseSummaryHearingBundleStartDecision",
                         "reviewHearingRequirements",
-                        "followUpOverdueRespondentEvidence",
-                        "followUpOverdueCaseBuilding",
+                        "followUpOverdueRespondentEvidence","detainedFollowUpOverdueRespondentEvidence",
+                        "followUpOverdueCaseBuilding","detainedFollowUpOverdueCaseBuilding",
                         "followUpOverdueReasonsForAppeal",
                         "followUpOverdueClarifyingAnswers",
                         "followUpOverdueCmaRequirements",
-                        "followUpOverdueRespondentReview",
+                        "followUpOverdueRespondentReview","detainedFollowUpOverdueRespondentReview",
                         "followUpOverdueHearingRequirements",
-                        "followUpNonStandardDirection",
-                        "followUpNoticeOfChange",
+                        "followUpNonStandardDirection","detainedFollowUpNonStandardDirection",
+                        "followUpNoticeOfChange","detainedFollowUpNoticeOfChange",
                         "reviewAdditionalEvidence",
                         "reviewAdditionalHomeOfficeEvidence",
                         "startDecisionsAndReasonsDocument",
@@ -448,7 +448,7 @@
         </inputEntry>
         <inputEntry id="UnaryTests_0je9679">
           <text>
-                        "followUpExtendedDirection",
+                        "followUpExtendedDirection","detainedFollowUpExtendedDirection",
                         "createHearingBundle",
                         "createCaseSummary",
                         "reviewAddendumEvidence"
@@ -699,16 +699,17 @@
 "reviewRespondentResponse",
 "caseSummaryHearingBundleStartDecision",
 "reviewHearingRequirements",
-"followUpOverdueRespondentEvidence",
+"followUpOverdueRespondentEvidence","detainedFollowUpOverdueRespondentEvidence",
 "followUpExtendedDirection",
-"followUpOverdueCaseBuilding",
+"detainedFollowUpExtendedDirection",
+"followUpOverdueCaseBuilding","detainedFollowUpOverdueCaseBuilding",
 "followUpOverdueReasonsForAppeal",
 "followUpOverdueClarifyingAnswers",
 "followUpOverdueCmaRequirements",
-"followUpOverdueRespondentReview",
+"followUpOverdueRespondentReview","detainedFollowUpOverdueRespondentReview",
 "followUpOverdueHearingRequirements",
-"followUpNonStandardDirection",
-"followUpNoticeOfChange",
+"followUpNonStandardDirection","detainedFollowUpNonStandardDirection",
+"followUpNoticeOfChange","detainedFollowUpNoticeOfChange",
 "reviewAddendumEvidence",
 "reviewRemissionApplication",
 "assignAFTPAJudge",

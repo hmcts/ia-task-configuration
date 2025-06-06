@@ -27,8 +27,8 @@ import java.util.UUID;
 import java.util.stream.Stream;
 
 import static java.util.Collections.emptyMap;
-import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.is;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static uk.gov.hmcts.reform.iataskconfiguration.DmnDecisionTable.WA_TASK_CONFIGURATION_IA_ASYLUM;
@@ -47,7 +47,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
     @ParameterizedTest
     @CsvSource({
-        "followUpNoticeOfChange"
+        "followUpNoticeOfChange","detainedFollowUpNoticeOfChange"
     })
     void when_taskId_then_return_Access_Requests(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
@@ -240,7 +240,9 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("attendCma", routineWork),
             Arguments.of("caseSummaryHearingBundleStartDecision", routineWork),
             Arguments.of("followUpExtendedDirection", routineWork),
+            Arguments.of("detainedFollowUpExtendedDirection", routineWork),
             Arguments.of("followUpNonStandardDirection", routineWork),
+            Arguments.of("detainedFollowUpNonStandardDirection", routineWork),
             Arguments.of("reviewClarifyingQuestionsAnswers", routineWork),
             Arguments.of("reviewRemissionApplication", routineWork),
             Arguments.of("assignAFTPAJudge", routineWork),
@@ -266,14 +268,17 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("reviewAdditionalEvidence", decisionMakingWork),
             Arguments.of("reviewTheAppeal", decisionMakingWork),
             Arguments.of("followUpOverdueRespondentEvidence", decisionMakingWork),
+            Arguments.of("detainedFollowUpOverdueRespondentEvidence", decisionMakingWork),
             Arguments.of("reviewRespondentEvidence", decisionMakingWork),
             Arguments.of("followUpOverdueCaseBuilding", decisionMakingWork),
+            Arguments.of("detainedFollowUpOverdueCaseBuilding", decisionMakingWork),
             Arguments.of("reviewAppealSkeletonArgument", decisionMakingWork),
             Arguments.of("followUpOverdueReasonsForAppeal", decisionMakingWork),
             Arguments.of("reviewReasonsForAppeal", decisionMakingWork),
             Arguments.of("followUpOverdueClarifyingAnswers", decisionMakingWork),
             Arguments.of("reviewClarifyingAnswers", decisionMakingWork),
             Arguments.of("followUpOverdueRespondentReview", decisionMakingWork),
+            Arguments.of("detainedFollowUpOverdueRespondentReview", decisionMakingWork),
             Arguments.of("reviewRespondentResponse", decisionMakingWork),
             Arguments.of("followUpOverdueCMARequirements", decisionMakingWork),
             Arguments.of("reviewCmaRequirements", decisionMakingWork),
@@ -526,10 +531,14 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "decideOnTimeExtension", "reviewRespondentEvidence", "reviewAppealSkeletonArgument", "reviewReasonsForAppeal",
         "reviewClarifyingQuestionsAnswers", "reviewAdditionalHomeOfficeEvidence",
         "reviewCmaRequirements", "attendCma", "reviewRespondentResponse", "caseSummaryHearingBundleStartDecision",
-        "reviewHearingRequirements", "followUpOverdueRespondentEvidence",
-        "followUpOverdueCaseBuilding", "followUpOverdueReasonsForAppeal", "followUpOverdueClarifyingAnswers",
-        "followUpOverdueCmaRequirements", "followUpOverdueRespondentReview", "followUpOverdueHearingRequirements",
-        "followUpNonStandardDirection", "followUpNoticeOfChange", "reviewAdditionalEvidence",
+        "reviewHearingRequirements", "followUpOverdueRespondentEvidence", "detainedFollowUpOverdueRespondentEvidence",
+        "followUpOverdueCaseBuilding","detainedFollowUpOverdueCaseBuilding", "followUpOverdueReasonsForAppeal",
+        "followUpOverdueClarifyingAnswers",
+        "followUpOverdueCmaRequirements", "followUpOverdueRespondentReview","detainedFollowUpOverdueRespondentReview",
+        "followUpOverdueHearingRequirements",
+        "followUpNonStandardDirection","detainedFollowUpNonStandardDirection", "followUpNoticeOfChange",
+        "detainedFollowUpNoticeOfChange",
+        "reviewAdditionalEvidence",
         "reviewAdditionalHomeOfficeEvidence", "reviewRemittedAppeal", "reviewAppealSetAsideUnderRule35",
         "reviewAppealSetAsideUnderRule32"
     })
@@ -555,7 +564,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
     @ParameterizedTest
     @CsvSource({
-        "followUpExtendedDirection", "createHearingBundle", "createCaseSummary", "reviewAddendumEvidence"
+        "followUpExtendedDirection","detainedFollowUpExtendedDirection",
+        "createHearingBundle", "createCaseSummary", "reviewAddendumEvidence"
     })
     void when_taskId_then_return_legal_operations_role_category_can_reconfigure(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
@@ -1547,15 +1557,21 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("caseSummaryHearingBundleStartDecision", twoDays),
             Arguments.of("reviewHearingRequirements", twoDays),
             Arguments.of("followUpOverdueRespondentEvidence", twoDays),
+            Arguments.of("detainedFollowUpOverdueRespondentEvidence", twoDays),
             Arguments.of("followUpExtendedDirection", twoDays),
+            Arguments.of("detainedFollowUpExtendedDirection", twoDays),
             Arguments.of("followUpOverdueCaseBuilding", twoDays),
+            Arguments.of("detainedFollowUpOverdueCaseBuilding", twoDays),
             Arguments.of("followUpOverdueReasonsForAppeal", twoDays),
             Arguments.of("followUpOverdueClarifyingAnswers", twoDays),
             Arguments.of("followUpOverdueCmaRequirements", twoDays),
             Arguments.of("followUpOverdueRespondentReview", twoDays),
+            Arguments.of("detainedFollowUpOverdueRespondentReview", twoDays),
             Arguments.of("followUpOverdueHearingRequirements", twoDays),
             Arguments.of("followUpNonStandardDirection", twoDays),
+            Arguments.of("detainedFollowUpNonStandardDirection", twoDays),
             Arguments.of("followUpNoticeOfChange", twoDays),
+            Arguments.of("detainedFollowUpNoticeOfChange", twoDays),
             Arguments.of("reviewAddendumEvidence", twoDays),
             Arguments.of("reviewRemissionApplication", twoDays),
             Arguments.of("assignAFTPAJudge", twoDays),
