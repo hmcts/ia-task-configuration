@@ -2888,8 +2888,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData(
                     "{\n"
                         + "   \"Data\":{\n"
-                        + "      \"uploadHomeOfficeBundleAvailable\":\"" +  false +"\",\n"
-                        + "      \"appellantInDetention\":\"" +  false +"\"\n"
+                        + "      \"uploadHomeOfficeBundleAvailable\":\"" +  false + "\",\n"
+                        + "      \"appellantInDetention\":\"" +  false + "\"\n"
                         + "   }\n"
                         + "}"),
                 List.of(
@@ -2908,8 +2908,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData(
                     "{\n"
                         + "   \"Data\":{\n"
-                        + "      \"uploadHomeOfficeBundleAvailable\":\"" +  false +"\",\n"
-                        + "      \"appellantInDetention\":\"" +  true +"\"\n"
+                        + "      \"uploadHomeOfficeBundleAvailable\":\"" +  false + "\",\n"
+                        + "      \"appellantInDetention\":\"" +  true + "\"\n"
                         + "   }\n"
                         + "}"),
                 List.of(
@@ -2928,8 +2928,9 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData(
                     "{\n"
                         + "   \"Data\":{\n"
-                        + "      \"uploadHomeOfficeBundleAvailable\": true\n"
-                        + "      \"appellantInDetention\": false\n"
+                        + "      \"uploadHomeOfficeBundleAvailable\":\"" +  true + "\",\n"
+                        + "      \"appellantInDetention\":\"" +  false + "\"\n"
+                        + "   }\n"
                         + "}"),
                 List.of(
                     Map.of(
@@ -2946,8 +2947,9 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData(
                     "{\n"
                         + "   \"Data\":{\n"
-                        + "      \"uploadHomeOfficeBundleAvailable\": true\n"
-                        + "      \"appellantInDetention\": true\n"
+                        + "      \"uploadHomeOfficeBundleAvailable\":\"" +  true + "\",\n"
+                        + "      \"appellantInDetention\":\"" +  true + "\"\n"
+                        + "   }\n"
                         + "}"),
                 List.of(
                     Map.of(
