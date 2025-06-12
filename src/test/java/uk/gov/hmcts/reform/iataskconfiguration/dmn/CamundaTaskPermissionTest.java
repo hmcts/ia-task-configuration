@@ -556,7 +556,8 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
     @SuppressWarnings("checkstyle:indentation")
     @ParameterizedTest
     @CsvSource(value = {
-        "reviewRespondentEvidence", "followUpOverdueRespondentEvidence","detainedFollowUpOverdueRespondentEvidence",
+        "reviewRespondentEvidence","detainedReviewRespondentEvidence", "followUpOverdueRespondentEvidence",
+        "detainedFollowUpOverdueRespondentEvidence",
         "followUpOverdueCaseBuilding","detainedFollowUpOverdueRespondentReview",
         "followUpOverdueReasonsForAppeal", "reviewTheAppeal",
         "reviewClarifyingQuestionsAnswers", "followUpOverdueClarifyingAnswers", "reviewRespondentResponse",
@@ -566,7 +567,8 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         "attendCma", "followUpOverdueCmaRequirements", "followUpNonStandardDirection",
         "detainedFollowUpNonStandardDirection",
          "attendCma", "followUpNoticeOfChange","detainedFollowUpNoticeOfChange", "followUpOverdueCmaRequirements",
-         "reviewAdditionalEvidence", "reviewAdditionalHomeOfficeEvidence", "reviewRemittedAppeal",
+         "reviewAdditionalEvidence","detainedReviewAdditionalEvidence",
+        "reviewAdditionalHomeOfficeEvidence","detainedReviewAdditionalHomeOfficeEvidence", "reviewRemittedAppeal",
         "reviewAppealSetAsideUnderRule35", "reviewAppealSetAsideUnderRule32"
     })
     void given_taskType_when_evaluate_dmn_then_it_returns_first_second_and_third_rules(String taskType) {
