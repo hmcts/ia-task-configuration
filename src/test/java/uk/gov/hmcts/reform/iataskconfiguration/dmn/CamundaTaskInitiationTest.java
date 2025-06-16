@@ -127,7 +127,9 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "appealSubmitted",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "revocationOfProtection" + "\"\n"
+                                      + "      \"appealType\":\"" + "revocationOfProtection" + "\",\n"
+                                      + "      \"appellantInDetention\": false\n"
+
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -146,9 +148,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "appealSubmitted",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "revocationOfProtection" + "\"\n"
+                                      + "      \"appealType\":\"" + "revocationOfProtection" + "\",\n"
                                       + "      \"appellantInDetention\": true\n"
-
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -174,6 +175,25 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+
+            Arguments.of(
+                "submitAppeal",
+                "appealSubmitted",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "deprivation" + "\",\n"
+                                      + "      \"appellantInDetention\": true\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedReviewTheAppeal",
+                        "name", "Detained - Review the appeal",
 
                         "processCategories", "caseProgression"
                     )
@@ -367,6 +387,24 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "submitAppeal",
+                "appealSubmitted",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "protection" + "\",\n"
+                                      + "      \"appellantInDetention\": true\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedReviewTheAppeal",
+                        "name", "Detained - Review the appeal",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
                 "payAndSubmitAppeal",
                 "appealSubmitted",
                 mapAdditionalData("{\n"
@@ -379,6 +417,26 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+
+            Arguments.of(
+                "payAndSubmitAppeal",
+                "appealSubmitted",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "protection" + "\",\n"
+                                      + "      \"journeyType\":\"" + "aip" + "\",\n"
+                                      + "      \"appellantInDetention\": true\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedReviewTheAppeal",
+                        "name", "Detained - Review the appeal",
 
                         "processCategories", "caseProgression"
                     )
@@ -401,12 +459,32 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     )
                 )
             ),
+
             Arguments.of(
                 "payAndSubmitAppeal",
                 "appealSubmitted",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "refusalOfHumanRights" + "\"\n"
+                                      + "      \"appealType\":\"" + "protection" + "\",\n"
+                                      + "      \"appellantInDetention\": true\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedReviewTheAppeal",
+                        "name", "Detained - Review the appeal",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "payAndSubmitAppeal",
+                "appealSubmitted",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
+                                      + "      \"appellantInDetention\": false\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -424,7 +502,105 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "appealSubmitted",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "refusalOfEu" + "\"\n"
+                                      + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
+                                      + "      \"appellantInDetention\": true\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedReviewTheAppeal",
+                        "name", "Detained - Review the appeal",
+
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "payAndSubmitAppeal",
+                "appealSubmitted",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "refusalOfEu" + "\",\n"
+                                      + "      \"appellantInDetention\": false\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewTheAppeal",
+                        "name", "Review the appeal",
+
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+
+            Arguments.of(
+                "payAndSubmitAppeal",
+                "appealSubmitted",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "refusalOfEu" + "\",\n"
+                                      + "      \"appellantInDetention\": true\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedReviewTheAppeal",
+                        "name", "Detained - Review the appeal",
+
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "markAppealPaid",
+                "appealSubmitted",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
+                                      + "      \"appellantInDetention\": false\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewTheAppeal",
+                        "name", "Review the appeal",
+
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+
+            Arguments.of(
+                "markAppealPaid",
+                "appealSubmitted",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
+                                      + "      \"appellantInDetention\": true\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedReviewTheAppeal",
+                        "name", "Detained - Review the appeal",
+
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "markAppealPaid",
+                "appealSubmitted",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "refusalOfEu" + "\",\n"
+                                      + "      \"appellantInDetention\": false\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -442,7 +618,27 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "appealSubmitted",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "refusalOfHumanRights" + "\"\n"
+                                      + "      \"appealType\":\"" + "refusalOfEu" + "\",\n"
+                                      + "      \"appellantInDetention\": true\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedReviewTheAppeal",
+                        "name", "Detained - Review the appeal",
+
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "moveToSubmitted",
+                "appealSubmitted",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
+                                      + "      \"appellantInDetention\": false\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -456,7 +652,26 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "markAppealPaid",
+                "moveToSubmitted",
+                "appealSubmitted",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
+                                      + "      \"appellantInDetention\": true\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedReviewTheAppeal",
+                        "name", "Detained - Review the appeal",
+
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "moveToSubmitted",
                 "appealSubmitted",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
@@ -478,31 +693,14 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "appealSubmitted",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "refusalOfHumanRights" + "\"\n"
+                                      + "      \"appealType\":\"" + "refusalOfEu" + "\",\n"
+                                      + "      \"appellantInDetention\": true\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
                     Map.of(
-                        "taskId", "reviewTheAppeal",
-                        "name", "Review the appeal",
-
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
-                "moveToSubmitted",
-                "appealSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "refusalOfEu" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewTheAppeal",
-                        "name", "Review the appeal",
+                        "taskId", "detainedReviewTheAppeal",
+                        "name", "Detained - Review the appeal",
 
 
                         "processCategories", "caseProgression"
@@ -532,6 +730,100 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "appealSubmitted",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
+                                      + "      \"appellantInDetention\": true\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedReviewTheAppeal",
+                        "name", "Detained - Review the appeal",
+
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "payForAppeal",
+                "appealSubmitted",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "refusalOfEu" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewTheAppeal",
+                        "name", "Review the appeal",
+
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "payForAppeal",
+                "appealSubmitted",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "refusalOfEu" + "\",\n"
+                                      + "      \"appellantInDetention\": true\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedReviewTheAppeal",
+                        "name", "Detained - Review the appeal",
+
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "recordRemissionDecision",
+                "appealSubmitted",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
+                                      + "      \"appellantInDetention\": false\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewTheAppeal",
+                        "name", "Review the appeal",
+
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "recordRemissionDecision",
+                "appealSubmitted",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
+                                      + "      \"appellantInDetention\": true\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedReviewTheAppeal",
+                        "name", "Detained - Review the appeal",
+
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "recordRemissionDecision",
+                "appealSubmitted",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
                                       + "      \"appealType\":\"" + "refusalOfEu" + "\"\n"
                                       + "   }"
                                       + "}"),
@@ -550,31 +842,14 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "appealSubmitted",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "refusalOfHumanRights" + "\"\n"
+                                      + "      \"appealType\":\"" + "refusalOfEu" + "\",\n"
+                                      + "      \"appellantInDetention\": true\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
                     Map.of(
-                        "taskId", "reviewTheAppeal",
-                        "name", "Review the appeal",
-
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
-                "recordRemissionDecision",
-                "appealSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "refusalOfEu" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewTheAppeal",
-                        "name", "Review the appeal",
+                        "taskId", "detainedReviewTheAppeal",
+                        "name", "Detained - Review the appeal",
 
 
                         "processCategories", "caseProgression"
@@ -604,6 +879,25 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "appealSubmitted",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "refusalOfEu" + "\",\n"
+                                      + "      \"appellantInDetention\": true\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedReviewTheAppeal",
+                        "name", "Detained - Review the appeal",
+
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "updatePaymentStatus",
+                "appealSubmitted",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
                                       + "      \"appealType\":\"" + "refusalOfHumanRights" + "\"\n"
                                       + "   }"
                                       + "}"),
@@ -611,6 +905,25 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
+
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "updatePaymentStatus",
+                "appealSubmitted",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
+                                      + "      \"appellantInDetention\": true\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedReviewTheAppeal",
+                        "name", "Detained - Review the appeal",
 
 
                         "processCategories", "caseProgression"
@@ -2346,6 +2659,26 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "appealSubmitted",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "revocationOfProtection" + "\",\n"
+                                      + "      \"appellantInDetention\": true\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedReviewTheAppeal",
+                        "name", "Detained - Review the appeal",
+
+
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "progressMigratedCase",
+                "appealSubmitted",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
                                       + "      \"appealType\":\"" + "deprivation" + "\"\n"
                                       + "   }"
                                       + "}"),
@@ -2353,6 +2686,24 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "progressMigratedCase",
+                "appealSubmitted",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "deprivation" + "\",\n"
+                                      + "      \"appellantInDetention\": true\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedReviewTheAppeal",
+                        "name", "Detained - Review the appeal",
 
                         "processCategories", "caseProgression"
                     )
