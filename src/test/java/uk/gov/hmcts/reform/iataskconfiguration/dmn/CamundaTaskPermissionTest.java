@@ -338,6 +338,17 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "detainedCmrListed",
+                List.of(
+                    taskSupervisor,
+                    seniorCaseWorkerPriorityOne,
+                    hearingCentreAdminPriorityOne,
+                    ctscAdminPriorityOne,
+                    ctscTeamLeaderPriorityOne,
+                    tribunalCaseWorkerPriorityTwoOwn
+                )
+            ),
+            Arguments.of(
                 "detainedListCmr",
                 List.of(
                     taskSupervisor,
@@ -349,6 +360,17 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "cmrUpdated",
+                List.of(
+                    taskSupervisor,
+                    seniorCaseWorkerPriorityOne,
+                    hearingCentreAdminPriorityOne,
+                    ctscAdminPriorityOne,
+                    ctscTeamLeaderPriorityOne,
+                    tribunalCaseWorkerPriorityTwoOwn
+                )
+            ),
+            Arguments.of(
+                "detainedCmrUpdated",
                 List.of(
                     taskSupervisor,
                     seniorCaseWorkerPriorityOne,
@@ -556,9 +578,10 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
     @SuppressWarnings("checkstyle:indentation")
     @ParameterizedTest
     @CsvSource(value = {
-        "reviewRespondentEvidence", "followUpOverdueRespondentEvidence","detainedFollowUpOverdueRespondentEvidence",
+        "reviewRespondentEvidence","detainedReviewRespondentEvidence", "followUpOverdueRespondentEvidence",
+        "detainedFollowUpOverdueRespondentEvidence",
         "followUpOverdueCaseBuilding","detainedFollowUpOverdueRespondentReview",
-        "followUpOverdueReasonsForAppeal", "reviewTheAppeal",
+        "followUpOverdueReasonsForAppeal", "reviewTheAppeal","detainedReviewTheAppeal",
         "reviewClarifyingQuestionsAnswers", "followUpOverdueClarifyingAnswers", "reviewRespondentResponse",
         "followUpOverdueRespondentReview","detainedFollowUpOverdueRespondentReview", "reviewHearingRequirements",
         "followUpOverdueHearingRequirements",
@@ -566,7 +589,8 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         "attendCma", "followUpOverdueCmaRequirements", "followUpNonStandardDirection",
         "detainedFollowUpNonStandardDirection",
          "attendCma", "followUpNoticeOfChange","detainedFollowUpNoticeOfChange", "followUpOverdueCmaRequirements",
-         "reviewAdditionalEvidence", "reviewAdditionalHomeOfficeEvidence", "reviewRemittedAppeal",
+         "reviewAdditionalEvidence","detainedReviewAdditionalEvidence",
+        "reviewAdditionalHomeOfficeEvidence","detainedReviewAdditionalHomeOfficeEvidence", "reviewRemittedAppeal",
         "reviewAppealSetAsideUnderRule35", "reviewAppealSetAsideUnderRule32"
     })
     void given_taskType_when_evaluate_dmn_then_it_returns_first_second_and_third_rules(String taskType) {
