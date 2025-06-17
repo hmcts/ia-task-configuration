@@ -31,6 +31,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1pk4pjl">
+        <inputEntry id="UnaryTests_1iajq0i">
+          <text>"requestCaseBuilding","requestReasonsForAppeal","sendDirection"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1i8eqc8">
+          <text>"detainedReviewRespondentEvidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1fxqwka">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0x1cjp2">
         <inputEntry id="UnaryTests_1bjqbmz">
           <text>"requestRespondentReview","requestCaseEdit"</text>
@@ -75,6 +86,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0527h8b">
+        <inputEntry id="UnaryTests_01zh5m5">
+          <text>"markEvidenceAsReviewed"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1eu0c7p">
+          <text>"detainedReviewAdditionalEvidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0boa32y">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1ermjaa">
         <inputEntry id="UnaryTests_10jbxe2">
           <text>"markEvidenceAsReviewed"</text>
@@ -83,6 +105,17 @@
           <text>"reviewAdditionalHomeOfficeEvidence"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0im41fd">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0kufr0x">
+        <inputEntry id="UnaryTests_04l5ra9">
+          <text>"markEvidenceAsReviewed"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_07bguah">
+          <text>"detainedReviewAdditionalHomeOfficeEvidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0u8oidg">
           <text>"Auto"</text>
         </outputEntry>
       </rule>
