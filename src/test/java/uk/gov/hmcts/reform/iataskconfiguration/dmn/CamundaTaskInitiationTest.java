@@ -63,6 +63,11 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             "delayUntilIntervalDays", "14",
             "delayUntilOrigin", LocalDate.now()
         );
+        Map<String, Object> appellantInDetention = mapAdditionalData("{\n"
+                                                                 + "   \"Data\":{\n"
+                                                                 + "      \"appellantInDetention\": true\n"
+                                                                 + "   }\n"
+                                                                 + "}");
 
         return Stream.of(
             Arguments.of(
@@ -911,6 +916,19 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "requestRespondentEvidence",
                 "awaitingRespondentEvidence",
+                merge(variablesDirectionDueDate, appellantInDetention),
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedFollowUpOverdueRespondentEvidence",
+                        "name", "Detained - Follow-up overdue respondent evidence",
+                        "processCategories", "followUpOverdue",
+                        "delayUntil", delayUntilDirectionDue
+                    )
+                )
+            ),
+            Arguments.of(
+                "requestRespondentEvidence",
+                "awaitingRespondentEvidence",
                 variablesDirectionDueDate,
                 singletonList(
                     Map.of(
@@ -935,6 +953,19 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "changeDirectionDueDate",
+                null,
+                merge(variablesDirectionDueDate,appellantInDetention),
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedFollowUpExtendedDirection",
+                        "name", "Detained - Follow-up extended direction",
+                        "processCategories", "caseProgression",
+                        "delayUntil", delayUntilDirectionDue
+                    )
+                )
+            ),
+            Arguments.of(
                 "requestCaseBuilding",
                 "caseBuilding",
                 variablesDirectionDueDate,
@@ -942,6 +973,19 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "followUpOverdueCaseBuilding",
                         "name", "Follow-up overdue case building",
+                        "processCategories", "followUpOverdue",
+                        "delayUntil", delayUntilDirectionDue
+                    )
+                )
+            ),
+            Arguments.of(
+                "requestCaseBuilding",
+                "caseBuilding",
+                merge(variablesDirectionDueDate, appellantInDetention),
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedFollowUpOverdueCaseBuilding",
+                        "name", "Detained - Follow-up overdue case building",
                         "processCategories", "followUpOverdue",
                         "delayUntil", delayUntilDirectionDue
                     )
@@ -1000,6 +1044,19 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "requestRespondentReview",
+                "respondentReview",
+                merge(variablesDirectionDueDate, appellantInDetention),
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedFollowUpOverdueRespondentReview",
+                        "name", "Detained - Follow-up overdue respondent review",
+                        "processCategories", "followUpOverdue",
+                        "delayUntil", delayUntilDirectionDue
+                    )
+                )
+            ),
+            Arguments.of(
                 "requestHearingRequirementsFeature",
                 "submitHearingRequirements",
                 variablesDirectionDueDate,
@@ -1026,6 +1083,19 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "sendDirection",
+                null,
+                merge(variablesDirectionDueDate, appellantInDetention),
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedFollowUpNonStandardDirection",
+                        "name", "Detained - Follow-up non-standard direction",
+                        "processCategories", "caseProgression",
+                        "delayUntil", delayUntilDirectionDue
+                    )
+                )
+            ),
+            Arguments.of(
                 "removeRepresentation",
                 null,
                 null,
@@ -1033,6 +1103,19 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "followUpNoticeOfChange",
                         "name", "Follow-up Notice of Change",
+                        "processCategories", "followUpOverdue",
+                        "delayUntil", delayFor14DaysExcludingBankHolidays
+                    )
+                )
+            ),
+            Arguments.of(
+                "removeRepresentation",
+                null,
+                appellantInDetention,
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedFollowUpNoticeOfChange",
+                        "name", "Detained - Follow-up Notice of Change",
                         "processCategories", "followUpOverdue",
                         "delayUntil", delayFor14DaysExcludingBankHolidays
                     )
@@ -2497,6 +2580,25 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "progressMigratedCase",
+                "ftpaSubmitted",
+                appellantInDetention,
+                List.of(
+                    Map.of(
+                        "taskId", "detainedAssignAFTPAJudge",
+                        "name", "Detained - Assign a FTPA Judge",
+
+                        "processCategories", "caseProgression"
+                    ),
+                    Map.of(
+                        "taskId", "detainedDecideAnFTPA",
+                        "name", "Detained - Decide an FTPA",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "progressMigratedCase",
                 "listing",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
@@ -2517,6 +2619,24 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "listing",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
+                                      + "      \"reviewedHearingRequirements\":\"" + false + "\",\n"
+                                      + "      \"appellantInDetention\": true\n"
+                                      + "   }"
+                                      + "}"),
+                List.of(
+                    Map.of(
+                        "taskId", "detainedReviewHearingRequirements",
+                        "name", "Detained - Review hearing requirements",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "progressMigratedCase",
+                "listing",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
                                       + "      \"reviewedHearingRequirements\":\"" + true + "\"\n"
                                       + "   }"
                                       + "}"),
@@ -2525,6 +2645,40 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "listTheCase",
                         "name", "List the case",
 
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "progressMigratedCase",
+                "listing",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"reviewedHearingRequirements\":\"" + true + "\",\n"
+                                      + "      \"appellantInDetention\": true\n"
+                                      + "   }"
+                                      + "}"),
+                List.of(
+                    Map.of(
+                        "taskId", "detainedListTheCase",
+                        "name", "Detained - List the case",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "generateListCmrTask",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appellantInDetention\":\"" + true + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                List.of(
+                    Map.of(
+                        "taskId", "detainedListCmr",
+                        "name", "Detained List CMR",
                         "processCategories", "caseProgression"
                     )
                 )
@@ -2554,6 +2708,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
         assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
+    }
+
+    @SafeVarargs
+    @SuppressWarnings("unchecked")
+    private static Map<String, Object> merge(Map<String, ?>... maps) {
+        Map<String, Object> result = new HashMap<>();
+        for (Map<String, ?> map : maps) {
+            if (map != null) {
+                result.putAll(map);
+            }
+        }
+        return result;
     }
 
     public static Stream<Arguments> multipleMapScenarioProvider() {
@@ -2683,6 +2849,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       + "            \"type\" : \"\",\n"
                                       + "            \"decision\" : \"\",\n"
                                       + "            \"applicant\" : \"\"\n"
+                                      + "            \"appellantInDetention\" : \"\"\n"
                                       + "          }\n"
                                       + "        }\n"
                                       + "      }"),
@@ -2690,47 +2857,116 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             ),
             getArgumentOf("Adjourn",
                           "processApplicationAdjourn",
-                          "Process Adjourn Application"),
+                          "Process Adjourn Application",
+                          false),
+
+            getArgumentOf("Adjourn",
+                          "detainedProcessApplicationAdjourn",
+                          "Detained Process Adjourn Application",
+                          true),
             getArgumentOf("Expedite",
                           "processApplicationExpedite",
-                          "Process Expedite Application"),
+                          "Process Expedite Application",
+                          false),
+            getArgumentOf("Expedite",
+                          "detainedProcessApplicationExpedite",
+                          "Detained Process Expedite Application",
+                          true),
             getArgumentOf("Time extension",
                           "processApplicationTimeExtension",
-                          "Process Time Extension Application"),
+                          "Process Time Extension Application",
+                          false),
+            getArgumentOf("Time extension",
+                          "detainedProcessApplicationTimeExtension",
+                          "Detained Process Time Extension Application",
+                          true),
             getArgumentOf("Transfer",
                           "processApplicationTransfer",
-                          "Process Transfer Application"),
+                          "Process Transfer Application",
+                          false),
+            getArgumentOf("Transfer",
+                          "detainedProcessApplicationTransfer",
+                          "Detained Process Transfer Application",
+                          true),
             getArgumentOf("Withdraw",
                           "processApplicationWithdraw",
-                          "Process Withdraw Application"),
+                          "Process Withdraw Application",
+                          false),
+            getArgumentOf("Withdraw",
+                          "detainedProcessApplicationWithdraw",
+                          "Detained Process Withdraw Application",
+                          true),
             getArgumentOf("Update hearing requirements",
                           "processApplicationUpdateHearingRequirements",
-                          "Process Update Hearing Requirements Application"),
+                          "Process Update Hearing Requirements Application",
+                          false),
+            getArgumentOf("Update hearing requirements",
+                          "detainedProcessApplicationUpdateHearingRequirements",
+                          "Detained Process Update Hearing Requirements Application",
+                          true),
             getArgumentOf("Update appeal details",
                           "processApplicationUpdateAppealDetails",
-                          "Process Update Appeal Details Application"),
+                          "Process Update Appeal Details Application",
+                          false),
+            getArgumentOf("Update appeal details",
+                          "detainedProcessApplicationUpdateAppealDetails",
+                          "Detained Process Update Appeal Details Application",
+                          true),
             getArgumentOf("Reinstate an ended appeal",
                           "processApplicationReinstateAnEndedAppeal",
-                          "Process Reinstate An Ended Appeal Application"),
+                          "Process Reinstate An Ended Appeal Application",
+                          false),
+            getArgumentOf("Reinstate an ended appeal",
+                          "detainedProcessApplicationReinstateAnEndedAppeal",
+                          "Detained Process Reinstate An Ended Appeal Application",
+                          true),
             getArgumentOf("Other",
                           "processApplicationOther",
-                          "Process Other Application"),
+                          "Process Other Application",
+                          false),
+            getArgumentOf("Other",
+                          "detainedProcessApplicationOther",
+                          "Detained Process Other Application",
+                          true),
             getArgumentOf("Link/unlink appeals",
                           "processApplicationLink/UnlinkAppeals",
-                          "Process Link/Unlink Appeals Application"),
+                          "Process Link/Unlink Appeals Application",
+                          false),
+            getArgumentOf("Link/unlink appeals",
+                          "detainedProcessApplicationLink/UnlinkAppeals",
+                          "Detained Process Link/Unlink Appeals Application",
+                          true),
             getArgumentOf("Set aside a decision",
                           "reviewSetAsideDecisionApplication",
-                          "Review set aside decision application"),
+                          "Review set aside decision application",
+                          false),
+            getArgumentOf("Set aside a decision",
+                          "detainedReviewSetAsideDecisionApplication",
+                          "Detained Review set aside decision application",
+                          true),
             getArgumentOf("Judge's review of application decision",
                           "processApplicationToReviewDecision",
-                          "Process Application to Review Decision"),
+                          "Process Application to Review Decision",
+                          false),
+            getArgumentOf("Judge's review of application decision",
+                          "detainedProcessApplicationToReviewDecision",
+                          "Detained Process Application to Review Decision",
+                          true),
             getArgumentOf("Change hearing type",
                           "processApplicationChangeHearingType",
-                          "Process Change Hearing Type Application")
+                          "Process Change Hearing Type Application",
+                          false),
+            getArgumentOf("Change hearing type",
+                          "detainedProcessApplicationChangeHearingType",
+                          "Detained Process Change Hearing Type Application",
+                          true)
         );
     }
 
-    private static Arguments getArgumentOf(String applicationType, String taskId, String taskName) {
+    private static Arguments getArgumentOf(String applicationType,
+                                           String taskId,
+                                           String taskName,
+                                           boolean appellantInDetention) {
         return Arguments.of(
             "makeAnApplication",
             null,
@@ -2740,7 +2976,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                   + "            \"type\" : \"" + applicationType + "\",\n"
                                   + "            \"decision\" : \"\",\n"
                                   + "            \"applicant\" : \"\"\n"
-                                  + "          }\n"
+                                  + "          },\n"
+                                  + "          \"appellantInDetention\" : \"" + appellantInDetention + "\"\n"
                                   + "        }\n"
                                   + "      }"),
             singletonList(
@@ -2857,9 +3094,9 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getInputs().size(), is(27));
+        assertThat(logic.getInputs().size(), is(28));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(90));
+        assertThat(logic.getRules().size(), is(116));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {
