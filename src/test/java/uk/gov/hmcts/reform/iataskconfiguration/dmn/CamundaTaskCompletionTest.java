@@ -40,6 +40,10 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                         "taskType", "decideAnFTPA",
                         "completionMode", "Auto"
                     ),
+                    Map.of(
+                        "taskType", "detainedDecideAnFTPA",
+                        "completionMode", "Auto"
+                    ),
                     Collections.emptyMap()
                 )
             ),
@@ -218,6 +222,10 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                 asList(
                     Map.of(
                         "taskType", "reviewHearingRequirements",
+                        "completionMode", "Auto"
+                    ),
+                    Map.of(
+                        "taskType", "detainedReviewHearingRequirements",
                         "completionMode", "Auto"
                     ),
                     Collections.emptyMap()
@@ -409,6 +417,10 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                         "taskType", "assignAFTPAJudge",
                         "completionMode", "Auto"
                     ),
+                    Map.of(
+                        "taskType", "detainedAssignAFTPAJudge",
+                        "completionMode", "Auto"
+                    ),
                     Collections.emptyMap()
                 )
             ),
@@ -417,6 +429,10 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                 asList(
                     Map.of(
                         "taskType", "listTheCase",
+                        "completionMode", "Auto"
+                    ),
+                    Map.of(
+                        "taskType", "detainedListTheCase",
                         "completionMode", "Auto"
                     ),
                     Collections.emptyMap()
@@ -513,7 +529,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
 
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(59));
+        assertThat(logic.getRules().size(), is(63));
     }
 
 

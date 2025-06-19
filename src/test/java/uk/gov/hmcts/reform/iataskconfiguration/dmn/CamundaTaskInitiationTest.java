@@ -2580,6 +2580,25 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "progressMigratedCase",
+                "ftpaSubmitted",
+                appellantInDetention,
+                List.of(
+                    Map.of(
+                        "taskId", "detainedAssignAFTPAJudge",
+                        "name", "Detained - Assign a FTPA Judge",
+
+                        "processCategories", "caseProgression"
+                    ),
+                    Map.of(
+                        "taskId", "detainedDecideAnFTPA",
+                        "name", "Detained - Decide an FTPA",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "progressMigratedCase",
                 "listing",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
@@ -2600,6 +2619,24 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "listing",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
+                                      + "      \"reviewedHearingRequirements\":\"" + false + "\",\n"
+                                      + "      \"appellantInDetention\": true\n"
+                                      + "   }"
+                                      + "}"),
+                List.of(
+                    Map.of(
+                        "taskId", "detainedReviewHearingRequirements",
+                        "name", "Detained - Review hearing requirements",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "progressMigratedCase",
+                "listing",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
                                       + "      \"reviewedHearingRequirements\":\"" + true + "\"\n"
                                       + "   }"
                                       + "}"),
@@ -2607,6 +2644,24 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "listTheCase",
                         "name", "List the case",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "progressMigratedCase",
+                "listing",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"reviewedHearingRequirements\":\"" + true + "\",\n"
+                                      + "      \"appellantInDetention\": true\n"
+                                      + "   }"
+                                      + "}"),
+                List.of(
+                    Map.of(
+                        "taskId", "detainedListTheCase",
+                        "name", "Detained - List the case",
 
                         "processCategories", "caseProgression"
                     )
@@ -3041,7 +3096,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(28));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(112));
+        assertThat(logic.getRules().size(), is(116));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {

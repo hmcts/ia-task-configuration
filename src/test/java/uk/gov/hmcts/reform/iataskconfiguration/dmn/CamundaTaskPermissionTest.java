@@ -185,7 +185,26 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "detainedListTheCase",
+                List.of(
+                    taskSupervisor,
+                    seniorCaseWorkerPriorityOne,
+                    hearingCentreAdminPriorityOne,
+                    ctscAdminPriorityOne,
+                    ctscTeamLeaderPriorityOne,
+                    tribunalCaseWorkerPriorityTwoOwn
+                )
+            ),
+            Arguments.of(
                 "assignAFTPAJudge",
+                List.of(
+                    taskSupervisor,
+                    ctscAdminPriorityOne,
+                    ctscTeamLeaderPriorityOne
+                )
+            ),
+            Arguments.of(
+                "detainedAssignAFTPAJudge",
                 List.of(
                     taskSupervisor,
                     ctscAdminPriorityOne,
@@ -218,6 +237,14 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "decideAnFTPA",
+                List.of(
+                    taskSupervisor,
+                    judgePriorityOne,
+                    ftpaJudgePriorityOne
+                )
+            ),
+            Arguments.of(
+                "detainedDecideAnFTPA",
                 List.of(
                     taskSupervisor,
                     judgePriorityOne,
@@ -560,8 +587,8 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         "followUpOverdueCaseBuilding","detainedFollowUpOverdueRespondentReview",
         "followUpOverdueReasonsForAppeal", "reviewTheAppeal",
         "reviewClarifyingQuestionsAnswers", "followUpOverdueClarifyingAnswers", "reviewRespondentResponse",
-        "followUpOverdueRespondentReview","detainedFollowUpOverdueRespondentReview", "reviewHearingRequirements",
-        "followUpOverdueHearingRequirements",
+        "followUpOverdueRespondentReview", "detainedFollowUpOverdueRespondentReview", "reviewHearingRequirements",
+        "detainedReviewHearingRequirements", "followUpOverdueHearingRequirements",
         "reviewCmaRequirements",
         "attendCma", "followUpOverdueCmaRequirements", "followUpNonStandardDirection",
         "detainedFollowUpNonStandardDirection",

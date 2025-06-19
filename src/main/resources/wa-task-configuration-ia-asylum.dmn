@@ -195,7 +195,7 @@
                         "followUpNonStandardDirection","detainedFollowUpNonStandardDirection",
                         "reviewClarifyingQuestionsAnswers",
                         "reviewRemissionApplication",
-                        "assignAFTPAJudge",
+                        "assignAFTPAJudge","detainedAssignAFTPAJudge",
                         "sendPaymentRequest",
                         "markAsPaid",
                         "reviewRemittedAppeal",
@@ -270,7 +270,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1ps3x4j">
-          <text>"generateDraftDecisionAndReasons","uploadDecision","uploadHearingRecording","postHearingAttendeesDurationAndRecording","editListing","followUpOverdueHearingRequirements","reviewHearingRequirements","allocateHearingJudge","prepareDecisionsAndReasons","startDecisionsAndReasonsDocument","createHearingBundle","createCaseSummary","listTheCase","hearingException","cmrListed","cmrUpdated","relistCase","reviewInterpreters","detainedEditListing","detainedListCmr"</text>
+          <text>"generateDraftDecisionAndReasons","uploadDecision","uploadHearingRecording","postHearingAttendeesDurationAndRecording","editListing","followUpOverdueHearingRequirements","reviewHearingRequirements","detainedReviewHearingRequirements","allocateHearingJudge","prepareDecisionsAndReasons","startDecisionsAndReasonsDocument","createHearingBundle","createCaseSummary","listTheCase","detainedListTheCase","hearingException","cmrListed","cmrUpdated","relistCase","reviewInterpreters","detainedEditListing","detainedListCmr"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0c3eia6">
           <text>"workType"</text>
@@ -326,7 +326,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_04wtfxs">
-          <text>"decideAnFTPA"</text>
+          <text>"decideAnFTPA","detainedDecideAnFTPA"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1ywf3hm">
           <text>"workType"</text>
@@ -415,7 +415,7 @@
                         "attendCma",
                         "reviewRespondentResponse",
                         "caseSummaryHearingBundleStartDecision",
-                        "reviewHearingRequirements",
+                        "reviewHearingRequirements","detainedReviewHearingRequirements",
                         "followUpOverdueRespondentEvidence","detainedFollowUpOverdueRespondentEvidence",
                         "followUpOverdueCaseBuilding","detainedFollowUpOverdueCaseBuilding",
                         "followUpOverdueReasonsForAppeal",
@@ -486,7 +486,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_15ftuu0">
-          <text>"generateDraftDecisionAndReasons","uploadDecision","reviewAddendumHomeOfficeEvidence","reviewAddendumAppellantEvidence","reviewSpecificAccessRequestJudiciary","reviewSpecificAccessRequestLegalOps","reviewSpecificAccessRequestAdmin","reviewSpecificAccessRequestCTSC","processApplicationToReviewDecision","detainedProcessApplicationToReviewDecision","sendDecisionsAndReasons","prepareDecisionsAndReasons","decideAnFTPA","reviewSetAsideDecisionApplication","detainedReviewSetAsideDecisionApplication"</text>
+          <text>"generateDraftDecisionAndReasons","uploadDecision","reviewAddendumHomeOfficeEvidence","reviewAddendumAppellantEvidence","reviewSpecificAccessRequestJudiciary","reviewSpecificAccessRequestLegalOps","reviewSpecificAccessRequestAdmin","reviewSpecificAccessRequestCTSC","processApplicationToReviewDecision","detainedProcessApplicationToReviewDecision","sendDecisionsAndReasons","prepareDecisionsAndReasons","decideAnFTPA","detainedDecideAnFTPA","reviewSetAsideDecisionApplication","detainedReviewSetAsideDecisionApplication"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_15nowth">
           <text>"roleCategory"</text>
@@ -503,7 +503,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0xh5are">
-          <text>"reviewRemissionApplication","assignAFTPAJudge","listTheCase","sendPaymentRequest","markAsPaid","processFeeRefund","reviewDraftAppeal"</text>
+          <text>"reviewRemissionApplication","assignAFTPAJudge","detainedAssignAFTPAJudge","listTheCase","detainedListTheCase","sendPaymentRequest","markAsPaid","processFeeRefund","reviewDraftAppeal"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0vqliz7">
           <text>"roleCategory"</text>
@@ -541,13 +541,17 @@
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewInterpreters" or taskType != null and taskType = "reviewInterpreters") then "[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings)"
                         else if ((taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "listTheCase" or taskType != null and taskType = "listTheCase") and (caseData != null and caseData.isIntegrated = null or caseData != null and caseData.isIntegrated = "No")) then "[List the case](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/listCase)"
                         else if ((taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "listTheCase" or taskType != null and taskType = "listTheCase") and (caseData != null and caseData.isIntegrated = "Yes")) then "[List the case](cases/case-details/${[CASE_REFERENCE]}/hearings)"
+                        else if ((taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "detainedListTheCase" or taskType != null and taskType = "detainedListTheCase") and (caseData != null and caseData.isIntegrated = null or caseData != null and caseData.isIntegrated = "No")) then "[List the case](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/listCase)"
+                        else if ((taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "detainedListTheCase" or taskType != null and taskType = "detainedListTheCase") and (caseData != null and caseData.isIntegrated = "Yes")) then "[List the case](cases/case-details/${[CASE_REFERENCE]}/hearings)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "assignAFTPAJudge" or taskType != null and taskType = "assignAFTPAJudge") then "[Record allocated Judge](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/recordAllocatedJudge)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "detainedAssignAFTPAJudge" or taskType != null and taskType = "detainedAassignAFTPAJudge") then "[Record allocated Judge](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/recordAllocatedJudge)"
                         else if taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "detainedProcessApplicationAdjourn" or taskType != null and taskType = "detainedProcessApplicationAdjourn)"
                         then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewRemissionApplication" or taskType != null and taskType = "reviewRemissionApplication") then "[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/recordRemissionDecision/recordRemissionDecisionremissionDecision)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "allocateHearingJudge" or taskType != null and taskType ="allocateHearingJudge") then "[Allocate Hearing Judge](/role-access/allocate-role/allocate?caseId=${[CASE_REFERENCE]}&amp;roleCategory=JUDICIAL&amp;jurisdiction=IA)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "prepareDecisionsAndReasons" or taskType != null and taskType = "prepareDecisionsAndReasons") then "[Prepare decisions and reasons](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/generateDecisionAndReasons)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "decideAnFTPA" or taskType != null and taskType = "decideAnFTPA") then "[Decide FTPA application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideFtpaApplication)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "detainedDecideAnFTPA" or taskType != null and taskType = "detainedDecideAnFTPA") then "[Decide FTPA application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideFtpaApplication)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "detainedEditListing" or taskType != null and taskType = "detainedEditListing") then "[Edit case listing](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/detainedEditCaseListing)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "generateDraftDecisionAndReasons" or taskType != null and taskType = "generateDraftDecisionAndReasons")	then "[Generate the draft decisions and reasons document](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/generateDecisionAndReasons)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewAddendumEvidence" or taskType != null and taskType = "reviewAddendumEvidence") then "[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAddendumEvidenceAsReviewed)"
@@ -560,10 +564,12 @@
                         then "[Start decision and reasons document](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decisionAndReasonsStarted/decisionAndReasonsStartedcaseIntroduction)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewHearingRequirements" or taskType != null and taskType = "reviewHearingRequirements")
                         then "[Review hearing requirements](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/reviewHearingRequirements)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "detainedReviewHearingRequirements" or taskType != null and taskType = "detainedReviewHearingRequirements")
+                        then "[Review hearing requirements](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/reviewHearingRequirements)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewAdditionalEvidence" or taskType != null and taskType ="reviewAdditionalEvidence")
                         then "[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markEvidenceAsReviewed)" else if
                          (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewCmaRequirements" or taskType != null and taskType = "reviewCmaRequirements")
-                        then "[Review CMA Requirements](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/reviewCmaRequirements)"  
+                        then "[Review CMA Requirements](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/reviewCmaRequirements)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewRespondentResponse" or taskType != null and taskType = "reviewRespondentResponse")
                         then "[Review Home Office response](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestResponseReview)&lt;br /&gt;[Amend appeal response](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestResponseAmend)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "createHearingBundle" or taskType != null and taskType = "createHearingBundle")
@@ -698,7 +704,7 @@
 "attendCma","detainedReviewSetAsideDecisionApplication",
 "reviewRespondentResponse",
 "caseSummaryHearingBundleStartDecision",
-"reviewHearingRequirements",
+"reviewHearingRequirements","detainedReviewHearingRequirements",
 "followUpOverdueRespondentEvidence","detainedFollowUpOverdueRespondentEvidence",
 "followUpExtendedDirection",
 "detainedFollowUpExtendedDirection",
@@ -712,8 +718,8 @@
 "followUpNoticeOfChange","detainedFollowUpNoticeOfChange",
 "reviewAddendumEvidence",
 "reviewRemissionApplication",
-"assignAFTPAJudge",
-"listTheCase",
+"assignAFTPAJudge","detainedAssignAFTPAJudge",
+"listTheCase","detainedListTheCase",
 "reviewSetAsideDecisionApplication",
 "cmrListed",
 "cmrUpdated",
@@ -739,7 +745,7 @@
 "sendPaymentRequest",
 "uploadHearingRecording",
 "postHearingAttendeesDurationAndRecording",
-"decideAnFTPA",
+"decideAnFTPA","detainedDecideAnFTPA",
 "printAndSendHoBundle",
 "printAndSendHoResponse",
 "printAndSendHearingRequirements",

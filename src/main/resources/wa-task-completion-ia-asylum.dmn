@@ -141,6 +141,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1dntv6c">
+        <inputEntry id="UnaryTests_04fzy3q">
+          <text>"reviewHearingRequirements"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0fbdc9n">
+          <text>"detainedReviewHearingRequirements"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0krhzxj">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0z5xy01">
         <inputEntry id="UnaryTests_0iji488">
           <text>"decisionAndReasonsStarted"</text>
@@ -493,6 +504,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1q5figz">
+        <inputEntry id="UnaryTests_1creph3">
+          <text>"decideFtpaApplication"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ivg5m3">
+          <text>"detainedDecideAnFTPA"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0yfgjvo">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_00ego89">
         <inputEntry id="UnaryTests_0mupz2m">
           <text>"decideAnApplication"</text>
@@ -537,6 +559,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_01avdea">
+        <inputEntry id="UnaryTests_180gsrb">
+          <text>"recordAllocatedJudge"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1uo7mcm">
+          <text>"detainedAssignAFTPAJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_06a017r">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0cpvviz">
         <inputEntry id="UnaryTests_0tfhu0p">
           <text>"listCase"</text>
@@ -545,6 +578,17 @@
           <text>"listTheCase"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1hkcl8d">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ecxntt">
+        <inputEntry id="UnaryTests_0dzn595">
+          <text>"listCase"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1309ng9">
+          <text>"detainedListTheCase"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ry405r">
           <text>"Auto"</text>
         </outputEntry>
       </rule>
