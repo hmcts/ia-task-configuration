@@ -284,6 +284,17 @@
           <text>"Review the appeal"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_02usshg">
+        <inputEntry id="UnaryTests_1759tr3">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_18mpnxq">
+          <text>"reviewTheAppeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_15owarv">
+          <text>"Detained - Review the appeal"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1sfjkmg">
         <inputEntry id="UnaryTests_044zyt9">
           <text></text>
