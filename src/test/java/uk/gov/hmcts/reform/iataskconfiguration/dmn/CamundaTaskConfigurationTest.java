@@ -268,6 +268,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("reviewAdditionalEvidence", decisionMakingWork),
             Arguments.of("detainedReviewAdditionalEvidence", decisionMakingWork),
             Arguments.of("reviewTheAppeal", decisionMakingWork),
+            Arguments.of("detainedReviewTheAppeal", decisionMakingWork),
             Arguments.of("followUpOverdueRespondentEvidence", decisionMakingWork),
             Arguments.of("detainedFollowUpOverdueRespondentEvidence", decisionMakingWork),
             Arguments.of("reviewRespondentEvidence", decisionMakingWork),
@@ -530,6 +531,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "detainedProcessApplicationOther",
         "processApplicationLink/UnlinkAppeals", "detainedProcessApplicationLink/UnlinkAppeals",
         "processApplicationChangeHearingType", "detainedProcessApplicationChangeHearingType", "reviewTheAppeal",
+        "detainedReviewTheAppeal",
         "decideOnTimeExtension", "reviewRespondentEvidence", "detainedReviewRespondentEvidence,"
             + "[Request reasons for appeal](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestReasonsForAppeal)<br />"
             + "[Send non-standard direction](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDirection),"
@@ -1362,6 +1364,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),,,",
         "reviewTheAppeal,[Request respondent evidence]"
             + "(/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentEvidence),,,",
+        "detainedReviewTheAppeal,[Request respondent evidence]"
+            + "(/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentEvidence),,,",
         "decideOnTimeExtension,"
             + "[Change the direction due date](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/changeDirectionDueDate),,,",
         "reviewRespondentEvidence,"
@@ -1559,6 +1563,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("detainedProcessApplicationToReviewDecision", twoDays),
             Arguments.of("editListing", twoDays),
             Arguments.of("reviewTheAppeal", twoDays),
+            Arguments.of("detainedReviewTheAppeal", twoDays),
             Arguments.of("decideOnTimeExtension", twoDays),
             Arguments.of("reviewRespondentEvidence", twoDays),
             Arguments.of("detainedReviewRespondentEvidence", twoDays),
