@@ -212,6 +212,11 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                    "Review Appeal Skeleton Argument"
             ),
             Map.of("taskTypeId",
+                   "detainedReviewAppealSkeletonArgument",
+                   "taskTypeName",
+                   "Detained - Review Appeal Skeleton Argument"
+            ),
+            Map.of("taskTypeId",
                    "reviewReasonsForAppeal",
                    "taskTypeName",
                    "Review Reasons For Appeal"
