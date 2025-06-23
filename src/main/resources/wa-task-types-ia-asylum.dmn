@@ -383,6 +383,17 @@
           <text>"Review hearing requirements"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1pefz1y">
+        <inputEntry id="UnaryTests_0jcob11">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1i0jdac">
+          <text>"detainedReviewHearingRequirements"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0wa9p34">
+          <text>"Detained - Review hearing requirements"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_00xjnr1">
         <inputEntry id="UnaryTests_1siximp">
           <text></text>
@@ -614,6 +625,17 @@
           <text>"Decide an FTPA"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1u67cot">
+        <inputEntry id="UnaryTests_1sbzj75">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_11dc7f5">
+          <text>"detainedDecideAnFTPA"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0vp23mc">
+          <text>"Detained - Decide an FTPA"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1w7bcd5">
         <inputEntry id="UnaryTests_1lmkaak">
           <text></text>
@@ -647,6 +669,17 @@
           <text>"Assign a FTPA Judge"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0xnwfo3">
+        <inputEntry id="UnaryTests_0rhfnij">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0l5ga4n">
+          <text>"detainedAssignAFTPAJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_19n6pnl">
+          <text>"Detained - Assign a FTPA Judge"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_03kxpwb">
         <inputEntry id="UnaryTests_0kts41d">
           <text></text>
@@ -656,6 +689,17 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_12y756g">
           <text>"List the case"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1tui23n">
+        <inputEntry id="UnaryTests_0gtbsop">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0737mww">
+          <text>"detainedListTheCase"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1mqbiac">
+          <text>"Detained - List the case"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1qiyph4">
