@@ -360,7 +360,7 @@
             "postHearingAttendeesDurationAndRecording",
             "editListing","detainedEditListing",
             "followUpSetAsideDecision",
-"hearingException","cmrListed","cmrUpdated","relistCase","listTheCase","reviewInterpreters",
+"hearingException","cmrListed","cmrUpdated","relistCase","listTheCase","detainedListTheCase","reviewInterpreters",
 "reviewMigratedCase",
 "reviewAriaRemissionApplication","detainedListCmr"</text>
         </inputEntry>

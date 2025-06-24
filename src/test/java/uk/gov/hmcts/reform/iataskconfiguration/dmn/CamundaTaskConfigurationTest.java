@@ -305,6 +305,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("createHearingBundle", hearingWork),
             Arguments.of("createCaseSummary", hearingWork),
             Arguments.of("listTheCase", hearingWork),
+            Arguments.of("detainedListTheCase", hearingWork),
             Arguments.of("hearingException", hearingWork),
             Arguments.of("cmrListed", hearingWork),
             Arguments.of("cmrUpdated", hearingWork),
@@ -495,7 +496,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
     @ParameterizedTest
     @CsvSource({
-        "reviewRemissionApplication","assignAFTPAJudge","listTheCase","sendPaymentRequest","markAsPaid",
+        "reviewRemissionApplication","assignAFTPAJudge","listTheCase","detainedListTheCase","sendPaymentRequest","markAsPaid",
         "processFeeRefund", "reviewDraftAppeal"
     })
     void when_taskId_then_return_Ctsc_role_category(String taskType) {
@@ -1448,6 +1449,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             + "recordAllocatedJudge),,,",
         "listTheCase,[List the case](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/listCase),,No,",
         "listTheCase,[List the case](cases/case-details/${[CASE_REFERENCE]}/hearings),,Yes,",
+        "detainedListTheCase,[List the case](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/listCase),,No,",
+        "detainedListTheCase,[List the case](cases/case-details/${[CASE_REFERENCE]}/hearings),,Yes,",
         "sendPaymentRequest,[Mark payment request sent](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
             + "markPaymentRequestSent),,,",
         "markAsPaid,[Mark appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid),,,",
@@ -1601,6 +1604,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("reviewRemissionApplication", twoDays),
             Arguments.of("assignAFTPAJudge", twoDays),
             Arguments.of("listTheCase", twoDays),
+            Arguments.of("detainedListTheCase", twoDays),
             Arguments.of("reviewSetAsideDecisionApplication", twoDays),
             Arguments.of("detainedReviewSetAsideDecisionApplication", twoDays),
             Arguments.of("reviewAriaRemissionApplication", twoDays),
