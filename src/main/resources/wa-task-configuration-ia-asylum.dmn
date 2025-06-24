@@ -234,7 +234,7 @@
         </inputEntry>
         <inputEntry id="UnaryTests_1gm06lg">
           <text>
-                        "reviewTheAppeal",
+                        "reviewTheAppeal","detainedReviewTheAppeal",
                         "followUpOverdueRespondentEvidence","detainedFollowUpOverdueRespondentEvidence",
                         "reviewRespondentEvidence",
                         "followUpOverdueCaseBuilding","detainedFollowUpOverdueCaseBuilding",
@@ -406,7 +406,7 @@
 		        "processApplicationReinstateAnEndedAppeal","detainedProcessApplicationReinstateAnEndedAppeal",
 		        "processApplicationOther","detainedProcessApplicationOther",
 		        "processApplicationLink/UnlinkAppeals",   "detainedProcessApplicationLink/UnlinkAppeals",        "processApplicationChangeHearingType","detainedProcessApplicationChangeHearingType",
-                        "reviewTheAppeal",
+                        "reviewTheAppeal","detainedReviewTheAppeal",
                         "decideOnTimeExtension",
                         "reviewRespondentEvidence","detainedReviewRespondentEvidence",
                         "reviewAppealSkeletonArgument",
@@ -566,13 +566,14 @@
                         then "[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markEvidenceAsReviewed)" else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "detainedReviewAdditionalEvidence" or taskType != null and taskType ="detainedReviewAdditionalEvidence")
                         then "[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markEvidenceAsReviewed)" else if
                          (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewCmaRequirements" or taskType != null and taskType = "reviewCmaRequirements")
-                        then "[Review CMA Requirements](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/reviewCmaRequirements)"  
+                        then "[Review CMA Requirements](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/reviewCmaRequirements)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewRespondentResponse" or taskType != null and taskType = "reviewRespondentResponse")
                         then "[Review Home Office response](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestResponseReview)&lt;br /&gt;[Amend appeal response](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestResponseAmend)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "createHearingBundle" or taskType != null and taskType = "createHearingBundle")
                         then "[Generate the hearing bundle](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/generateHearingBundle)&lt;br /&gt;[Customise the hearing bundle](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/customiseHearingBundle)"
                         else if ((taskAttributes != null and taskAttributes.taskType != null and (taskAttributes.taskType = "processApplicationExpedite" or taskAttributes.taskType = "detainedProcessApplicationExpedite")) or (taskType != null and (taskType = "processApplicationExpedite" or taskType = "detainedProcessApplicationExpedite")))
                   then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)" else if ((taskAttributes != null and taskAttributes.taskType != null and (taskAttributes.taskType = "reviewTheAppeal" or taskAttributes.taskType = "reviewTheAppeal")))
+                  then "[Request respondent evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentEvidence)" else if ((taskAttributes != null and taskAttributes.taskType != null and (taskAttributes.taskType = "detainedReviewTheAppeal" or taskAttributes.taskType = "detainedReviewTheAppeal")))
                   then "[Request respondent evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentEvidence)" else if ((taskAttributes != null and taskAttributes.taskType != null and (taskAttributes.taskType = "decideOnTimeExtension" or taskAttributes.taskType = "decideOnTimeExtension")))
                   then "[Change the direction due date](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/changeDirectionDueDate)" else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "attendCma" or taskType != null and taskType = "attendCma")
                         then "[Update case details after CMA](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/updateDetailsAfterCma)"
@@ -690,7 +691,7 @@
         <inputEntry id="UnaryTests_12nptxn">
           <text>"processApplicationToReviewDecision","detainedProcessApplicationToReviewDecision",
 "editListing","detainedEditListing",
-"reviewTheAppeal",
+"reviewTheAppeal","detainedReviewTheAppeal",
 "decideOnTimeExtension",
 "reviewRespondentEvidence",
 "reviewAdditionalEvidence",
