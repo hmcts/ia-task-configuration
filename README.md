@@ -184,6 +184,98 @@ To add new tasks or modify existing ones:
 - Requires Azure Service Bus message queue setup
 - Environment configuration needed for CCD integration
 
+## DMN Deployment Scripts
+
+### Automated DMN Upload to Preview Environment
+
+The repository includes an automated script to upload Work Allocation DMN files to the preview environment, eliminating the need for manual UI uploads and reducing deployment time.
+
+#### Script: `bin/upload-wa-dmn-preview.sh`
+
+**Purpose**: Automates the upload of all Work Allocation DMN files to Camunda in preview environments.
+
+**Key Features**:
+- Uploads multiple DMN files in a single execution
+- Comprehensive error handling with clear error messages
+- Success confirmation for each uploaded file
+- Dry-run mode for testing without actual uploads
+
+**Usage**:
+```bash
+# Basic usage - upload to PR 2609 preview environment
+./bin/upload-wa-dmn-preview.sh -p 2609
+
+# Dry run to see what would be uploaded
+./bin/upload-wa-dmn-preview.sh -p 2609 --dry-run
+
+# View help and all options
+./bin/upload-wa-dmn-preview.sh --help
+```
+
+**Parameters**:
+- `-p, --pr PR_NUMBER` (required): PR number for preview environment
+- `-d, --dry-run`: Show what would be done without uploading
+- `-w, --workspace PATH`: Workspace path (default: current directory)
+- `-t, --tenant-id ID`: Tenant ID (default: ia)
+- `-h, --help`: Show help message
+
+**Prerequisites**:
+- Access to the preview environment Camunda instance, VPN is ON
+
+**DMN Files Uploaded**:
+The script automatically discovers and uploads all `.dmn` files from `src/main/resources/`:
+- `wa-task-allowed-days-ia-asylum.dmn`
+- `wa-task-cancellation-ia-asylum.dmn`
+- `wa-task-completion-ia-asylum.dmn`
+- `wa-task-configuration-ia-asylum.dmn`
+- `wa-task-initiation-ia-asylum.dmn`
+- `wa-task-permissions-ia-asylum.dmn`
+- `wa-task-types-ia-asylum.dmn`
+
+**Output Example**:
+```
+==========================================
+Work Allocation DMN Upload to Preview
+==========================================
+PR Number: 2609
+Camunda URL: https://camunda-ia-case-api-pr-2609.preview.platform.hmcts.net
+DMN Files Path: /path/to/workspace/src/main/resources
+Tenant ID: ia
+Product: ia
+==========================================
+
+Found DMN files:
+  - wa-task-configuration-ia-asylum.dmn
+  - wa-task-initiation-ia-asylum.dmn
+  - ...
+
+Generating service token...
+Service token generated successfully
+
+Starting DMN file upload...
+
+Uploading: wa-task-configuration-ia-asylum.dmn...
+✅ wa-task-configuration-ia-asylum.dmn uploaded successfully
+
+...
+
+==========================================
+Upload Summary
+==========================================
+Total files processed: 7
+Successful uploads: 7
+Failed uploads: 0
+==========================================
+✅ All DMN files uploaded successfully!
+```
+
+**Integration with CI/CD**:
+The script is designed to be used in CI/CD pipelines:
+```bash
+# In Jenkins/GitHub Actions
+./bin/upload-wa-dmn-preview.sh -p ${PR_NUMBER}
+```
+
 ## Known Limitations and Challenges
 
 ### Development Constraints
