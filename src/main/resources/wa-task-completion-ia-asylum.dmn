@@ -185,6 +185,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0det3hb1">
+        <inputEntry id="UnaryTests_0det3hb1">
+          <text>"decisionAndReasonsStarted"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0det3hb1">
+          <text>"detainedCaseSummaryHearingBundleStartDecision"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0det3hb2">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0gdgm8a">
         <inputEntry id="UnaryTests_16tdmu0">
           <text>"changeDirectionDueDate"</text>
