@@ -5089,7 +5089,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1eattkb">
-          <text></text>
+          <text>false</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0a8r2w4">
           <text>"caseSummaryHearingBundleStartDecision"</text>
@@ -5101,6 +5101,104 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0pumcv9">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0det2hb1">
+        <inputEntry id="UnaryTests_0det2hb1">
+          <text>"listCase","progressMigratedCase"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det2hb2">
+          <text>"prepareForHearing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det2hb3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det2hb4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det2hb5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det2hb6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det2hb7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det2hb8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det2hb9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det2hb10">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det2hb11">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det2hb12">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det2hb13">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det2hb14">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det2hb15">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det2hb16">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det2hb17">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det2hb18">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det2hb19">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det2hb20">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det2hb21">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det2hb22">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det2hb23">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det2hb24">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det2hb25">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det2hb26">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det2hb27">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det2hb28">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0det2hb29">
+          <text>"detainedCaseSummaryHearingBundleStartDecision"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0det2hb30">
+          <text>"Detained - Create Hearing Bundle"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0det2hb31">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0det2hb32">
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>

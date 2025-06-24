@@ -232,6 +232,11 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                    "Create Hearing Bundle"
             ),
             Map.of("taskTypeId",
+                   "detainedCaseSummaryHearingBundleStartDecision",
+                   "taskTypeName",
+                   "Detained Create Hearing Bundle"
+            ),
+            Map.of("taskTypeId",
                    "reviewHearingRequirements",
                    "taskTypeName",
                    "Review hearing requirements"
@@ -503,6 +508,6 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(1));
         assertThat(logic.getOutputs().size(), is(2));
-        assertThat(logic.getRules().size(), is(89));
+        assertThat(logic.getRules().size(), is(90));
     }
 }
