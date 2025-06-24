@@ -262,10 +262,70 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                null,
+                "UpdateNextHearingInfo",
+                null,
+                singletonList(
+                    Map.of(
+                        "action", "Reconfigure"
+                    )
+                )
+            ),
+            Arguments.of(
                 "unknownState",
                 null,
                 null,
                 emptyList()
+            ),
+            Arguments.of(
+                null,
+                "cmrListing",
+                null,
+                singletonList(
+                    Map.of(
+                        "action", "Reconfigure"
+                    )
+                )
+            ),
+            Arguments.of(
+                null,
+                "cmrReListing",
+                null,
+                singletonList(
+                    Map.of(
+                        "action", "Reconfigure"
+                    )
+                )
+            ),
+            Arguments.of(
+                null,
+                "hearingCancelled",
+                null,
+                singletonList(
+                    Map.of(
+                        "action", "Reconfigure"
+                    )
+                )
+            ),
+            Arguments.of(
+                null,
+                "listCase",
+                null,
+                singletonList(
+                    Map.of(
+                        "action", "Reconfigure"
+                    )
+                )
+            ),
+            Arguments.of(
+                null,
+                "adjournHearingWithoutDate",
+                null,
+                singletonList(
+                    Map.of(
+                        "action", "Reconfigure"
+                    )
+                )
             )
         );
     }
@@ -292,7 +352,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(3));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(21));
+        assertThat(logic.getRules().size(), is(27));
 
     }
 }
