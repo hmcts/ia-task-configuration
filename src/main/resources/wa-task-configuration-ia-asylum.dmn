@@ -233,7 +233,7 @@
         </inputEntry>
         <inputEntry id="UnaryTests_1gm06lg">
           <text>
-                        "reviewTheAppeal",
+                        "reviewTheAppeal","detainedReviewTheAppeal",
                         "followUpOverdueRespondentEvidence","detainedFollowUpOverdueRespondentEvidence",
                         "reviewRespondentEvidence",
                         "followUpOverdueCaseBuilding","detainedFollowUpOverdueCaseBuilding",
@@ -253,7 +253,7 @@
                         "reviewAddendumAppellantEvidence",
                         "reviewAddendumEvidence",
                         "decideOnTimeExtension",
-                        "sendDecisionsAndReasons"</text>
+                        "sendDecisionsAndReasons","detainedReviewAdditionalEvidence","detainedReviewAdditionalHomeOfficeEvidence","detainedReviewRespondentEvidence"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0omxasv">
           <text>"workType"</text>
@@ -405,9 +405,9 @@
 		        "processApplicationReinstateAnEndedAppeal","detainedProcessApplicationReinstateAnEndedAppeal",
 		        "processApplicationOther","detainedProcessApplicationOther",
 		        "processApplicationLink/UnlinkAppeals",   "detainedProcessApplicationLink/UnlinkAppeals",        "processApplicationChangeHearingType","detainedProcessApplicationChangeHearingType",
-                        "reviewTheAppeal",
+                        "reviewTheAppeal","detainedReviewTheAppeal",
                         "decideOnTimeExtension",
-                        "reviewRespondentEvidence",
+                        "reviewRespondentEvidence","detainedReviewRespondentEvidence",
                         "reviewAppealSkeletonArgument",
                         "reviewReasonsForAppeal",
                         "reviewClarifyingQuestionsAnswers",
@@ -425,8 +425,8 @@
                         "followUpOverdueHearingRequirements",
                         "followUpNonStandardDirection","detainedFollowUpNonStandardDirection",
                         "followUpNoticeOfChange","detainedFollowUpNoticeOfChange",
-                        "reviewAdditionalEvidence",
-                        "reviewAdditionalHomeOfficeEvidence",
+                        "reviewAdditionalEvidence","detainedReviewAdditionalEvidence",
+                        "reviewAdditionalHomeOfficeEvidence","detainedReviewAdditionalHomeOfficeEvidence",
                         "startDecisionsAndReasonsDocument",
                         "reviewRemittedAppeal",
                         "reviewAppealSetAsideUnderRule35",
@@ -558,7 +558,7 @@
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "allocateHearingJudge" or taskType != null and taskType ="allocateHearingJudge") then "[Allocate Hearing Judge](/role-access/allocate-role/allocate?caseId=${[CASE_REFERENCE]}&amp;roleCategory=JUDICIAL&amp;jurisdiction=IA)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "arrangeOfflinePayment" or taskType != null and taskType ="arrangeOfflinePayment") then "[Mark the appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid)" else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewMigratedCase" or taskType != null and taskType = "reviewMigratedCase") then "[Progress migrated case](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/progressMigratedCase)" else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "detainedListCmr" or taskType != null and taskType = "detainedListCmr") then "[List CMR](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/generateListCmrTask)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "uploadHearingRecording" or taskType != null and taskType = "uploadHearingRecording") then "[Upload the hearing recording](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/uploadHearingRecording)"
-                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewAdditionalHomeOfficeEvidence" or taskType != null and taskType ="reviewAdditionalHomeOfficeEvidence")	 then "[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markEvidenceAsReviewed)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewAdditionalHomeOfficeEvidence" or taskType != null and taskType ="reviewAdditionalHomeOfficeEvidence")	 then "[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markEvidenceAsReviewed)"else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "detainedReviewAdditionalHomeOfficeEvidence" or taskType != null and taskType ="detainedReviewAdditionalHomeOfficeEvidence")	 then "[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markEvidenceAsReviewed)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "markCaseAsPaid" or taskType != null and taskType ="markCaseAsPaid") then "[Mark the appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "startDecisionsAndReasonsDocument" or taskType != null and taskType ="startDecisionsAndReasonsDocument")
                         then "[Start decision and reasons document](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decisionAndReasonsStarted/decisionAndReasonsStartedcaseIntroduction)"
@@ -567,6 +567,7 @@
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "detainedReviewHearingRequirements" or taskType != null and taskType = "detainedReviewHearingRequirements")
                         then "[Review hearing requirements](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/reviewHearingRequirements)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewAdditionalEvidence" or taskType != null and taskType ="reviewAdditionalEvidence")
+                        then "[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markEvidenceAsReviewed)" else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "detainedReviewAdditionalEvidence" or taskType != null and taskType ="detainedReviewAdditionalEvidence")
                         then "[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markEvidenceAsReviewed)" else if
                          (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewCmaRequirements" or taskType != null and taskType = "reviewCmaRequirements")
                         then "[Review CMA Requirements](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/reviewCmaRequirements)"
@@ -576,10 +577,12 @@
                         then "[Generate the hearing bundle](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/generateHearingBundle)&lt;br /&gt;[Customise the hearing bundle](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/customiseHearingBundle)"
                         else if ((taskAttributes != null and taskAttributes.taskType != null and (taskAttributes.taskType = "processApplicationExpedite" or taskAttributes.taskType = "detainedProcessApplicationExpedite")) or (taskType != null and (taskType = "processApplicationExpedite" or taskType = "detainedProcessApplicationExpedite")))
                   then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)" else if ((taskAttributes != null and taskAttributes.taskType != null and (taskAttributes.taskType = "reviewTheAppeal" or taskAttributes.taskType = "reviewTheAppeal")))
+                  then "[Request respondent evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentEvidence)" else if ((taskAttributes != null and taskAttributes.taskType != null and (taskAttributes.taskType = "detainedReviewTheAppeal" or taskAttributes.taskType = "detainedReviewTheAppeal")))
                   then "[Request respondent evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentEvidence)" else if ((taskAttributes != null and taskAttributes.taskType != null and (taskAttributes.taskType = "decideOnTimeExtension" or taskAttributes.taskType = "decideOnTimeExtension")))
                   then "[Change the direction due date](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/changeDirectionDueDate)" else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "attendCma" or taskType != null and taskType = "attendCma")
                         then "[Update case details after CMA](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/updateDetailsAfterCma)"
                         else if ((taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewRespondentEvidence" or taskType != null and taskType ="reviewRespondentEvidence") and (caseData != null and caseData.journeyType = "aip"))
+                        then "[Request reasons for appeal](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestReasonsForAppeal)&lt;br /&gt;[Send non-standard direction](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDirection)"else if ((taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "detainedReviewRespondentEvidence" or taskType != null and taskType ="detainedReviewRespondentEvidence") and (caseData != null and caseData.journeyType = "aip"))
                         then "[Request reasons for appeal](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestReasonsForAppeal)&lt;br /&gt;[Send non-standard direction](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDirection)"
 			                  else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewAppealSkeletonArgument" or taskType != null and taskType ="reviewAppealSkeletonArgument")
                         then "[Request respondent review](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentReview)&lt;br /&gt;[Request case edit](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestCaseEdit)"
@@ -692,11 +695,13 @@
         <inputEntry id="UnaryTests_12nptxn">
           <text>"processApplicationToReviewDecision","detainedProcessApplicationToReviewDecision",
 "editListing","detainedEditListing",
-"reviewTheAppeal",
+"reviewTheAppeal","detainedReviewTheAppeal",
 "decideOnTimeExtension",
 "reviewRespondentEvidence",
 "reviewAdditionalEvidence",
-"reviewAdditionalHomeOfficeEvidence",
+"reviewAdditionalHomeOfficeEvidence","detainedReviewRespondentEvidence",
+"detainedReviewAdditionalEvidence",
+"detainedReviewAdditionalHomeOfficeEvidence",
 "reviewAppealSkeletonArgument",
 "reviewReasonsForAppeal",
 "reviewClarifyingQuestionsAnswers",

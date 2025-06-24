@@ -54,6 +54,10 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                         "taskType", "reviewTheAppeal",
                         "completionMode", "Auto"
                     ),
+                    Map.of(
+                        "taskType", "detainedReviewTheAppeal",
+                        "completionMode", "Auto"
+                    ),
                     Collections.emptyMap()
                 )
             ),
@@ -74,6 +78,10 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                         "taskType", "reviewRespondentEvidence",
                         "completionMode", "Auto"
                     ),
+                    Map.of(
+                        "taskType", "detainedReviewRespondentEvidence",
+                        "completionMode", "Auto"
+                    ),
                     Collections.emptyMap()
                 )
             ),
@@ -84,6 +92,10 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                         "taskType", "reviewRespondentEvidence",
                         "completionMode", "Auto"
                     ),
+                    Map.of(
+                        "taskType", "detainedReviewRespondentEvidence",
+                        "completionMode", "Auto"
+                    ),
                     Collections.emptyMap()
                 )
             ),
@@ -92,6 +104,10 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                 asList(
                     Map.of(
                         "taskType", "reviewRespondentEvidence",
+                        "completionMode", "Auto"
+                    ),
+                    Map.of(
+                        "taskType", "detainedReviewRespondentEvidence",
                         "completionMode", "Auto"
                     ),
                     Collections.emptyMap()
@@ -171,7 +187,15 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                         "completionMode", "Auto"
                     ),
                     Map.of(
+                        "taskType", "detainedReviewAdditionalEvidence",
+                        "completionMode", "Auto"
+                    ),
+                    Map.of(
                         "taskType", "reviewAdditionalHomeOfficeEvidence",
+                        "completionMode", "Auto"
+                    ),
+                    Map.of(
+                        "taskType", "detainedReviewAdditionalHomeOfficeEvidence",
                         "completionMode", "Auto"
                     ),
                     Collections.emptyMap()
