@@ -122,7 +122,7 @@ fi
 
 # Generate service token
 echo "Generating service token..."
-SERVICE_TOKEN=$(realpath "${WORKSPACE}")/bin/utils/idam-lease-service-token.sh
+SERVICE_TOKEN=$("${WORKSPACE}"/bin/utils/idam-lease-service-token.sh iac)
 
 if [[ -z "${SERVICE_TOKEN}" ]]; then
     echo "Error: Failed to generate service token"
