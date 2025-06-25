@@ -295,6 +295,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("uploadDecision", hearingWork),
             Arguments.of("uploadHearingRecording", hearingWork),
             Arguments.of("postHearingAttendeesDurationAndRecording", hearingWork),
+            Arguments.of("detainedPostHearingAttendeesDurationAndRecording", hearingWork),
             Arguments.of("editListing", hearingWork),
             Arguments.of("detainedEditListing", hearingWork),
             Arguments.of("followUpOverdueHearingRequirements", hearingWork),
@@ -462,7 +463,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     @ParameterizedTest
     @CsvSource({
         "arrangeOfflinePayment", "markCaseAsPaid", "allocateHearingJudge", "uploadHearingRecording",
-        "postHearingAttendeesDurationAndRecording", "editListing", "detainedEditListing", "followUpSetAsideDecision",
+        "postHearingAttendeesDurationAndRecording", "detainedPostHearingAttendeesDurationAndRecording",
+        "editListing", "detainedEditListing", "followUpSetAsideDecision",
         "hearingException", "cmrListed", "cmrUpdated","relistCase",
         "reviewInterpreters", "reviewMigratedCase", "reviewAriaRemissionApplication",
         "printAndSendHoBundle","printAndSendHoResponse","printAndSendHearingRequirements",
@@ -1609,6 +1611,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("prepareDecisionsAndReasons", zeroDays),
             Arguments.of("sendPaymentRequest", zeroDays),
             Arguments.of("uploadHearingRecording", zeroDays),
+            Arguments.of("postHearingAttendeesDurationAndRecording", zeroDays),
+            Arguments.of("detainedPostHearingAttendeesDurationAndRecording", zeroDays),
             Arguments.of("decideAnFTPA", zeroDays),
             Arguments.of("printAndSendHoBundle", zeroDays),
             Arguments.of("printAndSendHoResponse", zeroDays),

@@ -1070,8 +1070,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "processCategories", "caseProgression"
                     ),
                     Map.of(
-                        "taskId", "postHearingAttendeesDurationAndRecording",
-                        "name", "Post hearing – attendees, duration and recording",
+                        "taskId", "detainedPostHearingAttendeesDurationAndRecording",
+                        "name", "Detained - Post hearing – attendees, duration and recording",
                         "processCategories", "caseProgression",
                         "delayUntil", Map.of(
                             "delayUntil", hearingDate,
@@ -3265,7 +3265,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(28));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(121));
+        assertThat(logic.getRules().size(), is(122));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {
