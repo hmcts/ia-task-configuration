@@ -682,7 +682,8 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
     @SuppressWarnings("checkstyle:indentation")
     @ParameterizedTest
     @CsvSource(value = {
-        "caseSummaryHearingBundleStartDecision"
+        "caseSummaryHearingBundleStartDecision",
+        "detainedCaseSummaryHearingBundleStartDecision"
     })
     void given_taskType_when_evaluate_dmn_then_it_returns_1st_2nd_3rd_4th_5th_rules(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
