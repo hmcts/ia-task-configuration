@@ -1,104 +1,87 @@
-# Spring Boot application template
+# Work Allocation System - IA Task Configuration
 
-[![Build Status](https://travis-ci.org/hmcts/spring-boot-template.svg?branch=master)](https://travis-ci.org/hmcts/spring-boot-template)
+## Overview
+
+The Work Allocation system is an automated task assignment platform that replaces email-based task management for internal users. It integrates with CCD (Case and Case Data) to automatically create, assign, and manage tasks based on configurable business rules.
 
 ## Purpose
 
-The purpose of this template is to speed up the creation of new Spring applications within HMCTS
-and help keep the same standards across multiple teams. If you need to create a new app, you can
-simply use this one as a starting point and build on top of it.
+- **Eliminates email communications** for case progress notifications
+- **Automates task assignment** from shared inboxes
+- **Categorizes tasks** by type (review appeals, listing cases, judge assignment)
+- **Provides role-based assignment** to appropriate user types (legal officers, admin staff, CTSC staff)
 
-## What's inside
+## System Architecture
 
-The template is a working application with a minimal setup. It contains:
- * application skeleton
- * setup script to prepare project
- * common plugins and libraries
- * docker setup
- * swagger configuration for api documentation ([see how to publish your api documentation to shared repository](https://github.com/hmcts/reform-api-docs#publish-swagger-docs))
- * code quality tools already set up
- * integration with Travis CI
- * Hystrix circuit breaker enabled
- * MIT license and contribution information
- * Helm chart using chart-java.
+### Message Flow
+1. **CCD Event triggered** → Message sent to CCD queue
+2. **Work Allocation subscribes** to messages based on publish flags
+3. **Tasks created** according to DMN (Decision Model and Notation) rules
+4. **XUI displays** tasks to users
 
-The application exposes health endpoint (http://localhost:4550/health) and metrics endpoint
-(http://localhost:4550/metrics).
+### Key Components
 
-## Plugins
+#### User Interface
+The system provides two main tabs:
 
-The template contains the following plugins:
+- **My Work**: Tasks assigned to or available for the current user
+- **All Work**: Overview for supervisors/managers to see all tasks and assign them
 
-  * checkstyle
+#### Filtering Options
+- **My Work filters**: Location, work type, role category
+- **All Work filters**: Additional task name filter
+- **Predefined filters**: Cannot be customized without XUI changes
 
-    https://docs.gradle.org/current/userguide/checkstyle_plugin.html
+## Technical Configuration
 
-    Performs code style checks on Java source files using Checkstyle and generates reports from these checks.
-    The checks are included in gradle's *check* task (you can run them by executing `./gradlew check` command).
+### DMN Files Structure
 
-  * pmd
+The system uses six main DMN (Decision Model and Notation) files:
 
-    https://docs.gradle.org/current/userguide/pmd_plugin.html
+#### 1. Task Initiation DMN
+- Defines **when** tasks are created
+- Based on CCD events and conditions
+- Uses case data fields for business rules
+- Supports delay mechanisms for follow-up tasks
 
-    Performs static code analysis to finds common programming flaws. Included in gradle `check` task.
+#### 2. Configuration DMN
+- Defines task attributes (work type, role category)
+- Configures shortcuts to events
+- Sets up due date calculations
+- Manages priority settings
+- Controls UI columns and filters
 
+#### 3. Permissions DMN
+- Controls user access to tasks
+- Defines task-level permissions (assign, cancel, complete)
+- Implements role-based access control
 
-  * jacoco
+#### 4. Task Types DMN
+- Lists all task types for filtering in UI
+- Must match task names defined in initiation file
 
-    https://docs.gradle.org/current/userguide/jacoco_plugin.html
+#### 5. Task Completion DMN
+- Defines auto-completion rules
+- Automatically closes tasks when events progress
 
-    Provides code coverage metrics for Java code via integration with JaCoCo.
-    You can create the report by running the following command:
+#### 6. Cancellation DMN
+- Cancels follow-up tasks when actions complete early
+- Uses process categories for bulk cancellation
 
-    ```bash
-      ./gradlew jacocoTestReport
-    ```
+### CCD Integration
 
-    The report will be created in build/reports subdirectory in your project directory.
+#### Publish Flags
+- Control message sending at both event and field level
+- Must be set to `Y` for events and fields that should trigger work allocation
+- Case data fields used in DMN rules must have publish flags enabled
 
-  * io.spring.dependency-management
+#### Task Lifecycle
+1. **Creation**: Based on event triggers and configured conditions
+2. **Assignment**: Manual or automatic based on permissions
+3. **Completion**: Manual by users or automatic based on event progression
+4. **Cancellation**: Automatic for outdated follow-up tasks
 
-    https://github.com/spring-gradle-plugins/dependency-management-plugin
-
-    Provides Maven-like dependency management. Allows you to declare dependency management
-    using `dependency 'groupId:artifactId:version'`
-    or `dependency group:'group', name:'name', version:version'`.
-
-  * org.springframework.boot
-
-    http://projects.spring.io/spring-boot/
-
-    Reduces the amount of work needed to create a Spring application
-
-  * org.owasp.dependencycheck
-
-    https://jeremylong.github.io/DependencyCheck/dependency-check-gradle/index.html
-
-    Provides monitoring of the project's dependent libraries and creating a report
-    of known vulnerable components that are included in the build. To run it
-    execute `gradle dependencyCheck` command.
-
-  * com.github.ben-manes.versions
-
-    https://github.com/ben-manes/gradle-versions-plugin
-
-    Provides a task to determine which dependencies have updates. Usage:
-
-    ```bash
-      ./gradlew dependencyUpdates -Drevision=release
-    ```
-
-## Setup
-
-Located in `./bin/init.sh`. Simply run and follow the explanation how to execute it.
-
-## Notes
-
-Since Spring Boot 2.1 bean overriding is disabled. If you want to enable it you will need to set `spring.main.allow-bean-definition-overriding` to `true`.
-
-JUnit 5 is now enabled by default in the project. Please refrain from using JUnit4 and use the next generation
-
-## Building and deploying the application
+## Building and Deploying the Application
 
 ### Building the application
 
@@ -108,7 +91,7 @@ The project uses [Gradle](https://gradle.org) as a build tool. It already contai
 To build the project execute the following command:
 
 ```bash
-  ./gradlew build
+./gradlew build
 ```
 
 ### Running the application
@@ -116,20 +99,19 @@ To build the project execute the following command:
 Create the image of the application by executing the following command:
 
 ```bash
-  ./gradlew assemble
+./gradlew assemble
 ```
 
 Create docker image:
 
 ```bash
-  docker-compose build
+docker-compose build
 ```
 
-Run the distribution (created in `build/install/spring-boot-template` directory)
-by executing the following command:
+Run the distribution by executing the following command:
 
 ```bash
-  docker-compose up
+docker-compose up
 ```
 
 This will start the API container exposing the application's port
@@ -138,13 +120,7 @@ This will start the API container exposing the application's port
 In order to test if the application is up, you can call its health endpoint:
 
 ```bash
-  curl http://localhost:4550/health
-```
-
-You should get a response similar to this:
-
-```
-  {"status":"UP","diskSpace":{"status":"UP","total":249644974080,"free":137188298752,"threshold":10485760}}
+curl http://localhost:4550/health
 ```
 
 ### Alternative script to run application
@@ -161,76 +137,202 @@ For more information:
 ./bin/run-in-docker.sh -h
 ```
 
-Script includes bare minimum environment variables necessary to start api instance. Whenever any variable is changed or any other script regarding docker image/container build, the suggested way to ensure all is cleaned up properly is by this command:
+## Development Workflow
 
+### Making Changes
+
+To add new tasks or modify existing ones:
+
+1. **Update Task Initiation DMN** - Add rules for when tasks should be created
+2. **Configure attributes in Configuration DMN** - Set filters, shortcuts, due dates
+3. **Set permissions in Permissions DMN** - Define who can access the tasks
+4. **Add task type to Task Types DMN** - Enable filtering in UI
+5. **Configure completion rules** (if needed) - Set auto-completion conditions
+6. **Update unit tests** - Ensure test coverage for new rules
+
+### Repository Structure
+- **Task Configuration Repo**: Contains all DMN files
+- **IA Case API**: Consumes DMN files via automated scripts
+- **Branch selection**: Configurable for DMN loading
+
+## Testing Strategy
+
+### Unit Tests
+- Each DMN file has dedicated unit tests
+- Tests validate rule logic using input/output mocks
+- Tests are maintained and should be updated with rule changes
+
+### Functional Tests
+- **Current status**: Outdated and failing
+- **Recommendation**: Write new isolated tests for current work
+- **Strategy**: Avoid dependency on legacy test suite
+
+### Manual Testing
+- **Preview Environment**: Primary platform for testing changes
+- **Camunda Cockpit**: Available at `/camunda` path for manual DMN deployment
+- **Local Environment**: Supported but requires message queue configuration
+
+## Environment Setup
+
+### Preview Environment
+- Preferred for integration testing
+- Manual DMN upload via Camunda UI using admin credentials
+- Configuration details available in repository README
+
+### Local Development
+- Full support available
+- Requires Azure Service Bus message queue setup
+- Environment configuration needed for CCD integration
+
+## DMN Deployment Scripts
+
+### Automated DMN Upload to Preview Environment
+
+The repository includes an automated script to upload Work Allocation DMN files to the preview environment, eliminating the need for manual UI uploads and reducing deployment time.
+
+#### Script: `bin/upload-wa-dmn-preview.sh`
+
+**Purpose**: Automates the upload of all Work Allocation DMN files to Camunda in preview environments.
+
+**Key Features**:
+- Uploads multiple DMN files in a single execution
+- Comprehensive error handling with clear error messages
+- Success confirmation for each uploaded file
+- Dry-run mode for testing without actual uploads
+
+**Usage**:
 ```bash
-docker-compose rm
+# Basic usage - upload to PR 2609 preview environment
+./bin/upload-wa-dmn-preview.sh -p 2609
+
+# Dry run to see what would be uploaded
+./bin/upload-wa-dmn-preview.sh -p 2609 --dry-run
+
+# View help and all options
+./bin/upload-wa-dmn-preview.sh --help
 ```
 
-It clears stopped containers correctly. Might consider removing clutter of images too, especially the ones fiddled with:
+**Parameters**:
+- `-p, --pr PR_NUMBER` (required): PR number for preview environment
+- `-d, --dry-run`: Show what would be done without uploading
+- `-w, --workspace PATH`: Workspace path (default: current directory)
+- `-t, --tenant-id ID`: Tenant ID (default: ia)
+- `-h, --help`: Show help message
 
+**Prerequisites**:
+- Access to the preview environment Camunda instance, VPN is ON
+
+**DMN Files Uploaded**:
+The script automatically discovers and uploads all `.dmn` files from `src/main/resources/`:
+- `wa-task-allowed-days-ia-asylum.dmn`
+- `wa-task-cancellation-ia-asylum.dmn`
+- `wa-task-completion-ia-asylum.dmn`
+- `wa-task-configuration-ia-asylum.dmn`
+- `wa-task-initiation-ia-asylum.dmn`
+- `wa-task-permissions-ia-asylum.dmn`
+- `wa-task-types-ia-asylum.dmn`
+
+**Output Example**:
+```
+==========================================
+Work Allocation DMN Upload to Preview
+==========================================
+PR Number: 2609
+Camunda URL: https://camunda-ia-case-api-pr-2609.preview.platform.hmcts.net
+DMN Files Path: /path/to/workspace/src/main/resources
+Tenant ID: ia
+Product: ia
+==========================================
+
+Found DMN files:
+  - wa-task-configuration-ia-asylum.dmn
+  - wa-task-initiation-ia-asylum.dmn
+  - ...
+
+Generating service token...
+Service token generated successfully
+
+Starting DMN file upload...
+
+Uploading: wa-task-configuration-ia-asylum.dmn...
+✅ wa-task-configuration-ia-asylum.dmn uploaded successfully
+
+...
+
+==========================================
+Upload Summary
+==========================================
+Total files processed: 7
+Successful uploads: 7
+Failed uploads: 0
+==========================================
+✅ All DMN files uploaded successfully!
+```
+
+**Integration with CI/CD**:
+The script is designed to be used in CI/CD pipelines:
 ```bash
-docker images
-
-docker image rm <image-id>
+# In Jenkins/GitHub Actions
+./bin/upload-wa-dmn-preview.sh -p ${PR_NUMBER}
 ```
 
-There is no need to remove postgres and java or similar core images.
+## Known Limitations and Challenges
 
-## Hystrix
+### Development Constraints
+- **DMN file conflicts**: Cannot merge parallel changes due to unique ID regeneration
+- **Limited UI customization**: Filters and columns are predefined in XUI
+- **Testing complexity**: Functional tests currently unreliable
 
-[Hystrix](https://github.com/Netflix/Hystrix/wiki) is a library that helps you control the interactions
-between your application and other services by adding latency tolerance and fault tolerance logic. It does this
-by isolating points of access between the services, stopping cascading failures across them,
-and providing fallback options. We recommend you to use Hystrix in your application if it calls any services.
+### Technical Challenges
+- **Camunda modeler**: Regenerates unique IDs, complicating parallel development
+- **Environment secrets**: Preview configuration sharing requires careful handling
+- **Pipeline integration**: Not enabled due to work allocation team concerns
 
-### Hystrix circuit breaker
+## Current Implementation Examples
 
-This template API has [Hystrix Circuit Breaker](https://github.com/Netflix/Hystrix/wiki/How-it-Works#circuit-breaker)
-already enabled. It monitors and manages all the`@HystrixCommand` or `HystrixObservableCommand` annotated methods
-inside `@Component` or `@Service` annotated classes.
+### Detained Appeals
+- Adding "Detained" prefix to existing task types
+- Requires rule duplication for detained vs non-detained cases
+- Significant configuration effort due to system limitations
+- Alternative solutions (case category prefix) rejected by service requirements
 
-### Other
+## Best Practices
 
-Hystrix offers much more than Circuit Breaker pattern implementation or command monitoring.
-Here are some other functionalities it provides:
- * [Separate, per-dependency thread pools](https://github.com/Netflix/Hystrix/wiki/How-it-Works#isolation)
- * [Semaphores](https://github.com/Netflix/Hystrix/wiki/How-it-Works#semaphores), which you can use to limit
- the number of concurrent calls to any given dependency
- * [Request caching](https://github.com/Netflix/Hystrix/wiki/How-it-Works#request-caching), allowing
- different code paths to execute Hystrix Commands without worrying about duplicating work
+### Rule Configuration
+- Use `processCategory` for logical task grouping and bulk cancellations
+- Implement shortcuts for direct navigation to related UI events
+- Configure appropriate delays for follow-up tasks
+- Ensure publish flags are correctly set in CCD definitions
 
+### Development Process
+- Test changes in preview environment before deployment
+- Maintain unit test coverage for all DMN rules
+- Coordinate with team to avoid file merge conflicts
+- Document rule logic and business requirements
 
-## Adding Git Conventions
+## Support and Maintenance
 
-### Include the git conventions.
-* Make sure your git version is at least 2.9 using the `git --version` command
-* Run the following command:
-```
-git config --local core.hooksPath .git-config/hooks
-```
-Once the above is done, you will be required to follow specific conventions for your commit messages and branch names.
+### Monitoring
+- **Camunda Cockpit**: Available for monitoring task execution and troubleshooting
+- **Message Queue**: Monitor CCD event processing and task creation
 
-If you violate a convention, the git error message will report clearly the convention you should follow and provide
-additional information where necessary.
+### Troubleshooting
+- Check publish flags in CCD configuration
+- Verify DMN rule conditions and outputs
+- Review Camunda logs for execution errors
+- Validate case data availability for rule evaluation
 
-*Optional:*
-* Install this plugin in Chrome: https://github.com/refined-github/refined-github
+## Getting Started
 
-  It will automatically set the title for new PRs according to the first commit message, so you won't have to change it manually.
+For new developers working with the Work Allocation system:
 
-  Note that it will also alter other behaviours in GitHub. Hopefully these will also be improvements to you.
+1. **Familiarize yourself** with DMN notation and Camunda concepts
+2. **Set up preview environment** access for testing
+3. **Review existing DMN files** to understand current rule patterns
+4. **Run unit tests** to understand expected inputs and outputs
+5. **Practice manual testing** using Camunda cockpit
 
-*In case of problems*
-
-1. Get in touch with your Technical Lead and inform them, so they can adjust the git hooks accordingly
-2. Instruct IntelliJ not to use Git Hooks for that commit or use git's `--no-verify` option if you are using the command-line
-3. If the rare eventuality that the above is not possible, you can disable enforcement of conventions using the following command
-
-   `git config --local --unset core.hooksPath`
-
-   Still, you shouldn't be doing it so make sure you get in touch with a Technical Lead soon afterwards.
-
+For questions or support, refer to the team documentation or contact the Work Allocation development team.
 
 ## License
 
