@@ -383,6 +383,17 @@
           <text>"Create Hearing Bundle"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0det1hb1">
+        <inputEntry id="UnaryTests_0det1hb1">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0det1hb1">
+          <text>"detainedCaseSummaryHearingBundleStartDecision"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0det1hb2">
+          <text>"Detained - Create Hearing Bundle"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1gwyuxg">
         <inputEntry id="UnaryTests_10kl24v">
           <text></text>
