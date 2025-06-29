@@ -64,6 +64,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1kb9ygx">
+        <inputEntry id="UnaryTests_12tn7ct">
+          <text>"requestRespondentReview","requestCaseEdit"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0hoi52a">
+          <text>"detainedReviewAppealSkeletonArgument"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1njpyvi">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1v9cegc">
         <inputEntry id="UnaryTests_1ckmgqx">
           <text>"requestRespondentReview","sendDirectionWithQuestions","requestCmaRequirements"</text>
