@@ -212,6 +212,11 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                    "Review Appeal Skeleton Argument"
             ),
             Map.of("taskTypeId",
+                   "detainedReviewAppealSkeletonArgument",
+                   "taskTypeName",
+                   "Detained - Review Appeal Skeleton Argument"
+            ),
+            Map.of("taskTypeId",
                    "reviewReasonsForAppeal",
                    "taskTypeName",
                    "Review Reasons For Appeal"
@@ -230,11 +235,6 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                    "caseSummaryHearingBundleStartDecision",
                    "taskTypeName",
                    "Create Hearing Bundle"
-            ),
-            Map.of("taskTypeId",
-                   "detainedCaseSummaryHearingBundleStartDecision",
-                   "taskTypeName",
-                   "Detained Create Hearing Bundle"
             ),
             Map.of("taskTypeId",
                    "reviewHearingRequirements",
@@ -335,6 +335,11 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                    "listTheCase",
                    "taskTypeName",
                    "List the case"
+            ),
+            Map.of("taskTypeId",
+                   "detainedListTheCase",
+                   "taskTypeName",
+                   "Detained - List the case"
             ),
             Map.of("taskTypeId",
                    "sendPaymentRequest",
@@ -518,7 +523,8 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(1));
         assertThat(logic.getOutputs().size(), is(2));
-        assertThat(logic.getRules().size(), is(92));
+        assertThat(logic.getRules().size(), is(94));
+
 
     }
 }
