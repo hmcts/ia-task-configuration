@@ -87,11 +87,12 @@
             "attendCma",
             "startDecisionsAndReasons",
             "caseSummaryHearingBundleStartDecision",
+            "detainedCaseSummaryHearingBundleStartDecision",
             "followUpNoticeOfChange","detainedFollowUpNoticeOfChange",
             "followUpOverdueCmaRequirements",
             "followUpNonStandardDirection","detainedFollowUpNonStandardDirection",
             "decideOnTimeExtension",
-            "reviewAdditionalEvidence","detainedReviewAdditionalEvidence",
+            "reviewAdditionalEvidence","detainedReviewAdditionalEvidence","detainedReviewAdditionalHomeOfficeEvidence",
             "followUpExtendedDirection","detainedFollowUpExtendedDirection",
             "reviewRemittedAppeal",
             "reviewAppealSetAsideUnderRule35",
@@ -140,6 +141,7 @@
             "followUpOverdueHearingRequirements",
             "reviewCmaRequirements",
             "caseSummaryHearingBundleStartDecision",
+            "detainedCaseSummaryHearingBundleStartDecision",
             "processApplicationAdjourn","detainedProcessApplicationAdjourn",
             "processApplicationExpedite","detainedProcessApplicationExpedite",
             "processApplicationTimeExtension","detainedProcessApplicationTimeExtension",
@@ -205,13 +207,14 @@
             "followUpOverdueReasonsForAppeal",
             "reviewClarifyingQuestionsAnswers",
             "followUpOverdueClarifyingAnswers",
-            "reviewRespondentResponse",
+            "reviewRespondentResponse","detainedReviewAdditionalHomeOfficeEvidence",
             "followUpOverdueRespondentReview","detainedFollowUpOverdueRespondentReview",
             "reviewHearingRequirements",
             "followUpOverdueHearingRequirements",
             "reviewCmaRequirements",
             "reviewAdditionalHomeOfficeEvidence","detainedReviewAdditionalHomeOfficeEvidence",
             "caseSummaryHearingBundleStartDecision",
+            "detainedCaseSummaryHearingBundleStartDecision",
             "processApplicationAdjourn","detainedProcessApplicationAdjourn",
             "processApplicationExpedite","detainedProcessApplicationExpedite",
             "processApplicationTimeExtension","detainedProcessApplicationTimeExtension",
@@ -234,8 +237,8 @@
             "reviewRemittedAppeal",
             "reviewAppealSetAsideUnderRule35",
             "reviewAppealSetAsideUnderRule32",
-  "cmrListed",
-            "cmrUpdated",
+  "cmrListed","detainedCmrListed",
+            "cmrUpdated","detainedCmrUpdated",
             "relistCase",
             "listTheCase",
             "reviewInterpreters"</text>
@@ -360,7 +363,7 @@
             "postHearingAttendeesDurationAndRecording",
             "editListing","detainedEditListing",
             "followUpSetAsideDecision",
-"hearingException","cmrListed","cmrUpdated","relistCase","listTheCase","reviewInterpreters",
+"hearingException","cmrListed","detainedCmrListed","cmrUpdated","detainedCmrUpdated","relistCase","listTheCase","reviewInterpreters",
 "reviewMigratedCase",
 "reviewAriaRemissionApplication","detainedListCmr"</text>
         </inputEntry>
@@ -648,7 +651,7 @@
       <rule id="DecisionRule_05nq60d">
         <description>CTSC Admin task permissions</description>
         <inputEntry id="UnaryTests_1q2j4ix">
-          <text>"reviewRemissionApplication","assignAFTPAJudge","listTheCase","sendPaymentRequest","markAsPaid","cmrListed","cmrUpdated","reviewInterpreters","processFeeRefund","reviewDraftAppeal"</text>
+          <text>"reviewRemissionApplication","assignAFTPAJudge","listTheCase","sendPaymentRequest","markAsPaid","cmrListed","detainedCmrListed","cmrUpdated","detainedCmrUpdated","reviewInterpreters","processFeeRefund","reviewDraftAppeal"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1p44stw">
           <text></text>
@@ -678,7 +681,7 @@
       <rule id="DecisionRule_155ah64">
         <description>CTSC Team Leader task permissions</description>
         <inputEntry id="UnaryTests_08panx7">
-          <text>"reviewRemissionApplication","assignAFTPAJudge","listTheCase","sendPaymentRequest","markAsPaid","cmrListed","cmrUpdated","reviewInterpreters","processFeeRefund","reviewDraftAppeal","detainedListCmr"</text>
+          <text>"reviewRemissionApplication","assignAFTPAJudge","listTheCase","sendPaymentRequest","markAsPaid","cmrListed","detainedCmrListed","cmrUpdated","detainedCmrUpdated","reviewInterpreters","processFeeRefund","reviewDraftAppeal","detainedListCmr"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0njeznv">
           <text></text>
@@ -707,7 +710,7 @@
       </rule>
       <rule id="DecisionRule_0xfd7pt">
         <inputEntry id="UnaryTests_141gjoe">
-          <text>"hearingException","cmrListed","cmrUpdated","relistCase","listTheCase","reviewInterpreters","detainedListCmr"</text>
+          <text>"hearingException","cmrListed","detainedCmrListed","cmrUpdated","detainedCmrUpdated","relistCase","listTheCase","reviewInterpreters","detainedListCmr"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0otzt6m">
           <text></text>

@@ -394,6 +394,17 @@
           <text>"Create Hearing Bundle"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0det1hb1">
+        <inputEntry id="UnaryTests_0det1hb1">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0det1hb1">
+          <text>"detainedCaseSummaryHearingBundleStartDecision"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0det1hb2">
+          <text>"Detained - Create Hearing Bundle"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1gwyuxg">
         <inputEntry id="UnaryTests_10kl24v">
           <text></text>
@@ -779,6 +790,17 @@
           <text>"Send CMR notification"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1w901kh">
+        <inputEntry id="UnaryTests_1s9oxm0">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1653wli">
+          <text>"detainedCmrListed"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_181pet7">
+          <text>"Detained - Send CMR notification"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1wipzfb">
         <inputEntry id="UnaryTests_0un5rbj">
           <text></text>
@@ -788,6 +810,17 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_04ofhz1">
           <text>"Update CMR notification"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0sir79i">
+        <inputEntry id="UnaryTests_145s8rr">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_12g4qcy">
+          <text>"detainedCmrUpdated"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1eejkj9">
+          <text>"Detained - Update CMR notification"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1n5djgj">
