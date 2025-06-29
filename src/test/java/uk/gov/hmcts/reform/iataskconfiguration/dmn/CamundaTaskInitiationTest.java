@@ -122,6 +122,21 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     )
                 )
             ),
+
+            Arguments.of(
+                "generateDecisionAndReasons",
+                "decision",
+                appellantInDetention,
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedSendDecisionsAndReasons",
+                        "name", "Detained - Send decisions and reasons",
+
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
             Arguments.of(
                 "submitAppeal",
                 "appealSubmitted",
@@ -3265,7 +3280,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(28));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(123));
+        assertThat(logic.getRules().size(), is(124));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {
