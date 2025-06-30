@@ -327,7 +327,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_04wtfxs">
-          <text>"decideAnFTPA"</text>
+          <text>"decideAnFTPA","detainedDecideAnFTPA"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1ywf3hm">
           <text>"workType"</text>
@@ -488,7 +488,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_15ftuu0">
-          <text>"generateDraftDecisionAndReasons","uploadDecision","reviewAddendumHomeOfficeEvidence","reviewAddendumAppellantEvidence","reviewSpecificAccessRequestJudiciary","reviewSpecificAccessRequestLegalOps","reviewSpecificAccessRequestAdmin","reviewSpecificAccessRequestCTSC","processApplicationToReviewDecision","detainedProcessApplicationToReviewDecision","sendDecisionsAndReasons","prepareDecisionsAndReasons","decideAnFTPA","reviewSetAsideDecisionApplication","detainedReviewSetAsideDecisionApplication"</text>
+          <text>"generateDraftDecisionAndReasons","uploadDecision","reviewAddendumHomeOfficeEvidence","reviewAddendumAppellantEvidence","reviewSpecificAccessRequestJudiciary","reviewSpecificAccessRequestLegalOps","reviewSpecificAccessRequestAdmin","reviewSpecificAccessRequestCTSC","processApplicationToReviewDecision","detainedProcessApplicationToReviewDecision","sendDecisionsAndReasons","prepareDecisionsAndReasons","decideAnFTPA","detainedDecideAnFTPA","reviewSetAsideDecisionApplication","detainedReviewSetAsideDecisionApplication"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_15nowth">
           <text>"roleCategory"</text>
@@ -552,6 +552,7 @@
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "allocateHearingJudge" or taskType != null and taskType ="allocateHearingJudge") then "[Allocate Hearing Judge](/role-access/allocate-role/allocate?caseId=${[CASE_REFERENCE]}&amp;roleCategory=JUDICIAL&amp;jurisdiction=IA)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "prepareDecisionsAndReasons" or taskType != null and taskType = "prepareDecisionsAndReasons") then "[Prepare decisions and reasons](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/generateDecisionAndReasons)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "decideAnFTPA" or taskType != null and taskType = "decideAnFTPA") then "[Decide FTPA application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideFtpaApplication)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "detainedDecideAnFTPA" or taskType != null and taskType = "detainedDecideAnFTPA") then "[Decide FTPA application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideFtpaApplication)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "detainedEditListing" or taskType != null and taskType = "detainedEditListing") then "[Edit case listing](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/detainedEditCaseListing)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "generateDraftDecisionAndReasons" or taskType != null and taskType = "generateDraftDecisionAndReasons")	then "[Generate the draft decisions and reasons document](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/generateDecisionAndReasons)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewAddendumEvidence" or taskType != null and taskType = "reviewAddendumEvidence") then "[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAddendumEvidenceAsReviewed)"
@@ -752,7 +753,7 @@
 "sendPaymentRequest",
 "uploadHearingRecording",
 "postHearingAttendeesDurationAndRecording",
-"decideAnFTPA",
+"decideAnFTPA","detainedDecideAnFTPA",
 "printAndSendHoBundle",
 "printAndSendHoResponse",
 "printAndSendHearingRequirements",

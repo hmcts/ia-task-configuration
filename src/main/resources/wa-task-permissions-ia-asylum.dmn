@@ -497,7 +497,7 @@
           <text>
             "processApplicationToReviewDecision","detainedProcessApplicationToReviewDecision",
             "sendDecisionsAndReasons",
-            "decideAnFTPA",
+            "decideAnFTPA","detainedDecideAnFTPA",
             "prepareDecisionsAndReasons",
             "reviewSetAsideDecisionApplication","detainedReviewSetAsideDecisionApplication",
             "processApplicationChangeHearingType","detainedProcessApplicationChangeHearingType"
@@ -531,7 +531,7 @@
       <rule id="DecisionRule_14oarem">
         <description>Judge task permissions</description>
         <inputEntry id="UnaryTests_1lcov8q">
-          <text>"decideAnFTPA"</text>
+          <text>"decideAnFTPA","detainedDecideAnFTPA"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_114aema">
           <text></text>

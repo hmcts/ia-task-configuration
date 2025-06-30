@@ -548,6 +548,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_18njkje">
+        <inputEntry id="UnaryTests_10g86t3">
+          <text>"decideFtpaApplication"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1oopwfh">
+          <text>"detainedDecideAnFTPA"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1nzmfs9">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_00ego89">
         <inputEntry id="UnaryTests_0mupz2m">
           <text>"decideAnApplication"</text>

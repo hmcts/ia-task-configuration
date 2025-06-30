@@ -225,6 +225,14 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "detainedDecideAnFTPA",
+                List.of(
+                    taskSupervisor,
+                    judgePriorityOne,
+                    ftpaJudgePriorityOne
+                )
+            ),
+            Arguments.of(
                 "uploadHearingRecording",
                 List.of(
                     taskSupervisor,

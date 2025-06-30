@@ -90,6 +90,25 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "applyForFTPAAppellant",
+                null,
+                appellantInDetention,
+                List.of(
+                    Map.of(
+                        "taskId", "detainedDecideAnFTPA",
+                        "name", "Detained - Decide an FTPA",
+
+                        "processCategories", "caseProgression"
+                    ),
+                    Map.of(
+                        "taskId", "assignAFTPAJudge",
+                        "name", "Assign a FTPA Judge",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
                 "applyForFTPARespondent",
                 null,
                 null,
@@ -97,6 +116,25 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "decideAnFTPA",
                         "name", "Decide an FTPA",
+
+                        "processCategories", "caseProgression"
+                    ),
+                    Map.of(
+                        "taskId", "assignAFTPAJudge",
+                        "name", "Assign a FTPA Judge",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "applyForFTPARespondent",
+                null,
+                appellantInDetention,
+                List.of(
+                    Map.of(
+                        "taskId", "detainedDecideAnFTPA",
+                        "name", "Detained - Decide an FTPA",
 
                         "processCategories", "caseProgression"
                     ),
@@ -3265,7 +3303,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(28));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(123));
+        assertThat(logic.getRules().size(), is(124));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {
