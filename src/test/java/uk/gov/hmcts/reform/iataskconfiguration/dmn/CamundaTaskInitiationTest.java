@@ -1061,14 +1061,40 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "prepareForHearing",
                 mapAdditionalData(" {\n"
                                       + "        \"Data\" : {\n"
-                                      + "          \"listCaseHearingDate\" : \"" + hearingDate + "\""
+                                      + "         \"listCaseHearingDate\" : \"" + hearingDate + "\","
+                                      + "         \"appellantInDetention\": false\n"
                                       + "        }\n"
                                       + "      }"),
                 List.of(
                     Map.of(
                         "taskId", "caseSummaryHearingBundleStartDecision",
                         "name", "Create Hearing Bundle",
-
+                        "processCategories", "caseProgression"
+                    ),
+                    Map.of(
+                        "taskId", "postHearingAttendeesDurationAndRecording",
+                        "name", "Post hearing – attendees, duration and recording",
+                        "processCategories", "caseProgression",
+                        "delayUntil", Map.of(
+                            "delayUntil", hearingDate,
+                            "delayUntilIntervalDays","0"
+                        )
+                    )
+                )
+            ),
+            Arguments.of(
+                "listCase",
+                "prepareForHearing",
+                mapAdditionalData(" {\n"
+                                      + "        \"Data\" : {\n"
+                                      + "         \"listCaseHearingDate\" : \"" + hearingDate + "\","
+                                      + "         \"appellantInDetention\": true\n"
+                                      + "        }\n"
+                                      + "      }"),
+                List.of(
+                    Map.of(
+                        "taskId", "detainedCaseSummaryHearingBundleStartDecision",
+                        "name", "Detained - Create Hearing Bundle",
                         "processCategories", "caseProgression"
                     ),
                     Map.of(
