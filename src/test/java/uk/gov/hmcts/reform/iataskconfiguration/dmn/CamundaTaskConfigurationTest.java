@@ -243,6 +243,12 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("followUpNonStandardDirection", routineWork),
             Arguments.of("reviewClarifyingQuestionsAnswers", routineWork),
             Arguments.of("reviewRemissionApplication", routineWork),
+            Arguments.of("reviewLARemission", routineWork),
+            Arguments.of("reviewASRemission", routineWork),
+            Arguments.of("reviewHOWaiverRemission", routineWork),
+            Arguments.of("reviewAuthorityRemission", routineWork),
+            Arguments.of("reviewHWFRemission", routineWork),
+            Arguments.of("reviewECRRemission", routineWork),
             Arguments.of("assignAFTPAJudge", routineWork),
             Arguments.of("reviewAppealSetAsideUnderRule35", routineWork),
             Arguments.of("reviewAppealSetAsideUnderRule32", routineWork),
@@ -472,8 +478,9 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
     @ParameterizedTest
     @CsvSource({
-        "reviewRemissionApplication","assignAFTPAJudge","listTheCase","sendPaymentRequest","markAsPaid",
-        "processFeeRefund", "reviewDraftAppeal"
+        "reviewRemissionApplication", "reviewLARemission", "reviewASRemission", "reviewHOWaiverRemission",
+        "reviewAuthorityRemission", "reviewHWFRemission", "reviewECRRemission","assignAFTPAJudge","listTheCase",
+        "sendPaymentRequest","markAsPaid", "processFeeRefund", "reviewDraftAppeal"
     })
     void when_taskId_then_return_Ctsc_role_category(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
@@ -1288,6 +1295,12 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("followUpNoticeOfChange", twoDays),
             Arguments.of("reviewAddendumEvidence", twoDays),
             Arguments.of("reviewRemissionApplication", twoDays),
+            Arguments.of("reviewLARemission", twoDays),
+            Arguments.of("reviewASRemission", twoDays),
+            Arguments.of("reviewHOWaiverRemission", twoDays),
+            Arguments.of("reviewAuthorityRemission", twoDays),
+            Arguments.of("reviewHWFRemission", twoDays),
+            Arguments.of("reviewECRRemission", twoDays),
             Arguments.of("assignAFTPAJudge", twoDays),
             Arguments.of("listTheCase", twoDays),
             Arguments.of("reviewSetAsideDecisionApplication", twoDays),
