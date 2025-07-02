@@ -352,6 +352,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                         "taskType", "reviewAriaRemissionApplication",
                         "completionMode", "Auto"
                     ),
+                    Collections.emptyMap(),
                     Map.of(
                         "taskType", "reviewLARemission",
                         "completionMode", "Auto"
@@ -375,8 +376,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskType", "reviewECRRemission",
                         "completionMode", "Auto"
-                    ),
-                    Collections.emptyMap()
+                    )
                 )
             ),
             Arguments.of(
