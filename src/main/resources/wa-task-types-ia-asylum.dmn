@@ -636,6 +636,17 @@
           <text>"Post hearing – attendees, duration and recording"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0det1tt">
+        <inputEntry id="UnaryTests_0det1tt1">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0det1tt2">
+          <text>"detainedPostHearingAttendeesDurationAndRecording"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0det1tt3">
+          <text>"Detained - Post hearing – attendees, duration and recording"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0bc4rdn">
         <inputEntry id="UnaryTests_056tbth">
           <text></text>
