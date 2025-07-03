@@ -466,7 +466,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     @ParameterizedTest
     @CsvSource({
         "arrangeOfflinePayment", "markCaseAsPaid", "allocateHearingJudge", "uploadHearingRecording",
-        "postHearingAttendeesDurationAndRecording", "detainedPostHearingAttendeesDurationAndRecording", "editListing", "detainedEditListing", "followUpSetAsideDecision",
+        "postHearingAttendeesDurationAndRecording", "detainedPostHearingAttendeesDurationAndRecording", "editListing",
+        "detainedEditListing", "followUpSetAsideDecision",
         "hearingException", "cmrListed", "cmrUpdated", "detainedCmrListed", "detainedCmrUpdated","relistCase",
         "reviewInterpreters", "reviewMigratedCase", "reviewAriaRemissionApplication",
         "printAndSendHoBundle","printAndSendHoResponse","printAndSendHearingRequirements",
@@ -537,7 +538,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "processApplicationLink/UnlinkAppeals", "detainedProcessApplicationLink/UnlinkAppeals",
         "processApplicationChangeHearingType", "detainedProcessApplicationChangeHearingType", "reviewTheAppeal",
         "detainedReviewTheAppeal",
-        "decideOnTimeExtension", "reviewRespondentEvidence", "detainedReviewRespondentEvidence,"
+        "decideOnTimeExtension", "reviewRespondentEvidence",
+        "detainedReviewRespondentEvidence,"
             + "[Request reasons for appeal](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestReasonsForAppeal)<br />"
             + "[Send non-standard direction](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDirection),"
             + "aip,,",
