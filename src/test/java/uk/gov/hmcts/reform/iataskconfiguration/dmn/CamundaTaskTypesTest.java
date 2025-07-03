@@ -373,6 +373,36 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                    "printAndSendReheardHearingRequirements",
                    "taskTypeName",
                    "Print and send reheard appeal hearing requirements form"
+            ),
+            Map.of("taskTypeId",
+                   "reviewLARemission",
+                   "taskTypeName",
+                   "Review LA remission"
+            ),
+            Map.of("taskTypeId",
+                   "reviewASRemission",
+                   "taskTypeName",
+                   "Review AS remission"
+            ),
+            Map.of("taskTypeId",
+                   "reviewHOWaiverRemission",
+                   "taskTypeName",
+                   "Review HO waiver remission"
+            ),
+            Map.of("taskTypeId",
+                   "reviewAuthorityRemission",
+                   "taskTypeName",
+                   "Review Authority remission"
+            ),
+            Map.of("taskTypeId",
+                   "reviewHWFRemission",
+                   "taskTypeName",
+                   "Review HWF remission"
+            ),
+            Map.of("taskTypeId",
+                   "reviewECRRemission",
+                   "taskTypeName",
+                   "Review ECR Remission"
             )
         );
         return Stream.of(
