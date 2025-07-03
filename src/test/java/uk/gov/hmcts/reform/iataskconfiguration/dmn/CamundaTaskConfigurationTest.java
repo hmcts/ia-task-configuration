@@ -277,6 +277,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("followUpOverdueCaseBuilding", decisionMakingWork),
             Arguments.of("detainedFollowUpOverdueCaseBuilding", decisionMakingWork),
             Arguments.of("reviewAppealSkeletonArgument", decisionMakingWork),
+            Arguments.of("detainedReviewAppealSkeletonArgument", decisionMakingWork),
             Arguments.of("followUpOverdueReasonsForAppeal", decisionMakingWork),
             Arguments.of("reviewReasonsForAppeal", decisionMakingWork),
             Arguments.of("followUpOverdueClarifyingAnswers", decisionMakingWork),
@@ -308,7 +309,9 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("listTheCase", hearingWork),
             Arguments.of("hearingException", hearingWork),
             Arguments.of("cmrListed", hearingWork),
+            Arguments.of("detainedCmrListed", hearingWork),
             Arguments.of("cmrUpdated", hearingWork),
+            Arguments.of("detainedCmrUpdated", hearingWork),
             Arguments.of("relistCase", hearingWork),
             Arguments.of("reviewInterpreters", hearingWork),
             Arguments.of("processApplicationAdjourn", applications),
@@ -463,9 +466,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     @ParameterizedTest
     @CsvSource({
         "arrangeOfflinePayment", "markCaseAsPaid", "allocateHearingJudge", "uploadHearingRecording",
-        "postHearingAttendeesDurationAndRecording", "detainedPostHearingAttendeesDurationAndRecording",
-        "editListing", "detainedEditListing", "followUpSetAsideDecision",
-        "hearingException", "cmrListed", "cmrUpdated","relistCase",
+        "postHearingAttendeesDurationAndRecording", "detainedPostHearingAttendeesDurationAndRecording", "editListing", "detainedEditListing", "followUpSetAsideDecision",
+        "hearingException", "cmrListed", "cmrUpdated", "detainedCmrListed", "detainedCmrUpdated","relistCase",
         "reviewInterpreters", "reviewMigratedCase", "reviewAriaRemissionApplication",
         "printAndSendHoBundle","printAndSendHoResponse","printAndSendHearingRequirements",
         "printAndSendHearingBundle", "printAndSendDecisionCorrectedRule31","printAndSendDecisionCorrectedRule32",
@@ -539,7 +541,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             + "[Request reasons for appeal](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestReasonsForAppeal)<br />"
             + "[Send non-standard direction](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDirection),"
             + "aip,,",
-        "reviewAppealSkeletonArgument", "reviewReasonsForAppeal",
+        "reviewAppealSkeletonArgument","detainedReviewAppealSkeletonArgument", "reviewReasonsForAppeal",
         "reviewClarifyingQuestionsAnswers", "reviewAdditionalHomeOfficeEvidence",
         "reviewCmaRequirements", "attendCma", "reviewRespondentResponse", "caseSummaryHearingBundleStartDecision",
         "detainedCaseSummaryHearingBundleStartDecision",
@@ -1386,6 +1388,9 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "reviewAppealSkeletonArgument,"
             + "[Request respondent review](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentReview)<br />"
             + "[Request case edit](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestCaseEdit),,,",
+        "detainedReviewAppealSkeletonArgument,"
+            + "[Request respondent review](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentReview)<br />"
+            + "[Request case edit](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestCaseEdit),,,",
         "reviewReasonsForAppeal,"
             + "[Request respondent review](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentReview)<br />"
             + "[Send direction with questions]"
@@ -1458,7 +1463,9 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             + "progressMigratedCase),,,10",
         "hearingException,[Go to case](cases/case-details/${[CASE_REFERENCE]}/hearings),,,",
         "cmrListed,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,,",
+        "detainedCmrListed,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,,",
         "cmrUpdated,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,,",
+        "detainedCmrUpdated,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,,",
         "relistCase,[Relist the hearing](cases/case-details/${[CASE_REFERENCE]}/hearings),,,",
         "reviewInterpreters,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,,"
     })
@@ -1576,6 +1583,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("reviewAdditionalHomeOfficeEvidence", twoDays),
             Arguments.of("detainedReviewAdditionalHomeOfficeEvidence", twoDays),
             Arguments.of("reviewAppealSkeletonArgument", twoDays),
+            Arguments.of("detainedReviewAppealSkeletonArgument", twoDays),
             Arguments.of("reviewReasonsForAppeal", twoDays),
             Arguments.of("reviewClarifyingQuestionsAnswers", twoDays),
             Arguments.of("reviewCmaRequirements", twoDays),
@@ -1627,7 +1635,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("printAndSendReheardHearingRequirements", zeroDays),
             Arguments.of("markAsPaid", fourteenDays),
             Arguments.of("cmrListed", twoDays),
-            Arguments.of("cmrUpdated", twoDays)
+            Arguments.of("detainedCmrUpdated", twoDays)
         );
     }
 
