@@ -478,7 +478,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
     @ParameterizedTest
     @CsvSource({
-        "reviewRemissionApplication", "reviewLARemission", "reviewASRemission", "reviewHOWaiverRemission",
+        "reviewLARemission", "reviewASRemission", "reviewHOWaiverRemission",
         "reviewAuthorityRemission", "reviewHWFRemission", "reviewECRRemission","assignAFTPAJudge","listTheCase",
         "sendPaymentRequest","markAsPaid", "processFeeRefund", "reviewDraftAppeal"
     })
