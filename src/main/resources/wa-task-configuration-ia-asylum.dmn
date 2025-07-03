@@ -194,7 +194,7 @@
                         "followUpExtendedDirection",
                         "followUpNonStandardDirection",
                         "reviewClarifyingQuestionsAnswers",
-                        "reviewRemissionApplication", "reviewLARemission", "reviewASRemission", "reviewHOWaiverRemission", "reviewAuthoritRemission", "reviewHWFRemission", "reviewECRRemission",
+                        "reviewRemissionApplication", "reviewLARemission", "reviewASRemission", "reviewHOWaiverRemission", "reviewAuthorityRemission", "reviewHWFRemission", "reviewECRRemission",
                         "assignAFTPAJudge",
                         "sendPaymentRequest",
                         "markAsPaid",
@@ -504,7 +504,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0xh5are">
-          <text>"reviewRemissionApplication", "reviewLARemission", "reviewASRemission", "reviewHOWaiverRemission", "reviewAuthoritRemission", "reviewHWFRemission", "reviewECRRemission", "assignAFTPAJudge","listTheCase","sendPaymentRequest","markAsPaid","processFeeRefund","reviewDraftAppeal"</text>
+          <text>"reviewRemissionApplication", "reviewLARemission", "reviewASRemission", "reviewHOWaiverRemission", "reviewAuthorityRemission", "reviewHWFRemission", "reviewECRRemission", "assignAFTPAJudge","listTheCase","sendPaymentRequest","markAsPaid","processFeeRefund","reviewDraftAppeal"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0vqliz7">
           <text>"roleCategory"</text>
