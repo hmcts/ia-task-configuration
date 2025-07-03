@@ -478,8 +478,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
     @ParameterizedTest
     @CsvSource({
-        "reviewLARemission", "reviewASRemission", "reviewHOWaiverRemission",
-        "reviewAuthorityRemission", "reviewHWFRemission", "reviewECRRemission","assignAFTPAJudge","listTheCase",
+        "reviewRemissionApplication", "assignAFTPAJudge","listTheCase",
         "sendPaymentRequest","markAsPaid", "processFeeRefund", "reviewDraftAppeal"
     })
     void when_taskId_then_return_Ctsc_role_category(String taskType) {
