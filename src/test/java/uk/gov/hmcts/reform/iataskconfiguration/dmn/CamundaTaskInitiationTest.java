@@ -2080,7 +2080,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "triggerCmrUpdated",
+                "cmrRelisting",
                 null,
                 null,
                 singletonList(
@@ -2093,7 +2093,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "triggerCmrListed",
+                "cmrListing",
                 null,
                 appellantInDetention,
                 singletonList(
@@ -2144,7 +2144,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "triggerCmrListed",
+                "cmrListing",
                 null,
                 null,
                 singletonList(
@@ -2157,7 +2157,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "triggerCmrListed",
+                "cmrListing",
                 null,
                 appellantInDetention,
                 singletonList(
