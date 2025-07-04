@@ -40,6 +40,10 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                         "taskType", "decideAnFTPA",
                         "completionMode", "Auto"
                     ),
+                    Map.of(
+                        "taskType", "detainedDecideAnFTPA",
+                        "completionMode", "Auto"
+                    ),
                     Collections.emptyMap()
                 )
             ),

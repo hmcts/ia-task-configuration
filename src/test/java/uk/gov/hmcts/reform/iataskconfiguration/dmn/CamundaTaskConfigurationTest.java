@@ -347,6 +347,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("detainedReviewSetAsideDecisionApplication", applications),
             Arguments.of("followUpSetAsideDecision", applications),
             Arguments.of("decideAnFTPA", upperTribunal),
+            Arguments.of("detainedDecideAnFTPA", upperTribunal),
             Arguments.of("processApplicationChangeHearingType", applications),
             Arguments.of("detainedProcessApplicationChangeHearingType", applications),
             Arguments.of("reviewMigratedCase", reviewCase)
@@ -435,7 +436,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "reviewAddendumAppellantEvidence", "reviewSpecificAccessRequestJudiciary",
         "reviewSpecificAccessRequestLegalOps", "reviewSpecificAccessRequestAdmin","reviewSpecificAccessRequestCTSC",
         "processApplicationToReviewDecision", "detainedProcessApplicationToReviewDecision",
-        "sendDecisionsAndReasons", "prepareDecisionsAndReasons", "decideAnFTPA",
+        "sendDecisionsAndReasons", "prepareDecisionsAndReasons", "decideAnFTPA","detainedDecideAnFTPA",
         "reviewSetAsideDecisionApplication", "detainedReviewSetAsideDecisionApplication"
     })
     void when_taskId_then_return_judicial_role_category(String taskType) {
@@ -1440,6 +1441,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "detainedEditListing,[Edit case listing](/case/IA/Asylum/${[CASE_REFERENCE]}"
             + "/trigger/detainedEditCaseListing),,,",
         "decideAnFTPA,[Decide FTPA application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideFtpaApplication),,,",
+        "detainedDecideAnFTPA,[Decide FTPA application](/case/IA/Asylum/${[CASE_REFERENCE]}"
+            + "/trigger/decideFtpaApplication),,,",
         "prepareDecisionsAndReasons,[Prepare decisions and reasons](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
             + "generateDecisionAndReasons),,,",
         "sendDecisionsAndReasons,[Complete decision and reasons](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
@@ -1619,6 +1622,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("sendPaymentRequest", zeroDays),
             Arguments.of("uploadHearingRecording", zeroDays),
             Arguments.of("decideAnFTPA", zeroDays),
+            Arguments.of("detainedDecideAnFTPA", zeroDays),
             Arguments.of("printAndSendHoBundle", zeroDays),
             Arguments.of("printAndSendHoResponse", zeroDays),
             Arguments.of("printAndSendHearingRequirements", zeroDays),
