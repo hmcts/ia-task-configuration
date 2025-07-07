@@ -239,6 +239,13 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "detainedPostHearingAttendeesDurationAndRecording",
+                List.of(
+                    taskSupervisor,
+                    hearingCentreAdminPriorityOne
+                )
+            ),
+            Arguments.of(
                 "allocateHearingJudge",
                 List.of(
                     taskSupervisor,
