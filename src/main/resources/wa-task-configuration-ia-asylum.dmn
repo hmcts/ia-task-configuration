@@ -238,7 +238,7 @@
                         "followUpOverdueRespondentEvidence","detainedFollowUpOverdueRespondentEvidence",
                         "reviewRespondentEvidence","detainedReviewRespondentEvidence",
                         "followUpOverdueCaseBuilding","detainedFollowUpOverdueCaseBuilding",
-                        "reviewAppealSkeletonArgument",
+                        "reviewAppealSkeletonArgument","detainedReviewAppealSkeletonArgument",
                         "followUpOverdueReasonsForAppeal",
                         "reviewReasonsForAppeal",
                         "followUpOverdueClarifyingAnswers",
@@ -409,7 +409,7 @@
                         "reviewTheAppeal","detainedReviewTheAppeal",
                         "decideOnTimeExtension",
                         "reviewRespondentEvidence","detainedReviewRespondentEvidence",
-                        "reviewAppealSkeletonArgument",
+                        "reviewAppealSkeletonArgument","detainedReviewAppealSkeletonArgument",
                         "reviewReasonsForAppeal",
                         "reviewClarifyingQuestionsAnswers",
                         "reviewCmaRequirements",
@@ -585,6 +585,8 @@
                         then "[Request reasons for appeal](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestReasonsForAppeal)&lt;br /&gt;[Send non-standard direction](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDirection)"
 			                  else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewAppealSkeletonArgument" or taskType != null and taskType ="reviewAppealSkeletonArgument")
                         then "[Request respondent review](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentReview)&lt;br /&gt;[Request case edit](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestCaseEdit)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "detainedReviewAppealSkeletonArgument" or taskType != null and taskType ="detainedReviewAppealSkeletonArgument")
+                        then "[Request respondent review](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentReview)&lt;br /&gt;[Request case edit](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestCaseEdit)"
                         else if ((taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewReasonsForAppeal" or taskType != null and taskType ="reviewReasonsForAppeal") and (caseData != null and caseData.journeyType = "aip"))
                         then "[Request respondent review](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentReview)&lt;br /&gt;[Send direction with questions](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDirectionWithQuestions)"
 			                  else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewReasonsForAppeal" or taskType != null and taskType ="reviewReasonsForAppeal")
@@ -703,7 +705,7 @@
 "reviewAdditionalHomeOfficeEvidence","detainedReviewRespondentEvidence",
 "detainedReviewAdditionalEvidence",
 "detainedReviewAdditionalHomeOfficeEvidence",
-"reviewAppealSkeletonArgument",
+"reviewAppealSkeletonArgument","detainedReviewAppealSkeletonArgument",
 "reviewReasonsForAppeal",
 "reviewClarifyingQuestionsAnswers",
 "reviewCmaRequirements",
