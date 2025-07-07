@@ -429,6 +429,13 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "detainedPrintAndSendHoBundle",
+                List.of(
+                    taskSupervisor,
+                    nationalBusinessCentreAdminPriorityOne
+                )
+            ),
+            Arguments.of(
                 "printAndSendHoResponse",
                 List.of(
                     taskSupervisor,
@@ -443,7 +450,21 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "detainedPrintAndSendHearingRequirements",
+                List.of(
+                    taskSupervisor,
+                    nationalBusinessCentreAdminPriorityOne
+                )
+            ),
+            Arguments.of(
                 "printAndSendHearingBundle",
+                List.of(
+                    taskSupervisor,
+                    nationalBusinessCentreAdminPriorityOne
+                )
+            ),
+            Arguments.of(
+                "detainedPrintAndSendHearingBundle",
                 List.of(
                     taskSupervisor,
                     nationalBusinessCentreAdminPriorityOne
@@ -457,7 +478,21 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "detainedPrintAndSendDecisionCorrectedRule31",
+                List.of(
+                    taskSupervisor,
+                    nationalBusinessCentreAdminPriorityOne
+                )
+            ),
+            Arguments.of(
                 "printAndSendDecisionCorrectedRule32",
+                List.of(
+                    taskSupervisor,
+                    nationalBusinessCentreAdminPriorityOne
+                )
+            ),
+            Arguments.of(
+                "detainedPrintAndSendDecisionCorrectedRule32",
                 List.of(
                     taskSupervisor,
                     nationalBusinessCentreAdminPriorityOne
@@ -471,7 +506,21 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "detainedPrintAndSendHoApplication",
+                List.of(
+                    taskSupervisor,
+                    nationalBusinessCentreAdminPriorityOne
+                )
+            ),
+            Arguments.of(
                 "printAndSendHoEvidence",
+                List.of(
+                    taskSupervisor,
+                    nationalBusinessCentreAdminPriorityOne
+                )
+            ),
+            Arguments.of(
+                "detainedPrintAndSendHoEvidence",
                 List.of(
                     taskSupervisor,
                     nationalBusinessCentreAdminPriorityOne
@@ -485,6 +534,13 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "detainedPrintAndSendAppealDecision",
+                List.of(
+                    taskSupervisor,
+                    nationalBusinessCentreAdminPriorityOne
+                )
+            ),
+            Arguments.of(
                 "printAndSendFTPADecision",
                 List.of(
                     taskSupervisor,
@@ -492,7 +548,21 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "detainedPrintAndSendFTPADecision",
+                List.of(
+                    taskSupervisor,
+                    nationalBusinessCentreAdminPriorityOne
+                )
+            ),
+            Arguments.of(
                 "printAndSendReheardHearingRequirements",
+                List.of(
+                    taskSupervisor,
+                    nationalBusinessCentreAdminPriorityOne
+                )
+            ),
+            Arguments.of(
+                "detainedPrintAndSendReheardHearingRequirements",
                 List.of(
                     taskSupervisor,
                     nationalBusinessCentreAdminPriorityOne

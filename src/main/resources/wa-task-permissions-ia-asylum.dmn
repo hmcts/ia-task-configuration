@@ -751,7 +751,7 @@
 "printAndSendHoEvidence","detainedPrintAndSendHoEvidence",
 "printAndSendAppealDecision","detainedPrintAndSendAppealDecision",
 "printAndSendFTPADecision","detainedPrintAndSendFTPADecision",
-"printAndSendReheardHearingRequirements","printAndSendReheardHearingRequirements"</text>
+"printAndSendReheardHearingRequirements","detainedPrintAndSendReheardHearingRequirements"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0twexc7">
           <text></text>
