@@ -2481,6 +2481,24 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "asyncStitchingComplete",
+                "preHearing",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAdmin\":\"" + true + "\",\n"
+                                      + "      \"appellantInDetention\":\"" + true + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedPrintAndSendHearingBundle",
+                        "name", "Detained - Print and send hearing bundle",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
                 "updateTribunalDecision",
                 null,
                 mapAdditionalData("{\n"
@@ -2494,6 +2512,26 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "printAndSendDecisionCorrectedRule31",
                         "name", "Print and send decision corrected under rule 31",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "updateTribunalDecision",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAdmin\":\"" + true + "\",\n"
+                                      + "      \"isDecisionRule31Changed\":\"" + true + "\",\n"
+                                      + "      \"updateTribunalDecisionList\":\"" + "underRule31" + "\",\n"
+                                      + "      \"appellantInDetention\":\"" + true + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedPrintAndSendDecisionCorrectedRule31",
+                        "name", "Detained - Print and send decision corrected under rule 31",
 
                         "processCategories", "caseProgression"
                     )
@@ -2524,11 +2562,37 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "updateTribunalDecision",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAdmin\":\"" + true + "\",\n"
+                                      + "      \"updateTribunalDecisionList\":\"" + "underRule32" + "\",\n"
+                                      + "      \"appellantInDetention\":\"" + true + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                List.of(
+                    Map.of(
+                        "taskId", "reviewAppealSetAsideUnderRule32",
+                        "name", "Review appeal set aside under rule 32",
+
+                        "processCategories", "caseProgression"
+                    ),
+                    Map.of(
+                        "taskId", "detainedPrintAndSendDecisionCorrectedRule32",
+                        "name", "Detained - Print and send decision corrected under rule 32",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
                 "makeAnApplication",
                 null,
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"isAdmin\":\"" + true + "\",\n"
+                                      + "      \"appellantInDetention\":\"" + false + "\",\n"
                                       + "      \"lastModifiedApplication\" : {\n"
                                       + "            \"type\" : \"Judge's review of application decision\",\n"
                                       + "            \"decision\" : \"\",\n"
@@ -2552,6 +2616,35 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "makeAnApplication",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAdmin\":\"" + true + "\",\n"
+                                      + "      \"appellantInDetention\":\"" + true + "\",\n"
+                                      + "      \"lastModifiedApplication\" : {\n"
+                                      + "            \"type\" : \"Judge's review of application decision\",\n"
+                                      + "            \"decision\" : \"\",\n"
+                                      + "            \"applicant\":\"" + "Respondent" + "\"\n"
+                                      + "          }\n"
+                                      + "   }"
+                                      + "}"),
+                List.of(
+                    Map.of(
+                        "taskId", "detainedProcessApplicationToReviewDecision",
+                        "name", "Detained Process Application to Review Decision",
+
+                        "processCategories", "application"
+                    ),
+                    Map.of(
+                        "taskId", "detainedPrintAndSendHoApplication",
+                        "name", "Detained - Print and send HO application",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
                 "uploadAdditionalEvidenceHomeOffice",
                 null,
                 mapAdditionalData("{\n"
@@ -2569,17 +2662,54 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "uploadAdditionalEvidenceHomeOffice",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAdmin\":\"" + true + "\",\n"
+                                      + "      \"appellantInDetention\":\"" + true + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedPrintAndSendHoEvidence",
+                        "name", "Detained - Print and send new HO evidence",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
                 "uploadAddendumEvidenceHomeOffice",
                 null,
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
-                                      + "      \"isAdmin\":\"" + true + "\"\n"
+                                      + "      \"isAdmin\":\"" + true + "\",\n"
+                                      + "      \"appellantInDetention\":\"" + false + "\"\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
                     Map.of(
                         "taskId", "printAndSendHoEvidence",
                         "name", "Print and send new HO evidence",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "uploadAddendumEvidenceHomeOffice",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAdmin\":\"" + true + "\",\n"
+                                      + "      \"appellantInDetention\":\"" + true + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedPrintAndSendHoEvidence",
+                        "name", "Detained - Print and send new HO evidence",
 
                         "processCategories", "caseProgression"
                     )
@@ -2603,6 +2733,24 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "sendDecisionAndReasons",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAdmin\":\"" + true + "\",\n"
+                                      + "      \"appellantInDetention\":\"" + true + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedPrintAndSendAppealDecision",
+                        "name", "Detained - Print and send appeal decision and FTPA form",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
                 "decideFtpaApplication",
                 null,
                 mapAdditionalData("{\n"
@@ -2620,6 +2768,24 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "decideFtpaApplication",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAdmin\":\"" + true + "\",\n"
+                                      + "      \"appellantInDetention\":\"" + true + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedPrintAndSendFTPADecision",
+                        "name", "Detained - Print and send FTPA decision",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
                 "requestNewHearingRequirements",
                 "submitHearingRequirements",
                 mapAdditionalData("{\n"
@@ -2631,6 +2797,24 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "printAndSendReheardHearingRequirements",
                         "name", "Print and send reheard appeal hearing requirements form",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "requestNewHearingRequirements",
+                "submitHearingRequirements",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAdmin\":\"" + true + "\",\n"
+                                      + "      \"appellantInDetention\":\"" + true + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedPrintAndSendReheardHearingRequirements",
+                        "name", "Detained - Print and send reheard appeal hearing requirements form",
 
                         "processCategories", "caseProgression"
                     )
@@ -3446,7 +3630,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(28));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(128));
+        assertThat(logic.getRules().size(), is(138));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {

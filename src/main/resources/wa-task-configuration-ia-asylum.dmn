@@ -204,17 +204,17 @@
                         "reviewAppealSetAsideUnderRule32",
                         "reviewAriaRemissionApplication",
                         "reviewDraftAppeal",
-                        "printAndSendHoBundle",
+                        "printAndSendHoBundle","detainedPrintAndSendHoBundle",
                         "printAndSendHoResponse",
-                        "printAndSendHearingRequirements",
-                        "printAndSendHearingBundle",
-                        "printAndSendDecisionCorrectedRule31",
-                        "printAndSendDecisionCorrectedRule32",
-                        "printAndSendHoApplication",
-                        "printAndSendHoEvidence",
-                        "printAndSendAppealDecision",
-                        "printAndSendFTPADecision",
-                        "printAndSendReheardHearingRequirements",
+                        "printAndSendHearingRequirements","detainedPrintAndSendHearingRequirements",
+                        "printAndSendHearingBundle","detainedPrintAndSendHearingBundle",
+                        "printAndSendDecisionCorrectedRule31","detainedPrintAndSendDecisionCorrectedRule31",
+                        "printAndSendDecisionCorrectedRule32","detainedPrintAndSendDecisionCorrectedRule32",
+                        "printAndSendHoApplication","detainedPrintAndSendHoApplication",
+                        "printAndSendHoEvidence","detainedPrintAndSendHoEvidence",
+                        "printAndSendAppealDecision","detainedPrintAndSendAppealDecision",
+                        "printAndSendFTPADecision","detainedPrintAndSendFTPADecision",
+                        "printAndSendReheardHearingRequirements","detainedPrintAndSendReheardHearingRequirements",
                         "processFeeRefund"
                       </text>
         </inputEntry>
@@ -471,7 +471,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1glizm3">
-          <text>"arrangeOfflinePayment","markCaseAsPaid","allocateHearingJudge","uploadHearingRecording","postHearingAttendeesDurationAndRecording", "detainedPostHearingAttendeesDurationAndRecording","editListing","detainedEditListing","followUpSetAsideDecision","hearingException","cmrListed","detainedCmrListed","cmrUpdated","detainedCmrUpdated","relistCase","reviewInterpreters","reviewMigratedCase","reviewAriaRemissionApplication","printAndSendHoBundle","printAndSendHoResponse","printAndSendHearingRequirements","printAndSendHearingBundle","printAndSendDecisionCorrectedRule31","printAndSendDecisionCorrectedRule32","printAndSendHoApplication","printAndSendHoEvidence","printAndSendAppealDecision","printAndSendFTPADecision","printAndSendReheardHearingRequirements","detainedListCmr"</text>
+          <text>"arrangeOfflinePayment","markCaseAsPaid","allocateHearingJudge","uploadHearingRecording","postHearingAttendeesDurationAndRecording", "detainedPostHearingAttendeesDurationAndRecording","editListing","detainedEditListing","followUpSetAsideDecision","hearingException","cmrListed","detainedCmrListed","cmrUpdated","detainedCmrUpdated","relistCase","reviewInterpreters","reviewMigratedCase","reviewAriaRemissionApplication","printAndSendHoBundle","detaiendPrintAndSendHoBundle","printAndSendHoResponse","printAndSendHearingRequirements","detainedPrintAndSendHearingRequirements","printAndSendHearingBundle","detainedPrintAndSendHearingBundle","printAndSendDecisionCorrectedRule31","detainedPrintAndSendDecisionCorrectedRule31","printAndSendDecisionCorrectedRule32","detainedPrintAndSendDecisionCorrectedRule32","printAndSendHoApplication","detainedPrintAndSendHoApplication","printAndSendHoEvidence","detainedPrintAndSendHoEvidence","printAndSendAppealDecision","detainedPrintAndSendAppealDecision","printAndSendFTPADecision","detainedPrintAndSendFTPADecision","printAndSendReheardHearingRequirements","detainedPrintAndSendReheardHearingRequirements","detainedListCmr"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1131kat">
           <text>"roleCategory"</text>
@@ -756,17 +756,17 @@
 "postHearingAttendeesDurationAndRecording",
 "detainedPostHearingAttendeesDurationAndRecording",
 "decideAnFTPA",
-"printAndSendHoBundle",
+"printAndSendHoBundle","detainedPrintAndSendHoBundle",
 "printAndSendHoResponse",
-"printAndSendHearingRequirements",
-"printAndSendHearingBundle",
-"printAndSendDecisionCorrectedRule31",
-"printAndSendDecisionCorrectedRule32",
-"printAndSendHoApplication",
-"printAndSendHoEvidence",
-"printAndSendAppealDecision",
-"printAndSendFTPADecision",
-"printAndSendReheardHearingRequirements","detainedListCmr"</text>
+"printAndSendHearingRequirements","detainedPrintAndSendHearingRequirements",
+"printAndSendHearingBundle","detainedPrintAndSendHearingBundle",
+"printAndSendDecisionCorrectedRule31","detainedPrintAndSendDecisionCorrectedRule31",
+"printAndSendDecisionCorrectedRule32","detainedPrintAndSendDecisionCorrectedRule32",
+"printAndSendHoApplication","detainedPrintAndSendHoApplication",
+"printAndSendHoEvidence","detainedPrintAndSendHoEvidence",
+"printAndSendAppealDecision","detainedPrintAndSendAppealDecision",
+"printAndSendFTPADecision","detainedPrintAndSendFTPADecision",
+"printAndSendReheardHearingRequirements","detainedPrintAndSendReheardHearingRequirements", "detainedListCmr"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0ssbj4t">
           <text>"dueDateIntervalDays"</text>

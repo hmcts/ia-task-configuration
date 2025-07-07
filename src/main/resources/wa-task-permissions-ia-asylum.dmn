@@ -741,17 +741,17 @@
       <rule id="DecisionRule_0bxyy8i">
         <description>National Business Centre admin task permissions</description>
         <inputEntry id="UnaryTests_0oh04n9">
-          <text>"printAndSendHoBundle",
+          <text>"printAndSendHoBundle","detainedPrintAndSendHoBundle",
 "printAndSendHoResponse",
-"printAndSendHearingRequirements",
-"printAndSendHearingBundle",
-"printAndSendDecisionCorrectedRule31",
-"printAndSendDecisionCorrectedRule32",
-"printAndSendHoApplication",
-"printAndSendHoEvidence",
-"printAndSendAppealDecision",
-"printAndSendFTPADecision",
-"printAndSendReheardHearingRequirements"</text>
+"printAndSendHearingRequirements","detainedPrintAndSendHearingRequirements",
+"printAndSendHearingBundle","detainedPrintAndSendHearingBundle",
+"printAndSendDecisionCorrectedRule31","detainedPrintAndSendDecisionCorrectedRule31",
+"printAndSendDecisionCorrectedRule32","detainedPrintAndSendDecisionCorrectedRule32",
+"printAndSendHoApplication","detainedPrintAndSendHoApplication",
+"printAndSendHoEvidence","detainedPrintAndSendHoEvidence",
+"printAndSendAppealDecision","detainedPrintAndSendAppealDecision",
+"printAndSendFTPADecision","detainedPrintAndSendFTPADecision",
+"printAndSendReheardHearingRequirements","printAndSendReheardHearingRequirements"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0twexc7">
           <text></text>
