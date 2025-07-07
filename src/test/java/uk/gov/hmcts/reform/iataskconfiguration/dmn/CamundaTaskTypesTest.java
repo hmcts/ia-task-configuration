@@ -317,6 +317,11 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                    "Post hearing – attendees, duration and recording"
             ),
             Map.of("taskTypeId",
+                   "detainedPostHearingAttendeesDurationAndRecording",
+                   "taskTypeName",
+                   "Detained - Post hearing – attendees, duration and recording"
+            ),
+            Map.of("taskTypeId",
                    "decideAnFTPA",
                    "taskTypeName",
                    "Decide an FTPA"
@@ -500,6 +505,16 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                     "detainedListCmr",
                     "taskTypeName",
                     "Detained List Cmr"
+            ),
+            Map.of("taskTypeId",
+                    "postHearingAttendeesDurationAndRecording",
+                    "taskTypeName",
+                    "Post hearing – attendees, duration and recording"
+            ),
+            Map.of("taskTypeId",
+                    "detainedPostHearingAttendeesDurationAndRecording",
+                    "taskTypeName",
+                    "Detained - Post hearing – attendees, duration and recording"
             )
         );
         return Stream.of(
