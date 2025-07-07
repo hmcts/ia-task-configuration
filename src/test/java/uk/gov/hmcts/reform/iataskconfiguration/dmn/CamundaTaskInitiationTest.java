@@ -1738,7 +1738,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"journeyType\":\"" + "aip" + "\",\n"
-                                      + "      \"remissionOption\":\"" + "receivesLegalAid" + "\"\n"
+                                      + "      \"remissionClaim\":\"" + "legalAid" + "\"\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
