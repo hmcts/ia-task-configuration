@@ -212,6 +212,11 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                    "Review Appeal Skeleton Argument"
             ),
             Map.of("taskTypeId",
+                   "detainedReviewAppealSkeletonArgument",
+                   "taskTypeName",
+                   "Detained - Review Appeal Skeleton Argument"
+            ),
+            Map.of("taskTypeId",
                    "reviewReasonsForAppeal",
                    "taskTypeName",
                    "Review Reasons For Appeal"
@@ -315,6 +320,11 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                    "postHearingAttendeesDurationAndRecording",
                    "taskTypeName",
                    "Post hearing – attendees, duration and recording"
+            ),
+            Map.of("taskTypeId",
+                   "detainedPostHearingAttendeesDurationAndRecording",
+                   "taskTypeName",
+                   "Detained - Post hearing – attendees, duration and recording"
             ),
             Map.of("taskTypeId",
                    "decideAnFTPA",
@@ -495,6 +505,16 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                     "detainedListCmr",
                     "taskTypeName",
                     "Detained List Cmr"
+            ),
+            Map.of("taskTypeId",
+                    "postHearingAttendeesDurationAndRecording",
+                    "taskTypeName",
+                    "Post hearing – attendees, duration and recording"
+            ),
+            Map.of("taskTypeId",
+                    "detainedPostHearingAttendeesDurationAndRecording",
+                    "taskTypeName",
+                    "Detained - Post hearing – attendees, duration and recording"
             )
         );
         return Stream.of(
@@ -523,7 +543,7 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(1));
         assertThat(logic.getOutputs().size(), is(2));
-        assertThat(logic.getRules().size(), is(93));
+        assertThat(logic.getRules().size(), is(94));
 
     }
 }

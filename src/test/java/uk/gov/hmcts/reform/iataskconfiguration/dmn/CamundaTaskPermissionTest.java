@@ -239,6 +239,13 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "detainedPostHearingAttendeesDurationAndRecording",
+                List.of(
+                    taskSupervisor,
+                    hearingCentreAdminPriorityOne
+                )
+            ),
+            Arguments.of(
                 "allocateHearingJudge",
                 List.of(
                     taskSupervisor,
@@ -712,7 +719,8 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
     @SuppressWarnings("checkstyle:indentation")
     @ParameterizedTest
     @CsvSource(value = {
-        "caseSummaryHearingBundleStartDecision"
+        "caseSummaryHearingBundleStartDecision",
+        "detainedCaseSummaryHearingBundleStartDecision"
     })
     void given_taskType_when_evaluate_dmn_then_it_returns_1st_2nd_3rd_4th_5th_rules(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
