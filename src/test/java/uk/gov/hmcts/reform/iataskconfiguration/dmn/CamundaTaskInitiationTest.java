@@ -1728,6 +1728,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"remissionClaim\":\"" + "asylumSupport" + "\"\n"
+                                      + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
