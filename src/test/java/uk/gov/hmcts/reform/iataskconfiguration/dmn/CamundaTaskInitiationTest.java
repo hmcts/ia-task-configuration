@@ -161,66 +161,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "appealSubmitted",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
-                                      + "      \"remissionClaim\":\"" + "asylumSupport" + "\"\n"
-                                      + "      \"appealType\":\"" + "refusalOfEu" + "\",\n"
-                                      + "   }"
-                                      + "}"),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewASRemission",
-                        "name", "Review AS remission",
-
-
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
-                "submitAppeal",
-                "appealSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"remissionClaim\":\"" + "asylumSupport" + "\"\n"
-                                      + "      \"appealType\":\"" + "protection" + "\",\n"
-                                      + "   }"
-                                      + "}"),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewASRemission",
-                        "name", "Review AS remission",
-
-
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
-                "submitAppeal",
-                "appealSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"remissionClaim\":\"" + "asylumSupport" + "\"\n"
-                                      + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                                      + "   }"
-                                      + "}"),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewASRemission",
-                        "name", "Review AS remission",
-
-
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
-                "submitAppeal",
-                "appealSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
                                       + "      \"appealType\":\"" + "deprivation" + "\"\n"
                                       + "   }"
                                       + "}"),
