@@ -263,7 +263,7 @@ dependencies {
   implementation group: 'io.springfox', name: 'springfox-boot-starter', version: versions.springfoxSwagger
 
   implementation group: 'com.github.hmcts.java-logging', name: 'logging', version: versions.reformLogging
-//  implementation group: 'com.github.hmcts.java-logging', name: 'logging-spring', version: '5.1.9'
+  implementation group: 'com.github.hmcts.java-logging', name: 'logging-spring', version: '5.1.9'
   implementation group: 'com.github.hmcts.java-logging', name: 'logging-appinsights', version: versions.reformLogging
 
   implementation group: 'org.apache.logging.log4j', name: 'log4j-api', version: versions.log4j
