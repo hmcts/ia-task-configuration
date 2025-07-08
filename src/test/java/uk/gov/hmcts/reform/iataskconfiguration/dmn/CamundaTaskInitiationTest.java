@@ -1696,7 +1696,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "submitAppeal",
                 "appealSubmitted",
-                null,
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"remissionClaim\":\"" + "legalAid" + "\"\n"
@@ -1714,7 +1713,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "submitAppeal",
                 "appealSubmitted",
-                null,
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"journeyType\":\"" + "aip" + "\",\n"
