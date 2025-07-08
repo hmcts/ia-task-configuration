@@ -11356,7 +11356,7 @@
       </rule>
       <rule id="DecisionRule_0f5colq">
         <inputEntry id="UnaryTests_0ocdofo">
-          <text>"requestHearingRequirementsFeature"</text>
+          <text>"forceCaseToSubmitHearingRequirements"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1gh9iok">
           <text>"submitHearingRequirements"</text>
