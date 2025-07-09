@@ -339,6 +339,17 @@
           <text>"Review Appeal Skeleton Argument"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_083ex94">
+        <inputEntry id="UnaryTests_0ma6bqt">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1mn3lqh">
+          <text>"detainedReviewAppealSkeletonArgument"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1b40zt1">
+          <text>"Detained - Review Appeal Skeleton Argument"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1gnw3c1">
         <inputEntry id="UnaryTests_0yldzt6">
           <text></text>
@@ -623,6 +634,17 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0yizjp6">
           <text>"Post hearing – attendees, duration and recording"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0det1tt">
+        <inputEntry id="UnaryTests_0det1tt1">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0det1tt2">
+          <text>"detainedPostHearingAttendeesDurationAndRecording"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0det1tt3">
+          <text>"Detained - Post hearing – attendees, duration and recording"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0bc4rdn">

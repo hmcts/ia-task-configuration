@@ -238,7 +238,7 @@
                         "followUpOverdueRespondentEvidence","detainedFollowUpOverdueRespondentEvidence",
                         "reviewRespondentEvidence","detainedReviewRespondentEvidence",
                         "followUpOverdueCaseBuilding","detainedFollowUpOverdueCaseBuilding",
-                        "reviewAppealSkeletonArgument",
+                        "reviewAppealSkeletonArgument","detainedReviewAppealSkeletonArgument",
                         "followUpOverdueReasonsForAppeal",
                         "reviewReasonsForAppeal",
                         "followUpOverdueClarifyingAnswers",
@@ -271,7 +271,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1ps3x4j">
-          <text>"generateDraftDecisionAndReasons","uploadDecision","uploadHearingRecording","postHearingAttendeesDurationAndRecording","editListing","followUpOverdueHearingRequirements","reviewHearingRequirements","allocateHearingJudge","prepareDecisionsAndReasons","startDecisionsAndReasonsDocument","createHearingBundle","createCaseSummary","listTheCase","hearingException","cmrListed","detainedCmrListed","cmrUpdated","detainedCmrUpdated","relistCase","reviewInterpreters","detainedEditListing","detainedListCmr"</text>
+          <text>"generateDraftDecisionAndReasons","uploadDecision","uploadHearingRecording","postHearingAttendeesDurationAndRecording","detainedPostHearingAttendeesDurationAndRecording","editListing","followUpOverdueHearingRequirements","reviewHearingRequirements","allocateHearingJudge","prepareDecisionsAndReasons","startDecisionsAndReasonsDocument","createHearingBundle","createCaseSummary","listTheCase","hearingException","cmrListed","detainedCmrListed","cmrUpdated","detainedCmrUpdated","relistCase","reviewInterpreters","detainedEditListing","detainedListCmr"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0c3eia6">
           <text>"workType"</text>
@@ -409,7 +409,7 @@
                         "reviewTheAppeal","detainedReviewTheAppeal",
                         "decideOnTimeExtension",
                         "reviewRespondentEvidence","detainedReviewRespondentEvidence",
-                        "reviewAppealSkeletonArgument",
+                        "reviewAppealSkeletonArgument","detainedReviewAppealSkeletonArgument",
                         "reviewReasonsForAppeal",
                         "reviewClarifyingQuestionsAnswers",
                         "reviewCmaRequirements",
@@ -471,7 +471,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1glizm3">
-          <text>"arrangeOfflinePayment","markCaseAsPaid","allocateHearingJudge","uploadHearingRecording","postHearingAttendeesDurationAndRecording","editListing","detainedEditListing","followUpSetAsideDecision","hearingException","cmrListed","detainedCmrListed","cmrUpdated","detainedCmrUpdated","relistCase","reviewInterpreters","reviewMigratedCase","reviewAriaRemissionApplication","printAndSendHoBundle","printAndSendHoResponse","printAndSendHearingRequirements","printAndSendHearingBundle","printAndSendDecisionCorrectedRule31","printAndSendDecisionCorrectedRule32","printAndSendHoApplication","printAndSendHoEvidence","printAndSendAppealDecision","printAndSendFTPADecision","printAndSendReheardHearingRequirements","detainedListCmr"</text>
+          <text>"arrangeOfflinePayment","markCaseAsPaid","allocateHearingJudge","uploadHearingRecording","postHearingAttendeesDurationAndRecording", "detainedPostHearingAttendeesDurationAndRecording","editListing","detainedEditListing","followUpSetAsideDecision","hearingException","cmrListed","detainedCmrListed","cmrUpdated","detainedCmrUpdated","relistCase","reviewInterpreters","reviewMigratedCase","reviewAriaRemissionApplication","printAndSendHoBundle","printAndSendHoResponse","printAndSendHearingRequirements","printAndSendHearingBundle","printAndSendDecisionCorrectedRule31","printAndSendDecisionCorrectedRule32","printAndSendHoApplication","printAndSendHoEvidence","printAndSendAppealDecision","printAndSendFTPADecision","printAndSendReheardHearingRequirements","detainedListCmr"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1131kat">
           <text>"roleCategory"</text>
@@ -583,6 +583,8 @@
                         then "[Request reasons for appeal](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestReasonsForAppeal)&lt;br /&gt;[Send non-standard direction](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDirection)"else if ((taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "detainedReviewRespondentEvidence" or taskType != null and taskType ="detainedReviewRespondentEvidence") and (caseData != null and caseData.journeyType = "aip"))
                         then "[Request reasons for appeal](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestReasonsForAppeal)&lt;br /&gt;[Send non-standard direction](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDirection)"
 			                  else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewAppealSkeletonArgument" or taskType != null and taskType ="reviewAppealSkeletonArgument")
+                        then "[Request respondent review](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentReview)&lt;br /&gt;[Request case edit](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestCaseEdit)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "detainedReviewAppealSkeletonArgument" or taskType != null and taskType ="detainedReviewAppealSkeletonArgument")
                         then "[Request respondent review](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentReview)&lt;br /&gt;[Request case edit](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestCaseEdit)"
                         else if ((taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewReasonsForAppeal" or taskType != null and taskType ="reviewReasonsForAppeal") and (caseData != null and caseData.journeyType = "aip"))
                         then "[Request respondent review](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentReview)&lt;br /&gt;[Send direction with questions](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDirectionWithQuestions)"
@@ -702,7 +704,7 @@
 "reviewAdditionalHomeOfficeEvidence","detainedReviewRespondentEvidence",
 "detainedReviewAdditionalEvidence",
 "detainedReviewAdditionalHomeOfficeEvidence",
-"reviewAppealSkeletonArgument",
+"reviewAppealSkeletonArgument","detainedReviewAppealSkeletonArgument",
 "reviewReasonsForAppeal",
 "reviewClarifyingQuestionsAnswers",
 "reviewCmaRequirements",
@@ -752,6 +754,7 @@
 "sendPaymentRequest",
 "uploadHearingRecording",
 "postHearingAttendeesDurationAndRecording",
+"detainedPostHearingAttendeesDurationAndRecording",
 "decideAnFTPA",
 "printAndSendHoBundle",
 "printAndSendHoResponse",
