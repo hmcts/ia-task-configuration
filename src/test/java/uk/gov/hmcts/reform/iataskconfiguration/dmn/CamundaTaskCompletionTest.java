@@ -64,6 +64,10 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                         "taskType", "uploadHearingRecording",
                         "completionMode", "Auto"
                     ),
+                    Map.of(
+                        "taskType", "detainedPostHearingAttendeesDurationAndRecording",
+                        "completionMode", "Auto"
+                    ),
                     Collections.emptyMap()
                 )
             ),

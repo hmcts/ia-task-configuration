@@ -179,7 +179,7 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
             Map.of("taskTypeId",
                    "detainedEditListing",
                    "taskTypeName",
-                   "Detained Edit Listing"
+                   "Detained - Edit Listing"
             ),
             Map.of("taskTypeId",
                    "reviewTheAppeal",
@@ -310,6 +310,11 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                    "postHearingAttendeesDurationAndRecording",
                    "taskTypeName",
                    "Post hearing – attendees, duration and recording"
+            ),
+            Map.of("taskTypeId",
+                   "detainedPostHearingAttendeesDurationAndRecording",
+                   "taskTypeName",
+                   "Detained - Post hearing – attendees, duration and recording"
             ),
             Map.of("taskTypeId",
                    "decideAnFTPA",
@@ -495,6 +500,16 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                     "detainedListCmr",
                     "taskTypeName",
                     "Detained List Cmr"
+            ),
+            Map.of("taskTypeId",
+                    "postHearingAttendeesDurationAndRecording",
+                    "taskTypeName",
+                    "Post hearing – attendees, duration and recording"
+            ),
+            Map.of("taskTypeId",
+                    "detainedPostHearingAttendeesDurationAndRecording",
+                    "taskTypeName",
+                    "Detained - Post hearing – attendees, duration and recording"
             )
         );
         return Stream.of(
