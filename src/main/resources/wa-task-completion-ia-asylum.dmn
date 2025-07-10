@@ -713,9 +713,20 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0det1tc">
+        <inputEntry id="UnaryTests_0det1tc1">
+          <text>"uploadHearingRecording"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0det1tc2">
+          <text>"detainedPostHearingAttendeesDurationAndRecording"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0det1tc3">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1u3c7sd">
         <inputEntry id="UnaryTests_1dd0p7u">
-          <text>"generateHearingBundle","decisionAndReasonsStarted","updateHearingRequirements","endAppeal","requestRespondentEvidence","requestCaseBuilding","requestReasonsForAppeal","sendDirection","requestRespondentReview","requestCaseEdit","sendDirectionWithQuestions","requestCmaRequirements","markEvidenceAsReviewed","markAddendumEvidenceAsReviewed","reviewCmaRequirements","updateDetailsAfterCma","requestResponseAmend","requestResponseReview","reviewHearingRequirements","changeDirectionDueDate","decideAnApplication","editCaseListing","sendDecisionAndReasons","generateDecisionAndReasons","uploadHearingRecording","postHearingAttendeesDurationAndRecording","decideFtpaApplication","recordRemissionDecision","recordAllocatedJudge","listCase","markAppealPaid","markPaymentRequestSent","requestNewHearingRequirements","refundConfirmation","progressMigratedCase","submitAppeal","generateListCmrTask","detainedReviewAdditionalHomeOfficeEvidence","detainedReviewAdditionalEvidence"</text>
+          <text>"generateHearingBundle","decisionAndReasonsStarted","updateHearingRequirements","endAppeal","requestRespondentEvidence","requestCaseBuilding","requestReasonsForAppeal","sendDirection","requestRespondentReview","requestCaseEdit","sendDirectionWithQuestions","requestCmaRequirements","markEvidenceAsReviewed","markAddendumEvidenceAsReviewed","reviewCmaRequirements","updateDetailsAfterCma","requestResponseAmend","requestResponseReview","reviewHearingRequirements","changeDirectionDueDate","decideAnApplication","editCaseListing","sendDecisionAndReasons","generateDecisionAndReasons","uploadHearingRecording","postHearingAttendeesDurationAndRecording","detainedPostHearingAttendeesDurationAndRecording","decideFtpaApplication","recordRemissionDecision","recordAllocatedJudge","listCase","markAppealPaid","markPaymentRequestSent","requestNewHearingRequirements","refundConfirmation","progressMigratedCase","submitAppeal","generateListCmrTask","detainedReviewAdditionalHomeOfficeEvidence","detainedReviewAdditionalEvidence"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1ex7ytl">
           <text></text>
