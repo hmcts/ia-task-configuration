@@ -1391,7 +1391,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 singletonList(
                     Map.of(
                         "taskId", "detainedEditListing",
-                        "name", "Detained Edit listing",
+                        "name", "Detained - Edit listing",
+
 
                         "processCategories", "caseProgression"
                     )
@@ -1417,7 +1418,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 singletonList(
                     Map.of(
                         "taskId", "detainedEditListing",
-                        "name", "Detained Edit listing",
+                        "name", "Detained - Edit listing",
+
 
                         "processCategories", "caseProgression"
                     )
@@ -1443,7 +1445,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 singletonList(
                     Map.of(
                         "taskId", "detainedEditListing",
-                        "name", "Detained Edit listing",
+                        "name", "Detained - Edit listing",
+
 
                         "processCategories", "caseProgression"
                     )
@@ -1469,7 +1472,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     Map.of(
                         "taskId", "detainedEditListing",
-                        "name", "Detained Edit listing",
+                        "name", "Detained - Edit listing",
+
 
                         "processCategories", "caseProgression"
                     )
@@ -2212,7 +2216,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "triggerCmrUpdated",
+                "cmrRelisting",
                 null,
                 null,
                 singletonList(
@@ -2225,20 +2229,22 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "cmrReListing",
+                "cmrRelisting",
                 null,
-                null,
+                appellantInDetention,
                 singletonList(
                     Map.of(
-                        "taskId", "cmrUpdated",
-                        "name", "Update CMR notification",
+                        "taskId", "detainedCmrUpdated",
+                        "name", "Detained - Update CMR notification",
+
 
                         "processCategories", "caseProgression"
                     )
                 )
             ),
             Arguments.of(
-                "triggerCmrListed",
+                "cmrListing",
+
                 null,
                 appellantInDetention,
                 singletonList(
@@ -2289,7 +2295,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "triggerCmrListed",
+                "cmrListing",
                 null,
                 null,
                 singletonList(
@@ -2302,7 +2308,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "triggerCmrListed",
+                "cmrListing",
                 null,
                 appellantInDetention,
                 singletonList(
@@ -3061,6 +3067,20 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "detainedReviewAppealSkeletonArgument",
                         "name", "Detained - Review Appeal Skeleton Argument",
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "progressMigratedCase",
+                "caseUnderReview",
+                appellantInDetention,
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedReviewAppealSkeletonArgument",
+                        "name", "Detained - Review Appeal Skeleton Argument",
+
+
                         "processCategories", "caseProgression"
                     )
                 )

@@ -2993,7 +2993,7 @@
           <text>"detainedEditListing"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0mnbp44">
-          <text>"Detained Edit Listing"</text>
+          <text>"Detained - Edit Listing"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0kx0h9c">
           <text></text>
@@ -7706,7 +7706,7 @@
           <text>"detainedEditListing"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1dlae17">
-          <text>"Detained Edit listing"</text>
+          <text>"Detained - Edit listing"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1btcp8c">
           <text></text>
@@ -9587,104 +9587,6 @@
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_14qf7ds">
-        <inputEntry id="UnaryTests_1ysv8x9">
-          <text>"triggerCmrListed"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0r3m3az">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0hmuexs">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0svy9mv">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1tdceha">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_13jz18i">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1ahqatd">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_06o3dft">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1y8ldqn">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1d6k7dx">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0yhmg6u">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1cozjhw">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_198zjru">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1tr988q">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0nk2yle">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1x0bpxf">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1w9x1c0">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0qo42c7">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_09gsnwx">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1p453z7">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0sb2pdk">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_04fj6pq">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1ffwgmj">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1se3g57">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1i385mh">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0x3pf5l">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1xqpj0a">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1bfomjl">
-          <text>false</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1twq7nt">
-          <text>"cmrListed"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1nai7pd">
-          <text>"Send CMR notification"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0ksnoes">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_16m2lnd">
-          <text>"caseProgression"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_1jb9i03">
         <inputEntry id="UnaryTests_176tolf">
           <text>"cmrListing"</text>
@@ -9768,7 +9670,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1missing">
-          <text></text>
+          <text>false</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_065j9k9">
           <text>"cmrListed"</text>
@@ -9785,7 +9687,7 @@
       </rule>
       <rule id="DecisionRule_18tpcx4">
         <inputEntry id="UnaryTests_1gd7h2k">
-          <text>"triggerCmrListed"</text>
+          <text>"cmrListing"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0abpq8x">
           <text></text>
@@ -9883,7 +9785,7 @@
       </rule>
       <rule id="DecisionRule_0pif48w">
         <inputEntry id="UnaryTests_1texref">
-          <text>"triggerCmrUpdated"</text>
+          <text>"cmrRelisting"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0lry8as">
           <text></text>
@@ -9981,7 +9883,7 @@
       </rule>
       <rule id="DecisionRule_0yecowq">
         <inputEntry id="UnaryTests_1lvdehb">
-          <text>"triggerCmrUpdated"</text>
+          <text>"cmrRelisting"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0krishg">
           <text></text>
@@ -10074,104 +9976,6 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_097w77c">
-          <text>"caseProgression"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1ab7wku">
-        <inputEntry id="UnaryTests_1pyeqp1">
-          <text>"cmrReListing"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_19ckcrn">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0kdziwe">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1hbu7g8">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_029t1ix">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1o5h2nl">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_08lc0lm">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1ivmtbv">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1szq2u1">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0ckddip">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1ijj975">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1dtqdgg">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1kk69ay">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1f8i4p0">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0axpoec">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_06f24kf">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_18jearb">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1nezcco">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1f4eojk">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_18le4sc">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1cvur1d">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0n8d1as">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0cnvfwf">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0xw73cv">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0ggwuta">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1m3z8cy">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1jg5de1">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1missing2">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1sxlidu">
-          <text>"cmrUpdated"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_019nzkd">
-          <text>"Update CMR notification"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_08fnj50">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0gubrat">
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
