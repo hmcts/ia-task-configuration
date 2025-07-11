@@ -247,6 +247,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("reviewClarifyingQuestionsAnswers", routineWork),
             Arguments.of("reviewRemissionApplication", routineWork),
             Arguments.of("assignAFTPAJudge", routineWork),
+            Arguments.of("detainedAssignAFTPAJudge", routineWork),
             Arguments.of("reviewAppealSetAsideUnderRule35", routineWork),
             Arguments.of("reviewAppealSetAsideUnderRule32", routineWork),
             Arguments.of("sendPaymentRequest", routineWork),
@@ -501,7 +502,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
     @ParameterizedTest
     @CsvSource({
-        "reviewRemissionApplication","assignAFTPAJudge","listTheCase","sendPaymentRequest","markAsPaid",
+        "reviewRemissionApplication","assignAFTPAJudge","detainedAssignAFTPAJudge","listTheCase",
+        "sendPaymentRequest","markAsPaid",
         "processFeeRefund", "reviewDraftAppeal"
     })
     void when_taskId_then_return_Ctsc_role_category(String taskType) {
@@ -1457,6 +1459,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             + "recordRemissionDecision/recordRemissionDecisionremissionDecision),,,",
         "assignAFTPAJudge,[Record allocated Judge](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
             + "recordAllocatedJudge),,,",
+        "detainedAssignAFTPAJudge,[Record allocated Judge](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
+            + "recordAllocatedJudge),,,",
         "listTheCase,[List the case](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/listCase),,No,",
         "listTheCase,[List the case](cases/case-details/${[CASE_REFERENCE]}/hearings),,Yes,",
         "sendPaymentRequest,[Mark payment request sent](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
@@ -1614,6 +1618,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("reviewAddendumEvidence", twoDays),
             Arguments.of("reviewRemissionApplication", twoDays),
             Arguments.of("assignAFTPAJudge", twoDays),
+            Arguments.of("detainedAssignAFTPAJudge", twoDays),
             Arguments.of("listTheCase", twoDays),
             Arguments.of("reviewSetAsideDecisionApplication", twoDays),
             Arguments.of("detainedReviewSetAsideDecisionApplication", twoDays),

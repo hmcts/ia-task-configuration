@@ -196,7 +196,7 @@
                         "followUpNonStandardDirection","detainedFollowUpNonStandardDirection",
                         "reviewClarifyingQuestionsAnswers",
                         "reviewRemissionApplication",
-                        "assignAFTPAJudge",
+                        "assignAFTPAJudge","detainedAssignAFTPAJudge",
                         "sendPaymentRequest",
                         "markAsPaid",
                         "reviewRemittedAppeal",
@@ -505,7 +505,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0xh5are">
-          <text>"reviewRemissionApplication","assignAFTPAJudge","listTheCase","sendPaymentRequest","markAsPaid","processFeeRefund","reviewDraftAppeal"</text>
+          <text>"reviewRemissionApplication","detainedAssignAFTPAJudge","assignAFTPAJudge","listTheCase","sendPaymentRequest","markAsPaid","processFeeRefund","reviewDraftAppeal"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0vqliz7">
           <text>"roleCategory"</text>
@@ -546,6 +546,7 @@
                         else if ((taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "listTheCase" or taskType != null and taskType = "listTheCase") and (caseData != null and caseData.isIntegrated = null or caseData != null and caseData.isIntegrated = "No")) then "[List the case](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/listCase)"
                         else if ((taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "listTheCase" or taskType != null and taskType = "listTheCase") and (caseData != null and caseData.isIntegrated = "Yes")) then "[List the case](cases/case-details/${[CASE_REFERENCE]}/hearings)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "assignAFTPAJudge" or taskType != null and taskType = "assignAFTPAJudge") then "[Record allocated Judge](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/recordAllocatedJudge)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "detainedAssignAFTPAJudge" or taskType != null and taskType = "detainedAssignAFTPAJudge") then "[Record allocated Judge](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/recordAllocatedJudge)"
                         else if taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "detainedProcessApplicationAdjourn" or taskType != null and taskType = "detainedProcessApplicationAdjourn)"
                         then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewRemissionApplication" or taskType != null and taskType = "reviewRemissionApplication") then "[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/recordRemissionDecision/recordRemissionDecisionremissionDecision)"
@@ -726,7 +727,7 @@
 "followUpNoticeOfChange","detainedFollowUpNoticeOfChange",
 "reviewAddendumEvidence",
 "reviewRemissionApplication",
-"assignAFTPAJudge",
+"assignAFTPAJudge","detainedAssignAFTPAJudge",
 "listTheCase",
 "reviewSetAsideDecisionApplication",
 "cmrListed",
