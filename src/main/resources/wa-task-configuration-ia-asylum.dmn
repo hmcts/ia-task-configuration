@@ -271,7 +271,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1ps3x4j">
-          <text>"generateDraftDecisionAndReasons","uploadDecision","uploadHearingRecording","postHearingAttendeesDurationAndRecording","detainedPostHearingAttendeesDurationAndRecording","editListing","followUpOverdueHearingRequirements","reviewHearingRequirements","allocateHearingJudge","prepareDecisionsAndReasons","startDecisionsAndReasonsDocument","createHearingBundle","createCaseSummary","listTheCase","hearingException","cmrListed","detainedCmrListed","cmrUpdated","detainedCmrUpdated","relistCase","reviewInterpreters","detainedEditListing","detainedListCmr"</text>
+          <text>"generateDraftDecisionAndReasons","uploadDecision","uploadHearingRecording","postHearingAttendeesDurationAndRecording","detainedPostHearingAttendeesDurationAndRecording","editListing","followUpOverdueHearingRequirements","reviewHearingRequirements","detainedReviewHearingRequirements","allocateHearingJudge","prepareDecisionsAndReasons","startDecisionsAndReasonsDocument","createHearingBundle","createCaseSummary","listTheCase","hearingException","cmrListed","detainedCmrListed","cmrUpdated","detainedCmrUpdated","relistCase","reviewInterpreters","detainedEditListing","detainedListCmr"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0c3eia6">
           <text>"workType"</text>
@@ -417,7 +417,7 @@
                         "reviewRespondentResponse",
                         "caseSummaryHearingBundleStartDecision",
                         "detainedCaseSummaryHearingBundleStartDecision",
-                        "reviewHearingRequirements",
+                        "reviewHearingRequirements","detainedReviewHearingRequirements",
                         "followUpOverdueRespondentEvidence","detainedFollowUpOverdueRespondentEvidence",
                         "followUpOverdueCaseBuilding","detainedFollowUpOverdueCaseBuilding",
                         "followUpOverdueReasonsForAppeal",
@@ -563,6 +563,8 @@
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "startDecisionsAndReasonsDocument" or taskType != null and taskType ="startDecisionsAndReasonsDocument")
                         then "[Start decision and reasons document](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decisionAndReasonsStarted/decisionAndReasonsStartedcaseIntroduction)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewHearingRequirements" or taskType != null and taskType = "reviewHearingRequirements")
+                        then "[Review hearing requirements](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/reviewHearingRequirements)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "detainedReviewHearingRequirements" or taskType != null and taskType = "detainedReviewHearingRequirements")
                         then "[Review hearing requirements](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/reviewHearingRequirements)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewAdditionalEvidence" or taskType != null and taskType ="reviewAdditionalEvidence")
                         then "[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markEvidenceAsReviewed)" else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "detainedReviewAdditionalEvidence" or taskType != null and taskType ="detainedReviewAdditionalEvidence")
@@ -712,7 +714,7 @@
 "reviewRespondentResponse",
 "caseSummaryHearingBundleStartDecision",
 "detainedCaseSummaryHearingBundleStartDecision",
-"reviewHearingRequirements",
+"reviewHearingRequirements","detainedReviewHearingRequirements",
 "followUpOverdueRespondentEvidence","detainedFollowUpOverdueRespondentEvidence",
 "followUpExtendedDirection",
 "detainedFollowUpExtendedDirection",

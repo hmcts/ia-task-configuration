@@ -301,6 +301,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("detainedEditListing", hearingWork),
             Arguments.of("followUpOverdueHearingRequirements", hearingWork),
             Arguments.of("reviewHearingRequirements", hearingWork),
+            Arguments.of("detainedReviewHearingRequirements", hearingWork),
             Arguments.of("allocateHearingJudge", hearingWork),
             Arguments.of("prepareDecisionsAndReasons", hearingWork),
             Arguments.of("startDecisionsAndReasonsDocument", hearingWork),
@@ -548,7 +549,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "reviewClarifyingQuestionsAnswers", "reviewAdditionalHomeOfficeEvidence",
         "reviewCmaRequirements", "attendCma", "reviewRespondentResponse", "caseSummaryHearingBundleStartDecision",
         "detainedCaseSummaryHearingBundleStartDecision",
-        "reviewHearingRequirements", "followUpOverdueRespondentEvidence", "detainedFollowUpOverdueRespondentEvidence",
+        "reviewHearingRequirements","detainedReviewHearingRequirements", "followUpOverdueRespondentEvidence",
+        "detainedFollowUpOverdueRespondentEvidence",
         "followUpOverdueCaseBuilding","detainedFollowUpOverdueCaseBuilding", "followUpOverdueReasonsForAppeal",
         "followUpOverdueClarifyingAnswers",
         "followUpOverdueCmaRequirements", "followUpOverdueRespondentReview","detainedFollowUpOverdueRespondentReview",
@@ -1420,6 +1422,9 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "reviewHearingRequirements,"
             + "[Review hearing requirements](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger"
             + "/reviewHearingRequirements),,,",
+        "detainedReviewHearingRequirements,"
+            + "[Review hearing requirements](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger"
+            + "/reviewHearingRequirements),,,",
         "reviewAdditionalEvidence,[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markEvidence"
             + "AsReviewed),,,",
         "detainedReviewAdditionalEvidence,[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markEvidence"
@@ -1595,6 +1600,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("caseSummaryHearingBundleStartDecision", twoDays),
             Arguments.of("detainedCaseSummaryHearingBundleStartDecision", twoDays),
             Arguments.of("reviewHearingRequirements", twoDays),
+            Arguments.of("detainedReviewHearingRequirements", twoDays),
             Arguments.of("followUpOverdueRespondentEvidence", twoDays),
             Arguments.of("detainedFollowUpOverdueRespondentEvidence", twoDays),
             Arguments.of("followUpExtendedDirection", twoDays),
