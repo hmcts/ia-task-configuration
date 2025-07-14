@@ -222,7 +222,7 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
             Map.of("taskTypeId",
                    "reviewRemissionApplication",
                    "taskTypeName",
-                   "Review Remission Application"
+                   "Review Remission Application Test"
             ),
             Map.of("taskTypeId",
                    "assignAFTPAJudge",
@@ -312,7 +312,7 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
             Map.of("taskTypeId",
                    "reviewAriaRemissionApplication",
                    "taskTypeName",
-                   "Review Remission Application"
+                   "Review Remission Application Test"
             ),
             Map.of("taskTypeId",
                    "reviewDraftAppeal",
