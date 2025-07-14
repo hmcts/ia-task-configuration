@@ -467,6 +467,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     @ParameterizedTest
     @CsvSource({
         "arrangeOfflinePayment", "markCaseAsPaid", "allocateHearingJudge", "uploadHearingRecording",
+
         "postHearingAttendeesDurationAndRecording", "detainedPostHearingAttendeesDurationAndRecording", "editListing",
         "detainedEditListing", "followUpSetAsideDecision",
         "hearingException", "cmrListed", "cmrUpdated", "detainedCmrListed", "detainedCmrUpdated","relistCase",
@@ -1442,7 +1443,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             + "markAddendumEvidenceAsReviewed),,,",
         "editListing,[Edit case listing](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/editCaseListing),,,",
         "detainedEditListing,[Edit case listing](/case/IA/Asylum/${[CASE_REFERENCE]}"
-            + "/trigger/detainedEditCaseListing),,,",
+            + "/trigger/editCaseListing),,,",
         "decideAnFTPA,[Decide FTPA application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideFtpaApplication),,,",
         "prepareDecisionsAndReasons,[Prepare decisions and reasons](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
             + "generateDecisionAndReasons),,,",
