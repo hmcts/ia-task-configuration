@@ -3476,20 +3476,26 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(28));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(136));
+        assertThat(logic.getRules().size(), is(137));
 
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {
+        Map<String, Object> appellantInDetention = mapAdditionalData("{\n"
+                                                                 + "   \"Data\":{\n"
+                                                                 + "      \"appellantInDetention\": true\n"
+                                                                 + "   }\n"
+                                                                 + "}");
+
         return Stream.of(
             Arguments.of(
                 "uploadAddendumEvidenceLegalRep",
                 "preHearing",
+                null,
                 singletonList(
                     Map.of(
                         "taskId", "reviewAddendumEvidence",
                         "name", "Review Addendum Evidence",
-
                         "processCategories", "caseProgression"
                     )
                 )
@@ -3497,11 +3503,11 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "uploadAddendumEvidenceLegalRep",
                 "decision",
-                List.of(
+                null,
+                singletonList(
                     Map.of(
                         "taskId", "reviewAddendumEvidence",
                         "name", "Review Addendum Evidence",
-
                         "processCategories", "caseProgression"
                     )
                 )
@@ -3509,11 +3515,59 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "uploadAddendumEvidenceLegalRep",
                 "decided",
-                List.of(
+                null,
+                singletonList(
                     Map.of(
                         "taskId", "reviewAddendumEvidence",
                         "name", "Review Addendum Evidence",
-
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "uploadAddendumEvidenceLegalRep",
+                "preHearing",
+                appellantInDetention,
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedReviewAddendumEvidence",
+                        "name", "Detained - Review Addendum Evidence",
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "uploadAddendumEvidence",
+                "decision",
+                appellantInDetention,
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedReviewAddendumEvidence",
+                        "name", "Detained - Review Addendum Evidence",
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "uploadAddendumEvidenceHomeOffice",
+                "decided",
+                appellantInDetention,
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedReviewAddendumEvidence",
+                        "name", "Detained - Review Addendum Evidence",
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "uploadAddendumEvidenceAdminOfficer",
+                "preHearing",
+                appellantInDetention,
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedReviewAddendumEvidence",
+                        "name", "Detained - Review Addendum Evidence",
                         "processCategories", "caseProgression"
                     )
                 )
@@ -3526,16 +3580,22 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     void given_addendum_events_when_evaluate_initiate_dmn_then_expect_reviewAddendumEvidence_task(
         String eventId,
         String postEventState,
+        Map<String, Object> additionalData,
         List<Map<String, String>> expectation
     ) {
         VariableMap inputVariables = new VariableMapImpl();
         inputVariables.putValue("eventId", eventId);
         inputVariables.putValue("postEventState", postEventState);
+        if (additionalData != null) {
+            inputVariables.putAll(additionalData);
+        }
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
         assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
     }
+
+
 
     private static Map<String, Object> mapAdditionalData(String additionalData) {
         ObjectMapper mapper = new ObjectMapper();

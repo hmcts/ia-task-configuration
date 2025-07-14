@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.34.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.36.1">
   <decision id="wa-task-initiation-ia-asylum" name="Task initiation DMN" camunda:historyTimeToLive="P90D">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT" biodi:annotationsWidth="400">
       <input id="Input_1" label="Event Id" biodi:width="515" camunda:inputVariable="eventId">
@@ -7106,7 +7106,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0qlrbsc">
-          <text></text>
+          <text>false</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0nu1njx">
           <text>"reviewAddendumEvidence"</text>
@@ -7118,6 +7118,109 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1chu8ia">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0detained_addendum">
+        <inputEntry id="UnaryTests_0det_add_1">
+          <text>
+            "uploadAddendumEvidenceLegalRep",
+            "uploadAddendumEvidence",
+            "uploadAddendumEvidenceHomeOffice",
+            "uploadAddendumEvidenceAdminOfficer"
+          </text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_add_2">
+          <text>"preHearing","decision","decided"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_add_3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_add_4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_add_5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_add_6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_add_7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_add_8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_add_9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_add_10">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_add_11">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_add_12">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_add_13">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_add_14">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_add_15">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_add_16">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_add_17">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_add_18">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_add_19">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_add_20">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_add_21">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_add_22">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_add_23">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_add_24">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_add_25">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_add_26">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_add_27">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_add_28">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0det_add_out1">
+          <text>"detainedReviewAddendumEvidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0det_add_out2">
+          <text>"Detained - Review Addendum Evidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0det_add_out3">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0det_add_out4">
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
