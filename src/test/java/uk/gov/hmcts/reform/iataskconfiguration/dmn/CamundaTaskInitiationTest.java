@@ -1393,7 +1393,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "detainedEditListing",
                         "name", "Detained - Edit listing",
 
-
                         "processCategories", "caseProgression"
                     )
                 )
@@ -1420,7 +1419,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "detainedEditListing",
                         "name", "Detained - Edit listing",
 
-
                         "processCategories", "caseProgression"
                     )
                 )
@@ -1447,7 +1445,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "detainedEditListing",
                         "name", "Detained - Edit listing",
 
-
                         "processCategories", "caseProgression"
                     )
                 )
@@ -1473,7 +1470,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "detainedEditListing",
                         "name", "Detained - Edit listing",
-
 
                         "processCategories", "caseProgression"
                     )
@@ -2883,6 +2879,20 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "detainedReviewAppealSkeletonArgument",
                         "name", "Detained - Review Appeal Skeleton Argument",
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "progressMigratedCase",
+                "caseUnderReview",
+                appellantInDetention,
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedReviewAppealSkeletonArgument",
+                        "name", "Detained - Review Appeal Skeleton Argument",
+
+
                         "processCategories", "caseProgression"
                     )
                 )
