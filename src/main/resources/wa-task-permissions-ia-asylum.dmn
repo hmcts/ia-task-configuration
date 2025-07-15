@@ -652,7 +652,7 @@
       <rule id="DecisionRule_05nq60d">
         <description>CTSC Admin task permissions</description>
         <inputEntry id="UnaryTests_1q2j4ix">
-          <text>"reviewRemissionApplication","assignAFTPAJudge","listTheCase","sendPaymentRequest","markAsPaid","cmrListed","detainedCmrListed","cmrUpdated","detainedCmrUpdated","reviewInterpreters","processFeeRefund","reviewDraftAppeal"</text>
+          <text>"reviewRemissionApplication","assignAFTPAJudge","listTheCase","sendPaymentRequest","markAsPaid","cmrListed","detainedCmrListed","cmrUpdated","detainedCmrUpdated","reviewInterpreters","processFeeRefund","reviewDraftAppeal","detainedPrintAndSendHoBundle","detainedPrintAndSendHearingRequirements","detainedPrintAndSendHearingBundle","detainedPrintAndSendDecisionCorrectedRule31","detainedPrintAndSendDecisionCorrectedRule32","detainedPrintAndSendHoApplication","detainedPrintAndSendHoEvidence","detainedPrintAndSendAppealDecision","detainedPrintAndSendFTPADecision","detainedPrintAndSendReheardHearingRequirements"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1p44stw">
           <text></text>
@@ -682,7 +682,7 @@
       <rule id="DecisionRule_155ah64">
         <description>CTSC Team Leader task permissions</description>
         <inputEntry id="UnaryTests_08panx7">
-          <text>"reviewRemissionApplication","assignAFTPAJudge","listTheCase","sendPaymentRequest","markAsPaid","cmrListed","detainedCmrListed","cmrUpdated","detainedCmrUpdated","reviewInterpreters","processFeeRefund","reviewDraftAppeal","detainedListCmr"</text>
+          <text>"reviewRemissionApplication","assignAFTPAJudge","listTheCase","sendPaymentRequest","markAsPaid","cmrListed","detainedCmrListed","cmrUpdated","detainedCmrUpdated","reviewInterpreters","processFeeRefund","reviewDraftAppeal","detainedListCmr","detainedPrintAndSendHoBundle","detainedPrintAndSendHearingRequirements","detainedPrintAndSendHearingBundle","detainedPrintAndSendDecisionCorrectedRule31","detainedPrintAndSendDecisionCorrectedRule32","detainedPrintAndSendHoApplication","detainedPrintAndSendHoEvidence","detainedPrintAndSendAppealDecision","detainedPrintAndSendFTPADecision","detainedPrintAndSendReheardHearingRequirements"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0njeznv">
           <text></text>
@@ -741,17 +741,17 @@
       <rule id="DecisionRule_0bxyy8i">
         <description>National Business Centre admin task permissions</description>
         <inputEntry id="UnaryTests_0oh04n9">
-          <text>"printAndSendHoBundle","detainedPrintAndSendHoBundle",
+          <text>"printAndSendHoBundle",
 "printAndSendHoResponse",
-"printAndSendHearingRequirements","detainedPrintAndSendHearingRequirements",
-"printAndSendHearingBundle","detainedPrintAndSendHearingBundle",
-"printAndSendDecisionCorrectedRule31","detainedPrintAndSendDecisionCorrectedRule31",
-"printAndSendDecisionCorrectedRule32","detainedPrintAndSendDecisionCorrectedRule32",
-"printAndSendHoApplication","detainedPrintAndSendHoApplication",
-"printAndSendHoEvidence","detainedPrintAndSendHoEvidence",
-"printAndSendAppealDecision","detainedPrintAndSendAppealDecision",
-"printAndSendFTPADecision","detainedPrintAndSendFTPADecision",
-"printAndSendReheardHearingRequirements","detainedPrintAndSendReheardHearingRequirements"</text>
+"printAndSendHearingRequirements",
+"printAndSendHearingBundle",
+"printAndSendDecisionCorrectedRule31",
+"printAndSendDecisionCorrectedRule32",
+"printAndSendHoApplication",
+"printAndSendHoEvidence",
+"printAndSendAppealDecision",
+"printAndSendFTPADecision",
+"printAndSendReheardHearingRequirements"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0twexc7">
           <text></text>

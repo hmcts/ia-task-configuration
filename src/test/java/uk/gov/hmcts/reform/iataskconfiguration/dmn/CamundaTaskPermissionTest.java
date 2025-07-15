@@ -432,7 +432,8 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "detainedPrintAndSendHoBundle",
                 List.of(
                     taskSupervisor,
-                    nationalBusinessCentreAdminPriorityOne
+                    ctscAdminPriorityOne,
+                    ctscTeamLeaderPriorityOne
                 )
             ),
             Arguments.of(
@@ -453,7 +454,8 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "detainedPrintAndSendHearingRequirements",
                 List.of(
                     taskSupervisor,
-                    nationalBusinessCentreAdminPriorityOne
+                    ctscAdminPriorityOne,
+                    ctscTeamLeaderPriorityOne
                 )
             ),
             Arguments.of(
@@ -467,7 +469,8 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "detainedPrintAndSendHearingBundle",
                 List.of(
                     taskSupervisor,
-                    nationalBusinessCentreAdminPriorityOne
+                    ctscAdminPriorityOne,
+                    ctscTeamLeaderPriorityOne
                 )
             ),
             Arguments.of(
@@ -481,7 +484,8 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "detainedPrintAndSendDecisionCorrectedRule31",
                 List.of(
                     taskSupervisor,
-                    nationalBusinessCentreAdminPriorityOne
+                    ctscAdminPriorityOne,
+                    ctscTeamLeaderPriorityOne
                 )
             ),
             Arguments.of(
@@ -495,7 +499,8 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "detainedPrintAndSendDecisionCorrectedRule32",
                 List.of(
                     taskSupervisor,
-                    nationalBusinessCentreAdminPriorityOne
+                    ctscAdminPriorityOne,
+                    ctscTeamLeaderPriorityOne
                 )
             ),
             Arguments.of(
@@ -509,7 +514,8 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "detainedPrintAndSendHoApplication",
                 List.of(
                     taskSupervisor,
-                    nationalBusinessCentreAdminPriorityOne
+                    ctscAdminPriorityOne,
+                    ctscTeamLeaderPriorityOne
                 )
             ),
             Arguments.of(
@@ -523,7 +529,8 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "detainedPrintAndSendHoEvidence",
                 List.of(
                     taskSupervisor,
-                    nationalBusinessCentreAdminPriorityOne
+                    ctscAdminPriorityOne,
+                    ctscTeamLeaderPriorityOne
                 )
             ),
             Arguments.of(
@@ -537,7 +544,8 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "detainedPrintAndSendAppealDecision",
                 List.of(
                     taskSupervisor,
-                    nationalBusinessCentreAdminPriorityOne
+                    ctscAdminPriorityOne,
+                    ctscTeamLeaderPriorityOne
                 )
             ),
             Arguments.of(
@@ -551,7 +559,8 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "detainedPrintAndSendFTPADecision",
                 List.of(
                     taskSupervisor,
-                    nationalBusinessCentreAdminPriorityOne
+                    ctscAdminPriorityOne,
+                    ctscTeamLeaderPriorityOne
                 )
             ),
             Arguments.of(
@@ -565,7 +574,8 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "detainedPrintAndSendReheardHearingRequirements",
                 List.of(
                     taskSupervisor,
-                    nationalBusinessCentreAdminPriorityOne
+                    ctscAdminPriorityOne,
+                    ctscTeamLeaderPriorityOne
                 )
             )
         );
