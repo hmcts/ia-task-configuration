@@ -152,6 +152,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0det_addendum_completion">
+        <inputEntry id="UnaryTests_0det_add_comp">
+          <text>"markAddendumEvidenceAsReviewed"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0det_add_comp1">
+          <text>"detainedReviewAddendumEvidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0det_add_comp2">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_19ss4q7">
         <inputEntry id="UnaryTests_013vo07">
           <text>"reviewCmaRequirements"</text>
