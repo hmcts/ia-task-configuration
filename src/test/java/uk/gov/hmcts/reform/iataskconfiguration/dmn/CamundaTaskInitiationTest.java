@@ -1147,7 +1147,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
-                                      + "      \"remissionType\":\"" + "hoWaiverRemission" + "\"\n"
+                                      + "      \"remissionClaim\":\"" + "hoWaiverRemission" + "\"\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -1201,7 +1201,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"appealType\":\"" + "refusalOfEu" + "\",\n"
-                                      + "      \"remissionType\":\"" + "hoWaiverRemission" + "\"\n"
+                                      + "      \"remissionClaim\":\"" + "hoWaiverRemission" + "\"\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -1255,7 +1255,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"appealType\":\"" + "protection" + "\",\n"
-                                      + "      \"remissionType\":\"" + "hoWaiverRemission" + "\"\n"
+                                      + "      \"remissionClaim\":\"" + "hoWaiverRemission" + "\"\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -1309,7 +1309,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                                      + "      \"remissionType\":\"" + "hoWaiverRemission" + "\"\n"
+                                      + "      \"remissionClaim\":\"" + "hoWaiverRemission" + "\"\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -1363,7 +1363,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
-                                      + "      \"remissionType\":\"" + "hoWaiverRemission" + "\"\n"
+                                      + "      \"remissionClaim\":\"" + "hoWaiverRemission" + "\"\n"
                                       + "   }"
                                       + "}"),
                 List.of(
@@ -1417,7 +1417,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"appealType\":\"" + "refusalOfEu" + "\",\n"
-                                      + "      \"remissionType\":\"" + "hoWaiverRemission" + "\"\n"
+                                      + "      \"remissionClaim\":\"" + "hoWaiverRemission" + "\"\n"
                                       + "   }"
                                       + "}"),
                 List.of(
@@ -1471,7 +1471,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"appealType\":\"" + "protection" + "\",\n"
-                                      + "      \"remissionType\":\"" + "hoWaiverRemission" + "\"\n"
+                                      + "      \"remissionClaim\":\"" + "hoWaiverRemission" + "\"\n"
                                       + "   }"
                                       + "}"),
                 List.of(
@@ -1543,7 +1543,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                                      + "      \"remissionType\":\"" + "hoWaiverRemission" + "\"\n"
+                                      + "      \"remissionClaim\":\"" + "hoWaiverRemission" + "\"\n"
                                       + "   }"
                                       + "}"),
                 List.of(
@@ -1596,7 +1596,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 null,
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
-                                      + "      \"remissionType\":\"" + "hoWaiverRemission" + "\"\n"
+                                      + "      \"remissionClaim\":\"" + "hoWaiverRemission" + "\"\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -2508,7 +2508,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"appealType\":\"" + "protection" + "\",\n"
-                                      + "      \"remissionType\":\"" + "hoWaiverRemission" + "\"\n"
+                                      + "      \"remissionClaim\":\"" + "hoWaiverRemission" + "\"\n"
                                       + "   }"
                                       + "}"),
                 List.of(
