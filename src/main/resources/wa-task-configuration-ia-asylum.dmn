@@ -195,7 +195,7 @@
                         "followUpExtendedDirection","detainedFollowUpExtendedDirection",
                         "followUpNonStandardDirection","detainedFollowUpNonStandardDirection",
                         "reviewClarifyingQuestionsAnswers",
-                        "reviewRemissionApplication",
+                        "reviewRemissionApplication","detainedReviewRemissionApplication",
                         "assignAFTPAJudge",
                         "sendPaymentRequest",
                         "markAsPaid",
@@ -507,7 +507,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0xh5are">
-          <text>"reviewRemissionApplication","assignAFTPAJudge","listTheCase","sendPaymentRequest","markAsPaid","processFeeRefund","reviewDraftAppeal"</text>
+          <text>"reviewRemissionApplication","detainedReviewRemissionApplication","assignAFTPAJudge","listTheCase","sendPaymentRequest","markAsPaid","processFeeRefund","reviewDraftAppeal"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0vqliz7">
           <text>"roleCategory"</text>
@@ -551,6 +551,7 @@
                         else if taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "detainedProcessApplicationAdjourn" or taskType != null and taskType = "detainedProcessApplicationAdjourn)"
                         then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewRemissionApplication" or taskType != null and taskType = "reviewRemissionApplication") then "[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/recordRemissionDecision/recordRemissionDecisionremissionDecision)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewRemissionApplication" or taskType != null and taskType = "detainedReviewRemissionApplication") then "[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/recordRemissionDecision/recordRemissionDecisionremissionDecision)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "allocateHearingJudge" or taskType != null and taskType ="allocateHearingJudge") then "[Allocate Hearing Judge](/role-access/allocate-role/allocate?caseId=${[CASE_REFERENCE]}&amp;roleCategory=JUDICIAL&amp;jurisdiction=IA)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "prepareDecisionsAndReasons" or taskType != null and taskType = "prepareDecisionsAndReasons") then "[Prepare decisions and reasons](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/generateDecisionAndReasons)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "decideAnFTPA" or taskType != null and taskType = "decideAnFTPA") then "[Decide FTPA application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideFtpaApplication)"
@@ -730,6 +731,7 @@
 "reviewAddendumEvidence",
 "detainedReviewAddendumEvidence",
 "reviewRemissionApplication",
+"detainedReviewRemissionApplication",
 "assignAFTPAJudge",
 "listTheCase",
 "reviewSetAsideDecisionApplication",
