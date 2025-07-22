@@ -291,6 +291,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("reviewAdditionalHomeOfficeEvidence", decisionMakingWork),
             Arguments.of("detainedReviewAdditionalHomeOfficeEvidence", decisionMakingWork),
             Arguments.of("reviewAddendumHomeOfficeEvidence", decisionMakingWork),
+            Arguments.of("reviewAddendumEvidence", decisionMakingWork),
+            Arguments.of("detainedReviewAddendumEvidence", decisionMakingWork),
             Arguments.of("decideOnTimeExtension", decisionMakingWork),
             Arguments.of("sendDecisionsAndReasons", decisionMakingWork),
             Arguments.of("generateDraftDecisionAndReasons", hearingWork),
@@ -584,7 +586,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     @ParameterizedTest
     @CsvSource({
         "followUpExtendedDirection","detainedFollowUpExtendedDirection",
-        "createHearingBundle", "createCaseSummary", "reviewAddendumEvidence"
+        "createHearingBundle", "createCaseSummary", "reviewAddendumEvidence", "detainedReviewAddendumEvidence"
     })
     void when_taskId_then_return_legal_operations_role_category_can_reconfigure(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
@@ -1442,9 +1444,11 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             + "/${[CASE_REFERENCE]}/trigger/generateDecisionAndReasons),,,",
         "reviewAddendumEvidence,[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
             + "markAddendumEvidenceAsReviewed),,,",
+        "detainedReviewAddendumEvidence,[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
+            + "markAddendumEvidenceAsReviewed),,,",
         "editListing,[Edit case listing](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/editCaseListing),,,",
         "detainedEditListing,[Edit case listing](/case/IA/Asylum/${[CASE_REFERENCE]}"
-            + "/trigger/detainedEditCaseListing),,,",
+            + "/trigger/editCaseListing),,,",
         "decideAnFTPA,[Decide FTPA application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideFtpaApplication),,,",
         "prepareDecisionsAndReasons,[Prepare decisions and reasons](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
             + "generateDecisionAndReasons),,,",
@@ -1616,6 +1620,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("followUpNoticeOfChange", twoDays),
             Arguments.of("detainedFollowUpNoticeOfChange", twoDays),
             Arguments.of("reviewAddendumEvidence", twoDays),
+            Arguments.of("detainedReviewAddendumEvidence", twoDays),
             Arguments.of("reviewRemissionApplication", twoDays),
             Arguments.of("assignAFTPAJudge", twoDays),
             Arguments.of("detainedAssignAFTPAJudge", twoDays),

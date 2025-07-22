@@ -759,6 +759,40 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
     @SuppressWarnings("checkstyle:indentation")
     @ParameterizedTest
     @CsvSource(value = {
+        "reviewAddendumEvidence", "detainedReviewAddendumEvidence"
+    })
+    void given_addendum_taskType_when_evaluate_dmn_then_it_returns_expected(String taskType) {
+        VariableMap inputVariables = new VariableMapImpl();
+        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        MatcherAssert.assertThat(dmnDecisionTableResult.getResultList(), is(List.of(
+            Map.of(
+                "name", "task-supervisor",
+                "value", "Read,Execute,Claim,Manage,Unassign,Assign,Complete,Cancel",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "tribunal-caseworker",
+                "value", "Read,Execute,Claim,Manage,Unassign,Assign,Complete,Cancel",
+                "roleCategory", "LEGAL_OPERATIONS",
+                "assignmentPriority", 2,
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "senior-tribunal-caseworker",
+                "value", "Read,Execute,Claim,Manage,Unassign,Assign,Complete,Cancel",
+                "roleCategory", "LEGAL_OPERATIONS",
+                "assignmentPriority", 2,
+                "autoAssignable", false
+            )
+        )));
+    }
+
+    @SuppressWarnings("checkstyle:indentation")
+    @ParameterizedTest
+    @CsvSource(value = {
         "editListing", "detainedEditListing"
     })
     void given_taskType_when_evaluate_dmn_then_it_returns_expected(String taskType) {
