@@ -272,7 +272,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1ps3x4j">
-          <text>"generateDraftDecisionAndReasons","uploadDecision","uploadHearingRecording","postHearingAttendeesDurationAndRecording","detainedPostHearingAttendeesDurationAndRecording","editListing","followUpOverdueHearingRequirements","reviewHearingRequirements","allocateHearingJudge","prepareDecisionsAndReasons","startDecisionsAndReasonsDocument","createHearingBundle","createCaseSummary","listTheCase","hearingException","cmrListed","detainedCmrListed","cmrUpdated","detainedCmrUpdated","relistCase","reviewInterpreters","detainedEditListing","detainedListCmr"</text>
+          <text>"generateDraftDecisionAndReasons","uploadDecision","uploadHearingRecording","postHearingAttendeesDurationAndRecording","detainedPostHearingAttendeesDurationAndRecording","editListing","followUpOverdueHearingRequirements","detainedFollowUpOverdueHearingRequirements","reviewHearingRequirements","allocateHearingJudge","prepareDecisionsAndReasons","startDecisionsAndReasonsDocument","createHearingBundle","createCaseSummary","listTheCase","hearingException","cmrListed","detainedCmrListed","cmrUpdated","detainedCmrUpdated","relistCase","reviewInterpreters","detainedEditListing","detainedListCmr"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0c3eia6">
           <text>"workType"</text>
@@ -425,7 +425,7 @@
                         "followUpOverdueClarifyingAnswers",
                         "followUpOverdueCmaRequirements",
                         "followUpOverdueRespondentReview","detainedFollowUpOverdueRespondentReview",
-                        "followUpOverdueHearingRequirements",
+                        "followUpOverdueHearingRequirements","detainedFollowUpOverdueHearingRequirements",
                         "followUpNonStandardDirection","detainedFollowUpNonStandardDirection",
                         "followUpNoticeOfChange","detainedFollowUpNoticeOfChange",
                         "reviewAdditionalEvidence","detainedReviewAdditionalEvidence",
@@ -724,7 +724,7 @@
 "followUpOverdueClarifyingAnswers",
 "followUpOverdueCmaRequirements",
 "followUpOverdueRespondentReview","detainedFollowUpOverdueRespondentReview",
-"followUpOverdueHearingRequirements",
+"followUpOverdueHearingRequirements","detainedFollowUpOverdueHearingRequirements",
 "followUpNonStandardDirection","detainedFollowUpNonStandardDirection",
 "followUpNoticeOfChange","detainedFollowUpNoticeOfChange",
 "reviewAddendumEvidence",

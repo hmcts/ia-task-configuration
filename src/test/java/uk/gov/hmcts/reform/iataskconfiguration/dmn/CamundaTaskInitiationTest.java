@@ -1305,6 +1305,19 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "requestHearingRequirementsFeature",
+                "submitHearingRequirements",
+                merge(variablesDirectionDueDate,appellantInDetention),
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedFollowUpOverdueHearingRequirements",
+                        "name", "Detained - Follow-up overdue hearing requirements",
+                        "processCategories", "followUpOverdue",
+                        "delayUntil", delayUntilDirectionDue
+                    )
+                )
+            ),
+            Arguments.of(
                 "sendDirection",
                 null,
                 variablesDirectionDueDate,
@@ -3476,7 +3489,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(28));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(137));
+        assertThat(logic.getRules().size(), is(138));
 
     }
 

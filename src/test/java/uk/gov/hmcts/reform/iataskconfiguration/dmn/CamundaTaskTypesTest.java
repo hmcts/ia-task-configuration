@@ -282,6 +282,11 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                    "Follow-up overdue hearing requirements"
             ),
             Map.of("taskTypeId",
+                   "detainedFollowUpOverdueHearingRequirements",
+                   "taskTypeName",
+                   "Follow-up overdue hearing requirements"
+            ),
+            Map.of("taskTypeId",
                    "followUpNonStandardDirection",
                    "taskTypeName",
                    "Follow-up non-standard direction"
@@ -543,7 +548,7 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(1));
         assertThat(logic.getOutputs().size(), is(2));
-        assertThat(logic.getRules().size(), is(95));
+        assertThat(logic.getRules().size(), is(97));
 
     }
 }

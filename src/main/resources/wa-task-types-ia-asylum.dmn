@@ -537,6 +537,17 @@
           <text>"Follow-up overdue hearing requirements"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_006ccyd">
+        <inputEntry id="UnaryTests_1vg1422">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_15eajkk">
+          <text>"detainedFollowUpOverdueHearingRequirements"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0416vo7">
+          <text>"Detained - Follow-up overdue hearing requirements"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1ui4tfa">
         <inputEntry id="UnaryTests_1m1xqnn">
           <text></text>
@@ -711,6 +722,17 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_12y756g">
           <text>"List the case"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1asdp2r">
+        <inputEntry id="UnaryTests_03j503j">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ppb4sq">
+          <text>"detainedListTheCase"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1xxe3np">
+          <text>"Detained - List the case"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1qiyph4">
