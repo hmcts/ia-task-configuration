@@ -548,6 +548,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1yg0rp4">
+        <inputEntry id="UnaryTests_0e5b712">
+          <text>"sendDecisionAndReasons"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1l38iza">
+          <text>"detainedSendDecisionsAndReasons"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1is995f">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1s2se0d">
         <inputEntry id="UnaryTests_1diis8c">
           <text>"generateDecisionAndReasons"</text>

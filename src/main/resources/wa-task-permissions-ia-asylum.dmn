@@ -464,7 +464,7 @@
         <inputEntry id="UnaryTests_1oxh1tt">
           <text>
           "processApplicationToReviewDecision","detainedProcessApplicationToReviewDecision",
-          "sendDecisionsAndReasons",
+          "sendDecisionsAndReasons","detainedSendDecisionsAndReasons",
           "prepareDecisionsAndReasons",
           "reviewSetAsideDecisionApplication","detainedReviewSetAsideDecisionApplication"
 </text>
@@ -499,7 +499,7 @@
         <inputEntry id="UnaryTests_1099gbv">
           <text>
             "processApplicationToReviewDecision","detainedProcessApplicationToReviewDecision",
-            "sendDecisionsAndReasons",
+            "sendDecisionsAndReasons","detainedSendDecisionsAndReasons",
             "decideAnFTPA",
             "prepareDecisionsAndReasons",
             "reviewSetAsideDecisionApplication","detainedReviewSetAsideDecisionApplication",

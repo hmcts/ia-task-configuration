@@ -614,6 +614,17 @@
           <text>"Send decisions and reasons"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1ww69lc">
+        <inputEntry id="UnaryTests_0mtd9pl">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_149asud">
+          <text>"detainedSendDecisionsAndReasons"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1yuosc5">
+          <text>"Detained - Send decisions and reasons"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_11i7nj2">
         <inputEntry id="UnaryTests_1fxpdzy">
           <text></text>
