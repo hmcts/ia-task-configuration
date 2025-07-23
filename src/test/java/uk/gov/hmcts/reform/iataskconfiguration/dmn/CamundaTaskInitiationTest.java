@@ -1305,15 +1305,17 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "requestHearingRequirementsFeature",
+                "forceCaseToSubmitHearingRequirements",
                 "submitHearingRequirements",
-                merge(variablesDirectionDueDate,appellantInDetention),
+                merge(delayUntilDirectionDue,appellantInDetention),
                 singletonList(
                     Map.of(
                         "taskId", "detainedFollowUpOverdueHearingRequirements",
                         "name", "Detained - Follow-up overdue hearing requirements",
                         "processCategories", "followUpOverdue",
-                        "delayUntil", delayUntilDirectionDue
+                        "delayUntil", Map.of(
+                        "delayUntilOrigin", LocalDate.now(),
+                        "delayUntilIntervalDays", "5")
                     )
                 )
             ),

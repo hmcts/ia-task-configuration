@@ -6612,7 +6612,7 @@
       </rule>
       <rule id="DecisionRule_1ngrlyn">
         <inputEntry id="UnaryTests_0gfszf9">
-          <text>"requestHearingRequirementsFeature"</text>
+          <text>"forceCaseToSubmitHearingRequirements"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_13ypr4r">
           <text>"submitHearingRequirements"</text>
@@ -6703,8 +6703,8 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0hqmpb3">
           <text>{
-"delayUntil": directionDueDate,
-"delayUntilIntervalDays": "0"
+"delayUntilOrigin": today(),
+"delayUntilIntervalDays":"5"
 }</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0588cp5">
