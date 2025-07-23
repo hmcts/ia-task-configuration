@@ -352,6 +352,11 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                    "Assign a FTPA Judge"
             ),
             Map.of("taskTypeId",
+                     "detainedAssignAFTPAJudge",
+                     "taskTypeName",
+                     "Detained - Assign a FTPA Judge"
+            ),
+            Map.of("taskTypeId",
                    "listTheCase",
                    "taskTypeName",
                    "List the case"

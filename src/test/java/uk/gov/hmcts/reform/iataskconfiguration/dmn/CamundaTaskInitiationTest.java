@@ -89,6 +89,25 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     )
                 )
             ),
+                Arguments.of(
+                        "applyForFTPAAppellant",
+                        null,
+                        appellantInDetention,
+                        List.of(
+                                Map.of(
+                                        "taskId", "decideAnFTPA",
+                                        "name", "Decide an FTPA",
+
+                                        "processCategories", "caseProgression"
+                                ),
+                                Map.of(
+                                        "taskId", "detainedAssignAFTPAJudge",
+                                        "name", "Detained - Assign a FTPA Judge",
+
+                                        "processCategories", "caseProgression"
+                                )
+                        )
+                ),
             Arguments.of(
                 "applyForFTPARespondent",
                 null,
@@ -108,6 +127,25 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     )
                 )
             ),
+                Arguments.of(
+                        "applyForFTPARespondent",
+                        null,
+                        appellantInDetention,
+                        List.of(
+                                Map.of(
+                                        "taskId", "decideAnFTPA",
+                                        "name", "Decide an FTPA",
+
+                                        "processCategories", "caseProgression"
+                                ),
+                                Map.of(
+                                        "taskId", "detainedAssignAFTPAJudge",
+                                        "name", "Detained - Assign a FTPA Judge",
+
+                                        "processCategories", "caseProgression"
+                                )
+                        )
+                ),
             Arguments.of(
                 "generateDecisionAndReasons",
                 "decision",
@@ -3491,7 +3529,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(28));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(138));
+        assertThat(logic.getRules().size(), is(139));
 
     }
 
