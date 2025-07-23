@@ -152,6 +152,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0det_addendum_completion">
+        <inputEntry id="UnaryTests_0det_add_comp">
+          <text>"markAddendumEvidenceAsReviewed"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0det_add_comp1">
+          <text>"detainedReviewAddendumEvidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0det_add_comp2">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_19ss4q7">
         <inputEntry id="UnaryTests_013vo07">
           <text>"reviewCmaRequirements"</text>
@@ -537,6 +548,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1yg0rp4">
+        <inputEntry id="UnaryTests_0e5b712">
+          <text>"sendDecisionAndReasons"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1l38iza">
+          <text>"detainedSendDecisionsAndReasons"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1is995f">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1s2se0d">
         <inputEntry id="UnaryTests_1diis8c">
           <text>"generateDecisionAndReasons"</text>
@@ -600,6 +622,17 @@
           <text>"assignAFTPAJudge"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0du9mzp">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1plegka">
+        <inputEntry id="UnaryTests_1y1ndzx">
+          <text>"recordAllocatedJudge"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0rbyfmk">
+          <text>"detainedAssignAFTPAJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1gs88a2">
           <text>"Auto"</text>
         </outputEntry>
       </rule>
