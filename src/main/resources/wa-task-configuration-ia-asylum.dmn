@@ -194,7 +194,7 @@
                         "followUpExtendedDirection",
                         "followUpNonStandardDirection",
                         "reviewClarifyingQuestionsAnswers",
-                        "reviewRemissionApplication", "reviewLARemission", "reviewASRemission", "reviewHOWaiverRemission", "reviewAuthorityRemission", "reviewHWFRemission", "reviewECRRemission",
+                        "reviewRemissionApplication", "reviewASRemission",
                         "assignAFTPAJudge",
                         "sendPaymentRequest",
                         "markAsPaid",
@@ -470,7 +470,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1glizm3">
-          <text>"arrangeOfflinePayment","markCaseAsPaid","allocateHearingJudge","uploadHearingRecording","postHearingAttendeesDurationAndRecording","editListing","followUpSetAsideDecision","hearingException","cmrListed","cmrUpdated","relistCase","reviewInterpreters","reviewMigratedCase","reviewAriaRemissionApplication", "reviewLARemission", "reviewASRemission", "reviewHOWaiverRemission", "reviewAuthorityRemission", "reviewHWFRemission", "reviewECRRemission", "printAndSendHoBundle","printAndSendHoResponse","printAndSendHearingRequirements","printAndSendHearingBundle","printAndSendDecisionCorrectedRule31","printAndSendDecisionCorrectedRule32","printAndSendHoApplication","printAndSendHoEvidence","printAndSendAppealDecision","printAndSendFTPADecision","printAndSendReheardHearingRequirements"</text>
+          <text>"arrangeOfflinePayment","markCaseAsPaid","allocateHearingJudge","uploadHearingRecording","postHearingAttendeesDurationAndRecording","editListing","followUpSetAsideDecision","hearingException","cmrListed","cmrUpdated","relistCase","reviewInterpreters","reviewMigratedCase","reviewAriaRemissionApplication", "reviewASRemission","printAndSendHoBundle","printAndSendHoResponse","printAndSendHearingRequirements","printAndSendHearingBundle","printAndSendDecisionCorrectedRule31","printAndSendDecisionCorrectedRule32","printAndSendHoApplication","printAndSendHoEvidence","printAndSendAppealDecision","printAndSendFTPADecision","printAndSendReheardHearingRequirements"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1131kat">
           <text>"roleCategory"</text>
@@ -504,7 +504,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0xh5are">
-          <text>"reviewRemissionApplication", "reviewLARemission", "reviewASRemission", "reviewHOWaiverRemission", "reviewAuthorityRemission", "reviewHWFRemission", "reviewECRRemission", "assignAFTPAJudge","listTheCase","sendPaymentRequest","markAsPaid","processFeeRefund","reviewDraftAppeal"</text>
+          <text>"reviewRemissionApplication", "reviewASRemission", "assignAFTPAJudge","listTheCase","sendPaymentRequest","markAsPaid","processFeeRefund","reviewDraftAppeal"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0vqliz7">
           <text>"roleCategory"</text>
@@ -714,12 +714,7 @@
 "cmrListed",
 "cmrUpdated",
 "reviewAriaRemissionApplication",
-"reviewLARemission",
-"reviewASRemission",
-"reviewHOWaiverRemission",
-"reviewAuthorityRemission",
-"reviewHWFRemission",
-"reviewECRRemission"</text>
+"reviewASRemission"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1kbin0j">
           <text>"dueDateIntervalDays"</text>
