@@ -1996,7 +1996,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "listing",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
-                                      + "          \"autoHearingRequestEnabled\" : " + false + "\n"
+                                      + "          \"autoHearingRequestEnabled\" : " + false + ",\n"
+                                      + "          \"appellantInDetention\" : " + false + "\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -2010,6 +2011,174 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "reviewHearingRequirements",
+                "listing",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "          \"autoHearingRequestEnabled\" : " + false + ",\n"
+                                      + "          \"appellantInDetention\" : " + true + "\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedListTheCase",
+                        "name", "Detained - List the case",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "reviewHearingRequirements",
+                "listing",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "          \"isIntegrated\" : " + false + ",\n"
+                                      + "          \"autoHearingRequestEnabled\" : " + true + ",\n"
+                                      + "          \"appellantInDetention\" : " + false + "\n"
+
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "listTheCase",
+                        "name", "List the case",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "reviewHearingRequirements",
+                "listing",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "          \"isIntegrated\" : " + false + ",\n"
+                                      + "          \"autoHearingRequestEnabled\" : " + true + ",\n"
+                                      + "          \"appellantInDetention\" : " + true + "\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedListTheCase",
+                        "name", "Detained - List the case",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "reviewHearingRequirements",
+                "listing",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "          \"isIntegrated\" : " + true + ",\n"
+                                      + "          \"isPanelRequired\" : " + true + ",\n"
+                                      + "          \"appellantInDetention\" : " + false + "\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "listTheCase",
+                        "name", "List the case",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "reviewHearingRequirements",
+                "listing",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "          \"isIntegrated\" : " + true + ",\n"
+                                      + "          \"isPanelRequired\" : " + true + ",\n"
+                                      + "          \"appellantInDetention\" : " + true + "\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedListTheCase",
+                        "name", "Detained - List the case",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "listCaseWithoutHearingRequirements",
+                "listing",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "          \"isIntegrated\" : " + true + "\n"
+                                      + "          \"isPanelRequired\" : " + true + "\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "listTheCase",
+                        "name", "List the case",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+//            Arguments.of(
+//                "listCaseWithoutHearingRequirements",
+//                "listing",
+//                mapAdditionalData("{\n"
+//                                      + "   \"Data\":{\n"
+//                                      + "          \"isIntegrated\" : " + true + ",\n"
+//                                      + "          \"isPanelRequired\" : " + true + ",\n"
+//                                      + "          \"appellantInDetention\" : " + true + "\n"
+//                                      + "   }"
+//                                      + "}"),
+//                singletonList(
+//                    Map.of(
+//                        "taskId", "detainedListTheCase",
+//                        "name", "Detained - List the case",
+//
+//                        "processCategories", "caseProgression"
+//                    )
+//                )
+//            ),
+            Arguments.of(
+                "listCaseWithoutHearingRequirements",
+                "listing",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "          \"autoHearingRequestEnabled\" : " + false + "\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "listTheCase",
+                        "name", "List the case",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "listCaseWithoutHearingRequirements",
+                "listing",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "          \"autoHearingRequestEnabled\" : " + false + ",\n"
+                                      + "          \"appellantInDetention\" : " + true + "\n"
+
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedListTheCase",
+                        "name", "Detained - List the case",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "listCaseWithoutHearingRequirements",
                 "listing",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
@@ -2027,71 +2196,19 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "reviewHearingRequirements",
-                "listing",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "          \"isIntegrated\" : " + true + "\n"
-                                      + "          \"isPanelRequired\" : " + true + "\n"
-                                      + "   }"
-                                      + "}"),
-                singletonList(
-                    Map.of(
-                        "taskId", "listTheCase",
-                        "name", "List the case",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
                 "listCaseWithoutHearingRequirements",
                 "listing",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
-                                      + "          \"isIntegrated\" : " + true + "\n"
-                                      + "          \"isPanelRequired\" : " + true + "\n"
+                                      + "          \"isIntegrated\" : " + false + ",\n"
+                                      + "          \"autoHearingRequestEnabled\" : " + true + ",\n"
+                                      + "          \"appellantInDetention\" : " + true + "\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
                     Map.of(
-                        "taskId", "listTheCase",
-                        "name", "List the case",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
-                "listCaseWithoutHearingRequirements",
-                "listing",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "          \"autoHearingRequestEnabled\" : " + false + "\n"
-                                      + "   }"
-                                      + "}"),
-                singletonList(
-                    Map.of(
-                        "taskId", "listTheCase",
-                        "name", "List the case",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
-                "listCaseWithoutHearingRequirements",
-                "listing",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "          \"isIntegrated\" : " + false + "\n"
-                                      + "          \"autoHearingRequestEnabled\" : " + true + "\n"
-                                      + "   }"
-                                      + "}"),
-                singletonList(
-                    Map.of(
-                        "taskId", "listTheCase",
-                        "name", "List the case",
+                        "taskId", "detainedListTheCase",
+                        "name", "Detained - List the case",
 
                         "processCategories", "caseProgression"
                     )
@@ -3476,7 +3593,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(28));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(137));
+        assertThat(logic.getRules().size(), is(140));
 
     }
 
