@@ -718,7 +718,13 @@
 "reviewSetAsideDecisionApplication",
 "cmrListed",
 "cmrUpdated",
-"reviewAriaRemissionApplication", "reviewLARemission", "reviewASRemission", "reviewHOWaiverRemission", "reviewAuthorityRemission", "reviewHWFRemission", "reviewECRRemission"</text>
+"reviewAriaRemissionApplication",
+"reviewLARemission",
+"reviewASRemission",
+"reviewHOWaiverRemission",
+"reviewAuthorityRemission",
+"reviewHWFRemission",
+"reviewECRRemission"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1kbin0j">
           <text>"dueDateIntervalDays"</text>
