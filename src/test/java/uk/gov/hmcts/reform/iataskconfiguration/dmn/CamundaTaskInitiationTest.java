@@ -2122,25 +2122,25 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     )
                 )
             ),
-//            Arguments.of(
-//                "listCaseWithoutHearingRequirements",
-//                "listing",
-//                mapAdditionalData("{\n"
-//                                      + "   \"Data\":{\n"
-//                                      + "          \"isIntegrated\" : " + true + ",\n"
-//                                      + "          \"isPanelRequired\" : " + true + ",\n"
-//                                      + "          \"appellantInDetention\" : " + true + "\n"
-//                                      + "   }"
-//                                      + "}"),
-//                singletonList(
-//                    Map.of(
-//                        "taskId", "detainedListTheCase",
-//                        "name", "Detained - List the case",
-//
-//                        "processCategories", "caseProgression"
-//                    )
-//                )
-//            ),
+            Arguments.of(
+                "listCaseWithoutHearingRequirements",
+                "listing",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "          \"isIntegrated\" : " + true + ",\n"
+                                      + "          \"isPanelRequired\" : " + true + ",\n"
+                                      + "          \"appellantInDetention\" : " + true + "\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedListTheCase",
+                        "name", "Detained - List the case",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
             Arguments.of(
                 "listCaseWithoutHearingRequirements",
                 "listing",
