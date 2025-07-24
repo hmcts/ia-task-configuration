@@ -559,6 +559,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1yg0rp4">
+        <inputEntry id="UnaryTests_0e5b712">
+          <text>"sendDecisionAndReasons"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1l38iza">
+          <text>"detainedSendDecisionsAndReasons"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1is995f">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1s2se0d">
         <inputEntry id="UnaryTests_1diis8c">
           <text>"generateDecisionAndReasons"</text>
@@ -622,6 +633,17 @@
           <text>"assignAFTPAJudge"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0du9mzp">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1plegka">
+        <inputEntry id="UnaryTests_1y1ndzx">
+          <text>"recordAllocatedJudge"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0rbyfmk">
+          <text>"detainedAssignAFTPAJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1gs88a2">
           <text>"Auto"</text>
         </outputEntry>
       </rule>
