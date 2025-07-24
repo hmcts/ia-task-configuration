@@ -193,6 +193,14 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "detainedAssignAFTPAJudge",
+                List.of(
+                    taskSupervisor,
+                    ctscAdminPriorityOne,
+                    ctscTeamLeaderPriorityOne
+                )
+            ),
+            Arguments.of(
                 "reviewRemissionApplication",
                 List.of(
                     taskSupervisor,
@@ -254,6 +262,14 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "sendDecisionsAndReasons",
+                List.of(
+                    taskSupervisor,
+                    hearingJudgePriorityOne,
+                    judgePriorityOne
+                )
+            ),
+            Arguments.of(
+                "detainedSendDecisionsAndReasons",
                 List.of(
                     taskSupervisor,
                     hearingJudgePriorityOne,
