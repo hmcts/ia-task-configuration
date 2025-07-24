@@ -768,17 +768,6 @@
           <text>"Print and send reheard appeal hearing requirements form"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_00ajh42">
-        <inputEntry id="UnaryTests_1uiw3lw">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1yravbo">
-          <text>"reviewLARemission"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0vpu4vk">
-          <text>"Review LA remission"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_0cyactm">
         <inputEntry id="UnaryTests_00h8bfs">
           <text></text>
@@ -788,50 +777,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_05vd934">
           <text>"Review AS remission"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1bkjhc7">
-        <inputEntry id="UnaryTests_1su52n8">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0yfqyzm">
-          <text>"reviewHOWaiverRemission"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0o3w3dt">
-          <text>"Review HO waiver remission"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1hu5qne">
-        <inputEntry id="UnaryTests_1an9bcy">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0n7xrgt">
-          <text>"reviewAuthorityRemission"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1t0w58u">
-          <text>"Review Authority remission"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1dse6pl">
-        <inputEntry id="UnaryTests_1tv374m">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1nwcn6x">
-          <text>"reviewHWFRemission"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0xe08yk">
-          <text>"Review HWF remission"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1436vj5">
-        <inputEntry id="UnaryTests_1f9vsne">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0q57baf">
-          <text>"reviewECRRemission"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0bskdld">
-          <text>"Review ECR Remission"</text>
         </outputEntry>
       </rule>
     </decisionTable>

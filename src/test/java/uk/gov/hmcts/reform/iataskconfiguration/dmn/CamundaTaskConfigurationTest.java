@@ -243,12 +243,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("followUpNonStandardDirection", routineWork),
             Arguments.of("reviewClarifyingQuestionsAnswers", routineWork),
             Arguments.of("reviewRemissionApplication", routineWork),
-            Arguments.of("reviewLARemission", routineWork),
             Arguments.of("reviewASRemission", routineWork),
-            Arguments.of("reviewHOWaiverRemission", routineWork),
-            Arguments.of("reviewAuthorityRemission", routineWork),
-            Arguments.of("reviewHWFRemission", routineWork),
-            Arguments.of("reviewECRRemission", routineWork),
             Arguments.of("assignAFTPAJudge", routineWork),
             Arguments.of("reviewAppealSetAsideUnderRule35", routineWork),
             Arguments.of("reviewAppealSetAsideUnderRule32", routineWork),
@@ -1147,17 +1142,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             + "decideAnApplication),,,",
         "reviewRemissionApplication,[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/"
             + "recordRemissionDecision/recordRemissionDecisionremissionDecision),,,",
-        "reviewLARemission,[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/"
-            + "recordRemissionDecision/recordRemissionDecisionremissionDecision),,,",
         "reviewASRemission,[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/"
-            + "recordRemissionDecision/recordRemissionDecisionremissionDecision),,,",
-        "reviewHOWaiverRemission,[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/"
-            + "recordRemissionDecision/recordRemissionDecisionremissionDecision),,,",
-        "reviewAuthorityRemission,[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/"
-            + "recordRemissionDecision/recordRemissionDecisionremissionDecision),,,",
-        "reviewHWFRemission,[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/"
-            + "recordRemissionDecision/recordRemissionDecisionremissionDecision),,,",
-        "reviewECRRemission,[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/"
             + "recordRemissionDecision/recordRemissionDecisionremissionDecision),,,",
         "assignAFTPAJudge,[Record allocated Judge](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
             + "recordAllocatedJudge),,,",
@@ -1306,12 +1291,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("followUpNoticeOfChange", twoDays),
             Arguments.of("reviewAddendumEvidence", twoDays),
             Arguments.of("reviewRemissionApplication", twoDays),
-            Arguments.of("reviewLARemission", twoDays),
             Arguments.of("reviewASRemission", twoDays),
-            Arguments.of("reviewHOWaiverRemission", twoDays),
-            Arguments.of("reviewAuthorityRemission", twoDays),
-            Arguments.of("reviewHWFRemission", twoDays),
-            Arguments.of("reviewECRRemission", twoDays),
             Arguments.of("assignAFTPAJudge", twoDays),
             Arguments.of("listTheCase", twoDays),
             Arguments.of("reviewSetAsideDecisionApplication", twoDays),
