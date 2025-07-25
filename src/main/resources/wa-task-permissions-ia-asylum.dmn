@@ -60,7 +60,7 @@
             "reviewTheAppeal","detainedReviewTheAppeal",
             "reviewRespondentEvidence","detainedReviewRespondentEvidence",
             "followUpOverdueRespondentEvidence","detainedFollowUpOverdueRespondentEvidence",
-            "reviewAppealSkeletonArgument",
+            "reviewAppealSkeletonArgument","detainedReviewAppealSkeletonArgument",
             "followUpOverdueCaseBuilding","detainedFollowUpOverdueCaseBuilding",
             "reviewReasonsForAppeal",
             "followUpOverdueReasonsForAppeal",
@@ -130,7 +130,7 @@
             "reviewTheAppeal","detainedReviewTheAppeal",
             "reviewRespondentEvidence","detainedReviewRespondentEvidence",
             "followUpOverdueRespondentEvidence","detainedFollowUpOverdueRespondentEvidence",
-            "reviewAppealSkeletonArgument",    "followUpOverdueCaseBuilding","detainedFollowUpOverdueCaseBuilding",
+            "reviewAppealSkeletonArgument","detainedReviewAppealSkeletonArgument","followUpOverdueCaseBuilding","detainedFollowUpOverdueCaseBuilding",
             "reviewReasonsForAppeal",
             "followUpOverdueReasonsForAppeal",
             "reviewClarifyingQuestionsAnswers",
@@ -201,7 +201,7 @@
             "reviewTheAppeal","detainedReviewTheAppeal",
             "reviewRespondentEvidence","detainedReviewRespondentEvidence",
             "followUpOverdueRespondentEvidence","detainedFollowUpOverdueRespondentEvidence",
-            "reviewAppealSkeletonArgument",
+            "reviewAppealSkeletonArgument","detainedReviewAppealSkeletonArgument",
             "followUpOverdueCaseBuilding","detainedFollowUpOverdueCaseBuilding",
             "reviewReasonsForAppeal",
             "followUpOverdueReasonsForAppeal",
@@ -358,9 +358,10 @@
         <description>Hearing centre admin task permissions</description>
         <inputEntry id="UnaryTests_0tzrow3">
           <text>
-            "allocateHearingJudge",
+            "allocateHearingJudge","detainedAllocateHearingJudge",
             "uploadHearingRecording",
             "postHearingAttendeesDurationAndRecording",
+            "detainedPostHearingAttendeesDurationAndRecording",
             "editListing","detainedEditListing",
             "followUpSetAsideDecision",
 "hearingException","cmrListed","detainedCmrListed","cmrUpdated","detainedCmrUpdated","relistCase","listTheCase","detainedListTheCase","reviewInterpreters",
@@ -396,6 +397,7 @@
         <inputEntry id="UnaryTests_0vmy0oj">
           <text>
             "reviewAddendumEvidence",
+            "detainedReviewAddendumEvidence",
             "editListing","reviewEditListing","detainedEditListing"
 </text>
         </inputEntry>
@@ -428,6 +430,7 @@
         <inputEntry id="UnaryTests_0co919o">
           <text>
             "reviewAddendumEvidence",
+            "detainedReviewAddendumEvidence",
             "editListing","detainedEditListing"
 </text>
         </inputEntry>
@@ -461,7 +464,7 @@
         <inputEntry id="UnaryTests_1oxh1tt">
           <text>
           "processApplicationToReviewDecision","detainedProcessApplicationToReviewDecision",
-          "sendDecisionsAndReasons",
+          "sendDecisionsAndReasons","detainedSendDecisionsAndReasons",
           "prepareDecisionsAndReasons",
           "reviewSetAsideDecisionApplication","detainedReviewSetAsideDecisionApplication"
 </text>
@@ -496,8 +499,8 @@
         <inputEntry id="UnaryTests_1099gbv">
           <text>
             "processApplicationToReviewDecision","detainedProcessApplicationToReviewDecision",
-            "sendDecisionsAndReasons",
-            "decideAnFTPA","detainedDecideAnFTPA",
+            "sendDecisionsAndReasons","detainedSendDecisionsAndReasons","detainedDecideAnFTPA",
+            "decideAnFTPA",
             "prepareDecisionsAndReasons",
             "reviewSetAsideDecisionApplication","detainedReviewSetAsideDecisionApplication",
             "processApplicationChangeHearingType","detainedProcessApplicationChangeHearingType"

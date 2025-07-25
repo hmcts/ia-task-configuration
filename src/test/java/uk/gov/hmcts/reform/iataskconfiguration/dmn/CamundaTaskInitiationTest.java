@@ -89,6 +89,25 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     )
                 )
             ),
+                Arguments.of(
+                        "applyForFTPAAppellant",
+                        null,
+                        appellantInDetention,
+                        List.of(
+                                Map.of(
+                                        "taskId", "decideAnFTPA",
+                                        "name", "Decide an FTPA",
+
+                                        "processCategories", "caseProgression"
+                                ),
+                                Map.of(
+                                        "taskId", "detainedAssignAFTPAJudge",
+                                        "name", "Detained - Assign a FTPA Judge",
+
+                                        "processCategories", "caseProgression"
+                                )
+                        )
+                ),
             Arguments.of(
                 "applyForFTPARespondent",
                 null,
@@ -108,6 +127,25 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     )
                 )
             ),
+                Arguments.of(
+                        "applyForFTPARespondent",
+                        null,
+                        appellantInDetention,
+                        List.of(
+                                Map.of(
+                                        "taskId", "decideAnFTPA",
+                                        "name", "Decide an FTPA",
+
+                                        "processCategories", "caseProgression"
+                                ),
+                                Map.of(
+                                        "taskId", "detainedAssignAFTPAJudge",
+                                        "name", "Detained - Assign a FTPA Judge",
+
+                                        "processCategories", "caseProgression"
+                                )
+                        )
+                ),
             Arguments.of(
                 "generateDecisionAndReasons",
                 "decision",
@@ -116,6 +154,21 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "sendDecisionsAndReasons",
                         "name", "Send decisions and reasons",
+
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+
+            Arguments.of(
+                "generateDecisionAndReasons",
+                "decision",
+                appellantInDetention,
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedSendDecisionsAndReasons",
+                        "name", "Detained - Send decisions and reasons",
 
 
                         "processCategories", "caseProgression"
@@ -790,6 +843,20 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "submitCase",
+                "caseUnderReview",
+                appellantInDetention,
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedReviewAppealSkeletonArgument",
+                        "name", "Detained - Review Appeal Skeleton Argument",
+
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
                 "buildCase",
                 "caseUnderReview",
                 null,
@@ -797,6 +864,20 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewAppealSkeletonArgument",
                         "name", "Review Appeal Skeleton Argument",
+
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "buildCase",
+                "caseUnderReview",
+                appellantInDetention,
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedReviewAppealSkeletonArgument",
+                        "name", "Detained - Review Appeal Skeleton Argument",
 
 
                         "processCategories", "caseProgression"
@@ -915,8 +996,34 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "processCategories", "caseProgression"
                     ),
                     Map.of(
-                        "taskId", "postHearingAttendeesDurationAndRecording",
-                        "name", "Post hearing – attendees, duration and recording",
+                        "taskId", "detainedPostHearingAttendeesDurationAndRecording",
+                        "name", "Detained - Post hearing – attendees, duration and recording",
+                        "processCategories", "caseProgression",
+                        "delayUntil", Map.of(
+                            "delayUntil", hearingDate,
+                            "delayUntilIntervalDays","0"
+                        )
+                    )
+                )
+            ),
+            Arguments.of(
+                "listCase",
+                "prepareForHearing",
+                mapAdditionalData(" {\n"
+                                      + "        \"Data\" : {\n"
+                                      + "         \"listCaseHearingDate\" : \"" + hearingDate + "\","
+                                      + "         \"appellantInDetention\": true\n"
+                                      + "        }\n"
+                                      + "      }"),
+                List.of(
+                    Map.of(
+                        "taskId", "detainedCaseSummaryHearingBundleStartDecision",
+                        "name", "Detained - Create Hearing Bundle",
+                        "processCategories", "caseProgression"
+                    ),
+                    Map.of(
+                        "taskId", "detainedPostHearingAttendeesDurationAndRecording",
+                        "name", "Detained - Post hearing – attendees, duration and recording",
                         "processCategories", "caseProgression",
                         "delayUntil", Map.of(
                             "delayUntil", hearingDate,
@@ -1177,6 +1284,19 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "changeHearingCentre",
+                "prepareForHearing",
+                appellantInDetention,
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedEditListing",
+                        "name", "Detained - Edit listing",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "changeHearingCentre",
                 "finalBundling",
                 null,
                 singletonList(
@@ -1190,12 +1310,38 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "changeHearingCentre",
+                "prepareForHearing",
+                appellantInDetention,
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedEditListing",
+                        "name", "Detained - Edit listing",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "changeHearingCentre",
                 "preHearing",
                 null,
                 singletonList(
                     Map.of(
                         "taskId", "editListing",
                         "name", "Edit listing",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "changeHearingCentre",
+                "preHearing",
+                appellantInDetention,
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedEditListing",
+                        "name", "Detained - Edit listing",
 
                         "processCategories", "caseProgression"
                     )
@@ -1215,6 +1361,19 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "changeHearingCentre",
+                "decision",
+                appellantInDetention,
+                List.of(
+                    Map.of(
+                        "taskId", "detainedEditListing",
+                        "name", "Detained - Edit listing",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
                 "generateHearingBundle",
                 "finalBundling",
                 null,
@@ -1222,6 +1381,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "allocateHearingJudge",
                         "name", "Allocate Hearing Judge",
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "generateHearingBundle",
+                "finalBundling",
+                appellantInDetention,
+                List.of(
+                    Map.of(
+                        "taskId", "detainedAllocateHearingJudge",
+                        "name", "Detained - Allocate Hearing Judge",
                         "processCategories", "caseProgression"
                     )
                 )
@@ -1239,6 +1410,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "customiseHearingBundle",
+                "finalBundling",
+                appellantInDetention,
+                List.of(
+                    Map.of(
+                        "taskId", "detainedAllocateHearingJudge",
+                        "name", "Detained - Allocate Hearing Judge",
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
                 "sendToPreHearing",
                 "preHearing",
                 null,
@@ -1246,6 +1429,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "allocateHearingJudge",
                         "name", "Allocate Hearing Judge",
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "sendToPreHearing",
+                "preHearing",
+                appellantInDetention,
+                List.of(
+                    Map.of(
+                        "taskId", "detainedAllocateHearingJudge",
+                        "name", "Detained - Allocate Hearing Judge",
                         "processCategories", "caseProgression"
                     )
                 )
@@ -1951,7 +2146,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "triggerCmrUpdated",
+                "cmrRelisting",
                 null,
                 null,
                 singletonList(
@@ -1964,7 +2159,22 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "triggerCmrListed",
+                "cmrRelisting",
+                null,
+                appellantInDetention,
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedCmrUpdated",
+                        "name", "Detained - Update CMR notification",
+
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "cmrListing",
+
                 null,
                 appellantInDetention,
                 singletonList(
@@ -2015,7 +2225,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "triggerCmrListed",
+                "cmrListing",
                 null,
                 null,
                 singletonList(
@@ -2028,13 +2238,26 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "triggerCmrListed",
+                "cmrListing",
                 null,
                 appellantInDetention,
                 singletonList(
                     Map.of(
                         "taskId", "detainedCmrListed",
                         "name", "Detained - Send CMR notification",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "cmrListing",
+                null,
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "cmrListed",
+                        "name", "Send CMR notification",
 
                         "processCategories", "caseProgression"
                     )
@@ -2063,6 +2286,19 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "triggerReviewInterpreterBookingTask",
+                null,
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewInterpreters",
+                        "name", "Review interpreter booking",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "hearingCancelled",
                 null,
                 null,
                 singletonList(
@@ -2565,6 +2801,44 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewAppealSkeletonArgument",
                         "name", "Review Appeal Skeleton Argument",
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "progressMigratedCase",
+                "caseUnderReview",
+                appellantInDetention,
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedReviewAppealSkeletonArgument",
+                        "name", "Detained - Review Appeal Skeleton Argument",
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "progressMigratedCase",
+                "caseUnderReview",
+                appellantInDetention,
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedReviewAppealSkeletonArgument",
+                        "name", "Detained - Review Appeal Skeleton Argument",
+
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "progressMigratedCase",
+                "caseUnderReview",
+                appellantInDetention,
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedReviewAppealSkeletonArgument",
+                        "name", "Detained - Review Appeal Skeleton Argument",
 
 
                         "processCategories", "caseProgression"
@@ -3148,20 +3422,26 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(28));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(127));
+        assertThat(logic.getRules().size(), is(143));
 
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {
+        Map<String, Object> appellantInDetention = mapAdditionalData("{\n"
+                                                                 + "   \"Data\":{\n"
+                                                                 + "      \"appellantInDetention\": true\n"
+                                                                 + "   }\n"
+                                                                 + "}");
+
         return Stream.of(
             Arguments.of(
                 "uploadAddendumEvidenceLegalRep",
                 "preHearing",
+                null,
                 singletonList(
                     Map.of(
                         "taskId", "reviewAddendumEvidence",
                         "name", "Review Addendum Evidence",
-
                         "processCategories", "caseProgression"
                     )
                 )
@@ -3169,11 +3449,11 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "uploadAddendumEvidenceLegalRep",
                 "decision",
-                List.of(
+                null,
+                singletonList(
                     Map.of(
                         "taskId", "reviewAddendumEvidence",
                         "name", "Review Addendum Evidence",
-
                         "processCategories", "caseProgression"
                     )
                 )
@@ -3181,11 +3461,59 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "uploadAddendumEvidenceLegalRep",
                 "decided",
-                List.of(
+                null,
+                singletonList(
                     Map.of(
                         "taskId", "reviewAddendumEvidence",
                         "name", "Review Addendum Evidence",
-
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "uploadAddendumEvidenceLegalRep",
+                "preHearing",
+                appellantInDetention,
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedReviewAddendumEvidence",
+                        "name", "Detained - Review Addendum Evidence",
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "uploadAddendumEvidence",
+                "decision",
+                appellantInDetention,
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedReviewAddendumEvidence",
+                        "name", "Detained - Review Addendum Evidence",
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "uploadAddendumEvidenceHomeOffice",
+                "decided",
+                appellantInDetention,
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedReviewAddendumEvidence",
+                        "name", "Detained - Review Addendum Evidence",
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "uploadAddendumEvidenceAdminOfficer",
+                "preHearing",
+                appellantInDetention,
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedReviewAddendumEvidence",
+                        "name", "Detained - Review Addendum Evidence",
                         "processCategories", "caseProgression"
                     )
                 )
@@ -3198,16 +3526,22 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     void given_addendum_events_when_evaluate_initiate_dmn_then_expect_reviewAddendumEvidence_task(
         String eventId,
         String postEventState,
+        Map<String, Object> additionalData,
         List<Map<String, String>> expectation
     ) {
         VariableMap inputVariables = new VariableMapImpl();
         inputVariables.putValue("eventId", eventId);
         inputVariables.putValue("postEventState", postEventState);
+        if (additionalData != null) {
+            inputVariables.putAll(additionalData);
+        }
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
         assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
     }
+
+
 
     private static Map<String, Object> mapAdditionalData(String additionalData) {
         ObjectMapper mapper = new ObjectMapper();

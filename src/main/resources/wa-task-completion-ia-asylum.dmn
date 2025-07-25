@@ -64,6 +64,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1kb9ygx">
+        <inputEntry id="UnaryTests_12tn7ct">
+          <text>"requestRespondentReview","requestCaseEdit"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0hoi52a">
+          <text>"detainedReviewAppealSkeletonArgument"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1njpyvi">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1v9cegc">
         <inputEntry id="UnaryTests_1ckmgqx">
           <text>"requestRespondentReview","sendDirectionWithQuestions","requestCmaRequirements"</text>
@@ -138,6 +149,17 @@
           <text>"reviewAddendumEvidence"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0fm3ljn">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0det_addendum_completion">
+        <inputEntry id="UnaryTests_0det_add_comp">
+          <text>"markAddendumEvidenceAsReviewed"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0det_add_comp1">
+          <text>"detainedReviewAddendumEvidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0det_add_comp2">
           <text>"Auto"</text>
         </outputEntry>
       </rule>
@@ -537,6 +559,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1yg0rp4">
+        <inputEntry id="UnaryTests_0e5b712">
+          <text>"sendDecisionAndReasons"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1l38iza">
+          <text>"detainedSendDecisionsAndReasons"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1is995f">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1s2se0d">
         <inputEntry id="UnaryTests_1diis8c">
           <text>"generateDecisionAndReasons"</text>
@@ -614,14 +647,14 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_01avdea">
-        <inputEntry id="UnaryTests_180gsrb">
+      <rule id="DecisionRule_1plegka">
+        <inputEntry id="UnaryTests_1y1ndzx">
           <text>"recordAllocatedJudge"</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_1uo7mcm">
+        <outputEntry id="LiteralExpression_0rbyfmk">
           <text>"detainedAssignAFTPAJudge"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_06a017r">
+        <outputEntry id="LiteralExpression_1gs88a2">
           <text>"Auto"</text>
         </outputEntry>
       </rule>
@@ -746,9 +779,20 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0det1tc">
+        <inputEntry id="UnaryTests_0det1tc1">
+          <text>"uploadHearingRecording"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0det1tc2">
+          <text>"detainedPostHearingAttendeesDurationAndRecording"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0det1tc3">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1u3c7sd">
         <inputEntry id="UnaryTests_1dd0p7u">
-          <text>"generateHearingBundle","decisionAndReasonsStarted","updateHearingRequirements","endAppeal","requestRespondentEvidence","requestCaseBuilding","requestReasonsForAppeal","sendDirection","requestRespondentReview","requestCaseEdit","sendDirectionWithQuestions","requestCmaRequirements","markEvidenceAsReviewed","markAddendumEvidenceAsReviewed","reviewCmaRequirements","updateDetailsAfterCma","requestResponseAmend","requestResponseReview","reviewHearingRequirements","changeDirectionDueDate","decideAnApplication","editCaseListing","sendDecisionAndReasons","generateDecisionAndReasons","uploadHearingRecording","postHearingAttendeesDurationAndRecording","decideFtpaApplication","recordRemissionDecision","recordAllocatedJudge","listCase","markAppealPaid","markPaymentRequestSent","requestNewHearingRequirements","refundConfirmation","progressMigratedCase","submitAppeal","generateListCmrTask","detainedReviewAdditionalHomeOfficeEvidence","detainedReviewAdditionalEvidence"</text>
+          <text>"generateHearingBundle","decisionAndReasonsStarted","updateHearingRequirements","endAppeal","requestRespondentEvidence","requestCaseBuilding","requestReasonsForAppeal","sendDirection","requestRespondentReview","requestCaseEdit","sendDirectionWithQuestions","requestCmaRequirements","markEvidenceAsReviewed","markAddendumEvidenceAsReviewed","reviewCmaRequirements","updateDetailsAfterCma","requestResponseAmend","requestResponseReview","reviewHearingRequirements","changeDirectionDueDate","decideAnApplication","editCaseListing","sendDecisionAndReasons","generateDecisionAndReasons","uploadHearingRecording","postHearingAttendeesDurationAndRecording","detainedPostHearingAttendeesDurationAndRecording","decideFtpaApplication","recordRemissionDecision","recordAllocatedJudge","listCase","markAppealPaid","markPaymentRequestSent","requestNewHearingRequirements","refundConfirmation","progressMigratedCase","submitAppeal","generateListCmrTask","detainedReviewAdditionalHomeOfficeEvidence","detainedReviewAdditionalEvidence"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1ex7ytl">
           <text></text>

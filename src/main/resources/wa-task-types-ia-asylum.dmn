@@ -405,14 +405,14 @@
           <text>"Review hearing requirements"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1pefz1y">
-        <inputEntry id="UnaryTests_0jcob11">
+      <rule id="DecisionRule_0ck14h7">
+        <inputEntry id="UnaryTests_1bs12mh">
           <text></text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_1i0jdac">
+        <outputEntry id="LiteralExpression_0it07sb">
           <text>"detainedReviewHearingRequirements"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_0wa9p34">
+        <outputEntry id="LiteralExpression_19n1wzg">
           <text>"Detained - Review hearing requirements"</text>
         </outputEntry>
       </rule>
@@ -592,6 +592,17 @@
           <text>"Review Addendum Evidence"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0det_addendum_type">
+        <inputEntry id="UnaryTests_0det_add_type">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0det_add_type1">
+          <text>"detainedReviewAddendumEvidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0det_add_type2">
+          <text>"Detained - Review Addendum Evidence"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1xabmqc">
         <inputEntry id="UnaryTests_10rzbiv">
           <text></text>
@@ -601,6 +612,17 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_1evjssg">
           <text>"Send decisions and reasons"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ww69lc">
+        <inputEntry id="UnaryTests_0mtd9pl">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_149asud">
+          <text>"detainedSendDecisionsAndReasons"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1yuosc5">
+          <text>"Detained - Send decisions and reasons"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_11i7nj2">
@@ -647,14 +669,14 @@
           <text>"Decide an FTPA"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1u67cot">
-        <inputEntry id="UnaryTests_1sbzj75">
+      <rule id="DecisionRule_0z7nm0q">
+        <inputEntry id="UnaryTests_1jrc04x">
           <text></text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_11dc7f5">
+        <outputEntry id="LiteralExpression_1nn1k8i">
           <text>"detainedDecideAnFTPA"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_0vp23mc">
+        <outputEntry id="LiteralExpression_0qojhqx">
           <text>"Detained - Decide an FTPA"</text>
         </outputEntry>
       </rule>
@@ -666,6 +688,17 @@
           <text>"allocateHearingJudge"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0dy3gh3">
+          <text>"Allocate Hearing Judge"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0moo30z">
+        <inputEntry id="UnaryTests_0ahdg9n">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1fb7vvw">
+          <text>"detainedAllocateHearingJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1sbx7yy">
           <text>"Allocate Hearing Judge"</text>
         </outputEntry>
       </rule>
@@ -691,14 +724,14 @@
           <text>"Assign a FTPA Judge"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0xnwfo3">
-        <inputEntry id="UnaryTests_0rhfnij">
+      <rule id="DecisionRule_1i0z202">
+        <inputEntry id="UnaryTests_17yjgbw">
           <text></text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_0l5ga4n">
+        <outputEntry id="LiteralExpression_0v4l86z">
           <text>"detainedAssignAFTPAJudge"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_19n6pnl">
+        <outputEntry id="LiteralExpression_1kmldvc">
           <text>"Detained - Assign a FTPA Judge"</text>
         </outputEntry>
       </rule>

@@ -179,7 +179,7 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
             Map.of("taskTypeId",
                    "detainedEditListing",
                    "taskTypeName",
-                   "Detained Edit Listing"
+                   "Detained - Edit Listing"
             ),
             Map.of("taskTypeId",
                    "reviewTheAppeal",
@@ -205,6 +205,11 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                    "reviewAppealSkeletonArgument",
                    "taskTypeName",
                    "Review Appeal Skeleton Argument"
+            ),
+            Map.of("taskTypeId",
+                   "detainedReviewAppealSkeletonArgument",
+                   "taskTypeName",
+                   "Detained - Review Appeal Skeleton Argument"
             ),
             Map.of("taskTypeId",
                    "reviewReasonsForAppeal",
@@ -282,9 +287,19 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                    "Review Addendum Evidence"
             ),
             Map.of("taskTypeId",
+                   "detainedReviewAddendumEvidence",
+                   "taskTypeName",
+                   "Detained - Review Addendum Evidence"
+            ),
+            Map.of("taskTypeId",
                    "sendDecisionsAndReasons",
                    "taskTypeName",
                    "Send decisions and reasons"
+            ),
+            Map.of("taskTypeId",
+                   "detainedSendDecisionsAndReasons",
+                   "taskTypeName",
+                   "Detained - Send decisions and reasons"
             ),
             Map.of("taskTypeId",
                    "prepareDecisionsAndReasons",
@@ -302,6 +317,11 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                    "Post hearing – attendees, duration and recording"
             ),
             Map.of("taskTypeId",
+                   "detainedPostHearingAttendeesDurationAndRecording",
+                   "taskTypeName",
+                   "Detained - Post hearing – attendees, duration and recording"
+            ),
+            Map.of("taskTypeId",
                    "decideAnFTPA",
                    "taskTypeName",
                    "Decide an FTPA"
@@ -312,6 +332,11 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                    "Allocate Hearing Judge"
             ),
             Map.of("taskTypeId",
+                   "detainedAllocateHearingJudge",
+                   "taskTypeName",
+                   "Detained - Allocate Hearing Judge"
+            ),
+            Map.of("taskTypeId",
                    "reviewRemissionApplication",
                    "taskTypeName",
                    "Review Remission Application"
@@ -320,6 +345,11 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                    "assignAFTPAJudge",
                    "taskTypeName",
                    "Assign a FTPA Judge"
+            ),
+            Map.of("taskTypeId",
+                     "detainedAssignAFTPAJudge",
+                     "taskTypeName",
+                     "Detained - Assign a FTPA Judge"
             ),
             Map.of("taskTypeId",
                    "listTheCase",
@@ -480,6 +510,16 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                     "detainedListCmr",
                     "taskTypeName",
                     "Detained List Cmr"
+            ),
+            Map.of("taskTypeId",
+                    "postHearingAttendeesDurationAndRecording",
+                    "taskTypeName",
+                    "Post hearing – attendees, duration and recording"
+            ),
+            Map.of("taskTypeId",
+                    "detainedPostHearingAttendeesDurationAndRecording",
+                    "taskTypeName",
+                    "Detained - Post hearing – attendees, duration and recording"
             )
         );
         return Stream.of(
@@ -508,7 +548,7 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(1));
         assertThat(logic.getOutputs().size(), is(2));
-        assertThat(logic.getRules().size(), is(96));
+        assertThat(logic.getRules().size(), is(98));
 
     }
 }

@@ -232,12 +232,12 @@ dependencyManagement {
 
 repositories {
   mavenLocal()
-  maven { url 'https://jitpack.io' }
+  maven { url 'https://pkgs.dev.azure.com/hmcts/Artifacts/_packaging/hmcts-lib/maven/v1' }
   mavenCentral()
 }
 
 def versions = [
-  reformLogging   : '5.1.9',
+  reformLogging   : '6.1.9',
   springfoxSwagger: '3.0.0',
   camunda         : '7.20.0',
   pitest          : '1.9.11',
@@ -264,13 +264,14 @@ dependencies {
 
   implementation group: 'com.github.hmcts.java-logging', name: 'logging', version: versions.reformLogging
   implementation group: 'com.github.hmcts.java-logging', name: 'logging-appinsights', version: versions.reformLogging
+  implementation group: 'com.github.hmcts.java-logging', name: 'logging-spring', version: '5.1.9'
 
   implementation group: 'org.apache.logging.log4j', name: 'log4j-api', version: versions.log4j
   implementation group: 'org.apache.logging.log4j', name: 'log4j-to-slf4j', version: versions.log4j
 
   // Adding for CVE errors
-  implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-core', version: '9.0.83'
-  implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-websocket', version: '9.0.83'
+  implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-core', version: '9.0.106'
+  implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-websocket', version: '9.0.106'
 
   implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.13'
   implementation group: 'ch.qos.logback', name: 'logback-core', version: '1.2.13'
