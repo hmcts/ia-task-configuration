@@ -2453,6 +2453,19 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "triggerReviewInterpreterBookingTask",
+                null,
+                appellantInDetention,
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedReviewInterpreters",
+                        "name", "Detained - Review interpreter booking",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
                 "hearingCancelled",
                 null,
                 null,
@@ -2460,6 +2473,19 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewInterpreters",
                         "name", "Review interpreter booking",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "hearingCancelled",
+                null,
+                appellantInDetention,
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedReviewInterpreters",
+                        "name", "Detained - Review interpreter booking",
 
                         "processCategories", "caseProgression"
                     )
@@ -2477,6 +2503,23 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewInterpreters",
                         "name", "Review interpreter booking",
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "editCaseListing",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"shouldTriggerReviewInterpreterTask\" : \"" + true + "\",\n"
+                                      + "      \"appellantInDetention\" : \"" + true + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedReviewInterpreters",
+                        "name", "Detained - Review interpreter booking",
                         "processCategories", "caseProgression"
                     )
                 )
@@ -3565,7 +3608,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(28));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(141));
+        assertThat(logic.getRules().size(), is(144));
 
     }
 
