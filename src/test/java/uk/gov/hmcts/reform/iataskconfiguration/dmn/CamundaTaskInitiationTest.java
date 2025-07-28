@@ -1556,6 +1556,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "generateHearingBundle",
+                "finalBundling",
+                appellantInDetention,
+                List.of(
+                    Map.of(
+                        "taskId", "detainedAllocateHearingJudge",
+                        "name", "Detained - Allocate Hearing Judge",
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
                 "customiseHearingBundle",
                 "finalBundling",
                 null,
@@ -1568,6 +1580,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "customiseHearingBundle",
+                "finalBundling",
+                appellantInDetention,
+                List.of(
+                    Map.of(
+                        "taskId", "detainedAllocateHearingJudge",
+                        "name", "Detained - Allocate Hearing Judge",
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
                 "sendToPreHearing",
                 "preHearing",
                 null,
@@ -1575,6 +1599,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "allocateHearingJudge",
                         "name", "Allocate Hearing Judge",
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "sendToPreHearing",
+                "preHearing",
+                appellantInDetention,
+                List.of(
+                    Map.of(
+                        "taskId", "detainedAllocateHearingJudge",
+                        "name", "Detained - Allocate Hearing Judge",
                         "processCategories", "caseProgression"
                     )
                 )
@@ -3544,8 +3580,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(28));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(140));
-
+        assertThat(logic.getRules().size(), is(141));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {

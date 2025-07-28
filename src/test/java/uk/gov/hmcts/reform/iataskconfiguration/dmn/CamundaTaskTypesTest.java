@@ -347,6 +347,11 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                    "Allocate Hearing Judge"
             ),
             Map.of("taskTypeId",
+                   "detainedAllocateHearingJudge",
+                   "taskTypeName",
+                   "Detained - Allocate Hearing Judge"
+            ),
+            Map.of("taskTypeId",
                    "reviewRemissionApplication",
                    "taskTypeName",
                    "Review Remission Application"

@@ -680,6 +680,17 @@
           <text>"Decide an FTPA"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0z7nm0q">
+        <inputEntry id="UnaryTests_1jrc04x">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1nn1k8i">
+          <text>"detainedDecideAnFTPA"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0qojhqx">
+          <text>"Detained - Decide an FTPA"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1w7bcd5">
         <inputEntry id="UnaryTests_1lmkaak">
           <text></text>
@@ -688,6 +699,17 @@
           <text>"allocateHearingJudge"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0dy3gh3">
+          <text>"Allocate Hearing Judge"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0moo30z">
+        <inputEntry id="UnaryTests_0ahdg9n">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1fb7vvw">
+          <text>"detainedAllocateHearingJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1sbx7yy">
           <text>"Allocate Hearing Judge"</text>
         </outputEntry>
       </rule>
