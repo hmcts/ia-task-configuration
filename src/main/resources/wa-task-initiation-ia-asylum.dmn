@@ -13404,7 +13404,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0xixw70">
-          <text></text>
+          <text>false</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_118wu0e">
           <text>"assignAFTPAJudge"</text>
@@ -13416,6 +13416,104 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_086lrpk">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1pbb06z">
+        <inputEntry id="UnaryTests_0p6xohq">
+          <text>"progressMigratedCase"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0b4er03">
+          <text>"ftpaSubmitted"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_104kxv1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04q3riv">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ufs5jt">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_190llnd">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jaa99x">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_13a7a2a">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_037z5ef">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17tkdz8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1doovw4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0navga1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1tbzghd">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10nl227">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qs6m40">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0l35lur">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1bllidj">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0iasekl">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nqa6ef">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0f72k3i">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xfurub">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17zanxx">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_02fy3so">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12nv033">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19fydzy">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1hc8z8d">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_073hvp6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tghrqx">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1q5zuva">
+          <text>"detainedAssignAFTPAJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1xlekt7">
+          <text>"Detained - Assign a FTPA Judge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0zydhkc">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0p8q84p">
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
@@ -13502,7 +13600,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_17pgz5m">
-          <text></text>
+          <text>false</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_02bgvvl">
           <text>"decideAnFTPA"</text>
@@ -13514,6 +13612,104 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1k46b3l">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0o3brzj">
+        <inputEntry id="UnaryTests_1c1vv35">
+          <text>"progressMigratedCase"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05l48is">
+          <text>"ftpaSubmitted"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1x2swog">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_179qhaw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ij1684">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01au50v">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lobdik">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0aq8xqj">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0fwch0e">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09k5g2c">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rs9q1q">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1njsxne">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1gxzyhk">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xai864">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0b8adi3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0k4ms3l">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pedm1w">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0dm13ny">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1x6jr4o">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12crs4i">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wi5uae">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jsuw0h">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0t68cj0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1q5r9om">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_115vngw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07nfbsv">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tuaidp">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1p19a40">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1h4nf6x">
+          <text>"detainedDecideAnFTPA"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1apfs66">
+          <text>"Detained - Decide an FTPA"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0zoplx7">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1cwseuy">
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
@@ -13600,7 +13796,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0fm42fi">
-          <text></text>
+          <text>false</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_10t5wx7">
           <text>"reviewHearingRequirements"</text>
@@ -13612,6 +13808,104 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0d7p4ho">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1i0er7v">
+        <inputEntry id="UnaryTests_05jdvss">
+          <text>"progressMigratedCase"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ysg37a">
+          <text>"listing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0objdw2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08q4fex">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0r9b2i8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1p162gp">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wnstbm">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0w3hmeq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qytmhu">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04w770i">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1i27r5o">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zv62gi">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12h6xb0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0biz784">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xwoha9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rv6y2m">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1b5n2bt">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_177vo7y">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12eqpt9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1phwpr5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08t7tiq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_02minm1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05xs2wo">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19vlw8h">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_030i1is">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07a3dor">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07byscy">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05azzg2">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0suf56f">
+          <text>"detainedReviewHearingRequirements"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_15925k7">
+          <text>"Detained - Review hearing requirements"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0xb4adq">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0nwr8ns">
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
@@ -13698,7 +13992,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1lfcz7l">
-          <text></text>
+          <text>false</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1a0z5pj">
           <text>"listTheCase"</text>
@@ -13710,6 +14004,104 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_03fkwzp">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0565w9k">
+        <inputEntry id="UnaryTests_18o1ax9">
+          <text>"progressMigratedCase"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0933w8h">
+          <text>"listing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1cwgj35">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1i0hljg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xks06p">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0fm2qih">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0egr7jc">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0vd1m23">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_129ayj0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ldqh8q">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ps5c3b">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0cwshhe">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1i2z4tq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wc54il">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0t9856v">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1k74p9n">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_137vqpp">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06e3od8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ep70jy">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0bzv829">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tk1rmp">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1cacsmr">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0x8f2ak">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0g2n3um">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rv4yx9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12j61kj">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1eqqf2u">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ww101b">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1bgow0r">
+          <text>"detainedListTheCase"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1qgngnx">
+          <text>"Detained - List the case"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0aysuku">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0rnttqb">
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
