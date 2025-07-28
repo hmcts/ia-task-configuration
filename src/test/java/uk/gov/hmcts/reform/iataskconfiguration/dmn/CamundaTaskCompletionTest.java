@@ -40,6 +40,10 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                         "taskType", "decideAnFTPA",
                         "completionMode", "Auto"
                     ),
+                    Map.of(
+                        "taskType", "detainedDecideAnFTPA",
+                        "completionMode", "Auto"
+                    ),
                     Collections.emptyMap()
                 )
             ),
@@ -260,6 +264,10 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                         "taskType", "reviewHearingRequirements",
                         "completionMode", "Auto"
                     ),
+                    Map.of(
+                        "taskType", "detainedReviewHearingRequirements",
+                        "completionMode", "Auto"
+                    ),
                     Collections.emptyMap()
                 )
             ),
@@ -471,6 +479,10 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                         "taskType", "listTheCase",
                         "completionMode", "Auto"
                     ),
+                    Map.of(
+                        "taskType", "detainedListTheCase",
+                        "completionMode", "Auto"
+                    ),
                     Collections.emptyMap()
                 )
             ),
@@ -565,7 +577,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
 
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(69));
+        assertThat(logic.getRules().size(), is(72));
     }
 
 
