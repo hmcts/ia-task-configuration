@@ -48,7 +48,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             "delayUntil", directionDueDate
         );
         Map<String,Object> delayForDaysExcludingBankHolidays = Map.of(
-            "delayUntilIntervalDays", "",
+            "delayUntilIntervalDays", "14",
             "delayUntilNonWorkingCalendar", "https://www.gov.uk/bank-holidays/england-and-wales.json",
             "delayUntilOrigin", LocalDate.now(),
             "delayUntilNonWorkingDaysOfWeek", "SATURDAY,SUNDAY"
@@ -60,7 +60,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         );
 
         Map<String,Object> delayForDays = Map.of(
-            "delayUntilIntervalDays", "",
+            "delayUntilIntervalDays", "14",
             "delayUntilOrigin", LocalDate.now()
         );
         Map<String, Object> appellantInDetention = mapAdditionalData("{\n"
