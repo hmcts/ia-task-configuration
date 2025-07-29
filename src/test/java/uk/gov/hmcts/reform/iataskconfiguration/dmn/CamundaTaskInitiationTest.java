@@ -47,7 +47,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             "delayUntilIntervalDays", "0",
             "delayUntil", directionDueDate
         );
-        Map<String,Object> delayFor14DaysExcludingBankHolidays = Map.of(
+        Map<String,Object> delayForDaysExcludingBankHolidays = Map.of(
             "delayUntilIntervalDays", "14",
             "delayUntilNonWorkingCalendar", "https://www.gov.uk/bank-holidays/england-and-wales.json",
             "delayUntilOrigin", LocalDate.now(),
@@ -59,7 +59,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             "delayUntilOrigin", LocalDate.now()
         );
 
-        Map<String,Object> delayFor14Days = Map.of(
+        Map<String,Object> delayForDays = Map.of(
             "delayUntilIntervalDays", "14",
             "delayUntilOrigin", LocalDate.now()
         );
@@ -1237,7 +1237,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "followUpNoticeOfChange",
                         "name", "Follow-up Notice of Change",
                         "processCategories", "followUpOverdue",
-                        "delayUntil", delayFor14DaysExcludingBankHolidays
+                        "delayUntil", delayForDaysExcludingBankHolidays
                     )
                 )
             ),
@@ -1250,7 +1250,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "detainedFollowUpNoticeOfChange",
                         "name", "Detained - Follow-up Notice of Change",
                         "processCategories", "followUpOverdue",
-                        "delayUntil", delayFor14DaysExcludingBankHolidays
+                        "delayUntil", delayForDaysExcludingBankHolidays
                     )
                 )
             ),
@@ -1265,7 +1265,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
 
                         "processCategories", "followUpOverdue",
-                        "delayUntil", delayFor14DaysExcludingBankHolidays
+                        "delayUntil", delayForDaysExcludingBankHolidays
                     )
                 )
             ),
@@ -2298,6 +2298,19 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "triggerReviewInterpreterBookingTask",
+                null,
+                appellantInDetention,
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedReviewInterpreters",
+                        "name", "Detained - Review interpreter booking",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
                 "hearingCancelled",
                 null,
                 null,
@@ -2305,6 +2318,19 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewInterpreters",
                         "name", "Review interpreter booking",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "hearingCancelled",
+                null,
+                appellantInDetention,
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedReviewInterpreters",
+                        "name", "Detained - Review interpreter booking",
 
                         "processCategories", "caseProgression"
                     )
@@ -2322,6 +2348,23 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewInterpreters",
                         "name", "Review interpreter booking",
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "editCaseListing",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"shouldTriggerReviewInterpreterTask\" : \"" + true + "\",\n"
+                                      + "      \"appellantInDetention\" : \"" + true + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedReviewInterpreters",
+                        "name", "Detained - Review interpreter booking",
                         "processCategories", "caseProgression"
                     )
                 )
@@ -2377,7 +2420,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewDraftAppeal",
                         "name", "Review draft appeal",
-                        "delayUntil", delayFor14Days,
+                        "delayUntil", delayForDays,
                         "processCategories", "followUpOverdue"
                     )
                 )
@@ -3422,7 +3465,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(28));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(145));
+        assertThat(logic.getRules().size(), is(148));
 
     }
 

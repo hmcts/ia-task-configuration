@@ -321,6 +321,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("detainedCmrUpdated", hearingWork),
             Arguments.of("relistCase", hearingWork),
             Arguments.of("reviewInterpreters", hearingWork),
+            Arguments.of("detainedReviewInterpreters", hearingWork),
             Arguments.of("processApplicationAdjourn", applications),
             Arguments.of("detainedProcessApplicationAdjourn", applications),
             Arguments.of("processApplicationExpedite", applications),
@@ -479,7 +480,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "detainedPostHearingAttendeesDurationAndRecording",
         "editListing", "detainedEditListing", "followUpSetAsideDecision",
         "hearingException", "cmrListed", "cmrUpdated", "detainedCmrListed", "detainedCmrUpdated","relistCase",
-        "reviewInterpreters", "reviewMigratedCase", "reviewAriaRemissionApplication",
+        "reviewInterpreters","detainedReviewInterpreters", "reviewMigratedCase", "reviewAriaRemissionApplication",
         "printAndSendHoBundle","printAndSendHoResponse","printAndSendHearingRequirements",
         "printAndSendHearingBundle", "printAndSendDecisionCorrectedRule31","printAndSendDecisionCorrectedRule32",
         "printAndSendHoApplication", "printAndSendHoEvidence","printAndSendAppealDecision","printAndSendFTPADecision",
@@ -1498,7 +1499,9 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "cmrUpdated,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,,",
         "detainedCmrUpdated,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,,",
         "relistCase,[Relist the hearing](cases/case-details/${[CASE_REFERENCE]}/hearings),,,",
-        "reviewInterpreters,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,,"
+        "reviewInterpreters,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,,",
+        "detainedReviewInterpreters,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,,"
+
     })
     void should_return_a_200_description_property(String taskType, String expectedDescription, String journeyType,
                                                   String isIntegrated, String ariaTaskDueDays) {
