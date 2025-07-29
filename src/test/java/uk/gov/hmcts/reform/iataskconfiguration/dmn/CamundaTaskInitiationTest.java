@@ -95,8 +95,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         appellantInDetention,
                         List.of(
                                 Map.of(
-                                        "taskId", "decideAnFTPA",
-                                        "name", "Decide an FTPA",
+                                        "taskId", "detainedDecideAnFTPA",
+                                        "name", "Detained - Decide an FTPA",
 
                                         "processCategories", "caseProgression"
                                 ),
@@ -120,8 +120,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "processCategories", "caseProgression"
                     ),
                     Map.of(
-                        "taskId", "assignAFTPAJudge",
-                        "name", "Assign a FTPA Judge",
+                        "taskId", "detainedAssignAFTPAJudge",
+                        "name", "Detained - Assign a FTPA Judge",
 
                         "processCategories", "caseProgression"
                     )
@@ -152,8 +152,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         appellantInDetention,
                         List.of(
                                 Map.of(
-                                        "taskId", "decideAnFTPA",
-                                        "name", "Decide an FTPA",
+                                        "taskId", "detainedDecideAnFTPA",
+                                        "name", "Detained - Decide an FTPA",
 
                                         "processCategories", "caseProgression"
                                 ),
@@ -177,8 +177,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "processCategories", "caseProgression"
                     ),
                     Map.of(
-                        "taskId", "assignAFTPAJudge",
-                        "name", "Assign a FTPA Judge",
+                        "taskId", "detainedAssignAFTPAJudge",
+                        "name", "Detained - Assign a FTPA Judge",
 
                         "processCategories", "caseProgression"
                     )
@@ -3503,7 +3503,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(28));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(148));
+        assertThat(logic.getRules().size(), is(149));
 
     }
 
