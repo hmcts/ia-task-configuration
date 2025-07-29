@@ -272,6 +272,11 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                    "Follow-up overdue hearing requirements"
             ),
             Map.of("taskTypeId",
+                   "detainedFollowUpOverdueHearingRequirements",
+                   "taskTypeName",
+                   "Follow-up overdue hearing requirements"
+            ),
+            Map.of("taskTypeId",
                    "followUpNonStandardDirection",
                    "taskTypeName",
                    "Follow-up non-standard direction"
