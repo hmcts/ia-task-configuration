@@ -724,6 +724,17 @@
           <text>"List the case"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1fezjah">
+        <inputEntry id="UnaryTests_1c6cmdl">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0z5nv05">
+          <text>"detainedListTheCase"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0t8gwu5">
+          <text>"Detained - List the case"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1qiyph4">
         <inputEntry id="UnaryTests_0v00rb2">
           <text></text>
