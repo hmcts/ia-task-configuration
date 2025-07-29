@@ -305,7 +305,6 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("detainedEditListing", hearingWork),
             Arguments.of("followUpOverdueHearingRequirements", hearingWork),
             Arguments.of("reviewHearingRequirements", hearingWork),
-            Arguments.of("detainedReviewHearingRequirements", hearingWork),
             Arguments.of("allocateHearingJudge", hearingWork),
             Arguments.of("detainedAllocateHearingJudge", hearingWork),
             Arguments.of("prepareDecisionsAndReasons", hearingWork),
@@ -321,7 +320,6 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("detainedCmrUpdated", hearingWork),
             Arguments.of("relistCase", hearingWork),
             Arguments.of("reviewInterpreters", hearingWork),
-            Arguments.of("detainedReviewInterpreters", hearingWork),
             Arguments.of("processApplicationAdjourn", applications),
             Arguments.of("detainedProcessApplicationAdjourn", applications),
             Arguments.of("processApplicationExpedite", applications),
@@ -356,7 +354,6 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("detainedReviewSetAsideDecisionApplication", applications),
             Arguments.of("followUpSetAsideDecision", applications),
             Arguments.of("decideAnFTPA", upperTribunal),
-            Arguments.of("detainedDecideAnFTPA", upperTribunal),
             Arguments.of("processApplicationChangeHearingType", applications),
             Arguments.of("detainedProcessApplicationChangeHearingType", applications),
             Arguments.of("reviewMigratedCase", reviewCase)
@@ -445,8 +442,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "reviewAddendumAppellantEvidence", "reviewSpecificAccessRequestJudiciary",
         "reviewSpecificAccessRequestLegalOps", "reviewSpecificAccessRequestAdmin","reviewSpecificAccessRequestCTSC",
         "processApplicationToReviewDecision", "detainedProcessApplicationToReviewDecision",
-        "sendDecisionsAndReasons","detainedSendDecisionsAndReasons", "prepareDecisionsAndReasons",
-        "decideAnFTPA","detainedDecideAnFTPA",
+        "sendDecisionsAndReasons","detainedSendDecisionsAndReasons", "prepareDecisionsAndReasons", "decideAnFTPA",
         "reviewSetAsideDecisionApplication", "detainedReviewSetAsideDecisionApplication"
     })
     void when_taskId_then_return_judicial_role_category(String taskType) {
@@ -480,7 +476,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "detainedPostHearingAttendeesDurationAndRecording",
         "editListing", "detainedEditListing", "followUpSetAsideDecision",
         "hearingException", "cmrListed", "cmrUpdated", "detainedCmrListed", "detainedCmrUpdated","relistCase",
-        "reviewInterpreters","detainedReviewInterpreters", "reviewMigratedCase", "reviewAriaRemissionApplication",
+        "reviewInterpreters", "reviewMigratedCase", "reviewAriaRemissionApplication",
         "printAndSendHoBundle","printAndSendHoResponse","printAndSendHearingRequirements",
         "printAndSendHearingBundle", "printAndSendDecisionCorrectedRule31","printAndSendDecisionCorrectedRule32",
         "printAndSendHoApplication", "printAndSendHoEvidence","printAndSendAppealDecision","printAndSendFTPADecision",
@@ -511,8 +507,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
     @ParameterizedTest
     @CsvSource({
-        "reviewRemissionApplication","assignAFTPAJudge","detainedAssignAFTPAJudge","listTheCase","detainedListTheCase",
-        "sendPaymentRequest","markAsPaid",
+        "reviewRemissionApplication","assignAFTPAJudge","detainedAssignAFTPAJudge","listTheCase",
+        "sendPaymentRequest","markAsPaid","detainedListTheCase",
         "processFeeRefund", "reviewDraftAppeal"
     })
     void when_taskId_then_return_Ctsc_role_category(String taskType) {
@@ -558,9 +554,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "reviewAppealSkeletonArgument","detainedReviewAppealSkeletonArgument", "reviewReasonsForAppeal",
         "reviewClarifyingQuestionsAnswers", "reviewAdditionalHomeOfficeEvidence",
         "reviewCmaRequirements", "attendCma", "reviewRespondentResponse", "caseSummaryHearingBundleStartDecision",
-        "reviewHearingRequirements", "detainedReviewHearingRequirements", "followUpOverdueRespondentEvidence",
-        "detainedFollowUpOverdueRespondentEvidence",
         "detainedCaseSummaryHearingBundleStartDecision",
+        "reviewHearingRequirements", "followUpOverdueRespondentEvidence", "detainedFollowUpOverdueRespondentEvidence",
         "followUpOverdueCaseBuilding","detainedFollowUpOverdueCaseBuilding", "followUpOverdueReasonsForAppeal",
         "followUpOverdueClarifyingAnswers",
         "followUpOverdueCmaRequirements", "followUpOverdueRespondentReview","detainedFollowUpOverdueRespondentReview",
@@ -1432,9 +1427,6 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "reviewHearingRequirements,"
             + "[Review hearing requirements](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger"
             + "/reviewHearingRequirements),,,",
-        "detainedReviewHearingRequirements,"
-            + "[Review hearing requirements](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger"
-            + "/reviewHearingRequirements),,,",
         "reviewAdditionalEvidence,[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markEvidence"
             + "AsReviewed),,,",
         "detainedReviewAdditionalEvidence,[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markEvidence"
@@ -1463,10 +1455,6 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "detainedEditListing,[Edit case listing](/case/IA/Asylum/${[CASE_REFERENCE]}"
             + "/trigger/editCaseListing),,,",
         "decideAnFTPA,[Decide FTPA application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideFtpaApplication),,,",
-        "prepareDecisionsAndReasons,[Prepare decisions and reasons](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
-            + "generateDecisionAndReasons),,,",
-        "detainedDecideAnFTPA,"
-            + "[Decide FTPA application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideFtpaApplication),,,",
         "prepareDecisionsAndReasons,[Prepare decisions and reasons](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
             + "generateDecisionAndReasons),,,",
         "sendDecisionsAndReasons,[Complete decision and reasons](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
@@ -1499,9 +1487,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "cmrUpdated,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,,",
         "detainedCmrUpdated,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,,",
         "relistCase,[Relist the hearing](cases/case-details/${[CASE_REFERENCE]}/hearings),,,",
-        "reviewInterpreters,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,,",
-        "detainedReviewInterpreters,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,,"
-
+        "reviewInterpreters,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,,"
     })
     void should_return_a_200_description_property(String taskType, String expectedDescription, String journeyType,
                                                   String isIntegrated, String ariaTaskDueDays) {
@@ -1627,7 +1613,6 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("caseSummaryHearingBundleStartDecision", twoDays),
             Arguments.of("detainedCaseSummaryHearingBundleStartDecision", twoDays),
             Arguments.of("reviewHearingRequirements", twoDays),
-            Arguments.of("detainedReviewHearingRequirements", twoDays),
             Arguments.of("followUpOverdueRespondentEvidence", twoDays),
             Arguments.of("detainedFollowUpOverdueRespondentEvidence", twoDays),
             Arguments.of("followUpExtendedDirection", twoDays),
@@ -1662,7 +1647,6 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("postHearingAttendeesDurationAndRecording", zeroDays),
             Arguments.of("detainedPostHearingAttendeesDurationAndRecording", zeroDays),
             Arguments.of("decideAnFTPA", zeroDays),
-            Arguments.of("detainedDecideAnFTPA", zeroDays),
             Arguments.of("printAndSendHoBundle", zeroDays),
             Arguments.of("printAndSendHoResponse", zeroDays),
             Arguments.of("printAndSendHearingRequirements", zeroDays),
