@@ -270,7 +270,7 @@
           <text>"detainedEditListing"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1o82ns4">
-          <text>"Detained Edit Listing"</text>
+          <text>"Detained - Edit Listing"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1piglun">
@@ -537,6 +537,17 @@
           <text>"Follow-up overdue hearing requirements"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_006ccyd">
+        <inputEntry id="UnaryTests_1vg1422">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_15eajkk">
+          <text>"detainedFollowUpOverdueHearingRequirements"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0416vo7">
+          <text>"Detained - Follow-up overdue hearing requirements"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1ui4tfa">
         <inputEntry id="UnaryTests_1m1xqnn">
           <text></text>
@@ -590,6 +601,17 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0tbbdm1">
           <text>"Review Addendum Evidence"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0det_addendum_type">
+        <inputEntry id="UnaryTests_0det_add_type">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0det_add_type1">
+          <text>"detainedReviewAddendumEvidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0det_add_type2">
+          <text>"Detained - Review Addendum Evidence"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1xabmqc">
@@ -711,6 +733,17 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_12y756g">
           <text>"List the case"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1tui23n">
+        <inputEntry id="UnaryTests_0gtbsop">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0737mww">
+          <text>"detainedListTheCase"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1mqbiac">
+          <text>"Detained - List the case"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1qiyph4">
@@ -854,6 +887,17 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_1faxwvi">
           <text>"Review interpreter booking"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_17t1zb9">
+        <inputEntry id="UnaryTests_1uiz9gl">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1xx5qvq">
+          <text>"detainedReviewInterpreters"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1k0qhhv">
+          <text>"Detained - Review interpreter booking"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_14bajdq">

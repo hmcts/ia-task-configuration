@@ -152,6 +152,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0det_addendum_completion">
+        <inputEntry id="UnaryTests_0det_add_comp">
+          <text>"markAddendumEvidenceAsReviewed"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0det_add_comp1">
+          <text>"detainedReviewAddendumEvidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0det_add_comp2">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_19ss4q7">
         <inputEntry id="UnaryTests_013vo07">
           <text>"reviewCmaRequirements"</text>
@@ -193,6 +204,17 @@
           <text>"reviewHearingRequirements"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_14xv3h2">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1dntv6c">
+        <inputEntry id="UnaryTests_04fzy3q">
+          <text>"reviewHearingRequirements"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0fbdc9n">
+          <text>"detainedReviewHearingRequirements"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0krhzxj">
           <text>"Auto"</text>
         </outputEntry>
       </rule>
@@ -537,6 +559,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1yg0rp4">
+        <inputEntry id="UnaryTests_0e5b712">
+          <text>"sendDecisionAndReasons"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1l38iza">
+          <text>"detainedSendDecisionsAndReasons"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1is995f">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1s2se0d">
         <inputEntry id="UnaryTests_1diis8c">
           <text>"generateDecisionAndReasons"</text>
@@ -559,14 +592,14 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_18njkje">
-        <inputEntry id="UnaryTests_10g86t3">
+      <rule id="DecisionRule_1q5figz">
+        <inputEntry id="UnaryTests_1creph3">
           <text>"decideFtpaApplication"</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_1oopwfh">
+        <outputEntry id="LiteralExpression_1ivg5m3">
           <text>"detainedDecideAnFTPA"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_1nzmfs9">
+        <outputEntry id="LiteralExpression_0yfgjvo">
           <text>"Auto"</text>
         </outputEntry>
       </rule>
@@ -614,6 +647,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1plegka">
+        <inputEntry id="UnaryTests_1y1ndzx">
+          <text>"recordAllocatedJudge"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0rbyfmk">
+          <text>"detainedAssignAFTPAJudge"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1gs88a2">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0cpvviz">
         <inputEntry id="UnaryTests_0tfhu0p">
           <text>"listCase"</text>
@@ -622,6 +666,17 @@
           <text>"listTheCase"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1hkcl8d">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ecxntt">
+        <inputEntry id="UnaryTests_0dzn595">
+          <text>"listCase"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1309ng9">
+          <text>"detainedListTheCase"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ry405r">
           <text>"Auto"</text>
         </outputEntry>
       </rule>
