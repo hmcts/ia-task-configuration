@@ -1046,6 +1046,20 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     )
                 )
             ),
+                Arguments.of(
+                        "draftHearingRequirements",
+                        "listing",
+                        appellantInDetention,
+                        List.of(
+                                Map.of(
+                                        "taskId", "detainedReviewHearingRequirements",
+                                        "name", "Detained - Review hearing requirements",
+
+
+                                        "processCategories", "caseProgression"
+                                )
+                        )
+                ),
             Arguments.of(
                 "requestRespondentEvidence",
                 "awaitingRespondentEvidence",
@@ -3964,7 +3978,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(28));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(151));
+        assertThat(logic.getRules().size(), is(153));
 
     }
 
