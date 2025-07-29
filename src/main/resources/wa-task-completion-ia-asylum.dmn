@@ -152,14 +152,14 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0det_addendum_completion">
-        <inputEntry id="UnaryTests_0det_add_comp">
+      <rule id="DecisionRule_111ic7u">
+        <inputEntry id="UnaryTests_132nyqb">
           <text>"markAddendumEvidenceAsReviewed"</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_0det_add_comp1">
+        <outputEntry id="LiteralExpression_0uxipq5">
           <text>"detainedReviewAddendumEvidence"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_0det_add_comp2">
+        <outputEntry id="LiteralExpression_06zjmm1">
           <text>"Auto"</text>
         </outputEntry>
       </rule>
@@ -633,6 +633,17 @@
           <text>"reviewRemissionApplication"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1ibdo4g">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_09aof5d">
+        <inputEntry id="UnaryTests_0deae0p">
+          <text>"recordRemissionDecision"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0kgq8ne">
+          <text>"detainedReviewRemissionApplication"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1cnt6cw">
           <text>"Auto"</text>
         </outputEntry>
       </rule>

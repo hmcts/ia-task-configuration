@@ -614,17 +614,6 @@
           <text>"Review Addendum Evidence"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0det_addendum_type">
-        <inputEntry id="UnaryTests_0det_add_type">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0det_add_type1">
-          <text>"detainedReviewAddendumEvidence"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0det_add_type2">
-          <text>"Detained - Review Addendum Evidence"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_1xabmqc">
         <inputEntry id="UnaryTests_10rzbiv">
           <text></text>
@@ -711,6 +700,17 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_087i02i">
           <text>"Review Remission Application"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0l1oc63">
+        <inputEntry id="UnaryTests_1ottkw3">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0bk889c">
+          <text>"detainedReviewRemissionApplication"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1owcbzq">
+          <text>"Detained - Review Remission Application"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_13bsoze">
@@ -942,6 +942,17 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_108n9v2">
           <text>"Review Remission Application"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1mtc1dl">
+        <inputEntry id="UnaryTests_1abw3lr">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0wxgfuf">
+          <text>"deainedReviewAriaRemissionApplication"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1gvqpe9">
+          <text>"Detained - Review Remission Application"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0nyewup">

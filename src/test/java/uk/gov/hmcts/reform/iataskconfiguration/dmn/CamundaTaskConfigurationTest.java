@@ -246,6 +246,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("detainedFollowUpNonStandardDirection", routineWork),
             Arguments.of("reviewClarifyingQuestionsAnswers", routineWork),
             Arguments.of("reviewRemissionApplication", routineWork),
+            Arguments.of("detainedReviewRemissionApplication", routineWork),
             Arguments.of("assignAFTPAJudge", routineWork),
             Arguments.of("detainedAssignAFTPAJudge", routineWork),
             Arguments.of("reviewAppealSetAsideUnderRule35", routineWork),
@@ -510,7 +511,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     @CsvSource({
         "reviewRemissionApplication","assignAFTPAJudge","detainedAssignAFTPAJudge","listTheCase",
         "sendPaymentRequest","markAsPaid","detainedListTheCase",
-        "processFeeRefund", "reviewDraftAppeal"
+        "processFeeRefund", "reviewDraftAppeal","detainedReviewRemissionApplication"
     })
     void when_taskId_then_return_Ctsc_role_category(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
@@ -1469,6 +1470,9 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             + "decideAnApplication),,,",
         "reviewRemissionApplication,[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/"
             + "recordRemissionDecision/recordRemissionDecisionremissionDecision),,,",
+        "detainedReviewRemissionApplication,[Record remission decision]"
+            + "(/cases/case-details/${[CASE_REFERENCE]}/trigger/"
+            + "recordRemissionDecision/recordRemissionDecisionremissionDecision),,,",
         "assignAFTPAJudge,[Record allocated Judge](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
             + "recordAllocatedJudge),,,",
         "detainedAssignAFTPAJudge,[Record allocated Judge](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
@@ -1634,6 +1638,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("reviewAddendumEvidence", twoDays),
             Arguments.of("detainedReviewAddendumEvidence", twoDays),
             Arguments.of("reviewRemissionApplication", twoDays),
+            Arguments.of("detainedReviewRemissionApplication", twoDays),
             Arguments.of("assignAFTPAJudge", twoDays),
             Arguments.of("detainedAssignAFTPAJudge", twoDays),
             Arguments.of("listTheCase", twoDays),
