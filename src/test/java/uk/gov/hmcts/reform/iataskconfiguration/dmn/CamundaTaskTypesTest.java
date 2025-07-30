@@ -327,6 +327,11 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                    "Decide an FTPA"
             ),
             Map.of("taskTypeId",
+                   "detainedDecideAnFTPA",
+                   "taskTypeName",
+                   "Detained - Decide an FTPA"
+            ),
+            Map.of("taskTypeId",
                    "allocateHearingJudge",
                    "taskTypeName",
                    "Allocate Hearing Judge"
@@ -420,6 +425,11 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                 "reviewInterpreters",
                 "taskTypeName",
                 "Review interpreter booking"
+            ),
+            Map.of("taskTypeId",
+                   "detainedReviewInterpreters",
+                   "taskTypeName",
+                   "Detained - Review interpreter booking"
             ),
             Map.of("taskTypeId",
                 "relistCase",

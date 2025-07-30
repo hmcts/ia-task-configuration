@@ -450,6 +450,17 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "detainedReviewInterpreters",
+                List.of(
+                    taskSupervisor,
+                    seniorCaseWorkerPriorityOne,
+                    hearingCentreAdminPriorityOne,
+                    ctscAdminPriorityOne,
+                    ctscTeamLeaderPriorityOne,
+                    tribunalCaseWorkerPriorityTwoOwn
+                )
+            ),
+            Arguments.of(
                 "reviewMigratedCase",
                 List.of(
                     taskSupervisor,
