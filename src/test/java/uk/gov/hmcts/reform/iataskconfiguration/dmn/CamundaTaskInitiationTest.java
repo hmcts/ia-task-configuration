@@ -2021,6 +2021,12 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       + "}"),
                 List.of(
                     Map.of(
+                        "taskId", "reviewTheAppeal",
+                        "name", "Review the appeal",
+
+                        "processCategories", "caseProgression"
+                    ),
+                    Map.of(
                         "taskId", "reviewHOWaiverRemission",
                         "name", "Review HO Waiver remission",
 
