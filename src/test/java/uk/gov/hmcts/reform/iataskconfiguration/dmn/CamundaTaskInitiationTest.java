@@ -1190,9 +1190,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     Map.of(
                         "taskId", "reviewTheAppeal",
-                        "name", "Review the appeal",
-
-                        "processCategories", "caseProgression"
+                        "processCategories", "caseProgression",
+                        "name", "Review the appeal"
                     )
                 )
             ),
@@ -1207,10 +1206,16 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       + "}"),
                 List.of(
                     Map.of(
+                        "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
-                        "processCategories", "caseProgression",
-                        "taskId", "reviewTheAppeal"
 
+                        "processCategories", "caseProgression"
+                    ),
+                    Map.of(
+                        "taskId", "reviewECRRemission",
+                        "name", "Review ECR Remission",
+
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
