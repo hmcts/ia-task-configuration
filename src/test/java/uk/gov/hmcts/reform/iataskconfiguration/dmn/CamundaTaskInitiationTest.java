@@ -2045,7 +2045,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewDraftAppeal",
                         "name", "Review draft appeal",
-                        "delayUntil", delayFor14Days,
                         "processCategories", "followUpOverdue"
                     )
                 )
