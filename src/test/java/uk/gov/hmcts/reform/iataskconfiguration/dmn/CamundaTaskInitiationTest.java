@@ -1908,7 +1908,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     ),
                     Map.of(
                         "taskId", "reviewECRRemission",
-                        "name", "Review ECR Remission",
+                        "name", "Review ECR remission",
 
                         "processCategories", "caseProgression"
                     )
@@ -1932,7 +1932,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     ),
                     Map.of(
                         "taskId", "reviewHWFRemission",
-                        "name", "Review HWF Remission",
+                        "name", "Review HWF remission",
 
                         "processCategories", "caseProgression"
                     )
@@ -1980,7 +1980,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     ),
                     Map.of(
                         "taskId", "reviewECRRemissionApplication",
-                        "name", "Review ECR Remission",
+                        "name", "Review ECR remission",
 
                         "processCategories", "caseProgression"
                     )
