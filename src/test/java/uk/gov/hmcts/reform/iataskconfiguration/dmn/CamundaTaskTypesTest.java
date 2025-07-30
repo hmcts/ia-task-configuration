@@ -379,11 +379,11 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                    "taskTypeName",
                    "Review AS remission"
             ),
-        Map.of("taskTypeId",
-               "reviewHOWaiverRemission",
-               "taskTypeName",
-               "Review HO waiver remission"
-        ),
+            Map.of("taskTypeId",
+                   "reviewHOWaiverRemission",
+                   "taskTypeName",
+                   "Review HO waiver remission"
+            ),
             Map.of("taskTypeId",
                    "reviewAuthorityRemission",
                    "taskTypeName",
