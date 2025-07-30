@@ -12423,7 +12423,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0exlqbz">
-          <text></text>
+          <text>false</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0s0nm25">
           <text>"reviewDraftAppeal"</text>
@@ -12438,6 +12438,107 @@
 }</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1odajn4">
+          <text>"followUpOverdue"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0detained_draft_appeal">
+        <inputEntry id="UnaryTests_0det_draft_1">
+          <text>"startAppeal"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_draft_2">
+          <text>"appealStartedByAdmin"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_draft_3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_draft_4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_draft_5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_draft_6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_draft_7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_draft_8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_draft_9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_draft_10">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_draft_11">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_draft_12">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_draft_13">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_draft_14">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_draft_15">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_draft_16">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_draft_17">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_draft_18">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_draft_19">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_draft_20">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_draft_21">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_draft_22">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_draft_23">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_draft_24">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_draft_25">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_draft_26">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_draft_27">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_draft_28">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0det_draft_out1">
+          <text>"DetainedReviewDraftAppeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0det_draft_out2">
+          <text>"Detained - Review Draft Appeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0det_draft_out3">
+          <text>{
+"delayUntilOrigin": today(),
+"delayUntilIntervalDays":"14"
+}</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0det_draft_out4">
           <text>"followUpOverdue"</text>
         </outputEntry>
       </rule>
