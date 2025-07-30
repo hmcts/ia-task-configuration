@@ -2019,7 +2019,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       + "      \"remissionType\":\"" + "hoWaiverRemission" + "\"\n"
                                       + "   }"
                                       + "}"),
-                singletonList(
+                List.of(
                     Map.of(
                         "taskId", "reviewHOWaiverRemission",
                         "name", "Review HO Waiver remission",
