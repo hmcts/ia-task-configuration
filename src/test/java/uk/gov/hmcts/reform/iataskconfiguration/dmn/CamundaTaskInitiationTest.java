@@ -95,8 +95,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         appellantInDetention,
                         List.of(
                                 Map.of(
-                                        "taskId", "decideAnFTPA",
-                                        "name", "Decide an FTPA",
+                                        "taskId", "detainedDecideAnFTPA",
+                                        "name", "Detained - Decide an FTPA",
 
                                         "processCategories", "caseProgression"
                                 ),
@@ -108,6 +108,25 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                 )
                         )
                 ),
+            Arguments.of(
+                "applyForFTPAAppellant",
+                null,
+                appellantInDetention,
+                List.of(
+                    Map.of(
+                        "taskId", "detainedDecideAnFTPA",
+                        "name", "Detained - Decide an FTPA",
+
+                        "processCategories", "caseProgression"
+                    ),
+                    Map.of(
+                        "taskId", "detainedAssignAFTPAJudge",
+                        "name", "Detained - Assign a FTPA Judge",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
             Arguments.of(
                 "applyForFTPARespondent",
                 null,
@@ -133,8 +152,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         appellantInDetention,
                         List.of(
                                 Map.of(
-                                        "taskId", "decideAnFTPA",
-                                        "name", "Decide an FTPA",
+                                        "taskId", "detainedDecideAnFTPA",
+                                        "name", "Detained - Decide an FTPA",
 
                                         "processCategories", "caseProgression"
                                 ),
@@ -146,6 +165,25 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                 )
                         )
                 ),
+            Arguments.of(
+                "applyForFTPARespondent",
+                null,
+                appellantInDetention,
+                List.of(
+                    Map.of(
+                        "taskId", "detainedDecideAnFTPA",
+                        "name", "Detained - Decide an FTPA",
+
+                        "processCategories", "caseProgression"
+                    ),
+                    Map.of(
+                        "taskId", "detainedAssignAFTPAJudge",
+                        "name", "Detained - Assign a FTPA Judge",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
             Arguments.of(
                 "generateDecisionAndReasons",
                 "decision",
