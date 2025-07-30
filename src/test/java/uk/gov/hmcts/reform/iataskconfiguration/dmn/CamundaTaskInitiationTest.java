@@ -179,25 +179,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       + "   \"Data\":{\n"
                                       + "      \"journeyType\":\"" + "aip" + "\",\n"
                                       + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                                      + "      \"remissionType\":\"" + "hoWaiverRemission" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewHoWaiverRemission",
-                        "name", "Review HO Waiver Remission",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
-                "submitAppeal",
-                "pendingPayment",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"journeyType\":\"" + "aip" + "\",\n"
-                                      + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
                                       + "      \"remissionType\":\"" + "exceptionalCircumstancesRemission" + "\"\n"
                                       + "   }"
                                       + "}"),
@@ -242,9 +223,9 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 singletonList(
                     Map.of(
                         "taskId", "reviewHOWaiverRemission",
-                        "name", "Review HO Waiver Remission",
 
-                        "processCategories", "caseProgression"
+                        "processCategories", "caseProgression",
+                        "name", "Review HO Waiver Remission"
                     )
                 )
             ),
@@ -1229,9 +1210,9 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     Map.of(
                         "taskId", "reviewTheAppeal",
-                        "name", "Review the appeal",
 
-                        "processCategories", "caseProgression"
+                        "processCategories", "caseProgression",
+                        "name", "Review the appeal"
                     )
                 )
             ),
