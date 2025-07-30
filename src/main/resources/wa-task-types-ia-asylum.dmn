@@ -779,6 +779,61 @@
           <text>"Review AS remission"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_12fhm9i">
+        <inputEntry id="UnaryTests_0h2d6uo">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1thv25u">
+          <text>"reviewLARemission"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04xczsf">
+          <text>"Review LA remission"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0xf9g1x">
+        <inputEntry id="UnaryTests_0lw07fm">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1opasmk">
+          <text>"reviewHOWaiverRemission"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_19o47g2">
+          <text>"Review HO Waiver remission"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0rvuvfq">
+        <inputEntry id="UnaryTests_14zs0gf">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0fat2y4">
+          <text>"reviewAuthorityRemission"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ysvy8p">
+          <text>"Review Authority remission"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_03bib6l">
+        <inputEntry id="UnaryTests_0qynxvr">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_12d3i2q">
+          <text>"reviewHWFRemission"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0r2ds1d">
+          <text>"Review HWF remission"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_08uio3t">
+        <inputEntry id="UnaryTests_0qrcqxe">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_114lzd7">
+          <text>"reviewECRRemission"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_196flk6">
+          <text>"Review ECR remission"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

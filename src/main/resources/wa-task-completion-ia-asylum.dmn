@@ -515,6 +515,61 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1wmpgbh">
+        <inputEntry id="UnaryTests_1f40q9n">
+          <text>"recordRemissionDecision"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0yvafry">
+          <text>"reviewLARemission"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1rsobip">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_123pdk4">
+        <inputEntry id="UnaryTests_0yqok2a">
+          <text>"recordRemissionDecision"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0k53nni">
+          <text>"reviewHOWaiverRemission"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12a2jj0">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_085epr3">
+        <inputEntry id="UnaryTests_0epdzes">
+          <text>"recordRemissionDecision"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_195su8t">
+          <text>"reviewAuthorityRemission"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0pqex9x">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0khyxp7">
+        <inputEntry id="UnaryTests_0gju3jr">
+          <text>"recordRemissionDecision"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0je7pqp">
+          <text>"reviewHWFRemission"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0te71hb">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0a0budd">
+        <inputEntry id="UnaryTests_017w7j6">
+          <text>"recordRemissionDecision"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_09y9f1a">
+          <text>"reviewECRRemission"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_173n7xp">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
