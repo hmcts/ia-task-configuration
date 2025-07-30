@@ -1978,6 +1978,12 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Review the appeal",
 
                         "processCategories", "caseProgression"
+                    ),
+                    Map.of(
+                        "taskId", "reviewECRRemission",
+                        "name", "Review ECR Remission",
+
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
@@ -1994,6 +2000,12 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
+
+                        "processCategories", "caseProgression"
+                    ),
+                    Map.of(
+                        "taskId", "reviewHWFRemission",
+                        "name", "Review HWF Remission",
 
                         "processCategories", "caseProgression"
                     )
@@ -2014,6 +2026,12 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Review the appeal",
 
                         "processCategories", "caseProgression"
+                    ),
+                    Map.of(
+                        "taskId", "reviewHOWaiverRemission",
+                        "name", "Review HO Waiver remission",
+
+                        "processCategories", "caseProgression"
                     )
                 )
             ),
@@ -2030,6 +2048,12 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewTheAppeal",
                         "name", "Review the appeal",
+
+                        "processCategories", "caseProgression"
+                    ),
+                    Map.of(
+                        "taskId", "reviewECRRemissionApplication",
+                        "name", "Review ECR Remission",
 
                         "processCategories", "caseProgression"
                     )
