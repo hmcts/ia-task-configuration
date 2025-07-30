@@ -478,7 +478,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
         "arrangeOfflinePayment", "markCaseAsPaid", "allocateHearingJudge", "detainedAllocateHearingJudge",
         "uploadHearingRecording", "postHearingAttendeesDurationAndRecording",
-        "detainedPostHearingAttendeesDurationAndRecording","detainedPostHearingAttendeesDurationAndRecording",
+        "detainedPostHearingAttendeesDurationAndRecording",
         "editListing", "detainedEditListing", "followUpSetAsideDecision",
         "hearingException", "cmrListed", "cmrUpdated", "detainedCmrListed", "detainedCmrUpdated","relistCase",
         "reviewInterpreters","detainedReviewInterpreters", "reviewMigratedCase", "reviewAriaRemissionApplication",
