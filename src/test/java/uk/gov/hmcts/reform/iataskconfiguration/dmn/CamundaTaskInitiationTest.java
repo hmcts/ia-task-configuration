@@ -1184,7 +1184,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"appealType\":\"" + "protection" + "\",\n"
-                                      + "      \"remissionType\":\"" + "hoWaiverRemission" + "\"\n"
                                       + "   }"
                                       + "}"),
                 List.of(
@@ -2020,13 +2019,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       + "      \"remissionType\":\"" + "hoWaiverRemission" + "\"\n"
                                       + "   }"
                                       + "}"),
-                List.of(
-                    Map.of(
-                        "taskId", "reviewTheAppeal",
-                        "name", "Review the appeal",
-
-                        "processCategories", "caseProgression"
-                    ),
+                singletonList(
                     Map.of(
                         "taskId", "reviewHOWaiverRemission",
                         "name", "Review HO Waiver remission",
