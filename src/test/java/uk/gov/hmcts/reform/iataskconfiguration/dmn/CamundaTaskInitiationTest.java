@@ -184,9 +184,9 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       + "}"),
                 singletonList(
                     Map.of(
-                        "name", "Review ECR Remission",
                         "processCategories", "caseProgression",
-                        "taskId", "reviewECRRemission"
+                        "taskId", "reviewECRRemission",
+                        "name", "Review ECR Remission"
                     )
                 )
             ),
@@ -203,8 +203,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 singletonList(
                     Map.of(
                         "processCategories", "caseProgression",
-                        "name", "Review HWF Remission",
-                        "taskId", "reviewHWFRemission"
+                        "taskId", "reviewHWFRemission",
+                        "name", "Review HWF Remission"
                     )
                 )
             ),
