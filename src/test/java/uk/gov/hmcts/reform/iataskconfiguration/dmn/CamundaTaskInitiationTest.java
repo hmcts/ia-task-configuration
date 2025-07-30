@@ -1979,7 +1979,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "processCategories", "caseProgression"
                     ),
                     Map.of(
-                        "taskId", "reviewECRRemissionApplication",
+                        "taskId", "reviewECRRemission",
                         "name", "Review ECR remission",
 
                         "processCategories", "caseProgression"
