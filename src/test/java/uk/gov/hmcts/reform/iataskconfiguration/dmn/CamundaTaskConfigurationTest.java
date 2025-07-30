@@ -1144,6 +1144,16 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             + "recordRemissionDecision/recordRemissionDecisionremissionDecision),,,",
         "reviewASRemission,[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/"
             + "recordRemissionDecision/recordRemissionDecisionremissionDecision),,,",
+        "reviewLARemission,[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/"
+            + "recordRemissionDecision/recordRemissionDecisionremissionDecision),,,",
+        "reviewHOWaiverRemission,[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/"
+            + "recordRemissionDecision/recordRemissionDecisionremissionDecision),,,",
+        "reviewAuthorityRemission,[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/"
+            + "recordRemissionDecision/recordRemissionDecisionremissionDecision),,,",
+        "reviewHWFRemission,[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/"
+            + "recordRemissionDecision/recordRemissionDecisionremissionDecision),,,",
+        "reviewECRRemission,[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/"
+            + "recordRemissionDecision/recordRemissionDecisionremissionDecision),,,",
         "assignAFTPAJudge,[Record allocated Judge](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
             + "recordAllocatedJudge),,,",
         "listTheCase,[List the case](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/listCase),,No,",
@@ -1292,6 +1302,11 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("reviewAddendumEvidence", twoDays),
             Arguments.of("reviewRemissionApplication", twoDays),
             Arguments.of("reviewASRemission", twoDays),
+            Arguments.of("reviewLARemission", twoDays),
+            Arguments.of("reviewHOWaiverRemission", twoDays),
+            Arguments.of("reviewAuthorityRemission", twoDays),
+            Arguments.of("reviewHWFRemission", twoDays),
+            Arguments.of("reviewECRRemission", twoDays),
             Arguments.of("assignAFTPAJudge", twoDays),
             Arguments.of("listTheCase", twoDays),
             Arguments.of("reviewSetAsideDecisionApplication", twoDays),
