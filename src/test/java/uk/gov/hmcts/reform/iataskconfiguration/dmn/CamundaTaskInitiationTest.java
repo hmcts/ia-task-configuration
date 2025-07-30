@@ -1962,7 +1962,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"appealType\":\"" + "protection" + "\",\n"
-                                      + "      \"remissionType\":\"" + "hoWaiverRemission" + "\"\n"
+                                      + "      \"remissionClaim\":\"" + "homeOfficeWaiver" + "\"\n"
                                       + "   }"
                                       + "}"),
                 List.of(
