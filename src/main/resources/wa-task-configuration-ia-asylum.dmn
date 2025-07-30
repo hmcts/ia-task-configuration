@@ -719,7 +719,7 @@ else if (taskAttributes != null and taskAttributes.taskType != null and taskAttr
 "cmrListed",
 "cmrUpdated",
 "reviewAriaRemissionApplication",
-"reviewASRemission",</text>
+"reviewASRemission", "reviewLARemission", "reviewHOWaiverRemission", "reviewAuthorityRemission", "reviewHWFRemission", "reviewECRRemission"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1kbin0j">
           <text>"dueDateIntervalDays"</text>
