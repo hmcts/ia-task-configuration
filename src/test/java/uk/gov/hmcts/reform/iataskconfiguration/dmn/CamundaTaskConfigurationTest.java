@@ -491,17 +491,17 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "editListing", "detainedEditListing", "followUpSetAsideDecision",
         "hearingException", "cmrListed", "cmrUpdated", "detainedCmrListed", "detainedCmrUpdated","relistCase",
         "reviewInterpreters","reviewMigratedCase","reviewAriaRemissionApplication",
-"printAndSendHoBundle","detainedPrintAndSendHoBundle","printAndSendHoResponse",
-"printAndSendHearingRequirements","detainedPrintAndSendHearingRequirements",
-"printAndSendHearingBundle","detainedPrintAndSendHearingBundle",
-"printAndSendDecisionCorrectedRule31","detainedPrintAndSendDecisionCorrectedRule31",
-"printAndSendDecisionCorrectedRule32","detainedPrintAndSendDecisionCorrectedRule32",
-"printAndSendHoApplication","detainedPrintAndSendHoApplication",
-"printAndSendHoEvidence","detainedPrintAndSendHoEvidence",
-"printAndSendAppealDecision","printAndSendFTPADecision","detainedPrintAndSendAppealDecision",
-"detainedPrintAndSendFTPADecision",
-"printAndSendReheardHearingRequirements","detainedPrintAndSendReheardHearingRequirements",
-"detainedListCmr","detainedReviewInterpreters"
+        "printAndSendHoBundle","detainedPrintAndSendHoBundle","printAndSendHoResponse",
+        "printAndSendHearingRequirements","detainedPrintAndSendHearingRequirements",
+        "printAndSendHearingBundle","detainedPrintAndSendHearingBundle",
+        "printAndSendDecisionCorrectedRule31","detainedPrintAndSendDecisionCorrectedRule31",
+        "printAndSendDecisionCorrectedRule32","detainedPrintAndSendDecisionCorrectedRule32",
+        "printAndSendHoApplication","detainedPrintAndSendHoApplication",
+        "printAndSendHoEvidence","detainedPrintAndSendHoEvidence",
+        "printAndSendAppealDecision","printAndSendFTPADecision","detainedPrintAndSendAppealDecision",
+        "detainedPrintAndSendFTPADecision",
+        "printAndSendReheardHearingRequirements","detainedPrintAndSendReheardHearingRequirements",
+        "detainedListCmr","detainedReviewInterpreters"
     })
     void when_taskId_then_return_Admin_role_category(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
