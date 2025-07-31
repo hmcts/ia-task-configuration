@@ -245,7 +245,7 @@
                         "followUpOverdueClarifyingAnswers",
                         "reviewClarifyingAnswers",
                         "followUpOverdueRespondentReview","detainedFollowUpOverdueRespondentReview",
-                        "reviewRespondentResponse",
+                        "reviewRespondentResponse","detainedReviewRespondentResponse",
                         "followUpOverdueCMARequirements",
                         "reviewCmaRequirements",
                         "reviewAdditionalEvidence",
@@ -416,7 +416,7 @@
                         "reviewClarifyingQuestionsAnswers",
                         "reviewCmaRequirements",
                         "attendCma",
-                        "reviewRespondentResponse",
+                        "reviewRespondentResponse","detainedReviewRespondentResponse",
                         "caseSummaryHearingBundleStartDecision",
                         "reviewHearingRequirements","detainedReviewHearingRequirements",
                         "detainedCaseSummaryHearingBundleStartDecision",
@@ -587,6 +587,8 @@
                         then "[Review CMA Requirements](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/reviewCmaRequirements)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewRespondentResponse" or taskType != null and taskType = "reviewRespondentResponse")
                         then "[Review Home Office response](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestResponseReview)&lt;br /&gt;[Amend appeal response](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestResponseAmend)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "detainedReviewRespondentResponse" or taskType != null and taskType = "detainedReviewRespondentResponse")
+                        then "[Review Home Office response](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestResponseReview)&lt;br /&gt;[Amend appeal response](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestResponseAmend)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "createHearingBundle" or taskType != null and taskType = "createHearingBundle")
                         then "[Generate the hearing bundle](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/generateHearingBundle)&lt;br /&gt;[Customise the hearing bundle](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/customiseHearingBundle)"
                         else if ((taskAttributes != null and taskAttributes.taskType != null and (taskAttributes.taskType = "processApplicationExpedite" or taskAttributes.taskType = "detainedProcessApplicationExpedite")) or (taskType != null and (taskType = "processApplicationExpedite" or taskType = "detainedProcessApplicationExpedite")))
@@ -725,7 +727,7 @@
 "reviewClarifyingQuestionsAnswers",
 "reviewCmaRequirements",
 "attendCma","detainedReviewSetAsideDecisionApplication",
-"reviewRespondentResponse",
+"reviewRespondentResponse","detainedReviewRespondentResponse",
 "caseSummaryHearingBundleStartDecision",
 "reviewHearingRequirements","detainedReviewHearingRequirements",
 "detainedCaseSummaryHearingBundleStartDecision",

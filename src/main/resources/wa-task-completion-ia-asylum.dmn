@@ -229,6 +229,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_13ulck9">
+        <inputEntry id="UnaryTests_0lfzhyb">
+          <text>"forceCaseToSubmitHearingRequirements"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_06beoad">
+          <text>"detainedReviewRespondentResponse"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1cxqzby">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0z5xy01">
         <inputEntry id="UnaryTests_0iji488">
           <text>"decisionAndReasonsStarted"</text>
@@ -692,15 +703,15 @@
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1ecxntt">
-              <inputEntry id="UnaryTests_0dzn595">
-                <text>"listCase"</text>
-              </inputEntry>
-              <outputEntry id="LiteralExpression_1309ng9">
-                <text>"detainedListTheCase"</text>
-              </outputEntry>
-              <outputEntry id="LiteralExpression_1ry405r">
-                <text>"Auto"</text>
-              </outputEntry>
+        <inputEntry id="UnaryTests_0dzn595">
+          <text>"listCase"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1309ng9">
+          <text>"detainedListTheCase"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ry405r">
+          <text>"Auto"</text>
+        </outputEntry>
       </rule>
       <rule id="DecisionRule_1dw5umn">
         <inputEntry id="UnaryTests_1je7jwi">

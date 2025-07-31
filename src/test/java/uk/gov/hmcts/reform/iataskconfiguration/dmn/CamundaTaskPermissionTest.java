@@ -755,6 +755,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         "followUpOverdueCaseBuilding","detainedFollowUpOverdueRespondentReview",
         "followUpOverdueReasonsForAppeal", "reviewTheAppeal","detainedReviewTheAppeal",
         "reviewClarifyingQuestionsAnswers", "followUpOverdueClarifyingAnswers", "reviewRespondentResponse",
+        "detainedReviewRespondentResponse",
         "followUpOverdueRespondentReview","detainedFollowUpOverdueRespondentReview", "reviewHearingRequirements",
         "followUpOverdueHearingRequirements","detainedReviewHearingRequirements","followUpOverdueHearingRequirements",
         "reviewCmaRequirements",

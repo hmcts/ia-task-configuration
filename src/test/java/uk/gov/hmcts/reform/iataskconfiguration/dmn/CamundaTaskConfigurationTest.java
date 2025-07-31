@@ -297,6 +297,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("followUpOverdueRespondentReview", decisionMakingWork),
             Arguments.of("detainedFollowUpOverdueRespondentReview", decisionMakingWork),
             Arguments.of("reviewRespondentResponse", decisionMakingWork),
+            Arguments.of("detainedReviewRespondentResponse", decisionMakingWork),
             Arguments.of("followUpOverdueCMARequirements", decisionMakingWork),
             Arguments.of("reviewCmaRequirements", decisionMakingWork),
             Arguments.of("reviewAdditionalHomeOfficeEvidence", decisionMakingWork),
@@ -574,7 +575,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             + "aip,,",
         "reviewAppealSkeletonArgument","detainedReviewAppealSkeletonArgument", "reviewReasonsForAppeal",
         "reviewClarifyingQuestionsAnswers", "reviewAdditionalHomeOfficeEvidence",
-        "reviewCmaRequirements", "attendCma", "reviewRespondentResponse", "caseSummaryHearingBundleStartDecision",
+        "reviewCmaRequirements", "attendCma", "reviewRespondentResponse","detainedReviewRespondentResponse", "caseSummaryHearingBundleStartDecision",
         "detainedCaseSummaryHearingBundleStartDecision",
         "reviewHearingRequirements","detainedReviewHearingRequirements", "followUpOverdueRespondentEvidence",
         "detainedFollowUpOverdueRespondentEvidence",
@@ -1439,6 +1440,10 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             + "[Review Home Office response](/case/IA/Asylum/${[CASE_REFERENCE]}/"
             + "trigger/requestResponseReview)<br />[Amend appeal response](/case/IA/Asylum/${[CASE_REFERENCE]}/"
             + "trigger/requestResponseAmend),,,",
+        "detainedReviewRespondentResponse,"
+            + "[Review Home Office response](/case/IA/Asylum/${[CASE_REFERENCE]}/"
+            + "trigger/requestResponseReview)<br />[Amend appeal response](/case/IA/Asylum/${[CASE_REFERENCE]}/"
+            + "trigger/requestResponseAmend),,,",
         "createHearingBundle,"
             + "[Generate the hearing bundle](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger"
             + "/generateHearingBundle)<br />"
@@ -1642,6 +1647,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("reviewCmaRequirements", twoDays),
             Arguments.of("attendCma", twoDays),
             Arguments.of("reviewRespondentResponse", twoDays),
+            Arguments.of("detainedReviewRespondentResponse", twoDays),
             Arguments.of("caseSummaryHearingBundleStartDecision", twoDays),
             Arguments.of("detainedCaseSummaryHearingBundleStartDecision", twoDays),
             Arguments.of("reviewHearingRequirements", twoDays),
