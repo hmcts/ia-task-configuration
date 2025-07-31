@@ -195,6 +195,40 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "pendingPayment",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
+                                      + "      \"remissionClaim\":\"" + "section17" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "name", "Review Authority remission",
+                        "processCategories", "caseProgression",
+                        "taskId", "reviewAuthorityRemission"
+                    )
+                )
+            ),
+            Arguments.of(
+                "submitAppeal",
+                "pendingPayment",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
+                                      + "      \"remissionClaim\":\"" + "section20" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "name", "Review Authority remission",
+                        "processCategories", "caseProgression",
+                        "taskId", "reviewAuthorityRemission"
+                    )
+                )
+            ),
+            Arguments.of(
+                "submitAppeal",
+                "pendingPayment",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
                                       + "      \"journeyType\":\"" + "aip" + "\",\n"
                                       + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
                                       + "      \"remissionType\":\"" + "helpWithFees" + "\"\n"

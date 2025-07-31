@@ -9947,6 +9947,105 @@
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1nqymp3">
+        <inputEntry id="UnaryTests_1eydj2e">
+          <text>"submitAppeal",
+"progressMigratedCase"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17sqvsj">
+          <text>"pendingPayment","appealSubmitted"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0atym9f">
+          <text>"refusalOfHumanRights","refusalOfEu","protection","euSettlementScheme"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_091bsdd">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0onnc8f">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1khswy7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1nvrbbc">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jkbel3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1f4dfd2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0i1mno5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0sifw0h">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xy7iqe">
+          <text>"section17", "section20"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1elqo91">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fvz3yr">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1o7cbrn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1bgtucg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0m5m9qk">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10cplwn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jlbjda">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03gfdbb">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12ba8t3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0uxli2p">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0l6j93h">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ywniw9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0apvhad">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0sj5ght">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_13xu40z">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wj10j2">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ed1fiw">
+          <text>"reviewAuthorityRemission"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1xkovee">
+          <text>"Review Authority remission"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_111kabf">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_11fq0gp">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1w2yads">
         <inputEntry id="UnaryTests_0z9r86r">
           <text>"requestFeeRemission"</text>
@@ -10827,6 +10926,104 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_1px2aoj">
           <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_08ura74">
+        <inputEntry id="UnaryTests_1bb5hfh">
+          <text>"requestFeeRemission"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jb6pw4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pkuoy2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0w45ot1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ye77q3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0j0o9us">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1kcpsp4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0kqfr6r">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0yr54cf">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rdttbb">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1omkfo7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_18gwgxu">
+          <text>"section17", "section20"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ohbycv">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1q6cjmx">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1i0mtro">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1eu0hjo">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08pco4v">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0vdb84h">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1en3oh1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0vukebx">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0x6uby5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1mdb290">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1g13k08">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1tdcd65">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19nznwc">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rxo25g">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rbks1m">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1mczeku">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1nlsuuo">
+          <text>"reviewAuthorityRemission"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0hmt2ml">
+          <text>"Review Authority remission"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1hmqexe">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_01f6sff">
+          <text></text>
         </outputEntry>
       </rule>
     </decisionTable>
