@@ -177,6 +177,24 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "pendingPayment",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
+                                      + "      \"remissionClaim\":\"" + "asylumSupport" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewASRemission",
+                        "name", "Review AS remission",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "submitAppeal",
+                "pendingPayment",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
                                       + "      \"journeyType\":\"" + "aip" + "\",\n"
                                       + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
                                       + "      \"remissionType\":\"" + "exceptionalCircumstancesRemission" + "\"\n"
