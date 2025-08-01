@@ -202,7 +202,7 @@
                         "markAsPaid",
                         "reviewRemittedAppeal",
                         "reviewAppealSetAsideUnderRule35",
-                        "reviewAppealSetAsideUnderRule32",
+                        "reviewAppealSetAsideUnderRule32","detainedReviewAppealSetAsideUnderRule32",
                         "reviewAriaRemissionApplication",
                         "reviewDraftAppeal",
                         "printAndSendHoBundle","detainedPrintAndSendHoBundle",
@@ -435,7 +435,7 @@
                         "startDecisionsAndReasonsDocument",
                         "reviewRemittedAppeal",
                         "reviewAppealSetAsideUnderRule35",
-                        "reviewAppealSetAsideUnderRule32"</text>
+                        "reviewAppealSetAsideUnderRule32","detainedReviewAppealSetAsideUnderRule32"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_05l5bvs">
           <text>"roleCategory"</text>
@@ -694,7 +694,7 @@
 "processApplicationLink/UnlinkAppeals","detainedProcessApplicationLink/UnlinkAppeals",
 "reviewRemittedAppeal",
 "reviewAppealSetAsideUnderRule35",
-"reviewAppealSetAsideUnderRule32",
+"reviewAppealSetAsideUnderRule32","detainedReviewAppealSetAsideUnderRule32",
 "reviewDraftAppeal",
 "processFeeRefund"</text>
         </inputEntry>

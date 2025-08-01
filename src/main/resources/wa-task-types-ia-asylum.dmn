@@ -812,6 +812,17 @@
           <text>"Review appeal set aside under rule 32"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_01uddsf">
+        <inputEntry id="UnaryTests_1h40dsl">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0gin7mt">
+          <text>"detainedReviewAppealSetAsideUnderRule32"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_05y4wht">
+          <text>"Detained - Review appeal set aside under rule 32"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0oznosm">
         <inputEntry id="UnaryTests_1byv6wo">
           <text></text>

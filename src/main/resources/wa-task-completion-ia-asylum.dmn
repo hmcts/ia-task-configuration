@@ -768,6 +768,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0m129us">
+        <inputEntry id="UnaryTests_0tuimbt">
+          <text>"requestNewHearingRequirements"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0edi1b4">
+          <text>"detainedReviewAppealSetAsideUnderRule32"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1x74xj0">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_03o6lzy">
         <inputEntry id="UnaryTests_0btxaat">
           <text>"progressMigratedCase"</text>

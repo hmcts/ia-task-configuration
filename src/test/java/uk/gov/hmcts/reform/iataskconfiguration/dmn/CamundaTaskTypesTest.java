@@ -415,6 +415,10 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                    "reviewAppealSetAsideUnderRule32",
                    "taskTypeName",
                    "Review appeal set aside under rule 32"
+            ),Map.of("taskTypeId",
+                     "detainedReviewAppealSetAsideUnderRule32",
+                     "taskTypeName",
+                     "Detained - Review appeal set aside under rule 32"
             ),
             Map.of("taskTypeId",
                 "hearingException",
