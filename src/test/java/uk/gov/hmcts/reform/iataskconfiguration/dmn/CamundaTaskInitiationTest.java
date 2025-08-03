@@ -2663,6 +2663,19 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "markAppealAsRemitted",
+                "remitted",
+                appellantInDetention,
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedReviewRemittedAppeal",
+                        "name", "Detained - Review remitted appeal",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
                 "decideFtpaApplication",
                 null,
                 mapAdditionalData("{\n"
@@ -2747,7 +2760,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "cmrRelisting",
+                "cmrReListing",
                 null,
                 null,
                 singletonList(
@@ -2760,7 +2773,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "cmrRelisting",
+                "cmrReListing",
                 null,
                 appellantInDetention,
                 singletonList(
@@ -3025,11 +3038,37 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "ariaCreateCase",
                 "migrated",
+                appellantInDetention,
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedReviewMigratedCase",
+                        "name", "Detained - Review migrated case",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "ariaCreateCase",
+                "migrated",
                 null,
                 List.of(
                     Map.of(
                         "taskId", "reviewMigratedCase",
                         "name", "Review migrated case",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "ariaCreateCase",
+                "migrated",
+                appellantInDetention,
+                List.of(
+                    Map.of(
+                        "taskId", "detainedReviewMigratedCase",
+                        "name", "Detained - Review migrated case",
 
                         "processCategories", "caseProgression"
                     )
@@ -3738,6 +3777,19 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "progressMigratedCase",
+                "remitted",
+                appellantInDetention,
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedReviewRemittedAppeal",
+                        "name", "Detained - Review remitted appeal",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "progressMigratedCase",
                 "ftpaSubmitted",
                 null,
                 List.of(
@@ -4273,7 +4325,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(28));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(159));
+        assertThat(logic.getRules().size(), is(161));
 
     }
 

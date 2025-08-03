@@ -476,6 +476,13 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "detainedReviewMigratedCase",
+                List.of(
+                    taskSupervisor,
+                    hearingCentreAdminPriorityOne
+                )
+            ),
+            Arguments.of(
                 "reviewAriaRemissionApplication",
                 List.of(
                     taskSupervisor,
@@ -764,6 +771,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
          "attendCma", "followUpNoticeOfChange","detainedFollowUpNoticeOfChange", "followUpOverdueCmaRequirements",
          "reviewAdditionalEvidence","detainedReviewAdditionalEvidence",
         "reviewAdditionalHomeOfficeEvidence","detainedReviewAdditionalHomeOfficeEvidence", "reviewRemittedAppeal",
+        "detainedReviewRemittedAppeal",
         "reviewAppealSetAsideUnderRule35", "reviewAppealSetAsideUnderRule32","reviewAppealSetAsideUnderRule32"
     })
     void given_taskType_when_evaluate_dmn_then_it_returns_first_second_and_third_rules(String taskType) {

@@ -746,6 +746,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1g4bxcj">
+        <inputEntry id="UnaryTests_0e5o70x">
+          <text>"requestNewHearingRequirements"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1iu46ef">
+          <text>"detainedReviewRemittedAppeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0r91j3t">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1ey9r2b">
         <inputEntry id="UnaryTests_0apqp13">
           <text>"requestNewHearingRequirements"</text>
@@ -787,6 +798,17 @@
           <text>"reviewMigratedCase"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0kuafu5">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_00yso6o">
+        <inputEntry id="UnaryTests_0jp0a04">
+          <text>"progressMigratedCase"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1a92i26">
+          <text>"detainedReviewMigratedCase"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_08s20d1">
           <text>"Auto"</text>
         </outputEntry>
       </rule>

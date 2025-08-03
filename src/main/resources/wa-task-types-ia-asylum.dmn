@@ -768,6 +768,17 @@
           <text>"Review remitted appeal"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_06ldy1b">
+        <inputEntry id="UnaryTests_0weeo5c">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0cc4wtz">
+          <text>"detainedReviewRemittedAppeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1tbesny">
+          <text>"Detained - Review remitted appeal"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_12nxngl">
         <inputEntry id="UnaryTests_14hns51">
           <text></text>
@@ -953,6 +964,17 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0x1covy">
           <text>"Review migrated case"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0hwgitv">
+        <inputEntry id="UnaryTests_1rndbss">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0tb75cg">
+          <text>"detainedReviewMigratedCase"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_11vgs13">
+          <text>"Detained - Review migrated case"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1g8hfyu">
