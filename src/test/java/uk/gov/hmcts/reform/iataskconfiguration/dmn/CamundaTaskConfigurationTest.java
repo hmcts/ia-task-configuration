@@ -485,6 +485,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
     @ParameterizedTest
     @CsvSource({
+
         "arrangeOfflinePayment", "markCaseAsPaid", "allocateHearingJudge", "detainedAllocateHearingJudge",
         "uploadHearingRecording", "postHearingAttendeesDurationAndRecording",
         "detainedPostHearingAttendeesDurationAndRecording",
