@@ -95,7 +95,7 @@
             "reviewAdditionalEvidence","detainedReviewAdditionalEvidence","detainedReviewAdditionalHomeOfficeEvidence",
             "followUpExtendedDirection","detainedFollowUpExtendedDirection",
             "reviewRemittedAppeal",
-            "reviewAppealSetAsideUnderRule35",
+            "reviewAppealSetAsideUnderRule35","detainedReviewAppealSetAsideUnderRule35",
             "reviewAppealSetAsideUnderRule32"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0buofva">
@@ -166,7 +166,7 @@
             "createHearingBundle",
             "createCaseSummary",
             "reviewRemittedAppeal",
-            "reviewAppealSetAsideUnderRule35",
+            "reviewAppealSetAsideUnderRule35","detainedReviewAppealSetAsideUnderRule35",
             "reviewAppealSetAsideUnderRule32"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_10s330p">
@@ -235,7 +235,7 @@
             "reviewAdditionalEvidence","detainedReviewAdditionalEvidence",
 "startDecisionsAndReasonsDocument","createHearingBundle","createCaseSummary",
             "reviewRemittedAppeal",
-            "reviewAppealSetAsideUnderRule35",
+            "reviewAppealSetAsideUnderRule35","detainedReviewAppealSetAsideUnderRule35",
             "reviewAppealSetAsideUnderRule32",
   "cmrListed","detainedCmrListed",
             "cmrUpdated","detainedCmrUpdated",

@@ -692,15 +692,15 @@
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1ecxntt">
-              <inputEntry id="UnaryTests_0dzn595">
-                <text>"listCase"</text>
-              </inputEntry>
-              <outputEntry id="LiteralExpression_1309ng9">
-                <text>"detainedListTheCase"</text>
-              </outputEntry>
-              <outputEntry id="LiteralExpression_1ry405r">
-                <text>"Auto"</text>
-              </outputEntry>
+        <inputEntry id="UnaryTests_0dzn595">
+          <text>"listCase"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1309ng9">
+          <text>"detainedListTheCase"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ry405r">
+          <text>"Auto"</text>
+        </outputEntry>
       </rule>
       <rule id="DecisionRule_1dw5umn">
         <inputEntry id="UnaryTests_1je7jwi">
@@ -743,6 +743,17 @@
           <text>"reviewAppealSetAsideUnderRule35"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0ba4pra">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1hq2mty">
+        <inputEntry id="UnaryTests_1mxmme5">
+          <text>"requestNewHearingRequirements"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0vojlzr">
+          <text>"detainedReviewAppealSetAsideUnderRule35"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ooi97c">
           <text>"Auto"</text>
         </outputEntry>
       </rule>
