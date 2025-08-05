@@ -966,6 +966,17 @@
           <text>"Review draft appeal"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0detained_review_draft_appeal">
+        <inputEntry id="UnaryTests_0det_rev_draft">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0det_rev_draft_id">
+          <text>"DetainedReviewDraftAppeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0det_rev_draft_name">
+          <text>"Detained - Review Draft Appeal"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1huctxl">
         <inputEntry id="UnaryTests_1v3q6vk">
           <text></text>
