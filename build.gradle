@@ -151,6 +151,7 @@ pitest {
 
 project.tasks['pitest'].group = "Verification"
 
+
 project.tasks['sonarqube'].dependsOn test, integration, jacocoTestReport
 
 sonarqube {
