@@ -533,7 +533,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     @CsvSource({
         "reviewRemissionApplication","assignAFTPAJudge","detainedAssignAFTPAJudge","listTheCase",
         "sendPaymentRequest","markAsPaid","detainedListTheCase",
-        "processFeeRefund", "reviewDraftAppeal","DetainedReviewDraftAppeal","detainedReviewRemissionApplication"
+        "processFeeRefund", "detainedProcessFeeRefund", "reviewDraftAppeal","DetainedReviewDraftAppeal",
+        "detainedReviewRemissionApplication"
     })
     void when_taskId_then_return_Ctsc_role_category(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
