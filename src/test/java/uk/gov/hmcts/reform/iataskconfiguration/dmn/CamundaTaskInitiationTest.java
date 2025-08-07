@@ -4161,22 +4161,27 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
         return Stream.of(
             getDecideAnApplicationArgumentsOf("Adjourn", "editListing",
-                                              "Edit Listing", "application", null, false),
+                                              "Edit Listing", "application", null, false,false),
             getDecideAnApplicationArgumentsOf("Expedite", "editListing",
-                                              "Edit Listing", "application", null, false),
+                                              "Edit Listing", "application", null, false,false),
             getDecideAnApplicationArgumentsOf("Transfer", "editListing",
-                                              "Edit Listing", "application", null, false),
+                                              "Edit Listing", "application", null, false,false),
             getDecideAnApplicationArgumentsOf("Adjourn", "editListing",
-                                              "Edit Listing", "application", null, true),
+                                              "Edit Listing", "application", null, true,false,
             getDecideAnApplicationArgumentsOf("Expedite", "editListing",
-                                              "Edit Listing", "application", null, true),
+                                              "Edit Listing", "application", null, true,false),
             getDecideAnApplicationArgumentsOf("Transfer", "editListing",
-                                              "Edit Listing", "application", null, true),
+                                              "Edit Listing", "application", null, true,false),
             getDecideAnApplicationArgumentsOf("Set aside a decision",
                                               "followUpSetAsideDecision",
                                               "Follow up set aside decision",
                                               "followUpOverdue",
-                                              delayFor5Days, false)
+                                              delayFor5Days, false, ),
+            getDecideAnApplicationArgumentsOf("Set aside a decision",
+                                              "detainedFollowUpSetAsideDecision",
+                                              "Detained - Follow up set aside decision",
+                                              "followUpOverdue",
+                                              delayFor5Days, false,false)
         );
     }
 
@@ -4185,7 +4190,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                                                String name,
                                                                String processCategories,
                                                                Map<String,Object> delayUntil,
-                                                               boolean isIntegrated) {
+                                                               boolean isIntegrated,
+                                                               boolean aId) {
         Map<String, Object> map = isIntegrated
             ? emptyMap()
             : new HashMap<String, Object>() {
@@ -4210,6 +4216,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                   + "            \"applicant\" : \"\"\n"
                                   + "          },\n"
                                   + "          \"isIntegrated\" : \"" + isIntegrated + "\"\n"
+                                  + "          \"appellantInDetention\" : \"" + aId + "\"\n"
                                   + "        }\n"
                                   + "      }"),
             singletonList(map)
