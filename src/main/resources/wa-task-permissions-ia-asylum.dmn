@@ -209,7 +209,7 @@
             "followUpOverdueClarifyingAnswers",
             "reviewRespondentResponse","detainedReviewAdditionalHomeOfficeEvidence",
             "followUpOverdueRespondentReview","detainedFollowUpOverdueRespondentReview",
-            "reviewHearingRequirements","detainedReviewHearingRequirements",
+            "reviewHearingRequirements",
             "reviewHearingRequirements","detainedReviewHearingRequirements",
             "followUpOverdueHearingRequirements","detainedFollowUpOverdueHearingRequirements",
             "reviewCmaRequirements",
