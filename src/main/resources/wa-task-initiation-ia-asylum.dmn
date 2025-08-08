@@ -10757,7 +10757,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0y1gy0r">
-          <text></text>
+          <text>false</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1l7xk40">
           <text>"hearingException"</text>
@@ -10769,6 +10769,104 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1v45bww">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_detained_hearing_exception">
+        <inputEntry id="UnaryTests_det_he_1">
+          <text>"handleHearingException"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_det_he_2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_det_he_3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_det_he_4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_det_he_5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_det_he_6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_det_he_7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_det_he_8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_det_he_9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_det_he_10">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_det_he_11">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_det_he_12">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_det_he_13">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_det_he_14">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_det_he_15">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_det_he_16">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_det_he_17">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_det_he_18">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_det_he_19">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_det_he_20">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_det_he_21">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_det_he_22">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_det_he_23">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_det_he_24">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_det_he_25">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_det_he_26">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_det_he_27">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_det_he_28">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_det_he_1">
+          <text>"detainedHearingException"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_det_he_2">
+          <text>"Detained - Hearing Exception"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_det_he_3">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_det_he_4">
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
