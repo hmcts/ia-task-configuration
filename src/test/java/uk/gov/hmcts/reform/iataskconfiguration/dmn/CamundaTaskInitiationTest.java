@@ -2965,13 +2965,50 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 null,
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
-                                      + "      \"feeUpdateTribunalAction\":\"" + "refund" + "\"\n"
+                                      + "      \"feeUpdateTribunalAction\":\"" + "refund" + "\",\n"
+                                      + "      \"appellantInDetention\" : \"" + false + "\"\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
                     Map.of(
                         "taskId", "processFeeRefund",
                         "name", "Process fee refund",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "manageFeeUpdate",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"feeUpdateTribunalAction\":\"" + "refund" + "\",\n"
+                                      + "      \"appellantInDetention\" : \"" + true + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedProcessFeeRefund",
+                        "name", "Detained - Process Fee Refund",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "manageFeeUpdate",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"feeUpdateTribunalAction\":\"" + "refund" + "\",\n"
+                                      + "      \"appellantInDetention\" : \"" + true + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedProcessFeeRefund",
+                        "name", "Detained - Process Fee Refund",
 
                         "processCategories", "caseProgression"
                     )
@@ -4253,7 +4290,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(28));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(158));
+        assertThat(logic.getRules().size(), is(159));
 
     }
 

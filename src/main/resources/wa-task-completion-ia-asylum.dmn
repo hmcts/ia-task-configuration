@@ -801,6 +801,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_detainedProcessFeeRefund">
+        <inputEntry id="UnaryTests_det_fee_completion">
+          <text>"refundConfirmation"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_det_fee_completion_task">
+          <text>"detainedProcessFeeRefund"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_det_fee_completion_mode">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0det1tc">
         <inputEntry id="UnaryTests_0det1tc1">
           <text>"uploadHearingRecording"</text>
