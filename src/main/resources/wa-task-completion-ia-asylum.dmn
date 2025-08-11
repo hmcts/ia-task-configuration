@@ -834,6 +834,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0detained_review_draft_completion">
+        <inputEntry id="UnaryTests_0det_draft_comp">
+          <text>"submitAppeal","endAppeal"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0det_draft_comp_task">
+          <text>"DetainedReviewDraftAppeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0det_draft_comp_mode">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1drcgy9">
         <inputEntry id="UnaryTests_0owczza">
           <text>"refundConfirmation"</text>
@@ -842,6 +853,17 @@
           <text>"processFeeRefund"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_06np5ow">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_detainedProcessFeeRefund">
+        <inputEntry id="UnaryTests_det_fee_completion">
+          <text>"refundConfirmation"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_det_fee_completion_task">
+          <text>"detainedProcessFeeRefund"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_det_fee_completion_mode">
           <text>"Auto"</text>
         </outputEntry>
       </rule>

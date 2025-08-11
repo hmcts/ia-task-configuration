@@ -955,6 +955,17 @@
           <text>"Process fee refund"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_detainedProcessFeeRefund">
+        <inputEntry id="UnaryTests_det_fee_types">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_det_fee_taskid">
+          <text>"detainedProcessFeeRefund"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_det_fee_name">
+          <text>"Detained - Process Fee Refund"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0u528hl">
         <inputEntry id="UnaryTests_14zt70s">
           <text></text>
@@ -1008,6 +1019,17 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_1w4m3re">
           <text>"Review draft appeal"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0detained_review_draft_appeal">
+        <inputEntry id="UnaryTests_0det_rev_draft">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0det_rev_draft_id">
+          <text>"DetainedReviewDraftAppeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0det_rev_draft_name">
+          <text>"Detained - Review Draft Appeal"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1huctxl">

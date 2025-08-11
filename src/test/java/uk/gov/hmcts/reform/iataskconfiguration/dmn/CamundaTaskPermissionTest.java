@@ -236,7 +236,23 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "detainedProcessFeeRefund",
+                List.of(
+                    taskSupervisor,
+                    ctscAdminPriorityOne,
+                    ctscTeamLeaderPriorityOne
+                )
+            ),
+            Arguments.of(
                 "reviewDraftAppeal",
+                List.of(
+                    taskSupervisor,
+                    ctscAdminPriorityOne,
+                    ctscTeamLeaderPriorityOne
+                )
+            ),
+            Arguments.of(
+                "DetainedReviewDraftAppeal",
                 List.of(
                     taskSupervisor,
                     ctscAdminPriorityOne,
@@ -762,9 +778,9 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         "followUpOverdueCaseBuilding","detainedFollowUpOverdueRespondentReview",
         "followUpOverdueReasonsForAppeal", "reviewTheAppeal","detainedReviewTheAppeal",
         "reviewClarifyingQuestionsAnswers", "followUpOverdueClarifyingAnswers", "reviewRespondentResponse",
-        "detainedReviewRespondentResponse",
-        "followUpOverdueRespondentReview","detainedFollowUpOverdueRespondentReview", "reviewHearingRequirements",
-        "followUpOverdueHearingRequirements","detainedReviewHearingRequirements","followUpOverdueHearingRequirements",
+"detainedReviewRespondentResponse",
+"followUpOverdueRespondentReview","detainedFollowUpOverdueRespondentReview","reviewHearingRequirements",
+"followUpOverdueHearingRequirements","detainedReviewHearingRequirements","detainedFollowUpOverdueHearingRequirements",
         "reviewCmaRequirements",
         "attendCma", "followUpOverdueCmaRequirements", "followUpNonStandardDirection",
         "detainedFollowUpNonStandardDirection",
