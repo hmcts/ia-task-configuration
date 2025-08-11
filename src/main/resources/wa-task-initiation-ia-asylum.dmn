@@ -11556,6 +11556,104 @@
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_15ri9t5">
+        <inputEntry id="UnaryTests_04ytelt">
+          <text>"restoreStateFromAdjourn"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08eetph">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0b8nk3c">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0m1rnnv">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_177pzkv">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wjvq6u">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fwhgfk">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0pfwmi9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nh1xzx">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0dcvc67">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wz8trx">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xzi2fl">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_100g6v4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rnn2ex">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0g7ej2u">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_11kvgpc">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1swoy9o">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1if2zc4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hsqawz">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1n6j040">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14ayzla">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0z2x4dz">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0v2prjv">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1kjppdg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jshuyz">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0h34ww8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_042aah5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05cc4bv">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_18ul3l9">
+          <text>"detainedRelistCase"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ezmu3d">
+          <text>"Detained - Relist The Case"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_06832j6">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ithzta">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_019mhpq">
         <inputEntry id="UnaryTests_1gsrig4">
           <text>"triggerReviewInterpreterBookingTask"</text>
