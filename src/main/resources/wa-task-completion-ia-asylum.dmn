@@ -735,6 +735,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1hq2mty">
+        <inputEntry id="UnaryTests_1mxmme5">
+          <text>"requestNewHearingRequirements"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0vojlzr">
+          <text>"detainedReviewAppealSetAsideUnderRule35"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ooi97c">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1i7s04n">
         <inputEntry id="UnaryTests_180jta8">
           <text>"requestNewHearingRequirements"</text>
