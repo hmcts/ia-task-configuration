@@ -694,8 +694,8 @@
 "processApplicationOther","detainedProcessApplicationOther",
 "processApplicationLink/UnlinkAppeals","detainedProcessApplicationLink/UnlinkAppeals",
 "reviewRemittedAppeal",
-"reviewAppealSetAsideUnderRule35",
-"reviewAppealSetAsideUnderRule32","detainedReviewAppealSetAsideUnderRule32",
+"reviewAppealSetAsideUnderRule35","detainedReviewAppealSetAsideUnderRule35",
+"reviewAppealSetAsideUnderRule32",
 "reviewDraftAppeal",
 "DetainedReviewDraftAppeal",
 "processFeeRefund","detainedProcessFeeRefund"</text>
