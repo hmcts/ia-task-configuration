@@ -205,6 +205,7 @@
                          "reviewAppealSetAsideUnderRule32",
                         "reviewAriaRemissionApplication",
                         "reviewDraftAppeal",
+                        "DetainedReviewDraftAppeal",
                         "printAndSendHoBundle","detainedPrintAndSendHoBundle",
                         "printAndSendHoResponse",
                         "printAndSendHearingRequirements","detainedPrintAndSendHearingRequirements",
@@ -216,7 +217,7 @@
                         "printAndSendAppealDecision","detainedPrintAndSendAppealDecision",
                         "printAndSendFTPADecision","detainedPrintAndSendFTPADecision",
                         "printAndSendReheardHearingRequirements","detainedPrintAndSendReheardHearingRequirements",
-                        "processFeeRefund"
+                        "processFeeRefund","detainedProcessFeeRefund"
                       </text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0rvgay2">
@@ -509,7 +510,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0xh5are">
-          <text>"reviewRemissionApplication","detainedAssignAFTPAJudge","assignAFTPAJudge","detainedReviewRemissionApplication","listTheCase","detainedListTheCase","sendPaymentRequest","markAsPaid","processFeeRefund","reviewDraftAppeal"</text>
+          <text>"reviewRemissionApplication","detainedAssignAFTPAJudge","assignAFTPAJudge","detainedReviewRemissionApplication","listTheCase","detainedListTheCase","sendPaymentRequest","markAsPaid","processFeeRefund","detainedProcessFeeRefund","reviewDraftAppeal","DetainedReviewDraftAppeal"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0vqliz7">
           <text>"roleCategory"</text>
@@ -694,7 +695,8 @@
 "reviewAppealSetAsideUnderRule35","detainedReviewAppealSetAsideUnderRule35",
 "reviewAppealSetAsideUnderRule32",
 "reviewDraftAppeal",
-"processFeeRefund"</text>
+"DetainedReviewDraftAppeal",
+"processFeeRefund","detainedProcessFeeRefund"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_18mybq6">
           <text>"dueDateIntervalDays"</text>

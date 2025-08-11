@@ -12717,7 +12717,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_12u38j7">
-          <text></text>
+          <text>false</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1rnbfbh">
           <text>"processFeeRefund"</text>
@@ -12729,6 +12729,104 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_143809n">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_detained_processFeeRefund">
+        <inputEntry id="UnaryTests_det_fee_1">
+          <text>"manageFeeUpdate"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_det_fee_2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_det_fee_3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_det_fee_4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_det_fee_5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_det_fee_6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_det_fee_7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_det_fee_8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_det_fee_9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_det_fee_10">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_det_fee_11">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_det_fee_12">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_det_fee_13">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_det_fee_14">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_det_fee_15">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_det_fee_16">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_det_fee_17">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_det_fee_18">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_det_fee_19">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_det_fee_20">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_det_fee_21">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_det_fee_22">
+          <text>"refund"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_det_fee_23">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_det_fee_24">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_det_fee_25">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_det_fee_26">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_det_fee_27">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_det_fee_28">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_det_fee_out1">
+          <text>"detainedProcessFeeRefund"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_det_fee_out2">
+          <text>"Detained - Process Fee Refund"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_det_fee_out3">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_det_fee_out4">
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
@@ -13011,7 +13109,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0exlqbz">
-          <text></text>
+          <text>false</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0s0nm25">
           <text>"reviewDraftAppeal"</text>
@@ -13026,6 +13124,107 @@
 }</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1odajn4">
+          <text>"followUpOverdue"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0detained_draft_appeal">
+        <inputEntry id="UnaryTests_0det_draft_1">
+          <text>"startAppeal"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_draft_2">
+          <text>"appealStartedByAdmin"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_draft_3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_draft_4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_draft_5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_draft_6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_draft_7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_draft_8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_draft_9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_draft_10">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_draft_11">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_draft_12">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_draft_13">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_draft_14">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_draft_15">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_draft_16">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_draft_17">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_draft_18">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_draft_19">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_draft_20">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_draft_21">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_draft_22">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_draft_23">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_draft_24">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_draft_25">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_draft_26">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_draft_27">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0det_draft_28">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0det_draft_out1">
+          <text>"DetainedReviewDraftAppeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0det_draft_out2">
+          <text>"Detained - Review Draft Appeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0det_draft_out3">
+          <text>{
+"delayUntilOrigin": today(),
+"delayUntilIntervalDays":"14"
+}</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0det_draft_out4">
           <text>"followUpOverdue"</text>
         </outputEntry>
       </rule>

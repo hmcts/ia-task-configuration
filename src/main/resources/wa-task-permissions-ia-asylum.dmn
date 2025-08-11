@@ -138,7 +138,7 @@
             "reviewRespondentResponse",
             "followUpOverdueRespondentReview","detainedFollowUpOverdueRespondentReview",
             "reviewHearingRequirements","detainedReviewHearingRequirements",
-            "followUpOverdueHearingRequirements",
+            "followUpOverdueHearingRequirements","detainedFollowUpOverdueHearingRequirements",
             "reviewCmaRequirements",
             "caseSummaryHearingBundleStartDecision",
             "detainedCaseSummaryHearingBundleStartDecision",
@@ -209,8 +209,9 @@
             "followUpOverdueClarifyingAnswers",
             "reviewRespondentResponse","detainedReviewAdditionalHomeOfficeEvidence",
             "followUpOverdueRespondentReview","detainedFollowUpOverdueRespondentReview",
+            "reviewHearingRequirements",
             "reviewHearingRequirements","detainedReviewHearingRequirements",
-            "followUpOverdueHearingRequirements",
+            "followUpOverdueHearingRequirements","detainedFollowUpOverdueHearingRequirements",
             "reviewCmaRequirements",
             "reviewAdditionalHomeOfficeEvidence","detainedReviewAdditionalHomeOfficeEvidence",
             "caseSummaryHearingBundleStartDecision",
@@ -652,7 +653,7 @@
       <rule id="DecisionRule_05nq60d">
         <description>CTSC Admin task permissions</description>
         <inputEntry id="UnaryTests_1q2j4ix">
-          <text>"reviewRemissionApplication","assignAFTPAJudge","detainedAssignAFTPAJudge","listTheCase","detainedListTheCase","detainedReviewRemissionApplication","sendPaymentRequest","markAsPaid","cmrListed","detainedCmrListed","cmrUpdated","detainedCmrUpdated","reviewInterpreters","detainedReviewInterpreters","processFeeRefund","reviewDraftAppeal","detainedPrintAndSendHoBundle","printAndSendHoBundle","detainedPrintAndSendHearingRequirements","detainedPrintAndSendHearingBundle","detainedPrintAndSendDecisionCorrectedRule31","detainedPrintAndSendDecisionCorrectedRule32","detainedPrintAndSendHoApplication","detainedPrintAndSendHoEvidence","detainedPrintAndSendAppealDecision","detainedPrintAndSendFTPADecision","detainedPrintAndSendReheardHearingRequirements","printAndSendHoResponse","printAndSendHearingRequirements","printAndSendHearingBundle","printAndSendDecisionCorrectedRule31","printAndSendDecisionCorrectedRule32","printAndSendHoApplication","printAndSendHoEvidence","printAndSendAppealDecision","printAndSendFTPADecision","printAndSendReheardHearingRequirements"</text>
+          <text>"reviewRemissionApplication","assignAFTPAJudge","detainedAssignAFTPAJudge","listTheCase","detainedListTheCase","detainedReviewRemissionApplication","sendPaymentRequest","markAsPaid","cmrListed","detainedCmrListed","cmrUpdated","detainedCmrUpdated","reviewInterpreters","detainedReviewInterpreters","processFeeRefund","detainedProcessFeeRefund","reviewDraftAppeal","detainedReviewDraftAppeal","detainedPrintAndSendHoBundle","printAndSendHoBundle","detainedPrintAndSendHearingRequirements","detainedPrintAndSendHearingBundle","detainedPrintAndSendDecisionCorrectedRule31","detainedPrintAndSendDecisionCorrectedRule32","detainedPrintAndSendHoApplication","detainedPrintAndSendHoEvidence","detainedPrintAndSendAppealDecision","detainedPrintAndSendFTPADecision","detainedPrintAndSendReheardHearingRequirements","printAndSendHoResponse","printAndSendHearingRequirements","printAndSendHearingBundle","printAndSendDecisionCorrectedRule31","printAndSendDecisionCorrectedRule32","printAndSendHoApplication","printAndSendHoEvidence","printAndSendAppealDecision","printAndSendFTPADecision","printAndSendReheardHearingRequirements"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1p44stw">
           <text></text>
@@ -682,7 +683,7 @@
       <rule id="DecisionRule_155ah64">
         <description>CTSC Team Leader task permissions</description>
         <inputEntry id="UnaryTests_08panx7">
-          <text>"reviewRemissionApplication","detainedReviewRemissionApplication","assignAFTPAJudge","detainedAssignAFTPAJudge","listTheCase","detainedListTheCase","sendPaymentRequest","markAsPaid","cmrListed","detainedCmrListed","cmrUpdated","detainedCmrUpdated","reviewInterpreters","detainedReviewInterpreters","processFeeRefund","reviewDraftAppeal","detainedListCmr","printAndSendHoBundle","detainedPrintAndSendHoBundle","detainedPrintAndSendHearingBundle","printAndSendHoResponse","printAndSendHearingRequirements","printAndSendHearingBundle","printAndSendDecisionCorrectedRule31","detainedPrintAndSendDecisionCorrectedRule31","printAndSendDecisionCorrectedRule32","detainedPrintAndSendDecisionCorrectedRule32","printAndSendHoApplication","printAndSendHoEvidence","printAndSendAppealDecision","detainedPrintAndSendAppealDecision","printAndSendFTPADecision","detainedPrintAndSendFTPADecision","printAndSendReheardHearingRequirements","detainedPrintAndSendHearingRequirements","detainedPrintAndSendHoApplication","detainedPrintAndSendHoEvidence","detainedPrintAndSendReheardHearingRequirements"</text>
+          <text>"reviewRemissionApplication","detainedReviewRemissionApplication","assignAFTPAJudge","detainedAssignAFTPAJudge","listTheCase","detainedListTheCase","sendPaymentRequest","markAsPaid","cmrListed","detainedCmrListed","cmrUpdated","detainedCmrUpdated","reviewInterpreters","detainedReviewInterpreters","processFeeRefund","detainedProcessFeeRefund","reviewDraftAppeal","detainedReviewDraftAppeal","detainedListCmr","printAndSendHoBundle","detainedPrintAndSendHoBundle","detainedPrintAndSendHearingBundle","printAndSendHoResponse","printAndSendHearingRequirements","printAndSendHearingBundle","printAndSendDecisionCorrectedRule31","detainedPrintAndSendDecisionCorrectedRule31","printAndSendDecisionCorrectedRule32","detainedPrintAndSendDecisionCorrectedRule32","printAndSendHoApplication","printAndSendHoEvidence","printAndSendAppealDecision","detainedPrintAndSendAppealDecision","printAndSendFTPADecision","detainedPrintAndSendFTPADecision","printAndSendReheardHearingRequirements","detainedPrintAndSendHearingRequirements","detainedPrintAndSendHoApplication","detainedPrintAndSendHoEvidence","detainedPrintAndSendReheardHearingRequirements"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0njeznv">
           <text></text>

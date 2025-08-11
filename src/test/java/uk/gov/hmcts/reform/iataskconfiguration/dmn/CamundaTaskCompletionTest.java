@@ -265,12 +265,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                         "completionMode", "Auto"
                     ),Map.of(
                         "taskType", "detainedReviewHearingRequirements",
-                        "completionMode", "Auto"
-                    ),
-                    Map.of(
-                        "taskType", "detainedReviewHearingRequirements",
-                        "completionMode", "Auto"
-                    ),
+                        "completionMode", "Auto"                
                     Collections.emptyMap()
                 )
             ),
@@ -552,6 +547,10 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                         "taskType", "reviewDraftAppeal",
                         "completionMode", "Auto"
                     ),
+                    Map.of(
+                        "taskType", "DetainedReviewDraftAppeal",
+                        "completionMode", "Auto"
+                    ),
                     Collections.emptyMap()
                 )
             ),
@@ -560,6 +559,24 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                 asList(
                     Map.of(
                         "taskType", "reviewDraftAppeal",
+                        "completionMode", "Auto"
+                    ),
+                    Map.of(
+                        "taskType", "DetainedReviewDraftAppeal",
+                        "completionMode", "Auto"
+                    ),
+                    Collections.emptyMap()
+                )
+            ),
+            Arguments.of(
+                "refundConfirmation",
+                asList(
+                    Map.of(
+                        "taskType", "processFeeRefund",
+                        "completionMode", "Auto"
+                    ),
+                    Map.of(
+                        "taskType", "detainedProcessFeeRefund",
                         "completionMode", "Auto"
                     ),
                     Collections.emptyMap()
