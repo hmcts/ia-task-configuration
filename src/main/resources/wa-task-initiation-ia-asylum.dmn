@@ -10380,6 +10380,109 @@
           <text>"followUpOverdue"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0q8imyd">
+        <inputEntry id="UnaryTests_1eqw9i0">
+          <text>"decideAnApplication"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qe0rfa">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1va6dm7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0dzap6a">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ud3dfy">
+          <text>"Set aside a decision"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07hzzd1">
+          <text>"Granted"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1n0mvcr">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xu7qc1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rumr94">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0yfyaax">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1519wv5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1s38wxm">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1v0sm3b">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0o1uwkf">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1udmmux">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0434j8y">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0m7petx">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pqhuii">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1lo99v6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ddi2j2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0o26xna">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1mmevbn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1sy66fs">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1hklq7i">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0s981ay">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0l0qn3c">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ic17mi">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0a29cxx">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_13fa9fv">
+          <text>"detainedFollowUpSetAsideDecision"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0necev7">
+          <text>"Detained - Follow up set aside decision"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1o9jmjq">
+          <text>{
+"delayUntilOrigin": today(),
+"delayUntilNonWorkingCalendar": "https://www.gov.uk/bank-holidays/england-and-wales.json",
+"delayUntilNonWorkingDaysOfWeek":"SATURDAY,SUNDAY",
+"delayUntilIntervalDays":"5"
+}</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_192267v">
+          <text>"followUpOverdue"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_172ny6a">
         <inputEntry id="UnaryTests_1d1tn33">
           <text>"decideFtpaApplication", "progressMigratedCase"</text>
