@@ -205,7 +205,7 @@
                         "reviewAppealSetAsideUnderRule32","detainedReviewAppealSetAsideUnderRule32",
                         "reviewAriaRemissionApplication",
                         "reviewDraftAppeal",
-                        "DetainedReviewDraftAppeal",
+                        "detainedReviewDraftAppeal",
                         "printAndSendHoBundle","detainedPrintAndSendHoBundle",
                         "printAndSendHoResponse",
                         "printAndSendHearingRequirements","detainedPrintAndSendHearingRequirements",
@@ -698,7 +698,7 @@
 "reviewAppealSetAsideUnderRule35",
 "reviewAppealSetAsideUnderRule32","detainedReviewAppealSetAsideUnderRule32",
 "reviewDraftAppeal",
-"DetainedReviewDraftAppeal",
+"detainedReviewDraftAppeal",
 "processFeeRefund","detainedProcessFeeRefund"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_18mybq6">
