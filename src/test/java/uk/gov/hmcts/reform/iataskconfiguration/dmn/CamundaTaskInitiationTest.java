@@ -2747,7 +2747,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "cmrRelisting",
+                "cmrReListing",
                 null,
                 null,
                 singletonList(
@@ -2760,7 +2760,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "cmrRelisting",
+                "cmrReListing",
                 null,
                 appellantInDetention,
                 singletonList(
@@ -2997,13 +2997,50 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 null,
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
-                                      + "      \"feeUpdateTribunalAction\":\"" + "refund" + "\"\n"
+                                      + "      \"feeUpdateTribunalAction\":\"" + "refund" + "\",\n"
+                                      + "      \"appellantInDetention\" : \"" + false + "\"\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
                     Map.of(
                         "taskId", "processFeeRefund",
                         "name", "Process fee refund",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "manageFeeUpdate",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"feeUpdateTribunalAction\":\"" + "refund" + "\",\n"
+                                      + "      \"appellantInDetention\" : \"" + true + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedProcessFeeRefund",
+                        "name", "Detained - Process Fee Refund",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "manageFeeUpdate",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"feeUpdateTribunalAction\":\"" + "refund" + "\",\n"
+                                      + "      \"appellantInDetention\" : \"" + true + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedProcessFeeRefund",
+                        "name", "Detained - Process Fee Refund",
 
                         "processCategories", "caseProgression"
                     )
@@ -3043,6 +3080,19 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewDraftAppeal",
                         "name", "Review draft appeal",
+                        "delayUntil", delayForDays,
+                        "processCategories", "followUpOverdue"
+                    )
+                )
+            ),
+            Arguments.of(
+                "startAppeal",
+                "appealStartedByAdmin",
+                appellantInDetention,
+                singletonList(
+                    Map.of(
+                        "taskId", "DetainedReviewDraftAppeal",
+                        "name", "Detained - Review Draft Appeal",
                         "delayUntil", delayForDays,
                         "processCategories", "followUpOverdue"
                     )
@@ -3178,6 +3228,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "detainedReviewAppealSetAsideUnderRule32",
                         "name", "Detained - Review appeal set aside under rule 32",
+
 
                         "processCategories", "caseProgression"
                     ),

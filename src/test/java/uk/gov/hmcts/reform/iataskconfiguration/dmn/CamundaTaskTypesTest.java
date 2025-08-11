@@ -471,6 +471,11 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                    "Process fee refund"
             ),
             Map.of("taskTypeId",
+                   "detainedProcessFeeRefund",
+                   "taskTypeName",
+                   "Detained - Process Fee Refund"
+            ),
+            Map.of("taskTypeId",
                    "reviewMigratedCase",
                    "taskTypeName",
                    "Review migrated case"
@@ -484,6 +489,11 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                    "reviewDraftAppeal",
                    "taskTypeName",
                    "Review draft appeal"
+            ),
+            Map.of("taskTypeId",
+                   "DetainedReviewDraftAppeal",
+                   "taskTypeName",
+                   "Detained - Review Draft Appeal"
             ),
             Map.of("taskTypeId",
                    "printAndSendHoBundle",
