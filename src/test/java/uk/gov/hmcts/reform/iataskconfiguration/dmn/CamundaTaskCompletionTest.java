@@ -583,16 +583,16 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                     Collections.emptyMap()
                 )
             ),
-                Arguments.of(
-                        "cmrListing",
-                        asList(
-                                Map.of(
-                                        "taskType", "detainedListCmr",
-                                        "completionMode", "Auto"
-                                ),
-                                Collections.emptyMap()
-                        )
-                ),            
+            Arguments.of(
+                    "cmrListing",
+                asList(
+                    Map.of(
+                            "taskType", "detainedListCmr",
+                            "completionMode", "Auto"
+                    ),
+                    Collections.emptyMap()
+                )
+            ),
             Arguments.of(
                 "unknownEvent",
                 emptyList()
