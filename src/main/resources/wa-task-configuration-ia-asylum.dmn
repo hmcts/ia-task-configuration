@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.34.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.31.0">
   <decision id="wa-task-configuration-ia-asylum" name="Task configuration DMN" camunda:historyTimeToLive="P90D">
     <decisionTable id="DecisionTable_14cx079" hitPolicy="COLLECT">
       <input id="InputClause_1gxyo7f" label="CCD Case Data" camunda:inputVariable="caseData">
@@ -201,8 +201,8 @@
                         "sendPaymentRequest",
                         "markAsPaid",
                         "reviewRemittedAppeal",
-                        "reviewAppealSetAsideUnderRule35",
-                        "reviewAppealSetAsideUnderRule32",
+                        "reviewAppealSetAsideUnderRule35","detainedReviewAppealSetAsideUnderRule35",
+                         "reviewAppealSetAsideUnderRule32",
                         "reviewAriaRemissionApplication",
                         "reviewDraftAppeal",
                         "DetainedReviewDraftAppeal",
@@ -421,6 +421,7 @@
                         "caseSummaryHearingBundleStartDecision",
                         "reviewHearingRequirements","detainedReviewHearingRequirements",
                         "detainedCaseSummaryHearingBundleStartDecision",
+                        "reviewHearingRequirements",
                         "followUpOverdueRespondentEvidence","detainedFollowUpOverdueRespondentEvidence",
                         "followUpOverdueCaseBuilding","detainedFollowUpOverdueCaseBuilding",
                         "followUpOverdueReasonsForAppeal",
@@ -434,7 +435,7 @@
                         "reviewAdditionalHomeOfficeEvidence","detainedReviewAdditionalHomeOfficeEvidence",
                         "startDecisionsAndReasonsDocument",
                         "reviewRemittedAppeal",
-                        "reviewAppealSetAsideUnderRule35",
+                        "reviewAppealSetAsideUnderRule35","detainedReviewAppealSetAsideUnderRule35",
                         "reviewAppealSetAsideUnderRule32"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_05l5bvs">
@@ -571,7 +572,7 @@
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "detainedReviewAddendumEvidence" or taskType != null and taskType = "detainedReviewAddendumEvidence") then "[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAddendumEvidenceAsReviewed)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "allocateHearingJudge" or taskType != null and taskType ="allocateHearingJudge") then "[Allocate Hearing Judge](/role-access/allocate-role/allocate?caseId=${[CASE_REFERENCE]}&amp;roleCategory=JUDICIAL&amp;jurisdiction=IA)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "detainedAllocateHearingJudge" or taskType != null and taskType ="detainedAllocateHearingJudge") then "[Allocate Hearing Judge](/role-access/allocate-role/allocate?caseId=${[CASE_REFERENCE]}&amp;roleCategory=JUDICIAL&amp;jurisdiction=IA)"
-                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "arrangeOfflinePayment" or taskType != null and taskType ="arrangeOfflinePayment") then "[Mark the appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid)" else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewMigratedCase" or taskType != null and taskType = "reviewMigratedCase") then "[Progress migrated case](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/progressMigratedCase)" else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "detainedListCmr" or taskType != null and taskType = "detainedListCmr") then "[List CMR](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/generateListCmrTask)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "arrangeOfflinePayment" or taskType != null and taskType ="arrangeOfflinePayment") then "[Mark the appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid)" else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewMigratedCase" or taskType != null and taskType = "reviewMigratedCase") then "[Progress migrated case](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/progressMigratedCase)" else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "detainedListCmr" or taskType != null and taskType = "detainedListCmr") then "[List CMR](cases/case-details/${[CASE_REFERENCE]}/hearings)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "uploadHearingRecording" or taskType != null and taskType = "uploadHearingRecording") then "[Upload the hearing recording](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/uploadHearingRecording)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewAdditionalHomeOfficeEvidence" or taskType != null and taskType ="reviewAdditionalHomeOfficeEvidence")	 then "[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markEvidenceAsReviewed)"else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "detainedReviewAdditionalHomeOfficeEvidence" or taskType != null and taskType ="detainedReviewAdditionalHomeOfficeEvidence")	 then "[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markEvidenceAsReviewed)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "markCaseAsPaid" or taskType != null and taskType ="markCaseAsPaid") then "[Mark the appeal as paid](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markAppealPaid)"
@@ -692,7 +693,7 @@
 "processApplicationOther","detainedProcessApplicationOther",
 "processApplicationLink/UnlinkAppeals","detainedProcessApplicationLink/UnlinkAppeals",
 "reviewRemittedAppeal",
-"reviewAppealSetAsideUnderRule35",
+"reviewAppealSetAsideUnderRule35","detainedReviewAppealSetAsideUnderRule35",
 "reviewAppealSetAsideUnderRule32",
 "reviewDraftAppeal",
 "DetainedReviewDraftAppeal",
@@ -731,6 +732,7 @@
 "caseSummaryHearingBundleStartDecision",
 "reviewHearingRequirements","detainedReviewHearingRequirements",
 "detainedCaseSummaryHearingBundleStartDecision",
+"reviewHearingRequirements",
 "followUpOverdueRespondentEvidence","detainedFollowUpOverdueRespondentEvidence",
 "followUpExtendedDirection",
 "detainedFollowUpExtendedDirection",

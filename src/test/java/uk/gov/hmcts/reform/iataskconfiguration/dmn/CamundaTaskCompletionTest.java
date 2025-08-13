@@ -522,6 +522,10 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                     ),
                     Map.of(
                         "completionMode", "Auto",
+                        "taskType", "detainedReviewAppealSetAsideUnderRule35"
+                    ),
+                    Map.of(
+                        "completionMode", "Auto",
                         "taskType", "reviewAppealSetAsideUnderRule32"
                     ),
                     Collections.emptyMap()
@@ -580,6 +584,16 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                    "cmrListing",
+                asList(
+                    Map.of(
+                            "taskType", "detainedListCmr",
+                            "completionMode", "Auto"
+                    ),
+                    Collections.emptyMap()
+                )
+            ),
+            Arguments.of(
                 "unknownEvent",
                 emptyList()
             )
@@ -602,7 +616,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
 
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(75));
+        assertThat(logic.getRules().size(), is(77));
     }
 
 

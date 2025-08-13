@@ -250,6 +250,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("assignAFTPAJudge", routineWork),
             Arguments.of("detainedAssignAFTPAJudge", routineWork),
             Arguments.of("reviewAppealSetAsideUnderRule35", routineWork),
+            Arguments.of("detainedReviewAppealSetAsideUnderRule35", routineWork),
             Arguments.of("reviewAppealSetAsideUnderRule32", routineWork),
             Arguments.of("sendPaymentRequest", routineWork),
             Arguments.of("markAsPaid", routineWork),
@@ -373,7 +374,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("decideAnFTPA", upperTribunal),
             Arguments.of("processApplicationChangeHearingType", applications),
             Arguments.of("detainedProcessApplicationChangeHearingType", applications),
-            Arguments.of("reviewMigratedCase", reviewCase)
+            Arguments.of("reviewMigratedCase", reviewCase),
+            Arguments.of("detainedListCmr", hearingWork)
 
         );
     }
@@ -591,6 +593,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "detainedFollowUpNoticeOfChange",
         "reviewAdditionalEvidence", "detainedReviewAdditionalEvidence","reviewAdditionalHomeOfficeEvidence",
         "detainedReviewAdditionalHomeOfficeEvidence", "reviewRemittedAppeal", "reviewAppealSetAsideUnderRule35",
+        "detainedReviewAppealSetAsideUnderRule35",
         "reviewAppealSetAsideUnderRule32"
     })
     void when_taskId_then_return_legal_operations_role_category(String taskType) {
@@ -1523,7 +1526,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "detainedCmrUpdated,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,,",
         "relistCase,[Relist the hearing](cases/case-details/${[CASE_REFERENCE]}/hearings),,,",
         "reviewInterpreters,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,,",
-        "detainedReviewInterpreters,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,,"
+        "detainedReviewInterpreters,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,,",
+        "detainedListCmr,[List CMR](cases/case-details/${[CASE_REFERENCE]}/hearings),,,"
 
     })
     void should_return_a_200_description_property(String taskType, String expectedDescription, String journeyType,
@@ -1623,6 +1627,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("processApplicationLink/UnlinkAppeals", fiveDays),
             Arguments.of("reviewRemittedAppeal", fiveDays),
             Arguments.of("reviewAppealSetAsideUnderRule35", fiveDays),
+            Arguments.of("detainedReviewAppealSetAsideUnderRule35", fiveDays),
             Arguments.of("reviewAppealSetAsideUnderRule32", fiveDays),
             Arguments.of("reviewDraftAppeal", fiveDays),
             Arguments.of("DetainedReviewDraftAppeal", fiveDays),
@@ -1712,7 +1717,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("detainedPrintAndSendReheardHearingRequirements", zeroDays),
             Arguments.of("markAsPaid", fourteenDays),
             Arguments.of("cmrListed", twoDays),
-            Arguments.of("detainedCmrUpdated", twoDays)
+            Arguments.of("detainedCmrUpdated", twoDays),
+            Arguments.of("detainedListCmr", zeroDays)
         );
     }
 
