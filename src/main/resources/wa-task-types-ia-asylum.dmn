@@ -834,6 +834,17 @@
           <text>"Hearing exception"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_detained_hearing_exception">
+        <inputEntry id="UnaryTests_det_he_types">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_det_he_types_1">
+          <text>"detainedHearingException"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_det_he_types_2">
+          <text>"Detained - Hearing Exception"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1ppqz55">
         <inputEntry id="UnaryTests_0rxjkiy">
           <text></text>

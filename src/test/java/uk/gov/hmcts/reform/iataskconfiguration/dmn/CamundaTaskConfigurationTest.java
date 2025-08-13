@@ -330,6 +330,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("listTheCase", hearingWork),
             Arguments.of("detainedListTheCase", hearingWork),
             Arguments.of("hearingException", hearingWork),
+            Arguments.of("detainedHearingException", hearingWork),
             Arguments.of("cmrListed", hearingWork),
             Arguments.of("detainedCmrListed", hearingWork),
             Arguments.of("cmrUpdated", hearingWork),
@@ -504,7 +505,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "printAndSendHoApplication","detainedPrintAndSendHoApplication",
         "printAndSendHoEvidence","detainedPrintAndSendHoEvidence",
         "printAndSendAppealDecision","printAndSendFTPADecision","detainedPrintAndSendAppealDecision",
-        "detainedPrintAndSendFTPADecision",
+        "detainedPrintAndSendFTPADecision","detainedHearingException",
         "printAndSendReheardHearingRequirements","detainedPrintAndSendReheardHearingRequirements",
         "detainedListCmr","detainedReviewInterpreters"
     })
@@ -1519,6 +1520,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "reviewMigratedCase,[Progress migrated case](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
             + "progressMigratedCase),,,10",
         "hearingException,[Go to case](cases/case-details/${[CASE_REFERENCE]}/hearings),,,",
+        "detainedHearingException,[Go to case](cases/case-details/${[CASE_REFERENCE]}/hearings),,,",
         "cmrListed,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,,",
         "detainedCmrListed,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,,",
         "cmrUpdated,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,,",
