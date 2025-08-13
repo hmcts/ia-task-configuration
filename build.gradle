@@ -12,7 +12,9 @@ plugins {
   id 'io.freefair.lombok' version '6.6.3'
 }
 repositories {
+  mavenLocal()
   mavenCentral()
+  maven { url 'https://jitpack.io' }
 }
   group = 'uk.gov.hmcts.reform'
 version = '0.0.1'

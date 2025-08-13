@@ -3930,7 +3930,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     Map.of(
                         "taskId", "detainedListCmr",
-                        "name", "Detained List CMR",
+                        "name", "Detained - List CMR",
                         "processCategories", "caseProgression"
                     )
                 )
