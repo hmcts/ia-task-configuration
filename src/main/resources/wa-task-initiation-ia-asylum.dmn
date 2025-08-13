@@ -11262,6 +11262,104 @@
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_detainedListTheCase_recordAdjournment">
+        <inputEntry id="UnaryTests_detained_recordAdj_1">
+          <text>"recordAdjournmentDetails"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_detained_recordAdj_2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_detained_recordAdj_3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_detained_recordAdj_4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_detained_recordAdj_5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_detained_recordAdj_6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_detained_recordAdj_7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_detained_recordAdj_8">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_detained_recordAdj_9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_detained_recordAdj_10">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_detained_recordAdj_11">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_detained_recordAdj_12">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_detained_recordAdj_13">
+          <text>"onHearingDate"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_detained_recordAdj_14">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_detained_recordAdj_15">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_detained_recordAdj_16">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_detained_recordAdj_17">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_detained_recordAdj_18">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_detained_recordAdj_19">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_detained_recordAdj_20">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_detained_recordAdj_21">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_detained_recordAdj_22">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_detained_recordAdj_23">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_detained_recordAdj_24">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_detained_recordAdj_25">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_detained_recordAdj_26">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_detained_recordAdj_27">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_detained_recordAdj_28">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_detained_recordAdj_taskId">
+          <text>"detainedListTheCase"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_detained_recordAdj_name">
+          <text>"Detained - List the case"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_detained_recordAdj_delayUntil">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_detained_recordAdj_processCategories">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1xzxzr2">
         <inputEntry id="UnaryTests_1fsswsn">
           <text>"recordAdjournmentDetails"</text>
@@ -11345,7 +11443,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0rnlwyp">
-          <text></text>
+          <text>false</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0r0778r">
           <text>"listTheCase"</text>
