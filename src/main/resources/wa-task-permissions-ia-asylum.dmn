@@ -208,9 +208,7 @@
             "reviewClarifyingQuestionsAnswers",
             "followUpOverdueClarifyingAnswers",
             "reviewRespondentResponse","detainedReviewAdditionalHomeOfficeEvidence",
-            "followUpOverdueRespondentReview","detainedFollowUpOverdueRespondentReview",
-            "reviewHearingRequirements",
-            "reviewHearingRequirements","detainedReviewHearingRequirements",
+            "followUpOverdueRespondentReview","detainedFollowUpOverdueRespondentReview",            "reviewHearingRequirements","detainedReviewHearingRequirements",
             "followUpOverdueHearingRequirements","detainedFollowUpOverdueHearingRequirements",
             "reviewCmaRequirements",
             "reviewAdditionalHomeOfficeEvidence","detainedReviewAdditionalHomeOfficeEvidence",
@@ -364,7 +362,7 @@
             "postHearingAttendeesDurationAndRecording",
             "detainedPostHearingAttendeesDurationAndRecording",
             "editListing","detainedEditListing",
-            "followUpSetAsideDecision","hearingException","cmrListed","detainedCmrListed","cmrUpdated","detainedCmrUpdated","relistCase","listTheCase","detainedListTheCase","reviewInterpreters","detainedReviewInterpreters","reviewMigratedCase",
+            "followUpSetAsideDecision","hearingException","detainedHearingException","cmrListed","detainedCmrListed","cmrUpdated","detainedCmrUpdated","relistCase","listTheCase","detainedListTheCase","reviewInterpreters","detainedReviewInterpreters","reviewMigratedCase",
 "reviewAriaRemissionApplication","detainedListCmr"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1sw9xpj">
@@ -712,7 +710,7 @@
       </rule>
       <rule id="DecisionRule_0xfd7pt">
         <inputEntry id="UnaryTests_141gjoe">
-          <text>"hearingException","cmrListed","detainedCmrListed","cmrUpdated","detainedCmrUpdated","relistCase","listTheCase","detainedListTheCase","reviewInterpreters","detainedReviewInterpreters","detainedListCmr"</text>
+          <text>"hearingException","detainedHearingException","cmrListed","detainedCmrListed","cmrUpdated","detainedCmrUpdated","relistCase","listTheCase","detainedListTheCase","reviewInterpreters","detainedReviewInterpreters","detainedListCmr"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0otzt6m">
           <text></text>
