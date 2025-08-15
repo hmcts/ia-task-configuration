@@ -2850,6 +2850,25 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "recordAdjournmentDetails",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"hearingAdjournmentWhen\":\"" + "onHearingDate" + "\",\n"
+                                      + "      \"relistCaseImmediately\":" + "\"Yes\"" + ",\n"
+                                      + "      \"autoHearingRequestEnabled\" : " + false + ",\n"
+                                      + "      \"appellantInDetention\":" + true + "\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedListTheCase",
+                        "name", "Detained - List the case",
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
                 "cmrListing",
                 null,
                 null,
@@ -4346,7 +4365,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(28));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(166));
+        assertThat(logic.getRules().size(), is(167));
 
     }
 
