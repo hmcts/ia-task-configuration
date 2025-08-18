@@ -4306,7 +4306,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                               "detainedFollowUpSetAsideDecision",
                                               "Detained - Follow Up Set Aside Decision",
                                               "followUpOverdue",
-                                              delayFor5Days, true)
+                                              delayFor5Days, true),
+            // Explicit test for appellantInDetention flag
+            getDecideAnApplicationArgumentsOf("Set aside a decision",
+                                              "followUpSetAsideDecision",
+                                              "Follow up set aside decision",
+                                              "followUpOverdue",
+                                              delayFor5Days, false, false),
+            getDecideAnApplicationArgumentsOf("Set aside a decision",
+                                              "detainedFollowUpSetAsideDecision",
+                                              "Detained - Follow Up Set Aside Decision",
+                                              "followUpOverdue",
+                                              delayFor5Days, false, true)
         );
     }
 
@@ -4340,6 +4351,44 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                   + "            \"applicant\" : \"\"\n"
                                   + "          },\n"
                                   + "          \"isIntegrated\" : \"" + isIntegrated + "\"\n"
+                                  + "        }\n"
+                                  + "      }"),
+            singletonList(map)
+        );
+    }
+
+    private static Arguments getDecideAnApplicationArgumentsOf(String applicationType,
+                                                               String taskId,
+                                                               String name,
+                                                               String processCategories,
+                                                               Map<String,Object> delayUntil,
+                                                               boolean isIntegrated,
+                                                               boolean appellantInDetention) {
+        Map<String, Object> map = isIntegrated
+            ? emptyMap()
+            : new HashMap<String, Object>() {
+                {
+                    put("taskId", taskId);
+                    put("name", name);
+                    put("processCategories", processCategories);
+                    if (delayUntil != null) {
+                        put("delayUntil", delayUntil);
+                    }
+                }
+            };
+
+        return Arguments.of(
+            "decideAnApplication",
+            null,
+            mapAdditionalData(" {\n"
+                                  + "        \"Data\" : {\n"
+                                  + "          \"lastModifiedApplication\" : {\n"
+                                  + "            \"type\" : \"" + applicationType + "\",\n"
+                                  + "            \"decision\" : \"Granted\",\n"
+                                  + "            \"applicant\" : \"\"\n"
+                                  + "          },\n"
+                                  + "          \"isIntegrated\" : \"" + isIntegrated + "\",\n"
+                                  + "          \"appellantInDetention\" : \"" + appellantInDetention + "\"\n"
                                   + "        }\n"
                                   + "      }"),
             singletonList(map)
