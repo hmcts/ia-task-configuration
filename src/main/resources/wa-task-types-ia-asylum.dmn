@@ -801,6 +801,17 @@
           <text>"Follow up set aside decision"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0detained_follow_up_set_aside">
+        <inputEntry id="UnaryTests_0detained_follow_up_set_aside">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0detained_follow_up_set_aside_task">
+          <text>"detainedFollowUpSetAsideDecision"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0detained_follow_up_set_aside_name">
+          <text>"Detained - Follow Up Set Aside Decision"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0myowc6">
         <inputEntry id="UnaryTests_1yugqdi">
           <text></text>

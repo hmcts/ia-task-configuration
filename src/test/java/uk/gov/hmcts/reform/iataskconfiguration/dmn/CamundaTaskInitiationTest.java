@@ -4301,7 +4301,12 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                               "followUpSetAsideDecision",
                                               "Follow up set aside decision",
                                               "followUpOverdue",
-                                              delayFor5Days, false)
+                                              delayFor5Days, false),
+            getDecideAnApplicationArgumentsOf("Set aside a decision",
+                                              "detainedFollowUpSetAsideDecision",
+                                              "Detained - Follow Up Set Aside Decision",
+                                              "followUpOverdue",
+                                              delayFor5Days, true)
         );
     }
 
