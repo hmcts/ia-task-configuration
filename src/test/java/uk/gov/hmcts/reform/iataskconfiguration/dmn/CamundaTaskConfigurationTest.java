@@ -497,7 +497,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "uploadHearingRecording", "postHearingAttendeesDurationAndRecording",
         "detainedPostHearingAttendeesDurationAndRecording",
         "editListing", "detainedEditListing", "followUpSetAsideDecision", "detainedFollowUpSetAsideDecision",
-        "hearingException", "cmrListed", "cmrUpdated", "detainedCmrListed", "detainedCmrUpdated","relistCase","detainedRelistCase",
+        "hearingException", "cmrListed", "cmrUpdated", "detainedCmrListed", "detainedCmrUpdated",
+        "relistCase","detainedRelistCase",
         "reviewInterpreters","reviewMigratedCase","reviewAriaRemissionApplication",
         "printAndSendHoBundle","detainedPrintAndSendHoBundle","printAndSendHoResponse",
         "printAndSendHearingRequirements","detainedPrintAndSendHearingRequirements",
@@ -1528,6 +1529,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "cmrUpdated,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,,",
         "detainedCmrUpdated,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,,",
         "relistCase,[Relist the hearing](cases/case-details/${[CASE_REFERENCE]}/hearings),,,",
+        "detainedRelistCase,[Relist the hearing](cases/case-details/${[CASE_REFERENCE]}/hearings),,,",
         "reviewInterpreters,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,,",
         "detainedReviewInterpreters,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,,",
         "detainedListCmr,[List CMR](cases/case-details/${[CASE_REFERENCE]}/hearings),,,"
