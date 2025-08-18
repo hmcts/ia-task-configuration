@@ -402,6 +402,11 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                    "Follow up set aside decision"
             ),
             Map.of("taskTypeId",
+                   "detainedFollowUpSetAsideDecision",
+                   "taskTypeName",
+                   "Detained - Follow Up Set Aside Decision"
+            ),
+            Map.of("taskTypeId",
                    "reviewAppealSetAsideUnderRule35",
                    "taskTypeName",
                    "Review appeal set aside under rule 35"

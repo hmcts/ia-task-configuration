@@ -4301,7 +4301,23 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                               "followUpSetAsideDecision",
                                               "Follow up set aside decision",
                                               "followUpOverdue",
-                                              delayFor5Days, false)
+                                              delayFor5Days, false),
+            getDecideAnApplicationArgumentsOf("Set aside a decision",
+                                              "detainedFollowUpSetAsideDecision",
+                                              "Detained - Follow Up Set Aside Decision",
+                                              "followUpOverdue",
+                                              delayFor5Days, true),
+            // Explicit test for appellantInDetention flag
+            getDecideAnApplicationArgumentsOf("Set aside a decision",
+                                              "followUpSetAsideDecision",
+                                              "Follow up set aside decision",
+                                              "followUpOverdue",
+                                              delayFor5Days, false, false),
+            getDecideAnApplicationArgumentsOf("Set aside a decision",
+                                              "detainedFollowUpSetAsideDecision",
+                                              "Detained - Follow Up Set Aside Decision",
+                                              "followUpOverdue",
+                                              delayFor5Days, false, true)
         );
     }
 
@@ -4341,6 +4357,44 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         );
     }
 
+    private static Arguments getDecideAnApplicationArgumentsOf(String applicationType,
+                                                               String taskId,
+                                                               String name,
+                                                               String processCategories,
+                                                               Map<String,Object> delayUntil,
+                                                               boolean isIntegrated,
+                                                               boolean appellantInDetention) {
+        Map<String, Object> map = isIntegrated
+            ? emptyMap()
+            : new HashMap<String, Object>() {
+                {
+                    put("taskId", taskId);
+                    put("name", name);
+                    put("processCategories", processCategories);
+                    if (delayUntil != null) {
+                        put("delayUntil", delayUntil);
+                    }
+                }
+            };
+
+        return Arguments.of(
+            "decideAnApplication",
+            null,
+            mapAdditionalData(" {\n"
+                                  + "        \"Data\" : {\n"
+                                  + "          \"lastModifiedApplication\" : {\n"
+                                  + "            \"type\" : \"" + applicationType + "\",\n"
+                                  + "            \"decision\" : \"Granted\",\n"
+                                  + "            \"applicant\" : \"\"\n"
+                                  + "          },\n"
+                                  + "          \"isIntegrated\" : \"" + isIntegrated + "\",\n"
+                                  + "          \"appellantInDetention\" : \"" + appellantInDetention + "\"\n"
+                                  + "        }\n"
+                                  + "      }"),
+            singletonList(map)
+        );
+    }
+
 
     @ParameterizedTest
     @MethodSource("decideAnApplicationScenarioProvider")
@@ -4365,7 +4419,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(28));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(167));
+        assertThat(logic.getRules().size(), is(168));
 
     }
 

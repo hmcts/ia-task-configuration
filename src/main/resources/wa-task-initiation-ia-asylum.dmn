@@ -10493,7 +10493,7 @@
           <text>"Granted"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1kfjlpy">
-          <text></text>
+          <text>false</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1xxvgjw">
           <text></text>
@@ -10556,7 +10556,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0eu3e6y">
-          <text></text>
+          <text>false</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_064rjgz">
           <text>"followUpSetAsideDecision"</text>
@@ -10573,6 +10573,109 @@
 }</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0tbivha">
+          <text>"followUpOverdue"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0detained_follow_up_set_aside">
+        <inputEntry id="UnaryTests_0detained_follow_up_set_aside_event">
+          <text>"decideAnApplication"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0detained_follow_up_set_aside_state">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0detained_follow_up_set_aside_appeal_type">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0detained_follow_up_set_aside_journey_type">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0detained_follow_up_set_aside_app_type">
+          <text>"Set aside a decision"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0detained_follow_up_set_aside_app_decision">
+          <text>"Granted"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0detained_follow_up_set_aside_integrated">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0detained_follow_up_set_aside_auto_hearing">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0detained_follow_up_set_aside_panel">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0detained_follow_up_set_aside_remission_type">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0detained_follow_up_set_aside_remission_option">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0detained_follow_up_set_aside_remission_decision">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0detained_follow_up_set_aside_source_of_appeal">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0detained_follow_up_set_aside_ftpa_appellant">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0detained_follow_up_set_aside_ftpa_respondent">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0detained_follow_up_set_aside_has_ftpa">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0detained_follow_up_set_aside_has_paid">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0detained_follow_up_set_aside_is_admin">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0detained_follow_up_set_aside_is_ej">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0detained_follow_up_set_aside_app_applicant">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0detained_follow_up_set_aside_has_case_flag">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0detained_follow_up_set_aside_case_management_category">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0detained_follow_up_set_aside_has_service_request">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0detained_follow_up_set_aside_is_aip">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0detained_follow_up_set_aside_is_legalrep">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0detained_follow_up_set_aside_reviewed_hearing_requirements">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0detained_follow_up_set_aside_home_office_bundle_available">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0detained_follow_up_set_aside_appellant_detention">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0detained_follow_up_set_aside_task_id">
+          <text>"detainedFollowUpSetAsideDecision"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0detained_follow_up_set_aside_task_name">
+          <text>"Detained - Follow Up Set Aside Decision"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0detained_follow_up_set_aside_delay_until">
+          <text>{
+"delayUntilOrigin": today(),
+"delayUntilNonWorkingCalendar": "https://www.gov.uk/bank-holidays/england-and-wales.json",
+"delayUntilNonWorkingDaysOfWeek":"SATURDAY,SUNDAY",
+"delayUntilIntervalDays":"5"
+}</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0detained_follow_up_set_aside_process_categories">
           <text>"followUpOverdue"</text>
         </outputEntry>
       </rule>
