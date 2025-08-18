@@ -12330,7 +12330,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1pshong">
-          <text></text>
+          <text>false</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1j6y4x9">
           <text>"relistCase"</text>
@@ -12342,6 +12342,104 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0bqqvpl">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0detained_relist_case">
+        <inputEntry id="UnaryTests_0detained_relist_case_event">
+          <text>"restoreStateFromAdjourn"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0detained_relist_case_state">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0detained_relist_case_appeal_type">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0detained_relist_case_journey_type">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0detained_relist_case_legal_rep">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0detained_relist_case_auto_hearing">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0detained_relist_case_integrated">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0detained_relist_case_panel_required">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0detained_relist_case_remission_type">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0detained_relist_case_remission_option">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0detained_relist_case_remission_decision">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0detained_relist_case_adjournment_when">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0detained_relist_case_relist_immediately">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0detained_relist_case_hearing_centre">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0detained_relist_case_fee_update_action">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0detained_relist_case_ftpa_appellant_outcome">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0detained_relist_case_ftpa_respondent_outcome">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0detained_relist_case_ftpa_applicant_type">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0detained_relist_case_update_tribunal_decision">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0detained_relist_case_application_type">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0detained_relist_case_application_decision">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0detained_relist_case_reviewed_hearing_requirements">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0detained_relist_case_upload_ho_bundle_available">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0detained_relist_case_should_trigger_review_interpreter">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0detained_relist_case_is_admin">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0detained_relist_case_is_ej">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0detained_relist_case_is_legal_rep">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0detained_relist_case_appellant_detention">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0detained_relist_case_task_id">
+          <text>"detainedRelistCase"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0detained_relist_case_task_name">
+          <text>"Detained - Relist The Case"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0detained_relist_case_delay_until">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0detained_relist_case_process_categories">
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>

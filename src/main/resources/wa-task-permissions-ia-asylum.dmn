@@ -238,7 +238,7 @@
             "reviewAppealSetAsideUnderRule32",
   "cmrListed","detainedCmrListed",
             "cmrUpdated","detainedCmrUpdated",
-            "relistCase",
+            "relistCase","detainedRelistCase",
             "listTheCase","detainedReviewInterpreters","detainedListTheCase",
             "reviewInterpreters","detainedListCmr"</text>
         </inputEntry>
@@ -362,7 +362,7 @@
             "postHearingAttendeesDurationAndRecording",
             "detainedPostHearingAttendeesDurationAndRecording",
             "editListing","detainedEditListing",
-            "followUpSetAsideDecision","detainedFollowUpSetAsideDecision","hearingException","detainedHearingException","cmrListed","detainedCmrListed","cmrUpdated","detainedCmrUpdated","relistCase","listTheCase","detainedListTheCase","reviewInterpreters","detainedReviewInterpreters","reviewMigratedCase",
+            "followUpSetAsideDecision","detainedFollowUpSetAsideDecision","hearingException","detainedHearingException","cmrListed","detainedCmrListed","cmrUpdated","detainedCmrUpdated","relistCase","detainedRelistCase","listTheCase","detainedListTheCase","reviewInterpreters","detainedReviewInterpreters","reviewMigratedCase",
 "reviewAriaRemissionApplication","detainedListCmr"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1sw9xpj">
@@ -710,7 +710,7 @@
       </rule>
       <rule id="DecisionRule_0xfd7pt">
         <inputEntry id="UnaryTests_141gjoe">
-          <text>"hearingException","detainedHearingException","cmrListed","detainedCmrListed","cmrUpdated","detainedCmrUpdated","relistCase","listTheCase","detainedListTheCase","reviewInterpreters","detainedReviewInterpreters","detainedListCmr"</text>
+          <text>"hearingException","detainedHearingException","cmrListed","detainedCmrListed","cmrUpdated","detainedCmrUpdated","relistCase","detainedRelistCase","listTheCase","detainedListTheCase","reviewInterpreters","detainedReviewInterpreters","detainedListCmr"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0otzt6m">
           <text></text>
