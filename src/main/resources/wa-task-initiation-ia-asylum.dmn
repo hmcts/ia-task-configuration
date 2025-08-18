@@ -10493,7 +10493,7 @@
           <text>"Granted"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1kfjlpy">
-          <text></text>
+          <text>false</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1xxvgjw">
           <text></text>
@@ -10556,7 +10556,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0eu3e6y">
-          <text></text>
+          <text>false</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_064rjgz">
           <text>"followUpSetAsideDecision"</text>
@@ -10596,7 +10596,7 @@
           <text>"Granted"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0detained_follow_up_set_aside_integrated">
-          <text></text>
+          <text>false</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0detained_follow_up_set_aside_auto_hearing">
           <text></text>
@@ -10634,6 +10634,9 @@
         <inputEntry id="UnaryTests_0detained_follow_up_set_aside_is_ej">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_0detained_follow_up_set_aside_app_applicant">
+          <text></text>
+        </inputEntry>
         <inputEntry id="UnaryTests_0detained_follow_up_set_aside_has_case_flag">
           <text></text>
         </inputEntry>
@@ -10647,6 +10650,12 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0detained_follow_up_set_aside_is_legalrep">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0detained_follow_up_set_aside_reviewed_hearing_requirements">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0detained_follow_up_set_aside_home_office_bundle_available">
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0detained_follow_up_set_aside_appellant_detention">
