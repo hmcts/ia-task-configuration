@@ -47,7 +47,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             "delayUntilIntervalDays", "0",
             "delayUntil", directionDueDate
         );
-        Map<String,Object> delayFor14DaysExcludingBankHolidays = Map.of(
+        Map<String,Object> delayForDaysExcludingBankHolidays = Map.of(
             "delayUntilIntervalDays", "14",
             "delayUntilNonWorkingCalendar", "https://www.gov.uk/bank-holidays/england-and-wales.json",
             "delayUntilOrigin", LocalDate.now(),
@@ -59,7 +59,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             "delayUntilOrigin", LocalDate.now()
         );
 
-        Map<String,Object> delayFor14Days = Map.of(
+        Map<String,Object> delayForDays = Map.of(
             "delayUntilIntervalDays", "14",
             "delayUntilOrigin", LocalDate.now()
         );
@@ -95,8 +95,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         appellantInDetention,
                         List.of(
                                 Map.of(
-                                        "taskId", "decideAnFTPA",
-                                        "name", "Decide an FTPA",
+                                        "taskId", "detainedDecideAnFTPA",
+                                        "name", "Detained - Decide an FTPA",
 
                                         "processCategories", "caseProgression"
                                 ),
@@ -108,6 +108,25 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                 )
                         )
                 ),
+            Arguments.of(
+                "applyForFTPAAppellant",
+                null,
+                appellantInDetention,
+                List.of(
+                    Map.of(
+                        "taskId", "detainedDecideAnFTPA",
+                        "name", "Detained - Decide an FTPA",
+
+                        "processCategories", "caseProgression"
+                    ),
+                    Map.of(
+                        "taskId", "detainedAssignAFTPAJudge",
+                        "name", "Detained - Assign a FTPA Judge",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
             Arguments.of(
                 "applyForFTPARespondent",
                 null,
@@ -133,8 +152,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         appellantInDetention,
                         List.of(
                                 Map.of(
-                                        "taskId", "decideAnFTPA",
-                                        "name", "Decide an FTPA",
+                                        "taskId", "detainedDecideAnFTPA",
+                                        "name", "Detained - Decide an FTPA",
 
                                         "processCategories", "caseProgression"
                                 ),
@@ -146,6 +165,25 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                 )
                         )
                 ),
+            Arguments.of(
+                "applyForFTPARespondent",
+                null,
+                appellantInDetention,
+                List.of(
+                    Map.of(
+                        "taskId", "detainedDecideAnFTPA",
+                        "name", "Detained - Decide an FTPA",
+
+                        "processCategories", "caseProgression"
+                    ),
+                    Map.of(
+                        "taskId", "detainedAssignAFTPAJudge",
+                        "name", "Detained - Assign a FTPA Judge",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
             Arguments.of(
                 "generateDecisionAndReasons",
                 "decision",
@@ -1046,6 +1084,20 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     )
                 )
             ),
+                Arguments.of(
+                        "draftHearingRequirements",
+                        "listing",
+                        appellantInDetention,
+                        List.of(
+                                Map.of(
+                                        "taskId", "detainedReviewHearingRequirements",
+                                        "name", "Detained - Review hearing requirements",
+
+
+                                        "processCategories", "caseProgression"
+                                )
+                        )
+                ),
             Arguments.of(
                 "requestRespondentEvidence",
                 "awaitingRespondentEvidence",
@@ -1237,7 +1289,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "followUpNoticeOfChange",
                         "name", "Follow-up Notice of Change",
                         "processCategories", "followUpOverdue",
-                        "delayUntil", delayFor14DaysExcludingBankHolidays
+                        "delayUntil", delayForDaysExcludingBankHolidays
                     )
                 )
             ),
@@ -1250,7 +1302,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "taskId", "detainedFollowUpNoticeOfChange",
                         "name", "Detained - Follow-up Notice of Change",
                         "processCategories", "followUpOverdue",
-                        "delayUntil", delayFor14DaysExcludingBankHolidays
+                        "delayUntil", delayForDaysExcludingBankHolidays
                     )
                 )
             ),
@@ -1265,7 +1317,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
 
                         "processCategories", "followUpOverdue",
-                        "delayUntil", delayFor14DaysExcludingBankHolidays
+                        "delayUntil", delayForDaysExcludingBankHolidays
                     )
                 )
             ),
@@ -1464,6 +1516,25 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                    "submitAppeal",
+                    "pendingPayment",
+                    mapAdditionalData("{\n"
+                            + "   \"Data\":{\n"
+                            + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
+                            + "      \"remissionType\":\"" + "hoWaiverRemission" + "\",\n"
+                            + "      \"appellantInDetention\":\"" + true + "\"\n"
+                            + "   }"
+                            + "}"),
+                    singletonList(
+                            Map.of(
+                                    "taskId", "detainedReviewRemissionApplication",
+                                    "name", "Detained - Review Remission Application",
+
+                                    "processCategories", "caseProgression"
+                            )
+                    )
+            ),
+            Arguments.of(
                 "submitAppeal",
                 "pendingPayment",
                 mapAdditionalData("{\n"
@@ -1482,6 +1553,25 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                    "submitAppeal",
+                    "pendingPayment",
+                    mapAdditionalData("{\n"
+                            + "   \"Data\":{\n"
+                            + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
+                            + "      \"remissionType\":\"" + "exceptionalCircumstancesRemission" + "\",\n"
+                            + "      \"appellantInDetention\":\"" + true + "\"\n"
+                            + "   }"
+                            + "}"),
+                    singletonList(
+                            Map.of(
+                                    "taskId", "detainedReviewRemissionApplication",
+                                    "name", "Detained - Review Remission Application",
+
+                                    "processCategories", "caseProgression"
+                            )
+                    )
+            ),
+            Arguments.of(
                 "submitAppeal",
                 "pendingPayment",
                 mapAdditionalData("{\n"
@@ -1498,6 +1588,25 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "processCategories", "caseProgression"
                     )
                 )
+            ),
+            Arguments.of(
+                    "submitAppeal",
+                    "pendingPayment",
+                    mapAdditionalData("{\n"
+                            + "   \"Data\":{\n"
+                            + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
+                            + "      \"remissionType\":\"" + "helpWithFees" + "\",\n"
+                            + "      \"appellantInDetention\":\"" + true + "\"\n"
+                            + "   }"
+                            + "}"),
+                    singletonList(
+                            Map.of(
+                                    "taskId", "detainedReviewRemissionApplication",
+                                    "name", "Detained - Review Remission Application",
+
+                                    "processCategories", "caseProgression"
+                            )
+                    )
             ),
             Arguments.of(
                 "submitAppeal",
@@ -1517,6 +1626,26 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     )
                 )
             ),
+                Arguments.of(
+                        "submitAppeal",
+                        "pendingPayment",
+                        mapAdditionalData("{\n"
+                                + "   \"Data\":{\n"
+                                + "      \"appealType\":\"" + "refusalOfEu" + "\",\n"
+                                + "      \"remissionType\":\"" + "hoWaiverRemission" + "\",\n"
+                                + "      \"appellantInDetention\":\"" + true + "\"\n"
+
+                                + "   }"
+                                + "}"),
+                        singletonList(
+                                Map.of(
+                                        "taskId", "detainedReviewRemissionApplication",
+                                        "name", "Detained - Review Remission Application",
+
+                                        "processCategories", "caseProgression"
+                                )
+                        )
+                ),
             Arguments.of(
                 "submitAppeal",
                 "pendingPayment",
@@ -1535,6 +1664,25 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     )
                 )
             ),
+                Arguments.of(
+                        "submitAppeal",
+                        "pendingPayment",
+                        mapAdditionalData("{\n"
+                                + "   \"Data\":{\n"
+                                + "      \"appealType\":\"" + "refusalOfEu" + "\",\n"
+                                + "      \"remissionType\":\"" + "exceptionalCircumstancesRemission" + "\",\n"
+                                + "      \"appellantInDetention\":\"" + true + "\"\n"
+                                + "   }"
+                                + "}"),
+                        singletonList(
+                                Map.of(
+                                        "taskId", "detainedReviewRemissionApplication",
+                                        "name", "Detained - Review Remission Application",
+
+                                        "processCategories", "caseProgression"
+                                )
+                        )
+                ),
             Arguments.of(
                 "submitAppeal",
                 "pendingPayment",
@@ -1553,6 +1701,25 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     )
                 )
             ),
+                Arguments.of(
+                        "submitAppeal",
+                        "pendingPayment",
+                        mapAdditionalData("{\n"
+                                + "   \"Data\":{\n"
+                                + "      \"appealType\":\"" + "refusalOfEu" + "\",\n"
+                                + "      \"remissionType\":\"" + "helpWithFees" + "\",\n"
+                                + "      \"appellantInDetention\":\"" + true + "\"\n"
+                                + "   }"
+                                + "}"),
+                        singletonList(
+                                Map.of(
+                                        "taskId", "detainedReviewRemissionApplication",
+                                        "name", "Detained - Review Remission Application",
+
+                                        "processCategories", "caseProgression"
+                                )
+                        )
+                ),
             Arguments.of(
                 "submitAppeal",
                 "pendingPayment",
@@ -1571,6 +1738,25 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     )
                 )
             ),
+                Arguments.of(
+                        "submitAppeal",
+                        "pendingPayment",
+                        mapAdditionalData("{\n"
+                                + "   \"Data\":{\n"
+                                + "      \"appealType\":\"" + "protection" + "\",\n"
+                                + "      \"remissionType\":\"" + "hoWaiverRemission" + "\",\n"
+                                + "      \"appellantInDetention\":\"" + true + "\"\n"
+                                + "   }"
+                                + "}"),
+                        singletonList(
+                                Map.of(
+                                        "taskId", "detainedReviewRemissionApplication",
+                                        "name", "Detained - Review Remission Application",
+
+                                        "processCategories", "caseProgression"
+                                )
+                        )
+                ),
             Arguments.of(
                 "submitAppeal",
                 "pendingPayment",
@@ -1589,6 +1775,25 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     )
                 )
             ),
+                Arguments.of(
+                        "submitAppeal",
+                        "pendingPayment",
+                        mapAdditionalData("{\n"
+                                + "   \"Data\":{\n"
+                                + "      \"appealType\":\"" + "protection" + "\",\n"
+                                + "      \"remissionType\":\"" + "exceptionalCircumstancesRemission" + "\",\n"
+                                + "      \"appellantInDetention\":\"" + true + "\"\n"
+                                + "   }"
+                                + "}"),
+                        singletonList(
+                                Map.of(
+                                        "taskId", "detainedReviewRemissionApplication",
+                                        "name", "Detained - Review Remission Application",
+
+                                        "processCategories", "caseProgression"
+                                )
+                        )
+                ),
             Arguments.of(
                 "submitAppeal",
                 "pendingPayment",
@@ -1607,6 +1812,26 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     )
                 )
             ),
+                Arguments.of(
+                        "submitAppeal",
+                        "pendingPayment",
+                        mapAdditionalData("{\n"
+                                + "   \"Data\":{\n"
+                                + "      \"appealType\":\"" + "protection" + "\",\n"
+                                + "      \"remissionType\":\"" + "helpWithFees" + "\",\n"
+                                + "      \"appellantInDetention\":\"" + true + "\"\n"
+
+                                + "   }"
+                                + "}"),
+                        singletonList(
+                                Map.of(
+                                        "taskId", "detainedReviewRemissionApplication",
+                                        "name", "Detained - Review Remission Application",
+
+                                        "processCategories", "caseProgression"
+                                )
+                        )
+                ),
             Arguments.of(
                 "submitAppeal",
                 "pendingPayment",
@@ -1625,6 +1850,26 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     )
                 )
             ),
+                Arguments.of(
+                        "submitAppeal",
+                        "pendingPayment",
+                        mapAdditionalData("{\n"
+                                + "   \"Data\":{\n"
+                                + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
+                                + "      \"remissionType\":\"" + "hoWaiverRemission" + "\",\n"
+                                + "      \"appellantInDetention\":\"" + true + "\"\n"
+                                + "   }"
+                                + "}"),
+                        singletonList(
+                                Map.of(
+                                        "taskId", "detainedReviewRemissionApplication",
+                                        "name", "Detained - Review Remission Application",
+
+
+                                        "processCategories", "caseProgression"
+                                )
+                        )
+                ),
             Arguments.of(
                 "submitAppeal",
                 "pendingPayment",
@@ -1643,19 +1888,59 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     )
                 )
             ),
+                Arguments.of(
+                        "submitAppeal",
+                        "pendingPayment",
+                        mapAdditionalData("{\n"
+                                + "   \"Data\":{\n"
+                                + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
+                                + "      \"remissionType\":\"" + "exceptionalCircumstancesRemission" + "\",\n"
+                                + "      \"appellantInDetention\":\"" + true + "\"\n"
+                                + "   }"
+                                + "}"),
+                        singletonList(
+                                Map.of(
+                                        "taskId", "detainedReviewRemissionApplication",
+                                        "name", "Detained - Review Remission Application",
+
+
+                                        "processCategories", "caseProgression"
+                                )
+                        )
+                ),
+                Arguments.of(
+                        "submitAppeal",
+                        "pendingPayment",
+                        mapAdditionalData("{\n"
+                                + "   \"Data\":{\n"
+                                + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
+                                + "      \"remissionType\":\"" + "helpWithFees" + "\"\n"
+                                + "   }"
+                                + "}"),
+                        singletonList(
+                                Map.of(
+                                        "taskId", "reviewRemissionApplication",
+                                        "name", "Review Remission Application",
+
+                                        "processCategories", "caseProgression"
+                                )
+                        )
+                ),
             Arguments.of(
                 "submitAppeal",
                 "pendingPayment",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                                      + "      \"remissionType\":\"" + "helpWithFees" + "\"\n"
-                                      + "   }"
+                                      + "      \"remissionType\":\"" + "helpWithFees" + "\",\n"
+                                      + "      \"appellantInDetention\":\"" + true + "\"\n"
+
+                        + "   }"
                                       + "}"),
                 singletonList(
                     Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
+                        "taskId", "detainedReviewRemissionApplication",
+                        "name", "Detained - Review Remission Application",
 
                         "processCategories", "caseProgression"
                     )
@@ -1679,6 +1964,25 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     )
                 )
             ),
+                Arguments.of(
+                        "submitAppeal",
+                        "appealSubmitted",
+                        mapAdditionalData("{\n"
+                                + "   \"Data\":{\n"
+                                + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
+                                + "      \"remissionType\":\"" + "hoWaiverRemission" + "\",\n"
+                                + "      \"appellantInDetention\":\"" + true + "\"\n"
+                                + "   }"
+                                + "}"),
+                        List.of(
+                                Map.of(
+                                        "taskId", "detainedReviewRemissionApplication",
+                                        "name", "Detained - Review Remission Application",
+
+                                        "processCategories", "caseProgression"
+                                )
+                        )
+                ),
             Arguments.of(
                 "submitAppeal",
                 "appealSubmitted",
@@ -1697,6 +2001,25 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     )
                 )
             ),
+                Arguments.of(
+                        "submitAppeal",
+                        "appealSubmitted",
+                        mapAdditionalData("{\n"
+                                + "   \"Data\":{\n"
+                                + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
+                                + "      \"remissionType\":\"" + "exceptionalCircumstancesRemission" + "\",\n"
+                                + "      \"appellantInDetention\":\"" + true + "\"\n"
+                                + "   }"
+                                + "}"),
+                        List.of(
+                                Map.of(
+                                        "taskId", "detainedReviewRemissionApplication",
+                                        "name", "Detained - Review Remission Application",
+
+                                        "processCategories", "caseProgression"
+                                )
+                        )
+                ),
             Arguments.of(
                 "submitAppeal",
                 "appealSubmitted",
@@ -1715,6 +2038,26 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     )
                 )
             ),
+                Arguments.of(
+                        "submitAppeal",
+                        "appealSubmitted",
+                        mapAdditionalData("{\n"
+                                + "   \"Data\":{\n"
+                                + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
+                                + "      \"remissionType\":\"" + "helpWithFees" + "\",\n"
+                                + "      \"appellantInDetention\":\"" + true + "\"\n"
+
+                                + "   }"
+                                + "}"),
+                        List.of(
+                                Map.of(
+                                        "taskId", "detainedReviewRemissionApplication",
+                                        "name", "Detained - Review Remission Application",
+
+                                        "processCategories", "caseProgression"
+                                )
+                        )
+                ),
             Arguments.of(
                 "submitAppeal",
                 "appealSubmitted",
@@ -1733,6 +2076,26 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     )
                 )
             ),
+                Arguments.of(
+                        "submitAppeal",
+                        "appealSubmitted",
+                        mapAdditionalData("{\n"
+                                + "   \"Data\":{\n"
+                                + "      \"appealType\":\"" + "refusalOfEu" + "\",\n"
+                                + "      \"remissionType\":\"" + "hoWaiverRemission" + "\",\n"
+                                + "      \"appellantInDetention\":\"" + true + "\"\n"
+
+                                + "   }"
+                                + "}"),
+                        List.of(
+                                Map.of(
+                                        "taskId", "detainedReviewRemissionApplication",
+                                        "name", "Detained - Review Remission Application",
+
+                                        "processCategories", "caseProgression"
+                                )
+                        )
+                ),
             Arguments.of(
                 "submitAppeal",
                 "appealSubmitted",
@@ -1751,6 +2114,26 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     )
                 )
             ),
+                Arguments.of(
+                        "submitAppeal",
+                        "appealSubmitted",
+                        mapAdditionalData("{\n"
+                                + "   \"Data\":{\n"
+                                + "      \"appealType\":\"" + "refusalOfEu" + "\",\n"
+                                + "      \"remissionType\":\"" + "exceptionalCircumstancesRemission" + "\",\n"
+                                + "      \"appellantInDetention\":\"" + true + "\"\n"
+
+                                + "   }"
+                                + "}"),
+                        List.of(
+                                Map.of(
+                                        "taskId", "detainedReviewRemissionApplication",
+                                        "name", "Detained - Review Remission Application",
+
+                                        "processCategories", "caseProgression"
+                                )
+                        )
+                ),
             Arguments.of(
                 "submitAppeal",
                 "appealSubmitted",
@@ -1769,6 +2152,26 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     )
                 )
             ),
+                Arguments.of(
+                        "submitAppeal",
+                        "appealSubmitted",
+                        mapAdditionalData("{\n"
+                                + "   \"Data\":{\n"
+                                + "      \"appealType\":\"" + "refusalOfEu" + "\",\n"
+                                + "      \"remissionType\":\"" + "helpWithFees" + "\",\n"
+                                + "      \"appellantInDetention\":\"" + true + "\"\n"
+
+                                + "   }"
+                                + "}"),
+                        List.of(
+                                Map.of(
+                                        "taskId", "detainedReviewRemissionApplication",
+                                        "name", "Detained - Review Remission Application",
+
+                                        "processCategories", "caseProgression"
+                                )
+                        )
+                ),
             Arguments.of(
                 "submitAppeal",
                 "appealSubmitted",
@@ -1793,6 +2196,32 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     )
                 )
             ),
+                Arguments.of(
+                        "submitAppeal",
+                        "appealSubmitted",
+                        mapAdditionalData("{\n"
+                                + "   \"Data\":{\n"
+                                + "      \"appealType\":\"" + "protection" + "\",\n"
+                                + "      \"remissionType\":\"" + "hoWaiverRemission" + "\",\n"
+                                + "      \"appellantInDetention\":\"" + true + "\"\n"
+
+                                + "   }"
+                                + "}"),
+                        List.of(
+                                Map.of(
+                                        "taskId", "detainedReviewTheAppeal",
+                                        "name", "Detained - Review the appeal",
+
+                                        "processCategories", "caseProgression"
+                                ),
+                                Map.of(
+                                        "taskId", "detainedReviewRemissionApplication",
+                                        "name", "Detained - Review Remission Application",
+
+                                        "processCategories", "caseProgression"
+                                )
+                        )
+                ),
             Arguments.of(
                 "submitAppeal",
                 "appealSubmitted",
@@ -1817,6 +2246,31 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     )
                 )
             ),
+                Arguments.of(
+                        "submitAppeal",
+                        "appealSubmitted",
+                        mapAdditionalData("{\n"
+                                + "   \"Data\":{\n"
+                                + "      \"appealType\":\"" + "protection" + "\",\n"
+                                + "      \"remissionType\":\"" + "exceptionalCircumstancesRemission" + "\",\n"
+                                + "      \"appellantInDetention\":\"" + true + "\"\n"
+                                + "   }"
+                                + "}"),
+                        List.of(
+                                Map.of(
+                                        "taskId", "detainedReviewTheAppeal",
+                                        "name", "Detained - Review the appeal",
+
+                                        "processCategories", "caseProgression"
+                                ),
+                                Map.of(
+                                        "taskId", "detainedReviewRemissionApplication",
+                                        "name", "Detained - Review Remission Application",
+
+                                        "processCategories", "caseProgression"
+                                )
+                        )
+                ),
             Arguments.of(
                 "submitAppeal",
                 "appealSubmitted",
@@ -1841,6 +2295,32 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     )
                 )
             ),
+                Arguments.of(
+                        "submitAppeal",
+                        "appealSubmitted",
+                        mapAdditionalData("{\n"
+                                + "   \"Data\":{\n"
+                                + "      \"appealType\":\"" + "protection" + "\",\n"
+                                + "      \"remissionType\":\"" + "helpWithFees" + "\",\n"
+                                + "      \"appellantInDetention\":\"" + true + "\"\n"
+
+                                + "   }"
+                                + "}"),
+                        List.of(
+                                Map.of(
+                                        "taskId", "detainedReviewTheAppeal",
+                                        "name", "Detained - Review the appeal",
+
+                                        "processCategories", "caseProgression"
+                                ),
+                                Map.of(
+                                        "taskId", "detainedReviewRemissionApplication",
+                                        "name", "Detained - Review Remission Application",
+
+                                        "processCategories", "caseProgression"
+                                )
+                        )
+                ),
             Arguments.of(
                 "submitAppeal",
                 "appealSubmitted",
@@ -1859,6 +2339,25 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     )
                 )
             ),
+                Arguments.of(
+                        "submitAppeal",
+                        "appealSubmitted",
+                        mapAdditionalData("{\n"
+                                + "   \"Data\":{\n"
+                                + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
+                                + "      \"remissionType\":\"" + "hoWaiverRemission" + "\",\n"
+                                + "      \"appellantInDetention\":\"" + true + "\"\n"
+                                + "   }"
+                                + "}"),
+                        List.of(
+                                Map.of(
+                                        "taskId", "detainedReviewRemissionApplication",
+                                        "name", "Detained - Review Remission Application",
+
+                                        "processCategories", "caseProgression"
+                                )
+                        )
+                ),
             Arguments.of(
                 "submitAppeal",
                 "appealSubmitted",
@@ -1877,6 +2376,26 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     )
                 )
             ),
+                Arguments.of(
+                        "submitAppeal",
+                        "appealSubmitted",
+                        mapAdditionalData("{\n"
+                                + "   \"Data\":{\n"
+                                + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
+                                + "      \"remissionType\":\"" + "exceptionalCircumstancesRemission" + "\",\n"
+                                + "      \"appellantInDetention\":\"" + true + "\"\n"
+
+                                + "   }"
+                                + "}"),
+                        List.of(
+                                Map.of(
+                                        "taskId", "detainedReviewRemissionApplication",
+                                        "name", "Detained - Review Remission Application",
+
+                                        "processCategories", "caseProgression"
+                                )
+                        )
+                ),
             Arguments.of(
                 "submitAppeal",
                 "appealSubmitted",
@@ -1895,6 +2414,25 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     )
                 )
             ),
+                Arguments.of(
+                        "submitAppeal",
+                        "appealSubmitted",
+                        mapAdditionalData("{\n"
+                                + "   \"Data\":{\n"
+                                + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
+                                + "      \"remissionType\":\"" + "helpWithFees" + "\",\n"
+                                + "      \"appellantInDetention\":\"" + true + "\"\n"
+                                + "   }"
+                                + "}"),
+                        List.of(
+                                Map.of(
+                                        "taskId", "detainedReviewRemissionApplication",
+                                        "name", "Detained - Review Remission Application",
+
+                                        "processCategories", "caseProgression"
+                                )
+                        )
+                ),
             Arguments.of(
                 "requestFeeRemission",
                 null,
@@ -1908,6 +2446,19 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     )
                 )
             ),
+                Arguments.of(
+                        "requestFeeRemission",
+                        null,
+                        appellantInDetention,
+                        singletonList(
+                                Map.of(
+                                        "taskId", "detainedReviewRemissionApplication",
+                                        "name", "Detained - Review Remission Application",
+
+                                        "processCategories", "caseProgression"
+                                )
+                        )
+                ),
             Arguments.of(
                 "requestFeeRemission",
                 null,
@@ -1949,6 +2500,24 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       + "   \"Data\":{\n"
                                       + "          \"isIntegrated\" : " + false + "\n"
                                       + "          \"autoHearingRequestEnabled\" : " + true + "\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "listTheCase",
+                        "name", "List the case",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "reviewHearingRequirements",
+                "listing",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "          \"isIntegrated\" : " + true + "\n"
+                                      + "          \"isPanelRequired\" : " + true + "\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -2102,6 +2671,26 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 null,
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
+                                      + "      \"ftpaAppellantRjDecisionOutcomeType\":\"" + "reheardRule35" + "\",\n"
+                                      + "      \"ftpaApplicantType\":\"" + "appellant" + "\",\n"
+                                      + "      \"appellantInDetention\":\"" + true + "\"\n"
+
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedReviewAppealSetAsideUnderRule35",
+                        "name", "Detained - Review appeal set aside under rule 35",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "decideFtpaApplication",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
                                       + "      \"ftpaRespondentRjDecisionOutcomeType\":\"" + "reheardRule35" + "\",\n"
                                       + "      \"ftpaApplicantType\":\"" + "respondent" + "\"\n"
                                       + "   }"
@@ -2110,6 +2699,25 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewAppealSetAsideUnderRule35",
                         "name", "Review appeal set aside under rule 35",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "decideFtpaApplication",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"ftpaRespondentRjDecisionOutcomeType\":\"" + "reheardRule35" + "\",\n"
+                                      + "      \"ftpaApplicantType\":\"" + "respondent" + "\",\n"
+                                      + "      \"appellantInDetention\":\"" + true + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedReviewAppealSetAsideUnderRule35",
+                        "name", "Detained - Review appeal set aside under rule 35",
 
                         "processCategories", "caseProgression"
                     )
@@ -2146,7 +2754,24 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "cmrRelisting",
+                "handleHearingException",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appellantInDetention\" : \"" + true + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedHearingException",
+                        "name", "Detained - Hearing Exception",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "cmrReListing",
                 null,
                 null,
                 singletonList(
@@ -2159,7 +2784,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "cmrRelisting",
+                "cmrReListing",
                 null,
                 appellantInDetention,
                 singletonList(
@@ -2225,6 +2850,25 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "recordAdjournmentDetails",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"hearingAdjournmentWhen\":\"" + "onHearingDate" + "\",\n"
+                                      + "      \"relistCaseImmediately\":" + "\"Yes\"" + ",\n"
+                                      + "      \"autoHearingRequestEnabled\" : " + false + ",\n"
+                                      + "      \"appellantInDetention\":" + true + "\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedListTheCase",
+                        "name", "Detained - List the case",
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
                 "cmrListing",
                 null,
                 null,
@@ -2285,7 +2929,55 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "decisionAndReasonsStarted",
+                "decision",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"listCaseHearingCentre\":\"" + "decisionWithoutHearing" + "\",\n"
+                                      + "          \"isIntegrated\" : " + true + ",\n"
+                                      + "      \"autoHearingRequestEnabled\" : " + false + ",\n"
+                                      + "      \"appellantInDetention\" : " + true + "\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedListTheCase",
+                        "name", "Detained - List the case",
+
+
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
                 "triggerReviewInterpreterBookingTask",
+                null,
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewInterpreters",
+                        "name", "Review interpreter booking",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "triggerReviewInterpreterBookingTask",
+                null,
+                appellantInDetention,
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedReviewInterpreters",
+                        "name", "Detained - Review interpreter booking",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "hearingCancelled",
                 null,
                 null,
                 singletonList(
@@ -2300,11 +2992,11 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "hearingCancelled",
                 null,
-                null,
+                appellantInDetention,
                 singletonList(
                     Map.of(
-                        "taskId", "reviewInterpreters",
-                        "name", "Review interpreter booking",
+                        "taskId", "detainedReviewInterpreters",
+                        "name", "Detained - Review interpreter booking",
 
                         "processCategories", "caseProgression"
                     )
@@ -2327,17 +3019,71 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "editCaseListing",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"shouldTriggerReviewInterpreterTask\" : \"" + true + "\",\n"
+                                      + "      \"appellantInDetention\" : \"" + true + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedReviewInterpreters",
+                        "name", "Detained - Review interpreter booking",
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
                 "manageFeeUpdate",
                 null,
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
-                                      + "      \"feeUpdateTribunalAction\":\"" + "refund" + "\"\n"
+                                      + "      \"feeUpdateTribunalAction\":\"" + "refund" + "\",\n"
+                                      + "      \"appellantInDetention\" : \"" + false + "\"\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
                     Map.of(
                         "taskId", "processFeeRefund",
                         "name", "Process fee refund",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "manageFeeUpdate",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"feeUpdateTribunalAction\":\"" + "refund" + "\",\n"
+                                      + "      \"appellantInDetention\" : \"" + true + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedProcessFeeRefund",
+                        "name", "Detained - Process Fee Refund",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "manageFeeUpdate",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"feeUpdateTribunalAction\":\"" + "refund" + "\",\n"
+                                      + "      \"appellantInDetention\" : \"" + true + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedProcessFeeRefund",
+                        "name", "Detained - Process Fee Refund",
 
                         "processCategories", "caseProgression"
                     )
@@ -2377,7 +3123,20 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewDraftAppeal",
                         "name", "Review draft appeal",
-                        "delayUntil", delayFor14Days,
+                        "delayUntil", delayForDays,
+                        "processCategories", "followUpOverdue"
+                    )
+                )
+            ),
+            Arguments.of(
+                "startAppeal",
+                "appealStartedByAdmin",
+                appellantInDetention,
+                singletonList(
+                    Map.of(
+                        "taskId", "DetainedReviewDraftAppeal",
+                        "name", "Detained - Review Draft Appeal",
+                        "delayUntil", delayForDays,
                         "processCategories", "followUpOverdue"
                     )
                 )
@@ -2509,8 +3268,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       + "}"),
                 List.of(
                     Map.of(
-                        "taskId", "reviewAppealSetAsideUnderRule32",
-                        "name", "Review appeal set aside under rule 32",
+                        "taskId", "detainedReviewAppealSetAsideUnderRule32",
+                        "name", "Detained - Review appeal set aside under rule 32",
 
                         "processCategories", "caseProgression"
                     ),
@@ -3188,7 +3947,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     Map.of(
                         "taskId", "detainedListCmr",
-                        "name", "Detained List CMR",
+                        "name", "Detained - List CMR",
                         "processCategories", "caseProgression"
                     )
                 )
@@ -3542,7 +4301,23 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                               "followUpSetAsideDecision",
                                               "Follow up set aside decision",
                                               "followUpOverdue",
-                                              delayFor5Days, false)
+                                              delayFor5Days, false),
+            getDecideAnApplicationArgumentsOf("Set aside a decision",
+                                              "detainedFollowUpSetAsideDecision",
+                                              "Detained - Follow Up Set Aside Decision",
+                                              "followUpOverdue",
+                                              delayFor5Days, true),
+            // Explicit test for appellantInDetention flag
+            getDecideAnApplicationArgumentsOf("Set aside a decision",
+                                              "followUpSetAsideDecision",
+                                              "Follow up set aside decision",
+                                              "followUpOverdue",
+                                              delayFor5Days, false, false),
+            getDecideAnApplicationArgumentsOf("Set aside a decision",
+                                              "detainedFollowUpSetAsideDecision",
+                                              "Detained - Follow Up Set Aside Decision",
+                                              "followUpOverdue",
+                                              delayFor5Days, false, true)
         );
     }
 
@@ -3582,6 +4357,44 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         );
     }
 
+    private static Arguments getDecideAnApplicationArgumentsOf(String applicationType,
+                                                               String taskId,
+                                                               String name,
+                                                               String processCategories,
+                                                               Map<String,Object> delayUntil,
+                                                               boolean isIntegrated,
+                                                               boolean appellantInDetention) {
+        Map<String, Object> map = isIntegrated
+            ? emptyMap()
+            : new HashMap<String, Object>() {
+                {
+                    put("taskId", taskId);
+                    put("name", name);
+                    put("processCategories", processCategories);
+                    if (delayUntil != null) {
+                        put("delayUntil", delayUntil);
+                    }
+                }
+            };
+
+        return Arguments.of(
+            "decideAnApplication",
+            null,
+            mapAdditionalData(" {\n"
+                                  + "        \"Data\" : {\n"
+                                  + "          \"lastModifiedApplication\" : {\n"
+                                  + "            \"type\" : \"" + applicationType + "\",\n"
+                                  + "            \"decision\" : \"Granted\",\n"
+                                  + "            \"applicant\" : \"\"\n"
+                                  + "          },\n"
+                                  + "          \"isIntegrated\" : \"" + isIntegrated + "\",\n"
+                                  + "          \"appellantInDetention\" : \"" + appellantInDetention + "\"\n"
+                                  + "        }\n"
+                                  + "      }"),
+            singletonList(map)
+        );
+    }
+
 
     @ParameterizedTest
     @MethodSource("decideAnApplicationScenarioProvider")
@@ -3606,7 +4419,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(28));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(145));
+        assertThat(logic.getRules().size(), is(168));
 
     }
 

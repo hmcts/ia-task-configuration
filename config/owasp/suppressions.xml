@@ -1,18 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suppressions xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.3.xsd">
   <suppress>
+    <!--These require spring 3 upgrade-->
     <cve>CVE-2024-38820</cve>
-    <cve>CVE-2024-52316</cve>
-    <cve>CVE-2025-31650</cve>
-    <cve>CVE-2024-24549</cve>
-    <cve>CVE-2025-31651</cve>
-    <cve>CVE-2024-23672</cve>
-    <cve>CVE-2024-34750</cve>
-    <cve>CVE-2024-38286</cve>
-    <cve>CVE-2025-24813</cve>
-    <cve>CVE-2024-52316</cve>
-    <cve>CVE-2025-31650</cve>
-    <cve>CVE-2025-31651</cve>
+    <cve>CVE-2024-22259</cve>
     <cve>CVE-2024-38808</cve>
     <cve>CVE-2024-22259</cve>
     <cve>CVE-2025-46701</cve>
@@ -23,5 +14,12 @@
     <cve>CVE-2025-49125</cve>
     <cve>CVE-2024-56337</cve>
     <cve>CVE-2024-54677</cve>
+    <cve>CVE-2025-53506</cve>
+    <cve>CVE-2025-52520</cve>
+    <cve>CVE-2025-52434</cve>
+    <cve>CVE-2025-48924</cve>
+    <cve>CVE-2025-53506</cve>
+    <cve>CVE-2025-52520</cve>
+    <cve>CVE-2025-52434</cve>
   </suppress>
 </suppressions>
