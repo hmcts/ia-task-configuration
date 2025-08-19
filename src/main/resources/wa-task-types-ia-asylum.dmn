@@ -955,6 +955,17 @@
           <text>"Relist The Case"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0detained_relist_case">
+        <inputEntry id="UnaryTests_0detained_relist_case_input">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0detained_relist_case_id">
+          <text>"detainedRelistCase"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0detained_relist_case_name">
+          <text>"Detained - Relist The Case"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_11oe6df">
         <inputEntry id="UnaryTests_064b9k1">
           <text></text>
