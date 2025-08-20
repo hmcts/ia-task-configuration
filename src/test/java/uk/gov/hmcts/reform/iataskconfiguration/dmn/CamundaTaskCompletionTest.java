@@ -536,6 +536,10 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                     ),
                     Map.of(
                         "completionMode", "Auto",
+                        "taskType", "detainedReviewAppealSetAsideUnderRule35"
+                    ),
+                    Map.of(
+                        "completionMode", "Auto",
                         "taskType", "reviewAppealSetAsideUnderRule32"
                     ),
                     Map.of(
@@ -597,6 +601,16 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskType", "detainedProcessFeeRefund",
                         "completionMode", "Auto"
+                    ),
+                    Collections.emptyMap()
+                )
+            ),
+            Arguments.of(
+                    "cmrListing",
+                asList(
+                    Map.of(
+                            "taskType", "detainedListCmr",
+                            "completionMode", "Auto"
                     ),
                     Collections.emptyMap()
                 )
