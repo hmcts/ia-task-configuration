@@ -186,8 +186,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1y3kj1v">
-          <text>
-                        "arrangeOfflinePayment",
+          <text>"arrangeOfflinePayment",
                         "markCaseAsPaid",
                         "attendCma",
                         "caseSummaryHearingBundleStartDecision",
@@ -202,7 +201,7 @@
                         "markAsPaid",
 "reviewRemittedAppeal","detainedReviewRemittedAppeal",
 "reviewAppealSetAsideUnderRule35","detainedReviewAppealSetAsideUnderRule35",
-"reviewAppealSetAsideUnderRule32","detainedReviewAppealSetAsideUnderRule32"
+"reviewAppealSetAsideUnderRule32","detainedReviewAppealSetAsideUnderRule32",
                         "reviewAriaRemissionApplication",
                         "reviewDraftAppeal",
                         "detainedReviewDraftAppeal",
