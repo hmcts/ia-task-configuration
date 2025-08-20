@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-completion-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.34.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-completion-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.31.0">
   <decision id="wa-task-completion-ia-asylum" name="Task completion DMN" camunda:historyTimeToLive="P90D">
     <decisionTable id="DecisionTable_01re27m" hitPolicy="COLLECT">
       <input id="eventId" label="Event ID" biodi:width="614">
@@ -735,6 +735,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1g4bxcj">
+        <inputEntry id="UnaryTests_0e5o70x">
+          <text>"requestNewHearingRequirements"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1iu46ef">
+          <text>"detainedReviewRemittedAppeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0r91j3t">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1ey9r2b">
         <inputEntry id="UnaryTests_0apqp13">
           <text>"requestNewHearingRequirements"</text>
@@ -787,6 +798,17 @@
           <text>"reviewMigratedCase"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0kuafu5">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_00yso6o">
+        <inputEntry id="UnaryTests_0jp0a04">
+          <text>"progressMigratedCase"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1a92i26">
+          <text>"detainedReviewMigratedCase"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_08s20d1">
           <text>"Auto"</text>
         </outputEntry>
       </rule>
@@ -856,9 +878,20 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1uf7gzp">
+        <inputEntry id="UnaryTests_14w6bms">
+          <text>"cmrListing"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_09amljc">
+          <text>"detainedListCmr"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1gjgbe3">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1u3c7sd">
         <inputEntry id="UnaryTests_1dd0p7u">
-          <text>"generateHearingBundle","decisionAndReasonsStarted","updateHearingRequirements","endAppeal","requestRespondentEvidence","requestCaseBuilding","requestReasonsForAppeal","sendDirection","requestRespondentReview","requestCaseEdit","sendDirectionWithQuestions","requestCmaRequirements","markEvidenceAsReviewed","markAddendumEvidenceAsReviewed","reviewCmaRequirements","updateDetailsAfterCma","requestResponseAmend","requestResponseReview","reviewHearingRequirements","detainedReviewHearingRequirements","changeDirectionDueDate","decideAnApplication","editCaseListing","sendDecisionAndReasons","generateDecisionAndReasons","uploadHearingRecording","postHearingAttendeesDurationAndRecording","detainedPostHearingAttendeesDurationAndRecording","decideFtpaApplication","recordRemissionDecision","recordAllocatedJudge","listCase","markAppealPaid","markPaymentRequestSent","requestNewHearingRequirements","refundConfirmation","progressMigratedCase","submitAppeal","generateListCmrTask","detainedReviewAdditionalHomeOfficeEvidence","detainedReviewAdditionalEvidence"</text>
+          <text>"generateHearingBundle","decisionAndReasonsStarted","updateHearingRequirements","endAppeal","requestRespondentEvidence","requestCaseBuilding","requestReasonsForAppeal","sendDirection","requestRespondentReview","requestCaseEdit","sendDirectionWithQuestions","requestCmaRequirements","markEvidenceAsReviewed","markAddendumEvidenceAsReviewed","reviewCmaRequirements","updateDetailsAfterCma","requestResponseAmend","requestResponseReview","reviewHearingRequirements","changeDirectionDueDate","decideAnApplication","editCaseListing","sendDecisionAndReasons","generateDecisionAndReasons","uploadHearingRecording","postHearingAttendeesDurationAndRecording","decideFtpaApplication","recordRemissionDecision","recordAllocatedJudge","listCase","markAppealPaid","markPaymentRequestSent","requestNewHearingRequirements","refundConfirmation","progressMigratedCase","submitAppeal","generateListCmrTask","cmrListing"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1ex7ytl">
           <text></text>

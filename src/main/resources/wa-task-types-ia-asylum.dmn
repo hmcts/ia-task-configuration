@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="Definitions_1kep5qz" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.34.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.0.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="Definitions_1kep5qz" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.31.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.0.0">
   <decision id="wa-task-types-ia-asylum" name="Task Types DMN" camunda:historyTimeToLive="P90D">
     <decisionTable id="DecisionTable_17knzal" hitPolicy="COLLECT">
       <input id="Input_1">
@@ -416,6 +416,17 @@
           <text>"Review hearing requirements"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0g9bcd7">
+        <inputEntry id="UnaryTests_12acl3p">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0lhfty8">
+          <text>"detainedReviewHearingRequirements"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_032h76o">
+          <text>"Detained - Review hearing requirements"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_00xjnr1">
         <inputEntry id="UnaryTests_1siximp">
           <text></text>
@@ -603,6 +614,17 @@
           <text>"Review Addendum Evidence"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0ov76mf">
+        <inputEntry id="UnaryTests_12tmt7p">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1d3vypd">
+          <text>"detainedReviewAddendumEvidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1dm68vj">
+          <text>"Detained - Review Addendum Evidence"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1xabmqc">
         <inputEntry id="UnaryTests_10rzbiv">
           <text></text>
@@ -768,6 +790,17 @@
           <text>"Review remitted appeal"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_06ldy1b">
+        <inputEntry id="UnaryTests_0weeo5c">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0cc4wtz">
+          <text>"detainedReviewRemittedAppeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1tbesny">
+          <text>"Detained - Review remitted appeal"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_12nxngl">
         <inputEntry id="UnaryTests_14hns51">
           <text></text>
@@ -788,6 +821,17 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_14gunbp">
           <text>"Follow up set aside decision"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0detained_follow_up_set_aside">
+        <inputEntry id="UnaryTests_0detained_follow_up_set_aside">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0detained_follow_up_set_aside_task">
+          <text>"detainedFollowUpSetAsideDecision"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0detained_follow_up_set_aside_name">
+          <text>"Detained - Follow Up Set Aside Decision"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0myowc6">
@@ -933,6 +977,17 @@
           <text>"Relist The Case"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0detained_relist_case">
+        <inputEntry id="UnaryTests_0detained_relist_case_input">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0detained_relist_case_id">
+          <text>"detainedRelistCase"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0detained_relist_case_name">
+          <text>"Detained - Relist The Case"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_11oe6df">
         <inputEntry id="UnaryTests_064b9k1">
           <text></text>
@@ -975,6 +1030,17 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0x1covy">
           <text>"Review migrated case"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0hwgitv">
+        <inputEntry id="UnaryTests_1rndbss">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0tb75cg">
+          <text>"detainedReviewMigratedCase"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_11vgs13">
+          <text>"Detained - Review migrated case"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1g8hfyu">
@@ -1260,7 +1326,7 @@
           <text>"detainedListCmr"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_03w9wag">
-          <text>"Detained List Cmr"</text>
+          <text>"Detained - List CMR"</text>
         </outputEntry>
       </rule>
     </decisionTable>

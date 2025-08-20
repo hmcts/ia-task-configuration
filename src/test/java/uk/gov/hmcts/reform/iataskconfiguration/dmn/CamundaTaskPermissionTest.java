@@ -392,7 +392,22 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "detainedFollowUpSetAsideDecision",
+                List.of(
+                    taskSupervisor,
+                    hearingCentreAdminPriorityOne
+                )
+            ),
+            Arguments.of(
             "hearingException",
+                List.of(
+                    taskSupervisor,
+                    hearingCentreAdminPriorityOne,
+                    tribunalCaseWorkerPriorityTwoOwn
+                )
+            ),
+            Arguments.of(
+                "detainedHearingException",
                 List.of(
                     taskSupervisor,
                     hearingCentreAdminPriorityOne,
@@ -427,6 +442,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     taskSupervisor,
                     seniorCaseWorkerPriorityOne,
                     hearingCentreAdminPriorityOne,
+                    ctscAdminPriorityOne,
                     ctscTeamLeaderPriorityOne,
                     tribunalCaseWorkerPriorityTwoOwn
                 )
@@ -463,6 +479,15 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "detainedRelistCase",
+                List.of(
+                    taskSupervisor,
+                    seniorCaseWorkerPriorityOne,
+                    hearingCentreAdminPriorityOne,
+                    tribunalCaseWorkerPriorityTwoOwn
+                )
+            ),
+            Arguments.of(
                 "reviewInterpreters",
                 List.of(
                     taskSupervisor,
@@ -486,6 +511,13 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "reviewMigratedCase",
+                List.of(
+                    taskSupervisor,
+                    hearingCentreAdminPriorityOne
+                )
+            ),
+            Arguments.of(
+                "detainedReviewMigratedCase",
                 List.of(
                     taskSupervisor,
                     hearingCentreAdminPriorityOne
@@ -774,14 +806,15 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
 "detainedReviewRespondentResponse",
 "followUpOverdueRespondentReview","detainedFollowUpOverdueRespondentReview","reviewHearingRequirements",
 "followUpOverdueHearingRequirements","detainedReviewHearingRequirements","detainedFollowUpOverdueHearingRequirements",
-
         "reviewCmaRequirements",
         "attendCma", "followUpOverdueCmaRequirements", "followUpNonStandardDirection",
         "detainedFollowUpNonStandardDirection",
          "attendCma", "followUpNoticeOfChange","detainedFollowUpNoticeOfChange", "followUpOverdueCmaRequirements",
          "reviewAdditionalEvidence","detainedReviewAdditionalEvidence",
         "reviewAdditionalHomeOfficeEvidence","detainedReviewAdditionalHomeOfficeEvidence", "reviewRemittedAppeal",
-        "reviewAppealSetAsideUnderRule35", "detainedReviewAppealSetAsideUnderRule35","reviewAppealSetAsideUnderRule32"
+"detainedReviewRemittedAppeal",
+"reviewAppealSetAsideUnderRule35","detainedReviewAppealSetAsideUnderRule35",
+"reviewAppealSetAsideUnderRule32"
     })
     void given_taskType_when_evaluate_dmn_then_it_returns_first_second_and_third_rules(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();

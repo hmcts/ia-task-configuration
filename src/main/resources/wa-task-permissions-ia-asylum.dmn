@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-permissions-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.34.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-permissions-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.31.0">
   <decision id="wa-task-permissions-ia-asylum" name="Permissions DMN" camunda:historyTimeToLive="P90D">
     <decisionTable id="DecisionTable_1pr5oic" hitPolicy="RULE ORDER">
       <input id="InputClause_12crj6e" label="Task Type" biodi:width="554" camunda:inputVariable="taskType">
@@ -65,7 +65,7 @@
             "reviewReasonsForAppeal",
             "followUpOverdueReasonsForAppeal",
             "reviewClarifyingQuestionsAnswers",
-            "followUpOverdueClarifyingAnswers",
+            "followUpOverdueClarifyingAnswers","detainedReviewRemittedAppeal",
             "reviewRespondentResponse","detainedReviewRespondentResponse",
             "followUpOverdueRespondentReview","detainedFollowUpOverdueRespondentReview",
             "reviewHearingRequirements","detainedReviewHearingRequirements","detainedFollowUpOverdueHearingRequirements",
@@ -95,8 +95,9 @@
             "reviewAdditionalEvidence","detainedReviewAdditionalEvidence","detainedReviewAdditionalHomeOfficeEvidence",
             "followUpExtendedDirection","detainedFollowUpExtendedDirection",
             "reviewRemittedAppeal",
-            "reviewAppealSetAsideUnderRule35",
+            "reviewAppealSetAsideUnderRule35","detainedReviewAppealSetAsideUnderRule35",
             "reviewAppealSetAsideUnderRule32","detainedReviewAppealSetAsideUnderRule32"</text>
+
         </inputEntry>
         <inputEntry id="UnaryTests_0buofva">
           <text></text>
@@ -165,9 +166,10 @@
             "startDecisionsAndReasonsDocument",
             "createHearingBundle",
             "createCaseSummary",
-            "reviewRemittedAppeal",
-            "reviewAppealSetAsideUnderRule35",
+            "reviewRemittedAppeal","detainedReviewRemittedAppeal",
+            "reviewAppealSetAsideUnderRule35","detainedReviewAppealSetAsideUnderRule35",
             "reviewAppealSetAsideUnderRule32","detainedReviewAppealSetAsideUnderRule32"</text>
+
         </inputEntry>
         <inputEntry id="UnaryTests_10s330p">
           <text></text>
@@ -209,8 +211,8 @@
             "followUpOverdueClarifyingAnswers",
             "reviewRespondentResponse","detainedReviewRespondentResponse","detainedReviewAdditionalHomeOfficeEvidence",
             "followUpOverdueRespondentReview","detainedFollowUpOverdueRespondentReview",
-            "reviewHearingRequirements",
             "reviewHearingRequirements","detainedReviewHearingRequirements",
+
             "followUpOverdueHearingRequirements","detainedFollowUpOverdueHearingRequirements",
             "reviewCmaRequirements",
             "reviewAdditionalHomeOfficeEvidence","detainedReviewAdditionalHomeOfficeEvidence",
@@ -235,14 +237,15 @@
             "decideOnTimeExtension",
             "reviewAdditionalEvidence","detainedReviewAdditionalEvidence",
 "startDecisionsAndReasonsDocument","createHearingBundle","createCaseSummary",
-            "reviewRemittedAppeal",
-            "reviewAppealSetAsideUnderRule35",
+            "reviewRemittedAppeal","detainedReviewRemittedAppeal",
+            "reviewAppealSetAsideUnderRule35","detainedReviewAppealSetAsideUnderRule35",
             "reviewAppealSetAsideUnderRule32","detainedReviewAppealSetAsideUnderRule32",
+
   "cmrListed","detainedCmrListed",
             "cmrUpdated","detainedCmrUpdated",
-            "relistCase",
+            "relistCase","detainedRelistCase",
             "listTheCase","detainedReviewInterpreters","detainedListTheCase",
-            "reviewInterpreters"</text>
+            "reviewInterpreters","detainedListCmr"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_18tqbn3">
           <text></text>
@@ -364,7 +367,14 @@
             "postHearingAttendeesDurationAndRecording",
             "detainedPostHearingAttendeesDurationAndRecording",
             "editListing","detainedEditListing",
-            "followUpSetAsideDecision","hearingException","cmrListed","detainedCmrListed","cmrUpdated","detainedCmrUpdated","relistCase","listTheCase","detainedListTheCase","reviewInterpreters","detainedReviewInterpreters","reviewMigratedCase",
+"followUpSetAsideDecision","detainedFollowUpSetAsideDecision",
+"hearingException","detainedHearingException",
+"cmrListed","detainedCmrListed",
+"cmrUpdated","detainedCmrUpdated",
+"relistCase","detainedRelistCase",
+"listTheCase","detainedListTheCase",
+"reviewInterpreters","detainedReviewInterpreters",
+"reviewMigratedCase","detainedReviewMigratedCase",
 "reviewAriaRemissionApplication","detainedListCmr"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1sw9xpj">
@@ -593,7 +603,7 @@
       <rule id="DecisionRule_0ks3xbb">
         <description>Default Senior Tribunal caseworker task permissions</description>
         <inputEntry id="UnaryTests_1k8ldgj">
-          <text>"r1","detainedListCmr"</text>
+          <text>"r1"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0yw7wdu">
           <text></text>
@@ -653,7 +663,26 @@
       <rule id="DecisionRule_05nq60d">
         <description>CTSC Admin task permissions</description>
         <inputEntry id="UnaryTests_1q2j4ix">
-          <text>"reviewRemissionApplication","assignAFTPAJudge","detainedAssignAFTPAJudge","listTheCase","detainedListTheCase","detainedReviewRemissionApplication","sendPaymentRequest","markAsPaid","cmrListed","detainedCmrListed","cmrUpdated","detainedCmrUpdated","reviewInterpreters","detainedReviewInterpreters","processFeeRefund","detainedProcessFeeRefund","reviewDraftAppeal","detainedReviewDraftAppeal","detainedPrintAndSendHoBundle","printAndSendHoBundle","detainedPrintAndSendHearingRequirements","detainedPrintAndSendHearingBundle","detainedPrintAndSendDecisionCorrectedRule31","detainedPrintAndSendDecisionCorrectedRule32","detainedPrintAndSendHoApplication","detainedPrintAndSendHoEvidence","detainedPrintAndSendAppealDecision","detainedPrintAndSendFTPADecision","detainedPrintAndSendReheardHearingRequirements","printAndSendHoResponse","printAndSendHearingRequirements","printAndSendHearingBundle","printAndSendDecisionCorrectedRule31","printAndSendDecisionCorrectedRule32","printAndSendHoApplication","printAndSendHoEvidence","printAndSendAppealDecision","printAndSendFTPADecision","printAndSendReheardHearingRequirements"</text>
+<text>"reviewRemissionApplication","detainedReviewRemissionApplication",
+"assignAFTPAJudge","detainedAssignAFTPAJudge",
+"listTheCase","detainedListTheCase","detainedListCmr",
+"sendPaymentRequest","markAsPaid",
+"cmrListed","detainedCmrListed",
+"cmrUpdated","detainedCmrUpdated",
+"reviewInterpreters","detainedReviewInterpreters",
+"processFeeRefund","detainedProcessFeeRefund",
+"reviewDraftAppeal","detainedReviewDraftAppeal",
+"printAndSendHoBundle","detainedPrintAndSendHoBundle",
+"printAndSendHoResponse",
+"printAndSendHearingRequirements","detainedPrintAndSendHearingRequirements",
+"printAndSendHearingBundle","detainedPrintAndSendHearingBundle",
+"printAndSendDecisionCorrectedRule31","detainedPrintAndSendDecisionCorrectedRule31",
+"printAndSendDecisionCorrectedRule32","detainedPrintAndSendDecisionCorrectedRule32",
+"printAndSendHoApplication","detainedPrintAndSendHoApplication",
+"printAndSendHoEvidence","detainedPrintAndSendHoEvidence",
+"printAndSendAppealDecision","detainedPrintAndSendAppealDecision",
+"printAndSendFTPADecision","detainedPrintAndSendFTPADecision",
+"printAndSendReheardHearingRequirements","detainedPrintAndSendReheardHearingRequirements"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1p44stw">
           <text></text>
@@ -712,7 +741,7 @@
       </rule>
       <rule id="DecisionRule_0xfd7pt">
         <inputEntry id="UnaryTests_141gjoe">
-          <text>"hearingException","cmrListed","detainedCmrListed","cmrUpdated","detainedCmrUpdated","relistCase","listTheCase","detainedListTheCase","reviewInterpreters","detainedReviewInterpreters","detainedListCmr"</text>
+          <text>"hearingException","detainedHearingException","cmrListed","detainedCmrListed","cmrUpdated","detainedCmrUpdated","relistCase","detainedRelistCase","listTheCase","detainedListTheCase","reviewInterpreters","detainedReviewInterpreters","detainedListCmr"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0otzt6m">
           <text></text>
