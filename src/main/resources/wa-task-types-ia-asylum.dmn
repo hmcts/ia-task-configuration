@@ -790,6 +790,17 @@
           <text>"Review remitted appeal"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_06ldy1b">
+        <inputEntry id="UnaryTests_0weeo5c">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0cc4wtz">
+          <text>"detainedReviewRemittedAppeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1tbesny">
+          <text>"Detained - Review remitted appeal"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_12nxngl">
         <inputEntry id="UnaryTests_14hns51">
           <text></text>
@@ -856,6 +867,17 @@
           <text>"Review appeal set aside under rule 32"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_01uddsf">
+        <inputEntry id="UnaryTests_1h40dsl">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0gin7mt">
+          <text>"detainedReviewAppealSetAsideUnderRule32"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_05y4wht">
+          <text>"Detained - Review appeal set aside under rule 32"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0oznosm">
         <inputEntry id="UnaryTests_1byv6wo">
           <text></text>
@@ -867,15 +889,15 @@
           <text>"Hearing exception"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_detained_hearing_exception">
-        <inputEntry id="UnaryTests_det_he_types">
+      <rule id="DecisionRule_06lha46">
+        <inputEntry id="UnaryTests_0h1nhep">
           <text></text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_det_he_types_1">
-          <text>"detainedHearingException"</text>
+        <outputEntry id="LiteralExpression_0coj4pr">
+          <text>"detainedReviewRespondentResponse"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_det_he_types_2">
-          <text>"Detained - Hearing Exception"</text>
+        <outputEntry id="LiteralExpression_0a6ponr">
+          <text>"Detained - Review Respondent Response"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1ppqz55">
@@ -1008,6 +1030,17 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0x1covy">
           <text>"Review migrated case"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0hwgitv">
+        <inputEntry id="UnaryTests_1rndbss">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0tb75cg">
+          <text>"detainedReviewMigratedCase"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_11vgs13">
+          <text>"Detained - Review migrated case"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1g8hfyu">

@@ -218,6 +218,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_13ulck9">
+        <inputEntry id="UnaryTests_0lfzhyb">
+          <text>"forceCaseToSubmitHearingRequirements"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_06beoad">
+          <text>"detainedReviewRespondentResponse"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1cxqzby">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0z5xy01">
         <inputEntry id="UnaryTests_0iji488">
           <text>"decisionAndReasonsStarted"</text>
@@ -724,6 +735,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1g4bxcj">
+        <inputEntry id="UnaryTests_0e5o70x">
+          <text>"requestNewHearingRequirements"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1iu46ef">
+          <text>"detainedReviewRemittedAppeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0r91j3t">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1ey9r2b">
         <inputEntry id="UnaryTests_0apqp13">
           <text>"requestNewHearingRequirements"</text>
@@ -757,6 +779,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0m129us">
+        <inputEntry id="UnaryTests_0tuimbt">
+          <text>"requestNewHearingRequirements"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0edi1b4">
+          <text>"detainedReviewAppealSetAsideUnderRule32"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1x74xj0">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_03o6lzy">
         <inputEntry id="UnaryTests_0btxaat">
           <text>"progressMigratedCase"</text>
@@ -765,6 +798,17 @@
           <text>"reviewMigratedCase"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0kuafu5">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_00yso6o">
+        <inputEntry id="UnaryTests_0jp0a04">
+          <text>"progressMigratedCase"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1a92i26">
+          <text>"detainedReviewMigratedCase"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_08s20d1">
           <text>"Auto"</text>
         </outputEntry>
       </rule>
