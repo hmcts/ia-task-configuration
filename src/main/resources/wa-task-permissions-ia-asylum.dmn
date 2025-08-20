@@ -95,8 +95,9 @@
             "reviewAdditionalEvidence","detainedReviewAdditionalEvidence","detainedReviewAdditionalHomeOfficeEvidence",
             "followUpExtendedDirection","detainedFollowUpExtendedDirection",
             "reviewRemittedAppeal",
-"reviewAppealSetAsideUnderRule35","detainedReviewAppealSetAsideUnderRule35",
-"reviewAppealSetAsideUnderRule32","detainedReviewAppealSetAsideUnderRule32"</text>
+            "reviewAppealSetAsideUnderRule35","detainedReviewAppealSetAsideUnderRule35",
+            "reviewAppealSetAsideUnderRule32","detainedReviewAppealSetAsideUnderRule32"</text>
+
         </inputEntry>
         <inputEntry id="UnaryTests_0buofva">
           <text></text>
@@ -165,9 +166,10 @@
             "startDecisionsAndReasonsDocument",
             "createHearingBundle",
             "createCaseSummary",
-"reviewRemittedAppeal","detainedReviewRemittedAppeal",
-"reviewAppealSetAsideUnderRule35","detainedReviewAppealSetAsideUnderRule35",
-"reviewAppealSetAsideUnderRule32","detainedReviewAppealSetAsideUnderRule32"</text>
+            "reviewRemittedAppeal","detainedReviewRemittedAppeal",
+            "reviewAppealSetAsideUnderRule35","detainedReviewAppealSetAsideUnderRule35",
+            "reviewAppealSetAsideUnderRule32","detainedReviewAppealSetAsideUnderRule32"</text>
+
         </inputEntry>
         <inputEntry id="UnaryTests_10s330p">
           <text></text>
@@ -207,9 +209,10 @@
             "followUpOverdueReasonsForAppeal",
             "reviewClarifyingQuestionsAnswers",
             "followUpOverdueClarifyingAnswers",
-"reviewRespondentResponse","detainedReviewRespondentResponse","detainedReviewAdditionalHomeOfficeEvidence",
-"followUpOverdueRespondentReview","detainedFollowUpOverdueRespondentReview",
-"reviewHearingRequirements","detainedReviewHearingRequirements",
+            "reviewRespondentResponse","detainedReviewRespondentResponse","detainedReviewAdditionalHomeOfficeEvidence",
+            "followUpOverdueRespondentReview","detainedFollowUpOverdueRespondentReview",
+            "reviewHearingRequirements","detainedReviewHearingRequirements",
+
             "followUpOverdueHearingRequirements","detainedFollowUpOverdueHearingRequirements",
             "reviewCmaRequirements",
             "reviewAdditionalHomeOfficeEvidence","detainedReviewAdditionalHomeOfficeEvidence",
@@ -234,9 +237,10 @@
             "decideOnTimeExtension",
             "reviewAdditionalEvidence","detainedReviewAdditionalEvidence",
 "startDecisionsAndReasonsDocument","createHearingBundle","createCaseSummary",
-"reviewRemittedAppeal","detainedReviewRemittedAppeal",
-"reviewAppealSetAsideUnderRule35","detainedReviewAppealSetAsideUnderRule35",
-"reviewAppealSetAsideUnderRule32","detainedReviewAppealSetAsideUnderRule32",
+            "reviewRemittedAppeal","detainedReviewRemittedAppeal",
+            "reviewAppealSetAsideUnderRule35","detainedReviewAppealSetAsideUnderRule35",
+            "reviewAppealSetAsideUnderRule32","detainedReviewAppealSetAsideUnderRule32",
+
   "cmrListed","detainedCmrListed",
             "cmrUpdated","detainedCmrUpdated",
             "relistCase","detainedRelistCase",

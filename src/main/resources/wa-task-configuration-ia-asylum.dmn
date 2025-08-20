@@ -199,9 +199,13 @@
                         "assignAFTPAJudge","detainedAssignAFTPAJudge",
                         "sendPaymentRequest",
                         "markAsPaid",
-"reviewRemittedAppeal","detainedReviewRemittedAppeal",
-"reviewAppealSetAsideUnderRule35","detainedReviewAppealSetAsideUnderRule35",
-"reviewAppealSetAsideUnderRule32","detainedReviewAppealSetAsideUnderRule32",
+"reviewRemittedAppeal",
+"detainedReviewRemittedAppeal",
+"reviewAppealSetAsideUnderRule35",
+"detainedReviewAppealSetAsideUnderRule35",
+"reviewAppealSetAsideUnderRule32",
+"detainedReviewAppealSetAsideUnderRule32",
+
                         "reviewAriaRemissionApplication",
                         "reviewDraftAppeal",
                         "detainedReviewDraftAppeal",
@@ -435,7 +439,8 @@
                         "startDecisionsAndReasonsDocument",
 "reviewRemittedAppeal","detainedReviewRemittedAppeal",
 "reviewAppealSetAsideUnderRule35","detainedReviewAppealSetAsideUnderRule35",
-            "reviewAppealSetAsideUnderRule32","detainedReviewAppealSetAsideUnderRule32"</text>
+"reviewAppealSetAsideUnderRule32","detainedReviewAppealSetAsideUnderRule32"</text>
+
         </inputEntry>
         <outputEntry id="LiteralExpression_05l5bvs">
           <text>"roleCategory"</text>
