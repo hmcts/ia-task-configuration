@@ -699,7 +699,7 @@
           <text>"detainedAllocateHearingJudge"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1sbx7yy">
-          <text>"Allocate Hearing Judge"</text>
+          <text>"Detained - Allocate Hearing Judge"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0zg7nai">
