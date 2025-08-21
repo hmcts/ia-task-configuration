@@ -495,25 +495,29 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
     @ParameterizedTest
     @CsvSource({
-
         "arrangeOfflinePayment", "markCaseAsPaid", "allocateHearingJudge", "detainedAllocateHearingJudge",
         "uploadHearingRecording", "postHearingAttendeesDurationAndRecording",
         "detainedPostHearingAttendeesDurationAndRecording",
         "editListing", "detainedEditListing", "followUpSetAsideDecision", "detainedFollowUpSetAsideDecision",
-        "hearingException", "cmrListed", "cmrUpdated", "detainedCmrListed", "detainedCmrUpdated",
-        "relistCase","detainedRelistCase",
-        "reviewInterpreters","reviewMigratedCase","reviewAriaRemissionApplication",
-        "printAndSendHoBundle","detainedPrintAndSendHoBundle","printAndSendHoResponse",
-        "printAndSendHearingRequirements","detainedPrintAndSendHearingRequirements",
-        "printAndSendHearingBundle","detainedPrintAndSendHearingBundle",
-        "printAndSendDecisionCorrectedRule31","detainedPrintAndSendDecisionCorrectedRule31",
-        "printAndSendDecisionCorrectedRule32","detainedPrintAndSendDecisionCorrectedRule32",
-        "printAndSendHoApplication","detainedPrintAndSendHoApplication",
-        "printAndSendHoEvidence","detainedPrintAndSendHoEvidence",
-        "printAndSendAppealDecision","printAndSendFTPADecision","detainedPrintAndSendAppealDecision",
-        "detainedPrintAndSendFTPADecision","detainedHearingException",
-        "printAndSendReheardHearingRequirements","detainedPrintAndSendReheardHearingRequirements",
-        "detainedListCmr","detainedReviewInterpreters"
+        "hearingException", "detainedHearingException",
+        "cmrListed", "cmrUpdated", "detainedCmrListed", "detainedCmrUpdated",
+        "relistCase", "detainedRelistCase",
+        "reviewInterpreters", "detainedReviewInterpreters",
+        "reviewMigratedCase", "detainedReviewMigratedCase",
+        "reviewAriaRemissionApplication",
+        "printAndSendHoBundle", "detainedPrintAndSendHoBundle",
+        "printAndSendHoResponse",
+        "printAndSendHearingRequirements", "detainedPrintAndSendHearingRequirements",
+        "printAndSendHearingBundle", "detainedPrintAndSendHearingBundle",
+        "printAndSendDecisionCorrectedRule31", "detainedPrintAndSendDecisionCorrectedRule31",
+        "printAndSendDecisionCorrectedRule32", "detainedPrintAndSendDecisionCorrectedRule32",
+        "printAndSendHoApplication", "detainedPrintAndSendHoApplication",
+        "printAndSendHoEvidence", "detainedPrintAndSendHoEvidence",
+        "printAndSendAppealDecision", "detainedPrintAndSendAppealDecision",
+        "printAndSendFTPADecision", "detainedPrintAndSendFTPADecision",
+        "printAndSendReheardHearingRequirements", "detainedPrintAndSendReheardHearingRequirements",
+        "detainedListCmr"
+
     })
     void when_taskId_then_return_Admin_role_category(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
