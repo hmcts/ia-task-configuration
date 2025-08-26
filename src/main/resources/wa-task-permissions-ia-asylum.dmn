@@ -367,14 +367,14 @@
             "postHearingAttendeesDurationAndRecording",
             "detainedPostHearingAttendeesDurationAndRecording",
             "editListing","detainedEditListing",
-<text>"followUpSetAsideDecision","detainedFollowUpSetAsideDecision",
+"followUpSetAsideDecision","detainedFollowUpSetAsideDecision",
 "hearingException","detainedHearingException",
 "cmrListed","detainedCmrListed",
 "cmrUpdated","detainedCmrUpdated",
 "relistCase","detainedRelistCase",
 "listTheCase","detainedListTheCase",
 "reviewInterpreters","detainedReviewInterpreters",
-"reviewMigratedCase","detainedReviewMigratedCase"</text>
+"reviewMigratedCase","detainedReviewMigratedCase",
 "reviewAriaRemissionApplication","detainedListCmr"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1sw9xpj">
