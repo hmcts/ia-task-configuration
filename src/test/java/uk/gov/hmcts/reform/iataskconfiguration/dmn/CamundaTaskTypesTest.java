@@ -37,7 +37,7 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
             Map.of("taskTypeId",
                      "detainedProcessApplicationAdjourn",
                      "taskTypeName",
-                     "Detained Process Adjourn Application"
+                     "Detained - Process Adjourn Application"
             ),
             Map.of("taskTypeId",
                    "processApplicationExpedite",
@@ -47,7 +47,7 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
             Map.of("taskTypeId",
                    "detainedProcessApplicationExpedite",
                    "taskTypeName",
-                   "Detained Process Expedite Application"
+                   "Detained - Process Expedite Application"
             ),
             Map.of("taskTypeId",
                    "processApplicationTimeExtension",
@@ -57,7 +57,7 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
             Map.of("taskTypeId",
                    "detainedProcessApplicationTimeExtension",
                    "taskTypeName",
-                   "Detained Process Time Extension Application"
+                   "Detained - Process Time Extension Application"
             ),
             Map.of("taskTypeId",
                    "processApplicationTransfer",
@@ -67,7 +67,7 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
             Map.of("taskTypeId",
                    "detainedProcessApplicationTransfer",
                    "taskTypeName",
-                   "Detained Process Transfer Application"
+                   "Detained - Process Transfer Application"
             ),
             Map.of("taskTypeId",
                    "processApplicationWithdraw",
@@ -77,7 +77,7 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
             Map.of("taskTypeId",
                    "detainedProcessApplicationWithdraw",
                    "taskTypeName",
-                   "Detained Process Withdraw Application"
+                   "Detained - Process Withdraw Application"
             ),
             Map.of("taskTypeId",
                    "processApplicationUpdateHearingRequirements",
@@ -87,7 +87,7 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
             Map.of("taskTypeId",
                    "detainedProcessApplicationUpdateHearingRequirements",
                    "taskTypeName",
-                   "Detained Process Update Hearing Requirements Application"
+                   "Detained - Process Update Hearing Requirements Application"
             ),
             Map.of("taskTypeId",
                    "processApplicationUpdateAppealDetails",
@@ -97,7 +97,7 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
             Map.of("taskTypeId",
                    "detainedProcessApplicationUpdateAppealDetails",
                    "taskTypeName",
-                   "Detained Process Update Appeal Details Application"
+                   "Detained - Process Update Appeal Details Application"
             ),
             Map.of("taskTypeId",
                    "processApplicationReinstateAnEndedAppeal",
@@ -138,7 +138,7 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
             Map.of("taskTypeId",
                    "detainedProcessApplicationReinstateAnEndedAppeal",
                    "taskTypeName",
-                   "Detained Process Reinstate An Ended Appeal Application"
+                   "Detained - Process Reinstate An Ended Appeal Application"
 
             ),
             Map.of("taskTypeId",
@@ -149,7 +149,7 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
             Map.of("taskTypeId",
                    "detainedProcessApplicationOther",
                    "taskTypeName",
-                   "Detained Process Other Application"
+                   "Detained - Process Other Application"
             ),
             Map.of("taskTypeId",
                    "processApplicationLink/UnlinkAppeals",
@@ -159,7 +159,7 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
             Map.of("taskTypeId",
                    "detainedProcessApplicationLink/UnlinkAppeals",
                    "taskTypeName",
-                   "Detained Process Link/Unlink Appeals Application"
+                   "Detained - Process Link/Unlink Appeals Application"
             ),
             Map.of("taskTypeId",
                    "processApplicationToReviewDecision",
@@ -169,7 +169,7 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
             Map.of("taskTypeId",
                    "detainedProcessApplicationToReviewDecision",
                    "taskTypeName",
-                   "Detained Process Application to Review Decision"
+                   "Detained - Process Application to Review Decision"
             ),
             Map.of("taskTypeId",
                    "editListing",
