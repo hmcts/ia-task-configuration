@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.18.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.36.1">
   <decision id="wa-task-initiation-ia-asylum" name="Task initiation DMN" camunda:historyTimeToLive="P90D">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT" biodi:annotationsWidth="400">
       <input id="Input_1" label="Event Id" biodi:width="515" camunda:inputVariable="eventId">
@@ -8301,101 +8301,6 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1e9ftbn">
-          <text>"caseProgression"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0q6augn">
-        <inputEntry id="UnaryTests_0rjaj1n">
-          <text>"sendDecisionAndReasons"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1lax3ms">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0i355yc">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1rqgvl0">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_16vnt7i">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1h3odz4">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1b2ib9f">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0n0xm8s">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_14p63eg">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_087p5sr">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1k76xm9">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0lger1x">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1wze2oj">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_10cwhm3">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0nmfkvz">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_08icy32">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0vemrfv">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_08xwawh">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_11krsyq">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_16ml4pe">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1kuugfq">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_084ff1s">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0b4gdgw">
-          <text>true</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1ke06px">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1xagqig">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0m7txek">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1rg6kw1">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1ts1mn7">
-          <text>"printAndSendAppealDecision"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1nsf8b1">
-          <text>"Print and send appeal decision and FTPA form"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_02oh7rj">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0nwdnnj">
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
