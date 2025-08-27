@@ -445,7 +445,7 @@
           <text>"detainedProcessApplicationAdjourn"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_19lrw2w">
-          <text>"Detained Process Adjourn Application"</text>
+          <text>"Detained - Process Adjourn Application"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_03zzs8a">
           <text></text>
@@ -641,7 +641,7 @@
           <text>"detainedProcessApplicationExpedite"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0nommdv">
-          <text>"Detained Process Expedite Application"</text>
+          <text>"Detained - Process Expedite Application"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0jy8izu">
           <text></text>
@@ -837,7 +837,7 @@
           <text>"detainedProcessApplicationTimeExtension"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_16tk8rz">
-          <text>"Detained Process Time Extension Application"</text>
+          <text>"Detained - Process Time Extension Application"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_187iim2">
           <text></text>
@@ -1033,7 +1033,7 @@
           <text>"detainedProcessApplicationTransfer"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0ummxs2">
-          <text>"Detained Process Transfer Application"</text>
+          <text>"Detained - Process Transfer Application"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_17t6f5j">
           <text></text>
@@ -1229,7 +1229,7 @@
           <text>"detainedProcessApplicationWithdraw"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1w495gq">
-          <text>"Detained Process Withdraw Application"</text>
+          <text>"Detained - Process Withdraw Application"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_00uavfz">
           <text></text>
@@ -1425,7 +1425,7 @@
           <text>"detainedProcessApplicationUpdateHearingRequirements"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0zv1svg">
-          <text>"Detained Process Update Hearing Requirements Application"</text>
+          <text>"Detained - Process Update Hearing Requirements Application"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_19xki75">
           <text></text>
@@ -1621,7 +1621,7 @@
           <text>"detainedProcessApplicationUpdateAppealDetails"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0gkx1ic">
-          <text>"Detained Process Update Appeal Details Application"</text>
+          <text>"Detained - Process Update Appeal Details Application"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_15y85lu">
           <text></text>
@@ -1817,7 +1817,7 @@
           <text>"detainedProcessApplicationReinstateAnEndedAppeal"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1omemsc">
-          <text>"Detained Process Reinstate An Ended Appeal Application"</text>
+          <text>"Detained - Process Reinstate An Ended Appeal Application"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0utl855">
           <text></text>
@@ -2013,7 +2013,7 @@
           <text>"detainedProcessApplicationOther"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_13cemnm">
-          <text>"Detained Process Other Application"</text>
+          <text>"Detained - Process Other Application"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0qm4nfq">
           <text></text>
@@ -2209,7 +2209,7 @@
           <text>"detainedProcessApplicationLink/UnlinkAppeals"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1ln76lv">
-          <text>"Detained Process Link/Unlink Appeals Application"</text>
+          <text>"Detained - Process Link/Unlink Appeals Application"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_085oqku">
           <text></text>
@@ -2405,7 +2405,7 @@
           <text>"detainedProcessApplicationToReviewDecision"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_16hmijc">
-          <text>"Detained Process Application to Review Decision"</text>
+          <text>"Detained - Process Application to Review Decision"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0d9nlkp">
           <text></text>
@@ -2601,7 +2601,7 @@
           <text>"detainedReviewSetAsideDecisionApplication"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1j0tata">
-          <text>"Detained Review set aside decision application"</text>
+          <text>"Detained - Review set aside decision application"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_14ep7co">
           <text></text>
@@ -2797,7 +2797,7 @@
           <text>"detainedProcessApplicationChangeHearingType"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_03h90jo">
-          <text>"Detained Process Change Hearing Type Application"</text>
+          <text>"Detained - Process Change Hearing Type Application"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_05x360o">
           <text></text>
