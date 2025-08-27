@@ -207,6 +207,7 @@ dependencyManagement {
     //CVE-2021-29425
     dependency group: 'commons-io', name: 'commons-io', version: '2.15.1'
 
+
     dependencySet(group: 'com.fasterxml.jackson.core', version: '2.16.0') {
       entry 'jackson-databind'
       entry 'jackson-core'
@@ -252,6 +253,8 @@ dependencies {
   implementation group: 'org.springframework.boot', name: 'spring-boot-starter-json'
 
   implementation group: 'io.springfox', name: 'springfox-boot-starter', version: versions.springfoxSwagger
+
+  implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.18.0'
 
   implementation group: 'com.github.hmcts.java-logging', name: 'logging', version: versions.reformLogging
   implementation group: 'com.github.hmcts.java-logging', name: 'logging-spring', version: '5.1.7'
