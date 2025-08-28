@@ -2975,8 +2975,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "decision",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
-                                      + "      \"listCaseHearingCentre\":\"" + "decisionWithoutHearing" + "\",\n"
                                       + "          \"isIntegrated\" : " + true + ",\n"
+                                      + "      \"isDecisionWithoutHearing\" : " + true + ",\n"
                                       + "      \"autoHearingRequestEnabled\" : " + false + "\n"
                                       + "   }"
                                       + "}"),
@@ -2996,9 +2996,9 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "decision",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
-                                      + "      \"listCaseHearingCentre\":\"" + "decisionWithoutHearing" + "\",\n"
                                       + "          \"isIntegrated\" : " + true + ",\n"
                                       + "      \"autoHearingRequestEnabled\" : " + false + ",\n"
+                                      + "      \"isDecisionWithoutHearing\" : " + true + ",\n"
                                       + "      \"appellantInDetention\" : " + true + "\n"
                                       + "   }"
                                       + "}"),
@@ -4523,7 +4523,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         assertThat(logic.getInputs().size(), is(28));
         assertThat(logic.getOutputs().size(), is(4));
         assertThat(logic.getRules().size(), is(169));
-
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {
