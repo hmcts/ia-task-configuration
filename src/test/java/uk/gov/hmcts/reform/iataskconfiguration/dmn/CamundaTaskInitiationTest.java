@@ -2975,8 +2975,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "decision",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
-                                      + "      \"listCaseHearingCentre\":\"" + "decisionWithoutHearing" + "\",\n"
                                       + "          \"isIntegrated\" : " + true + ",\n"
+                                      + "      \"isDecisionWithoutHearing\" : " + true + ",\n"
                                       + "      \"autoHearingRequestEnabled\" : " + false + "\n"
                                       + "   }"
                                       + "}"),
@@ -2996,9 +2996,9 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "decision",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
-                                      + "      \"listCaseHearingCentre\":\"" + "decisionWithoutHearing" + "\",\n"
                                       + "          \"isIntegrated\" : " + true + ",\n"
                                       + "      \"autoHearingRequestEnabled\" : " + false + ",\n"
+                                      + "      \"isDecisionWithoutHearing\" : " + true + ",\n"
                                       + "      \"appellantInDetention\" : " + true + "\n"
                                       + "   }"
                                       + "}"),
