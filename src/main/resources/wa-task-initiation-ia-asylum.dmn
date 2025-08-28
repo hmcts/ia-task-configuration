@@ -124,7 +124,7 @@
             false</text>
         </inputExpression>
       </input>
-      <input id="InputClause_0jk7k9d" label="Is Decision Without Hearing" camunda:inputVariable="listCaseHearingCentre">
+      <input id="InputClause_0jk7k9d" label="Is Decision Without Hearing" camunda:inputVariable="isDecisionWithoutHearing">
         <inputExpression id="LiteralExpression_02qa9fn" typeRef="boolean">
           <text>if(additionalData != null
           and additionalData.Data != null
