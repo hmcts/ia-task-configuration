@@ -28,7 +28,7 @@
           <text>"detainedProcessApplicationAdjourn"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0bos7rb">
-          <text>"Detained Process Adjourn Application"</text>
+          <text>"Detained - Process Adjourn Application"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1m0z59q">
@@ -50,7 +50,7 @@
           <text>"detainedProcessApplicationExpedite"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_048bh83">
-          <text>"Detained Process Expedite Application"</text>
+          <text>"Detained - Process Expedite Application"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_18d4ohk">
@@ -72,7 +72,7 @@
           <text>"detainedProcessApplicationTimeExtension"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1i07mca">
-          <text>"Detained Process Time Extension Application"</text>
+          <text>"Detained - Process Time Extension Application"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_02icg4x">
@@ -94,7 +94,7 @@
           <text>"detainedProcessApplicationTransfer"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1ncadtq">
-          <text>"Detained Process Transfer Application"</text>
+          <text>"Detained - Process Transfer Application"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_13b78zg">
@@ -116,7 +116,7 @@
           <text>"detainedProcessApplicationWithdraw"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1gialb3">
-          <text>"Detained Process Withdraw Application"</text>
+          <text>"Detained - Process Withdraw Application"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_11fpcla">
@@ -138,7 +138,7 @@
           <text>"detainedProcessApplicationUpdateHearingRequirements"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_08istxu">
-          <text>"Detained Process Update Hearing Requirements Application"</text>
+          <text>"Detained - Process Update Hearing Requirements Application"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0fv2v8w">
@@ -160,7 +160,7 @@
           <text>"detainedProcessApplicationUpdateAppealDetails"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_08iwyct">
-          <text>"Detained Process Update Appeal Details Application"</text>
+          <text>"Detained - Process Update Appeal Details Application"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_18uau7u">
@@ -182,7 +182,7 @@
           <text>"detainedProcessApplicationReinstateAnEndedAppeal"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0ro48ft">
-          <text>"Detained Process Reinstate An Ended Appeal Application"</text>
+          <text>"Detained - Process Reinstate An Ended Appeal Application"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0jimf71">
@@ -204,7 +204,7 @@
           <text>"detainedProcessApplicationOther"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0hjgwp5">
-          <text>"Detained Process Other Application"</text>
+          <text>"Detained - Process Other Application"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1wb8yhw">
@@ -226,7 +226,7 @@
           <text>"detainedProcessApplicationLink/UnlinkAppeals"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0bk8hw8">
-          <text>"Detained Process Link/Unlink Appeals Application"</text>
+          <text>"Detained - Process Link/Unlink Appeals Application"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1a2nbis">
@@ -248,7 +248,7 @@
           <text>"detainedProcessApplicationToReviewDecision"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1tdjch6">
-          <text>"Detained Process Application to Review Decision"</text>
+          <text>"Detained - Process Application to Review Decision"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0aenrnf">
@@ -634,6 +634,17 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_1evjssg">
           <text>"Send decisions and reasons"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ww69lc">
+        <inputEntry id="UnaryTests_0mtd9pl">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_149asud">
+          <text>"detainedSendDecisionsAndReasons"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1yuosc5">
+          <text>"Detained - Send decisions and reasons"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_11i7nj2">
