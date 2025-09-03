@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.34.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.31.0">
   <decision id="wa-task-initiation-ia-asylum" name="Task initiation DMN" camunda:historyTimeToLive="P90D">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT" biodi:annotationsWidth="400">
       <input id="Input_1" label="Event Id" biodi:width="515" camunda:inputVariable="eventId">
@@ -117,11 +117,12 @@
       </input>
       <input id="InputClause_1fkhlxd" label="Relist Case Immedialtely" camunda:inputVariable="relistCaseImmediately ">
         <inputExpression id="LiteralExpression_1h0w5in" typeRef="boolean">
-          <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.relistCaseImmediately
-            != null and additionalData.Data.relistCaseImmediately = "Yes") then
-            true
-            else
-            false</text>
+          <text>if(additionalData != null
+          and additionalData.Data != null
+          and additionalData.Data.relistCaseImmediately != null) then
+          additionalData.Data.relistCaseImmediately
+          else
+          false</text>
         </inputExpression>
       </input>
       <input id="InputClause_0jk7k9d" label="Is Decision Without Hearing" camunda:inputVariable="isDecisionWithoutHearing">

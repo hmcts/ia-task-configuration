@@ -2897,7 +2897,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"hearingAdjournmentWhen\":\"" + "onHearingDate" + "\",\n"
-                                      + "      \"relistCaseImmediately\":" + "\"Yes\"" + ",\n"
+                                      + "      \"relistCaseImmediately\":" + true + ",\n"
                                       + "      \"autoHearingRequestEnabled\" : " + false + "\n"
                                       + "   }"
                                       + "}"),
@@ -2918,8 +2918,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"hearingAdjournmentWhen\":\"" + "onHearingDate" + "\",\n"
-                                      + "      \"relistCaseImmediately\":" + "\"Yes\"" + ",\n"
-                                      + "      \"autoHearingRequestEnabled\" : " + false + ",\n"
+                                      + "      \"relistCaseImmediately\":" + true + ",\n"
+                                      + "      \"autoHearingRequestEnabled\" : " + true + ",\n"
                                       + "      \"appellantInDetention\":" + true + "\n"
                                       + "   }"
                                       + "}"),
