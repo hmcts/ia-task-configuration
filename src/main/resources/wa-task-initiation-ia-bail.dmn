@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.34.0">
+  <decision id="wa-task-initiation-ia-bail" name="Task initiation DMN" camunda:historyTimeToLive="P90D">
+    <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT" biodi:annotationsWidth="400">
+      <input id="Input_1" label="Event Id" biodi:width="515" camunda:inputVariable="eventId">
+        <inputExpression id="InputExpression_1" typeRef="string">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0gxli97" label="Post event state" biodi:width="334" camunda:inputVariable="postEventState">
+        <inputExpression id="LiteralExpression_0dijl5x" typeRef="string">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_15dhd3c" label="Last modified application type" biodi:width="267" camunda:inputVariable="lastModifiedApplicationType">
+        <inputExpression id="LiteralExpression_00shf3r" typeRef="string">
+          <text>if(additionalData != null and additionalData.Data != null and
+            additionalData.Data.lastModifiedApplication != null) then
+            additionalData.Data.lastModifiedApplication.type
+            else
+            null
+          </text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_10uivrc" label="Last modified application decision" biodi:width="266" camunda:inputVariable="lastModifiedApplicationDecision">
+        <inputExpression id="LiteralExpression_1gqrajz" typeRef="string">
+          <text>if(additionalData != null and additionalData.Data != null and
+            additionalData.Data.lastModifiedApplication != null and
+            additionalData.Data.lastModifiedApplication.decision != null) then
+            additionalData.Data.lastModifiedApplication.decision
+            else
+            null
+          </text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0k8flip" label="Is Panel Required" camunda:inputVariable="isPanelRequired">
+        <inputExpression id="LiteralExpression_0g29hou" typeRef="boolean">
+          <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.isPanelRequired
+            != null) then
+            additionalData.Data.isPanelRequired
+            else
+            false</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0yx9m1t" label="Remission Decision" camunda:inputVariable="remissionDecision">
+        <inputExpression id="LiteralExpression_1fg845k" typeRef="string">
+          <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.remissionDecision
+            != null) then
+            additionalData.Data.remissionDecision
+            else
+            null</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_19kq3zf" label="When Hearing Adjourned" camunda:inputVariable="hearingAdjournmentWhen">
+        <inputExpression id="LiteralExpression_1xxrq3p" typeRef="string">
+          <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.hearingAdjournmentWhen
+            != null) then
+            additionalData.Data.hearingAdjournmentWhen
+            else
+            null</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1fkhlxd" label="Relist Case Immedialtely" camunda:inputVariable="relistCaseImmediately ">
+        <inputExpression id="LiteralExpression_1h0w5in" typeRef="boolean">
+          <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.relistCaseImmediately
+            != null and additionalData.Data.relistCaseImmediately = "Yes") then
+            true
+            else
+            false</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0jk7k9d" label="List Case Hearing Centre" camunda:inputVariable="listCaseHearingCentre">
+        <inputExpression id="LiteralExpression_02qa9fn" typeRef="string">
+          <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.listCaseHearingCentre
+            != null) then
+            additionalData.Data.listCaseHearingCentre
+            else
+            null</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1mgvvu3" label="Last modified application applicant role" camunda:inputVariable="lastModifiedApplicationApplicant">
+        <inputExpression id="LiteralExpression_11wrx0v" typeRef="string">
+          <text>if(additionalData != null and additionalData.Data != null and
+            additionalData.Data.lastModifiedApplication != null) then
+            additionalData.Data.lastModifiedApplication.applicant
+            else
+            null</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0c3am0h" label="Reviewed Hearing Requirements" biodi:width="390" camunda:inputVariable="reviewedHearingRequirements">
+        <inputExpression id="LiteralExpression_10ob503" typeRef="boolean">
+          <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.reviewedHearingRequirements
+            != null) then
+            additionalData.Data.reviewedHearingRequirements
+            else
+            false</text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" label="Task Id" name="taskId" typeRef="string" biodi:width="368" />
+      <output id="OutputClause_0p5fhhd" label="Name" name="name" typeRef="string" biodi:width="345" />
+      <output id="OutputClause_165p3r3" label="Delay Until" name="delayUntil" typeRef="json" />
+      <output id="OutputClause_10rno4c" label="Process Categories Identifiers" name="processCategories" typeRef="string" biodi:width="268" />
+      <rule id="DecisionRule_1fenvxm">
+        <inputEntry id="UnaryTests_09nq8bu">
+          <text>"submitApplication"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0aldx9i">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1gkkvta">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1sr2i4d">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0m9fy99">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07kf9n9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1uwss2j">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qttqmb">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0gq0sp9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_13wmu4c">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0c50kaw">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0tbxmk0">
+          <text>"testTask"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_02t95m8">
+          <text>"Test Task"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1x6roa1">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1m76a0d">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="DMNDiagram_0b2rkcb">
+      <dmndi:DMNShape id="DMNShape_0wc7glt" dmnElementRef="wa-task-initiation-ia-bail">
+        <dc:Bounds height="80" width="180" x="150" y="80" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
