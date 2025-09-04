@@ -2919,7 +2919,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       + "   \"Data\":{\n"
                                       + "      \"hearingAdjournmentWhen\":\"" + "onHearingDate" + "\",\n"
                                       + "      \"relistCaseImmediately\":" + true + ",\n"
-                                      + "      \"autoHearingRequestEnabled\" : " + true + ",\n"
+                                      + "      \"autoHearingRequestEnabled\" : " + false + ",\n"
                                       + "      \"appellantInDetention\":" + true + "\n"
                                       + "   }"
                                       + "}"),
