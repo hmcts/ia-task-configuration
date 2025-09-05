@@ -2972,7 +2972,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "decisionAndReasonsStarted",
-                "decision"
+                "decision",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "          \"isIntegrated\" : " + true + ",\n"
