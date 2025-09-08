@@ -26,7 +26,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1ag5ntf">
-          <text>"forceCaseToHearing","endApplication"</text>
+          <text>"caseListing","endApplication"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_032mxu7">
           <text></text>
@@ -64,6 +64,29 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0z4i5sg">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0leqbk9">
+        <inputEntry id="UnaryTests_0froh2m">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1glhnt9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xnpu9a">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_09umugc">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_010v80r">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1c03tth">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0aomgz8">
           <text></text>
         </outputEntry>
       </rule>
