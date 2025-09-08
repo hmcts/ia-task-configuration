@@ -95,6 +95,23 @@
           <text>true</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1uwtep0">
+        <inputEntry id="UnaryTests_09twmfp">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_00vcipi">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_18p2rj7">
+          <text>"caseManagementCategory"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0r2b7yo">
+          <text>"Bail"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0yrdabo">
+          <text>false</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0ikmf14">
         <inputEntry id="UnaryTests_0epux74">
           <text></text>
