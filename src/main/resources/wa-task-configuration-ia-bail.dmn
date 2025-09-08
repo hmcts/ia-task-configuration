@@ -100,7 +100,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1y3kj1v">
-          <text>"testTask"</text>
+          <text>"processBailApplication"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0rvgay2">
           <text>"workType"</text>
@@ -117,7 +117,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_10f3uas">
-          <text>"testTask"</text>
+          <text>"processBailApplication"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_05l5bvs">
           <text>"roleCategory"</text>
@@ -126,24 +126,7 @@
           <text>"ADMIN"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0cde4ic">
-          <text>false</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_01cmxvs">
-        <inputEntry id="UnaryTests_1np8ii5">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_15ftuu0">
-          <text>"testTask"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_15nowth">
-          <text>"roleCategory"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1cn9cb2">
-          <text>"JUDICIAL"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0me2qfr">
-          <text>false</text>
+          <text>true</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1lny4x5">
@@ -157,8 +140,8 @@
           <text>"description"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1iaoi95">
-          <text>  if (taskAttributes != null and taskAttributes.taskType = "testTask" or taskType = "testTask")
-  then "[Edit Bail Documents](/case/IA/Bail/${[CASE_REFERENCE]}/trigger/editBailDocuments)"
+          <text>  if (taskAttributes != null and taskAttributes.taskType = "processBailApplication" or taskType = "processBailApplication")
+  then "[Confirm location](/case/IA/Bail/${[CASE_REFERENCE]}/trigger/confirmDetentionLocation)"
   else if (taskAttributes != null and taskAttributes.taskType = "testTask" or taskType = "testTask")
   then "[Edit Bail Documents](/case/IA/Bail/${[CASE_REFERENCE]}/trigger/editBailDocuments)"
   else ""
@@ -298,10 +281,44 @@
           <text>"calculatedDates"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0sbydg2">
-          <text>"dueDate,priorityDate"</text>
+          <text>"nextHearingDate,dueDate,priorityDate"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_102zbyh">
           <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ae79dl">
+        <inputEntry id="UnaryTests_176bsfq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1bl31cp">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0t2i1en">
+          <text>"nextHearingId"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1utatib">
+          <text>if (caseData != null and caseData.nextHearingDetails != null and caseData.nextHearingDetails.hearingID != null) then caseData.nextHearingDetails.hearingID else ""</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1iroi68">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0jybdsg">
+        <inputEntry id="UnaryTests_1vuhccu">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ghbdtf">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1s43i47">
+          <text>"nextHearingDate"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1jvms47">
+          <text>if (caseData != null and caseData.nextHearingDetails != null and caseData.nextHearingDetails.hearingDateTime != null) then caseData.nextHearingDetails.hearingDateTime else ""</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0bbhq0e">
+          <text>true</text>
         </outputEntry>
       </rule>
     </decisionTable>

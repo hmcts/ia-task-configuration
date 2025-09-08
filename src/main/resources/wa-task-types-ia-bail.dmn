@@ -14,10 +14,10 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1q4hpbf">
-          <text>"testTask"</text>
+          <text>"processBailApplication"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1ir3otm">
-          <text>"Test bail task"</text>
+          <text>"Process Application"</text>
         </outputEntry>
       </rule>
     </decisionTable>

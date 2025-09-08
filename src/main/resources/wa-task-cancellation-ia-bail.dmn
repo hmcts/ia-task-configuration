@@ -21,6 +21,52 @@
       <output id="OutputClause_0tu8bqp" label="Warning Code" name="warningCode" typeRef="string" />
       <output id="OutputClause_1kfc3jv" label="Warning Text" name="warningText" typeRef="string" />
       <output id="OutputClause_0dqzted" label="Process Categories Identifiers" name="processCategories" typeRef="string" biodi:width="277" />
+      <rule id="DecisionRule_1bvgla8">
+        <inputEntry id="UnaryTests_148ptmx">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ag5ntf">
+          <text>"forceCaseToHearing","endApplication"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_032mxu7">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1peyfe0">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_08ioyfx">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1sqdmbw">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1kk8oeo">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0snum3e">
+        <inputEntry id="UnaryTests_16boc3c">
+          <text>"applicationSubmitted"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12wyhh6">
+          <text>"editBailApplicationAfterSubmit"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1nov2jg">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1jcs0hs">
+          <text>"Reconfigure"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1392taw">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1b2hnzo">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0z4i5sg">
+          <text></text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

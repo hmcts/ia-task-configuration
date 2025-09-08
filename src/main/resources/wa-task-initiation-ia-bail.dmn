@@ -12,6 +12,16 @@
           <text></text>
         </inputExpression>
       </input>
+      <input id="InputClause_0i39w5t" label="Application Submitted By" biodi:width="267" camunda:inputVariable="applicationSubmittedBy">
+        <inputExpression id="LiteralExpression_0ktawbe" typeRef="string">
+          <text>if(additionalData != null and additionalData.Data != null and
+            additionalData.Data.applicationSubmittedBy != null) then
+            additionalData.Data.applicationSubmittedBy
+            else
+            null
+          </text>
+        </inputExpression>
+      </input>
       <input id="InputClause_15dhd3c" label="Last modified application type" biodi:width="267" camunda:inputVariable="lastModifiedApplicationType">
         <inputExpression id="LiteralExpression_00shf3r" typeRef="string">
           <text>if(additionalData != null and additionalData.Data != null and
@@ -102,10 +112,13 @@
       <output id="OutputClause_10rno4c" label="Process Categories Identifiers" name="processCategories" typeRef="string" biodi:width="268" />
       <rule id="DecisionRule_1fenvxm">
         <inputEntry id="UnaryTests_09nq8bu">
-          <text>"changeTribunalCentre"</text>
+          <text>"submitApplication"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0aldx9i">
           <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0utu1dy">
+          <text>"Legal Representative"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1gkkvta">
           <text></text>
@@ -135,10 +148,10 @@
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0tbxmk0">
-          <text>"testTask"</text>
+          <text>"processBailApplication"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_02t95m8">
-          <text>"Test Task"</text>
+          <text>"Process Application"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1x6roa1">
           <text></text>
