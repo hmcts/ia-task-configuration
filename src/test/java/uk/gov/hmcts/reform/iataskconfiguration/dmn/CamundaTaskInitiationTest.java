@@ -2495,45 +2495,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "listing",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
-                                      + "          \"autoHearingRequestEnabled\" : " + false + ",\n"
-                                      + "          \"appellantInDetention\" : " + false + "\n"
-                                      + "   }"
-                                      + "}"),
-                singletonList(
-                    Map.of(
-                        "taskId", "listTheCase",
-                        "name", "List the case",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
-                "reviewHearingRequirements",
-                "listing",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "          \"isIntegrated\" : " + true + ",\n"
-                                      + "          \"isPanelRequired\" : " + true + ",\n"
-                                      + "          \"appellantInDetention\" : " + false + "\n"
-                                      + "   }"
-                                      + "}"),
-                singletonList(
-                    Map.of(
-                        "taskId", "listTheCase",
-                        "name", "List the case",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
-                "reviewHearingRequirements",
-                "listing",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "          \"isIntegrated\" : " + false + ",\n"
-                                      + "          \"autoHearingRequestEnabled\" : " + true + ",\n"
                                       + "          \"appellantInDetention\" : " + false + "\n"
                                       + "   }"
                                       + "}"),
@@ -2551,45 +2512,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     "listing",
                     mapAdditionalData("{\n"
                             + "   \"Data\":{\n"
-                            + "          \"autoHearingRequestEnabled\" : " + false + ",\n"
-                            + "          \"appellantInDetention\" : " + true + "\n"
-                            + "   }"
-                            + "}"),
-                    singletonList(
-                            Map.of(
-                                    "taskId", "detainedListTheCase",
-                                    "name", "Detained - List the case",
-
-                                    "processCategories", "caseProgression"
-                            )
-                    )
-            ),
-            Arguments.of(
-                    "reviewHearingRequirements",
-                    "listing",
-                    mapAdditionalData("{\n"
-                            + "   \"Data\":{\n"
-                            + "          \"isIntegrated\" : " + true + ",\n"
-                            + "          \"isPanelRequired\" : " + true + ",\n"
-                            + "          \"appellantInDetention\" : " + true + "\n"
-                            + "   }"
-                            + "}"),
-                    singletonList(
-                            Map.of(
-                                    "taskId", "detainedListTheCase",
-                                    "name", "Detained - List the case",
-
-                                    "processCategories", "caseProgression"
-                            )
-                    )
-            ),
-            Arguments.of(
-                    "reviewHearingRequirements",
-                    "listing",
-                    mapAdditionalData("{\n"
-                            + "   \"Data\":{\n"
-                            + "          \"isIntegrated\" : " + false + ",\n"
-                            + "          \"autoHearingRequestEnabled\" : " + true + ",\n"
                             + "          \"appellantInDetention\" : " + true + "\n"
                             + "   }"
                             + "}"),
@@ -2607,7 +2529,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     "listing",
                     mapAdditionalData("{\n"
                             + "   \"Data\":{\n"
-                            + "          \"autoHearingRequestEnabled\" : " + false + ",\n"
                             + "          \"appellantInDetention\" : " + false + "\n"
                             + "   }"
                             + "}"),
@@ -2625,83 +2546,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     "listing",
                     mapAdditionalData("{\n"
                             + "   \"Data\":{\n"
-                            + "          \"isIntegrated\" : " + true + ",\n"
-                            + "          \"isPanelRequired\" : " + true + ",\n"
-                            + "          \"appellantInDetention\" : " + false + "\n"
-                            + "   }"
-                            + "}"),
-                    singletonList(
-                            Map.of(
-                                    "taskId", "listTheCase",
-                                    "name", "List the case",
-
-                                    "processCategories", "caseProgression"
-                            )
-                    )
-            ),
-            Arguments.of(
-                    "listCaseWithoutHearingRequirements",
-                    "listing",
-                    mapAdditionalData("{\n"
-                            + "   \"Data\":{\n"
-                            + "          \"isIntegrated\" : " + false + ",\n"
-                            + "          \"autoHearingRequestEnabled\" : " + true + ",\n"
-                            + "          \"appellantInDetention\" : " + false + "\n"
-                            + "   }"
-                            + "}"),
-                    singletonList(
-                            Map.of(
-                                    "taskId", "listTheCase",
-                                    "name", "List the case",
-
-                                    "processCategories", "caseProgression"
-                            )
-                    )
-            ),
-            Arguments.of(
-                    "listCaseWithoutHearingRequirements",
-                    "listing",
-                    mapAdditionalData("{\n"
-                            + "   \"Data\":{\n"
-                            + "          \"autoHearingRequestEnabled\" : " + false + ",\n"
-                            + "          \"appellantInDetention\" : " + true + "\n"
-                            + "   }"
-                            + "}"),
-                    singletonList(
-                            Map.of(
-                                    "taskId", "detainedListTheCase",
-                                    "name", "Detained - List the case",
-
-                                    "processCategories", "caseProgression"
-                            )
-                    )
-            ),
-            Arguments.of(
-                    "listCaseWithoutHearingRequirements",
-                    "listing",
-                    mapAdditionalData("{\n"
-                            + "   \"Data\":{\n"
-                            + "          \"isIntegrated\" : " + true + ",\n"
-                            + "          \"isPanelRequired\" : " + true + ",\n"
-                            + "          \"appellantInDetention\" : " + true + "\n"
-                            + "   }"
-                            + "}"),
-                    singletonList(
-                            Map.of(
-                                    "taskId", "detainedListTheCase",
-                                    "name", "Detained - List the case",
-
-                                    "processCategories", "caseProgression"
-                            )
-                    )
-            ),
-            Arguments.of(
-                    "listCaseWithoutHearingRequirements",
-                    "listing",
-                    mapAdditionalData("{\n"
-                            + "   \"Data\":{\n"
-                            + "          \"isIntegrated\" : " + false + ",\n"
-                            + "          \"autoHearingRequestEnabled\" : " + true + ",\n"
                             + "          \"appellantInDetention\" : " + true + "\n"
                             + "   }"
                             + "}"),
@@ -4504,17 +4348,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                               "followUpSetAsideDecision",
                                               "Follow up set aside decision",
                                               "followUpOverdue",
-                                              delayFor5Days, false),
-            getDecideAnApplicationArgumentsOf("Set aside a decision",
-                                              "detainedFollowUpSetAsideDecision",
-                                              "Detained - Follow Up Set Aside Decision",
-                                              "followUpOverdue",
-                                              delayFor5Days, true),
-            // Explicit test for appellantInDetention flag
-            getDecideAnApplicationArgumentsOf("Set aside a decision",
-                                              "followUpSetAsideDecision",
-                                              "Follow up set aside decision",
-                                              "followUpOverdue",
                                               delayFor5Days, false, false),
             getDecideAnApplicationArgumentsOf("Set aside a decision",
                                               "detainedFollowUpSetAsideDecision",
@@ -4622,7 +4455,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(28));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(169));
+        assertThat(logic.getRules().size(), is(165));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {
