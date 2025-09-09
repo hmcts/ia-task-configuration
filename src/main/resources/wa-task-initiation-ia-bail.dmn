@@ -29,31 +29,25 @@ then additionalData.Data.hasActiveInterpreterFlag
 else null</text>
         </inputExpression>
       </input>
-      <input id="InputClause_0k8flip" label="Is Panel Required" camunda:inputVariable="isPanelRequired">
-        <inputExpression id="LiteralExpression_0g29hou" typeRef="boolean">
-          <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.isPanelRequired
-            != null) then
-            additionalData.Data.isPanelRequired
-            else
-            false</text>
+      <input id="InputClause_0k8flip" label="Current User" camunda:inputVariable="currentUser">
+        <inputExpression id="LiteralExpression_0g29hou" typeRef="string">
+          <text>if (additionalData != null and additionalData.Data != null) 
+then additionalData.Data.currentUser
+else ""</text>
         </inputExpression>
       </input>
-      <input id="InputClause_0yx9m1t" label="Remission Decision" camunda:inputVariable="remissionDecision">
+      <input id="InputClause_0yx9m1t" label="Listing Event" camunda:inputVariable="listingEvent">
         <inputExpression id="LiteralExpression_1fg845k" typeRef="string">
-          <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.remissionDecision
-            != null) then
-            additionalData.Data.remissionDecision
-            else
-            null</text>
+          <text>if (additionalData != null and additionalData.Data != null)
+then additionalData.Data.listingEvent
+else null</text>
         </inputExpression>
       </input>
-      <input id="InputClause_19kq3zf" label="When Hearing Adjourned" camunda:inputVariable="hearingAdjournmentWhen">
+      <input id="InputClause_19kq3zf" label="Record Decision Type" camunda:inputVariable="recordDecisionType">
         <inputExpression id="LiteralExpression_1xxrq3p" typeRef="string">
-          <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.hearingAdjournmentWhen
-            != null) then
-            additionalData.Data.hearingAdjournmentWhen
-            else
-            null</text>
+          <text>if (additionalData != null and additionalData.Data != null)
+then additionalData.Data.recordDecisionType
+else null</text>
         </inputExpression>
       </input>
       <input id="InputClause_1fkhlxd" label="Relist Case Immedialtely" camunda:inputVariable="relistCaseImmediately ">
@@ -134,7 +128,7 @@ else null</text>
           <text>"processBailApplication"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_02t95m8">
-          <text>"Process Application"</text>
+          <text>"Process application"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1x6roa1">
           <text></text>
@@ -181,7 +175,7 @@ else null</text>
           <text>"reviewInterpreterFlag"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_12mpycf">
-          <text>"Review Interpreter Booking"</text>
+          <text>"Review interpreter booking"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0xnohe8">
           <text></text>
@@ -254,7 +248,7 @@ else null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1bb7jfq">
-          <text></text>
+          <text>"initialListing"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1aucv3o">
           <text></text>
@@ -275,7 +269,7 @@ else null</text>
           <text>"followUpBailSummary"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_04dp26x">
-          <text>"Follow up HO Bail Summary"</text>
+          <text>"Follow up Home Office summary"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_06vgm9q">
           <text>{
@@ -284,6 +278,194 @@ else null</text>
 }</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1lz2uin">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0b6grt0">
+        <inputEntry id="UnaryTests_1tayejm">
+          <text>"uploadDocuments"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1phpjou">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0f60f98">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tytpcl">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1n9hu8m">
+          <text>"Legal Representative","Home Office"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0e3nzdb">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05tfypq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1nhd5lj">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01geyra">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_18bnws4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05osp5z">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_19mxggn">
+          <text>"reviewAdditionalEvidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ik3k0u">
+          <text>"Review additional evidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ct16m0">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_041kg3q">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0tikeyh">
+        <inputEntry id="UnaryTests_0ts20qq">
+          <text>"recordTheDecision"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1emx2hf">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fesk7j">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1h8ds85">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08eo6qx">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0oo8602">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1789mjv">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1x29ali">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0m84cmt">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_086zmdu">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12cmbeh">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1tcx8po">
+          <text>"uploadSignedDecision"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1k4sl17">
+          <text>"Upload signed decision"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0b87lqq">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0tenz1z">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1rdgkyi">
+        <inputEntry id="UnaryTests_1bugc16">
+          <text>"recordTheDecision"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0pei14u">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lqoey3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ejuz4b">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0neht1m">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1l63rzv">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0vozyyn">
+          <text>"conditionalGrant"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1uad91i">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1sr6yxb">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1hwoio8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vmms27">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0jqgcgt">
+          <text>"listForFurtherReview"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_13wvfix">
+          <text>"List for further review"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0lkjec2">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1gj8yu0">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_04gdqs2">
+        <inputEntry id="UnaryTests_0zq05bm">
+          <text>"changeTribunalCentre"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qlm7fk">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0yn9apg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0b151fp">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0iv1ab2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06bazoz">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05djqdh">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1yen7bm">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0f1ye4w">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0e0h8fa">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19p9azw">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0eifw4n">
+          <text>"processBailApplication"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1rde28x">
+          <text>"Process application"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0y50zmx">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1aqcsrx">
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>

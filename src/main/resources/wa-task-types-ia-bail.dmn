@@ -17,7 +17,7 @@
           <text>"processBailApplication"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1ir3otm">
-          <text>"Process Application"</text>
+          <text>"Process application"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1tk6g6b">
@@ -50,7 +50,40 @@
           <text>"followUpBailSummary"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0ip4ggr">
-          <text>"Follow up HO Bail Summary"</text>
+          <text>"Follow up Home Office summary"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1i1bfhm">
+        <inputEntry id="UnaryTests_0lbm3z4">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1f5g4cl">
+          <text>"reviewAdditionalEvidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0aq8tgi">
+          <text>"Review additional evidence"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1p4g2i2">
+        <inputEntry id="UnaryTests_1p1ybhh">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0pox86a">
+          <text>"uploadSignedDecision"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_11e911j">
+          <text>"Upload signed decision"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0yh8ob7">
+        <inputEntry id="UnaryTests_034olyk">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0wy0lwe">
+          <text>"listForFurtherReview"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ijr9on">
+          <text>"List for further review"</text>
         </outputEntry>
       </rule>
     </decisionTable>

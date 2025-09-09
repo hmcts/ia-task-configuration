@@ -117,7 +117,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1y3kj1v">
-          <text>"processBailApplication","reviewInterpreterFlag","noticeOfChange","followUpBailSummary"</text>
+          <text>"processBailApplication","reviewInterpreterFlag","noticeOfChange","followUpBailSummary","reviewAdditionalEvidence","uploadSignedDecision"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0rvgay2">
           <text>"workType"</text>
@@ -134,7 +134,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_10f3uas">
-          <text>"processBailApplication","reviewInterpreterFlag","noticeOfChange","followUpBailSummary"</text>
+          <text>"processBailApplication","reviewInterpreterFlag","noticeOfChange","followUpBailSummary","reviewAdditionalEvidence","uploadSignedDecision"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_05l5bvs">
           <text>"roleCategory"</text>
@@ -165,6 +165,10 @@
   then "The Legal Representative has been removed from the case. Please get the new representative to perform a Notice of Change on this case"
   else if (taskAttributes != null and taskAttributes.taskType = "followUpBailSummary" or taskType = "followUpBailSummary")
   then "The Bail Summary has yet to be uploaded. It is due today, please follow up on it."
+  else if (taskAttributes != null and taskAttributes.taskType = "reviewAdditionalEvidence" or taskType = "reviewAdditionalEvidence")
+  then "Additional evidence has been received, please review it in the [Documents](/case/IA/Bail/${[CASE_REFERENCE]}#Documents) tab"
+  else if (taskAttributes != null and taskAttributes.taskType = "uploadSignedDecision" or taskType = "uploadSignedDecision")
+  then "Download the bail decision, get it signed by all parties concerned and then [Upload Signed Decision Notice](/case/IA/Bail/${[CASE_REFERENCE]}/trigger/uploadSignedDecisionNotice)"
   else ""</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_184xf0n">

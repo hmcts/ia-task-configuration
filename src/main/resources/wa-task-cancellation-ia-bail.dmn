@@ -136,6 +136,29 @@
           <text></text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1i6ey99">
+        <inputEntry id="UnaryTests_1v0poh7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1a262bg">
+          <text>"recordTheDecision"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_02ieio6">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0r707q9">
+          <text>"Reconfigure"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1yquteq">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_01yfdvk">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0gqk2sc">
+          <text></text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

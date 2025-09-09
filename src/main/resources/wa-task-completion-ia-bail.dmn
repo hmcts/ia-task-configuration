@@ -53,6 +53,28 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0hgh0v1">
+        <inputEntry id="UnaryTests_0vsfw2y">
+          <text>"uploadSignedDecisionNotice"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0wbcom1">
+          <text>"uploadSignedDecision"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1fjiqvd">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1aqs11m">
+        <inputEntry id="UnaryTests_0thh2t3">
+          <text>"caseListing"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_08lwccu">
+          <text>"listForFurtherReview"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_076yge4">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
