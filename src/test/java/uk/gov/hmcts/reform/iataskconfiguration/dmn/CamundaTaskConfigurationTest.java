@@ -1228,7 +1228,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         Scenario detainedProcessApplicationChangeHearingTypeScenario =
             Scenario.builder()
                 .caseData(emptyMap())
-                .taskAttributes(Map.of("taskType", "detainedProcessApplicationChangeHearingTypeScenario"))
+                .taskAttributes(Map.of("taskType", "detainedProcessApplicationChangeHearingType"))
                 .expectedCaseNameValue(null)
                 .expectedAppealTypeValue("")
                 .expectedRegionValue("1")
