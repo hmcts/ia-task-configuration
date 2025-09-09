@@ -56,7 +56,7 @@
       <rule id="DecisionRule_0hv79lq">
         <description>Hearing centre admin task permissions</description>
         <inputEntry id="UnaryTests_0tzrow3">
-          <text>"processBailApplication","reviewInterpreterFlag","noticeOfChange"</text>
+          <text>"processBailApplication","reviewInterpreterFlag","noticeOfChange","followUpBailSummary"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1sw9xpj">
           <text></text>

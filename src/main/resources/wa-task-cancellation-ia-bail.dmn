@@ -113,6 +113,29 @@
           <text></text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_13hxyfk">
+        <inputEntry id="UnaryTests_0dxk8mi">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1at2g0g">
+          <text>"caseListing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01hj0p8">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1she7g1">
+          <text>"Reconfigure"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_113kldf">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_18wdj69">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1yy31yy">
+          <text></text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

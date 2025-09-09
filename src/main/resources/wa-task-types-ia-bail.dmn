@@ -42,6 +42,17 @@
           <text>"Notice of Change"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0bbx5nd">
+        <inputEntry id="UnaryTests_09bnmpv">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1fksozp">
+          <text>"followUpBailSummary"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ip4ggr">
+          <text>"Follow up HO Bail Summary"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

@@ -29,17 +29,6 @@ then additionalData.Data.hasActiveInterpreterFlag
 else null</text>
         </inputExpression>
       </input>
-      <input id="InputClause_10uivrc" label="Last modified application decision" biodi:width="266" camunda:inputVariable="lastModifiedApplicationDecision">
-        <inputExpression id="LiteralExpression_1gqrajz" typeRef="string">
-          <text>if(additionalData != null and additionalData.Data != null and
-            additionalData.Data.lastModifiedApplication != null and
-            additionalData.Data.lastModifiedApplication.decision != null) then
-            additionalData.Data.lastModifiedApplication.decision
-            else
-            null
-          </text>
-        </inputExpression>
-      </input>
       <input id="InputClause_0k8flip" label="Is Panel Required" camunda:inputVariable="isPanelRequired">
         <inputExpression id="LiteralExpression_0g29hou" typeRef="boolean">
           <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.isPanelRequired
@@ -120,9 +109,6 @@ else null</text>
         <inputEntry id="UnaryTests_1gkkvta">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_1sr2i4d">
-          <text></text>
-        </inputEntry>
         <inputEntry id="UnaryTests_0m9fy99">
           <text></text>
         </inputEntry>
@@ -169,9 +155,6 @@ else null</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0ak9esm">
           <text>"Yes"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1hw526r">
-          <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0ttqasy">
           <text></text>
@@ -220,9 +203,6 @@ else null</text>
         <inputEntry id="UnaryTests_0rktybr">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_0q9919z">
-          <text></text>
-        </inputEntry>
         <inputEntry id="UnaryTests_1660x0z">
           <text></text>
         </inputEntry>
@@ -254,6 +234,56 @@ else null</text>
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1h2i13z">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1mmaz4x">
+        <inputEntry id="UnaryTests_1gv9seo">
+          <text>"caseListing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ov45ha">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ftiv7e">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xcuzcq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1yvnls4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1bb7jfq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1aucv3o">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1f7xjze">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09mktyv">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0bjzf3y">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_137xpmr">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1k5x8ly">
+          <text>"followUpBailSummary"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04dp26x">
+          <text>"Follow up HO Bail Summary"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_06vgm9q">
+          <text>{
+"delayUntil": dateOfCompliance,
+"delayUntilIntervalDays": "0"
+}</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1lz2uin">
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
