@@ -168,7 +168,9 @@
   else if (taskAttributes != null and taskAttributes.taskType = "reviewAdditionalEvidence" or taskType = "reviewAdditionalEvidence")
   then "Additional evidence has been received, please review it in the [Documents](/case/IA/Bail/${[CASE_REFERENCE]}#Documents) tab"
   else if (taskAttributes != null and taskAttributes.taskType = "uploadSignedDecision" or taskType = "uploadSignedDecision")
-  then "Download the bail decision, get it signed by all parties concerned and then [Upload Signed Decision Notice](/case/IA/Bail/${[CASE_REFERENCE]}/trigger/uploadSignedDecisionNotice)"
+  then "[Upload Signed Decision Notice](/case/IA/Bail/${[CASE_REFERENCE]}/trigger/uploadSignedDecisionNotice)"
+  else if (taskAttributes != null and taskAttributes.taskType = "listForFurtherReview" or taskType = "listForFurtherReview")
+  then "Decision was conditional, the case needs listing for further review via the [Hearings](/case/IA/Bail/${[CASE_REFERENCE]}/hearings) tab"
   else ""</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_184xf0n">
