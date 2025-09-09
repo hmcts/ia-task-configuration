@@ -277,7 +277,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1ps3x4j">
-<text>"generateDraftDecisionAndReasons","uploadDecision","uploadHearingRecording","postHearingAttendeesDurationAndRecording","detainedPostHearingAttendeesDurationAndRecording","editListing","followUpOverdueHearingRequirements","detainedFollowUpOverdueHearingRequirements","reviewHearingRequirements","detainedReviewHearingRequirements","allocateHearingJudge","detainedAllocateHearingJudge","prepareDecisionsAndReasons","startDecisionsAndReasonsDocument","createHearingBundle","createCaseSummary","listTheCase","detainedListTheCase","hearingException","detainedHearingException","cmrListed","detainedCmrListed","cmrUpdated","detainedCmrUpdated","relistCase","detainedRelistCase","reviewInterpreters","detainedReviewInterpreters","detainedEditListing","detainedListCmr"</text>
+          <text>"generateDraftDecisionAndReasons","uploadDecision","uploadHearingRecording","postHearingAttendeesDurationAndRecording","detainedPostHearingAttendeesDurationAndRecording","editListing","followUpOverdueHearingRequirements","detainedFollowUpOverdueHearingRequirements","reviewHearingRequirements","detainedReviewHearingRequirements","allocateHearingJudge","detainedAllocateHearingJudge","prepareDecisionsAndReasons","startDecisionsAndReasonsDocument","createHearingBundle","createCaseSummary","listTheCase","detainedListTheCase","hearingException","detainedHearingException","cmrListed","detainedCmrListed","cmrUpdated","detainedCmrUpdated","relistCase","detainedRelistCase","reviewInterpreters","detainedReviewInterpreters","detainedEditListing","detainedListCmr"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0c3eia6">
           <text>"workType"</text>
@@ -402,8 +402,7 @@
         </inputEntry>
         <inputEntry id="UnaryTests_10f3uas">
           <text>
-		        "processApplicationAdjourn","detainedProcessApplicationAdjourn", "detainedProcessApplicationTimeExtension",processApplicationTimeExtension,
-		        "processApplicationExpedite","detainedProcessApplicationExpedite",
+		        "processApplicationAdjourn","detainedProcessApplicationAdjourn", 		        "processApplicationExpedite","detainedProcessApplicationExpedite",
 		        "processApplicationTimeExtension","detainedProcessApplicationTimeExtension",
 		        "processApplicationTransfer","detainedProcessApplicationTransfer",
 		        "processApplicationWithdraw","detainedProcessApplicationWithdraw",
@@ -513,7 +512,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0xh5are">
-<text>"reviewRemissionApplication","detainedReviewRemissionApplication","assignAFTPAJudge","detainedAssignAFTPAJudge","listTheCase","detainedListTheCase","sendPaymentRequest","markAsPaid","processFeeRefund","detainedProcessFeeRefund","reviewDraftAppeal","detainedReviewDraftAppeal"</text>
+          <text>"reviewRemissionApplication","detainedReviewRemissionApplication","assignAFTPAJudge","detainedAssignAFTPAJudge","listTheCase","detainedListTheCase","sendPaymentRequest","markAsPaid","processFeeRefund","detainedProcessFeeRefund","reviewDraftAppeal","detainedReviewDraftAppeal"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0vqliz7">
           <text>"roleCategory"</text>
@@ -690,7 +689,7 @@
         <inputEntry id="UnaryTests_01h3gvh">
           <text>"processApplicationAdjourn","detainedProcessApplicationAdjourn",
 "processApplicationExpedite","detainedProcessApplicationExpedite",
-"processApplicationTimeExtension","detaineProcessApplicationTimeExtension",
+"processApplicationTimeExtension","detainedProcessApplicationTimeExtension",
 "processApplicationTransfer","detainedProcessApplicationTransfer",
 "processApplicationWithdraw","detainedProcessApplicationWithdraw",
 "processApplicationUpdateHearingRequirements","detainedProcessApplicationUpdateHearingRequirements",
@@ -703,7 +702,7 @@
 "reviewAppealSetAsideUnderRule32","detainedReviewAppealSetAsideUnderRule32",
 "reviewDraftAppeal",
 "detainedReviewDraftAppeal",
-"processFeeRefund","detainedProcessFeeRefund"</text>
+"processFeeRefund","detainedProcessFeeRefund","processApplicationChangeHearingType","detainedProcessApplicationChangeHearingType"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_18mybq6">
           <text>"dueDateIntervalDays"</text>
