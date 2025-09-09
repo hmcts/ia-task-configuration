@@ -31,6 +31,17 @@
           <text>"Review interpreter booking"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1fb7crf">
+        <inputEntry id="UnaryTests_1f1ljm5">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1bbl167">
+          <text>"noticeOfChange"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_00sgdpv">
+          <text>"Notice of Change"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

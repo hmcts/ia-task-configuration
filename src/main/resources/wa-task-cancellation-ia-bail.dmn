@@ -90,6 +90,29 @@
           <text></text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_126y1nd">
+        <inputEntry id="UnaryTests_0lxpy81">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0g343m6">
+          <text>"applyNocDecision"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_11nbpf9">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1xf3mxy">
+          <text>"Reconfigure"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_09n87je">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04j5i0f">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0n632lv">
+          <text></text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

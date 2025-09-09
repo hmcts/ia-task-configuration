@@ -117,7 +117,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1y3kj1v">
-          <text>"processBailApplication","reviewInterpreterFlag"</text>
+          <text>"processBailApplication","reviewInterpreterFlag","noticeOfChange"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0rvgay2">
           <text>"workType"</text>
@@ -134,7 +134,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_10f3uas">
-          <text>"processBailApplication","reviewInterpreterFlag"</text>
+          <text>"processBailApplication","reviewInterpreterFlag","noticeOfChange"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_05l5bvs">
           <text>"roleCategory"</text>
@@ -161,8 +161,9 @@
   then "[Confirm location](/case/IA/Bail/${[CASE_REFERENCE]}/trigger/confirmDetentionLocation)"
   else if (taskAttributes != null and taskAttributes.taskType = "reviewInterpreterFlag" or taskType = "reviewInterpreterFlag")
   then "Review the interpreter flags in the [Case flags](/case/IA/Bail/${[CASE_REFERENCE]}#Case flags) tab"
-  else ""
-          </text>
+  else if (taskAttributes != null and taskAttributes.taskType = "noticeOfChange" or taskType = "noticeOfChange")
+  then "The Legal Representative has been removed from the case. Please get the new representative to perform a Notice of Change on this case"
+  else ""</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_184xf0n">
           <text>false</text>

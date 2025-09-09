@@ -207,6 +207,56 @@ else null</text>
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1ck55ab">
+        <inputEntry id="UnaryTests_0amtisx">
+          <text>"removeBailLegalRepresentative","stopLegalRepresenting"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19rtwkh">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1h36wwl">
+          <text>"Legal Representative"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rktybr">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0q9919z">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1660x0z">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1y4y5cn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rvro0g">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1c4psda">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0pzljco">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1yzi26g">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1iiqabj">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ruhcex">
+          <text>"noticeOfChange"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1kt14mn">
+          <text>"Notice Of Change"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_11uq9vx">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1h2i13z">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
