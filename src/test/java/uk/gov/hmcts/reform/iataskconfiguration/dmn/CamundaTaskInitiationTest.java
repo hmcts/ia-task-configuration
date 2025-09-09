@@ -2495,7 +2495,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "listing",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
-                                      + "          \"autoHearingRequestEnabled\" : " + false + "\n"
+                                      + "          \"appellantInDetention\" : " + false + "\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -2508,111 +2508,55 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "reviewHearingRequirements",
-                "listing",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "          \"isIntegrated\" : " + false + "\n"
-                                      + "          \"autoHearingRequestEnabled\" : " + true + "\n"
-                                      + "   }"
-                                      + "}"),
-                singletonList(
-                    Map.of(
-                        "taskId", "listTheCase",
-                        "name", "List the case",
+                    "reviewHearingRequirements",
+                    "listing",
+                    mapAdditionalData("{\n"
+                            + "   \"Data\":{\n"
+                            + "          \"appellantInDetention\" : " + true + "\n"
+                            + "   }"
+                            + "}"),
+                    singletonList(
+                            Map.of(
+                                    "taskId", "detainedListTheCase",
+                                    "name", "Detained - List the case",
 
-                        "processCategories", "caseProgression"
+                                    "processCategories", "caseProgression"
+                            )
                     )
-                )
             ),
             Arguments.of(
-                "reviewHearingRequirements",
-                "listing",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "          \"isIntegrated\" : " + true + "\n"
-                                      + "          \"isPanelRequired\" : " + true + "\n"
-                                      + "   }"
-                                      + "}"),
-                singletonList(
-                    Map.of(
-                        "taskId", "listTheCase",
-                        "name", "List the case",
+                    "listCaseWithoutHearingRequirements",
+                    "listing",
+                    mapAdditionalData("{\n"
+                            + "   \"Data\":{\n"
+                            + "          \"appellantInDetention\" : " + false + "\n"
+                            + "   }"
+                            + "}"),
+                    singletonList(
+                            Map.of(
+                                    "taskId", "listTheCase",
+                                    "name", "List the case",
 
-                        "processCategories", "caseProgression"
+                                    "processCategories", "caseProgression"
+                            )
                     )
-                )
             ),
             Arguments.of(
-                "reviewHearingRequirements",
-                "listing",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "          \"isIntegrated\" : " + true + "\n"
-                                      + "          \"isPanelRequired\" : " + true + "\n"
-                                      + "   }"
-                                      + "}"),
-                singletonList(
-                    Map.of(
-                        "taskId", "listTheCase",
-                        "name", "List the case",
+                    "listCaseWithoutHearingRequirements",
+                    "listing",
+                    mapAdditionalData("{\n"
+                            + "   \"Data\":{\n"
+                            + "          \"appellantInDetention\" : " + true + "\n"
+                            + "   }"
+                            + "}"),
+                    singletonList(
+                            Map.of(
+                                    "taskId", "detainedListTheCase",
+                                    "name", "Detained - List the case",
 
-                        "processCategories", "caseProgression"
+                                    "processCategories", "caseProgression"
+                            )
                     )
-                )
-            ),
-            Arguments.of(
-                "listCaseWithoutHearingRequirements",
-                "listing",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "          \"isIntegrated\" : " + true + "\n"
-                                      + "          \"isPanelRequired\" : " + true + "\n"
-                                      + "   }"
-                                      + "}"),
-                singletonList(
-                    Map.of(
-                        "taskId", "listTheCase",
-                        "name", "List the case",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
-                "listCaseWithoutHearingRequirements",
-                "listing",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "          \"autoHearingRequestEnabled\" : " + false + "\n"
-                                      + "   }"
-                                      + "}"),
-                singletonList(
-                    Map.of(
-                        "taskId", "listTheCase",
-                        "name", "List the case",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
-                "listCaseWithoutHearingRequirements",
-                "listing",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "          \"isIntegrated\" : " + false + "\n"
-                                      + "          \"autoHearingRequestEnabled\" : " + true + "\n"
-                                      + "   }"
-                                      + "}"),
-                singletonList(
-                    Map.of(
-                        "taskId", "listTheCase",
-                        "name", "List the case",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
             ),
             Arguments.of(
                 "recordRemissionDecision",
@@ -4404,17 +4348,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                               "followUpSetAsideDecision",
                                               "Follow up set aside decision",
                                               "followUpOverdue",
-                                              delayFor5Days, false),
-            getDecideAnApplicationArgumentsOf("Set aside a decision",
-                                              "detainedFollowUpSetAsideDecision",
-                                              "Detained - Follow Up Set Aside Decision",
-                                              "followUpOverdue",
-                                              delayFor5Days, true),
-            // Explicit test for appellantInDetention flag
-            getDecideAnApplicationArgumentsOf("Set aside a decision",
-                                              "followUpSetAsideDecision",
-                                              "Follow up set aside decision",
-                                              "followUpOverdue",
                                               delayFor5Days, false, false),
             getDecideAnApplicationArgumentsOf("Set aside a decision",
                                               "detainedFollowUpSetAsideDecision",
@@ -4522,7 +4455,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(28));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(169));
+        assertThat(logic.getRules().size(), is(165));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {
