@@ -26,7 +26,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1ag5ntf">
-          <text>"caseListing","endApplication"</text>
+          <text>"endApplication"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_032mxu7">
           <text></text>
@@ -72,13 +72,13 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1glhnt9">
-          <text></text>
+          <text>"createFlag","manageFlags"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0xnpu9a">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_09umugc">
-          <text></text>
+          <text>"Reconfigure"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_010v80r">
           <text></text>

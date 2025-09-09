@@ -117,7 +117,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1y3kj1v">
-          <text>"processBailApplication"</text>
+          <text>"processBailApplication","reviewInterpreterFlag"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0rvgay2">
           <text>"workType"</text>
@@ -134,7 +134,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_10f3uas">
-          <text>"processBailApplication"</text>
+          <text>"processBailApplication","reviewInterpreterFlag"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_05l5bvs">
           <text>"roleCategory"</text>
@@ -159,8 +159,8 @@
         <outputEntry id="LiteralExpression_1iaoi95">
           <text>  if (taskAttributes != null and taskAttributes.taskType = "processBailApplication" or taskType = "processBailApplication")
   then "[Confirm location](/case/IA/Bail/${[CASE_REFERENCE]}/trigger/confirmDetentionLocation)"
-  else if (taskAttributes != null and taskAttributes.taskType = "testTask" or taskType = "testTask")
-  then "[Edit Bail Documents](/case/IA/Bail/${[CASE_REFERENCE]}/trigger/editBailDocuments)"
+  else if (taskAttributes != null and taskAttributes.taskType = "reviewInterpreterFlag" or taskType = "reviewInterpreterFlag")
+  then "Review the interpreter flags in the [Case flags](/case/IA/Bail/${[CASE_REFERENCE]}#Case flags) tab"
   else ""
           </text>
         </outputEntry>

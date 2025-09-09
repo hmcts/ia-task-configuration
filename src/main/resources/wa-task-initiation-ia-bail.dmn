@@ -22,14 +22,11 @@
           </text>
         </inputExpression>
       </input>
-      <input id="InputClause_15dhd3c" label="Last modified application type" biodi:width="267" camunda:inputVariable="lastModifiedApplicationType">
+      <input id="InputClause_15dhd3c" label="Has Active Interpreter Flag" biodi:width="267" camunda:inputVariable="hasActiveInterpreterFlag">
         <inputExpression id="LiteralExpression_00shf3r" typeRef="string">
-          <text>if(additionalData != null and additionalData.Data != null and
-            additionalData.Data.lastModifiedApplication != null) then
-            additionalData.Data.lastModifiedApplication.type
-            else
-            null
-          </text>
+          <text>if (additionalData != null and additionalData.Data != null) 
+then additionalData.Data.hasActiveInterpreterFlag
+else null</text>
         </inputExpression>
       </input>
       <input id="InputClause_10uivrc" label="Last modified application decision" biodi:width="266" camunda:inputVariable="lastModifiedApplicationDecision">
@@ -157,6 +154,56 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1m76a0d">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1t0re97">
+        <inputEntry id="UnaryTests_1qu2cti">
+          <text>"createFlag"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1n63vs1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0r324y9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ak9esm">
+          <text>"Yes"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1hw526r">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ttqasy">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rwz4sg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hf2rvh">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0arqh30">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1h8bzcc">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1w792w3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lrkfan">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1a2npxt">
+          <text>"reviewInterpreterFlag"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12mpycf">
+          <text>"Review Interpreter Booking"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0xnohe8">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1b9ikhs">
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
