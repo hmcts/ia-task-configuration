@@ -1151,7 +1151,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         Scenario detainedProcessApplicationOtherScenario =
             Scenario.builder()
                 .caseData(emptyMap())
-                .taskAttributes(Map.of("taskType", "detainedProcessApplicationOtherScenario"))
+                .taskAttributes(Map.of("taskType", "detainedProcessApplicationOther"))
                 .expectedCaseNameValue(null)
                 .expectedAppealTypeValue("")
                 .expectedRegionValue("1")
@@ -1222,6 +1222,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 .expectedDescriptionValue("[Decide an application]"
                                           + "(/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)")
                 .expectedDueDateOrigin(dateOrigin)
+                .expectedDueDateIntervalDays("5")
                 .build();
 
         Scenario detainedProcessApplicationChangeHearingTypeScenario =
@@ -1241,6 +1242,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 .expectedDescriptionValue("[Decide an application]"
                                               + "(/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)")
                 .expectedDueDateOrigin(dateOrigin)
+                .expectedDueDateIntervalDays("5")
                 .build();
 
         return Stream.of(
@@ -1253,7 +1255,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             detainedProcessApplicationAdjournScenario,
             processApplicationExpediteScenario,
             processApplicationTimeExtensionScenario,
-            //detainedProcessApplicationTimeExtensionScenario,
+            detainedProcessApplicationTimeExtensionScenario,
             processApplicationTransferScenario,
             detainedProcessApplicationTransferScenario,
             processApplicationWithdrawScenario,
@@ -1265,10 +1267,11 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             processApplicationReinstateAnEndedAppealScenario,
             detainedProcessApplicationReinstateAnEndedAppealScenario,
             processApplicationOtherScenario,
-            //detainedProcessApplicationOtherScenario,
+            detainedProcessApplicationOtherScenario,
             processApplicationLinkUnlinkAppealsScenario,
-            processApplicationChangeHearingTypeScenario
-            //detainedProcessApplicationChangeHearingTypeScenario
+            detainedProcessApplicationLinkUnlinkAppealsScenario,
+            processApplicationChangeHearingTypeScenario,
+            detainedProcessApplicationChangeHearingTypeScenario
         );
     }
 
@@ -1658,6 +1661,8 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("detainedReviewDraftAppeal", fiveDays),
             Arguments.of("processFeeRefund", fiveDays),
             Arguments.of("detainedProcessFeeRefund", fiveDays),
+            Arguments.of("processApplicationChangeHearingType", fiveDays),
+            Arguments.of("detainedProcessApplicationChangeHearingType", fiveDays),
             Arguments.of("allocateHearingJudge", threeDays),
             Arguments.of("detainedAllocateHearingJudge", threeDays),
             Arguments.of("processApplicationToReviewDecision", twoDays),
