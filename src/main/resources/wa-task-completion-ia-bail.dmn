@@ -33,7 +33,7 @@
       </rule>
       <rule id="DecisionRule_0qf355j">
         <inputEntry id="UnaryTests_07wd5uf">
-          <text>"applyNocDecision"</text>
+          <text>"updateBailLegalRepDetails"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0htb4bi">
           <text>"noticeOfChange"</text>
