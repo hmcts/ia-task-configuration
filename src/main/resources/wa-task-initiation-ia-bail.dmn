@@ -469,6 +469,56 @@ else null</text>
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_18f9kki">
+        <inputEntry id="UnaryTests_19ayz75">
+          <text>"caseListing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0gtmh6z">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1c2zjwu">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16k5rvx">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0yodaol">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ayoibq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ggqlq0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0n3o0az">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qi789z">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07bp4i9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ejbn00">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0y1lj69">
+          <text>"postHearingRecord"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_03x6flb">
+          <text>"Post hearing – attendees, duration and recording"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1lyqzmz">
+          <text>{
+"delayUntil": additionalData.Data.listingHearingDate,
+"delayUntilIntervalDays": "0"
+}</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ulphro">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

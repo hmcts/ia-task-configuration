@@ -86,6 +86,17 @@
           <text>"List for further review"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0c6zq6c">
+        <inputEntry id="UnaryTests_149zvo6">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ng6txo">
+          <text>"postHearingRecord"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0rtu36t">
+          <text>"Post hearing – attendees, duration and recording"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

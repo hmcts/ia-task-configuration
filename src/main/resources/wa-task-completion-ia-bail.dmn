@@ -75,6 +75,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_15wrkvo">
+        <inputEntry id="UnaryTests_0so3zr7">
+          <text>"hearingCompleted"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_03lz71v">
+          <text>"postHearingRecord"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1gwmyjw">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

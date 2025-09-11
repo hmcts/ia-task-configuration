@@ -117,7 +117,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1y3kj1v">
-          <text>"processBailApplication","reviewInterpreterFlag","noticeOfChange","followUpBailSummary","reviewAdditionalEvidence","uploadSignedDecision"</text>
+          <text>"processBailApplication","reviewInterpreterFlag","noticeOfChange","followUpBailSummary","reviewAdditionalEvidence","uploadSignedDecision","postHearingRecord"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0rvgay2">
           <text>"workType"</text>
@@ -134,7 +134,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_10f3uas">
-          <text>"processBailApplication","reviewInterpreterFlag","noticeOfChange","followUpBailSummary","reviewAdditionalEvidence","uploadSignedDecision"</text>
+          <text>"processBailApplication","reviewInterpreterFlag","noticeOfChange","followUpBailSummary","reviewAdditionalEvidence","uploadSignedDecision","postHearingRecord"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_05l5bvs">
           <text>"roleCategory"</text>
@@ -160,17 +160,19 @@
           <text>  if (taskAttributes != null and taskAttributes.taskType = "processBailApplication" or taskType = "processBailApplication")
   then "[Confirm location](/case/IA/Bail/${[CASE_REFERENCE]}/trigger/confirmDetentionLocation)"
   else if (taskAttributes != null and taskAttributes.taskType = "reviewInterpreterFlag" or taskType = "reviewInterpreterFlag")
-  then "Review the interpreter flags in the [Case flags](/case/IA/Bail/${[CASE_REFERENCE]}#Case flags) tab"
+  then "[Update interpreter status](/case/IA/Bail/${[CASE_REFERENCE]}/trigger/updateInterpreterStatus)"
   else if (taskAttributes != null and taskAttributes.taskType = "noticeOfChange" or taskType = "noticeOfChange")
-  then "The Legal Representative has been removed from the case. Please get the new representative to perform a Notice of Change on this case"
+  then "Follow up with applicant"
   else if (taskAttributes != null and taskAttributes.taskType = "followUpBailSummary" or taskType = "followUpBailSummary")
-  then "The Bail Summary has yet to be uploaded. It is due today, please follow up on it."
+  then "[Send direction](/case/IA/Bail/${[CASE_REFERENCE]}/trigger/sendBailDirection) if required"
   else if (taskAttributes != null and taskAttributes.taskType = "reviewAdditionalEvidence" or taskType = "reviewAdditionalEvidence")
-  then "Additional evidence has been received, please review it in the [Documents](/case/IA/Bail/${[CASE_REFERENCE]}#Documents) tab"
+  then "Review additional evidence"
   else if (taskAttributes != null and taskAttributes.taskType = "uploadSignedDecision" or taskType = "uploadSignedDecision")
-  then "[Upload Signed Decision Notice](/case/IA/Bail/${[CASE_REFERENCE]}/trigger/uploadSignedDecisionNotice)"
+  then "[Upload Signed Decision](/case/IA/Bail/${[CASE_REFERENCE]}/trigger/uploadSignedDecisionNotice)"
   else if (taskAttributes != null and taskAttributes.taskType = "listForFurtherReview" or taskType = "listForFurtherReview")
-  then "Decision was conditional, the case needs listing for further review via the [Hearings](/case/IA/Bail/${[CASE_REFERENCE]}/hearings) tab"
+  then "[Relist the case](/case/IA/Bail/${[CASE_REFERENCE]}/hearings)"
+  else if (taskAttributes != null and taskAttributes.taskType = "postHearingRecord" or taskType = "postHearingRecord")
+  then "[Add hearing details](/case/IA/Bail/${[CASE_REFERENCE]}/hearings)"
   else ""</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_184xf0n">
