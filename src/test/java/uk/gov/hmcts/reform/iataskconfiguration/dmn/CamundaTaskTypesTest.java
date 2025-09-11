@@ -373,6 +373,36 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                    "printAndSendReheardHearingRequirements",
                    "taskTypeName",
                    "Print and send reheard appeal hearing requirements form"
+            ),
+            Map.of("taskTypeId",
+                   "reviewASRemission",
+                   "taskTypeName",
+                   "Review AS remission"
+            ),
+            Map.of("taskTypeId",
+                   "reviewLARemission",
+                   "taskTypeName",
+                   "Review LA remission"
+            ),
+            Map.of("taskTypeId",
+                   "reviewHOWaiverRemission",
+                   "taskTypeName",
+                   "Review HO Waiver remission"
+            ),
+            Map.of("taskTypeId",
+                   "reviewAuthorityRemission",
+                   "taskTypeName",
+                   "Review Authority remission"
+            ),
+            Map.of("taskTypeId",
+                   "reviewHWFRemission",
+                   "taskTypeName",
+                   "Review HWF remission"
+            ),
+            Map.of("taskTypeId",
+                   "reviewECRRemission",
+                   "taskTypeName",
+                   "Review ECR remission"
             )
         );
         return Stream.of(
@@ -400,6 +430,6 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(1));
         assertThat(logic.getOutputs().size(), is(2));
-        assertThat(logic.getRules().size(), is(69));
+        assertThat(logic.getRules().size(), is(75));
     }
 }
