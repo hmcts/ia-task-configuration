@@ -1150,14 +1150,6 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "roleCategory", "JUDICIAL",
                 "assignmentPriority", 2,
                 "autoAssignable", false
-            ),
-            Map.of(
-                "name", "judge",
-                "value", "Read,Own,Claim,Manage,Unassign,Assign,Complete,Cancel",
-                "roleCategory", "JUDICIAL",
-                "assignmentPriority", 1,
-                "authorisations", "373",
-                "autoAssignable", false
             )
         )));
     }
@@ -1208,14 +1200,6 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "value", "Read,Execute,Claim,Cancel",
                 "roleCategory", "JUDICIAL",
                 "assignmentPriority", 2,
-                "autoAssignable", false
-            ),
-            Map.of(
-                "name", "judge",
-                "value", "Read,Own,Claim,Manage,Unassign,Assign,Complete,Cancel",
-                "roleCategory", "JUDICIAL",
-                "assignmentPriority", 1,
-                "authorisations", "373",
                 "autoAssignable", false
             )
         )));

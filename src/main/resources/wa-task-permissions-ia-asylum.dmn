@@ -97,7 +97,6 @@
             "reviewRemittedAppeal",
             "reviewAppealSetAsideUnderRule35","detainedReviewAppealSetAsideUnderRule35",
             "reviewAppealSetAsideUnderRule32","detainedReviewAppealSetAsideUnderRule32"</text>
-
         </inputEntry>
         <inputEntry id="UnaryTests_0buofva">
           <text></text>
@@ -169,7 +168,6 @@
             "reviewRemittedAppeal","detainedReviewRemittedAppeal",
             "reviewAppealSetAsideUnderRule35","detainedReviewAppealSetAsideUnderRule35",
             "reviewAppealSetAsideUnderRule32","detainedReviewAppealSetAsideUnderRule32"</text>
-
         </inputEntry>
         <inputEntry id="UnaryTests_10s330p">
           <text></text>
@@ -511,8 +509,7 @@
             "sendDecisionsAndReasons","detainedSendDecisionsAndReasons","detainedDecideAnFTPA",
             "decideAnFTPA",
             "prepareDecisionsAndReasons",
-            "reviewSetAsideDecisionApplication","detainedReviewSetAsideDecisionApplication",
-            "processApplicationChangeHearingType","detainedProcessApplicationChangeHearingType"
+            "reviewSetAsideDecisionApplication","detainedReviewSetAsideDecisionApplication"
             </text>
         </inputEntry>
         <inputEntry id="UnaryTests_1sgyxq7">
@@ -663,7 +660,7 @@
       <rule id="DecisionRule_05nq60d">
         <description>CTSC Admin task permissions</description>
         <inputEntry id="UnaryTests_1q2j4ix">
-<text>"reviewRemissionApplication","detainedReviewRemissionApplication",
+          <text>"reviewRemissionApplication","detainedReviewRemissionApplication",
 "assignAFTPAJudge","detainedAssignAFTPAJudge",
 "listTheCase","detainedListTheCase","detainedListCmr",
 "sendPaymentRequest","markAsPaid",
@@ -712,7 +709,7 @@
       <rule id="DecisionRule_155ah64">
         <description>CTSC Team Leader task permissions</description>
         <inputEntry id="UnaryTests_08panx7">
-<text>"reviewRemissionApplication","detainedReviewRemissionApplication","assignAFTPAJudge","detainedAssignAFTPAJudge","listTheCase","detainedListTheCase","sendPaymentRequest","markAsPaid","cmrListed","detainedCmrListed","cmrUpdated","detainedCmrUpdated","reviewInterpreters","detainedReviewInterpreters","processFeeRefund","detainedProcessFeeRefund","reviewDraftAppeal","detainedReviewDraftAppeal","detainedListCmr","printAndSendHoBundle","detainedPrintAndSendHoBundle","printAndSendHoResponse","printAndSendHearingRequirements","detainedPrintAndSendHearingRequirements","printAndSendHearingBundle","detainedPrintAndSendHearingBundle","printAndSendDecisionCorrectedRule31","detainedPrintAndSendDecisionCorrectedRule31","printAndSendDecisionCorrectedRule32","detainedPrintAndSendDecisionCorrectedRule32","printAndSendHoApplication","detainedPrintAndSendHoApplication","printAndSendHoEvidence","detainedPrintAndSendHoEvidence","printAndSendAppealDecision","detainedPrintAndSendAppealDecision","printAndSendFTPADecision","detainedPrintAndSendFTPADecision","printAndSendReheardHearingRequirements","detainedPrintAndSendReheardHearingRequirements"</text>
+          <text>"reviewRemissionApplication","detainedReviewRemissionApplication","assignAFTPAJudge","detainedAssignAFTPAJudge","listTheCase","detainedListTheCase","sendPaymentRequest","markAsPaid","cmrListed","detainedCmrListed","cmrUpdated","detainedCmrUpdated","reviewInterpreters","detainedReviewInterpreters","processFeeRefund","detainedProcessFeeRefund","reviewDraftAppeal","detainedReviewDraftAppeal","detainedListCmr","printAndSendHoBundle","detainedPrintAndSendHoBundle","printAndSendHoResponse","printAndSendHearingRequirements","detainedPrintAndSendHearingRequirements","printAndSendHearingBundle","detainedPrintAndSendHearingBundle","printAndSendDecisionCorrectedRule31","detainedPrintAndSendDecisionCorrectedRule31","printAndSendDecisionCorrectedRule32","detainedPrintAndSendDecisionCorrectedRule32","printAndSendHoApplication","detainedPrintAndSendHoApplication","printAndSendHoEvidence","detainedPrintAndSendHoEvidence","printAndSendAppealDecision","detainedPrintAndSendAppealDecision","printAndSendFTPADecision","detainedPrintAndSendFTPADecision","printAndSendReheardHearingRequirements","detainedPrintAndSendReheardHearingRequirements"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0njeznv">
           <text></text>
@@ -741,7 +738,7 @@
       </rule>
       <rule id="DecisionRule_0xfd7pt">
         <inputEntry id="UnaryTests_141gjoe">
-<text>"hearingException","detainedHearingException","cmrListed","detainedCmrListed","cmrUpdated","detainedCmrUpdated","relistCase","detainedRelistCase","listTheCase","detainedListTheCase","reviewInterpreters","detainedReviewInterpreters","detainedListCmr"</text>
+          <text>"hearingException","detainedHearingException","cmrListed","detainedCmrListed","cmrUpdated","detainedCmrUpdated","relistCase","detainedRelistCase","listTheCase","detainedListTheCase","reviewInterpreters","detainedReviewInterpreters","detainedListCmr"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0otzt6m">
           <text></text>
