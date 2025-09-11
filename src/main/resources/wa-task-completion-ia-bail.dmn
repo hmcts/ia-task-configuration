@@ -86,6 +86,17 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0n3sv5h">
+        <inputEntry id="UnaryTests_0hp3dyk">
+          <text>"confirmDetentionLocation","updateInterpreterBookingStatus","updateBailLegalRepDetails","uploadBailSummary","uploadSignedDecisionNotice","caseListing","hearingCompleted"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_01y2icz">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_06u7dz4">
+          <text></text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
