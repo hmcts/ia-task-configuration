@@ -29,10 +29,10 @@ then additionalData.Data.hasActiveInterpreterFlag
 else null</text>
         </inputExpression>
       </input>
-      <input id="InputClause_0k8flip" label="Current User" camunda:inputVariable="currentUser">
+      <input id="InputClause_0k8flip" label="Current User" camunda:inputVariable="lastFileUploadedBy">
         <inputExpression id="LiteralExpression_0g29hou" typeRef="string">
           <text>if (additionalData != null and additionalData.Data != null) 
-then additionalData.Data.currentUser
+then additionalData.Data.lastFileUploadedBy
 else ""</text>
         </inputExpression>
       </input>
@@ -273,7 +273,7 @@ else null</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_06vgm9q">
           <text>{
-"delayUntil": dateOfCompliance,
+"delayUntil": additionalData.Data.bailSummaryDueDate,
 "delayUntilIntervalDays": "0"
 }</text>
         </outputEntry>

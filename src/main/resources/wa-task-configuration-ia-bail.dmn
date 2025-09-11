@@ -117,7 +117,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1y3kj1v">
-          <text>"processBailApplication","reviewInterpreterFlag","noticeOfChange","followUpBailSummary","reviewAdditionalEvidence","uploadSignedDecision","postHearingRecord"</text>
+          <text>"processBailApplication","reviewInterpreterFlag","noticeOfChange","followUpBailSummary","reviewAdditionalEvidence","uploadSignedDecision","postHearingRecord","listForFurtherReview"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0rvgay2">
           <text>"workType"</text>
@@ -134,7 +134,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_10f3uas">
-          <text>"processBailApplication","reviewInterpreterFlag","noticeOfChange","followUpBailSummary","reviewAdditionalEvidence","uploadSignedDecision","postHearingRecord"</text>
+          <text>"processBailApplication","reviewInterpreterFlag","noticeOfChange","followUpBailSummary","reviewAdditionalEvidence","uploadSignedDecision","postHearingRecord","listForFurtherReview"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_05l5bvs">
           <text>"roleCategory"</text>
