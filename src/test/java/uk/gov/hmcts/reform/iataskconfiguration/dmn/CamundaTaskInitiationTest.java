@@ -104,6 +104,20 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "generateDecisionAndReasons",
+                "decision",
+                null,
+                singletonList(
+                    Map.of(
+                        "taskId", "sendDecisionsAndReasons",
+                        "name", "Send decisions and reasons",
+
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
                 "submitAppeal",
                 "appealSubmitted",
                 mapAdditionalData("{\n"
@@ -1783,6 +1797,23 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "printAndSendHoEvidence",
                         "name", "Print and send new HO evidence",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "sendDecisionAndReasons",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isAdmin\":\"" + true + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "printAndSendAppealDecision",
+                        "name", "Print and send appeal decision and FTPA form",
 
                         "processCategories", "caseProgression"
                     )
