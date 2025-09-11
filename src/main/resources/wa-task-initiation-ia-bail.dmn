@@ -23,10 +23,10 @@
         </inputExpression>
       </input>
       <input id="InputClause_15dhd3c" label="Has Active Interpreter Flag" biodi:width="267" camunda:inputVariable="hasActiveInterpreterFlag">
-        <inputExpression id="LiteralExpression_00shf3r" typeRef="string">
-          <text>if (additionalData != null and additionalData.Data != null) 
+        <inputExpression id="LiteralExpression_00shf3r" typeRef="boolean">
+          <text>if (additionalData != null and additionalData.Data != null and additionalData.Data.hasActiveInterpreterFlag != null) 
 then additionalData.Data.hasActiveInterpreterFlag
-else null</text>
+else false</text>
         </inputExpression>
       </input>
       <input id="InputClause_0k8flip" label="Current User" camunda:inputVariable="lastFileUploadedBy">
@@ -148,7 +148,7 @@ else null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0ak9esm">
-          <text>"Yes"</text>
+          <text>true</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0ttqasy">
           <text></text>
