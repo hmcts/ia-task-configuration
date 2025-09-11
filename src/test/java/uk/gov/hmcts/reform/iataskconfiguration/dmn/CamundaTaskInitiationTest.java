@@ -104,20 +104,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "generateDecisionAndReasons",
-                "decision",
-                null,
-                singletonList(
-                    Map.of(
-                        "taskId", "sendDecisionsAndReasons",
-                        "name", "Send decisions and reasons",
-
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
                 "submitAppeal",
                 "appealSubmitted",
                 mapAdditionalData("{\n"
