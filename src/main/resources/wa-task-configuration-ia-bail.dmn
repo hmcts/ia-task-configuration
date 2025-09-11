@@ -160,7 +160,7 @@
           <text>  if (taskAttributes != null and taskAttributes.taskType = "processBailApplication" or taskType = "processBailApplication")
   then "[Confirm location](/case/IA/Bail/${[CASE_REFERENCE]}/trigger/confirmDetentionLocation)"
   else if (taskAttributes != null and taskAttributes.taskType = "reviewInterpreterFlag" or taskType = "reviewInterpreterFlag")
-  then "[Update interpreter status](/case/IA/Bail/${[CASE_REFERENCE]}/trigger/updateInterpreterStatus)"
+  then "[Update interpreter status](/case/IA/Bail/${[CASE_REFERENCE]}/trigger/updateInterpreterBookingStatus)"
   else if (taskAttributes != null and taskAttributes.taskType = "noticeOfChange" or taskType = "noticeOfChange")
   then "Follow up with applicant"
   else if (taskAttributes != null and taskAttributes.taskType = "followUpBailSummary" or taskType = "followUpBailSummary")

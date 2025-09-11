@@ -11,7 +11,7 @@
       <output id="OutputClause_1mldd9e" label="Completion Mode" name="completionMode" typeRef="string" />
       <rule id="DecisionRule_12eenty">
         <inputEntry id="UnaryTests_17cg7de">
-          <text>"caseListing"</text>
+          <text>"confirmDetentionLocation","caseListing"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1lk4wxe">
           <text>"processBailApplication"</text>
@@ -22,7 +22,7 @@
       </rule>
       <rule id="DecisionRule_0pd2qug">
         <inputEntry id="UnaryTests_015h6e0">
-          <text>"caseListing"</text>
+          <text>"updateInterpreterBookingStatus"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1kf8kfm">
           <text>"reviewInterpreterFlag"</text>
