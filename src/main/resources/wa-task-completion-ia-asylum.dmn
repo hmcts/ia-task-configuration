@@ -641,9 +641,64 @@
           <text>"recordRemissionDecision"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0o35653">
-          <text>"reviewRemissionApplication"</text>
+          <text>"reviewASRemission"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1ibdo4g">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1wb84dz">
+        <inputEntry id="UnaryTests_1uzsa0e">
+          <text>"recordRemissionDecision"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1fx4d2z">
+          <text>"reviewLARemission"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_164npo2">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1m3gufp">
+        <inputEntry id="UnaryTests_14dr1sv">
+          <text>"recordRemissionDecision"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1tp8cwl">
+          <text>"reviewHOWaiverRemission"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_13nque2">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0na64uh">
+        <inputEntry id="UnaryTests_11h9isg">
+          <text>"recordRemissionDecision"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_173e6ue">
+          <text>"reviewAuthorityRemission"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_031qm5t">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_086q8tk">
+        <inputEntry id="UnaryTests_0ipihln">
+          <text>"recordRemissionDecision"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1gpq02w">
+          <text>"reviewHWFRemission"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1xdgl34">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_15xpnrv">
+        <inputEntry id="UnaryTests_1q7skyq">
+          <text>"recordRemissionDecision"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1r53mg9">
+          <text>"reviewECRRemission"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1rmq9qz">
           <text>"Auto"</text>
         </outputEntry>
       </rule>
@@ -652,9 +707,64 @@
           <text>"recordRemissionDecision"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0kgq8ne">
-          <text>"detainedReviewRemissionApplication"</text>
+          <text>"detainedReviewASRemission"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1cnt6cw">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0azauju">
+        <inputEntry id="UnaryTests_07puf6r">
+          <text>"recordRemissionDecision"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_15s5kse">
+          <text>"detainedReviewLARemission"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1c3zds7">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0mtq48u">
+        <inputEntry id="UnaryTests_00b25ve">
+          <text>"recordRemissionDecision"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0d4rlh6">
+          <text>"detainedReviewHOWaiverRemission"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_05ri5s3">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ock85w">
+        <inputEntry id="UnaryTests_0vtfmsq">
+          <text>"recordRemissionDecision"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0oczwum">
+          <text>"detainedReviewAuthorityRemission"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ts3gah">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1y4l6ut">
+        <inputEntry id="UnaryTests_141xksk">
+          <text>"recordRemissionDecision"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0paklql">
+          <text>"detainedReviewHWFRemission"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1pwd41a">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_12pd8ax">
+        <inputEntry id="UnaryTests_12ul63l">
+          <text>"recordRemissionDecision"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0pel0gh">
+          <text>"detainedReviewECRRemission"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0cqgxir">
           <text>"Auto"</text>
         </outputEntry>
       </rule>

@@ -654,6 +654,66 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                     "detainedProcessApplicationChangeHearingType",
                     "taskTypeName",
                     "Detained - Process Change Hearing Type Application"
+            ),
+            Map.of("taskTypeId",
+                    "reviewASRemission",
+                    "taskTypeName",
+                    "Review AS remission"
+            ),
+            Map.of("taskTypeId",
+                    "reviewLARemission",
+                    "taskTypeName",
+                    "Review LA remission"
+            ),
+            Map.of("taskTypeId",
+                    "reviewHOWaiverRemission",
+                    "taskTypeName",
+                    "Review HO Waiver remission"
+            ),
+            Map.of("taskTypeId",
+                    "reviewAuthorityRemission",
+                    "taskTypeName",
+                    "Review Authority remission"
+            ),
+            Map.of("taskTypeId",
+                    "reviewHWFRemission",
+                    "taskTypeName",
+                    "Review HWF remission"
+            ),
+            Map.of("taskTypeId",
+                    "reviewECRRemission",
+                    "taskTypeName",
+                    "Review ECR remission"
+            ),
+            Map.of("taskTypeId",
+                    "detainedReviewASRemission",
+                    "taskTypeName",
+                    "Detained - Review AS remission"
+            ),
+            Map.of("taskTypeId",
+                    "detainedReviewLARemission",
+                    "taskTypeName",
+                    "Detained - Review LA remission"
+            ),
+            Map.of("taskTypeId",
+                    "detainedReviewHOWaiverRemission",
+                    "taskTypeName",
+                    "Detained - Review HO Waiver remission"
+            ),
+            Map.of("taskTypeId",
+                    "detainedReviewAuthorityRemission",
+                    "taskTypeName",
+                    "Detained - Review Authority remission"
+            ),
+            Map.of("taskTypeId",
+                    "detainedReviewHWFRemission",
+                    "taskTypeName",
+                    "Detained - Review HWF remission"
+            ),
+            Map.of("taskTypeId",
+                    "detainedReviewECRRemission",
+                    "taskTypeName",
+                    "Detained - Review ECR remission"
             )
         );
         return Stream.of(
@@ -682,7 +742,7 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(1));
         assertThat(logic.getOutputs().size(), is(2));
-        assertThat(logic.getRules().size(), is(125));
+        assertThat(logic.getRules().size(), is(137));
 
     }
 }

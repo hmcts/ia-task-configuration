@@ -246,7 +246,18 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("detainedFollowUpNonStandardDirection", routineWork),
             Arguments.of("reviewClarifyingQuestionsAnswers", routineWork),
             Arguments.of("reviewRemissionApplication", routineWork),
-            Arguments.of("detainedReviewRemissionApplication", routineWork),
+            Arguments.of("reviewASRemission", routineWork),
+            Arguments.of("reviewLARemission", routineWork),
+            Arguments.of("reviewHOWaiverRemission", routineWork),
+            Arguments.of("reviewAuthorityRemission", routineWork),
+            Arguments.of("reviewHWFRemission", routineWork),
+            Arguments.of("reviewECRRemission", routineWork),
+            Arguments.of("detainedReviewASRemission", routineWork),
+            Arguments.of("detainedReviewLARemission", routineWork),
+            Arguments.of("detainedReviewHOWaiverRemission", routineWork),
+            Arguments.of("detainedReviewAuthorityRemission", routineWork),
+            Arguments.of("detainedReviewHWFRemission", routineWork),
+            Arguments.of("detainedReviewECRRemission", routineWork),
             Arguments.of("assignAFTPAJudge", routineWork),
             Arguments.of("detainedAssignAFTPAJudge", routineWork),
             Arguments.of("reviewAppealSetAsideUnderRule35", routineWork),
@@ -544,7 +555,13 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
     @ParameterizedTest
     @CsvSource({
-        "reviewRemissionApplication","detainedReviewRemissionApplication",
+        "reviewRemissionApplication","reviewASRemission",
+        "reviewLARemission", "reviewHOWaiverRemission",
+        "reviewAuthorityRemission", "reviewHWFRemission",
+        "reviewECRRemission", "detainedReviewASRemission",
+        "detainedReviewLARemission", "detainedReviewHOWaiverRemission",
+        "detainedReviewAuthorityRemission", "detainedReviewHWFRemission",
+        "detainedReviewECRRemission",
         "assignAFTPAJudge","detainedAssignAFTPAJudge",
         "listTheCase","detainedListTheCase",
         "sendPaymentRequest","markAsPaid",
@@ -1525,9 +1542,42 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             + "decideAnApplication),,,",
         "reviewRemissionApplication,[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/"
             + "recordRemissionDecision/recordRemissionDecisionremissionDecision),,,",
-        "detainedReviewRemissionApplication,[Record remission decision]"
+        "reviewASRemission,[Record remission decision]"
             + "(/cases/case-details/${[CASE_REFERENCE]}/trigger/"
             + "recordRemissionDecision/recordRemissionDecisionremissionDecision),,,",
+        "reviewLARemission,[Record remission decision]"
+                + "(/cases/case-details/${[CASE_REFERENCE]}/trigger/"
+                + "recordRemissionDecision/recordRemissionDecisionremissionDecision),,,",
+        "reviewHOWaiverRemission,[Record remission decision]"
+                + "(/cases/case-details/${[CASE_REFERENCE]}/trigger/"
+                + "recordRemissionDecision/recordRemissionDecisionremissionDecision),,,",
+        "reviewAuthorityRemission,[Record remission decision]"
+                + "(/cases/case-details/${[CASE_REFERENCE]}/trigger/"
+                + "recordRemissionDecision/recordRemissionDecisionremissionDecision),,,",
+        "reviewHWFRemission,[Record remission decision]"
+                + "(/cases/case-details/${[CASE_REFERENCE]}/trigger/"
+                + "recordRemissionDecision/recordRemissionDecisionremissionDecision),,,",
+        "reviewECRRemission,[Record remission decision]"
+                + "(/cases/case-details/${[CASE_REFERENCE]}/trigger/"
+                + "recordRemissionDecision/recordRemissionDecisionremissionDecision),,,",
+        "detainedReviewASRemission,[Record remission decision]"
+                + "(/cases/case-details/${[CASE_REFERENCE]}/trigger/"
+                + "recordRemissionDecision/recordRemissionDecisionremissionDecision),,,",
+        "detainedReviewLARemission,[Record remission decision]"
+                + "(/cases/case-details/${[CASE_REFERENCE]}/trigger/"
+                + "recordRemissionDecision/recordRemissionDecisionremissionDecision),,,",
+        "detainedReviewHOWaiverRemission,[Record remission decision]"
+                + "(/cases/case-details/${[CASE_REFERENCE]}/trigger/"
+                + "recordRemissionDecision/recordRemissionDecisionremissionDecision),,,",
+        "detainedReviewAuthorityRemission,[Record remission decision]"
+                + "(/cases/case-details/${[CASE_REFERENCE]}/trigger/"
+                + "recordRemissionDecision/recordRemissionDecisionremissionDecision),,,",
+        "detainedReviewHWFRemission,[Record remission decision]"
+                + "(/cases/case-details/${[CASE_REFERENCE]}/trigger/"
+                + "recordRemissionDecision/recordRemissionDecisionremissionDecision),,,",
+        "detainedReviewECRRemission,[Record remission decision]"
+                + "(/cases/case-details/${[CASE_REFERENCE]}/trigger/"
+                + "recordRemissionDecision/recordRemissionDecisionremissionDecision),,,",
         "assignAFTPAJudge,[Record allocated Judge](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
             + "recordAllocatedJudge),,,",
         "detainedAssignAFTPAJudge,[Record allocated Judge](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
@@ -1709,7 +1759,18 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("reviewAddendumEvidence", twoDays),
             Arguments.of("detainedReviewAddendumEvidence", twoDays),
             Arguments.of("reviewRemissionApplication", twoDays),
-            Arguments.of("detainedReviewRemissionApplication", twoDays),
+            Arguments.of("reviewASRemission", twoDays),
+            Arguments.of("reviewLARemission", twoDays),
+            Arguments.of("reviewHOWaiverRemission", twoDays),
+            Arguments.of("reviewAuthorityRemission", twoDays),
+            Arguments.of("reviewHWFRemission", twoDays),
+            Arguments.of("reviewECRRemission", twoDays),
+            Arguments.of("detainedReviewASRemission", twoDays),
+            Arguments.of("detainedReviewLARemission", twoDays),
+            Arguments.of("detainedReviewHOWaiverRemission", twoDays),
+            Arguments.of("detainedReviewAuthorityRemission", twoDays),
+            Arguments.of("detainedReviewHWFRemission", twoDays),
+            Arguments.of("detainedReviewECRRemission", twoDays),
             Arguments.of("assignAFTPAJudge", twoDays),
             Arguments.of("detainedAssignAFTPAJudge", twoDays),
             Arguments.of("listTheCase", twoDays),

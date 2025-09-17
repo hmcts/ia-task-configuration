@@ -1384,6 +1384,144 @@
           <text>"Detained - List CMR"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0s5nu9f">
+        <description></description>
+        <inputEntry id="UnaryTests_0xzx4lf">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1kzrqhm">
+          <text>"reviewASRemission"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0x8oh9s">
+          <text>"Review AS remission"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1dr3lh4">
+        <description></description>
+        <inputEntry id="UnaryTests_12z472l">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0fjw8zu">
+          <text>"reviewLARemission"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0c66l0t">
+          <text>"Review LA remission"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_091p862">
+        <description></description>
+        <inputEntry id="UnaryTests_0yitas4">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1tphoqs">
+          <text>"reviewHOWaiverRemission"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0xs96xz">
+          <text>"Review HO Waiver remission"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1rfrv8o">
+        <description></description>
+        <inputEntry id="UnaryTests_1dosrhq">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0lm2dd0">
+          <text>"reviewAuthorityRemission"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04adv0y">
+          <text>"Review Authority remission"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1scwho7">
+        <description></description>
+        <inputEntry id="UnaryTests_01imrb1">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_12zjcgn">
+          <text>"reviewHWFRemission"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0wehrqu">
+          <text>"Review HWF remission"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1lbv9um">
+        <description></description>
+        <inputEntry id="UnaryTests_12fzzey">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0o2omoq">
+          <text>"reviewECRRemission"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_176x36j">
+          <text>"Review ECR remission"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0vvkkuz">
+        <inputEntry id="UnaryTests_1mojnod">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1h2zk2b">
+          <text>"detainedReviewASRemission"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1t3rquw">
+          <text>"Detained - Review AS remission"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_16dslmj">
+        <inputEntry id="UnaryTests_11h5kzd">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0trzw0c">
+          <text>"detainedReviewLARemission"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0axo9s9">
+          <text>"Detained - Review AS remission"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_17ksdj9">
+        <inputEntry id="UnaryTests_1xqxrax">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0n5n6m2">
+          <text>"detainedReviewHOWaiverRemission"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0dgohys">
+          <text>"Detained - Review HO Waiver remission"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ngzn5p">
+        <inputEntry id="UnaryTests_1t8t2yf">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1gjnq6v">
+          <text>"detainedReviewAuthorityRemission"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1kujgt8">
+          <text>"Detained - Review Authority remission"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1fvn7va">
+        <inputEntry id="UnaryTests_1wtie7u">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_14qh4nt">
+          <text>"detainedReviewHWFRemission"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04p2hn5">
+          <text>"Detained - Review HWF remission"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0yeygxg">
+        <inputEntry id="UnaryTests_0hzqoh2">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_054ezdk">
+          <text>"detainedReviewECRRemission"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_07dk4g5">
+          <text>"Detained - Review ECR remission"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
