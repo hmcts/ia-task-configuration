@@ -194,7 +194,6 @@
                         "followUpExtendedDirection","detainedFollowUpExtendedDirection",
                         "followUpNonStandardDirection","detainedFollowUpNonStandardDirection",
                         "reviewClarifyingQuestionsAnswers",
-                        "detainedReviewRemissionApplication",
                         "reviewRemissionApplication",
                         "assignAFTPAJudge","detainedAssignAFTPAJudge",
                         "sendPaymentRequest",
@@ -220,8 +219,7 @@
                         "printAndSendAppealDecision","detainedPrintAndSendAppealDecision",
                         "printAndSendFTPADecision","detainedPrintAndSendFTPADecision",
                         "printAndSendReheardHearingRequirements","detainedPrintAndSendReheardHearingRequirements",
-                        "processFeeRefund","detainedProcessFeeRefund"
-                      </text>
+                        "processFeeRefund","detainedProcessFeeRefund","reviewASRemission","reviewLARemission", "reviewHOWaiverRemission", "reviewAuthorityRemission", "reviewHWFRemission", "reviewECRRemission","detainedReviewASRemission", "detainedReviewLARemission", "detainedReviewHOWaiverRemission", "detainedReviewAuthorityRemission", "detainedReviewHWFRemission", "detainedReviewECRRemission"                      </text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0rvgay2">
           <text>"workType"</text>
@@ -512,7 +510,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0xh5are">
-          <text>"reviewRemissionApplication","detainedReviewRemissionApplication","assignAFTPAJudge","detainedAssignAFTPAJudge","listTheCase","detainedListTheCase","sendPaymentRequest","markAsPaid","processFeeRefund","detainedProcessFeeRefund","reviewDraftAppeal","detainedReviewDraftAppeal"</text>
+          <text>"reviewRemissionApplication","reviewASRemission", "reviewLARemission", "reviewHOWaiverRemission", "reviewAuthorityRemission", "reviewHWFRemission", "reviewECRRemission", "detainedReviewASRemission", "detainedReviewLARemission", "detainedReviewHOWaiverRemission", "detainedReviewAuthorityRemission", "detainedReviewHWFRemission", "detainedReviewECRRemission","assignAFTPAJudge","detainedAssignAFTPAJudge","listTheCase","detainedListTheCase","sendPaymentRequest","markAsPaid","processFeeRefund","detainedProcessFeeRefund","reviewDraftAppeal","detainedReviewDraftAppeal"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0vqliz7">
           <text>"roleCategory"</text>
@@ -565,7 +563,19 @@
                         then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewRemissionApplication" or taskType != null and taskType = "reviewRemissionApplication") then "[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/recordRemissionDecision/recordRemissionDecisionremissionDecision)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "detainedReviewRemissionApplication" or taskType != null and taskType = "detainedReviewRemissionApplication") then "[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/recordRemissionDecision/recordRemissionDecisionremissionDecision)"
-                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "allocateHearingJudge" or taskType != null and taskType ="allocateHearingJudge") then "[Allocate Hearing Judge](/role-access/allocate-role/allocate?caseId=${[CASE_REFERENCE]}&amp;roleCategory=JUDICIAL&amp;jurisdiction=IA)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewASRemission" or taskType != null and taskType = "reviewASRemission") then "[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/recordRemissionDecision/recordRemissionDecisionremissionDecision)"  
+                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewLARemission" or taskType != null and taskType = "reviewLARemission") then "[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/recordRemissionDecision/recordRemissionDecisionremissionDecision)"
+                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewHOWaiverRemission" or taskType != null and taskType = "reviewHOWaiverRemission") then "[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/recordRemissionDecision/recordRemissionDecisionremissionDecision)"
+                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewAuthorityRemission" or taskType != null and taskType = "reviewAuthorityRemission") then "[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/recordRemissionDecision/recordRemissionDecisionremissionDecision)"
+                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewHWFRemission" or taskType != null and taskType = "reviewHWFRemission") then "[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/recordRemissionDecision/recordRemissionDecisionremissionDecision)"
+                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewECRRemission" or taskType != null and taskType = "reviewECRRemission") then "[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/recordRemissionDecision/recordRemissionDecisionremissionDecision)"
+                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "detainedReviewASRemission" or taskType != null and taskType = "detainedReviewASRemission") then "[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/recordRemissionDecision/recordRemissionDecisionremissionDecision)" 
+                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "detainedReviewLARemission" or taskType != null and taskType = "detainedReviewLARemission") then "[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/recordRemissionDecision/recordRemissionDecisionremissionDecision)"
+                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "detainedReviewHOWaiverRemission" or taskType != null and taskType = "detainedReviewHOWaiverRemission") then "[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/recordRemissionDecision/recordRemissionDecisionremissionDecision)"
+                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "detainedReviewAuthorityRemission" or taskType != null and taskType = "detainedReviewAuthorityRemission") then "[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/recordRemissionDecision/recordRemissionDecisionremissionDecision)"
+                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "detainedReviewHWFRemission" or taskType != null and taskType = "detainedReviewHWFRemission") then "[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/recordRemissionDecision/recordRemissionDecisionremissionDecision)"
+                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "detainedReviewECRRemission" or taskType != null and taskType = "detainedReviewECRRemission") then "[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/recordRemissionDecision/recordRemissionDecisionremissionDecision)"
+                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "allocateHearingJudge" or taskType != null and taskType ="allocateHearingJudge") then "[Allocate Hearing Judge](/role-access/allocate-role/allocate?caseId=${[CASE_REFERENCE]}&amp;roleCategory=JUDICIAL&amp;jurisdiction=IA)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "detainedAllocateHearingJudge" or taskType != null and taskType ="detainedAllocateHearingJudge") then "[Allocate Hearing Judge](/role-access/allocate-role/allocate?caseId=${[CASE_REFERENCE]}&amp;roleCategory=JUDICIAL&amp;jurisdiction=IA)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "prepareDecisionsAndReasons" or taskType != null and taskType = "prepareDecisionsAndReasons") then "[Prepare decisions and reasons](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/generateDecisionAndReasons)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "decideAnFTPA" or taskType != null and taskType = "decideAnFTPA") then "[Decide FTPA application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideFtpaApplication)"
@@ -590,20 +600,20 @@
                         then "[Review evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/markEvidenceAsReviewed)" else if
                          (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewCmaRequirements" or taskType != null and taskType = "reviewCmaRequirements")
                         then "[Review CMA Requirements](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/reviewCmaRequirements)"
-                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewRespondentResponse" or taskType != null and taskType = "reviewRespondentResponse")
+                  else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewRespondentResponse" or taskType != null and taskType = "reviewRespondentResponse")
                         then "[Review Home Office response](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestResponseReview)&lt;br /&gt;[Amend appeal response](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestResponseAmend)"
-                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "detainedReviewRespondentResponse" or taskType != null and taskType = "detainedReviewRespondentResponse")
+                   else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "detainedReviewRespondentResponse" or taskType != null and taskType = "detainedReviewRespondentResponse")
                         then "[Force case - hearing reqs](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/forceCaseToSubmitHearingRequirements)&lt;br /&gt;[Amend appeal response](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestResponseAmend)"
-                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "createHearingBundle" or taskType != null and taskType = "createHearingBundle")
+                  else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "createHearingBundle" or taskType != null and taskType = "createHearingBundle")
                         then "[Generate the hearing bundle](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/generateHearingBundle)&lt;br /&gt;[Customise the hearing bundle](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/customiseHearingBundle)"
-                        else if ((taskAttributes != null and taskAttributes.taskType != null and (taskAttributes.taskType = "processApplicationExpedite" or taskAttributes.taskType = "detainedProcessApplicationExpedite")) or (taskType != null and (taskType = "processApplicationExpedite" or taskType = "detainedProcessApplicationExpedite")))
+                  else if ((taskAttributes != null and taskAttributes.taskType != null and (taskAttributes.taskType = "processApplicationExpedite" or taskAttributes.taskType = "detainedProcessApplicationExpedite")) or (taskType != null and (taskType = "processApplicationExpedite" or taskType = "detainedProcessApplicationExpedite")))
                   then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)" else if ((taskAttributes != null and taskAttributes.taskType != null and (taskAttributes.taskType = "reviewTheAppeal" or taskAttributes.taskType = "reviewTheAppeal")))
                   then "[Request respondent evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentEvidence)" else if ((taskAttributes != null and taskAttributes.taskType != null and (taskAttributes.taskType = "detainedReviewTheAppeal" or taskAttributes.taskType = "detainedReviewTheAppeal")))
                   then "[Request respondent evidence](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentEvidence)" else if ((taskAttributes != null and taskAttributes.taskType != null and (taskAttributes.taskType = "decideOnTimeExtension" or taskAttributes.taskType = "decideOnTimeExtension")))
                   then "[Change the direction due date](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/changeDirectionDueDate)" else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "attendCma" or taskType != null and taskType = "attendCma")
                         then "[Update case details after CMA](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/updateDetailsAfterCma)"
                         else if ((taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewRespondentEvidence" or taskType != null and taskType ="reviewRespondentEvidence") and (caseData != null and caseData.journeyType = "aip"))
-                        then "[Request reasons for appeal](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestReasonsForAppeal)&lt;br /&gt;[Send non-standard direction](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDirection)"else if ((taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "detainedReviewRespondentEvidence" or taskType != null and taskType ="detainedReviewRespondentEvidence") and (caseData != null and caseData.journeyType = "aip"))
+                        then "[Request reasons for appeal](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestReasonsForAppeal)&lt;br /&gt;[Send non-standard direction](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDirection)" else if ((taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "detainedReviewRespondentEvidence" or taskType != null and taskType ="detainedReviewRespondentEvidence") and (caseData != null and caseData.journeyType = "aip"))
                         then "[Request reasons for appeal](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestReasonsForAppeal)&lt;br /&gt;[Send non-standard direction](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDirection)"
 			                  else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewAppealSkeletonArgument" or taskType != null and taskType ="reviewAppealSkeletonArgument")
                         then "[Request respondent review](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentReview)&lt;br /&gt;[Request case edit](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestCaseEdit)"
@@ -611,7 +621,7 @@
                         then "[Request respondent review](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentReview)&lt;br /&gt;[Request case edit](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestCaseEdit)"
                         else if ((taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewReasonsForAppeal" or taskType != null and taskType ="reviewReasonsForAppeal") and (caseData != null and caseData.journeyType = "aip"))
                         then "[Request respondent review](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentReview)&lt;br /&gt;[Send direction with questions](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDirectionWithQuestions)"
-			                  else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewReasonsForAppeal" or taskType != null and taskType ="reviewReasonsForAppeal")
+			             else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewReasonsForAppeal" or taskType != null and taskType ="reviewReasonsForAppeal")
                         then "[Request respondent review](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentReview)&lt;br /&gt;[Request CMA requirements](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestCmaRequirements)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewRespondentEvidence" or taskType != null and taskType ="reviewRespondentEvidence")
                         then "[Request case building](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestCaseBuilding)&lt;br /&gt;[Send non-standard direction](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDirection)"
@@ -752,14 +762,13 @@
 "reviewAddendumEvidence",
 "detainedReviewAddendumEvidence",
 "reviewRemissionApplication",
-"detainedReviewRemissionApplication",
 "assignAFTPAJudge","detainedAssignAFTPAJudge",
 "listTheCase","detainedListTheCase",
 "reviewSetAsideDecisionApplication",
 "cmrListed",
 "cmrUpdated","detainedCmrListed",
 "detainedCmrUpdated",
-"reviewAriaRemissionApplication"</text>
+"reviewAriaRemissionApplication","reviewASRemission", "reviewLARemission", "reviewHOWaiverRemission", "reviewAuthorityRemission", "reviewHWFRemission", "reviewECRRemission", "detainedReviewASRemission", "detainedReviewLARemission", "detainedReviewHOWaiverRemission", "detainedReviewAuthorityRemission", "detainedReviewHWFRemission", "detainedReviewECRRemission"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1kbin0j">
           <text>"dueDateIntervalDays"</text>

@@ -462,12 +462,52 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                 "recordRemissionDecision",
                 asList(
                     Map.of(
-                        "taskType", "reviewRemissionApplication",
-                        "completionMode", "Auto"
+                        "completionMode", "Auto",
+                        "taskType", "reviewASRemission"
                     ),
                     Map.of(
-                        "taskType", "detainedReviewRemissionApplication",
-                        "completionMode", "Auto"
+                        "completionMode", "Auto",
+                        "taskType", "reviewLARemission"
+                    ),
+                    Map.of(
+                        "completionMode", "Auto",
+                        "taskType", "reviewHOWaiverRemission"
+                    ),
+                    Map.of(
+                        "completionMode", "Auto",
+                        "taskType", "reviewAuthorityRemission"
+                    ),
+                    Map.of(
+                        "completionMode", "Auto",
+                        "taskType", "reviewHWFRemission"
+                    ),
+                    Map.of(
+                        "completionMode", "Auto",
+                        "taskType", "reviewECRRemission"
+                    ),
+                    Map.of(
+                        "completionMode", "Auto",
+                        "taskType", "detainedReviewASRemission"
+                    ),
+                    Map.of(
+                        "completionMode", "Auto",
+                        "taskType", "detainedReviewLARemission"
+                    ),
+                    Map.of(
+                        "completionMode", "Auto",
+                        "taskType", "detainedReviewHOWaiverRemission"
+                    ),
+                    Map.of(
+                        "completionMode", "Auto",
+                        "taskType", "detainedReviewAuthorityRemission"
+                    ),
+                    Map.of(
+                        "completionMode", "Auto",
+                        "taskType", "detainedReviewHWFRemission"
+                    ),
+                    Map.of(
+                        "completionMode", "Auto",
+                        "taskType", "detainedReviewECRRemission"
                     ),
                     Map.of(
                         "completionMode", "Auto",
@@ -633,7 +673,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
 
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(80));
+        assertThat(logic.getRules().size(), is(90));
     }
 
 

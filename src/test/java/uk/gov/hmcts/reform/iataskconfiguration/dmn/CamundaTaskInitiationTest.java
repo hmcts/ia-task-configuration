@@ -250,23 +250,23 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "submitAppeal",
-                "pendingPayment",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"journeyType\":\"" + "aip" + "\",\n"
-                                      + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                                      + "      \"remissionOption\":\"" + "asylumSupportFromHo" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
+                    "submitAppeal",
+                    "pendingPayment",
+                    mapAdditionalData("{\n"
+                            + "   \"Data\":{\n"
+                            + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
+                            + "      \"remissionClaim\":\"" + "asylumSupport" + "\",\n"
+                            + "      \"appellantInDetention\": false\n"
+                            + "   }"
+                            + "}"),
+                    singletonList(
+                            Map.of(
+                                    "taskId", "reviewASRemission",
+                                    "name", "Review AS remission",
 
-                        "processCategories", "caseProgression"
+                                    "processCategories", "caseProgression"
+                            )
                     )
-                )
             ),
             Arguments.of(
                 "submitAppeal",
@@ -275,36 +275,152 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       + "   \"Data\":{\n"
                                       + "      \"journeyType\":\"" + "aip" + "\",\n"
                                       + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                                      + "      \"remissionOption\":\"" + "feeWaiverFromHo" + "\"\n"
+                                      + "      \"remissionOption\":\"" + "asylumSupportFromHo" + "\",\n"
+                                      + "      \"appellantInDetention\": false\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
                     Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
+                        "taskId", "reviewASRemission",
+                        "name", "Review AS remission",
 
                         "processCategories", "caseProgression"
                     )
                 )
             ),
-            Arguments.of(
-                "submitAppeal",
-                "pendingPayment",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"journeyType\":\"" + "aip" + "\",\n"
-                                      + "      \"appealType\":\"" + "refusalOfEu" + "\",\n"
-                                      + "      \"remissionOption\":\"" + "under18GetSupportFromLocalAuthority" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
+                Arguments.of(
+                        "submitAppeal",
+                        "pendingPayment",
+                        mapAdditionalData("{\n"
+                                + "   \"Data\":{\n"
+                                + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
+                                + "      \"remissionClaim\":\"" + "asylumSupport" + "\",\n"
+                                + "      \"appellantInDetention\": true\n"
+                                + "   }"
+                                + "}"),
+                        singletonList(
+                                Map.of(
+                                        "taskId", "detainedReviewASRemission",
+                                        "name", "Detained - Review AS remission",
 
-                        "processCategories", "caseProgression"
+                                        "processCategories", "caseProgression"
+                                )
+                        )
+                ),
+                Arguments.of(
+                        "submitAppeal",
+                        "pendingPayment",
+                        mapAdditionalData("{\n"
+                                + "   \"Data\":{\n"
+                                + "      \"journeyType\":\"" + "aip" + "\",\n"
+                                + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
+                                + "      \"remissionOption\":\"" + "asylumSupportFromHo" + "\",\n"
+                                + "      \"appellantInDetention\": true\n"
+                                + "   }"
+                                + "}"),
+                        singletonList(
+                                Map.of(
+                                        "taskId", "detainedReviewASRemission",
+                                        "name", "Detained - Review AS remission",
+
+                                        "processCategories", "caseProgression"
+                                )
+                        )
+                ),
+            Arguments.of(
+                    "submitAppeal",
+                    "pendingPayment",
+                    mapAdditionalData("{\n"
+                            + "   \"Data\":{\n"
+                            + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
+                            + "      \"remissionClaim\":\"" + "homeOfficeWaiver" + "\",\n"
+                            + "      \"appellantInDetention\": false\n"
+                            + "   }"
+                            + "}"),
+                    singletonList(
+                            Map.of(
+                                    "taskId", "reviewHOWaiverRemission",
+                                    "name", "Review HO Waiver remission",
+
+                                    "processCategories", "caseProgression"
+                            )
                     )
-                )
+            ),
+                Arguments.of(
+                        "submitAppeal",
+                        "pendingPayment",
+                        mapAdditionalData("{\n"
+                                + "   \"Data\":{\n"
+                                + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
+                                + "      \"remissionClaim\":\"" + "homeOfficeWaiver" + "\",\n"
+                                + "      \"appellantInDetention\": true\n"
+                                + "   }"
+                                + "}"),
+                        singletonList(
+                                Map.of(
+                                        "taskId", "detainedReviewHOWaiverRemission",
+                                        "name", "Detained - Review HO Waiver remission",
+
+                                        "processCategories", "caseProgression"
+                                )
+                        )
+                ),
+            Arguments.of(
+                    "submitAppeal",
+                    "pendingPayment",
+                    mapAdditionalData("{\n"
+                            + "   \"Data\":{\n"
+                            + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
+                            + "      \"remissionType\":\"" + "exceptionalCircumstancesRemission" + "\",\n"
+                            + "      \"appellantInDetention\": false\n"
+                            + "   }"
+                            + "}"),
+                    singletonList(
+                            Map.of(
+                                    "taskId", "reviewECRRemission",
+                                    "name", "Review ECR remission",
+
+                                    "processCategories", "caseProgression"
+                            )
+                    )
+            ),
+                Arguments.of(
+                        "submitAppeal",
+                        "pendingPayment",
+                        mapAdditionalData("{\n"
+                                + "   \"Data\":{\n"
+                                + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
+                                + "      \"remissionType\":\"" + "exceptionalCircumstancesRemission" + "\",\n"
+                                + "      \"appellantInDetention\": true\n"
+                                + "   }"
+                                + "}"),
+                        singletonList(
+                                Map.of(
+                                        "taskId", "detainedReviewECRRemission",
+                                        "name", "Detained - Review ECR remission",
+
+                                        "processCategories", "caseProgression"
+                                )
+                        )
+                ),
+            Arguments.of(
+                    "submitAppeal",
+                    "pendingPayment",
+                    mapAdditionalData("{\n"
+                            + "   \"Data\":{\n"
+                            + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
+                            + "      \"remissionType\":\"" + "helpWithFees" + "\",\n"
+                            + "      \"appellantInDetention\": false\n"
+                            + "   }"
+                            + "}"),
+                    singletonList(
+                            Map.of(
+                                    "taskId", "reviewHWFRemission",
+                                    "name", "Review HWF remission",
+
+                                    "processCategories", "caseProgression"
+                            )
+                    )
             ),
             Arguments.of(
                 "submitAppeal",
@@ -313,18 +429,38 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       + "   \"Data\":{\n"
                                       + "      \"journeyType\":\"" + "aip" + "\",\n"
                                       + "      \"appealType\":\"" + "protection" + "\",\n"
-                                      + "      \"remissionOption\":\"" + "iWantToGetHelpWithFees" + "\"\n"
+                                      + "      \"remissionOption\":\"" + "feeWaiverFromHo" + "\"\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
                     Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
+                        "taskId", "reviewHOWaiverRemission",
+                        "name", "Review HO Waiver remission",
 
                         "processCategories", "caseProgression"
                     )
                 )
             ),
+                Arguments.of(
+                        "submitAppeal",
+                        "pendingPayment",
+                        mapAdditionalData("{\n"
+                                + "   \"Data\":{\n"
+                                + "      \"journeyType\":\"" + "aip" + "\",\n"
+                                + "      \"appealType\":\"" + "protection" + "\",\n"
+                                + "      \"remissionOption\":\"" + "feeWaiverFromHo" + "\",\n"
+                                + "      \"appellantInDetention\": true\n"
+                                + "   }"
+                                + "}"),
+                        singletonList(
+                                Map.of(
+                                        "taskId", "detainedReviewHOWaiverRemission",
+                                        "name", "Detained - Review HO Waiver remission",
+
+                                        "processCategories", "caseProgression"
+                                )
+                        )
+                ),
             Arguments.of(
                 "submitAppeal",
                 "pendingPayment",
@@ -332,18 +468,131 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       + "   \"Data\":{\n"
                                       + "      \"journeyType\":\"" + "aip" + "\",\n"
                                       + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
-                                      + "      \"remissionOption\":\"" + "parentGetSupportFromLocalAuthority" + "\"\n"
+                                      + "      \"remissionOption\":\"" + "under18GetSupportFromLocalAuthority" + "\"\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
                     Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
+                        "taskId", "reviewAuthorityRemission",
+                        "name", "Review Authority remission",
 
                         "processCategories", "caseProgression"
                     )
                 )
             ),
+                Arguments.of(
+                        "submitAppeal",
+                        "pendingPayment",
+                        mapAdditionalData("{\n"
+                                + "   \"Data\":{\n"
+                                + "      \"journeyType\":\"" + "aip" + "\",\n"
+                                + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
+                                + "      \"remissionOption\":\"" + "under18GetSupportFromLocalAuthority" + "\",\n"
+                                + "      \"appellantInDetention\": true\n"
+                                + "   }"
+                                + "}"),
+                        singletonList(
+                                Map.of(
+                                        "taskId", "detainedReviewAuthorityRemission",
+                                        "name", "Detained - Review Authority remission",
+
+                                        "processCategories", "caseProgression"
+                                )
+                        )
+                ),
+            Arguments.of(
+                    "submitAppeal",
+                    "pendingPayment",
+                    mapAdditionalData("{\n"
+                            + "   \"Data\":{\n"
+                            + "      \"journeyType\":\"" + "aip" + "\",\n"
+                            + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
+                            + "      \"remissionOption\":\"" + "iWantToGetHelpWithFees" + "\"\n"
+                            + "   }"
+                            + "}"),
+                    singletonList(
+                            Map.of(
+                                    "taskId", "reviewHWFRemission",
+                                    "name", "Review HWF remission",
+
+                                    "processCategories", "caseProgression"
+                            )
+                    )
+            ),
+                Arguments.of(
+                        "submitAppeal",
+                        "pendingPayment",
+                        mapAdditionalData("{\n"
+                                + "   \"Data\":{\n"
+                                + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
+                                + "      \"remissionClaim\":\"" + "legalAid" + "\"\n"
+                                + "   }"
+                                + "}"),
+                        singletonList(
+                                Map.of(
+                                        "taskId", "reviewLARemission",
+                                        "name", "Review LA remission",
+
+                                        "processCategories", "caseProgression"
+                                )
+                        )
+                ),
+                Arguments.of(
+                        "submitAppeal",
+                        "pendingPayment",
+                        mapAdditionalData("{\n"
+                                + "   \"Data\":{\n"
+                                + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
+                                + "      \"remissionClaim\":\"" + "legalAid" + "\",\n"
+                                + "      \"appellantInDetention\": true\n"
+                                + "   }"
+                                + "}"),
+                        singletonList(
+                                Map.of(
+                                        "taskId", "detainedReviewLARemission",
+                                        "name", "Detained - Review LA remission",
+
+                                        "processCategories", "caseProgression"
+                                )
+                        )
+                ),
+            Arguments.of(
+                    "submitAppeal",
+                    "pendingPayment",
+                    mapAdditionalData("{\n"
+                            + "   \"Data\":{\n"
+                            + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
+                            + "      \"remissionClaim\":\"" + "section17" + "\"\n"
+                            + "   }"
+                            + "}"),
+                    singletonList(
+                            Map.of(
+                                    "taskId", "reviewAuthorityRemission",
+                                    "name", "Review Authority remission",
+
+                                    "processCategories", "caseProgression"
+                            )
+                    )
+            ),
+                Arguments.of(
+                        "submitAppeal",
+                        "pendingPayment",
+                        mapAdditionalData("{\n"
+                                + "   \"Data\":{\n"
+                                + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
+                                + "      \"remissionClaim\":\"" + "section17" + "\",\n"
+                                + "      \"appellantInDetention\": true\n"
+                                + "   }"
+                                + "}"),
+                        singletonList(
+                                Map.of(
+                                        "taskId", "detainedReviewAuthorityRemission",
+                                        "name", "Detained - Review Authority remission",
+
+                                        "processCategories", "caseProgression"
+                                )
+                        )
+                ),
             Arguments.of(
                 "paymentAppeal",
                 "appealSubmitted",
@@ -1513,17 +1762,16 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "submitAppeal",
-                "pendingPayment",
+                "appealSubmitted",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
-                                      + "      \"remissionType\":\"" + "hoWaiverRemission" + "\"\n"
+                                      + "      \"appealType\":\"" + "protection" + "\"\n"
                                       + "   }"
                                       + "}"),
-                singletonList(
+                List.of(
                     Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
+                        "taskId", "reviewTheAppeal",
+                        "name", "Review the appeal",
 
                         "processCategories", "caseProgression"
                     )
@@ -1531,18 +1779,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                     "submitAppeal",
-                    "pendingPayment",
+                    "appealSubmitted",
                     mapAdditionalData("{\n"
                             + "   \"Data\":{\n"
-                            + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
-                            + "      \"remissionType\":\"" + "hoWaiverRemission" + "\",\n"
+                            + "      \"appealType\":\"" + "protection" + "\",\n"
                             + "      \"appellantInDetention\":\"" + true + "\"\n"
+
                             + "   }"
                             + "}"),
-                    singletonList(
+                    List.of(
                             Map.of(
-                                    "taskId", "detainedReviewRemissionApplication",
-                                    "name", "Detained - Review Remission Application",
+                                    "taskId", "detainedReviewTheAppeal",
+                                    "name", "Detained - Review the appeal",
 
                                     "processCategories", "caseProgression"
                             )
@@ -1550,17 +1798,23 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "submitAppeal",
-                "pendingPayment",
+                "appealSubmitted",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
+                                      + "      \"appealType\":\"" + "protection" + "\",\n"
                                       + "      \"remissionType\":\"" + "exceptionalCircumstancesRemission" + "\"\n"
                                       + "   }"
                                       + "}"),
-                singletonList(
+                List.of(
                     Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
+                        "taskId", "reviewTheAppeal",
+                        "name", "Review the appeal",
+
+                        "processCategories", "caseProgression"
+                    ),
+                    Map.of(
+                        "taskId", "reviewECRRemission",
+                        "name", "Review ECR remission",
 
                         "processCategories", "caseProgression"
                     )
@@ -1568,18 +1822,24 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                     "submitAppeal",
-                    "pendingPayment",
+                    "appealSubmitted",
                     mapAdditionalData("{\n"
                             + "   \"Data\":{\n"
-                            + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
+                            + "      \"appealType\":\"" + "protection" + "\",\n"
                             + "      \"remissionType\":\"" + "exceptionalCircumstancesRemission" + "\",\n"
                             + "      \"appellantInDetention\":\"" + true + "\"\n"
                             + "   }"
                             + "}"),
-                    singletonList(
+                    List.of(
                             Map.of(
-                                    "taskId", "detainedReviewRemissionApplication",
-                                    "name", "Detained - Review Remission Application",
+                                    "taskId", "detainedReviewTheAppeal",
+                                    "name", "Detained - Review the appeal",
+
+                                    "processCategories", "caseProgression"
+                            ),
+                            Map.of(
+                                    "taskId", "detainedReviewECRRemission",
+                                    "name", "Detained - Review ECR remission",
 
                                     "processCategories", "caseProgression"
                             )
@@ -1587,17 +1847,23 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "submitAppeal",
-                "pendingPayment",
+                "appealSubmitted",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
+                                      + "      \"appealType\":\"" + "protection" + "\",\n"
                                       + "      \"remissionType\":\"" + "helpWithFees" + "\"\n"
                                       + "   }"
                                       + "}"),
-                singletonList(
+                List.of(
                     Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
+                        "taskId", "reviewTheAppeal",
+                        "name", "Review the appeal",
+
+                        "processCategories", "caseProgression"
+                    ),
+                    Map.of(
+                        "taskId", "reviewHWFRemission",
+                        "name", "Review HWF remission",
 
                         "processCategories", "caseProgression"
                     )
@@ -1605,890 +1871,462 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                     "submitAppeal",
-                    "pendingPayment",
+                    "appealSubmitted",
                     mapAdditionalData("{\n"
                             + "   \"Data\":{\n"
-                            + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
+                            + "      \"appealType\":\"" + "protection" + "\",\n"
+                            + "      \"remissionType\":\"" + "helpWithFees" + "\",\n"
+                            + "      \"appellantInDetention\":\"" + true + "\"\n"
+
+                            + "   }"
+                            + "}"),
+                    List.of(
+                            Map.of(
+                                    "taskId", "detainedReviewTheAppeal",
+                                    "name", "Detained - Review the appeal",
+
+                                    "processCategories", "caseProgression"
+                            ),
+                            Map.of(
+                                    "taskId", "detainedReviewHWFRemission",
+                                    "name", "Detained - Review HWF remission",
+
+                                    "processCategories", "caseProgression"
+                            )
+                    )
+            ),
+            Arguments.of(
+                "submitAppeal",
+                "appealSubmitted",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
+                                      + "      \"remissionType\":\"" + "exceptionalCircumstancesRemission" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                List.of(
+                    Map.of(
+                        "taskId", "reviewECRRemission",
+                        "name", "Review ECR remission",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                    "submitAppeal",
+                    "appealSubmitted",
+                    mapAdditionalData("{\n"
+                            + "   \"Data\":{\n"
+                            + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
+                            + "      \"remissionType\":\"" + "exceptionalCircumstancesRemission" + "\",\n"
+                            + "      \"appellantInDetention\":\"" + true + "\"\n"
+
+                            + "   }"
+                            + "}"),
+                    List.of(
+                            Map.of(
+                                    "taskId", "detainedReviewECRRemission",
+                                    "name", "Detained - Review ECR remission",
+
+                                    "processCategories", "caseProgression"
+                            )
+                    )
+            ),
+            Arguments.of(
+                "submitAppeal",
+                "appealSubmitted",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
+                                      + "      \"remissionType\":\"" + "helpWithFees" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                List.of(
+                    Map.of(
+                        "taskId", "reviewHWFRemission",
+                        "name", "Review HWF remission",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                    "submitAppeal",
+                    "appealSubmitted",
+                    mapAdditionalData("{\n"
+                            + "   \"Data\":{\n"
+                            + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
+                            + "      \"remissionType\":\"" + "helpWithFees" + "\",\n"
+                            + "      \"appellantInDetention\":\"" + true + "\"\n"
+                            + "   }"
+                            + "}"),
+                    List.of(
+                            Map.of(
+                                    "taskId", "detainedReviewHWFRemission",
+                                    "name", "Detained - Review HWF remission",
+
+                                    "processCategories", "caseProgression"
+                            )
+                    )
+            ),
+            Arguments.of(
+                "requestFeeRemission",
+                null,
+                mapAdditionalData("{\n"
+                        + "   \"Data\":{\n"
+                        + "      \"remissionType\":\"" + "helpWithFees" + "\"\n"
+                        + "   }"
+                        + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewHWFRemission",
+                        "name", "Review HWF remission",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                    "requestFeeRemission",
+                    null,
+                    mapAdditionalData("{\n"
+                            + "   \"Data\":{\n"
                             + "      \"remissionType\":\"" + "helpWithFees" + "\",\n"
                             + "      \"appellantInDetention\":\"" + true + "\"\n"
                             + "   }"
                             + "}"),
                     singletonList(
                             Map.of(
-                                    "taskId", "detainedReviewRemissionApplication",
-                                    "name", "Detained - Review Remission Application",
+                                    "taskId", "detainedReviewHWFRemission",
+                                    "name", "Detained - Review HWF remission",
 
                                     "processCategories", "caseProgression"
                             )
                     )
             ),
             Arguments.of(
-                "submitAppeal",
-                "pendingPayment",
+                "requestFeeRemission",
+                null,
                 mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "refusalOfEu" + "\",\n"
-                                      + "      \"remissionType\":\"" + "hoWaiverRemission" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-                Arguments.of(
-                        "submitAppeal",
-                        "pendingPayment",
-                        mapAdditionalData("{\n"
-                                + "   \"Data\":{\n"
-                                + "      \"appealType\":\"" + "refusalOfEu" + "\",\n"
-                                + "      \"remissionType\":\"" + "hoWaiverRemission" + "\",\n"
-                                + "      \"appellantInDetention\":\"" + true + "\"\n"
-
-                                + "   }"
-                                + "}"),
-                        singletonList(
-                                Map.of(
-                                        "taskId", "detainedReviewRemissionApplication",
-                                        "name", "Detained - Review Remission Application",
-
-                                        "processCategories", "caseProgression"
-                                )
-                        )
-                ),
-            Arguments.of(
-                "submitAppeal",
-                "pendingPayment",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "refusalOfEu" + "\",\n"
-                                      + "      \"remissionType\":\"" + "exceptionalCircumstancesRemission" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-                Arguments.of(
-                        "submitAppeal",
-                        "pendingPayment",
-                        mapAdditionalData("{\n"
-                                + "   \"Data\":{\n"
-                                + "      \"appealType\":\"" + "refusalOfEu" + "\",\n"
-                                + "      \"remissionType\":\"" + "exceptionalCircumstancesRemission" + "\",\n"
-                                + "      \"appellantInDetention\":\"" + true + "\"\n"
-                                + "   }"
-                                + "}"),
-                        singletonList(
-                                Map.of(
-                                        "taskId", "detainedReviewRemissionApplication",
-                                        "name", "Detained - Review Remission Application",
-
-                                        "processCategories", "caseProgression"
-                                )
-                        )
-                ),
-            Arguments.of(
-                "submitAppeal",
-                "pendingPayment",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "refusalOfEu" + "\",\n"
-                                      + "      \"remissionType\":\"" + "helpWithFees" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-                Arguments.of(
-                        "submitAppeal",
-                        "pendingPayment",
-                        mapAdditionalData("{\n"
-                                + "   \"Data\":{\n"
-                                + "      \"appealType\":\"" + "refusalOfEu" + "\",\n"
-                                + "      \"remissionType\":\"" + "helpWithFees" + "\",\n"
-                                + "      \"appellantInDetention\":\"" + true + "\"\n"
-                                + "   }"
-                                + "}"),
-                        singletonList(
-                                Map.of(
-                                        "taskId", "detainedReviewRemissionApplication",
-                                        "name", "Detained - Review Remission Application",
-
-                                        "processCategories", "caseProgression"
-                                )
-                        )
-                ),
-            Arguments.of(
-                "submitAppeal",
-                "pendingPayment",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "protection" + "\",\n"
-                                      + "      \"remissionType\":\"" + "hoWaiverRemission" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-                Arguments.of(
-                        "submitAppeal",
-                        "pendingPayment",
-                        mapAdditionalData("{\n"
-                                + "   \"Data\":{\n"
-                                + "      \"appealType\":\"" + "protection" + "\",\n"
-                                + "      \"remissionType\":\"" + "hoWaiverRemission" + "\",\n"
-                                + "      \"appellantInDetention\":\"" + true + "\"\n"
-                                + "   }"
-                                + "}"),
-                        singletonList(
-                                Map.of(
-                                        "taskId", "detainedReviewRemissionApplication",
-                                        "name", "Detained - Review Remission Application",
-
-                                        "processCategories", "caseProgression"
-                                )
-                        )
-                ),
-            Arguments.of(
-                "submitAppeal",
-                "pendingPayment",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "protection" + "\",\n"
-                                      + "      \"remissionType\":\"" + "exceptionalCircumstancesRemission" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-                Arguments.of(
-                        "submitAppeal",
-                        "pendingPayment",
-                        mapAdditionalData("{\n"
-                                + "   \"Data\":{\n"
-                                + "      \"appealType\":\"" + "protection" + "\",\n"
-                                + "      \"remissionType\":\"" + "exceptionalCircumstancesRemission" + "\",\n"
-                                + "      \"appellantInDetention\":\"" + true + "\"\n"
-                                + "   }"
-                                + "}"),
-                        singletonList(
-                                Map.of(
-                                        "taskId", "detainedReviewRemissionApplication",
-                                        "name", "Detained - Review Remission Application",
-
-                                        "processCategories", "caseProgression"
-                                )
-                        )
-                ),
-            Arguments.of(
-                "submitAppeal",
-                "pendingPayment",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "protection" + "\",\n"
-                                      + "      \"remissionType\":\"" + "helpWithFees" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-                Arguments.of(
-                        "submitAppeal",
-                        "pendingPayment",
-                        mapAdditionalData("{\n"
-                                + "   \"Data\":{\n"
-                                + "      \"appealType\":\"" + "protection" + "\",\n"
-                                + "      \"remissionType\":\"" + "helpWithFees" + "\",\n"
-                                + "      \"appellantInDetention\":\"" + true + "\"\n"
-
-                                + "   }"
-                                + "}"),
-                        singletonList(
-                                Map.of(
-                                        "taskId", "detainedReviewRemissionApplication",
-                                        "name", "Detained - Review Remission Application",
-
-                                        "processCategories", "caseProgression"
-                                )
-                        )
-                ),
-            Arguments.of(
-                "submitAppeal",
-                "pendingPayment",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                                      + "      \"remissionType\":\"" + "hoWaiverRemission" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-                Arguments.of(
-                        "submitAppeal",
-                        "pendingPayment",
-                        mapAdditionalData("{\n"
-                                + "   \"Data\":{\n"
-                                + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                                + "      \"remissionType\":\"" + "hoWaiverRemission" + "\",\n"
-                                + "      \"appellantInDetention\":\"" + true + "\"\n"
-                                + "   }"
-                                + "}"),
-                        singletonList(
-                                Map.of(
-                                        "taskId", "detainedReviewRemissionApplication",
-                                        "name", "Detained - Review Remission Application",
-
-
-                                        "processCategories", "caseProgression"
-                                )
-                        )
-                ),
-            Arguments.of(
-                "submitAppeal",
-                "pendingPayment",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                                      + "      \"remissionType\":\"" + "exceptionalCircumstancesRemission" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-                Arguments.of(
-                        "submitAppeal",
-                        "pendingPayment",
-                        mapAdditionalData("{\n"
-                                + "   \"Data\":{\n"
-                                + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                                + "      \"remissionType\":\"" + "exceptionalCircumstancesRemission" + "\",\n"
-                                + "      \"appellantInDetention\":\"" + true + "\"\n"
-                                + "   }"
-                                + "}"),
-                        singletonList(
-                                Map.of(
-                                        "taskId", "detainedReviewRemissionApplication",
-                                        "name", "Detained - Review Remission Application",
-
-
-                                        "processCategories", "caseProgression"
-                                )
-                        )
-                ),
-                Arguments.of(
-                        "submitAppeal",
-                        "pendingPayment",
-                        mapAdditionalData("{\n"
-                                + "   \"Data\":{\n"
-                                + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                                + "      \"remissionType\":\"" + "helpWithFees" + "\"\n"
-                                + "   }"
-                                + "}"),
-                        singletonList(
-                                Map.of(
-                                        "taskId", "reviewRemissionApplication",
-                                        "name", "Review Remission Application",
-
-                                        "processCategories", "caseProgression"
-                                )
-                        )
-                ),
-            Arguments.of(
-                "submitAppeal",
-                "pendingPayment",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                                      + "      \"remissionType\":\"" + "helpWithFees" + "\",\n"
-                                      + "      \"appellantInDetention\":\"" + true + "\"\n"
-
+                        + "   \"Data\":{\n"
+                        + "   \"journeyType\":\"" + "aip" + "\",\n"
+                        + "      \"remissionOption\":\"" + "asylumSupportFromHo" + "\"\n"
                         + "   }"
-                                      + "}"),
+                        + "}"),
                 singletonList(
                     Map.of(
-                        "taskId", "detainedReviewRemissionApplication",
-                        "name", "Detained - Review Remission Application",
+                        "taskId", "reviewASRemission",
+                        "name", "Review AS remission",
 
                         "processCategories", "caseProgression"
                     )
                 )
             ),
             Arguments.of(
-                "submitAppeal",
-                "appealSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
-                                      + "      \"remissionType\":\"" + "hoWaiverRemission" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                List.of(
-                    Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
+                    "requestFeeRemission",
+                    null,
+                    mapAdditionalData("{\n"
+                            + "   \"Data\":{\n"
+                            + "   \"journeyType\":\"" + "aip" + "\",\n"
+                            + "      \"remissionOption\":\"" + "asylumSupportFromHo" + "\",\n"
+                            + "      \"appellantInDetention\":\"" + true + "\"\n"
+                            + "   }"
+                            + "}"),
+                    singletonList(
+                            Map.of(
+                                    "taskId", "detainedReviewASRemission",
+                                    "name", "Detained - Review AS remission",
 
-                        "processCategories", "caseProgression"
+                                    "processCategories", "caseProgression"
+                            )
                     )
-                )
             ),
-                Arguments.of(
-                        "submitAppeal",
-                        "appealSubmitted",
-                        mapAdditionalData("{\n"
-                                + "   \"Data\":{\n"
-                                + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
-                                + "      \"remissionType\":\"" + "hoWaiverRemission" + "\",\n"
-                                + "      \"appellantInDetention\":\"" + true + "\"\n"
-                                + "   }"
-                                + "}"),
-                        List.of(
-                                Map.of(
-                                        "taskId", "detainedReviewRemissionApplication",
-                                        "name", "Detained - Review Remission Application",
-
-                                        "processCategories", "caseProgression"
-                                )
-                        )
-                ),
             Arguments.of(
-                "submitAppeal",
-                "appealSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
-                                      + "      \"remissionType\":\"" + "exceptionalCircumstancesRemission" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                List.of(
-                    Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
+                    "requestFeeRemission",
+                    null,
+                    mapAdditionalData("{\n"
+                            + "   \"Data\":{\n"
+                            + "      \"remissionClaim\":\"" + "asylumSupport" + "\"\n"
+                            + "   }"
+                            + "}"),
+                    singletonList(
+                            Map.of(
+                                    "taskId", "reviewASRemission",
+                                    "name", "Review AS remission",
 
-                        "processCategories", "caseProgression"
+                                    "processCategories", "caseProgression"
+                            )
                     )
-                )
             ),
-                Arguments.of(
-                        "submitAppeal",
-                        "appealSubmitted",
-                        mapAdditionalData("{\n"
-                                + "   \"Data\":{\n"
-                                + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
-                                + "      \"remissionType\":\"" + "exceptionalCircumstancesRemission" + "\",\n"
-                                + "      \"appellantInDetention\":\"" + true + "\"\n"
-                                + "   }"
-                                + "}"),
-                        List.of(
-                                Map.of(
-                                        "taskId", "detainedReviewRemissionApplication",
-                                        "name", "Detained - Review Remission Application",
-
-                                        "processCategories", "caseProgression"
-                                )
-                        )
-                ),
             Arguments.of(
-                "submitAppeal",
-                "appealSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
-                                      + "      \"remissionType\":\"" + "helpWithFees" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                List.of(
-                    Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
+                    "requestFeeRemission",
+                    null,
+                    mapAdditionalData("{\n"
+                            + "   \"Data\":{\n"
+                            + "      \"remissionClaim\":\"" + "asylumSupport" + "\",\n"
+                            + "      \"appellantInDetention\":\"" + true + "\"\n"
+                            + "   }"
+                            + "}"),
+                    singletonList(
+                            Map.of(
+                                    "taskId", "detainedReviewASRemission",
+                                    "name", "Detained - Review AS remission",
 
-                        "processCategories", "caseProgression"
+                                    "processCategories", "caseProgression"
+                            )
                     )
-                )
             ),
-                Arguments.of(
-                        "submitAppeal",
-                        "appealSubmitted",
-                        mapAdditionalData("{\n"
-                                + "   \"Data\":{\n"
-                                + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
-                                + "      \"remissionType\":\"" + "helpWithFees" + "\",\n"
-                                + "      \"appellantInDetention\":\"" + true + "\"\n"
-
-                                + "   }"
-                                + "}"),
-                        List.of(
-                                Map.of(
-                                        "taskId", "detainedReviewRemissionApplication",
-                                        "name", "Detained - Review Remission Application",
-
-                                        "processCategories", "caseProgression"
-                                )
-                        )
-                ),
             Arguments.of(
-                "submitAppeal",
-                "appealSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "refusalOfEu" + "\",\n"
-                                      + "      \"remissionType\":\"" + "hoWaiverRemission" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                List.of(
-                    Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
+                    "requestFeeRemission",
+                    null,
+                    mapAdditionalData("{\n"
+                            + "   \"Data\":{\n"
+                            + "      \"remissionClaim\":\"" + "homeOfficeWaiver" + "\"\n"
+                            + "   }"
+                            + "}"),
+                    singletonList(
+                            Map.of(
+                                    "taskId", "reviewHOWaiverRemission",
+                                    "name", "Review HO Waiver remission",
 
-                        "processCategories", "caseProgression"
+                                    "processCategories", "caseProgression"
+                            )
                     )
-                )
             ),
-                Arguments.of(
-                        "submitAppeal",
-                        "appealSubmitted",
-                        mapAdditionalData("{\n"
-                                + "   \"Data\":{\n"
-                                + "      \"appealType\":\"" + "refusalOfEu" + "\",\n"
-                                + "      \"remissionType\":\"" + "hoWaiverRemission" + "\",\n"
-                                + "      \"appellantInDetention\":\"" + true + "\"\n"
-
-                                + "   }"
-                                + "}"),
-                        List.of(
-                                Map.of(
-                                        "taskId", "detainedReviewRemissionApplication",
-                                        "name", "Detained - Review Remission Application",
-
-                                        "processCategories", "caseProgression"
-                                )
-                        )
-                ),
             Arguments.of(
-                "submitAppeal",
-                "appealSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "refusalOfEu" + "\",\n"
-                                      + "      \"remissionType\":\"" + "exceptionalCircumstancesRemission" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                List.of(
-                    Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
+                    "requestFeeRemission",
+                    null,
+                    mapAdditionalData("{\n"
+                            + "   \"Data\":{\n"
+                            + "      \"remissionClaim\":\"" + "homeOfficeWaiver" + "\",\n"
+                            + "      \"appellantInDetention\":\"" + true + "\"\n"
+                            + "   }"
+                            + "}"),
+                    singletonList(
+                            Map.of(
+                                    "taskId", "detainedReviewHOWaiverRemission",
+                                    "name", "Detained - Review HO Waiver remission",
 
-                        "processCategories", "caseProgression"
+                                    "processCategories", "caseProgression"
+                            )
                     )
-                )
             ),
-                Arguments.of(
-                        "submitAppeal",
-                        "appealSubmitted",
-                        mapAdditionalData("{\n"
-                                + "   \"Data\":{\n"
-                                + "      \"appealType\":\"" + "refusalOfEu" + "\",\n"
-                                + "      \"remissionType\":\"" + "exceptionalCircumstancesRemission" + "\",\n"
-                                + "      \"appellantInDetention\":\"" + true + "\"\n"
-
-                                + "   }"
-                                + "}"),
-                        List.of(
-                                Map.of(
-                                        "taskId", "detainedReviewRemissionApplication",
-                                        "name", "Detained - Review Remission Application",
-
-                                        "processCategories", "caseProgression"
-                                )
-                        )
-                ),
             Arguments.of(
-                "submitAppeal",
-                "appealSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "refusalOfEu" + "\",\n"
-                                      + "      \"remissionType\":\"" + "helpWithFees" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                List.of(
-                    Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
+                    "requestFeeRemission",
+                    null,
+                    mapAdditionalData("{\n"
+                            + "   \"Data\":{\n"
+                            + "      \"remissionType\":\"" + "exceptionalCircumstancesRemission" + "\"\n"
+                            + "   }"
+                            + "}"),
+                    singletonList(
+                            Map.of(
+                                    "taskId", "reviewECRRemission",
+                                    "name", "Review ECR remission",
 
-                        "processCategories", "caseProgression"
+                                    "processCategories", "caseProgression"
+                            )
                     )
-                )
             ),
-                Arguments.of(
-                        "submitAppeal",
-                        "appealSubmitted",
-                        mapAdditionalData("{\n"
-                                + "   \"Data\":{\n"
-                                + "      \"appealType\":\"" + "refusalOfEu" + "\",\n"
-                                + "      \"remissionType\":\"" + "helpWithFees" + "\",\n"
-                                + "      \"appellantInDetention\":\"" + true + "\"\n"
-
-                                + "   }"
-                                + "}"),
-                        List.of(
-                                Map.of(
-                                        "taskId", "detainedReviewRemissionApplication",
-                                        "name", "Detained - Review Remission Application",
-
-                                        "processCategories", "caseProgression"
-                                )
-                        )
-                ),
             Arguments.of(
-                "submitAppeal",
-                "appealSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "protection" + "\",\n"
-                                      + "      \"remissionType\":\"" + "hoWaiverRemission" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                List.of(
-                    Map.of(
-                        "taskId", "reviewTheAppeal",
-                        "name", "Review the appeal",
+                    "requestFeeRemission",
+                    null,
+                    mapAdditionalData("{\n"
+                            + "   \"Data\":{\n"
+                            + "      \"remissionType\":\"" + "exceptionalCircumstancesRemission" + "\",\n"
+                            + "      \"appellantInDetention\":\"" + true + "\"\n"
+                            + "   }"
+                            + "}"),
+                    singletonList(
+                            Map.of(
+                                    "taskId", "detainedReviewECRRemission",
+                                    "name", "Detained - Review ECR remission",
 
-                        "processCategories", "caseProgression"
-                    ),
-                    Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
-
-                        "processCategories", "caseProgression"
+                                    "processCategories", "caseProgression"
+                            )
                     )
-                )
             ),
-                Arguments.of(
-                        "submitAppeal",
-                        "appealSubmitted",
-                        mapAdditionalData("{\n"
-                                + "   \"Data\":{\n"
-                                + "      \"appealType\":\"" + "protection" + "\",\n"
-                                + "      \"remissionType\":\"" + "hoWaiverRemission" + "\",\n"
-                                + "      \"appellantInDetention\":\"" + true + "\"\n"
-
-                                + "   }"
-                                + "}"),
-                        List.of(
-                                Map.of(
-                                        "taskId", "detainedReviewTheAppeal",
-                                        "name", "Detained - Review the appeal",
-
-                                        "processCategories", "caseProgression"
-                                ),
-                                Map.of(
-                                        "taskId", "detainedReviewRemissionApplication",
-                                        "name", "Detained - Review Remission Application",
-
-                                        "processCategories", "caseProgression"
-                                )
-                        )
-                ),
             Arguments.of(
-                "submitAppeal",
-                "appealSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "protection" + "\",\n"
-                                      + "      \"remissionType\":\"" + "exceptionalCircumstancesRemission" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                List.of(
-                    Map.of(
-                        "taskId", "reviewTheAppeal",
-                        "name", "Review the appeal",
+                    "requestFeeRemission",
+                    null,
+                    mapAdditionalData("{\n"
+                            + "   \"Data\":{\n"
+                            + "   \"journeyType\":\"" + "aip" + "\",\n"
+                            + "      \"remissionOption\":\"" + "feeWaiverFromHo" + "\"\n"
+                            + "   }"
+                            + "}"),
+                    singletonList(
+                            Map.of(
+                                    "taskId", "reviewHOWaiverRemission",
+                                    "name", "Review HO Waiver remission",
 
-                        "processCategories", "caseProgression"
-                    ),
-                    Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
-
-                        "processCategories", "caseProgression"
+                                    "processCategories", "caseProgression"
+                            )
                     )
-                )
             ),
-                Arguments.of(
-                        "submitAppeal",
-                        "appealSubmitted",
-                        mapAdditionalData("{\n"
-                                + "   \"Data\":{\n"
-                                + "      \"appealType\":\"" + "protection" + "\",\n"
-                                + "      \"remissionType\":\"" + "exceptionalCircumstancesRemission" + "\",\n"
-                                + "      \"appellantInDetention\":\"" + true + "\"\n"
-                                + "   }"
-                                + "}"),
-                        List.of(
-                                Map.of(
-                                        "taskId", "detainedReviewTheAppeal",
-                                        "name", "Detained - Review the appeal",
-
-                                        "processCategories", "caseProgression"
-                                ),
-                                Map.of(
-                                        "taskId", "detainedReviewRemissionApplication",
-                                        "name", "Detained - Review Remission Application",
-
-                                        "processCategories", "caseProgression"
-                                )
-                        )
-                ),
             Arguments.of(
-                "submitAppeal",
-                "appealSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "protection" + "\",\n"
-                                      + "      \"remissionType\":\"" + "helpWithFees" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                List.of(
-                    Map.of(
-                        "taskId", "reviewTheAppeal",
-                        "name", "Review the appeal",
+                    "requestFeeRemission",
+                    null,
+                    mapAdditionalData("{\n"
+                            + "   \"Data\":{\n"
+                            + "   \"journeyType\":\"" + "aip" + "\",\n"
+                            + "      \"remissionOption\":\"" + "feeWaiverFromHo" + "\",\n"
+                            + "      \"appellantInDetention\":\"" + true + "\"\n"
+                            + "   }"
+                            + "}"),
+                    singletonList(
+                            Map.of(
+                                    "taskId", "detainedReviewHOWaiverRemission",
+                                    "name", "Detained - Review HO Waiver remission",
 
-                        "processCategories", "caseProgression"
-                    ),
-                    Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
-
-                        "processCategories", "caseProgression"
+                                    "processCategories", "caseProgression"
+                            )
                     )
-                )
             ),
-                Arguments.of(
-                        "submitAppeal",
-                        "appealSubmitted",
-                        mapAdditionalData("{\n"
-                                + "   \"Data\":{\n"
-                                + "      \"appealType\":\"" + "protection" + "\",\n"
-                                + "      \"remissionType\":\"" + "helpWithFees" + "\",\n"
-                                + "      \"appellantInDetention\":\"" + true + "\"\n"
-
-                                + "   }"
-                                + "}"),
-                        List.of(
-                                Map.of(
-                                        "taskId", "detainedReviewTheAppeal",
-                                        "name", "Detained - Review the appeal",
-
-                                        "processCategories", "caseProgression"
-                                ),
-                                Map.of(
-                                        "taskId", "detainedReviewRemissionApplication",
-                                        "name", "Detained - Review Remission Application",
-
-                                        "processCategories", "caseProgression"
-                                )
-                        )
-                ),
             Arguments.of(
-                "submitAppeal",
-                "appealSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                                      + "      \"remissionType\":\"" + "hoWaiverRemission" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                List.of(
-                    Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
+                    "requestFeeRemission",
+                    null,
+                    mapAdditionalData("{\n"
+                            + "   \"Data\":{\n"
+                            + "   \"journeyType\":\"" + "aip" + "\",\n"
+                            + "      \"remissionOption\":\"" + "parentGetSupportFromLocalAuthority" + "\"\n"
+                            + "   }"
+                            + "}"),
+                    singletonList(
+                            Map.of(
+                                    "taskId", "reviewAuthorityRemission",
+                                    "name", "Review Authority remission",
 
-                        "processCategories", "caseProgression"
+                                    "processCategories", "caseProgression"
+                            )
                     )
-                )
             ),
-                Arguments.of(
-                        "submitAppeal",
-                        "appealSubmitted",
-                        mapAdditionalData("{\n"
-                                + "   \"Data\":{\n"
-                                + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                                + "      \"remissionType\":\"" + "hoWaiverRemission" + "\",\n"
-                                + "      \"appellantInDetention\":\"" + true + "\"\n"
-                                + "   }"
-                                + "}"),
-                        List.of(
-                                Map.of(
-                                        "taskId", "detainedReviewRemissionApplication",
-                                        "name", "Detained - Review Remission Application",
-
-                                        "processCategories", "caseProgression"
-                                )
-                        )
-                ),
             Arguments.of(
-                "submitAppeal",
-                "appealSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                                      + "      \"remissionType\":\"" + "exceptionalCircumstancesRemission" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                List.of(
-                    Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
+                    "requestFeeRemission",
+                    null,
+                    mapAdditionalData("{\n"
+                            + "   \"Data\":{\n"
+                            + "   \"journeyType\":\"" + "aip" + "\",\n"
+                            + "      \"remissionOption\":\"" + "parentGetSupportFromLocalAuthority" + "\",\n"
+                            + "      \"appellantInDetention\":\"" + true + "\"\n"
+                            + "   }"
+                            + "}"),
+                    singletonList(
+                            Map.of(
+                                    "taskId", "detainedReviewAuthorityRemission",
+                                    "name", "Detained - Review Authority remission",
 
-                        "processCategories", "caseProgression"
+                                    "processCategories", "caseProgression"
+                            )
                     )
-                )
             ),
-                Arguments.of(
-                        "submitAppeal",
-                        "appealSubmitted",
-                        mapAdditionalData("{\n"
-                                + "   \"Data\":{\n"
-                                + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                                + "      \"remissionType\":\"" + "exceptionalCircumstancesRemission" + "\",\n"
-                                + "      \"appellantInDetention\":\"" + true + "\"\n"
-
-                                + "   }"
-                                + "}"),
-                        List.of(
-                                Map.of(
-                                        "taskId", "detainedReviewRemissionApplication",
-                                        "name", "Detained - Review Remission Application",
-
-                                        "processCategories", "caseProgression"
-                                )
-                        )
-                ),
             Arguments.of(
-                "submitAppeal",
-                "appealSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                                      + "      \"remissionType\":\"" + "helpWithFees" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                List.of(
-                    Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
+                    "requestFeeRemission",
+                    null,
+                    mapAdditionalData("{\n"
+                            + "   \"Data\":{\n"
+                            + "   \"journeyType\":\"" + "aip" + "\",\n"
+                            + "      \"remissionOption\":\"" + "iWantToGetHelpWithFees" + "\"\n"
+                            + "   }"
+                            + "}"),
+                    singletonList(
+                            Map.of(
+                                    "taskId", "reviewHWFRemission",
+                                    "name", "Review HWF remission",
 
-                        "processCategories", "caseProgression"
+                                    "processCategories", "caseProgression"
+                            )
                     )
-                )
             ),
-                Arguments.of(
-                        "submitAppeal",
-                        "appealSubmitted",
-                        mapAdditionalData("{\n"
-                                + "   \"Data\":{\n"
-                                + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                                + "      \"remissionType\":\"" + "helpWithFees" + "\",\n"
-                                + "      \"appellantInDetention\":\"" + true + "\"\n"
-                                + "   }"
-                                + "}"),
-                        List.of(
-                                Map.of(
-                                        "taskId", "detainedReviewRemissionApplication",
-                                        "name", "Detained - Review Remission Application",
-
-                                        "processCategories", "caseProgression"
-                                )
-                        )
-                ),
             Arguments.of(
-                "requestFeeRemission",
-                null,
-                null,
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
+                    "requestFeeRemission",
+                    null,
+                    mapAdditionalData("{\n"
+                            + "   \"Data\":{\n"
+                            + "   \"journeyType\":\"" + "aip" + "\",\n"
+                            + "      \"remissionOption\":\"" + "iWantToGetHelpWithFees" + "\",\n"
+                            + "      \"appellantInDetention\":\"" + true + "\"\n"
+                            + "   }"
+                            + "}"),
+                    singletonList(
+                            Map.of(
+                                    "taskId", "detainedReviewHWFRemission",
+                                    "name", "Detained - Review HWF remission",
 
-                        "processCategories", "caseProgression"
+                                    "processCategories", "caseProgression"
+                            )
                     )
-                )
             ),
-                Arguments.of(
-                        "requestFeeRemission",
-                        null,
-                        appellantInDetention,
-                        singletonList(
-                                Map.of(
-                                        "taskId", "detainedReviewRemissionApplication",
-                                        "name", "Detained - Review Remission Application",
-
-                                        "processCategories", "caseProgression"
-                                )
-                        )
-                ),
             Arguments.of(
-                "requestFeeRemission",
-                null,
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"journeyType\":\"" + "aip" + "\",\n"
-                                      + "   }"
-                                      + "}"),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
+                    "requestFeeRemission",
+                    null,
+                    mapAdditionalData("{\n"
+                            + "   \"Data\":{\n"
+                            + "      \"remissionClaim\":\"" + "legalAid" + "\"\n"
+                            + "   }"
+                            + "}"),
+                    singletonList(
+                            Map.of(
+                                    "taskId", "reviewLARemission",
+                                    "name", "Review LA remission",
 
-                        "processCategories", "caseProgression"
+                                    "processCategories", "caseProgression"
+                            )
                     )
-                )
+            ),
+            Arguments.of(
+                    "requestFeeRemission",
+                    null,
+                    mapAdditionalData("{\n"
+                            + "   \"Data\":{\n"
+                            + "      \"remissionClaim\":\"" + "legalAid" + "\",\n"
+                            + "      \"appellantInDetention\":\"" + true + "\"\n"
+                            + "   }"
+                            + "}"),
+                    singletonList(
+                            Map.of(
+                                    "taskId", "detainedReviewLARemission",
+                                    "name", "Detained - Review LA remission",
+
+                                    "processCategories", "caseProgression"
+                            )
+                    )
+            ),
+            Arguments.of(
+                    "requestFeeRemission",
+                    null,
+                    mapAdditionalData("{\n"
+                            + "   \"Data\":{\n"
+                            + "      \"remissionClaim\":\"" + "section20" + "\"\n"
+                            + "   }"
+                            + "}"),
+                    singletonList(
+                            Map.of(
+                                    "taskId", "reviewAuthorityRemission",
+                                    "name", "Review Authority remission",
+
+                                    "processCategories", "caseProgression"
+                            )
+                    )
+            ),
+            Arguments.of(
+                    "requestFeeRemission",
+                    null,
+                    mapAdditionalData("{\n"
+                            + "   \"Data\":{\n"
+                            + "      \"remissionClaim\":\"" + "section20" + "\",\n"
+                            + "      \"appellantInDetention\":\"" + true + "\"\n"
+                            + "   }"
+                            + "}"),
+                    singletonList(
+                            Map.of(
+                                    "taskId", "detainedReviewAuthorityRemission",
+                                    "name", "Detained - Review Authority remission",
+
+                                    "processCategories", "caseProgression"
+                            )
+                    )
             ),
             Arguments.of(
                 "reviewHearingRequirements",
@@ -3667,8 +3505,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       + "}"),
                 List.of(
                     Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
+                        "taskId", "reviewHWFRemission",
+                        "name", "Review HWF remission",
 
                         "processCategories", "caseProgression"
                     )
@@ -3691,8 +3529,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "processCategories", "caseProgression"
                     ),
                     Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
+                        "taskId", "reviewECRRemission",
+                        "name", "Review ECR remission",
 
                         "processCategories", "caseProgression"
                     )
@@ -3715,8 +3553,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "processCategories", "caseProgression"
                     ),
                     Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
+                        "taskId", "reviewHWFRemission",
+                        "name", "Review HWF remission",
 
                         "processCategories", "caseProgression"
                     )
@@ -3728,7 +3566,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
                                       + "      \"appealType\":\"" + "protection" + "\",\n"
-                                      + "      \"remissionType\":\"" + "hoWaiverRemission" + "\"\n"
+                                      + "      \"remissionClaim\":\"" + "homeOfficeWaiver" + "\"\n"
                                       + "   }"
                                       + "}"),
                 List.of(
@@ -3739,8 +3577,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "processCategories", "caseProgression"
                     ),
                     Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
+                        "taskId", "reviewHOWaiverRemission",
+                        "name", "Review HO Waiver remission",
 
                         "processCategories", "caseProgression"
                     )
@@ -3763,8 +3601,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "processCategories", "caseProgression"
                     ),
                     Map.of(
-                        "taskId", "reviewRemissionApplication",
-                        "name", "Review Remission Application",
+                        "taskId", "reviewECRRemission",
+                        "name", "Review ECR remission",
 
                         "processCategories", "caseProgression"
                     )
@@ -4453,9 +4291,9 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getInputs().size(), is(28));
+        assertThat(logic.getInputs().size(), is(29));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(165));
+        assertThat(logic.getRules().size(), is(199));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {
