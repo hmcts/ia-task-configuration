@@ -398,6 +398,63 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "migrateCase",
+                "appealSubmitted",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
+                                      + "      \"journeyType\":\"" + "aip" + "\",\n"
+                                      + "      \"paymentStatus\":\"" + "Paid" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewTheAppeal",
+                        "name", "Review the appeal",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "migrateCase",
+                "appealSubmitted",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "refusalOfEu" + "\",\n"
+                                      + "      \"journeyType\":\"" + "aip" + "\",\n"
+                                      + "      \"paymentStatus\":\"" + "Paid" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewTheAppeal",
+                        "name", "Review the appeal",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "migrateCase",
+                "appealSubmitted",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
+                                      + "      \"journeyType\":\"" + "aip" + "\",\n"
+                                      + "      \"paymentStatus\":\"" + "Paid" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewTheAppeal",
+                        "name", "Review the appeal",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
                 "payAndSubmitAppeal",
                 "appealSubmitted",
                 mapAdditionalData("{\n"
