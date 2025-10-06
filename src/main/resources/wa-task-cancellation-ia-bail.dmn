@@ -159,6 +159,29 @@
           <text></text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1ucz80w">
+        <inputEntry id="UnaryTests_0doxqnf">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10agxjc">
+          <text>"uploadBailSummary"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04pykrg">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0eyh6de">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0elp0u5">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1yqdecg">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1iqd133">
+          <text>"followUpOverdue"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
