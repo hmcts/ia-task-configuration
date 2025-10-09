@@ -273,7 +273,7 @@ else null</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_06vgm9q">
           <text>{
-"delayUntil": additionalData.Data.listingHearingDate,
+"delayUntil": additionalData.Data.bailSummaryDueDate,
 "delayUntilIntervalDays": "0"
 }</text>
         </outputEntry>
