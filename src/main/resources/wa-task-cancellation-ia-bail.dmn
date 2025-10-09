@@ -182,6 +182,29 @@
           <text>"followUpOverdue"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0pdohc2">
+        <inputEntry id="UnaryTests_1fassfs">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1e4hn3m">
+          <text>"updateBailLegalRepDetails"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17ki4zs">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0890lwi">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_19gu4ih">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ayn2h8">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1nyoj5q">
+          <text>"followUpNoc"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

@@ -31,17 +31,6 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0qf355j">
-        <inputEntry id="UnaryTests_07wd5uf">
-          <text>"updateBailLegalRepDetails"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0htb4bi">
-          <text>"noticeOfChange"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0n95hzn">
-          <text>"Auto"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_0hgh0v1">
         <inputEntry id="UnaryTests_0vsfw2y">
           <text>"uploadSignedDecisionNotice"</text>
