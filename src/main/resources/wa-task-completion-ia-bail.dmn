@@ -42,17 +42,6 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0usa6bx">
-        <inputEntry id="UnaryTests_0dlyhoi">
-          <text>"uploadBailSummary"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1dmtdog">
-          <text>"followUpBailSummary"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0b5df0g">
-          <text>"Auto"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_0hgh0v1">
         <inputEntry id="UnaryTests_0vsfw2y">
           <text>"uploadSignedDecisionNotice"</text>
