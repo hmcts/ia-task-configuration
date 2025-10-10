@@ -92,7 +92,7 @@ else null</text>
       <output id="OutputClause_10rno4c" label="Process Categories Identifiers" name="processCategories" typeRef="string" biodi:width="268" />
       <rule id="DecisionRule_1fenvxm">
         <inputEntry id="UnaryTests_09nq8bu">
-          <text>"submitApplication"</text>
+          <text>"submitApplication","makeNewApplication"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0aldx9i">
           <text></text>
