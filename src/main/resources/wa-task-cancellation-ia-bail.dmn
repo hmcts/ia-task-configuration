@@ -205,6 +205,29 @@
           <text>"followUpNoc"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0wj61rd">
+        <inputEntry id="UnaryTests_19k2pyh">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06pxn11">
+          <text>"hearingCompleted"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1nc932q">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1bu6zec">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ryvfom">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1xk6wsm">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0rqhd60">
+          <text>"followUpPostHearingTasks"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

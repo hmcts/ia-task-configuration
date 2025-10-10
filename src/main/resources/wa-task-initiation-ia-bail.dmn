@@ -516,7 +516,7 @@ else null</text>
 }</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0ulphro">
-          <text>"caseProgression"</text>
+          <text>"followUpPostHearingTasks"</text>
         </outputEntry>
       </rule>
     </decisionTable>
