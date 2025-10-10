@@ -210,7 +210,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_06pxn11">
-          <text>"hearingCompleted","uploadHearingRecording"</text>
+          <text>"hearingCompletedOrCancelled","uploadHearingRecording"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1nc932q">
           <text></text>
