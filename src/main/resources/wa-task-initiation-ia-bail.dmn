@@ -31,59 +31,23 @@ else false</text>
       </input>
       <input id="InputClause_0k8flip" label="Last file uploaded by" camunda:inputVariable="lastFileUploadedBy">
         <inputExpression id="LiteralExpression_0g29hou" typeRef="string">
-          <text>if (additionalData != null and additionalData.Data != null)
+          <text>if (additionalData != null and additionalData.Data != null and additionalData.Data.lastFileUploadedBy != null)
 then additionalData.Data.lastFileUploadedBy
 else ""</text>
         </inputExpression>
       </input>
       <input id="InputClause_0yx9m1t" label="Listing Event" camunda:inputVariable="listingEvent">
         <inputExpression id="LiteralExpression_1fg845k" typeRef="string">
-          <text>if (additionalData != null and additionalData.Data != null)
+          <text>if (additionalData != null and additionalData.Data != null and additionalData.Data.listingEvent != null)
 then additionalData.Data.listingEvent
 else null</text>
         </inputExpression>
       </input>
       <input id="InputClause_19kq3zf" label="Record Decision Type" camunda:inputVariable="recordDecisionType">
         <inputExpression id="LiteralExpression_1xxrq3p" typeRef="string">
-          <text>if (additionalData != null and additionalData.Data != null)
+          <text>if (additionalData != null and additionalData.Data != null and additionalData.Data.recordDecisionType != null)
 then additionalData.Data.recordDecisionType
 else null</text>
-        </inputExpression>
-      </input>
-      <input id="InputClause_1fkhlxd" label="Relist Case Immedialtely" camunda:inputVariable="relistCaseImmediately ">
-        <inputExpression id="LiteralExpression_1h0w5in" typeRef="boolean">
-          <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.relistCaseImmediately
-            != null and additionalData.Data.relistCaseImmediately = "Yes") then
-            true
-            else
-            false</text>
-        </inputExpression>
-      </input>
-      <input id="InputClause_0jk7k9d" label="List Case Hearing Centre" camunda:inputVariable="listCaseHearingCentre">
-        <inputExpression id="LiteralExpression_02qa9fn" typeRef="string">
-          <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.listCaseHearingCentre
-            != null) then
-            additionalData.Data.listCaseHearingCentre
-            else
-            null</text>
-        </inputExpression>
-      </input>
-      <input id="InputClause_1mgvvu3" label="Last modified application applicant role" camunda:inputVariable="lastModifiedApplicationApplicant">
-        <inputExpression id="LiteralExpression_11wrx0v" typeRef="string">
-          <text>if(additionalData != null and additionalData.Data != null and
-            additionalData.Data.lastModifiedApplication != null) then
-            additionalData.Data.lastModifiedApplication.applicant
-            else
-            null</text>
-        </inputExpression>
-      </input>
-      <input id="InputClause_0c3am0h" label="Reviewed Hearing Requirements" biodi:width="390" camunda:inputVariable="reviewedHearingRequirements">
-        <inputExpression id="LiteralExpression_10ob503" typeRef="boolean">
-          <text>if(additionalData != null and additionalData.Data != null and additionalData.Data.reviewedHearingRequirements
-            != null) then
-            additionalData.Data.reviewedHearingRequirements
-            else
-            false</text>
         </inputExpression>
       </input>
       <output id="Output_1" label="Task Id" name="taskId" typeRef="string" biodi:width="368" />
@@ -110,18 +74,6 @@ else null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1uwss2j">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1qttqmb">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0gq0sp9">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_13wmu4c">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0c50kaw">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0tbxmk0">
@@ -159,18 +111,6 @@ else null</text>
         <inputEntry id="UnaryTests_0hf2rvh">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_0arqh30">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1h8bzcc">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1w792w3">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0lrkfan">
-          <text></text>
-        </inputEntry>
         <outputEntry id="LiteralExpression_1a2npxt">
           <text>"reviewInterpreterFlag"</text>
         </outputEntry>
@@ -206,18 +146,6 @@ else null</text>
         <inputEntry id="UnaryTests_0rvro0g">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_1c4psda">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0pzljco">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1yzi26g">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1iiqabj">
-          <text></text>
-        </inputEntry>
         <outputEntry id="LiteralExpression_1ruhcex">
           <text>"noticeOfChange"</text>
         </outputEntry>
@@ -251,18 +179,6 @@ else null</text>
           <text>"initialListing"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1aucv3o">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1f7xjze">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_09mktyv">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0bjzf3y">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_137xpmr">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1k5x8ly">
@@ -303,18 +219,6 @@ else null</text>
         <inputEntry id="UnaryTests_05tfypq">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_1nhd5lj">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_01geyra">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_18bnws4">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_05osp5z">
-          <text></text>
-        </inputEntry>
         <outputEntry id="LiteralExpression_19mxggn">
           <text>"reviewAdditionalEvidence"</text>
         </outputEntry>
@@ -348,18 +252,6 @@ else null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1789mjv">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1x29ali">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0m84cmt">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_086zmdu">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_12cmbeh">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1tcx8po">
@@ -397,18 +289,6 @@ else null</text>
         <inputEntry id="UnaryTests_0vozyyn">
           <text>"conditionalGrant"</text>
         </inputEntry>
-        <inputEntry id="UnaryTests_1uad91i">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1sr6yxb">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1hwoio8">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1vmms27">
-          <text></text>
-        </inputEntry>
         <outputEntry id="LiteralExpression_0jqgcgt">
           <text>"listForFurtherReview"</text>
         </outputEntry>
@@ -444,18 +324,6 @@ else null</text>
         <inputEntry id="UnaryTests_05djqdh">
           <text></text>
         </inputEntry>
-        <inputEntry id="UnaryTests_1yen7bm">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0f1ye4w">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0e0h8fa">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_19p9azw">
-          <text></text>
-        </inputEntry>
         <outputEntry id="LiteralExpression_0eifw4n">
           <text>"processBailApplication"</text>
         </outputEntry>
@@ -489,18 +357,6 @@ else null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1ggqlq0">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0n3o0az">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1qi789z">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_07bp4i9">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1ejbn00">
           <text></text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0y1lj69">

@@ -1,17 +1,5 @@
 package uk.gov.hmcts.reform.iataskconfiguration.dmn;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static uk.gov.hmcts.reform.iataskconfiguration.DmnDecisionTable.WA_TASK_CONFIGURATION_IA_BAIL;
-
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.UUID;
-import java.util.stream.Stream;
 import org.camunda.bpm.dmn.engine.DmnDecisionTableResult;
 import org.camunda.bpm.dmn.engine.impl.DmnDecisionTableImpl;
 import org.camunda.bpm.engine.variable.VariableMap;
@@ -23,6 +11,20 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.MethodSource;
 import uk.gov.hmcts.reform.iataskconfiguration.DmnDecisionTableBaseUnitTest;
+
+import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.UUID;
+import java.util.stream.Stream;
+
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static uk.gov.hmcts.reform.iataskconfiguration.DmnDecisionTable.WA_TASK_CONFIGURATION_IA_BAIL;
 
 class CamundaTaskBailConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
@@ -39,11 +41,11 @@ class CamundaTaskBailConfigurationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(16));
+        assertThat(logic.getRules().size(), is(17));
     }
 
     @Test
-    void when_case_data_then_return_case_name() {
+    void when_case_data_name_then_return_case_name() {
         String randomString = UUID.randomUUID().toString();
         VariableMap inputVariables = new VariableMapImpl();
         Map<String, Object> caseData = new HashMap<>(); // allow null values
@@ -59,6 +61,88 @@ class CamundaTaskBailConfigurationTest extends DmnDecisionTableBaseUnitTest {
         )));
     }
 
+    @Test
+    void when_case_data_name_null_then_return_empty() {
+        VariableMap inputVariables = new VariableMapImpl();
+        Map<String, Object> caseData = new HashMap<>(); // allow null values
+        inputVariables.putValue("caseData", caseData);
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        assertTrue(dmnDecisionTableResult.getResultList().contains(Map.of(
+            "name", "caseName",
+            "value", "",
+            "canReconfigure", true
+        )));
+    }
+
+    @Test
+    void when_case_data_next_hearing_details_then_return_Id_and_date() {
+        String randomString = UUID.randomUUID().toString();
+        LocalDateTime now = LocalDateTime.now();
+        Map<String, Object> nextHearingDetails = new HashMap<>();
+        nextHearingDetails.put("hearingID", randomString);
+        nextHearingDetails.put("hearingDateTime", now);
+        Map<String, Object> caseData = new HashMap<>(); // allow null values
+        caseData.put("nextHearingDetails", nextHearingDetails);
+        VariableMap inputVariables = new VariableMapImpl();
+        inputVariables.putValue("caseData", caseData);
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        assertTrue(dmnDecisionTableResult.getResultList().contains(Map.of(
+            "name", "nextHearingId",
+            "value", randomString,
+            "canReconfigure", true
+        )));
+        assertTrue(dmnDecisionTableResult.getResultList().contains(Map.of(
+            "name", "nextHearingDate",
+            "value", now.toString(),
+            "canReconfigure", true
+        )));
+    }
+
+    @Test
+    void when_case_data_next_hearing_details_null_fields_then_return_empty() {
+        VariableMap inputVariables = new VariableMapImpl();
+        Map<String, Object> caseData = new HashMap<>(); // allow null values
+        caseData.put("nextHearingDetails", new HashMap<>());
+        inputVariables.putValue("caseData", caseData);
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        assertTrue(dmnDecisionTableResult.getResultList().contains(Map.of(
+            "name", "nextHearingId",
+            "value", "",
+            "canReconfigure", true
+        )));
+        assertTrue(dmnDecisionTableResult.getResultList().contains(Map.of(
+            "name", "nextHearingDate",
+            "value", "",
+            "canReconfigure", true
+        )));
+    }
+
+    @Test
+    void when_case_data_next_hearing_details_null_value_then_return_empty() {
+        VariableMap inputVariables = new VariableMapImpl();
+        Map<String, Object> caseData = new HashMap<>(); // allow null values
+        inputVariables.putValue("caseData", caseData);
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        assertTrue(dmnDecisionTableResult.getResultList().contains(Map.of(
+            "name", "nextHearingId",
+            "value", "",
+            "canReconfigure", true
+        )));
+        assertTrue(dmnDecisionTableResult.getResultList().contains(Map.of(
+            "name", "nextHearingDate",
+            "value", "",
+            "canReconfigure", true
+        )));
+    }
+
     @ParameterizedTest
     @CsvSource(value = {
         "someRegion, someEpimmsId, someLocationName",
@@ -67,13 +151,13 @@ class CamundaTaskBailConfigurationTest extends DmnDecisionTableBaseUnitTest {
     void when_case_data_caseManagementLocation_then_return_fields(String region,
                                                                   String baseLocationCode,
                                                                   String baseLocationLabel) {
-        VariableMap inputVariables = new VariableMapImpl();
-        Map<String, Object> caseData = new HashMap<>(); // allow null values
         Map<String, Object> caseManagementLocation = new HashMap<>(); // allow null values
         caseManagementLocation.put("region", region);
         caseManagementLocation.put("baseLocationCode", baseLocationCode);
         caseManagementLocation.put("baseLocationLabel", baseLocationLabel);
+        Map<String, Object> caseData = new HashMap<>(); // allow null values
         caseData.put("caseManagementLocation", caseManagementLocation);
+        VariableMap inputVariables = new VariableMapImpl();
         inputVariables.putValue("caseData", caseData);
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
@@ -123,7 +207,7 @@ class CamundaTaskBailConfigurationTest extends DmnDecisionTableBaseUnitTest {
     @Test
     void when_task_type_then_sets_work_type_and_role_category() {
         VariableMap inputVariables = new VariableMapImpl();
-        inputVariables.putValue("taskType", "testTask");
+        inputVariables.putValue("taskType", "processBailApplication");
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
         assertTrue(dmnDecisionTableResult.getResultList().contains(Map.of(
@@ -134,12 +218,7 @@ class CamundaTaskBailConfigurationTest extends DmnDecisionTableBaseUnitTest {
         assertTrue(dmnDecisionTableResult.getResultList().contains(Map.of(
             "name", "roleCategory",
             "value", "ADMIN",
-            "canReconfigure", false
-        )));
-        assertTrue(dmnDecisionTableResult.getResultList().contains(Map.of(
-            "name", "roleCategory",
-            "value", "JUDICIAL",
-            "canReconfigure", false
+            "canReconfigure", true
         )));
     }
 
@@ -216,7 +295,10 @@ class CamundaTaskBailConfigurationTest extends DmnDecisionTableBaseUnitTest {
         assertTrue(dmnDecisionTableResultList
                        .contains(nameValueMap("dueDateNonWorkingDaysOfWeek", "SATURDAY,SUNDAY", false)));
         assertTrue(dmnDecisionTableResultList
-                       .contains(nameValueMap("calculatedDates", "dueDate,priorityDate", false)));
+                       .contains(nameValueMap("calculatedDates", "nextHearingDate,dueDate,priorityDate", false)));
+        assertTrue(dmnDecisionTableResult.getResultList()
+                       .contains(Map.of("name", "caseManagementCategory", "value", "Bail", "canReconfigure", false
+        )));
 
     }
 
@@ -231,8 +313,36 @@ class CamundaTaskBailConfigurationTest extends DmnDecisionTableBaseUnitTest {
     public static Stream<Arguments> workTypeScenarioProvider() {
         return Stream.of(
             Arguments.of(
-                "testTask",
-                "[Edit Bail Documents](/case/IA/Bail/${[CASE_REFERENCE]}/trigger/editBailDocuments)"
+                "processBailApplication",
+                "[Confirm location](/case/IA/Bail/${[CASE_REFERENCE]}/trigger/confirmDetentionLocation)"
+            ),
+            Arguments.of(
+                "reviewInterpreterFlag",
+                "[Update interpreter status](/case/IA/Bail/${[CASE_REFERENCE]}/trigger/updateInterpreterBookingStatus)"
+            ),
+            Arguments.of(
+                "noticeOfChange",
+                "Follow up with applicant"
+            ),
+            Arguments.of(
+                "followUpBailSummary",
+                "[Send direction](/case/IA/Bail/${[CASE_REFERENCE]}/trigger/sendBailDirection) if required"
+            ),
+            Arguments.of(
+                "reviewAdditionalEvidence",
+                "Review additional evidence"
+            ),
+            Arguments.of(
+                "uploadSignedDecision",
+                "[Upload Signed Decision](/case/IA/Bail/${[CASE_REFERENCE]}/trigger/uploadSignedDecisionNotice)"
+            ),
+            Arguments.of(
+                "listForFurtherReview",
+                "[Relist the case](/case/IA/Bail/${[CASE_REFERENCE]}/hearings)"
+            ),
+            Arguments.of(
+                "postHearingRecord",
+                "[Add hearing details](/case/IA/Bail/${[CASE_REFERENCE]}/hearings)"
             ),
             Arguments.of(
                 "unknownTask",
