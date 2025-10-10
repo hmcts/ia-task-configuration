@@ -55,7 +55,7 @@
       </rule>
       <rule id="DecisionRule_15wrkvo">
         <inputEntry id="UnaryTests_0so3zr7">
-          <text>"hearingCompleted"</text>
+          <text>"uploadHearingRecording"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_03lz71v">
           <text>"postHearingRecord"</text>
@@ -66,7 +66,7 @@
       </rule>
       <rule id="DecisionRule_0n3sv5h">
         <inputEntry id="UnaryTests_0hp3dyk">
-          <text>"confirmDetentionLocation","updateInterpreterBookingStatus","updateBailLegalRepDetails","uploadBailSummary","uploadSignedDecisionNotice","caseListing","hearingCompleted"</text>
+          <text>"confirmDetentionLocation","updateInterpreterBookingStatus","updateBailLegalRepDetails","uploadBailSummary","uploadSignedDecisionNotice","caseListing","uploadHearingRecording"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_01y2icz">
           <text></text>

@@ -24,14 +24,14 @@
       </input>
       <input id="InputClause_15dhd3c" label="Has Active Interpreter Flag" biodi:width="267" camunda:inputVariable="hasActiveInterpreterFlag">
         <inputExpression id="LiteralExpression_00shf3r" typeRef="boolean">
-          <text>if (additionalData != null and additionalData.Data != null and additionalData.Data.hasActiveInterpreterFlag != null) 
+          <text>if (additionalData != null and additionalData.Data != null and additionalData.Data.hasActiveInterpreterFlag != null)
 then additionalData.Data.hasActiveInterpreterFlag
 else false</text>
         </inputExpression>
       </input>
-      <input id="InputClause_0k8flip" label="Current User" camunda:inputVariable="lastFileUploadedBy">
+      <input id="InputClause_0k8flip" label="Last file uploaded by" camunda:inputVariable="lastFileUploadedBy">
         <inputExpression id="LiteralExpression_0g29hou" typeRef="string">
-          <text>if (additionalData != null and additionalData.Data != null) 
+          <text>if (additionalData != null and additionalData.Data != null)
 then additionalData.Data.lastFileUploadedBy
 else ""</text>
         </inputExpression>
