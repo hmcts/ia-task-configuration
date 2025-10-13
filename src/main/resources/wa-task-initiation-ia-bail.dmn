@@ -197,6 +197,44 @@ else null</text>
           <text>"followUpOverdue"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_01yya3i">
+        <inputEntry id="UnaryTests_19hd5xg">
+          <text>"caseListing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qpf1yn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0s7cd2j">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1alx32b">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zrfppp">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0w3tpf7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07ovbjc">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0wzef9x">
+          <text>"postHearingRecord"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1gmbly4">
+          <text>"Post hearing – attendees, duration and recording"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0okqn2z">
+          <text>{
+"delayUntil": additionalData.Data.listingHearingDate,
+"delayUntilIntervalDays": "0"
+}</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_11m5neb">
+          <text>"followUpPostHearingTasks"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0b6grt0">
         <inputEntry id="UnaryTests_1tayejm">
           <text>"uploadDocuments"</text>
@@ -335,44 +373,6 @@ else null</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1aqcsrx">
           <text>"caseProgression"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_18f9kki">
-        <inputEntry id="UnaryTests_19ayz75">
-          <text>"caseListing"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0gtmh6z">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1c2zjwu">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_16k5rvx">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0yodaol">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0ayoibq">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1ggqlq0">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0y1lj69">
-          <text>"postHearingRecord"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_03x6flb">
-          <text>"Post hearing – attendees, duration and recording"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1lyqzmz">
-          <text>{
-"delayUntil": additionalData.Data.listingHearingDate,
-"delayUntilIntervalDays": "0"
-}</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0ulphro">
-          <text>"followUpPostHearingTasks"</text>
         </outputEntry>
       </rule>
     </decisionTable>
