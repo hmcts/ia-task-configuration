@@ -622,12 +622,13 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "submitAppeal",
+                "migrateCase",
                 "appealSubmitted",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "protection" + "\",\n"
-                                      + "      \"journeyType\":\"" + "aip" + "\"\n"
+                                      + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
+                                      + "      \"journeyType\":\"" + "aip" + "\",\n"
+                                      + "      \"paymentStatus\":\"" + "Paid" + "\"\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
@@ -640,11 +641,32 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "submitAppeal",
+                "migrateCase",
                 "appealSubmitted",
                 mapAdditionalData("{\n"
                                       + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "protection" + "\"\n"
+                                      + "      \"appealType\":\"" + "refusalOfEu" + "\",\n"
+                                      + "      \"journeyType\":\"" + "aip" + "\",\n"
+                                      + "      \"paymentStatus\":\"" + "Paid" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewTheAppeal",
+                        "name", "Review the appeal",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "migrateCase",
+                "appealSubmitted",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
+                                      + "      \"journeyType\":\"" + "aip" + "\",\n"
+                                      + "      \"paymentStatus\":\"" + "Paid" + "\"\n"
                                       + "   }"
                                       + "}"),
                 singletonList(
