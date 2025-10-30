@@ -360,78 +360,78 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "printAndSendHoBundle",
                 List.of(
-                    ctscAdminPriorityOne,
-                    taskSupervisor
+                    taskSupervisor,
+                    ctscAdminPriorityOne
                 )
             ),
             Arguments.of(
                 "printAndSendHoResponse",
                 List.of(
-                    ctscAdminPriorityOne,
-                    taskSupervisor
+                    taskSupervisor,
+                    ctscAdminPriorityOne
                 )
             ),
             Arguments.of(
                 "printAndSendHearingRequirements",
                 List.of(
-                    ctscAdminPriorityOne,
-                    taskSupervisor
+                    taskSupervisor,
+                    ctscAdminPriorityOne
                 )
             ),
             Arguments.of(
                 "printAndSendHearingBundle",
                 List.of(
-                    ctscAdminPriorityOne,
-                    taskSupervisor
+                    taskSupervisor,
+                    ctscAdminPriorityOne
                 )
             ),
             Arguments.of(
                 "printAndSendDecisionCorrectedRule31",
                 List.of(
-                    ctscAdminPriorityOne,
-                    taskSupervisor
+                    taskSupervisor,
+                    ctscAdminPriorityOne
                 )
             ),
             Arguments.of(
                 "printAndSendDecisionCorrectedRule32",
                 List.of(
-                    ctscAdminPriorityOne,
-                    taskSupervisor
+                    taskSupervisor,
+                    ctscAdminPriorityOne
                 )
             ),
             Arguments.of(
                 "printAndSendHoApplication",
                 List.of(
-                    ctscAdminPriorityOne,
-                    taskSupervisor
+                    taskSupervisor,
+                    ctscAdminPriorityOne
                 )
             ),
             Arguments.of(
                 "printAndSendHoEvidence",
                 List.of(
-                    ctscAdminPriorityOne,
-                    taskSupervisor
+                    taskSupervisor,
+                    ctscAdminPriorityOne
                 )
             ),
             Arguments.of(
                 "printAndSendAppealDecision",
                 List.of(
-                    ctscAdminPriorityOne,
-                    taskSupervisor
+                    taskSupervisor,
+                    ctscAdminPriorityOne
                 )
             ),
             Arguments.of(
                 "printAndSendFTPADecision",
                 List.of(
-                    ctscAdminPriorityOne,
-                    taskSupervisor
+                    taskSupervisor,
+                    ctscAdminPriorityOne
                 )
             ),
             Arguments.of(
                 "printAndSendReheardHearingRequirements",
                 List.of(
-                    ctscAdminPriorityOne,
-                    taskSupervisor
+                    taskSupervisor,
+                    ctscAdminPriorityOne
                 )
             )
         );
