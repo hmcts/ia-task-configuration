@@ -634,8 +634,10 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "printAndSendHoBundle",
                 List.of(
                     taskSupervisor,
+                    ctscTeamLeaderPriorityOne,
                     ctscAdminPriorityOne,
-                    ctscTeamLeaderPriorityOne
+                    nationalBusinessCentreAdminPriorityOne
+
                 )
             ),
             Arguments.of(
@@ -650,13 +652,18 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "printAndSendHoResponse",
                 List.of(
                     taskSupervisor,
-                    ctscAdminPriorityOne
+                    ctscTeamLeaderPriorityOne,
+                    ctscAdminPriorityOne,
+                    nationalBusinessCentreAdminPriorityOne
                 )
             ),
             Arguments.of(
                 "printAndSendHearingRequirements",
                 List.of(
-                    ctscAdminPriorityOne
+                    taskSupervisor,
+                    ctscTeamLeaderPriorityOne,
+                    ctscAdminPriorityOne,
+                    nationalBusinessCentreAdminPriorityOne
                 )
             ),
             Arguments.of(
@@ -670,7 +677,10 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "printAndSendHearingBundle",
                 List.of(
-                    ctscAdminPriorityOne
+                    taskSupervisor,
+                    ctscTeamLeaderPriorityOne,
+                    ctscAdminPriorityOne,
+                    nationalBusinessCentreAdminPriorityOne
                 )
             ),
             Arguments.of(
@@ -684,7 +694,10 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "printAndSendDecisionCorrectedRule31",
                 List.of(
-                    ctscAdminPriorityOne
+                    taskSupervisor,
+                    ctscAdminPriorityOne,
+                    ctscTeamLeaderPriorityOne,
+                    nationalBusinessCentreAdminPriorityOne
                 )
             ),
             Arguments.of(
@@ -698,7 +711,10 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "printAndSendDecisionCorrectedRule32",
                 List.of(
-                    ctscAdminPriorityOne
+                    taskSupervisor,
+                    ctscAdminPriorityOne,
+                    ctscTeamLeaderPriorityOne,
+                    nationalBusinessCentreAdminPriorityOne
                 )
             ),
             Arguments.of(
@@ -712,7 +728,10 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "printAndSendHoApplication",
                 List.of(
-                    ctscAdminPriorityOne
+                    taskSupervisor,
+                    ctscTeamLeaderPriorityOne,
+                    ctscAdminPriorityOne,
+                    nationalBusinessCentreAdminPriorityOne
 
                 )
             ),
@@ -727,7 +746,10 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "printAndSendHoEvidence",
                 List.of(
-                    ctscAdminPriorityOne
+                    taskSupervisor,
+                    ctscAdminPriorityOne,
+                    ctscTeamLeaderPriorityOne,
+                    nationalBusinessCentreAdminPriorityOne
                 )
             ),
             Arguments.of(
@@ -741,7 +763,10 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "printAndSendAppealDecision",
                 List.of(
-                    ctscAdminPriorityOne
+                    taskSupervisor,
+                    ctscAdminPriorityOne,
+                    ctscTeamLeaderPriorityOne,
+                    nationalBusinessCentreAdminPriorityOne
                 )
             ),
             Arguments.of(
@@ -755,7 +780,10 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "printAndSendFTPADecision",
                 List.of(
-                    ctscAdminPriorityOne
+                    taskSupervisor,
+                    ctscAdminPriorityOne,
+                    ctscTeamLeaderPriorityOne,
+                    nationalBusinessCentreAdminPriorityOne
                 )
             ),
             Arguments.of(
@@ -769,7 +797,10 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "printAndSendReheardHearingRequirements",
                 List.of(
-                    ctscAdminPriorityOne
+                    taskSupervisor,
+                    ctscAdminPriorityOne,
+                    ctscTeamLeaderPriorityOne,
+                    nationalBusinessCentreAdminPriorityOne
                 )
             ),
             Arguments.of(
