@@ -635,7 +635,8 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     taskSupervisor,
                     ctscTeamLeaderPriorityOne,
-                    ctscAdminPriorityOne
+                    ctscAdminPriorityOne,
+                    nationalBusinessCentreAdminPriorityOne
 
                 )
             ),
