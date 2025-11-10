@@ -630,16 +630,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     hearingCentreAdminPriorityOne
                 )
             ),
-            Arguments.of(
-                "printAndSendHoBundle",
-                List.of(
-                    taskSupervisor,
-                    ctscTeamLeaderPriorityOne,
-                    ctscAdminPriorityOne,
-                    nationalBusinessCentreAdminPriorityOne
-
-                )
-            ),
+            
             Arguments.of(
                 "detainedPrintAndSendHoBundle",
                 List.of(
