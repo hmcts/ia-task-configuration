@@ -130,10 +130,10 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
     );
 
     private static final Map<String, Serializable> ctscAdminPriorityOne = Map.of(
-        "roleCategory", "CTSC",
         "name", "ctsc",
-        "value", "Read,Own,Claim,Manage,Unassign,Assign,Complete,Cancel",
-        "autoAssignable", false
+        "roleCategory", "CTSC",
+        "autoAssignable", false,
+        "value", "Read,Own,Claim,Manage,Unassign,Assign,Complete,Cancel"
     );
 
     private static final Map<String, Serializable> ctscTeamLeaderPriorityOne = Map.of(
