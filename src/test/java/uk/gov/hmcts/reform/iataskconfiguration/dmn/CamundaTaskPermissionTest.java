@@ -635,8 +635,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     taskSupervisor,
                     ctscTeamLeaderPriorityOne,
-                    ctscAdminPriorityOne,
-                    nationalBusinessCentreAdminPriorityOne
+                    ctscAdminPriorityOne
 
                 )
             ),
@@ -653,8 +652,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     taskSupervisor,
                     ctscTeamLeaderPriorityOne,
-                    ctscAdminPriorityOne,
-                    nationalBusinessCentreAdminPriorityOne
+                    ctscAdminPriorityOne
                 )
             ),
             Arguments.of(
@@ -662,8 +660,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     taskSupervisor,
                     ctscTeamLeaderPriorityOne,
-                    ctscAdminPriorityOne,
-                    nationalBusinessCentreAdminPriorityOne
+                    ctscAdminPriorityOne
                 )
             ),
             Arguments.of(
@@ -679,8 +676,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     taskSupervisor,
                     ctscTeamLeaderPriorityOne,
-                    ctscAdminPriorityOne,
-                    nationalBusinessCentreAdminPriorityOne
+                    ctscAdminPriorityOne
                 )
             ),
             Arguments.of(
@@ -696,8 +692,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     taskSupervisor,
                     ctscAdminPriorityOne,
-                    ctscTeamLeaderPriorityOne,
-                    nationalBusinessCentreAdminPriorityOne
+                    ctscTeamLeaderPriorityOne
                 )
             ),
             Arguments.of(
@@ -713,8 +708,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     taskSupervisor,
                     ctscAdminPriorityOne,
-                    ctscTeamLeaderPriorityOne,
-                    nationalBusinessCentreAdminPriorityOne
+                    ctscTeamLeaderPriorityOne
                 )
             ),
             Arguments.of(
@@ -730,8 +724,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     taskSupervisor,
                     ctscTeamLeaderPriorityOne,
-                    ctscAdminPriorityOne,
-                    nationalBusinessCentreAdminPriorityOne
+                    ctscAdminPriorityOne
 
                 )
             ),
@@ -748,8 +741,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     taskSupervisor,
                     ctscAdminPriorityOne,
-                    ctscTeamLeaderPriorityOne,
-                    nationalBusinessCentreAdminPriorityOne
+                    ctscTeamLeaderPriorityOne
                 )
             ),
             Arguments.of(
@@ -765,8 +757,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     taskSupervisor,
                     ctscAdminPriorityOne,
-                    ctscTeamLeaderPriorityOne,
-                    nationalBusinessCentreAdminPriorityOne
+                    ctscTeamLeaderPriorityOne
                 )
             ),
             Arguments.of(
@@ -782,8 +773,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     taskSupervisor,
                     ctscAdminPriorityOne,
-                    ctscTeamLeaderPriorityOne,
-                    nationalBusinessCentreAdminPriorityOne
+                    ctscTeamLeaderPriorityOne
                 )
             ),
             Arguments.of(
@@ -799,8 +789,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 List.of(
                     taskSupervisor,
                     ctscAdminPriorityOne,
-                    ctscTeamLeaderPriorityOne,
-                    nationalBusinessCentreAdminPriorityOne
+                    ctscTeamLeaderPriorityOne
                 )
             ),
             Arguments.of(
