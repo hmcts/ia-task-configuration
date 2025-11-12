@@ -1,4 +1,4 @@
-#!/bin/bash
+/m#!/bin/bash
 ## Usage: ./camunda-deployment [SERVICE_TOKEN]
 ##
 ## Options:
