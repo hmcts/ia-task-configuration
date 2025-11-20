@@ -4814,7 +4814,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                            String taskId,
                                            String taskName,
                                            boolean appellantInDetention,
-                                           boolean isNotificationTurnedOff ) {
+                                           boolean isNotificationTurnedOff) {
         return Arguments.of(
             "makeAnApplication",
             null,
