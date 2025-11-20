@@ -4996,8 +4996,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     public static Stream<Arguments> addendumScenarioProvider() {
         Map<String, Object> appellantInDetention = mapAdditionalData("{\n"
                                                                  + "   \"Data\":{\n"
-                                                                 + "          \"appellantInDetention\" : \"" + true + "\",\n"
-                                                                 + "          \"isNotificationTurnedOff\" : \"" + false + "\"\n"
+                                                                 + "    \"appellantInDetention\" : \"" + true + "\",\n"
+                                                                 + "    \"isNotificationTurnedOff\" : \"" + false + "\"\n"
                                                                  + "   }\n"
                                                                  + "}");
 
