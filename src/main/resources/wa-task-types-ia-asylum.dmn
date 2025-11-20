@@ -416,17 +416,6 @@
           <text>"Review Respondent Response"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_12u8fnv">
-        <inputEntry id="UnaryTests_0keyo9i">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0db7uaz">
-          <text>"detainedReviewRespondentResponse"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1tie0ah">
-          <text>"Detained - Review Respondent Response"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_1fcz28z">
         <inputEntry id="UnaryTests_1au32gp">
           <text></text>
