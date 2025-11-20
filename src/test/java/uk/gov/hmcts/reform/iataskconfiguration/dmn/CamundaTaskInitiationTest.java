@@ -535,6 +535,48 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                             )
                     )
             ),
+            Arguments.of(
+                "submitAppeal",
+                "pendingPayment",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"journeyType\":\"" + "aip" + "\",\n"
+                                      + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
+                                      + "      \"remissionOption\":\"" + "noneOfTheseStatements" + "\",\n"
+                                      + "      \"helpWithFeesOption\":\"" + "alreadyApplied" + "\",\n"
+                                      + "      \"appellantInDetention\":\"" + "false" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewHWFRemission",
+                        "name", "Review HWF remission",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "submitAppeal",
+                "pendingPayment",
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"journeyType\":\"" + "aip" + "\",\n"
+                                      + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
+                                      + "      \"remissionOption\":\"" + "noneOfTheseStatements" + "\",\n"
+                                      + "      \"helpWithFeesOption\":\"" + "wantToApply" + "\",\n"
+                                      + "      \"appellantInDetention\":\"" + "true" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedReviewHWFRemission",
+                        "name", "Detained - Review HWF remission",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
                 Arguments.of(
                         "submitAppeal",
                         "pendingPayment",
@@ -2668,6 +2710,44 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                     "processCategories", "caseProgression"
                             )
                     )
+            ),
+            Arguments.of(
+                "requestFeeRemission",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "   \"journeyType\":\"" + "aip" + "\",\n"
+                                      + "      \"remissionOption\":\"" + "noneOfTheseStatements" + "\",\n"
+                                      + "      \"helpWithFeesOption\":\"" + "wantToApply" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewHWFRemission",
+                        "name", "Review HWF remission",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "requestFeeRemission",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "   \"journeyType\":\"" + "aip" + "\",\n"
+                                      + "      \"remissionOption\":\"" + "noneOfTheseStatements" + "\",\n"
+                                      + "      \"helpWithFeesOption\":\"" + "alreadyApplied" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "reviewHWFRemission",
+                        "name", "Review HWF remission",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
             ),
             Arguments.of(
                     "requestFeeRemission",
@@ -4882,9 +4962,9 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getInputs().size(), is(30));
+        assertThat(logic.getInputs().size(), is(31));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(195));
+        assertThat(logic.getRules().size(), is(199));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {
