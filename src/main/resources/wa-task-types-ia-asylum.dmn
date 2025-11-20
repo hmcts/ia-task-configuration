@@ -306,6 +306,17 @@
           <text>"Review Respondent Evidence"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1fryjds">
+        <inputEntry id="UnaryTests_1mnkpnn">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0gzyn4t">
+          <text>"detainedReviewRespondentEvidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0txp2m1">
+          <text>"Detained - Review Respondent Evidence"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0wtgwhy">
         <inputEntry id="UnaryTests_0ywhbm9">
           <text></text>
@@ -317,6 +328,17 @@
           <text>"Review additional evidence"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1npqfib">
+        <inputEntry id="UnaryTests_1ufyz0z">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1io0xmr">
+          <text>"detainedReviewAdditionalEvidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0zhcu7o">
+          <text>"Detained - Review additional evidence"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1ncy7b1">
         <inputEntry id="UnaryTests_1g3egse">
           <text></text>
@@ -326,6 +348,17 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_1l6m7qe">
           <text>"Review additional Home Office evidence"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ubt27h">
+        <inputEntry id="UnaryTests_1sxa5uy">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1d86ehf">
+          <text>"detainedReviewAdditionalHomeOfficeEvidence"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1sbzik4">
+          <text>"Detained - Review additional Home Office evidence"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0lfe0ed">
@@ -931,6 +964,17 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_1geobef">
           <text>"Hearing exception"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0hub1sk">
+        <inputEntry id="UnaryTests_0tl1qo1">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0v8rwu1">
+          <text>"detainedHearingException"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0pqtrht">
+          <text>"Detained - Hearing exception"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_06lha46">
