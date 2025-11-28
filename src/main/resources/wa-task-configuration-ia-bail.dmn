@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.31.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.34.0">
   <decision id="wa-task-configuration-ia-bail" name="Task configuration DMN - Bail" camunda:historyTimeToLive="P90D">
     <decisionTable id="DecisionTable_14cx079" hitPolicy="COLLECT">
       <input id="InputClause_1gxyo7f" label="CCD Case Data" camunda:inputVariable="caseData">
@@ -170,9 +170,9 @@
   else if (taskAttributes != null and taskAttributes.taskType = "uploadSignedDecision" or taskType = "uploadSignedDecision")
   then "[Upload Signed Decision](/case/IA/Bail/${[CASE_REFERENCE]}/trigger/uploadSignedDecisionNotice)"
   else if (taskAttributes != null and taskAttributes.taskType = "listForFurtherReview" or taskType = "listForFurtherReview")
-  then "[Relist the case](/case/IA/Bail/${[CASE_REFERENCE]}/hearings)"
+  then "[Relist the case](/cases/case-details/IA/Bail/${[CASE_REFERENCE]}/hearings)"
   else if (taskAttributes != null and taskAttributes.taskType = "postHearingRecord" or taskType = "postHearingRecord")
-  then "[Add hearing details](/case/IA/Bail/${[CASE_REFERENCE]}/hearings)"
+  then "[Add hearing details](/cases/case-details/IA/Bail/${[CASE_REFERENCE]}/hearings)"
   else ""</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_184xf0n">

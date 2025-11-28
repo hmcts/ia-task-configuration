@@ -338,11 +338,11 @@ class CamundaTaskBailConfigurationTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "listForFurtherReview",
-                "[Relist the case](/case/IA/Bail/${[CASE_REFERENCE]}/hearings)"
+                "[Relist the case](/cases/case-details/IA/Bail/${[CASE_REFERENCE]}/hearings)"
             ),
             Arguments.of(
                 "postHearingRecord",
-                "[Add hearing details](/case/IA/Bail/${[CASE_REFERENCE]}/hearings)"
+                "[Add hearing details](/cases/case-details/IA/Bail/${[CASE_REFERENCE]}/hearings)"
             ),
             Arguments.of(
                 "unknownTask",
