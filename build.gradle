@@ -11,8 +11,12 @@ plugins {
   id 'info.solidsoft.pitest' version '1.9.11'
   id 'io.freefair.lombok' version '6.6.3'
 }
-
-group = 'uk.gov.hmcts.reform'
+repositories {
+  mavenLocal()
+  mavenCentral()
+  maven { url 'https://jitpack.io' }
+}
+  group = 'uk.gov.hmcts.reform'
 version = '0.0.1'
 
 java {
@@ -149,7 +153,6 @@ pitest {
 
 project.tasks['pitest'].group = "Verification"
 
-
 project.tasks['sonarqube'].dependsOn test, integration, jacocoTestReport
 
 sonarqube {
@@ -246,6 +249,14 @@ def versions = [
 
 dependencies {
 
+  configurations.all {
+    resolutionStrategy {
+      force 'org.hamcrest:hamcrest:2.2'
+    }
+  }
+
+  testImplementation 'org.hamcrest:hamcrest:2.2'
+  testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.0'
   implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web'
   implementation group: 'org.springframework.boot', name: 'spring-boot-starter-actuator'
   implementation group: 'org.springframework.boot', name: 'spring-boot-starter-aop'
@@ -254,8 +265,8 @@ dependencies {
   implementation group: 'io.springfox', name: 'springfox-boot-starter', version: versions.springfoxSwagger
 
   implementation group: 'com.github.hmcts.java-logging', name: 'logging', version: versions.reformLogging
-  implementation group: 'com.github.hmcts.java-logging', name: 'logging-spring', version: '5.1.7'
   implementation group: 'com.github.hmcts.java-logging', name: 'logging-appinsights', version: versions.reformLogging
+  implementation group: 'com.github.hmcts.java-logging', name: 'logging-spring', version: '5.1.9'
 
   implementation group: 'org.apache.logging.log4j', name: 'log4j-api', version: versions.log4j
   implementation group: 'org.apache.logging.log4j', name: 'log4j-to-slf4j', version: versions.log4j
