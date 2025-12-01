@@ -67,29 +67,6 @@
           <text></text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0leqbk9">
-        <inputEntry id="UnaryTests_0froh2m">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1glhnt9">
-          <text>"updateInterpreterWaTask"</text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0xnpu9a">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_09umugc">
-          <text>"Reconfigure"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_010v80r">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1c03tth">
-          <text></text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0aomgz8">
-          <text></text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_126y1nd">
         <inputEntry id="UnaryTests_0lxpy81">
           <text></text>
@@ -226,6 +203,29 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0rqhd60">
           <text>"followUpPostHearingTasks"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_18zb59e">
+        <inputEntry id="UnaryTests_011plg4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1p418nb">
+          <text>"updateInterpreterWaTask"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ayp4e7">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_159f79z">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1uejub9">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0atx62j">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_00rboyk">
+          <text>"flagReview"</text>
         </outputEntry>
       </rule>
     </decisionTable>

@@ -149,7 +149,7 @@ class CamundaTaskBailInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .expectation(List.of(Map.of(
                     "taskId", "reviewInterpreterFlag",
                     "name", "Review interpreter booking",
-                    "processCategories", "caseProgression"
+                    "processCategories", "flagReview"
                 )))
                 .build(),
             Scenario.builder()
