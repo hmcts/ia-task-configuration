@@ -6,14 +6,10 @@ import org.camunda.bpm.engine.variable.VariableMap;
 import org.camunda.bpm.engine.variable.impl.VariableMapImpl;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.Arguments;
-import org.junit.jupiter.params.provider.MethodSource;
 import uk.gov.hmcts.reform.iataskconfiguration.DmnDecisionTableBaseUnitTest;
 
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.CoreMatchers.is;
@@ -27,8 +23,7 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
         CURRENT_DMN_DECISION_TABLE = WA_TASK_TYPES_IA_ASYLUM;
     }
 
-    static Stream<Arguments> scenarioProvider() {
-        List<Map<String, String>> taskTypes = List.of(
+    List<Map<String, String>> expectedTaskTypes = List.<Map<String, String>>of(
             Map.of("taskTypeId",
                    "processApplicationAdjourn",
                    "taskTypeName",
@@ -741,16 +736,10 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
                     "Detained - Hearing exception"
             )
         );
-        return Stream.of(
-            Arguments.of(
-                taskTypes
-            )
-        );
     }
 
-    @ParameterizedTest(name = "retrieve all task type data")
-    @MethodSource("scenarioProvider")
-    void should_evaluate_dmn_return_all_task_type_fields(List<Map<String, Object>> expectedTaskTypes) {
+    @Test
+    void should_evaluate_dmn_return_all_task_type_fields() {
 
         VariableMap inputVariables = new VariableMapImpl();
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
