@@ -144,7 +144,7 @@ class CamundaTaskBailInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .build(),
             Scenario.builder()
                 .description("Create flag with active interpreter")
-                .eventId("createFlag")
+                .eventId("updateInterpreterWaTask")
                 .hasActiveInterpreterFlag(true)
                 .expectation(List.of(Map.of(
                     "taskId", "reviewInterpreterFlag",
@@ -154,7 +154,7 @@ class CamundaTaskBailInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .build(),
             Scenario.builder()
                 .description("Create flag with no active interpreter")
-                .eventId("createFlag")
+                .eventId("updateInterpreterWaTask")
                 .hasActiveInterpreterFlag(false)
                 .expectation(emptyList())
                 .build(),
