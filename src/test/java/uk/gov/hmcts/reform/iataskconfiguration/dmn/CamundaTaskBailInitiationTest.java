@@ -85,7 +85,7 @@ class CamundaTaskBailInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(7));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(9));
+        assertThat(logic.getRules().size(), is(10));
     }
 
     private static Stream<Scenario> scenarioProvider() {
@@ -261,7 +261,7 @@ class CamundaTaskBailInitiationTest extends DmnDecisionTableBaseUnitTest {
                 .recordDecisionType("conditionalGrant")
                 .expectation(List.of(
                     Map.of(
-                        "taskId", "uploadSignedDecision",
+                        "taskId", "uploadSignedDecisionConditionalGrant",
                         "name", "Upload signed decision",
                         "processCategories", "caseProgression"
                     ),
@@ -273,9 +273,21 @@ class CamundaTaskBailInitiationTest extends DmnDecisionTableBaseUnitTest {
                 ))
                 .build(),
             Scenario.builder()
-                .description("Decision is recorded as anything other than conditional")
+                .description("Decision is recorded as granted")
                 .eventId("recordTheDecision")
-                .recordDecisionType("approved")
+                .recordDecisionType("granted")
+                .expectation(List.of(
+                    Map.of(
+                        "taskId", "uploadSignedDecision",
+                        "name", "Upload signed decision",
+                        "processCategories", "caseProgression"
+                    )
+                ))
+                .build(),
+            Scenario.builder()
+                .description("Decision is recorded as refused")
+                .eventId("recordTheDecision")
+                .recordDecisionType("refused")
                 .expectation(List.of(
                     Map.of(
                         "taskId", "uploadSignedDecision",

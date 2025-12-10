@@ -59,6 +59,15 @@ class CamundaTaskBailCompletionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "uploadSignedDecisionNoticeConditionalGrant",
+                List.of(
+                    Map.of(
+                        "taskType", "uploadSignedDecisionConditionalGrant",
+                        "completionMode", "Auto"
+                    ), Map.of()
+                )
+            ),
+            Arguments.of(
                 "caseListing",
                 List.of(
                     Map.of(
@@ -90,7 +99,7 @@ class CamundaTaskBailCompletionTest extends DmnDecisionTableBaseUnitTest {
 
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(5));
+        assertThat(logic.getRules().size(), is(6));
     }
 
 

@@ -117,7 +117,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1y3kj1v">
-          <text>"processBailApplication","reviewInterpreterFlag","noticeOfChange","followUpBailSummary","reviewAdditionalEvidence","uploadSignedDecision","postHearingRecord","listForFurtherReview"</text>
+          <text>"processBailApplication","reviewInterpreterFlag","noticeOfChange","followUpBailSummary","reviewAdditionalEvidence","uploadSignedDecision","uploadSignedDecisionConditionalGrant","postHearingRecord","listForFurtherReview"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0rvgay2">
           <text>"workType"</text>
@@ -134,7 +134,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_10f3uas">
-          <text>"processBailApplication","reviewInterpreterFlag","noticeOfChange","followUpBailSummary","reviewAdditionalEvidence","uploadSignedDecision","postHearingRecord","listForFurtherReview"</text>
+          <text>"processBailApplication","reviewInterpreterFlag","noticeOfChange","followUpBailSummary","reviewAdditionalEvidence","uploadSignedDecision","uploadSignedDecisionConditionalGrant","postHearingRecord","listForFurtherReview"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_05l5bvs">
           <text>"roleCategory"</text>
@@ -169,6 +169,8 @@
   then "Review additional evidence"
   else if (taskAttributes != null and taskAttributes.taskType = "uploadSignedDecision" or taskType = "uploadSignedDecision")
   then "[Upload Signed Decision](/case/IA/Bail/${[CASE_REFERENCE]}/trigger/uploadSignedDecisionNotice)"
+  else if (taskAttributes != null and taskAttributes.taskType = "uploadSignedDecisionConditionalGrant" or taskType = "uploadSignedDecisionConditionalGrant")
+  then "[Upload Signed Decision](/case/IA/Bail/${[CASE_REFERENCE]}/trigger/uploadSignedDecisionNoticeConditionalGrant)"
   else if (taskAttributes != null and taskAttributes.taskType = "listForFurtherReview" or taskType = "listForFurtherReview")
   then "[Relist the case](/cases/case-details/IA/Bail/${[CASE_REFERENCE]}/hearings)"
   else if (taskAttributes != null and taskAttributes.taskType = "postHearingRecord" or taskType = "postHearingRecord")

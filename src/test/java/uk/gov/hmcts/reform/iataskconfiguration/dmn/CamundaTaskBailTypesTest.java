@@ -54,6 +54,10 @@ class CamundaTaskBailTypesTest extends DmnDecisionTableBaseUnitTest {
                 "taskTypeName", "Upload signed decision"
             ),
             Map.of(
+                "taskTypeId", "uploadSignedDecisionConditionalGrant",
+                "taskTypeName", "Upload signed decision"
+            ),
+            Map.of(
                 "taskTypeId", "listForFurtherReview",
                 "taskTypeName", "List for further review"
             ),
@@ -82,6 +86,6 @@ class CamundaTaskBailTypesTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(1));
         assertThat(logic.getOutputs().size(), is(2));
-        assertThat(logic.getRules().size(), is(8));
+        assertThat(logic.getRules().size(), is(9));
     }
 }

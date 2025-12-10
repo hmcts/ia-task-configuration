@@ -290,7 +290,7 @@ else null</text>
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1789mjv">
-          <text></text>
+          <text>"granted","refused"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1tcx8po">
           <text>"uploadSignedDecision"</text>
@@ -302,6 +302,41 @@ else null</text>
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0tenz1z">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0tfzrgj">
+        <inputEntry id="UnaryTests_1bm9l9f">
+          <text>"recordTheDecision"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05zpnbz">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1c1294a">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0wjzfit">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ywhtdj">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1iv481q">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1n8auja">
+          <text>"conditionalGrant"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1sg7vq2">
+          <text>"uploadSignedDecisionConditionalGrant"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0pnkf2i">
+          <text>"Upload signed decision"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ifc88j">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_14w7g47">
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
