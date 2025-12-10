@@ -263,7 +263,7 @@ class CamundaTaskBailInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "uploadSignedDecisionConditionalGrant",
                         "name", "Upload signed decision",
-                        "processCategories", "caseProgression"
+                        "processCategories", "uploadDecisionTask"
                     ),
                     Map.of(
                         "taskId", "listForFurtherReview",
@@ -280,7 +280,7 @@ class CamundaTaskBailInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "uploadSignedDecision",
                         "name", "Upload signed decision",
-                        "processCategories", "caseProgression"
+                        "processCategories", "uploadDecisionTask"
                     )
                 ))
                 .build(),
@@ -292,7 +292,7 @@ class CamundaTaskBailInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "uploadSignedDecision",
                         "name", "Upload signed decision",
-                        "processCategories", "caseProgression"
+                        "processCategories", "uploadDecisionTask"
                     )
                 ))
                 .build(),

@@ -31,28 +31,6 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0hgh0v1">
-        <inputEntry id="UnaryTests_0vsfw2y">
-          <text>"uploadSignedDecisionNotice"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0wbcom1">
-          <text>"uploadSignedDecision"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1fjiqvd">
-          <text>"Auto"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_10u2b3x">
-        <inputEntry id="UnaryTests_1wlaysu">
-          <text>"uploadSignedDecisionNoticeConditionalGrant"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1k5uguv">
-          <text>"uploadSignedDecisionConditionalGrant"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0zw47rh">
-          <text>"Auto"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_1aqs11m">
         <inputEntry id="UnaryTests_0thh2t3">
           <text>"caseListing"</text>

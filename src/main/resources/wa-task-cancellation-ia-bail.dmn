@@ -228,6 +228,29 @@
           <text>"flagReview"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_05md27y">
+        <inputEntry id="UnaryTests_16eeb8v">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ngvajq">
+          <text>"uploadSignedDecision","uploadSignedDecisionConditionalGrant"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1t21ruu">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_18y4k2g">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1l8wofb">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_14x8n1m">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0w79sta">
+          <text>"uploadDecisionTask"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

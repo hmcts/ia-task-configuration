@@ -302,7 +302,7 @@ else null</text>
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0tenz1z">
-          <text>"caseProgression"</text>
+          <text>"uploadDecisionTask"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_0tfzrgj">
@@ -337,7 +337,7 @@ else null</text>
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_14w7g47">
-          <text>"caseProgression"</text>
+          <text>"uploadDecisionTask"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1rdgkyi">
