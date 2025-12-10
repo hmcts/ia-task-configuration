@@ -102,7 +102,7 @@ class CamundaTaskBailCancellationTest extends DmnDecisionTableBaseUnitTest {
                     ))
                 .build(),
             Scenario.builder()
-                .eventId("uploadSignedDecision")
+                .eventId("uploadSignedDecisionNotice")
                 .expectation(
                     List.of(Map.of(
                         "action", "Cancel",
@@ -110,7 +110,7 @@ class CamundaTaskBailCancellationTest extends DmnDecisionTableBaseUnitTest {
                     ))
                 .build(),
             Scenario.builder()
-                .eventId("uploadSignedDecisionConditionalGrant")
+                .eventId("uploadSignedDecisionNoticeConditionalGrant")
                 .expectation(
                     List.of(Map.of(
                         "action", "Cancel",
