@@ -251,6 +251,29 @@
           <text>"uploadDecisionTask"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1u2nmf4">
+        <inputEntry id="UnaryTests_06dd3z5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0d3osso">
+          <text>"caseListing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08uuwnv">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1f6mnjb">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_06olqvw">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_07pmi0s">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04rx4vq">
+          <text>"conditionalListTask"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

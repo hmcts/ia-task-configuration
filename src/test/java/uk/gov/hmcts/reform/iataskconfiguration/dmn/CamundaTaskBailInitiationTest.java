@@ -268,7 +268,7 @@ class CamundaTaskBailInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "listForFurtherReview",
                         "name", "List for further review",
-                        "processCategories", "caseProgression"
+                        "processCategories", "conditionalListTask"
                     )
                 ))
                 .build(),

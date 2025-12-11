@@ -116,6 +116,14 @@ class CamundaTaskBailCancellationTest extends DmnDecisionTableBaseUnitTest {
                         "action", "Cancel",
                         "processCategories", "uploadDecisionTask")
                     ))
+                .build(),
+            Scenario.builder()
+                .eventId("caseListing")
+                .expectation(
+                    List.of(Map.of(
+                        "action", "Cancel",
+                        "processCategories", "conditionalListTask")
+                    ))
                 .build()
         );
     }
@@ -142,6 +150,6 @@ class CamundaTaskBailCancellationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(3));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(10));
+        assertThat(logic.getRules().size(), is(11));
     }
 }
