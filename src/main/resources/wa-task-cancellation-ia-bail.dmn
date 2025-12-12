@@ -26,7 +26,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1ag5ntf">
-          <text>"endApplication"</text>
+          <text>"endApplication","moveApplicationToDecided"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_032mxu7">
           <text></text>

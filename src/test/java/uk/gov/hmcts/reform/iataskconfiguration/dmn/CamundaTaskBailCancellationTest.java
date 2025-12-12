@@ -45,6 +45,10 @@ class CamundaTaskBailCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .expectation(singletonList(Map.of("action", "Cancel")))
                 .build(),
             Scenario.builder()
+                .eventId("moveApplicationToDecided")
+                .expectation(singletonList(Map.of("action", "Cancel")))
+                .build(),
+            Scenario.builder()
                 .fromState("applicationSubmitted")
                 .eventId("editBailApplicationAfterSubmit")
                 .expectation(singletonList(Map.of("action", "Reconfigure")))
