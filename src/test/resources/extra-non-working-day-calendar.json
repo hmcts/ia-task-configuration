@@ -10,27 +10,6 @@
     },
     {
       "title": "Non working day",
-      "date": "2025-12-25",
-      "notes": "",
-      "bunting": true,
-      "working_day": false
-    },
-    {
-      "title": "Non working day",
-      "date": "2025-12-26",
-      "notes": "",
-      "bunting": true,
-      "working_day": false
-    },
-    {
-      "title": "Non working day",
-      "date": "2026-01-01",
-      "notes": "",
-      "bunting": true,
-      "working_day": false
-    },
-    {
-      "title": "Non working day",
       "date": "2026-01-02",
       "notes": "",
       "bunting": true,
