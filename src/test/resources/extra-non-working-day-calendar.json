@@ -3,14 +3,14 @@
   "events": [
     {
       "title": "Non working day",
-      "date": "2023-04-19",
+      "date": "2025-12-24",
       "notes": "",
       "bunting": true,
       "working_day": false
     },
     {
-      "title": "Test non working day 2",
-      "date": "2023-04-27",
+      "title": "Non working day",
+      "date": "2026-01-02",
       "notes": "",
       "bunting": true,
       "working_day": false
