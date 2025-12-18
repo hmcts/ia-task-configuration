@@ -326,7 +326,7 @@ class CamundaTaskBailConfigurationTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "followUpBailSummary",
-                "[Send direction](/case/IA/Bail/${[CASE_REFERENCE]}/trigger/sendBailDirection) if required"
+                "[Send direction if required](/case/IA/Bail/${[CASE_REFERENCE]}/trigger/sendBailDirection)"
             ),
             Arguments.of(
                 "reviewAdditionalEvidence",

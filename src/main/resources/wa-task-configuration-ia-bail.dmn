@@ -164,7 +164,7 @@
   else if (taskAttributes != null and taskAttributes.taskType = "noticeOfChange" or taskType = "noticeOfChange")
   then "Follow up with applicant"
   else if (taskAttributes != null and taskAttributes.taskType = "followUpBailSummary" or taskType = "followUpBailSummary")
-  then "[Send direction](/case/IA/Bail/${[CASE_REFERENCE]}/trigger/sendBailDirection) if required"
+  then "[Send direction if required](/case/IA/Bail/${[CASE_REFERENCE]}/trigger/sendBailDirection)"
   else if (taskAttributes != null and taskAttributes.taskType = "reviewAdditionalEvidence" or taskType = "reviewAdditionalEvidence")
   then "Review additional evidence"
   else if (taskAttributes != null and taskAttributes.taskType = "uploadSignedDecision" or taskType = "uploadSignedDecision")
