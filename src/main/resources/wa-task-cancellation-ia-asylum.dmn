@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-cancellation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.23.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-cancellation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.39.0">
   <decision id="wa-task-cancellation-ia-asylum" name="Task cancellation DMN" camunda:historyTimeToLive="P90D">
     <decisionTable id="DecisionTable_0z3jx1g" hitPolicy="COLLECT">
       <input id="Input_1" label="From State">
@@ -640,6 +640,52 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_127x3nu">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0bp9tsx">
+        <inputEntry id="UnaryTests_1a2dvzd">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_111rjd4">
+          <text>"addStatutoryTimeframe24Weeks"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tz2o7u">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0xbxm04">
+          <text>"Reconfigure"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1veci9e">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ykn7w7">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_16yl4cm">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1uwub4f">
+        <inputEntry id="UnaryTests_1jwjka8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19d0tgb">
+          <text>"removeStatutoryTimeframe24Weeks"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15lqs1i">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ffur3g">
+          <text>"Reconfigure"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1rievjx">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0tsh6te">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1hmx61q">
           <text></text>
         </outputEntry>
       </rule>
