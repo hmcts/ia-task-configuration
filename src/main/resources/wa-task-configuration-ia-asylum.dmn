@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.31.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.39.0">
   <decision id="wa-task-configuration-ia-asylum" name="Task configuration DMN" camunda:historyTimeToLive="P90D">
     <decisionTable id="DecisionTable_14cx079" hitPolicy="COLLECT">
       <input id="InputClause_1gxyo7f" label="CCD Case Data" camunda:inputVariable="caseData">
@@ -999,6 +999,23 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_02y8ncm">
           <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1lq5glq">
+        <inputEntry id="UnaryTests_1rgu257">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0r7qkoo">
+          <text>"decideAnFTPA","detainedDecideAnFTPA"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_17k9hog">
+          <text>"workType"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1tvs4d4">
+          <text>"stf_24w_upper_tribunal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ca8ijr">
+          <text>false</text>
         </outputEntry>
       </rule>
     </decisionTable>
