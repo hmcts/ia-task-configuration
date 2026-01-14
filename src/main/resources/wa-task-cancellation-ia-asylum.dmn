@@ -645,7 +645,7 @@
       </rule>
       <rule id="DecisionRule_0bp9tsx">
         <inputEntry id="UnaryTests_1a2dvzd">
-          <text></text>
+          <text>-</text>
         </inputEntry>
         <inputEntry id="UnaryTests_111rjd4">
           <text>"addStatutoryTimeframe24Weeks"</text>
@@ -668,7 +668,7 @@
       </rule>
       <rule id="DecisionRule_1uwub4f">
         <inputEntry id="UnaryTests_1jwjka8">
-          <text></text>
+          <text>-</text>
         </inputEntry>
         <inputEntry id="UnaryTests_19d0tgb">
           <text>"removeStatutoryTimeframe24Weeks"</text>
