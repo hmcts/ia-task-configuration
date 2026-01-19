@@ -59,7 +59,14 @@ class CamundaTaskBailCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .build(),
             Scenario.builder()
                 .eventId("caseListing")
-                .expectation(singletonList(Map.of("action", "Reconfigure")))
+                .expectation(
+                    List.of(
+                        Map.of("action", "Reconfigure"),
+                        Map.of(
+                            "action", "Cancel",
+                            "processCategories", "conditionalListTask"
+                        )
+                    ))
                 .build(),
             Scenario.builder()
                 .eventId("recordTheDecision")
@@ -77,56 +84,54 @@ class CamundaTaskBailCancellationTest extends DmnDecisionTableBaseUnitTest {
                 .eventId("updateBailLegalRepDetails")
                 .expectation(
                     List.of(Map.of(
-                        "action", "Cancel",
-                        "processCategories", "followUpNoc")
+                                "action", "Cancel",
+                                "processCategories", "followUpNoc"
+                            )
                     ))
                 .build(),
             Scenario.builder()
                 .eventId("hearingCompletedOrCancelled")
                 .expectation(
                     List.of(Map.of(
-                        "action", "Cancel",
-                        "processCategories", "followUpPostHearingTasks")
+                                "action", "Cancel",
+                                "processCategories", "followUpPostHearingTasks"
+                            )
                     ))
                 .build(),
             Scenario.builder()
                 .eventId("uploadHearingRecording")
                 .expectation(
                     List.of(Map.of(
-                        "action", "Cancel",
-                        "processCategories", "followUpPostHearingTasks")
+                                "action", "Cancel",
+                                "processCategories", "followUpPostHearingTasks"
+                            )
                     ))
                 .build(),
             Scenario.builder()
                 .eventId("updateInterpreterWaTask")
                 .expectation(
                     List.of(Map.of(
-                        "action", "Cancel",
-                        "processCategories", "flagReview")
+                                "action", "Cancel",
+                                "processCategories", "flagReview"
+                            )
                     ))
                 .build(),
             Scenario.builder()
                 .eventId("uploadSignedDecisionNotice")
                 .expectation(
                     List.of(Map.of(
-                        "action", "Cancel",
-                        "processCategories", "uploadDecisionTask")
+                                "action", "Cancel",
+                                "processCategories", "uploadDecisionTask"
+                            )
                     ))
                 .build(),
             Scenario.builder()
                 .eventId("uploadSignedDecisionNoticeConditionalGrant")
                 .expectation(
                     List.of(Map.of(
-                        "action", "Cancel",
-                        "processCategories", "uploadDecisionTask")
-                    ))
-                .build(),
-            Scenario.builder()
-                .eventId("caseListing")
-                .expectation(
-                    List.of(Map.of(
-                        "action", "Cancel",
-                        "processCategories", "conditionalListTask")
+                                "action", "Cancel",
+                                "processCategories", "uploadDecisionTask"
+                            )
                     ))
                 .build()
         );
