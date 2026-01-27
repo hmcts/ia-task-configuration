@@ -181,8 +181,9 @@ class CamundaTaskBailPermissionTest extends DmnDecisionTableBaseUnitTest {
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"processBailApplication", "reviewInterpreterFlag", "noticeOfChange", "followUpBailSummary",
-        "reviewAdditionalEvidence", "uploadSignedDecision", "uploadSignedDecisionConditionalGrant", "postHearingRecord"})
+    @ValueSource(strings = {"processBailApplication", "reviewInterpreterFlag", "noticeOfChange",
+        "followUpBailSummary", "reviewAdditionalEvidence", "uploadSignedDecision",
+        "uploadSignedDecisionConditionalGrant", "postHearingRecord"})
     void given_taskType_when_evaluate_dmn_then_it_returns_expected_rules(String taskType) {
         VariableMap inputVariables = new VariableMapImpl();
         inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
