@@ -338,8 +338,8 @@ class CamundaTaskBailConfigurationTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 "uploadSignedDecisionConditionalGrant",
-                "[Upload Signed Decision](/case/IA/Bail/${[CASE_REFERENCE]}" +
-                    "/trigger/uploadSignedDecisionNoticeConditionalGrant)"
+                "[Upload Signed Decision](/case/IA/Bail/${[CASE_REFERENCE]}"
+                    + "/trigger/uploadSignedDecisionNoticeConditionalGrant)"
             ),
             Arguments.of(
                 "listForFurtherReview",
