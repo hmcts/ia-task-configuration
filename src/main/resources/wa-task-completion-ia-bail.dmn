@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-completion-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.34.0">
+  <decision id="wa-task-completion-ia-bail" name="Task completion DMN - Bail" camunda:historyTimeToLive="P90D">
+    <decisionTable id="DecisionTable_01re27m" hitPolicy="COLLECT">
+      <input id="eventId" label="Event ID" biodi:width="614">
+        <inputExpression id="LiteralExpression_1ngg489" typeRef="string">
+          <text>eventId</text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" label="Task Type" name="taskType" typeRef="string" biodi:width="282" />
+      <output id="OutputClause_1mldd9e" label="Completion Mode" name="completionMode" typeRef="string" />
+      <rule id="DecisionRule_12eenty">
+        <inputEntry id="UnaryTests_17cg7de">
+          <text>"confirmDetentionLocation"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1lk4wxe">
+          <text>"processBailApplication"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ap1s9l">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0pd2qug">
+        <inputEntry id="UnaryTests_015h6e0">
+          <text>"updateInterpreterBookingStatus"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1kf8kfm">
+          <text>"reviewInterpreterFlag"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_19zp2bz">
+          <text>"Auto"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0n3sv5h">
+        <inputEntry id="UnaryTests_0hp3dyk">
+          <text>"confirmDetentionLocation","updateInterpreterBookingStatus","updateBailLegalRepDetails","uploadBailSummary","uploadSignedDecisionNotice","uploadSignedDecisionNoticeConditionalGrant","caseListing","hearingCompletedOrCancelled","uploadHearingRecording"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_01y2icz">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_06u7dz4">
+          <text></text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="wa-task-completion-ia-bail">
+        <dc:Bounds height="80" width="180" x="160" y="80" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
