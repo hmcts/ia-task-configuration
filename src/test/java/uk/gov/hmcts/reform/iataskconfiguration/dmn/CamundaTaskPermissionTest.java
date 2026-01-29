@@ -633,7 +633,6 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     taskSupervisor,
                     ctscTeamLeaderPriorityOne,
                     ctscAdminPriorityOne
-
                 )
             ),
             Arguments.of(
@@ -1311,6 +1310,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
             "assignmentPriority",
             "autoAssignable"
         );
+
         assertThat(logic.getOutputs().size(), is(7));
         assertThatOutputContainInOrder(outputColumnIds, logic.getOutputs());
         //Rules
