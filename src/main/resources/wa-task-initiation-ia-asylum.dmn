@@ -3719,7 +3719,7 @@
       </rule>
       <rule id="DecisionRule_1neox9h">
         <inputEntry id="UnaryTests_0s4uzvv">
-          <text>"paymentAppeal", "progressMigratedCase", "migrateCase"</text>
+          <text>"paymentAppeal","progressMigratedCase"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0lz3uxd">
           <text>"appealSubmitted"</text>
