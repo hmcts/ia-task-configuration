@@ -2,8 +2,6 @@ package uk.gov.hmcts.reform.iataskconfiguration.dmn;
 
 import org.camunda.bpm.dmn.engine.DmnDecisionTableResult;
 import org.camunda.bpm.dmn.engine.impl.DmnDecisionTableImpl;
-import org.camunda.bpm.dmn.engine.impl.DmnDecisionTableInputImpl;
-import org.camunda.bpm.dmn.engine.impl.DmnDecisionTableOutputImpl;
 import org.camunda.bpm.engine.variable.VariableMap;
 import org.camunda.bpm.engine.variable.impl.VariableMapImpl;
 import org.hamcrest.MatcherAssert;
@@ -18,7 +16,6 @@ import uk.gov.hmcts.reform.iataskconfiguration.DmnDecisionTableBaseUnitTest;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 import static java.util.Arrays.asList;
@@ -1318,15 +1315,5 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         assertThatOutputContainInOrder(outputColumnIds, logic.getOutputs());
         //Rules
         assertThat(logic.getRules().size(), is(18));
-    }
-
-    private void assertThatInputContainInOrder(List<String> inputColumnIds, List<DmnDecisionTableInputImpl> inputs) {
-        IntStream.range(0, inputs.size())
-            .forEach(i -> assertThat(inputs.get(i).getInputVariable(), is(inputColumnIds.get(i))));
-    }
-
-    private void assertThatOutputContainInOrder(List<String> outputColumnIds, List<DmnDecisionTableOutputImpl> output) {
-        IntStream.range(0, output.size())
-            .forEach(i -> assertThat(output.get(i).getOutputName(), is(outputColumnIds.get(i))));
     }
 }
