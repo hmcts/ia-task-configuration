@@ -16147,6 +16147,9 @@
         <inputEntry id="UnaryTests_0gxnsi5">
           <text></text>
         </inputEntry>
+        <inputEntry id="UnaryTests_0gxnsi6">
+          <text>false</text>
+        </inputEntry>
         <outputEntry id="LiteralExpression_0tub41q">
           <text>"printAndSendAppealDecision"</text>
         </outputEntry>
@@ -16253,6 +16256,9 @@
         </inputEntry>
         <inputEntry id="UnaryTests_0bbri07">
           <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0bbri08">
+          <text>false</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1m75ry7">
           <text>"detainedPrintAndSendAppealDecision"</text>
