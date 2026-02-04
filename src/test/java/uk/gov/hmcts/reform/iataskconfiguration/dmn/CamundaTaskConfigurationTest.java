@@ -65,7 +65,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         assertEquals(Map.of(
             "name", "workType",
             "value", "access_requests",
-            "canReconfigure", false
+            "canReconfigure", true
         ), workTypeResultList.get(0));
     }
 
@@ -206,32 +206,32 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         List<Map<String, Object>> routineWork = List.of(Map.of(
             "name", "workType",
             "value", "routine_work",
-            "canReconfigure", false
+            "canReconfigure", true
         ));
         List<Map<String, Object>> decisionMakingWork = List.of(Map.of(
             "name", "workType",
             "value", "decision_making_work",
-            "canReconfigure", false
+            "canReconfigure", true
         ));
         List<Map<String, Object>> hearingWork = List.of(Map.of(
             "name", "workType",
             "value", "hearing_work",
-            "canReconfigure", false
+            "canReconfigure", true
         ));
         List<Map<String, Object>> applications = List.of(Map.of(
             "name", "workType",
             "value", "applications",
-            "canReconfigure", false
+            "canReconfigure", true
         ));
         List<Map<String, Object>> upperTribunal = List.of(Map.of(
             "name", "workType",
             "value", "upper_tribunal",
-            "canReconfigure", false
+            "canReconfigure", true
         ));
         List<Map<String, Object>> reviewCase = List.of(Map.of(
             "name", "workType",
             "value", "review_case",
-            "canReconfigure", false
+            "canReconfigure", true
         ));
 
         return Stream.of(
@@ -419,7 +419,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         assertEquals(Map.of(
             "name", "workType",
             "value", "access_requests",
-            "canReconfigure", false
+            "canReconfigure", true
         ), workTypeResultList.get(0));
     }
 
@@ -1340,7 +1340,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         getExpectedValue(rules, "caseManagementCategory", scenario.getExpectedCaseManagementCategoryValue());
         if (!Objects.isNull(scenario.getTaskAttributes())
             && StringUtils.isNotBlank(scenario.taskAttributes.get("taskType").toString())) {
-            getExpectedValue(rules, "workType", scenario.getExpectedWorkType());
+            getExpectedValueWithReconfigure(rules, "workType", scenario.getExpectedWorkType(), "true");
             getExpectedValue(rules, "roleCategory", scenario.getExpectedRoleCategory());
         }
 
@@ -1350,7 +1350,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         if (!Objects.isNull(scenario.getExpectedDueDateIntervalDays())) {
             getExpectedValue(rules, "dueDateIntervalDays", scenario.getExpectedDueDateIntervalDays());
         }
-        getExpectedValue(rules, "majorPriority", String.valueOf(5000));
+        getExpectedValueWithReconfigure(rules, "majorPriority", String.valueOf(5000), "true");
         getExpectedValue(rules, "minorPriority", String.valueOf(500));
         getExpectedValue(rules, "priorityDateOriginRef", "dueDate");
         getExpectedValue(rules, "dueDateNonWorkingDaysOfWeek", "SATURDAY,SUNDAY");
@@ -1837,7 +1837,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         assertTrue(dmnDecisionTableResult.getResultList().contains(Map.of(
             "name", "majorPriority",
             "value", "5000",
-            "canReconfigure", false
+            "canReconfigure", true
         )));
     }
 
@@ -1864,7 +1864,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         assertTrue(dmnDecisionTableResult.getResultList().contains(Map.of(
             "name", "majorPriority",
             "value", "5000",
-            "canReconfigure", false
+            "canReconfigure", true
         )));
     }
 
