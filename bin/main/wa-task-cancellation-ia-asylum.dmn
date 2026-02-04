@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-cancellation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.23.0">
+  <decision id="wa-task-cancellation-ia-asylum" name="Task cancellation DMN" camunda:historyTimeToLive="P90D">
+    <decisionTable id="DecisionTable_0z3jx1g" hitPolicy="COLLECT">
+      <input id="Input_1" label="From State">
+        <inputExpression id="InputExpression_1" typeRef="string">
+          <text>fromState</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0ain215" label="Event" biodi:width="330">
+        <inputExpression id="LiteralExpression_0h2l2zj" typeRef="string">
+          <text>event</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0bomy63" label="State">
+        <inputExpression id="LiteralExpression_1g5glfi" typeRef="string">
+          <text>state</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_18zgoaj" label="Action" name="action" typeRef="string" />
+      <output id="OutputClause_0tu8bqp" label="Warning Code" name="warningCode" typeRef="string" />
+      <output id="OutputClause_1kfc3jv" label="Warning Text" name="warningText" typeRef="string" />
+      <output id="OutputClause_0dqzted" label="Process Categories Identifiers" name="processCategories" typeRef="string" biodi:width="277" />
+      <rule id="DecisionRule_0w82l1w">
+        <inputEntry id="UnaryTests_1nfllzy">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0a7tgdv">
+          <text>"endAppeal","removeAppealFromOnline"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1iy08tm">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0t8415e">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0c65k96">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0fivyma">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0zmhw8j">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_19epvph">
+        <inputEntry id="UnaryTests_195fkvt">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vazx8h">
+          <text>"moveToPaymentPending"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hzixx6">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0wupzgv">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ca920i">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_121jn6y">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0w5kdce">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0m3e4d4">
+        <inputEntry id="UnaryTests_0sqoj1l">
+          <text>"awaitingReasonsForAppeal"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07779ja">
+          <text>"submitReasonsForAppeal"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jf2o4q">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1mcdfgb">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1o0pjik">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0z09tsr">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_15mt0ck">
+          <text>"followUpOverdue"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0xhe2ed">
+        <inputEntry id="UnaryTests_1smac6l">
+          <text>"awaitingReasonsForAppeal"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0onznoe">
+          <text>"submitReasonsForAppeal"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ps95nn">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1iyn5uc">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_09h0dxq">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_02ourzw">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1fhqwus">
+          <text>"timeExtension"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0v6o280">
+        <inputEntry id="UnaryTests_0c5otry">
+          <text>"awaitingCmaRequirements"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xjjkcf">
+          <text>"submitCmaRequirements"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0b3qntf">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_03jbwg1">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1wn9h2a">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1com1ds">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1jsnh0n">
+          <text>"followUpOverdue"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0t1xbh5">
+        <inputEntry id="UnaryTests_0zn0lpn">
+          <text>"awaitingCmaRequirements"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1kxbwcu">
+          <text>"submitCmaRequirements"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1txzhid">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0pu6wb2">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1vc1mxr">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1fr62ht">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0mjvutv">
+          <text>"timeExtension"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1eqg9rj">
+        <inputEntry id="UnaryTests_0k7zzpi">
+          <text>"awaitingClarifyingQuestionsAnswers"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_11zba7l">
+          <text>"submitClarifyingQuestionAnswers"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07xou4e">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0tnremj">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1e45hdn">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0umps79">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0e9p769">
+          <text>"followUpOverdue"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0hp5vha">
+        <inputEntry id="UnaryTests_0208l6b">
+          <text>"awaitingClarifyingQuestionsAnswers"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lwafpc">
+          <text>"submitClarifyingQuestionAnswers"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1bkrt6j">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0z8z6xl">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0e6szkt">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_08qukks">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_17relsw">
+          <text>"timeExtension"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0scl4xr">
+        <inputEntry id="UnaryTests_1dh0imd">
+          <text>"awaitingRespondentEvidence"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zpargy">
+          <text>"uploadHomeOfficeBundle"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1frhg4x">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_150j4np">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_06e85qm">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1va46dq">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12nxxhe">
+          <text>"followUpOverdue"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1m50f0j">
+        <inputEntry id="UnaryTests_0xe4fhd">
+          <text>"caseBuilding"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1429gdh">
+          <text>"buildCase"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0dvrgd1">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0thgeq9">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_13c40ls">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0wevx60">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0k32648">
+          <text>"followUpOverdue"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1vxg4dz">
+        <inputEntry id="UnaryTests_04kpixr">
+          <text>"respondentReview"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_151y3jk">
+          <text>"uploadHomeOfficeAppealResponse"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1x0e6cj">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_037nmut">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ehyjhc">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0bhakgi">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1x6xtks">
+          <text>"followUpOverdue"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0kjcieg">
+        <inputEntry id="UnaryTests_0s5vy7l">
+          <text>"submitHearingRequirements"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rvglpd">
+          <text>"draftHearingRequirements"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ampz0y">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1l7on3b">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_17xfp2x">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0a53ozk">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0d9whzb">
+          <text>"followUpOverdue"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0599dvt">
+        <inputEntry id="UnaryTests_1j49miq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jfvqqo">
+          <text>"markAppealPaid"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17ypuqr">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0p0qzak">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0cw1jd1">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_05nki3j">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_161b5g7">
+          <text>"followUpOverdue"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1on215e">
+        <inputEntry id="UnaryTests_0gf1nxm">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1hricqn">
+          <text>"applyNocDecision"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1lwxm93">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0d0ubcr">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1qwpnm7">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1u2vx51">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_05kjt3x">
+          <text>"followUpOverdue"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1f4jb32">
+        <inputEntry id="UnaryTests_1prhy5e">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09l7em8">
+          <text>"makeAnApplication"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qhx1ga">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0zhe8gj">
+          <text>"Warn"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0xzosbc">
+          <text>"TA01"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_02t03hs">
+          <text>"There is an application task which might impact other active tasks"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1cbtlhv">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1rxinj8">
+        <inputEntry id="UnaryTests_1hduxph">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1002qs3">
+          <text>"editAppealAfterSubmit"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0brgsan">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_06gd6rb">
+          <text>"Reconfigure"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1jkk1ro">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_19x1wbj">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_181jxp2">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_18pmsxl">
+        <inputEntry id="UnaryTests_0afwjs5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ruvdw4">
+          <text>"changeHearingCentre"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0dsj8lu">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0pgjlyg">
+          <text>"Reconfigure"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_00pcqgl">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ue8p8m">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ii5ued">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1x9twvw">
+        <inputEntry id="UnaryTests_1njmwrl">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0knw6yd">
+          <text>"editCaseListing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_109anp4">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1uprkz6">
+          <text>"Reconfigure"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1qt3cu9">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1krnal1">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0veqes0">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_07vcwri">
+        <description>"If case retriggered then tasks should be created"</description>
+        <inputEntry id="UnaryTests_0wjmlnv">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_18yains">
+          <text>"reTriggerWaTasks"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0d8da12">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_01idyzc">
+          <text>"Reconfigure"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0w7kc1a">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_06ckir5">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ys1m1a">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0c9dabt">
+        <inputEntry id="UnaryTests_01vprbg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rqyb08">
+          <text>"updateTribunalDecision"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rt72k8">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1eg7x67">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1wo61af">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1x8rg1o">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_157g42n">
+          <text>"followUpOverdue"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0bi5xm6">
+        <inputEntry id="UnaryTests_0eyresj">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qw84wb">
+          <text>"submitAppeal"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qjdaj2">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1dw8hca">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1qkauga">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ad3f3r">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0hx6g5u">
+          <text>"followUpOverdue"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1vcqfbn">
+        <inputEntry id="UnaryTests_0v8qdxm">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1df0qij">
+          <text>"UpdateNextHearingInfo"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ak5zpr">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1o90cf0">
+          <text>"Reconfigure"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_145vvyw">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_116019e">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_11zwpdu">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0qhxotx">
+        <inputEntry id="UnaryTests_1b31fvq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ng3ore">
+          <text>"cmrListing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_168vxwn">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0wqunbk">
+          <text>"Reconfigure"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0zm6os6">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_10bjfl8">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1rextfn">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0k1ix6d">
+        <inputEntry id="UnaryTests_0vw6yd8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_11ro51s">
+          <text>"cmrReListing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05bfy3l">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1eih3cq">
+          <text>"Reconfigure"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1dviqkm">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0lmml7j">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0zuiwo6">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1s29ofo">
+        <inputEntry id="UnaryTests_07b3qph">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0flkfaw">
+          <text>"hearingCancelled"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12k3fbj">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0il9mok">
+          <text>"Reconfigure"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1rhlzao">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1hna72u">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0lmev7g">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0fjqt42">
+        <inputEntry id="UnaryTests_0tnrlh3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14dvc5o">
+          <text>"listCase"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ywf5v7">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_03zkp5h">
+          <text>"Reconfigure"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_02wrxru">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0j7koys">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0dprwvw">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0zzsez4">
+        <inputEntry id="UnaryTests_1emr3fh">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qyacq4">
+          <text>"adjournHearingWithoutDate"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jjg5od">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_00h4vda">
+          <text>"Reconfigure"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1bbeaf1">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_00f19yj">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_127x3nu">
+          <text></text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="wa-task-cancellation-ia-asylum">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
