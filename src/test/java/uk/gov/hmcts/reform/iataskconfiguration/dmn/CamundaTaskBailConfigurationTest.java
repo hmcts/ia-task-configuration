@@ -149,21 +149,21 @@ class CamundaTaskBailConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "null, null, null"
     }, nullValues = "null")
     void when_case_data_caseManagementLocation_then_return_fields(String region,
-                                                                  String baseLocationCode,
-                                                                  String baseLocationLabel) {
+                                                                  String baseLocation,
+                                                                  String staffLocation) {
         Map<String, Object> caseManagementLocation = new HashMap<>(); // allow null values
         caseManagementLocation.put("region", region);
-        caseManagementLocation.put("baseLocationCode", baseLocationCode);
-        caseManagementLocation.put("baseLocationLabel", baseLocationLabel);
+        caseManagementLocation.put("baseLocation", baseLocation);
         Map<String, Object> caseData = new HashMap<>(); // allow null values
         caseData.put("caseManagementLocation", caseManagementLocation);
+        caseData.put("staffLocation", staffLocation);
         VariableMap inputVariables = new VariableMapImpl();
         inputVariables.putValue("caseData", caseData);
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
         String expectedRegion = region != null ? region : "1";
-        String expectedBaseLocationCode = baseLocationCode != null ? baseLocationCode : "227101";
-        String expectedBaseLocationLabel = baseLocationLabel != null ? baseLocationLabel : "Newport";
+        String expectedBaseLocationCode = baseLocation != null ? baseLocation : "227101";
+        String expectedBaseLocationLabel = staffLocation != null ? staffLocation : "Newport";
         assertTrue(dmnDecisionTableResult.getResultList().contains(Map.of(
             "name", "region",
             "value", expectedRegion,

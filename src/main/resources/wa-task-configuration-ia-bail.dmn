@@ -68,8 +68,8 @@
           <text>"location"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0jj1wzo">
-          <text>  if (caseData.caseManagementLocation != null and caseData.caseManagementLocation.baseLocationCode != null)
-  then caseData.caseManagementLocation.baseLocationCode
+          <text>  if (caseData.caseManagementLocation != null and caseData.caseManagementLocation.baseLocation != null)
+  then caseData.caseManagementLocation.baseLocation
   else "227101"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1wrzh5i">
@@ -87,8 +87,8 @@
           <text>"locationName"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0xp4dc7">
-          <text>  if (caseData.caseManagementLocation != null and caseData.caseManagementLocation.baseLocationLabel != null)
-  then caseData.caseManagementLocation.baseLocationLabel
+          <text>  if (caseData.staffLocation != null)
+  then caseData.staffLocation
   else "Newport"                    </text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1la2dkb">
