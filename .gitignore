@@ -24,3 +24,7 @@ bin/main/application.yaml
 lombok.config
 
 .DS_Store
+
+bin/integrationTest/
+bin/main/
+bin/test/
