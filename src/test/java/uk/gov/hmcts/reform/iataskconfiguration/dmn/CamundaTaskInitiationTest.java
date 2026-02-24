@@ -3052,24 +3052,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "cmrListing",
-                null,
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                singletonList(
-                    Map.of(
-                        "taskId", "detainedCmrListed",
-                        "name", "Detained - Send CMR notification",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
                 "restoreStateFromAdjourn",
                 null,
                 mapAdditionalData("{\n"
@@ -3144,58 +3126,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "detainedListTheCase",
                         "name", "Detained - List the case",
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
-                "cmrListing",
-                null,
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                singletonList(
-                    Map.of(
-                        "taskId", "cmrListed",
-                        "name", "Send CMR notification",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
-                "cmrListing",
-                null,
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                singletonList(
-                    Map.of(
-                        "taskId", "detainedCmrListed",
-                        "name", "Detained - Send CMR notification",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
-                "cmrListing",
-                null,
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                singletonList(
-                    Map.of(
-                        "taskId", "cmrListed",
-                        "name", "Send CMR notification",
-
                         "processCategories", "caseProgression"
                     )
                 )
@@ -4870,7 +4800,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(32));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(201));
+        assertThat(logic.getRules().size(), is(199));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {
