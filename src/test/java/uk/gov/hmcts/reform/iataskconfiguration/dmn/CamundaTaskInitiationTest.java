@@ -3016,42 +3016,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "cmrReListing",
-                null,
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                singletonList(
-                    Map.of(
-                        "taskId", "cmrUpdated",
-                        "name", "Update CMR notification",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
-                "cmrReListing",
-                null,
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
-                singletonList(
-                    Map.of(
-                        "taskId", "detainedCmrUpdated",
-                        "name", "Detained - Update CMR notification",
-
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-            Arguments.of(
                 "restoreStateFromAdjourn",
                 null,
                 mapAdditionalData("{\n"
@@ -4800,7 +4764,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(32));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(199));
+        assertThat(logic.getRules().size(), is(197));
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {
