@@ -279,26 +279,6 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
             ),
             Arguments.of(
                 null,
-                "cmrListing",
-                null,
-                singletonList(
-                    Map.of(
-                        "action", "Reconfigure"
-                    )
-                )
-            ),
-            Arguments.of(
-                null,
-                "cmrReListing",
-                null,
-                singletonList(
-                    Map.of(
-                        "action", "Reconfigure"
-                    )
-                )
-            ),
-            Arguments.of(
-                null,
                 "hearingCancelled",
                 null,
                 singletonList(
@@ -372,7 +352,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(3));
         assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(29));
+        assertThat(logic.getRules().size(), is(27));
 
     }
 }
