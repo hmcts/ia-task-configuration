@@ -348,7 +348,9 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("cmrListed", hearingWork),
             Arguments.of("detainedCmrListed", hearingWork),
             Arguments.of("cmrUpdated", hearingWork),
+            Arguments.of("cmrRelisted", hearingWork),
             Arguments.of("detainedCmrUpdated", hearingWork),
+            Arguments.of("detainedCmrRelisted", hearingWork),
             Arguments.of("relistCase", hearingWork),
             Arguments.of("detainedRelistCase", hearingWork),
             Arguments.of("reviewInterpreters", hearingWork),
@@ -511,7 +513,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "detainedPostHearingAttendeesDurationAndRecording",
         "editListing", "detainedEditListing", "followUpSetAsideDecision", "detainedFollowUpSetAsideDecision",
         "hearingException", "detainedHearingException",
-        "cmrListed", "cmrUpdated", "detainedCmrListed", "detainedCmrUpdated",
+        "cmrListed", "cmrUpdated","cmrRelisted", "detainedCmrListed", "detainedCmrUpdated", "detainedCmrRelisted",
         "relistCase", "detainedRelistCase",
         "reviewInterpreters", "detainedReviewInterpreters",
         "reviewMigratedCase", "detainedReviewMigratedCase",
@@ -1598,7 +1600,9 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "cmrListed,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,,",
         "detainedCmrListed,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,,",
         "cmrUpdated,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,,",
+        "cmrRelisted,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,,",
         "detainedCmrUpdated,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,,",
+        "detainedCmrRelisted,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,,",
         "relistCase,[Relist the hearing](cases/case-details/${[CASE_REFERENCE]}/hearings),,,",
         "detainedRelistCase,[Relist the hearing](cases/case-details/${[CASE_REFERENCE]}/hearings),,,",
         "reviewInterpreters,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,,",
@@ -1810,6 +1814,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("markAsPaid", fourteenDays),
             Arguments.of("cmrListed", twoDays),
             Arguments.of("detainedCmrUpdated", twoDays),
+            Arguments.of("detainedCmrRelisted", twoDays),
             Arguments.of("detainedListCmr", zeroDays)
         );
     }

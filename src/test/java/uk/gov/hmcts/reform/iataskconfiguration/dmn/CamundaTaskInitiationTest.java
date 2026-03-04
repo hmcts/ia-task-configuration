@@ -3025,8 +3025,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       + "}"),
                 singletonList(
                     Map.of(
-                        "taskId", "cmrUpdated",
-                        "name", "Update CMR notification",
+                        "taskId", "cmrRelisted",
+                        "name", "Relist CMR hearing",
 
                         "processCategories", "caseProgression"
                     )
@@ -3043,8 +3043,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       + "}"),
                 singletonList(
                     Map.of(
-                        "taskId", "detainedCmrUpdated",
-                        "name", "Detained - Update CMR notification",
+                        "taskId", "detainedCmrRelisted",
+                        "name", "Detained - Relist CMR hearing",
 
 
                         "processCategories", "caseProgression"
