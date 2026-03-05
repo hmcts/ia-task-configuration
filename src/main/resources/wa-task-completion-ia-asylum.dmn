@@ -1067,7 +1067,7 @@
       </rule>
       <rule id="DecisionRule_165r6rq">
         <inputEntry id="UnaryTests_0trbpgd">
-          <text>"raiseQuery"</text>
+          <text>"queryManagementRaiseQuery"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0cxnxvf">
           <text>"respondToQuery"</text>

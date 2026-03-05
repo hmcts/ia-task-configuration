@@ -22573,7 +22573,7 @@
       </rule>
       <rule id="DecisionRule_0s3pymo">
         <inputEntry id="UnaryTests_0zogek3">
-          <text>"raiseQuery"</text>
+          <text>"queryManagementRaiseQuery"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0wezemq">
           <text></text>
