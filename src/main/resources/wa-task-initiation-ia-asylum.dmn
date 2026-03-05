@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.36.1">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.34.0">
   <decision id="wa-task-initiation-ia-asylum" name="Task initiation DMN" camunda:historyTimeToLive="P90D">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT" biodi:annotationsWidth="400">
       <input id="Input_1" label="Event Id" biodi:width="515" camunda:inputVariable="eventId">
@@ -12073,10 +12073,10 @@
           <text>false</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1sc5xw3">
-          <text>"cmrUpdated"</text>
+          <text>"cmrRelisted"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0w5zxye">
-          <text>"Update CMR notification"</text>
+          <text>"Relist CMR hearing"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0s2t1ow">
           <text></text>
@@ -12183,10 +12183,10 @@
           <text>false</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1yn1xk5">
-          <text>"detainedCmrUpdated"</text>
+          <text>"detainedCmrRelisted"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1au7mpg">
-          <text>"Detained - Update CMR notification"</text>
+          <text>"Detained - Relist CMR hearing"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_17mwoba">
           <text></text>

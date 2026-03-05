@@ -567,6 +567,28 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "cmrRelisted",
+                List.of(
+                    taskSupervisor,
+                    seniorCaseWorkerPriorityOne,
+                    hearingCentreAdminPriorityOne,
+                    ctscAdminPriorityOne,
+                    ctscTeamLeaderPriorityOne,
+                    tribunalCaseWorkerPriorityTwoOwn
+                )
+            ),
+            Arguments.of(
+                "detainedCmrRelisted",
+                List.of(
+                    taskSupervisor,
+                    seniorCaseWorkerPriorityOne,
+                    hearingCentreAdminPriorityOne,
+                    ctscAdminPriorityOne,
+                    ctscTeamLeaderPriorityOne,
+                    tribunalCaseWorkerPriorityTwoOwn
+                )
+            ),
+            Arguments.of(
                 "relistCase",
                 List.of(
                     taskSupervisor,
