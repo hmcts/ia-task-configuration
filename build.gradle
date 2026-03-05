@@ -14,7 +14,10 @@ plugins {
 repositories {
   mavenLocal()
   mavenCentral()
-  maven { url 'https://jitpack.io' }
+  maven {
+    name = "AzureArtifacts"
+    url = uri("https://pkgs.dev.azure.com/hmcts/Artifacts/_packaging/hmcts-lib/maven/v1")
+  }
 }
   group = 'uk.gov.hmcts.reform'
 version = '0.0.1'
@@ -184,7 +187,7 @@ dependencyCheck {
   // Specifies if the build should be failed if a CVSS score above a specified level is identified.
   // range of 0-10 fails the build, anything greater and it doesn't fail the build
   failBuildOnCVSS = System.getProperty('dependencyCheck.failBuild') == 'true' ? 0 : 11
-  suppressionFile = 'config/owasp/suppressions.xml'
+  suppressionFile = 'https://raw.githubusercontent.com/hmcts/ia-owasp-suppressions/refs/heads/master/ia-task-configuration/suppressions.xml'
 
   analyzers {
     // Disable scanning of .NET related binaries
@@ -266,7 +269,7 @@ dependencies {
 
   implementation group: 'com.github.hmcts.java-logging', name: 'logging', version: versions.reformLogging
   implementation group: 'com.github.hmcts.java-logging', name: 'logging-appinsights', version: versions.reformLogging
-  implementation group: 'com.github.hmcts.java-logging', name: 'logging-spring', version: '5.1.9'
+  implementation group: 'com.github.hmcts.java-logging', name: 'logging-spring', version: '5.1.7'
 
   implementation group: 'org.apache.logging.log4j', name: 'log4j-api', version: versions.log4j
   implementation group: 'org.apache.logging.log4j', name: 'log4j-to-slf4j', version: versions.log4j
