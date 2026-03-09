@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.36.1">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.44.0">
   <decision id="wa-task-initiation-ia-asylum" name="Task initiation DMN" camunda:historyTimeToLive="P90D">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT" biodi:annotationsWidth="400">
       <input id="Input_1" label="Event Id" biodi:width="515" camunda:inputVariable="eventId">
@@ -13179,7 +13179,10 @@
           <text>"Review interpreter booking"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1fs4m85">
-          <text></text>
+          <text>{
+"delayUntil": additionalData.Data.listCaseHearingDate,
+"delayUntilIntervalDays": "-1"
+}</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1y6rwjw">
           <text>"caseProgression"</text>
@@ -13289,7 +13292,10 @@
           <text>"Detained - Review interpreter booking"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_09x373h">
-          <text></text>
+          <text>{
+"delayUntil": additionalData.Data.listCaseHearingDate,
+"delayUntilIntervalDays": "-1"
+}</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1bfexoa">
           <text>"caseProgression"</text>
