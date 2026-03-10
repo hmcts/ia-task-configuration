@@ -262,7 +262,7 @@
                         "reviewAddendumEvidence",
                         "detainedReviewAddendumEvidence",
                         "decideOnTimeExtension",
-                        "sendDecisionsAndReasons","detainedSendDecisionsAndReasons","detainedReviewAdditionalEvidence","detainedReviewAdditionalHomeOfficeEvidence","detainedReviewRespondentEvidence"</text>
+                        "sendDecisionsAndReasons","detainedSendDecisionsAndReasons","detainedReviewAdditionalEvidence","detainedReviewAdditionalHomeOfficeEvidence","detainedReviewRespondentEvidence", "respondToQuery"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0omxasv">
           <text>"workType"</text>
