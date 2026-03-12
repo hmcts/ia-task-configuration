@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="Definitions_1kep5qz" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.31.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.0.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="Definitions_1kep5qz" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.18.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.0.0">
   <decision id="wa-task-types-ia-asylum" name="Task Types DMN" camunda:historyTimeToLive="P90D">
     <decisionTable id="DecisionTable_17knzal" hitPolicy="COLLECT">
       <input id="Input_1">
@@ -986,50 +986,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0a6ponr">
           <text>"Detained - Review Respondent Response"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1ppqz55">
-        <inputEntry id="UnaryTests_0rxjkiy">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1lgtvgg">
-          <text>"cmrListed"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_133eiai">
-          <text>"Send CMR notification"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1w901kh">
-        <inputEntry id="UnaryTests_1s9oxm0">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1653wli">
-          <text>"detainedCmrListed"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_181pet7">
-          <text>"Detained - Send CMR notification"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1wipzfb">
-        <inputEntry id="UnaryTests_0un5rbj">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1m9ioaj">
-          <text>"cmrUpdated"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_04ofhz1">
-          <text>"Update CMR notification"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0sir79i">
-        <inputEntry id="UnaryTests_145s8rr">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_12g4qcy">
-          <text>"detainedCmrUpdated"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1eejkj9">
-          <text>"Detained - Update CMR notification"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1n5djgj">

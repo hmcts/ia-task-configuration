@@ -531,30 +531,6 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
             ),
             Map.of(
                 "taskTypeId",
-                "cmrListed",
-                "taskTypeName",
-                "Send CMR notification"
-            ),
-            Map.of(
-                "taskTypeId",
-                "detainedCmrListed",
-                "taskTypeName",
-                "Detained - Send CMR notification"
-            ),
-            Map.of(
-                "taskTypeId",
-                "cmrUpdated",
-                "taskTypeName",
-                "Update CMR notification"
-            ),
-            Map.of(
-                "taskTypeId",
-                "detainedCmrUpdated",
-                "taskTypeName",
-                "Detained - Update CMR notification"
-            ),
-            Map.of(
-                "taskTypeId",
                 "reviewInterpreters",
                 "taskTypeName",
                 "Review interpreter booking"
@@ -904,7 +880,7 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertThat(logic.getInputs().size(), is(1));
         assertThat(logic.getOutputs().size(), is(2));
-        assertThat(logic.getRules().size(), is(141));
+        assertThat(logic.getRules().size(), is(137));
 
     }
 }
