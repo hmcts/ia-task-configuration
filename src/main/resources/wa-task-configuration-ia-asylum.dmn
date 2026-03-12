@@ -262,7 +262,7 @@
                         "reviewAddendumEvidence",
                         "detainedReviewAddendumEvidence",
                         "decideOnTimeExtension",
-                        "sendDecisionsAndReasons","detainedSendDecisionsAndReasons","detainedReviewAdditionalEvidence","detainedReviewAdditionalHomeOfficeEvidence","detainedReviewRespondentEvidence", "respondToQuery"</text>
+                        "sendDecisionsAndReasons","detainedSendDecisionsAndReasons","detainedReviewAdditionalEvidence","detainedReviewAdditionalHomeOfficeEvidence","detainedReviewRespondentEvidence"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0omxasv">
           <text>"workType"</text>
@@ -1031,6 +1031,57 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_02y8ncm">
           <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1osmnw5">
+        <inputEntry id="UnaryTests_0s502j7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1092t8m">
+          <text>"respondToQuery"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1xi5w6f">
+          <text>"workType"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1fs50j3">
+          <text>"query_work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0cdm56f">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0367s8y">
+        <inputEntry id="UnaryTests_1sbhbx5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1gq72i5">
+          <text>"respondToQuery"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0vu3383">
+          <text>"roleCategory"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_16fgjsm">
+          <text>"CTSC"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1v7a7rm">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0vrercb">
+        <inputEntry id="UnaryTests_14rzhe9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tws1n4">
+          <text>"respondToQuery"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0haujlf">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_02aa0j6">
+          <text>"[Respond to a query](/query/${[CASE_REFERENCE]}/" + queryId + ")</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0bwyopc">
+          <text>false</text>
         </outputEntry>
       </rule>
     </decisionTable>
