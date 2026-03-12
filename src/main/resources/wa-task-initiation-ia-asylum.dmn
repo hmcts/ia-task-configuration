@@ -22678,7 +22678,7 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_10yo1qa">
-          <text>"qmResponseTasks,queryManagement_queryID_" + additionalData.Data.qmLatestQuery.queryId</text>
+          <text>"caseProgression"</text>
         </outputEntry>
       </rule>
     </decisionTable>
