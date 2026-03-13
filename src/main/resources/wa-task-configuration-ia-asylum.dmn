@@ -1064,7 +1064,7 @@
           <text>if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "respondToQuery" or taskType != null and taskType = "respondToQuery") then "[Respond to a query](/query/${[CASE_REFERENCE]}/" + queryId + ")" else ""</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_16q8t0t">
-          <text></text>
+          <text>false</text>
         </outputEntry>
       </rule>
     </decisionTable>
