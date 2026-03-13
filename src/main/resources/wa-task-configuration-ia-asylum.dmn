@@ -1050,23 +1050,6 @@
           <text>false</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_0367s8y">
-        <inputEntry id="UnaryTests_1sbhbx5">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_1gq72i5">
-          <text>"respondToQuery"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0vu3383">
-          <text>"roleCategory"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_16fgjsm">
-          <text>"CTSC"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1v7a7rm">
-          <text>false</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_0vrercb">
         <inputEntry id="UnaryTests_14rzhe9">
           <text></text>
