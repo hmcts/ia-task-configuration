@@ -22571,6 +22571,116 @@
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_0s3pymo">
+        <inputEntry id="UnaryTests_0zogek3">
+          <text>"queryManagementRaiseQuery"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0wezemq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_13jvx4h">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1gclg70">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fs7vxt">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tueq1v">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1bv8m69">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12wwzhp">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08sflft">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1glhgk0">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0fugqm5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rdi049">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xid8j8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ae49us">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qgwie6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_007s2h8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_11tprnq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14gf8yt">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0cux38y">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1thhtwu">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01wvay1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0dj77co">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0uhtdc6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_125mjll">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1e1vvha">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ly9sn7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wly4z1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0w69ng3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0wb4faf">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0iko2m5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1o1fk3d">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17vx6f2">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1xl7if2">
+          <text>"respondToQuery"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1c7wltn">
+          <text>"Respond to Query"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0en4xok">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_10yo1qa">
+          <text>"qmResponseTasks,queryManagement_queryID_" + additionalData.Data.qmLatestQuery.queryId</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

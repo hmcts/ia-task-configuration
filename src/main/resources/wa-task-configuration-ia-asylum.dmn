@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.39.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="wa-configuration-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.36.1">
   <decision id="wa-task-configuration-ia-asylum" name="Task configuration DMN" camunda:historyTimeToLive="P90D">
     <decisionTable id="DecisionTable_14cx079" hitPolicy="COLLECT">
       <input id="InputClause_1gxyo7f" label="CCD Case Data" camunda:inputVariable="caseData">
@@ -538,7 +538,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0xh5are">
-          <text>"reviewRemissionApplication","reviewASRemission", "reviewLARemission", "reviewHOWaiverRemission", "reviewAuthorityRemission", "reviewHWFRemission", "reviewECRRemission", "detainedReviewASRemission", "detainedReviewLARemission", "detainedReviewHOWaiverRemission", "detainedReviewAuthorityRemission", "detainedReviewHWFRemission", "detainedReviewECRRemission","assignAFTPAJudge","detainedAssignAFTPAJudge","listTheCase","detainedListTheCase","sendPaymentRequest","markAsPaid","processFeeRefund","detainedProcessFeeRefund","reviewDraftAppeal","detainedReviewDraftAppeal"</text>
+          <text>"reviewRemissionApplication","reviewASRemission", "reviewLARemission", "reviewHOWaiverRemission", "reviewAuthorityRemission", "reviewHWFRemission", "reviewECRRemission", "detainedReviewASRemission", "detainedReviewLARemission", "detainedReviewHOWaiverRemission", "detainedReviewAuthorityRemission", "detainedReviewHWFRemission", "detainedReviewECRRemission","assignAFTPAJudge","detainedAssignAFTPAJudge","listTheCase","detainedListTheCase","sendPaymentRequest","markAsPaid","processFeeRefund","detainedProcessFeeRefund","reviewDraftAppeal","detainedReviewDraftAppeal", "respondToQuery"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0vqliz7">
           <text>"roleCategory"</text>
@@ -591,13 +591,13 @@
                         then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewRemissionApplication" or taskType != null and taskType = "reviewRemissionApplication") then "[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/recordRemissionDecision/recordRemissionDecisionremissionDecision)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "detainedReviewRemissionApplication" or taskType != null and taskType = "detainedReviewRemissionApplication") then "[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/recordRemissionDecision/recordRemissionDecisionremissionDecision)"
-                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewASRemission" or taskType != null and taskType = "reviewASRemission") then "[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/recordRemissionDecision/recordRemissionDecisionremissionDecision)"  
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewASRemission" or taskType != null and taskType = "reviewASRemission") then "[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/recordRemissionDecision/recordRemissionDecisionremissionDecision)"
                          else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewLARemission" or taskType != null and taskType = "reviewLARemission") then "[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/recordRemissionDecision/recordRemissionDecisionremissionDecision)"
                          else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewHOWaiverRemission" or taskType != null and taskType = "reviewHOWaiverRemission") then "[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/recordRemissionDecision/recordRemissionDecisionremissionDecision)"
                          else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewAuthorityRemission" or taskType != null and taskType = "reviewAuthorityRemission") then "[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/recordRemissionDecision/recordRemissionDecisionremissionDecision)"
                          else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewHWFRemission" or taskType != null and taskType = "reviewHWFRemission") then "[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/recordRemissionDecision/recordRemissionDecisionremissionDecision)"
                          else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewECRRemission" or taskType != null and taskType = "reviewECRRemission") then "[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/recordRemissionDecision/recordRemissionDecisionremissionDecision)"
-                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "detainedReviewASRemission" or taskType != null and taskType = "detainedReviewASRemission") then "[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/recordRemissionDecision/recordRemissionDecisionremissionDecision)" 
+                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "detainedReviewASRemission" or taskType != null and taskType = "detainedReviewASRemission") then "[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/recordRemissionDecision/recordRemissionDecisionremissionDecision)"
                          else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "detainedReviewLARemission" or taskType != null and taskType = "detainedReviewLARemission") then "[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/recordRemissionDecision/recordRemissionDecisionremissionDecision)"
                          else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "detainedReviewHOWaiverRemission" or taskType != null and taskType = "detainedReviewHOWaiverRemission") then "[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/recordRemissionDecision/recordRemissionDecisionremissionDecision)"
                          else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "detainedReviewAuthorityRemission" or taskType != null and taskType = "detainedReviewAuthorityRemission") then "[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/recordRemissionDecision/recordRemissionDecisionremissionDecision)"
@@ -680,6 +680,7 @@
                   else if ((taskAttributes != null and taskAttributes.taskType != null and (taskAttributes.taskType = "processApplicationChangeHearingType" or taskAttributes.taskType = "detainedProcessApplicationChangeHearingType")) or (taskType != null and (taskType = "processApplicationChangeHearingType" or taskType = "detainedProcessApplicationChangeHearingType")))
                   then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)"
                   else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "editListing" or taskType != null and taskType = "editListing") then "[Edit case listing](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/editCaseListing)"
+                  else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "respondToQuery" or taskType != null and taskType = "respondToQuery") then "[Respond to a query](/query/${[CASE_REFERENCE]}/" + queryId + ")"
                   else "" </text>
         </outputEntry>
         <outputEntry id="LiteralExpression_184xf0n">
@@ -1033,12 +1034,41 @@
           <text>true</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_1osmnw5">
+        <inputEntry id="UnaryTests_0s502j7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1092t8m">
+          <text>"respondToQuery"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1xi5w6f">
+          <text>"workType"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1fs50j3">
+          <text>"query_work"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0cdm56f">
+          <text>false</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
+  </decision>
+  <decision id="Decision_187bb0q" name="queryId">
+    <variable id="InformationItem_0qirlxs" name="queryId" />
+    <literalExpression id="LiteralExpression_15lh2wg" />
   </decision>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram id="DMNDiagram_1ifewa3">
       <dmndi:DMNShape id="DMNShape_0ijg0or" dmnElementRef="wa-task-configuration-ia-asylum">
         <dc:Bounds height="80" width="180" x="150" y="80" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_0fm4gnb" dmnElementRef="InformationRequirement_0mci2q9">
+        <di:waypoint x="330" y="240" />
+        <di:waypoint x="240" y="180" />
+        <di:waypoint x="240" y="160" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_10ixbs6" dmnElementRef="Decision_187bb0q">
+        <dc:Bounds height="80" width="180" x="240" y="240" />
       </dmndi:DMNShape>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>
