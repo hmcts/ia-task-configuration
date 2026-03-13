@@ -1078,7 +1078,7 @@
           <text>"description"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_02aa0j6">
-          <text>"[Respond to a query](/query/${[CASE_REFERENCE]}/" + queryId + ")</text>
+          <text>"[Respond to a query](/query/${[CASE_REFERENCE]}/" + queryId + ")"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0bwyopc">
           <text>false</text>
