@@ -679,7 +679,8 @@
                   then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)"
                   else if ((taskAttributes != null and taskAttributes.taskType != null and (taskAttributes.taskType = "processApplicationChangeHearingType" or taskAttributes.taskType = "detainedProcessApplicationChangeHearingType")) or (taskType != null and (taskType = "processApplicationChangeHearingType" or taskType = "detainedProcessApplicationChangeHearingType")))
                   then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)"
-                  else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "editListing" or taskType != null and taskType = "editListing") then "[Edit case listing](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/editCaseListing)"
+                  else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "editListing" or taskType != null and taskType = "editListing") then "[Edit case listing](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/editCaseListing)" 
+                  else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "respondToQuery" or taskType != null and taskType = "editListing") then "[Respond to a query](/query/${[CASE_REFERENCE]}/" + queryId + ")"
                   else "" </text>
         </outputEntry>
         <outputEntry id="LiteralExpression_184xf0n">
@@ -1047,23 +1048,6 @@
           <text>"query_work"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0cdm56f">
-          <text>false</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0vrercb">
-        <inputEntry id="UnaryTests_14rzhe9">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0tws1n4">
-          <text>"respondToQuery"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_0haujlf">
-          <text>"description"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_02aa0j6">
-          <text>"[Respond to a query](/query/${[CASE_REFERENCE]}/" + queryId + ")"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0bwyopc">
           <text>false</text>
         </outputEntry>
       </rule>
