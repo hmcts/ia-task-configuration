@@ -680,7 +680,6 @@
                   else if ((taskAttributes != null and taskAttributes.taskType != null and (taskAttributes.taskType = "processApplicationChangeHearingType" or taskAttributes.taskType = "detainedProcessApplicationChangeHearingType")) or (taskType != null and (taskType = "processApplicationChangeHearingType" or taskType = "detainedProcessApplicationChangeHearingType")))
                   then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)"
                   else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "editListing" or taskType != null and taskType = "editListing") then "[Edit case listing](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/editCaseListing)" 
-                  else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "respondToQuery" or taskType != null and taskType = "respondToQuery") then "[Respond to a query](/query/${[CASE_REFERENCE]}/" + queryId + ")"
                   else "" </text>
         </outputEntry>
         <outputEntry id="LiteralExpression_184xf0n">
@@ -1049,6 +1048,40 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0cdm56f">
           <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0jcntus">
+        <inputEntry id="UnaryTests_1yd7fo1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jka3dt">
+          <text>"respondToQuery"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_073b5cm">
+          <text>"description"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_054r9hz">
+          <text>if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "respondToQuery" or taskType != null and taskType = "respondToQuery") then "[Respond to a query](/query/${[CASE_REFERENCE]}/" + queryId + ")" else ""</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_16q8t0t">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0xt8u34">
+        <inputEntry id="UnaryTests_1vebbkw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1hgz2b0">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_13ugxv6">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0evq6l6">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_17dpho6">
+          <text></text>
         </outputEntry>
       </rule>
     </decisionTable>
