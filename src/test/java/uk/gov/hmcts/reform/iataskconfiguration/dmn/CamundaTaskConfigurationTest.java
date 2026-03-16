@@ -345,8 +345,6 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("detainedListTheCase", hearingWork),
             Arguments.of("hearingException", hearingWork),
             Arguments.of("detainedHearingException", hearingWork),
-            Arguments.of("cmrListed", hearingWork),
-            Arguments.of("detainedCmrListed", hearingWork),
             Arguments.of("cmrUpdated", hearingWork),
             Arguments.of("detainedCmrUpdated", hearingWork),
             Arguments.of("relistCase", hearingWork),
@@ -511,7 +509,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "detainedPostHearingAttendeesDurationAndRecording",
         "editListing", "detainedEditListing", "followUpSetAsideDecision", "detainedFollowUpSetAsideDecision",
         "hearingException", "detainedHearingException",
-        "cmrListed", "cmrUpdated", "detainedCmrListed", "detainedCmrUpdated",
+        "cmrUpdated", "detainedCmrUpdated",
         "relistCase", "detainedRelistCase",
         "reviewInterpreters", "detainedReviewInterpreters",
         "reviewMigratedCase", "detainedReviewMigratedCase",
@@ -1595,8 +1593,6 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             + "progressMigratedCase),,,10",
         "hearingException,[Go to case](cases/case-details/${[CASE_REFERENCE]}/hearings),,,",
         "detainedHearingException,[Go to case](cases/case-details/${[CASE_REFERENCE]}/hearings),,,",
-        "cmrListed,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,,",
-        "detainedCmrListed,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,,",
         "cmrUpdated,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,,",
         "detainedCmrUpdated,[View the Hearings](cases/case-details/${[CASE_REFERENCE]}/hearings),,,",
         "relistCase,[Relist the hearing](cases/case-details/${[CASE_REFERENCE]}/hearings),,,",
@@ -1808,9 +1804,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of("printAndSendReheardHearingRequirements", zeroDays),
             Arguments.of("detainedPrintAndSendReheardHearingRequirements", zeroDays),
             Arguments.of("markAsPaid", fourteenDays),
-            Arguments.of("cmrListed", twoDays),
-            Arguments.of("detainedCmrUpdated", twoDays),
-            Arguments.of("detainedListCmr", zeroDays)
+            Arguments.of("detainedCmrUpdated", twoDays)
         );
     }
 

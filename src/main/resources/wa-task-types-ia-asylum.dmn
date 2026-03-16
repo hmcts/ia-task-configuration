@@ -988,28 +988,6 @@
           <text>"Detained - Review Respondent Response"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_1ppqz55">
-        <inputEntry id="UnaryTests_0rxjkiy">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1lgtvgg">
-          <text>"cmrListed"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_133eiai">
-          <text>"Send CMR notification"</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_1w901kh">
-        <inputEntry id="UnaryTests_1s9oxm0">
-          <text></text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_1653wli">
-          <text>"detainedCmrListed"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_181pet7">
-          <text>"Detained - Send CMR notification"</text>
-        </outputEntry>
-      </rule>
       <rule id="DecisionRule_1wipzfb">
         <inputEntry id="UnaryTests_0un5rbj">
           <text></text>
