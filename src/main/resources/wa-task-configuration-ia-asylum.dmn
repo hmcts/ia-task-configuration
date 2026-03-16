@@ -590,7 +590,7 @@
                         else if ((taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "detainedListTheCase" or taskType != null and taskType = "detainedListTheCase") and (caseData != null and caseData.isIntegrated = "Yes")) then "[List the case](cases/case-details/${[CASE_REFERENCE]}/hearings)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "assignAFTPAJudge" or taskType != null and taskType = "assignAFTPAJudge") then "[Record allocated Judge](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/recordAllocatedJudge)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "detainedAssignAFTPAJudge" or taskType != null and taskType = "detainedAssignAFTPAJudge") then "[Record allocated Judge](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/recordAllocatedJudge)"
-                        else if taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "detainedProcessApplicationAdjourn" or taskType != null and taskType = "detainedProcessApplicationAdjourn)"
+                        else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "detainedProcessApplicationAdjourn" or taskType != null and taskType = "detainedProcessApplicationAdjourn)")
                         then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewRemissionApplication" or taskType != null and taskType = "reviewRemissionApplication") then "[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/recordRemissionDecision/recordRemissionDecisionremissionDecision)"
                         else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "detainedReviewRemissionApplication" or taskType != null and taskType = "detainedReviewRemissionApplication") then "[Record remission decision](/cases/case-details/${[CASE_REFERENCE]}/trigger/recordRemissionDecision/recordRemissionDecisionremissionDecision)"
@@ -1057,8 +1057,18 @@
     </decisionTable>
   </decision>
   <decision id="Decision_187bb0q" name="queryId">
-    <variable id="InformationItem_0qirlxs" name="queryId" />
-    <literalExpression id="LiteralExpression_15lh2wg" />
+    <variable id="InformationItem_0qirlxs" name="queryId" typeRef="string" />
+    <literalExpression id="LiteralExpression_15lh2wg" expressionLanguage="feel">
+      <text>if taskAttributes = null then null else
+{
+  "__prefix" : "__processCategory__queryManagement_queryID_",
+  "__attribute_entries" : get entries(taskAttributes),
+  "__matching_keys" : for __item in __attribute_entries return if starts with(__item.key, __prefix) then substring(__item.key, string length(__prefix) + 1) else null,
+  "__filtered_keys" : __matching_keys[item != null],
+  "__nonempty_keys" : append(__filtered_keys, null),
+  "__nullable_query_id" : __nonempty_keys[1]
+}.__nullable_query_id</text>
+    </literalExpression>
   </decision>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram id="DMNDiagram_1ifewa3">
