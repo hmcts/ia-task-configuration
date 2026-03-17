@@ -1065,14 +1065,14 @@
           <text>"Auto"</text>
         </outputEntry>
       </rule>
-      <rule id="DecisionRule_165r6rq">
-        <inputEntry id="UnaryTests_0trbpgd">
-          <text>"queryManagementRaiseQuery"</text>
+      <rule id="DecisionRule_0n73mn4">
+        <inputEntry id="UnaryTests_11l1zgt">
+          <text>"queryManagementRespondQuery"</text>
         </inputEntry>
-        <outputEntry id="LiteralExpression_0cxnxvf">
+        <outputEntry id="LiteralExpression_0k3cg91">
           <text>"respondToQuery"</text>
         </outputEntry>
-        <outputEntry id="LiteralExpression_0o6tst2">
+        <outputEntry id="LiteralExpression_0hvimq7">
           <text>"Auto"</text>
         </outputEntry>
       </rule>
