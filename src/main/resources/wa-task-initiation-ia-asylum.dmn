@@ -13181,7 +13181,7 @@
         <outputEntry id="LiteralExpression_1fs4m85">
           <text>{
 "delayUntil": additionalData.Data.listCaseHearingDate,
-"delayUntilIntervalDays": "0"
+"delayUntilIntervalDays": "-5"
 }</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1y6rwjw">
@@ -13294,7 +13294,7 @@
         <outputEntry id="LiteralExpression_09x373h">
           <text>{
 "delayUntil": additionalData.Data.listCaseHearingDate,
-"delayUntilIntervalDays": "0"
+"delayUntilIntervalDays": "-5"
 }</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1bfexoa">
