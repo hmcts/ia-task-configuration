@@ -13069,7 +13069,10 @@
           <text>"Detained - Review interpreter booking"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0thfzpg">
-          <text></text>
+          <text>{
+"delayUntil": additionalData.Data.listCaseHearingDate,
+"delayUntilIntervalDays": "-2"
+}</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_02il0q0">
           <text>"caseProgression"</text>
@@ -13179,7 +13182,10 @@
           <text>"Review interpreter booking"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1fs4m85">
-          <text></text>
+          <text>{
+"delayUntil": additionalData.Data.listCaseHearingDate,
+"delayUntilIntervalDays": "-2"
+}</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1y6rwjw">
           <text>"caseProgression"</text>
