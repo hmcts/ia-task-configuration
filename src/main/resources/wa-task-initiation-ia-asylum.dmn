@@ -13070,9 +13070,9 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0thfzpg">
           <text>{
-"delayUntil": additionalData.Data.listCaseHearingDate,
-"delayUntilIntervalDays": "-2"
-}</text>
+  "delayUntil": date(additionalData.Data.listCaseHearingDate) - duration("P2D") 
+}
+</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_02il0q0">
           <text>"caseProgression"</text>
@@ -13183,8 +13183,7 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_1fs4m85">
           <text>{
-"delayUntil": additionalData.Data.listCaseHearingDate,
-"delayUntilIntervalDays": "-2"
+  "delayUntil": date(additionalData.Data.listCaseHearingDate) - duration("P2D") 
 }</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1y6rwjw">
