@@ -13069,10 +13069,7 @@
           <text>"Detained - Review interpreter booking"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0thfzpg">
-          <text>{
-  "delayUntil": date and time(additionalData.Data.listCaseHearingDate) - duration("P3D"),
-"delayUntilIntervalDays": "0" 
-}</text>
+          <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_02il0q0">
           <text>"caseProgression"</text>
@@ -13183,7 +13180,7 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_1fs4m85">
           <text>{
-  "delayUntil": date and time(additionalData.Data.listCaseHearingDate) - duration("P3D"),
+  "delayUntil": date and time(additionalData.Data.listCaseHearingDate) - duration("P1D"),
 "delayUntilIntervalDays": "0" 
 }</text>
         </outputEntry>
@@ -13295,7 +13292,10 @@
           <text>"Detained - Review interpreter booking"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_09x373h">
-          <text></text>
+          <text>{
+  "delayUntil": date and time(additionalData.Data.listCaseHearingDate) - duration("P1D"),
+"delayUntilIntervalDays": "0" 
+}</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1bfexoa">
           <text>"caseProgression"</text>
