@@ -5,11 +5,12 @@ properties([
 ])
 
 @Library("Infrastructure")
-
+import uk.gov.hmcts.contino.GradleBuilder
 def type = "java"
 def product = "ia"
 def component = "task-configuration"
 
+GradleBuilder builder = new GradleBuilder(this, product)
 withNightlyPipeline(type, product, component) {
   afterAlways('build') {
     stage('Checkstyle and unit tests') {
