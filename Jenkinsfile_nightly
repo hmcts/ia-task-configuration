@@ -1,10 +1,15 @@
 #!groovy
 
+properties([
+  pipelineTriggers([cron('H 8 * * 1-5')]),
+])
+
 @Library("Infrastructure")
 
 def type = "java"
 def product = "ia"
 def component = "task-configuration"
 
-withPipeline(type, product, component) {
+withNightlyPipeline(type, product, component) {
+  enableDockerTestBuild()
 }
