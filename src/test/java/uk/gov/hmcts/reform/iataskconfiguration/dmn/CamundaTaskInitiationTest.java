@@ -3016,6 +3016,42 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
+                "cmrReListing",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "cmrUpdated",
+                        "name", "Update CMR notification",
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
+                "cmrReListing",
+                null,
+                mapAdditionalData("{\n"
+                                      + "   \"Data\":{\n"
+                                      + "      \"appellantInDetention\":\"" + "true" + "\",\n"
+                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
+                                      + "   }"
+                                      + "}"),
+                singletonList(
+                    Map.of(
+                        "taskId", "detainedCmrUpdated",
+                        "name", "Detained - Update CMR notification",
+
+
+                        "processCategories", "caseProgression"
+                    )
+                )
+            ),
+            Arguments.of(
                 "restoreStateFromAdjourn",
                 null,
                 mapAdditionalData("{\n"

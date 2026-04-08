@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-permissions-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.18.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="wa-permissions-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.36.1">
   <decision id="wa-task-permissions-ia-asylum" name="Permissions DMN" camunda:historyTimeToLive="P90D">
     <decisionTable id="DecisionTable_1pr5oic" hitPolicy="RULE ORDER">
       <input id="InputClause_12crj6e" label="Task Type" biodi:width="554" camunda:inputVariable="taskType">
@@ -238,6 +238,8 @@
             "reviewRemittedAppeal","detainedReviewRemittedAppeal",
             "reviewAppealSetAsideUnderRule35","detainedReviewAppealSetAsideUnderRule35",
             "reviewAppealSetAsideUnderRule32","detainedReviewAppealSetAsideUnderRule32",
+
+            "cmrUpdated","detainedCmrUpdated",
             "relistCase","detainedRelistCase",
             "listTheCase","detainedReviewInterpreters","detainedListTheCase",
             "reviewInterpreters","detainedListCmr"</text>
@@ -364,6 +366,7 @@
             "editListing","detainedEditListing",
 "followUpSetAsideDecision","detainedFollowUpSetAsideDecision",
 "hearingException","detainedHearingException",
+"cmrUpdated","detainedCmrUpdated",
 "relistCase","detainedRelistCase",
 "listTheCase","detainedListTheCase",
 "reviewInterpreters","detainedReviewInterpreters",
@@ -659,6 +662,7 @@
 "assignAFTPAJudge","detainedAssignAFTPAJudge",
 "listTheCase","detainedListTheCase","detainedListCmr",
 "sendPaymentRequest","markAsPaid",
+"cmrUpdated","detainedCmrUpdated",
 "reviewInterpreters","detainedReviewInterpreters",
 "processFeeRefund","detainedProcessFeeRefund",
 "reviewDraftAppeal","detainedReviewDraftAppeal",
@@ -702,7 +706,7 @@
       <rule id="DecisionRule_155ah64">
         <description>CTSC Team Leader task permissions</description>
         <inputEntry id="UnaryTests_08panx7">
-          <text>"reviewRemissionApplication","detainedReviewRemissionApplication","assignAFTPAJudge","detainedAssignAFTPAJudge","listTheCase","detainedListTheCase","sendPaymentRequest","markAsPaid","reviewInterpreters","detainedReviewInterpreters","processFeeRefund","detainedProcessFeeRefund","reviewDraftAppeal","detainedReviewDraftAppeal","detainedListCmr","printAndSendHoBundle","detainedPrintAndSendHoBundle","printAndSendHoResponse","printAndSendHearingRequirements","detainedPrintAndSendHearingRequirements","printAndSendHearingBundle","detainedPrintAndSendHearingBundle","printAndSendDecisionCorrectedRule31","detainedPrintAndSendDecisionCorrectedRule31","printAndSendDecisionCorrectedRule32","detainedPrintAndSendDecisionCorrectedRule32","printAndSendHoApplication","detainedPrintAndSendHoApplication","printAndSendHoEvidence","detainedPrintAndSendHoEvidence","printAndSendAppealDecision","detainedPrintAndSendAppealDecision","printAndSendFTPADecision","detainedPrintAndSendFTPADecision","printAndSendReheardHearingRequirements","detainedPrintAndSendReheardHearingRequirements","reviewASRemission", "reviewLARemission", "reviewHOWaiverRemission", "reviewAuthorityRemission", "reviewHWFRemission", "reviewECRRemission", "detainedReviewASRemission", "detainedReviewLARemission", "detainedReviewHOWaiverRemission", "detainedReviewAuthorityRemission", "detainedReviewHWFRemission", "detainedReviewECRRemission"</text>
+          <text>"reviewRemissionApplication","detainedReviewRemissionApplication","assignAFTPAJudge","detainedAssignAFTPAJudge","listTheCase","detainedListTheCase","sendPaymentRequest","markAsPaid","cmrUpdated","detainedCmrUpdated","reviewInterpreters","detainedReviewInterpreters","processFeeRefund","detainedProcessFeeRefund","reviewDraftAppeal","detainedReviewDraftAppeal","detainedListCmr","printAndSendHoBundle","detainedPrintAndSendHoBundle","printAndSendHoResponse","printAndSendHearingRequirements","detainedPrintAndSendHearingRequirements","printAndSendHearingBundle","detainedPrintAndSendHearingBundle","printAndSendDecisionCorrectedRule31","detainedPrintAndSendDecisionCorrectedRule31","printAndSendDecisionCorrectedRule32","detainedPrintAndSendDecisionCorrectedRule32","printAndSendHoApplication","detainedPrintAndSendHoApplication","printAndSendHoEvidence","detainedPrintAndSendHoEvidence","printAndSendAppealDecision","detainedPrintAndSendAppealDecision","printAndSendFTPADecision","detainedPrintAndSendFTPADecision","printAndSendReheardHearingRequirements","detainedPrintAndSendReheardHearingRequirements","reviewASRemission", "reviewLARemission", "reviewHOWaiverRemission", "reviewAuthorityRemission", "reviewHWFRemission", "reviewECRRemission", "detainedReviewASRemission", "detainedReviewLARemission", "detainedReviewHOWaiverRemission", "detainedReviewAuthorityRemission", "detainedReviewHWFRemission", "detainedReviewECRRemission"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0njeznv">
           <text></text>
@@ -731,7 +735,7 @@
       </rule>
       <rule id="DecisionRule_0xfd7pt">
         <inputEntry id="UnaryTests_141gjoe">
-          <text>"hearingException","detainedHearingException","relistCase","detainedRelistCase","listTheCase","detainedListTheCase","reviewInterpreters","detainedReviewInterpreters","detainedListCmr"</text>
+          <text>"hearingException","detainedHearingException","cmrUpdated","detainedCmrUpdated","relistCase","detainedRelistCase","listTheCase","detainedListTheCase","reviewInterpreters","detainedReviewInterpreters","detainedListCmr"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0otzt6m">
           <text></text>
