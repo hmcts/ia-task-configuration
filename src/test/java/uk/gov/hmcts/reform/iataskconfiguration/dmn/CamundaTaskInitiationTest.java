@@ -36,7 +36,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         CURRENT_DMN_DECISION_TABLE = WA_TASK_INITIATION_IA_ASYLUM;
     }
 
-    private static final String hearingDate = LocalDateTime.now().plusDays(5).format(DateTimeFormatter.ISO_LOCAL_DATE_TIME);
+    private static final String hearingDate = LocalDateTime.now().plusDays(5)
+        .format(DateTimeFormatter.ISO_LOCAL_DATE_TIME);
 
     static Stream<Arguments> scenarioProvider() {
         LocalDateTime directionDueDate = LocalDateTime.now().plusDays(5);
