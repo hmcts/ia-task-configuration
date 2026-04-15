@@ -310,12 +310,18 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 null,
                 "listCase",
-                null,
+                "prepareForHearing",
                 singletonList(
                     Map.of(
                         "action", "Reconfigure"
                     )
                 )
+            ),
+            Arguments.of(
+                null,
+                "listCase",
+                "listing",
+                emptyList()
             ),
             Arguments.of(
                 null,
