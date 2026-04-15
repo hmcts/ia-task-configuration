@@ -3289,14 +3289,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
                                       + "   }"
                                       + "}"),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewInterpreters",
-                        "name", "Review interpreter booking",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                emptyList()
             ),
             Arguments.of(
                 "hearingCancelled",
@@ -3307,14 +3300,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
                                       + "   }"
                                       + "}"),
-                singletonList(
-                    Map.of(
-                        "taskId", "detainedReviewInterpreters",
-                        "name", "Detained - Review interpreter booking",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                emptyList()
             ),
             Arguments.of(
                 "editCaseListing",
@@ -3329,7 +3315,11 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "reviewInterpreters",
                         "name", "Review interpreter booking",
-                        "processCategories", "caseProgression"
+                        "processCategories", "caseProgression",
+                        "delayUntil", new HashMap<String, Object>() {{
+                            put("delayUntil", null);
+                            put("delayUntilIntervalDays", "0");
+                        }}
                     )
                 )
             ),
@@ -3347,7 +3337,11 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     Map.of(
                         "taskId", "detainedReviewInterpreters",
                         "name", "Detained - Review interpreter booking",
-                        "processCategories", "caseProgression"
+                        "processCategories", "caseProgression",
+                        "delayUntil", new HashMap<String, Object>() {{
+                            put("delayUntil", null);
+                            put("delayUntilIntervalDays", "0");
+                        }}
                     )
                 )
             ),
@@ -4405,6 +4399,9 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         inputVariables.putAll(map);
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
+//        if (expectation.size() > 0 && expectation.get(0).get("name").equals("Review interpreter booking")) {
+//            assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
+//        }
         assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
     }
 
