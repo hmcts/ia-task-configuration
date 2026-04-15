@@ -3317,9 +3317,9 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Review interpreter booking",
                         "processCategories", "caseProgression",
                         "delayUntil", new HashMap<String, Object>() {{
-                            put("delayUntil", null);
-                            put("delayUntilIntervalDays", "0");
-                        }}
+                                put("delayUntil", null);
+                                put("delayUntilIntervalDays", "0");
+                            }}
                     )
                 )
             ),
@@ -3339,9 +3339,9 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                         "name", "Detained - Review interpreter booking",
                         "processCategories", "caseProgression",
                         "delayUntil", new HashMap<String, Object>() {{
-                            put("delayUntil", null);
-                            put("delayUntilIntervalDays", "0");
-                        }}
+                                put("delayUntil", null);
+                                put("delayUntilIntervalDays", "0");
+                            }}
                     )
                 )
             ),
@@ -4399,9 +4399,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         inputVariables.putAll(map);
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
-//        if (expectation.size() > 0 && expectation.get(0).get("name").equals("Review interpreter booking")) {
-//            assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
-//        }
         assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
     }
 
