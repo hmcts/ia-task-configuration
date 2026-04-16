@@ -10177,7 +10177,7 @@
         <outputEntry id="LiteralExpression_ccr_taskId"><text>"listTheCase"</text></outputEntry>
         <outputEntry id="LiteralExpression_ccr_name"><text>"List the case"</text></outputEntry>
         <outputEntry id="LiteralExpression_ccr_delay"><text></text></outputEntry>
-        <outputEntry id="LiteralExpression_ccr_category"><text>"caseProgression"</text></outputEntry>
+        <outputEntry id="LiteralExpression_ccr_category"><text>"listTheCaseTask"</text></outputEntry>
       </rule>
       <rule id="DecisionRule_sendToAdminForListing_listTheCase">
         <inputEntry id="UnaryTests_stal_eventId"><text>"sendToAdminForListing"</text></inputEntry>
@@ -10216,7 +10216,7 @@
         <outputEntry id="LiteralExpression_stal_taskId"><text>"listTheCase"</text></outputEntry>
         <outputEntry id="LiteralExpression_stal_name"><text>"List the case"</text></outputEntry>
         <outputEntry id="LiteralExpression_stal_delay"><text></text></outputEntry>
-        <outputEntry id="LiteralExpression_stal_category"><text>"caseProgression"</text></outputEntry>
+        <outputEntry id="LiteralExpression_stal_category"><text>"listTheCaseTask"</text></outputEntry>
       </rule>
       <rule id="DecisionRule_1bk16ud">
         <inputEntry id="UnaryTests_03k9idy">

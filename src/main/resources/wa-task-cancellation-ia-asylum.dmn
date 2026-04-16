@@ -621,6 +621,30 @@
         </outputEntry>
       </rule>
 
+      <rule id="DecisionRule_listCase_listTheCaseTask">
+        <inputEntry id="UnaryTests_lc_ltct_fromState">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_lc_ltct_event">
+          <text>"listCase"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_lc_ltct_state">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_lc_ltct_action">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_lc_ltct_warningCode">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_lc_ltct_warningText">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_lc_ltct_processCategories">
+          <text>"listTheCaseTask"</text>
+        </outputEntry>
+      </rule>
+
       <rule id="DecisionRule_0zzsez4">
         <inputEntry id="UnaryTests_1emr3fh">
           <text></text>
