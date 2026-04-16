@@ -620,6 +620,29 @@
           <text></text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_listCase_stf24w_cancel">
+        <inputEntry id="UnaryTests_listCase_stf24w_fromState">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_listCase_stf24w_event">
+          <text>"listCase"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_listCase_stf24w_state">
+          <text>"listing"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_listCase_stf24w_action">
+          <text>"Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_listCase_stf24w_warningCode">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_listCase_stf24w_warningText">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_listCase_stf24w_processCategories">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_0zzsez4">
         <inputEntry id="UnaryTests_1emr3fh">
           <text></text>
