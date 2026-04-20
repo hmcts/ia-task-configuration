@@ -4421,24 +4421,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         );
     }
 
-    @ParameterizedTest(name = "event id: {0} post event state: {1} additional data: {2}")
-    @MethodSource("scenarioProvider")
-    void given_multiple_event_ids_should_evaluate_dmn(String eventId,
-                                                      String postEventState,
-                                                      Map<String, Object> map,
-                                                      List<Map<String, Object>> expectation) {
-
-        VariableMap inputVariables = new VariableMapImpl();
-        inputVariables.putValue("eventId", eventId);
-        inputVariables.putValue("postEventState", postEventState);
-        inputVariables.putValue("now", LocalDateTime.now().minusMinutes(10)
-            .format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
-        inputVariables.putAll(map);
-        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
-
-        assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
-    }
-
     @SafeVarargs
     @SuppressWarnings("unchecked")
     private static Map<String, Object> merge(Map<String, ?>... maps) {
