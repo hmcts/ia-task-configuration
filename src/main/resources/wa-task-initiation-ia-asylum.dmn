@@ -10181,7 +10181,7 @@
       </rule>
       <rule id="DecisionRule_sendToAdminForListing_listTheCase">
         <inputEntry id="UnaryTests_stal_eventId"><text>"sendToAdminForListing"</text></inputEntry>
-        <inputEntry id="UnaryTests_stal_state"><text>"awaitingRespondentEvidence", "caseUnderReview"</text></inputEntry>
+        <inputEntry id="UnaryTests_stal_state"><text></text></inputEntry>
         <inputEntry id="UnaryTests_stal_appealType"><text></text></inputEntry>
         <inputEntry id="UnaryTests_stal_journeyType"><text></text></inputEntry>
         <inputEntry id="UnaryTests_stal_lastModAppType"><text></text></inputEntry>
