@@ -620,7 +620,6 @@
           <text></text>
         </outputEntry>
       </rule>
-
       <rule id="DecisionRule_listCase_listTheCaseTask">
         <inputEntry id="UnaryTests_lc_ltct_fromState">
           <text></text>
@@ -644,7 +643,6 @@
           <text>"listTheCaseTask"</text>
         </outputEntry>
       </rule>
-
       <rule id="DecisionRule_0zzsez4">
         <inputEntry id="UnaryTests_1emr3fh">
           <text></text>
