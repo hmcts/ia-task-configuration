@@ -1,7 +1,6 @@
 package uk.gov.hmcts.reform.iataskconfiguration.dmn;
 
 import lombok.Builder;
-import lombok.Value;
 import org.camunda.bpm.dmn.engine.DmnDecisionTableResult;
 import org.camunda.bpm.dmn.engine.impl.DmnDecisionTableImpl;
 import org.camunda.bpm.engine.variable.VariableMap;
@@ -22,13 +21,19 @@ import static uk.gov.hmcts.reform.iataskconfiguration.DmnDecisionTable.WA_TASK_C
 
 class CamundaTaskBailCancellationTest extends DmnDecisionTableBaseUnitTest {
 
-    @Builder
-    @Value
-    private static class Scenario {
-        String fromState;
-        String eventId;
-        String state;
-        List<Map<String, String>> expectation;
+    @ParameterizedTest(name = "from state: {0}, event id: {1}, state: {2}")
+    @MethodSource("scenarioProvider")
+    void given_multiple_event_ids_should_evaluate_dmn(Scenario scenario) {
+        String fromState = scenario.fromState();
+        String eventId = scenario.eventId();
+        String state = scenario.state();
+        VariableMap inputVariables = new VariableMapImpl();
+        inputVariables.putValue("fromState", fromState);
+        inputVariables.putValue("event", eventId);
+        inputVariables.putValue("state", state);
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+        List<Map<String, String>> expectation = scenario.expectation();
+        assertEquals(expectation, dmnDecisionTableResult.getResultList());
     }
 
     @BeforeAll
@@ -135,19 +140,8 @@ class CamundaTaskBailCancellationTest extends DmnDecisionTableBaseUnitTest {
         );
     }
 
-    @ParameterizedTest(name = "from state: {0}, event id: {1}, state: {2}")
-    @MethodSource("scenarioProvider")
-    void given_multiple_event_ids_should_evaluate_dmn(Scenario scenario) {
-        String fromState = scenario.getFromState();
-        String eventId = scenario.getEventId();
-        String state = scenario.getState();
-        VariableMap inputVariables = new VariableMapImpl();
-        inputVariables.putValue("fromState", fromState);
-        inputVariables.putValue("event", eventId);
-        inputVariables.putValue("state", state);
-        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
-        List<Map<String, String>> expectation = scenario.getExpectation();
-        assertEquals(expectation, dmnDecisionTableResult.getResultList());
+    @Builder
+    private record Scenario(String fromState, String eventId, String state, List<Map<String, String>> expectation) {
     }
 
     @Test

@@ -175,8 +175,6 @@ dependencies {
   testImplementation group: 'org.camunda.bpm.dmn', name: 'camunda-engine-dmn', version: '7.20.0'
   testImplementation group: 'org.camunda.bpm.assert', name: 'camunda-bpm-assert', version: '8.0.0'
   testImplementation group: 'org.camunda.bpm', name: 'camunda-engine', version: '7.20.0'
-
-  testImplementation group: 'org.apiguardian', name: 'apiguardian-api', version: '1.1.2'
 }
 
 mainClassName = 'uk.gov.hmcts.reform.iataskconfiguration.Application'
