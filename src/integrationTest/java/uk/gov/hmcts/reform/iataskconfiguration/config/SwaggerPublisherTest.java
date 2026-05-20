@@ -10,7 +10,7 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import java.io.OutputStream;
 import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.nio.file.Path;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -29,15 +29,14 @@ class SwaggerPublisherTest {
 
     @DisplayName("Generate swagger documentation")
     @Test
-    @SuppressWarnings("PMD.JUnitTestsShouldIncludeAssert")
     void generateDocs() throws Exception {
-        byte[] specs = mvc.perform(get("/v2/api-docs"))
+        byte[] specs = mvc.perform(get("/v3/api-docs"))
             .andExpect(status().isOk())
             .andReturn()
             .getResponse()
             .getContentAsByteArray();
 
-        try (OutputStream outputStream = Files.newOutputStream(Paths.get("/tmp/swagger-specs.json"))) {
+        try (OutputStream outputStream = Files.newOutputStream(Path.of("/tmp/swagger-specs.json"))) {
             outputStream.write(specs);
         }
 

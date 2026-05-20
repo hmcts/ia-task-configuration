@@ -6,7 +6,6 @@ import org.camunda.bpm.dmn.engine.DmnDecisionTableResult;
 import org.camunda.bpm.dmn.engine.impl.DmnDecisionTableImpl;
 import org.camunda.bpm.engine.variable.VariableMap;
 import org.camunda.bpm.engine.variable.impl.VariableMapImpl;
-import org.hamcrest.MatcherAssert;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -18,8 +17,7 @@ import java.util.Map;
 import java.util.stream.Stream;
 
 import static java.util.Collections.singletonList;
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static uk.gov.hmcts.reform.iataskconfiguration.DmnDecisionTable.WA_TASK_CANCELLATION_IA_BAIL;
 
 class CamundaTaskBailCancellationTest extends DmnDecisionTableBaseUnitTest {
@@ -149,7 +147,7 @@ class CamundaTaskBailCancellationTest extends DmnDecisionTableBaseUnitTest {
         inputVariables.putValue("state", state);
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
         List<Map<String, String>> expectation = scenario.getExpectation();
-        MatcherAssert.assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
+        assertEquals(expectation, dmnDecisionTableResult.getResultList());
     }
 
     @Test
@@ -157,8 +155,8 @@ class CamundaTaskBailCancellationTest extends DmnDecisionTableBaseUnitTest {
 
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getInputs().size(), is(3));
-        assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(11));
+        assertEquals(3, logic.getInputs().size());
+        assertEquals(4, logic.getOutputs().size());
+        assertEquals(11, logic.getRules().size());
     }
 }

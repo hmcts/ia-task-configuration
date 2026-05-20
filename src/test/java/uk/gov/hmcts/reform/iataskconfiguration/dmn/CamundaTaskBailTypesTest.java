@@ -15,8 +15,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static uk.gov.hmcts.reform.iataskconfiguration.DmnDecisionTable.WA_TASK_TYPES_IA_BAIL;
 
@@ -84,8 +83,8 @@ class CamundaTaskBailTypesTest extends DmnDecisionTableBaseUnitTest {
 
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getInputs().size(), is(1));
-        assertThat(logic.getOutputs().size(), is(2));
-        assertThat(logic.getRules().size(), is(9));
+        assertEquals(1, logic.getInputs().size());
+        assertEquals(2, logic.getOutputs().size());
+        assertEquals(9, logic.getRules().size());
     }
 }

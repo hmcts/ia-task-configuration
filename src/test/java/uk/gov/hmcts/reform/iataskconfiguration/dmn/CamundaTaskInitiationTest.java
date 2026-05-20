@@ -25,8 +25,7 @@ import java.util.stream.Stream;
 import static java.util.Collections.emptyList;
 import static java.util.Collections.emptyMap;
 import static java.util.Collections.singletonList;
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static uk.gov.hmcts.reform.iataskconfiguration.DmnDecisionTable.WA_TASK_INITIATION_IA_ASYLUM;
 
 class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
@@ -68,11 +67,13 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "applyForFTPAAppellant",
                 null,
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"isNotificationTurnedOff\": false\n"
-                                      + "   }\n"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "isNotificationTurnedOff": false
+                                         }
+                                      }\
+                                      """),
                 List.of(
                     Map.of(
                         "taskId", "decideAnFTPA",
@@ -91,12 +92,16 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 Arguments.of(
                         "applyForFTPAAppellant",
                         null,
-                        mapAdditionalData("{\n"
-                                              + "   \"Data\":{\n"
-                                              + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                                              + "      \"isNotificationTurnedOff\": false\n"
-                                              + "   }\n"
-                                              + "}"),
+                        mapAdditionalData("""
+                                              {
+                                                 "Data":{
+                                                    "appellantInDetention":"\
+                                              true\
+                                              ",
+                                                    "isNotificationTurnedOff": false
+                                                 }
+                                              }\
+                                              """),
                         List.of(
                                 Map.of(
                                         "taskId", "detainedDecideAnFTPA",
@@ -115,12 +120,16 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "applyForFTPAAppellant",
                 null,
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\": false\n"
-                                      + "   }\n"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "appellantInDetention":"\
+                                      true\
+                                      ",
+                                            "isNotificationTurnedOff": false
+                                         }
+                                      }\
+                                      """),
                 List.of(
                     Map.of(
                         "taskId", "detainedDecideAnFTPA",
@@ -139,11 +148,13 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "applyForFTPARespondent",
                 null,
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"isNotificationTurnedOff\": false\n"
-                                      + "   }\n"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "isNotificationTurnedOff": false
+                                         }
+                                      }\
+                                      """),
                 List.of(
                     Map.of(
                         "taskId", "decideAnFTPA",
@@ -162,12 +173,16 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 Arguments.of(
                         "applyForFTPARespondent",
                         null,
-                        mapAdditionalData("{\n"
-                                              + "   \"Data\":{\n"
-                                              + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                                              + "      \"isNotificationTurnedOff\": false\n"
-                                              + "   }\n"
-                                              + "}"),
+                        mapAdditionalData("""
+                                              {
+                                                 "Data":{
+                                                    "appellantInDetention":"\
+                                              true\
+                                              ",
+                                                    "isNotificationTurnedOff": false
+                                                 }
+                                              }\
+                                              """),
                         List.of(
                                 Map.of(
                                         "taskId", "detainedDecideAnFTPA",
@@ -186,12 +201,16 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "applyForFTPARespondent",
                 null,
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\": false\n"
-                                      + "   }\n"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "appellantInDetention":"\
+                                      true\
+                                      ",
+                                            "isNotificationTurnedOff": false
+                                         }
+                                      }\
+                                      """),
                 List.of(
                     Map.of(
                         "taskId", "detainedDecideAnFTPA",
@@ -210,12 +229,16 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "submitAppeal",
                 "appealSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "revocationOfProtection" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\": false\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "appealType":"\
+                                      revocationOfProtection\
+                                      ",
+                                            "isNotificationTurnedOff": false
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "reviewTheAppeal",
@@ -230,12 +253,16 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "submitAppeal",
                 "appealSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "deprivation" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\": false\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "appealType":"\
+                                      deprivation\
+                                      ",
+                                            "isNotificationTurnedOff": false
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "reviewTheAppeal",
@@ -248,14 +275,22 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                     "submitAppeal",
                     "pendingPayment",
-                    mapAdditionalData("{\n"
-                            + "   \"Data\":{\n"
-                            + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                            + "      \"remissionClaim\":\"" + "asylumSupport" + "\",\n"
-                            + "      \"appellantInDetention\":\"" + "false" + "\",\n"
-                            + "      \"isNotificationTurnedOff\": false\n"
-                            + "   }"
-                            + "}"),
+                    mapAdditionalData("""
+                            {
+                               "Data":{
+                                  "appealType":"\
+                            euSettlementScheme\
+                            ",
+                                  "remissionClaim":"\
+                            asylumSupport\
+                            ",
+                                  "appellantInDetention":"\
+                            false\
+                            ",
+                                  "isNotificationTurnedOff": false
+                               }\
+                            }\
+                            """),
                     singletonList(
                             Map.of(
                                     "taskId", "reviewASRemission",
@@ -268,15 +303,25 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "submitAppeal",
                 "pendingPayment",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"journeyType\":\"" + "aip" + "\",\n"
-                                      + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                                      + "      \"remissionOption\":\"" + "asylumSupportFromHo" + "\",\n"
-                                      + "      \"appellantInDetention\":\"" + "false" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\": false\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "journeyType":"\
+                                      aip\
+                                      ",
+                                            "appealType":"\
+                                      euSettlementScheme\
+                                      ",
+                                            "remissionOption":"\
+                                      asylumSupportFromHo\
+                                      ",
+                                            "appellantInDetention":"\
+                                      false\
+                                      ",
+                                            "isNotificationTurnedOff": false
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "reviewASRemission",
@@ -289,14 +334,22 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 Arguments.of(
                         "submitAppeal",
                         "pendingPayment",
-                        mapAdditionalData("{\n"
-                                + "   \"Data\":{\n"
-                                + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                                + "      \"remissionClaim\":\"" + "asylumSupport" + "\",\n"
-                                + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                                + "      \"isNotificationTurnedOff\": false\n"
-                                + "   }"
-                                + "}"),
+                        mapAdditionalData("""
+                                {
+                                   "Data":{
+                                      "appealType":"\
+                                euSettlementScheme\
+                                ",
+                                      "remissionClaim":"\
+                                asylumSupport\
+                                ",
+                                      "appellantInDetention":"\
+                                true\
+                                ",
+                                      "isNotificationTurnedOff": false
+                                   }\
+                                }\
+                                """),
                         singletonList(
                                 Map.of(
                                         "taskId", "detainedReviewASRemission",
@@ -309,15 +362,25 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 Arguments.of(
                         "submitAppeal",
                         "pendingPayment",
-                        mapAdditionalData("{\n"
-                                + "   \"Data\":{\n"
-                                + "      \"journeyType\":\"" + "aip" + "\",\n"
-                                + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                                + "      \"remissionOption\":\"" + "asylumSupportFromHo" + "\",\n"
-                                + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                                + "      \"isNotificationTurnedOff\": false\n"
-                                + "   }"
-                                + "}"),
+                        mapAdditionalData("""
+                                {
+                                   "Data":{
+                                      "journeyType":"\
+                                aip\
+                                ",
+                                      "appealType":"\
+                                euSettlementScheme\
+                                ",
+                                      "remissionOption":"\
+                                asylumSupportFromHo\
+                                ",
+                                      "appellantInDetention":"\
+                                true\
+                                ",
+                                      "isNotificationTurnedOff": false
+                                   }\
+                                }\
+                                """),
                         singletonList(
                                 Map.of(
                                         "taskId", "detainedReviewASRemission",
@@ -330,14 +393,22 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                     "submitAppeal",
                     "pendingPayment",
-                    mapAdditionalData("{\n"
-                            + "   \"Data\":{\n"
-                            + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                            + "      \"remissionClaim\":\"" + "homeOfficeWaiver" + "\",\n"
-                            + "      \"appellantInDetention\":\"" + "false" + "\",\n"
-                            + "      \"isNotificationTurnedOff\": false\n"
-                            + "   }"
-                            + "}"),
+                    mapAdditionalData("""
+                            {
+                               "Data":{
+                                  "appealType":"\
+                            euSettlementScheme\
+                            ",
+                                  "remissionClaim":"\
+                            homeOfficeWaiver\
+                            ",
+                                  "appellantInDetention":"\
+                            false\
+                            ",
+                                  "isNotificationTurnedOff": false
+                               }\
+                            }\
+                            """),
                     singletonList(
                             Map.of(
                                     "taskId", "reviewHOWaiverRemission",
@@ -350,14 +421,22 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 Arguments.of(
                         "submitAppeal",
                         "pendingPayment",
-                        mapAdditionalData("{\n"
-                                + "   \"Data\":{\n"
-                                + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                                + "      \"remissionClaim\":\"" + "homeOfficeWaiver" + "\",\n"
-                                + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                                + "      \"isNotificationTurnedOff\": false\n"
-                                + "   }"
-                                + "}"),
+                        mapAdditionalData("""
+                                {
+                                   "Data":{
+                                      "appealType":"\
+                                euSettlementScheme\
+                                ",
+                                      "remissionClaim":"\
+                                homeOfficeWaiver\
+                                ",
+                                      "appellantInDetention":"\
+                                true\
+                                ",
+                                      "isNotificationTurnedOff": false
+                                   }\
+                                }\
+                                """),
                         singletonList(
                                 Map.of(
                                         "taskId", "detainedReviewHOWaiverRemission",
@@ -370,14 +449,22 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                     "submitAppeal",
                     "pendingPayment",
-                    mapAdditionalData("{\n"
-                            + "   \"Data\":{\n"
-                            + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                            + "      \"remissionType\":\"" + "exceptionalCircumstancesRemission" + "\",\n"
-                            + "      \"appellantInDetention\":\"" + "false" + "\",\n"
-                            + "      \"isNotificationTurnedOff\": false\n"
-                            + "   }"
-                            + "}"),
+                    mapAdditionalData("""
+                            {
+                               "Data":{
+                                  "appealType":"\
+                            euSettlementScheme\
+                            ",
+                                  "remissionType":"\
+                            exceptionalCircumstancesRemission\
+                            ",
+                                  "appellantInDetention":"\
+                            false\
+                            ",
+                                  "isNotificationTurnedOff": false
+                               }\
+                            }\
+                            """),
                     singletonList(
                             Map.of(
                                     "taskId", "reviewECRRemission",
@@ -390,14 +477,24 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 Arguments.of(
                         "submitAppeal",
                         "pendingPayment",
-                        mapAdditionalData("{\n"
-                                + "   \"Data\":{\n"
-                                + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                                + "      \"remissionType\":\"" + "exceptionalCircumstancesRemission" + "\",\n"
-                                + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                                + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                + "   }"
-                                + "}"),
+                        mapAdditionalData("""
+                                {
+                                   "Data":{
+                                      "appealType":"\
+                                euSettlementScheme\
+                                ",
+                                      "remissionType":"\
+                                exceptionalCircumstancesRemission\
+                                ",
+                                      "appellantInDetention":"\
+                                true\
+                                ",
+                                      "isNotificationTurnedOff":"\
+                                false\
+                                "
+                                   }\
+                                }\
+                                """),
                         singletonList(
                                 Map.of(
                                         "taskId", "detainedReviewECRRemission",
@@ -410,14 +507,24 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                     "submitAppeal",
                     "pendingPayment",
-                    mapAdditionalData("{\n"
-                            + "   \"Data\":{\n"
-                            + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                            + "      \"remissionType\":\"" + "helpWithFees" + "\",\n"
-                            + "      \"appellantInDetention\":\"" + "false" + "\",\n"
-                            + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                            + "   }"
-                            + "}"),
+                    mapAdditionalData("""
+                            {
+                               "Data":{
+                                  "appealType":"\
+                            euSettlementScheme\
+                            ",
+                                  "remissionType":"\
+                            helpWithFees\
+                            ",
+                                  "appellantInDetention":"\
+                            false\
+                            ",
+                                  "isNotificationTurnedOff":"\
+                            false\
+                            "
+                               }\
+                            }\
+                            """),
                     singletonList(
                             Map.of(
                                     "taskId", "reviewHWFRemission",
@@ -430,14 +537,22 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "submitAppeal",
                 "pendingPayment",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"journeyType\":\"" + "aip" + "\",\n"
-                                      + "      \"appealType\":\"" + "protection" + "\",\n"
-                                      + "      \"remissionOption\":\"" + "feeWaiverFromHo" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\": false\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "journeyType":"\
+                                      aip\
+                                      ",
+                                            "appealType":"\
+                                      protection\
+                                      ",
+                                            "remissionOption":"\
+                                      feeWaiverFromHo\
+                                      ",
+                                            "isNotificationTurnedOff": false
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "reviewHOWaiverRemission",
@@ -450,15 +565,25 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 Arguments.of(
                         "submitAppeal",
                         "pendingPayment",
-                        mapAdditionalData("{\n"
-                                + "   \"Data\":{\n"
-                                + "      \"journeyType\":\"" + "aip" + "\",\n"
-                                + "      \"appealType\":\"" + "protection" + "\",\n"
-                                + "      \"remissionOption\":\"" + "feeWaiverFromHo" + "\",\n"
-                                + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                                + "      \"isNotificationTurnedOff\": false\n"
-                                + "   }"
-                                + "}"),
+                        mapAdditionalData("""
+                                {
+                                   "Data":{
+                                      "journeyType":"\
+                                aip\
+                                ",
+                                      "appealType":"\
+                                protection\
+                                ",
+                                      "remissionOption":"\
+                                feeWaiverFromHo\
+                                ",
+                                      "appellantInDetention":"\
+                                true\
+                                ",
+                                      "isNotificationTurnedOff": false
+                                   }\
+                                }\
+                                """),
                         singletonList(
                                 Map.of(
                                         "taskId", "detainedReviewHOWaiverRemission",
@@ -471,14 +596,22 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "submitAppeal",
                 "pendingPayment",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"journeyType\":\"" + "aip" + "\",\n"
-                                      + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
-                                      + "      \"remissionOption\":\"" + "under18GetSupportFromLocalAuthority" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\": false\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "journeyType":"\
+                                      aip\
+                                      ",
+                                            "appealType":"\
+                                      refusalOfHumanRights\
+                                      ",
+                                            "remissionOption":"\
+                                      under18GetSupportFromLocalAuthority\
+                                      ",
+                                            "isNotificationTurnedOff": false
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "reviewAuthorityRemission",
@@ -491,15 +624,25 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 Arguments.of(
                         "submitAppeal",
                         "pendingPayment",
-                        mapAdditionalData("{\n"
-                                + "   \"Data\":{\n"
-                                + "      \"journeyType\":\"" + "aip" + "\",\n"
-                                + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
-                                + "      \"remissionOption\":\"" + "under18GetSupportFromLocalAuthority" + "\",\n"
-                                + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                                + "      \"isNotificationTurnedOff\": false\n"
-                                + "   }"
-                                + "}"),
+                        mapAdditionalData("""
+                                {
+                                   "Data":{
+                                      "journeyType":"\
+                                aip\
+                                ",
+                                      "appealType":"\
+                                refusalOfHumanRights\
+                                ",
+                                      "remissionOption":"\
+                                under18GetSupportFromLocalAuthority\
+                                ",
+                                      "appellantInDetention":"\
+                                true\
+                                ",
+                                      "isNotificationTurnedOff": false
+                                   }\
+                                }\
+                                """),
                         singletonList(
                                 Map.of(
                                         "taskId", "detainedReviewAuthorityRemission",
@@ -512,14 +655,22 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                     "submitAppeal",
                     "pendingPayment",
-                    mapAdditionalData("{\n"
-                            + "   \"Data\":{\n"
-                            + "      \"journeyType\":\"" + "aip" + "\",\n"
-                            + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
-                            + "      \"remissionOption\":\"" + "iWantToGetHelpWithFees" + "\",\n"
-                            + "      \"isNotificationTurnedOff\": false\n"
-                            + "   }"
-                            + "}"),
+                    mapAdditionalData("""
+                            {
+                               "Data":{
+                                  "journeyType":"\
+                            aip\
+                            ",
+                                  "appealType":"\
+                            refusalOfHumanRights\
+                            ",
+                                  "remissionOption":"\
+                            iWantToGetHelpWithFees\
+                            ",
+                                  "isNotificationTurnedOff": false
+                               }\
+                            }\
+                            """),
                     singletonList(
                             Map.of(
                                     "taskId", "reviewHWFRemission",
@@ -532,16 +683,30 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "submitAppeal",
                 "pendingPayment",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"journeyType\":\"" + "aip" + "\",\n"
-                                      + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
-                                      + "      \"remissionOption\":\"" + "noneOfTheseStatements" + "\",\n"
-                                      + "      \"helpWithFeesOption\":\"" + "alreadyApplied" + "\",\n"
-                                      + "      \"appellantInDetention\":\"" + "false" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "journeyType":"\
+                                      aip\
+                                      ",
+                                            "appealType":"\
+                                      refusalOfHumanRights\
+                                      ",
+                                            "remissionOption":"\
+                                      noneOfTheseStatements\
+                                      ",
+                                            "helpWithFeesOption":"\
+                                      alreadyApplied\
+                                      ",
+                                            "appellantInDetention":"\
+                                      false\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "reviewHWFRemission",
@@ -554,16 +719,30 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "submitAppeal",
                 "pendingPayment",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"journeyType\":\"" + "aip" + "\",\n"
-                                      + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
-                                      + "      \"remissionOption\":\"" + "noneOfTheseStatements" + "\",\n"
-                                      + "      \"helpWithFeesOption\":\"" + "wantToApply" + "\",\n"
-                                      + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "journeyType":"\
+                                      aip\
+                                      ",
+                                            "appealType":"\
+                                      refusalOfHumanRights\
+                                      ",
+                                            "remissionOption":"\
+                                      noneOfTheseStatements\
+                                      ",
+                                            "helpWithFeesOption":"\
+                                      wantToApply\
+                                      ",
+                                            "appellantInDetention":"\
+                                      true\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "detainedReviewHWFRemission",
@@ -576,13 +755,21 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 Arguments.of(
                         "submitAppeal",
                         "pendingPayment",
-                        mapAdditionalData("{\n"
-                                + "   \"Data\":{\n"
-                                + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
-                                + "      \"remissionClaim\":\"" + "legalAid" + "\",\n"
-                                + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                + "   }"
-                                + "}"),
+                        mapAdditionalData("""
+                                {
+                                   "Data":{
+                                      "appealType":"\
+                                refusalOfHumanRights\
+                                ",
+                                      "remissionClaim":"\
+                                legalAid\
+                                ",
+                                      "isNotificationTurnedOff":"\
+                                false\
+                                "
+                                   }\
+                                }\
+                                """),
                         singletonList(
                                 Map.of(
                                         "taskId", "reviewLARemission",
@@ -595,14 +782,24 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 Arguments.of(
                         "submitAppeal",
                         "pendingPayment",
-                        mapAdditionalData("{\n"
-                                + "   \"Data\":{\n"
-                                + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
-                                + "      \"remissionClaim\":\"" + "legalAid" + "\",\n"
-                                + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                                + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                + "   }"
-                                + "}"),
+                        mapAdditionalData("""
+                                {
+                                   "Data":{
+                                      "appealType":"\
+                                refusalOfHumanRights\
+                                ",
+                                      "remissionClaim":"\
+                                legalAid\
+                                ",
+                                      "appellantInDetention":"\
+                                true\
+                                ",
+                                      "isNotificationTurnedOff":"\
+                                false\
+                                "
+                                   }\
+                                }\
+                                """),
                         singletonList(
                                 Map.of(
                                         "taskId", "detainedReviewLARemission",
@@ -615,13 +812,21 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                     "submitAppeal",
                     "pendingPayment",
-                    mapAdditionalData("{\n"
-                            + "   \"Data\":{\n"
-                            + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
-                            + "      \"remissionClaim\":\"" + "section17" + "\",\n"
-                            + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                            + "   }"
-                            + "}"),
+                    mapAdditionalData("""
+                            {
+                               "Data":{
+                                  "appealType":"\
+                            refusalOfHumanRights\
+                            ",
+                                  "remissionClaim":"\
+                            section17\
+                            ",
+                                  "isNotificationTurnedOff":"\
+                            false\
+                            "
+                               }\
+                            }\
+                            """),
                     singletonList(
                             Map.of(
                                     "taskId", "reviewAuthorityRemission",
@@ -634,14 +839,24 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 Arguments.of(
                         "submitAppeal",
                         "pendingPayment",
-                        mapAdditionalData("{\n"
-                                + "   \"Data\":{\n"
-                                + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
-                                + "      \"remissionClaim\":\"" + "section17" + "\",\n"
-                                + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                                + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                + "   }"
-                                + "}"),
+                        mapAdditionalData("""
+                                {
+                                   "Data":{
+                                      "appealType":"\
+                                refusalOfHumanRights\
+                                ",
+                                      "remissionClaim":"\
+                                section17\
+                                ",
+                                      "appellantInDetention":"\
+                                true\
+                                ",
+                                      "isNotificationTurnedOff":"\
+                                false\
+                                "
+                                   }\
+                                }\
+                                """),
                         singletonList(
                                 Map.of(
                                         "taskId", "detainedReviewAuthorityRemission",
@@ -654,14 +869,24 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "paymentAppeal",
                 "appealSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
-                                      + "      \"journeyType\":\"" + "aip" + "\",\n"
-                                      + "      \"paymentStatus\":\"" + "Paid" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "appealType":"\
+                                      refusalOfHumanRights\
+                                      ",
+                                            "journeyType":"\
+                                      aip\
+                                      ",
+                                            "paymentStatus":"\
+                                      Paid\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "reviewTheAppeal",
@@ -674,14 +899,24 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "paymentAppeal",
                 "appealSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "refusalOfEu" + "\",\n"
-                                      + "      \"journeyType\":\"" + "aip" + "\",\n"
-                                      + "      \"paymentStatus\":\"" + "Paid" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "appealType":"\
+                                      refusalOfEu\
+                                      ",
+                                            "journeyType":"\
+                                      aip\
+                                      ",
+                                            "paymentStatus":"\
+                                      Paid\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "reviewTheAppeal",
@@ -694,14 +929,24 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "paymentAppeal",
                 "appealSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                                      + "      \"journeyType\":\"" + "aip" + "\",\n"
-                                      + "      \"paymentStatus\":\"" + "Paid" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "appealType":"\
+                                      euSettlementScheme\
+                                      ",
+                                            "journeyType":"\
+                                      aip\
+                                      ",
+                                            "paymentStatus":"\
+                                      Paid\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "reviewTheAppeal",
@@ -714,13 +959,21 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "payAndSubmitAppeal",
                 "appealSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "protection" + "\",\n"
-                                      + "      \"journeyType\":\"" + "aip" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "appealType":"\
+                                      protection\
+                                      ",
+                                            "journeyType":"\
+                                      aip\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "reviewTheAppeal",
@@ -733,12 +986,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "payAndSubmitAppeal",
                 "appealSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "protection" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "appealType":"\
+                                      protection\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "reviewTheAppeal",
@@ -751,12 +1010,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "payAndSubmitAppeal",
                 "appealSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "appealType":"\
+                                      refusalOfHumanRights\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "reviewTheAppeal",
@@ -770,12 +1035,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "payAndSubmitAppeal",
                 "appealSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "refusalOfEu" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "appealType":"\
+                                      refusalOfEu\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "reviewTheAppeal",
@@ -789,12 +1060,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "markAppealPaid",
                 "appealSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "appealType":"\
+                                      refusalOfHumanRights\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "reviewTheAppeal",
@@ -808,12 +1085,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "markAppealPaid",
                 "appealSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "refusalOfEu" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "appealType":"\
+                                      refusalOfEu\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "reviewTheAppeal",
@@ -827,12 +1110,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "moveToSubmitted",
                 "appealSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "appealType":"\
+                                      refusalOfHumanRights\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "reviewTheAppeal",
@@ -846,12 +1135,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "moveToSubmitted",
                 "appealSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "refusalOfEu" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "appealType":"\
+                                      refusalOfEu\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "reviewTheAppeal",
@@ -865,12 +1160,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "payForAppeal",
                 "appealSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "appealType":"\
+                                      refusalOfHumanRights\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "reviewTheAppeal",
@@ -884,12 +1185,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "payForAppeal",
                 "appealSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "refusalOfEu" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "appealType":"\
+                                      refusalOfEu\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "reviewTheAppeal",
@@ -903,12 +1210,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "recordRemissionDecision",
                 "appealSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "appealType":"\
+                                      refusalOfHumanRights\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "reviewTheAppeal",
@@ -922,12 +1235,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "recordRemissionDecision",
                 "appealSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "refusalOfEu" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "appealType":"\
+                                      refusalOfEu\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "reviewTheAppeal",
@@ -941,12 +1260,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "updatePaymentStatus",
                 "appealSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "refusalOfEu" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "appealType":"\
+                                      refusalOfEu\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "reviewTheAppeal",
@@ -960,12 +1285,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "updatePaymentStatus",
                 "appealSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "refusalOfHumanRights" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "appealType":"\
+                                      refusalOfHumanRights\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "reviewTheAppeal",
@@ -979,11 +1310,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "submitTimeExtension",
                 "null",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "decideOnTimeExtension",
@@ -997,11 +1332,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "uploadHomeOfficeBundle",
                 "awaitingRespondentEvidence",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "reviewRespondentEvidence",
@@ -1015,11 +1354,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "uploadAdditionalEvidence",
                 "caseUnderReview",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 List.of(
                     Map.of(
                         "taskId", "reviewAdditionalEvidence",
@@ -1033,11 +1376,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "uploadAdditionalEvidence",
                 "respondentReview",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 List.of(
                     Map.of(
                         "taskId", "reviewAdditionalEvidence",
@@ -1051,11 +1398,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "uploadAdditionalEvidence",
                 "submitHearingRequirements",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 List.of(
                     Map.of(
                         "taskId", "reviewAdditionalEvidence",
@@ -1069,11 +1420,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "uploadAdditionalEvidence",
                 "listing",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 List.of(
                     Map.of(
                         "taskId", "reviewAdditionalEvidence",
@@ -1087,11 +1442,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "uploadAdditionalEvidence",
                 "prepareForHearing",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "reviewAdditionalEvidence",
@@ -1105,11 +1464,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "uploadAdditionalEvidenceHomeOffice",
                 "caseBuilding",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "reviewAdditionalHomeOfficeEvidence",
@@ -1122,11 +1485,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "uploadAdditionalEvidenceHomeOffice",
                 "caseBuilding",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "reviewAdditionalHomeOfficeEvidence",
@@ -1139,11 +1506,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "uploadAdditionalEvidenceHomeOffice",
                 "caseUnderReview",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "reviewAdditionalHomeOfficeEvidence",
@@ -1156,11 +1527,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "uploadAdditionalEvidenceHomeOffice",
                 "respondentReview",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "reviewAdditionalHomeOfficeEvidence",
@@ -1174,11 +1549,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "uploadAdditionalEvidenceHomeOffice",
                 "submitHearingRequirements",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "reviewAdditionalHomeOfficeEvidence",
@@ -1192,11 +1571,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "uploadAdditionalEvidenceHomeOffice",
                 "listing",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "reviewAdditionalHomeOfficeEvidence",
@@ -1210,11 +1593,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "submitCase",
                 "caseUnderReview",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "reviewAppealSkeletonArgument",
@@ -1228,12 +1615,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "submitCase",
                 "caseUnderReview",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "appellantInDetention":"\
+                                      true\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "detainedReviewAppealSkeletonArgument",
@@ -1247,11 +1640,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "buildCase",
                 "caseUnderReview",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "reviewAppealSkeletonArgument",
@@ -1265,12 +1662,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "buildCase",
                 "caseUnderReview",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "appellantInDetention":"\
+                                      true\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "detainedReviewAppealSkeletonArgument",
@@ -1284,11 +1687,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "submitReasonsForAppeal",
                 "reasonsForAppealSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "reviewReasonsForAppeal",
@@ -1302,11 +1709,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "submitClarifyingQuestionAnswers",
                 "clarifyingQuestionsAnswersSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "reviewClarifyingQuestionsAnswers",
@@ -1320,11 +1731,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "submitCmaRequirements",
                 "cmaRequirementsSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "reviewCmaRequirements",
@@ -1338,11 +1753,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "listCma",
                 "cmaListed",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "attendCma",
@@ -1356,11 +1775,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "uploadHomeOfficeAppealResponse",
                 "respondentReview",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "reviewRespondentResponse",
@@ -1374,12 +1797,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "uploadHomeOfficeAppealResponse",
                 "respondentReview",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "appellantInDetention":"\
+                                      true\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "detainedReviewRespondentResponse",
@@ -1474,11 +1903,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "draftHearingRequirements",
                 "listing",
-                mapAdditionalData(" {\n"
-                                      + "        \"Data\" : {\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "        }\n"
-                                      + "      }"),
+                mapAdditionalData("""
+                                       {
+                                              "Data" : {
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                              }
+                                            }\
+                                      """),
                 List.of(
                     Map.of(
                         "taskId", "reviewHearingRequirements",
@@ -1492,12 +1925,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                     "draftHearingRequirements",
                     "listing",
-                    mapAdditionalData(" {\n"
-                                          + "        \"Data\" : {\n"
-                                          + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                                          + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                          + "        }\n"
-                                          + "      }"),
+                    mapAdditionalData("""
+                                           {
+                                                  "Data" : {
+                                                "appellantInDetention":"\
+                                          true\
+                                          ",
+                                                "isNotificationTurnedOff":"\
+                                          false\
+                                          "
+                                                  }
+                                                }\
+                                          """),
                     List.of(
                             Map.of(
                                     "taskId", "detainedReviewHearingRequirements",
@@ -1513,12 +1952,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "awaitingRespondentEvidence",
                 merge(
                     variablesDirectionDueDate,
-                    mapAdditionalData(" {\n"
-                                          + "        \"Data\" : {\n"
-                                          + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                                          + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                          + "        }\n"
-                                          + "      }")
+                    mapAdditionalData("""
+                                           {
+                                                  "Data" : {
+                                                "appellantInDetention":"\
+                                          true\
+                                          ",
+                                                "isNotificationTurnedOff":"\
+                                          false\
+                                          "
+                                                  }
+                                                }\
+                                          """)
                 ),
                 singletonList(
                     Map.of(
@@ -1534,11 +1979,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "awaitingRespondentEvidence",
                 merge(
                     variablesDirectionDueDate,
-                    mapAdditionalData(" {\n"
-                                          + "        \"Data\" : {\n"
-                                          + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                          + "        }\n"
-                                          + "      }")
+                    mapAdditionalData("""
+                                           {
+                                                  "Data" : {
+                                                "isNotificationTurnedOff":"\
+                                          false\
+                                          "
+                                                  }
+                                                }\
+                                          """)
                 ),
                 singletonList(
                     Map.of(
@@ -1554,11 +2003,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 null,
                 merge(
                     variablesDirectionDueDate,
-                    mapAdditionalData(" {\n"
-                                          + "        \"Data\" : {\n"
-                                          + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                          + "        }\n"
-                                          + "      }")
+                    mapAdditionalData("""
+                                           {
+                                                  "Data" : {
+                                                "isNotificationTurnedOff":"\
+                                          false\
+                                          "
+                                                  }
+                                                }\
+                                          """)
                 ),
                 singletonList(
                     Map.of(
@@ -1574,12 +2027,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 null,
                 merge(
                     variablesDirectionDueDate,
-                    mapAdditionalData(" {\n"
-                                          + "        \"Data\" : {\n"
-                                          + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                                          + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                          + "        }\n"
-                                          + "      }")
+                    mapAdditionalData("""
+                                           {
+                                                  "Data" : {
+                                                "appellantInDetention":"\
+                                          true\
+                                          ",
+                                                "isNotificationTurnedOff":"\
+                                          false\
+                                          "
+                                                  }
+                                                }\
+                                          """)
                 ),
                 singletonList(
                     Map.of(
@@ -1595,11 +2054,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "caseBuilding",
                 merge(
                     variablesDirectionDueDate,
-                    mapAdditionalData(" {\n"
-                                          + "        \"Data\" : {\n"
-                                          + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                          + "        }\n"
-                                          + "      }")
+                    mapAdditionalData("""
+                                           {
+                                                  "Data" : {
+                                                "isNotificationTurnedOff":"\
+                                          false\
+                                          "
+                                                  }
+                                                }\
+                                          """)
                 ),
                 singletonList(
                     Map.of(
@@ -1615,12 +2078,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "caseBuilding",
                 merge(
                     variablesDirectionDueDate,
-                    mapAdditionalData(" {\n"
-                                          + "        \"Data\" : {\n"
-                                          + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                                          + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                          + "        }\n"
-                                          + "      }")
+                    mapAdditionalData("""
+                                           {
+                                                  "Data" : {
+                                                "appellantInDetention":"\
+                                          true\
+                                          ",
+                                                "isNotificationTurnedOff":"\
+                                          false\
+                                          "
+                                                  }
+                                                }\
+                                          """)
                 ),
                 singletonList(
                     Map.of(
@@ -1636,11 +2105,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "awaitingReasonsForAppeal",
                 merge(
                     variablesDirectionDueDate,
-                    mapAdditionalData(" {\n"
-                                          + "        \"Data\" : {\n"
-                                          + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                          + "        }\n"
-                                          + "      }")
+                    mapAdditionalData("""
+                                           {
+                                                  "Data" : {
+                                                "isNotificationTurnedOff":"\
+                                          false\
+                                          "
+                                                  }
+                                                }\
+                                          """)
                 ),
                 singletonList(
                     Map.of(
@@ -1656,11 +2129,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "awaitingClarifyingQuestionsAnswers",
                 merge(
                     variablesDirectionDueDate,
-                    mapAdditionalData(" {\n"
-                                          + "        \"Data\" : {\n"
-                                          + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                          + "        }\n"
-                                          + "      }")
+                    mapAdditionalData("""
+                                           {
+                                                  "Data" : {
+                                                "isNotificationTurnedOff":"\
+                                          false\
+                                          "
+                                                  }
+                                                }\
+                                          """)
                 ),
                 singletonList(
                     Map.of(
@@ -1676,11 +2153,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "awaitingCmaRequirements",
                 merge(
                     variablesDirectionDueDate,
-                    mapAdditionalData(" {\n"
-                                          + "        \"Data\" : {\n"
-                                          + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                          + "        }\n"
-                                          + "      }")
+                    mapAdditionalData("""
+                                           {
+                                                  "Data" : {
+                                                "isNotificationTurnedOff":"\
+                                          false\
+                                          "
+                                                  }
+                                                }\
+                                          """)
                 ),
                 singletonList(
                     Map.of(
@@ -1696,11 +2177,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "respondentReview",
                 merge(
                     variablesDirectionDueDate,
-                    mapAdditionalData(" {\n"
-                                          + "        \"Data\" : {\n"
-                                          + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                          + "        }\n"
-                                          + "      }")
+                    mapAdditionalData("""
+                                           {
+                                                  "Data" : {
+                                                "isNotificationTurnedOff":"\
+                                          false\
+                                          "
+                                                  }
+                                                }\
+                                          """)
                 ),
                 singletonList(
                     Map.of(
@@ -1716,12 +2201,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "respondentReview",
                 merge(
                     variablesDirectionDueDate,
-                    mapAdditionalData(" {\n"
-                                          + "        \"Data\" : {\n"
-                                          + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                                          + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                          + "        }\n"
-                                          + "      }")
+                    mapAdditionalData("""
+                                           {
+                                                  "Data" : {
+                                                "appellantInDetention":"\
+                                          true\
+                                          ",
+                                                "isNotificationTurnedOff":"\
+                                          false\
+                                          "
+                                                  }
+                                                }\
+                                          """)
                 ),
                 singletonList(
                     Map.of(
@@ -1737,11 +2228,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "submitHearingRequirements",
                 merge(
                     variablesDirectionDueDate,
-                    mapAdditionalData(" {\n"
-                                          + "        \"Data\" : {\n"
-                                          + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                          + "        }\n"
-                                          + "      }")
+                    mapAdditionalData("""
+                                           {
+                                                  "Data" : {
+                                                "isNotificationTurnedOff":"\
+                                          false\
+                                          "
+                                                  }
+                                                }\
+                                          """)
                 ),
                 singletonList(
                     Map.of(
@@ -1757,11 +2252,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 null,
                 merge(
                     variablesDirectionDueDate,
-                    mapAdditionalData(" {\n"
-                                          + "        \"Data\" : {\n"
-                                          + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                          + "        }\n"
-                                          + "      }")
+                    mapAdditionalData("""
+                                           {
+                                                  "Data" : {
+                                                "isNotificationTurnedOff":"\
+                                          false\
+                                          "
+                                                  }
+                                                }\
+                                          """)
                 ),
                 singletonList(
                     Map.of(
@@ -1777,12 +2276,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 null,
                 merge(
                     variablesDirectionDueDate,
-                    mapAdditionalData(" {\n"
-                                          + "        \"Data\" : {\n"
-                                          + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                                          + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                          + "        }\n"
-                                          + "      }")
+                    mapAdditionalData("""
+                                           {
+                                                  "Data" : {
+                                                "appellantInDetention":"\
+                                          true\
+                                          ",
+                                                "isNotificationTurnedOff":"\
+                                          false\
+                                          "
+                                                  }
+                                                }\
+                                          """)
                 ),
                 singletonList(
                     Map.of(
@@ -1796,11 +2301,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "removeRepresentation",
                 null,
-                mapAdditionalData(" {\n"
-                                      + "        \"Data\" : {\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "        }\n"
-                                      + "      }"),
+                mapAdditionalData("""
+                                       {
+                                              "Data" : {
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                              }
+                                            }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "followUpNoticeOfChange",
@@ -1813,12 +2322,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "removeRepresentation",
                 null,
-                mapAdditionalData(" {\n"
-                                      + "        \"Data\" : {\n"
-                                      + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "        }\n"
-                                      + "      }"),
+                mapAdditionalData("""
+                                       {
+                                              "Data" : {
+                                            "appellantInDetention":"\
+                                      true\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                              }
+                                            }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "detainedFollowUpNoticeOfChange",
@@ -1831,11 +2346,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "removeLegalRepresentative",
                 null,
-                mapAdditionalData(" {\n"
-                                      + "        \"Data\" : {\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "        }\n"
-                                      + "      }"),
+                mapAdditionalData("""
+                                       {
+                                              "Data" : {
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                              }
+                                            }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "followUpNoticeOfChange",
@@ -1850,11 +2369,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "changeHearingCentre",
                 "prepareForHearing",
-                mapAdditionalData(" {\n"
-                                      + "        \"Data\" : {\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "        }\n"
-                                      + "      }"),
+                mapAdditionalData("""
+                                       {
+                                              "Data" : {
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                              }
+                                            }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "editListing",
@@ -1867,12 +2390,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "changeHearingCentre",
                 "prepareForHearing",
-                mapAdditionalData(" {\n"
-                                      + "        \"Data\" : {\n"
-                                      + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "        }\n"
-                                      + "      }"),
+                mapAdditionalData("""
+                                       {
+                                              "Data" : {
+                                            "appellantInDetention":"\
+                                      true\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                              }
+                                            }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "detainedEditListing",
@@ -1885,11 +2414,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "changeHearingCentre",
                 "finalBundling",
-                mapAdditionalData(" {\n"
-                                      + "        \"Data\" : {\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "        }\n"
-                                      + "      }"),
+                mapAdditionalData("""
+                                       {
+                                              "Data" : {
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                              }
+                                            }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "editListing",
@@ -1902,12 +2435,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "changeHearingCentre",
                 "prepareForHearing",
-                mapAdditionalData(" {\n"
-                                      + "        \"Data\" : {\n"
-                                      + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "        }\n"
-                                      + "      }"),
+                mapAdditionalData("""
+                                       {
+                                              "Data" : {
+                                            "appellantInDetention":"\
+                                      true\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                              }
+                                            }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "detainedEditListing",
@@ -1920,11 +2459,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "changeHearingCentre",
                 "preHearing",
-                mapAdditionalData(" {\n"
-                                      + "        \"Data\" : {\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "        }\n"
-                                      + "      }"),
+                mapAdditionalData("""
+                                       {
+                                              "Data" : {
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                              }
+                                            }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "editListing",
@@ -1937,12 +2480,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "changeHearingCentre",
                 "preHearing",
-                mapAdditionalData(" {\n"
-                                      + "        \"Data\" : {\n"
-                                      + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "        }\n"
-                                      + "      }"),
+                mapAdditionalData("""
+                                       {
+                                              "Data" : {
+                                            "appellantInDetention":"\
+                                      true\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                              }
+                                            }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "detainedEditListing",
@@ -1955,11 +2504,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "changeHearingCentre",
                 "decision",
-                mapAdditionalData(" {\n"
-                                      + "        \"Data\" : {\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "        }\n"
-                                      + "      }"),
+                mapAdditionalData("""
+                                       {
+                                              "Data" : {
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                              }
+                                            }\
+                                      """),
                 List.of(
                     Map.of(
                         "taskId", "editListing",
@@ -1972,12 +2525,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "changeHearingCentre",
                 "decision",
-                mapAdditionalData(" {\n"
-                                      + "        \"Data\" : {\n"
-                                      + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "        }\n"
-                                      + "      }"),
+                mapAdditionalData("""
+                                       {
+                                              "Data" : {
+                                            "appellantInDetention":"\
+                                      true\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                              }
+                                            }\
+                                      """),
                 List.of(
                     Map.of(
                         "taskId", "detainedEditListing",
@@ -1990,11 +2549,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "generateHearingBundle",
                 "finalBundling",
-                mapAdditionalData(" {\n"
-                                      + "        \"Data\" : {\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "        }\n"
-                                      + "      }"),
+                mapAdditionalData("""
+                                       {
+                                              "Data" : {
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                              }
+                                            }\
+                                      """),
                 List.of(
                     Map.of(
                         "taskId", "allocateHearingJudge",
@@ -2006,12 +2569,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "generateHearingBundle",
                 "finalBundling",
-                mapAdditionalData(" {\n"
-                                      + "        \"Data\" : {\n"
-                                      + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "        }\n"
-                                      + "      }"),
+                mapAdditionalData("""
+                                       {
+                                              "Data" : {
+                                            "appellantInDetention":"\
+                                      true\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                              }
+                                            }\
+                                      """),
                 List.of(
                     Map.of(
                         "taskId", "detainedAllocateHearingJudge",
@@ -2023,11 +2592,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "customiseHearingBundle",
                 "finalBundling",
-                mapAdditionalData(" {\n"
-                                      + "        \"Data\" : {\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "        }\n"
-                                      + "      }"),
+                mapAdditionalData("""
+                                       {
+                                              "Data" : {
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                              }
+                                            }\
+                                      """),
                 List.of(
                     Map.of(
                         "taskId", "allocateHearingJudge",
@@ -2039,12 +2612,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "customiseHearingBundle",
                 "finalBundling",
-                mapAdditionalData(" {\n"
-                                      + "        \"Data\" : {\n"
-                                      + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "        }\n"
-                                      + "      }"),
+                mapAdditionalData("""
+                                       {
+                                              "Data" : {
+                                            "appellantInDetention":"\
+                                      true\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                              }
+                                            }\
+                                      """),
                 List.of(
                     Map.of(
                         "taskId", "detainedAllocateHearingJudge",
@@ -2056,11 +2635,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "sendToPreHearing",
                 "preHearing",
-                mapAdditionalData(" {\n"
-                                      + "        \"Data\" : {\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "        }\n"
-                                      + "      }"),
+                mapAdditionalData("""
+                                       {
+                                              "Data" : {
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                              }
+                                            }\
+                                      """),
                 List.of(
                     Map.of(
                         "taskId", "allocateHearingJudge",
@@ -2072,12 +2655,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "sendToPreHearing",
                 "preHearing",
-                mapAdditionalData(" {\n"
-                                      + "        \"Data\" : {\n"
-                                      + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "        }\n"
-                                      + "      }"),
+                mapAdditionalData("""
+                                       {
+                                              "Data" : {
+                                            "appellantInDetention":"\
+                                      true\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                              }
+                                            }\
+                                      """),
                 List.of(
                     Map.of(
                         "taskId", "detainedAllocateHearingJudge",
@@ -2089,12 +2678,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "submitAppeal",
                 "appealSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "protection" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "appealType":"\
+                                      protection\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 List.of(
                     Map.of(
                         "taskId", "reviewTheAppeal",
@@ -2107,13 +2702,21 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                     "submitAppeal",
                     "appealSubmitted",
-                    mapAdditionalData("{\n"
-                            + "   \"Data\":{\n"
-                            + "      \"appealType\":\"" + "protection" + "\",\n"
-                           + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                           + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                            + "   }"
-                            + "}"),
+                    mapAdditionalData("""
+                           {
+                              "Data":{
+                                 "appealType":"\
+                           protection\
+                           ",
+                                 "appellantInDetention":"\
+                           true\
+                           ",
+                                 "isNotificationTurnedOff":"\
+                           false\
+                           "
+                              }\
+                           }\
+                           """),
                     List.of(
                             Map.of(
                                     "taskId", "detainedReviewTheAppeal",
@@ -2126,13 +2729,21 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "submitAppeal",
                 "appealSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "protection" + "\",\n"
-                                      + "      \"remissionType\":\"" + "exceptionalCircumstancesRemission" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "appealType":"\
+                                      protection\
+                                      ",
+                                            "remissionType":"\
+                                      exceptionalCircumstancesRemission\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 List.of(
                     Map.of(
                         "taskId", "reviewTheAppeal",
@@ -2151,14 +2762,24 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                     "submitAppeal",
                     "appealSubmitted",
-                    mapAdditionalData("{\n"
-                            + "   \"Data\":{\n"
-                            + "      \"appealType\":\"" + "protection" + "\",\n"
-                            + "      \"remissionType\":\"" + "exceptionalCircumstancesRemission" + "\",\n"
-                            + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                            + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                            + "   }"
-                            + "}"),
+                    mapAdditionalData("""
+                            {
+                               "Data":{
+                                  "appealType":"\
+                            protection\
+                            ",
+                                  "remissionType":"\
+                            exceptionalCircumstancesRemission\
+                            ",
+                                  "appellantInDetention":"\
+                            true\
+                            ",
+                                  "isNotificationTurnedOff":"\
+                            false\
+                            "
+                               }\
+                            }\
+                            """),
                     List.of(
                             Map.of(
                                     "taskId", "detainedReviewTheAppeal",
@@ -2177,13 +2798,21 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "submitAppeal",
                 "appealSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "protection" + "\",\n"
-                                      + "      \"remissionType\":\"" + "helpWithFees" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "appealType":"\
+                                      protection\
+                                      ",
+                                            "remissionType":"\
+                                      helpWithFees\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 List.of(
                     Map.of(
                         "taskId", "reviewTheAppeal",
@@ -2202,14 +2831,24 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                     "submitAppeal",
                     "appealSubmitted",
-                    mapAdditionalData("{\n"
-                            + "   \"Data\":{\n"
-                            + "      \"appealType\":\"" + "protection" + "\",\n"
-                            + "      \"remissionType\":\"" + "helpWithFees" + "\",\n"
-                            + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                            + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                            + "   }"
-                            + "}"),
+                    mapAdditionalData("""
+                            {
+                               "Data":{
+                                  "appealType":"\
+                            protection\
+                            ",
+                                  "remissionType":"\
+                            helpWithFees\
+                            ",
+                                  "appellantInDetention":"\
+                            true\
+                            ",
+                                  "isNotificationTurnedOff":"\
+                            false\
+                            "
+                               }\
+                            }\
+                            """),
                     List.of(
                             Map.of(
                                     "taskId", "detainedReviewTheAppeal",
@@ -2228,13 +2867,21 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "submitAppeal",
                 "appealSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                                      + "      \"remissionType\":\"" + "exceptionalCircumstancesRemission" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "appealType":"\
+                                      euSettlementScheme\
+                                      ",
+                                            "remissionType":"\
+                                      exceptionalCircumstancesRemission\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 List.of(
                     Map.of(
                         "taskId", "reviewECRRemission",
@@ -2247,14 +2894,24 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                     "submitAppeal",
                     "appealSubmitted",
-                    mapAdditionalData("{\n"
-                            + "   \"Data\":{\n"
-                            + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                            + "      \"remissionType\":\"" + "exceptionalCircumstancesRemission" + "\",\n"
-                            + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                            + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                            + "   }"
-                            + "}"),
+                    mapAdditionalData("""
+                            {
+                               "Data":{
+                                  "appealType":"\
+                            euSettlementScheme\
+                            ",
+                                  "remissionType":"\
+                            exceptionalCircumstancesRemission\
+                            ",
+                                  "appellantInDetention":"\
+                            true\
+                            ",
+                                  "isNotificationTurnedOff":"\
+                            false\
+                            "
+                               }\
+                            }\
+                            """),
                     List.of(
                             Map.of(
                                     "taskId", "detainedReviewECRRemission",
@@ -2267,13 +2924,21 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "submitAppeal",
                 "appealSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                                      + "      \"remissionType\":\"" + "helpWithFees" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "appealType":"\
+                                      euSettlementScheme\
+                                      ",
+                                            "remissionType":"\
+                                      helpWithFees\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 List.of(
                     Map.of(
                         "taskId", "reviewHWFRemission",
@@ -2286,14 +2951,24 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                     "submitAppeal",
                     "appealSubmitted",
-                    mapAdditionalData("{\n"
-                            + "   \"Data\":{\n"
-                            + "      \"appealType\":\"" + "euSettlementScheme" + "\",\n"
-                            + "      \"remissionType\":\"" + "helpWithFees" + "\",\n"
-                            + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                            + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                            + "   }"
-                            + "}"),
+                    mapAdditionalData("""
+                            {
+                               "Data":{
+                                  "appealType":"\
+                            euSettlementScheme\
+                            ",
+                                  "remissionType":"\
+                            helpWithFees\
+                            ",
+                                  "appellantInDetention":"\
+                            true\
+                            ",
+                                  "isNotificationTurnedOff":"\
+                            false\
+                            "
+                               }\
+                            }\
+                            """),
                     List.of(
                             Map.of(
                                     "taskId", "detainedReviewHWFRemission",
@@ -2306,12 +2981,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "requestFeeRemission",
                 null,
-                mapAdditionalData("{\n"
-                        + "   \"Data\":{\n"
-                        + "      \"lateRemissionType\":\"" + "helpWithFees" + "\",\n"
-                        + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                        + "   }"
-                        + "}"),
+                mapAdditionalData("""
+                        {
+                           "Data":{
+                              "lateRemissionType":"\
+                        helpWithFees\
+                        ",
+                              "isNotificationTurnedOff":"\
+                        false\
+                        "
+                           }\
+                        }\
+                        """),
                 singletonList(
                     Map.of(
                         "taskId", "reviewHWFRemission",
@@ -2324,13 +3005,21 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                     "requestFeeRemission",
                     null,
-                    mapAdditionalData("{\n"
-                            + "   \"Data\":{\n"
-                            + "      \"lateRemissionType\":\"" + "helpWithFees" + "\",\n"
-                            + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                            + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                            + "   }"
-                            + "}"),
+                    mapAdditionalData("""
+                            {
+                               "Data":{
+                                  "lateRemissionType":"\
+                            helpWithFees\
+                            ",
+                                  "appellantInDetention":"\
+                            true\
+                            ",
+                                  "isNotificationTurnedOff":"\
+                            false\
+                            "
+                               }\
+                            }\
+                            """),
                     singletonList(
                             Map.of(
                                     "taskId", "detainedReviewHWFRemission",
@@ -2343,13 +3032,21 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "requestFeeRemission",
                 null,
-                mapAdditionalData("{\n"
-                        + "   \"Data\":{\n"
-                        + "   \"journeyType\":\"" + "aip" + "\",\n"
-                        + "      \"remissionOption\":\"" + "asylumSupportFromHo" + "\",\n"
-                        + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                        + "   }"
-                        + "}"),
+                mapAdditionalData("""
+                        {
+                           "Data":{
+                           "journeyType":"\
+                        aip\
+                        ",
+                              "remissionOption":"\
+                        asylumSupportFromHo\
+                        ",
+                              "isNotificationTurnedOff":"\
+                        false\
+                        "
+                           }\
+                        }\
+                        """),
                 singletonList(
                     Map.of(
                         "taskId", "reviewASRemission",
@@ -2362,14 +3059,24 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                     "requestFeeRemission",
                     null,
-                    mapAdditionalData("{\n"
-                            + "   \"Data\":{\n"
-                            + "   \"journeyType\":\"" + "aip" + "\",\n"
-                            + "      \"remissionOption\":\"" + "asylumSupportFromHo" + "\",\n"
-                            + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                            + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                            + "   }"
-                            + "}"),
+                    mapAdditionalData("""
+                            {
+                               "Data":{
+                               "journeyType":"\
+                            aip\
+                            ",
+                                  "remissionOption":"\
+                            asylumSupportFromHo\
+                            ",
+                                  "appellantInDetention":"\
+                            true\
+                            ",
+                                  "isNotificationTurnedOff":"\
+                            false\
+                            "
+                               }\
+                            }\
+                            """),
                     singletonList(
                             Map.of(
                                     "taskId", "detainedReviewASRemission",
@@ -2382,12 +3089,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                     "requestFeeRemission",
                     null,
-                    mapAdditionalData("{\n"
-                            + "   \"Data\":{\n"
-                            + "      \"remissionClaim\":\"" + "asylumSupport" + "\",\n"
-                            + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                            + "   }"
-                            + "}"),
+                    mapAdditionalData("""
+                            {
+                               "Data":{
+                                  "remissionClaim":"\
+                            asylumSupport\
+                            ",
+                                  "isNotificationTurnedOff":"\
+                            false\
+                            "
+                               }\
+                            }\
+                            """),
                     singletonList(
                             Map.of(
                                     "taskId", "reviewASRemission",
@@ -2400,13 +3113,21 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                     "requestFeeRemission",
                     null,
-                    mapAdditionalData("{\n"
-                            + "   \"Data\":{\n"
-                            + "      \"remissionClaim\":\"" + "asylumSupport" + "\",\n"
-                            + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                            + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                            + "   }"
-                            + "}"),
+                    mapAdditionalData("""
+                            {
+                               "Data":{
+                                  "remissionClaim":"\
+                            asylumSupport\
+                            ",
+                                  "appellantInDetention":"\
+                            true\
+                            ",
+                                  "isNotificationTurnedOff":"\
+                            false\
+                            "
+                               }\
+                            }\
+                            """),
                     singletonList(
                             Map.of(
                                     "taskId", "detainedReviewASRemission",
@@ -2419,12 +3140,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                     "requestFeeRemission",
                     null,
-                    mapAdditionalData("{\n"
-                            + "   \"Data\":{\n"
-                            + "      \"remissionClaim\":\"" + "homeOfficeWaiver" + "\",\n"
-                            + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                            + "   }"
-                            + "}"),
+                    mapAdditionalData("""
+                            {
+                               "Data":{
+                                  "remissionClaim":"\
+                            homeOfficeWaiver\
+                            ",
+                                  "isNotificationTurnedOff":"\
+                            false\
+                            "
+                               }\
+                            }\
+                            """),
                     singletonList(
                             Map.of(
                                     "taskId", "reviewHOWaiverRemission",
@@ -2437,13 +3164,21 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                     "requestFeeRemission",
                     null,
-                    mapAdditionalData("{\n"
-                            + "   \"Data\":{\n"
-                            + "      \"remissionClaim\":\"" + "homeOfficeWaiver" + "\",\n"
-                            + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                            + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                            + "   }"
-                            + "}"),
+                    mapAdditionalData("""
+                            {
+                               "Data":{
+                                  "remissionClaim":"\
+                            homeOfficeWaiver\
+                            ",
+                                  "appellantInDetention":"\
+                            true\
+                            ",
+                                  "isNotificationTurnedOff":"\
+                            false\
+                            "
+                               }\
+                            }\
+                            """),
                     singletonList(
                             Map.of(
                                     "taskId", "detainedReviewHOWaiverRemission",
@@ -2456,12 +3191,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                     "requestFeeRemission",
                     null,
-                    mapAdditionalData("{\n"
-                            + "   \"Data\":{\n"
-                            + "      \"lateRemissionType\":\"" + "exceptionalCircumstancesRemission" + "\",\n"
-                            + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                            + "   }"
-                            + "}"),
+                    mapAdditionalData("""
+                            {
+                               "Data":{
+                                  "lateRemissionType":"\
+                            exceptionalCircumstancesRemission\
+                            ",
+                                  "isNotificationTurnedOff":"\
+                            false\
+                            "
+                               }\
+                            }\
+                            """),
                     singletonList(
                             Map.of(
                                     "taskId", "reviewECRRemission",
@@ -2474,13 +3215,21 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                     "requestFeeRemission",
                     null,
-                    mapAdditionalData("{\n"
-                            + "   \"Data\":{\n"
-                            + "      \"lateRemissionType\":\"" + "exceptionalCircumstancesRemission" + "\",\n"
-                            + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                            + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                            + "   }"
-                            + "}"),
+                    mapAdditionalData("""
+                            {
+                               "Data":{
+                                  "lateRemissionType":"\
+                            exceptionalCircumstancesRemission\
+                            ",
+                                  "appellantInDetention":"\
+                            true\
+                            ",
+                                  "isNotificationTurnedOff":"\
+                            false\
+                            "
+                               }\
+                            }\
+                            """),
                     singletonList(
                             Map.of(
                                     "taskId", "detainedReviewECRRemission",
@@ -2493,13 +3242,21 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                     "requestFeeRemission",
                     null,
-                    mapAdditionalData("{\n"
-                            + "   \"Data\":{\n"
-                            + "   \"journeyType\":\"" + "aip" + "\",\n"
-                            + "      \"remissionOption\":\"" + "feeWaiverFromHo" + "\",\n"
-                            + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                            + "   }"
-                            + "}"),
+                    mapAdditionalData("""
+                            {
+                               "Data":{
+                               "journeyType":"\
+                            aip\
+                            ",
+                                  "remissionOption":"\
+                            feeWaiverFromHo\
+                            ",
+                                  "isNotificationTurnedOff":"\
+                            false\
+                            "
+                               }\
+                            }\
+                            """),
                     singletonList(
                             Map.of(
                                     "taskId", "reviewHOWaiverRemission",
@@ -2512,14 +3269,24 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                     "requestFeeRemission",
                     null,
-                    mapAdditionalData("{\n"
-                            + "   \"Data\":{\n"
-                            + "   \"journeyType\":\"" + "aip" + "\",\n"
-                            + "      \"remissionOption\":\"" + "feeWaiverFromHo" + "\",\n"
-                            + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                            + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                            + "   }"
-                            + "}"),
+                    mapAdditionalData("""
+                            {
+                               "Data":{
+                               "journeyType":"\
+                            aip\
+                            ",
+                                  "remissionOption":"\
+                            feeWaiverFromHo\
+                            ",
+                                  "appellantInDetention":"\
+                            true\
+                            ",
+                                  "isNotificationTurnedOff":"\
+                            false\
+                            "
+                               }\
+                            }\
+                            """),
                     singletonList(
                             Map.of(
                                     "taskId", "detainedReviewHOWaiverRemission",
@@ -2532,13 +3299,21 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                     "requestFeeRemission",
                     null,
-                    mapAdditionalData("{\n"
-                            + "   \"Data\":{\n"
-                            + "   \"journeyType\":\"" + "aip" + "\",\n"
-                            + "      \"remissionOption\":\"" + "parentGetSupportFromLocalAuthority" + "\",\n"
-                            + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                            + "   }"
-                            + "}"),
+                    mapAdditionalData("""
+                            {
+                               "Data":{
+                               "journeyType":"\
+                            aip\
+                            ",
+                                  "remissionOption":"\
+                            parentGetSupportFromLocalAuthority\
+                            ",
+                                  "isNotificationTurnedOff":"\
+                            false\
+                            "
+                               }\
+                            }\
+                            """),
                     singletonList(
                             Map.of(
                                     "taskId", "reviewAuthorityRemission",
@@ -2551,14 +3326,24 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                     "requestFeeRemission",
                     null,
-                    mapAdditionalData("{\n"
-                            + "   \"Data\":{\n"
-                            + "   \"journeyType\":\"" + "aip" + "\",\n"
-                            + "      \"remissionOption\":\"" + "parentGetSupportFromLocalAuthority" + "\",\n"
-                            + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                            + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                            + "   }"
-                            + "}"),
+                    mapAdditionalData("""
+                            {
+                               "Data":{
+                               "journeyType":"\
+                            aip\
+                            ",
+                                  "remissionOption":"\
+                            parentGetSupportFromLocalAuthority\
+                            ",
+                                  "appellantInDetention":"\
+                            true\
+                            ",
+                                  "isNotificationTurnedOff":"\
+                            false\
+                            "
+                               }\
+                            }\
+                            """),
                     singletonList(
                             Map.of(
                                     "taskId", "detainedReviewAuthorityRemission",
@@ -2571,13 +3356,21 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                     "requestFeeRemission",
                     null,
-                    mapAdditionalData("{\n"
-                            + "   \"Data\":{\n"
-                            + "   \"journeyType\":\"" + "aip" + "\",\n"
-                            + "      \"remissionOption\":\"" + "iWantToGetHelpWithFees" + "\",\n"
-                            + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                            + "   }"
-                            + "}"),
+                    mapAdditionalData("""
+                            {
+                               "Data":{
+                               "journeyType":"\
+                            aip\
+                            ",
+                                  "remissionOption":"\
+                            iWantToGetHelpWithFees\
+                            ",
+                                  "isNotificationTurnedOff":"\
+                            false\
+                            "
+                               }\
+                            }\
+                            """),
                     singletonList(
                             Map.of(
                                     "taskId", "reviewHWFRemission",
@@ -2590,14 +3383,24 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "requestFeeRemission",
                 null,
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "   \"journeyType\":\"" + "aip" + "\",\n"
-                                      + "      \"remissionOption\":\"" + "noneOfTheseStatements" + "\",\n"
-                                      + "      \"helpWithFeesOption\":\"" + "wantToApply" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                         "journeyType":"\
+                                      aip\
+                                      ",
+                                            "remissionOption":"\
+                                      noneOfTheseStatements\
+                                      ",
+                                            "helpWithFeesOption":"\
+                                      wantToApply\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "reviewHWFRemission",
@@ -2610,14 +3413,24 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "requestFeeRemission",
                 null,
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "   \"journeyType\":\"" + "aip" + "\",\n"
-                                      + "      \"remissionOption\":\"" + "noneOfTheseStatements" + "\",\n"
-                                      + "      \"helpWithFeesOption\":\"" + "alreadyApplied" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                         "journeyType":"\
+                                      aip\
+                                      ",
+                                            "remissionOption":"\
+                                      noneOfTheseStatements\
+                                      ",
+                                            "helpWithFeesOption":"\
+                                      alreadyApplied\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "reviewHWFRemission",
@@ -2630,14 +3443,24 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                     "requestFeeRemission",
                     null,
-                    mapAdditionalData("{\n"
-                            + "   \"Data\":{\n"
-                            + "   \"journeyType\":\"" + "aip" + "\",\n"
-                            + "      \"remissionOption\":\"" + "iWantToGetHelpWithFees" + "\",\n"
-                            + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                            + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                            + "   }"
-                            + "}"),
+                    mapAdditionalData("""
+                            {
+                               "Data":{
+                               "journeyType":"\
+                            aip\
+                            ",
+                                  "remissionOption":"\
+                            iWantToGetHelpWithFees\
+                            ",
+                                  "appellantInDetention":"\
+                            true\
+                            ",
+                                  "isNotificationTurnedOff":"\
+                            false\
+                            "
+                               }\
+                            }\
+                            """),
                     singletonList(
                             Map.of(
                                     "taskId", "detainedReviewHWFRemission",
@@ -2650,12 +3473,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                     "requestFeeRemission",
                     null,
-                    mapAdditionalData("{\n"
-                            + "   \"Data\":{\n"
-                            + "      \"remissionClaim\":\"" + "legalAid" + "\",\n"
-                            + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                            + "   }"
-                            + "}"),
+                    mapAdditionalData("""
+                            {
+                               "Data":{
+                                  "remissionClaim":"\
+                            legalAid\
+                            ",
+                                  "isNotificationTurnedOff":"\
+                            false\
+                            "
+                               }\
+                            }\
+                            """),
                     singletonList(
                             Map.of(
                                     "taskId", "reviewLARemission",
@@ -2668,13 +3497,21 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                     "requestFeeRemission",
                     null,
-                    mapAdditionalData("{\n"
-                            + "   \"Data\":{\n"
-                            + "      \"remissionClaim\":\"" + "legalAid" + "\",\n"
-                            + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                            + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                            + "   }"
-                            + "}"),
+                    mapAdditionalData("""
+                            {
+                               "Data":{
+                                  "remissionClaim":"\
+                            legalAid\
+                            ",
+                                  "appellantInDetention":"\
+                            true\
+                            ",
+                                  "isNotificationTurnedOff":"\
+                            false\
+                            "
+                               }\
+                            }\
+                            """),
                     singletonList(
                             Map.of(
                                     "taskId", "detainedReviewLARemission",
@@ -2687,12 +3524,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                     "requestFeeRemission",
                     null,
-                    mapAdditionalData("{\n"
-                            + "   \"Data\":{\n"
-                            + "      \"remissionClaim\":\"" + "section20" + "\",\n"
-                            + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                            + "   }"
-                            + "}"),
+                    mapAdditionalData("""
+                            {
+                               "Data":{
+                                  "remissionClaim":"\
+                            section20\
+                            ",
+                                  "isNotificationTurnedOff":"\
+                            false\
+                            "
+                               }\
+                            }\
+                            """),
                     singletonList(
                             Map.of(
                                     "taskId", "reviewAuthorityRemission",
@@ -2705,13 +3548,21 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                     "requestFeeRemission",
                     null,
-                    mapAdditionalData("{\n"
-                            + "   \"Data\":{\n"
-                            + "      \"remissionClaim\":\"" + "section20" + "\",\n"
-                            + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                            + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                            + "   }"
-                            + "}"),
+                    mapAdditionalData("""
+                            {
+                               "Data":{
+                                  "remissionClaim":"\
+                            section20\
+                            ",
+                                  "appellantInDetention":"\
+                            true\
+                            ",
+                                  "isNotificationTurnedOff":"\
+                            false\
+                            "
+                               }\
+                            }\
+                            """),
                     singletonList(
                             Map.of(
                                     "taskId", "detainedReviewAuthorityRemission",
@@ -2724,12 +3575,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "reviewHearingRequirements",
                 "listing",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appellantInDetention\":\"" + "false" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "appellantInDetention":"\
+                                      false\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "listTheCase",
@@ -2742,12 +3599,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                     "reviewHearingRequirements",
                     "listing",
-                    mapAdditionalData("{\n"
-                            + "   \"Data\":{\n"
-                                          + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                                          + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                            + "   }"
-                            + "}"),
+                    mapAdditionalData("""
+                            {
+                               "Data":{
+                                  "appellantInDetention":"\
+                            true\
+                            ",
+                                  "isNotificationTurnedOff":"\
+                            false\
+                            "
+                               }\
+                            }\
+                            """),
                     singletonList(
                             Map.of(
                                     "taskId", "detainedListTheCase",
@@ -2760,12 +3623,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                     "listCaseWithoutHearingRequirements",
                     "listing",
-                    mapAdditionalData("{\n"
-                            + "   \"Data\":{\n"
-                                          + "      \"appellantInDetention\":\"" + "false" + "\",\n"
-                                          + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                            + "   }"
-                            + "}"),
+                    mapAdditionalData("""
+                            {
+                               "Data":{
+                                  "appellantInDetention":"\
+                            false\
+                            ",
+                                  "isNotificationTurnedOff":"\
+                            false\
+                            "
+                               }\
+                            }\
+                            """),
                     singletonList(
                             Map.of(
                                     "taskId", "listTheCase",
@@ -2778,12 +3647,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                     "listCaseWithoutHearingRequirements",
                     "listing",
-                    mapAdditionalData("{\n"
-                            + "   \"Data\":{\n"
-                                          + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                                          + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                            + "   }"
-                            + "}"),
+                    mapAdditionalData("""
+                            {
+                               "Data":{
+                                  "appellantInDetention":"\
+                            true\
+                            ",
+                                  "isNotificationTurnedOff":"\
+                            false\
+                            "
+                               }\
+                            }\
+                            """),
                     singletonList(
                             Map.of(
                                     "taskId", "detainedListTheCase",
@@ -2796,12 +3671,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "recordRemissionDecision",
                 null,
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"remissionDecision\":\"" + "partiallyApproved" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "remissionDecision":"\
+                                      partiallyApproved\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 List.of(
                     Map.of(
                         "taskId", "sendPaymentRequest",
@@ -2821,23 +3702,35 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "recordRemissionDecision",
                 null,
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"remissionDecision\":\"" + "partiallyApproved" + "\",\n"
-                                      + "      \"paymentStatus\":\"" + "Paid" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "remissionDecision":"\
+                                      partiallyApproved\
+                                      ",
+                                            "paymentStatus":"\
+                                      Paid\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 emptyList()
             ),
             Arguments.of(
                 "markAppealAsRemitted",
                 "remitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "reviewRemittedAppeal",
@@ -2850,12 +3743,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "markAppealAsRemitted",
                 "remitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "appellantInDetention":"\
+                                      true\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "detainedReviewRemittedAppeal",
@@ -2868,13 +3767,21 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "decideFtpaApplication",
                 null,
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"ftpaAppellantRjDecisionOutcomeType\":\"" + "reheardRule35" + "\",\n"
-                                      + "      \"ftpaApplicantType\":\"" + "appellant" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "ftpaAppellantRjDecisionOutcomeType":"\
+                                      reheardRule35\
+                                      ",
+                                            "ftpaApplicantType":"\
+                                      appellant\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "reviewAppealSetAsideUnderRule35",
@@ -2887,14 +3794,24 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "decideFtpaApplication",
                 null,
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"ftpaAppellantRjDecisionOutcomeType\":\"" + "reheardRule35" + "\",\n"
-                                      + "      \"ftpaApplicantType\":\"" + "appellant" + "\",\n"
-                                      + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "ftpaAppellantRjDecisionOutcomeType":"\
+                                      reheardRule35\
+                                      ",
+                                            "ftpaApplicantType":"\
+                                      appellant\
+                                      ",
+                                            "appellantInDetention":"\
+                                      true\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "detainedReviewAppealSetAsideUnderRule35",
@@ -2907,13 +3824,21 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "decideFtpaApplication",
                 null,
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"ftpaRespondentRjDecisionOutcomeType\":\"" + "reheardRule35" + "\",\n"
-                                      + "      \"ftpaApplicantType\":\"" + "respondent" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "ftpaRespondentRjDecisionOutcomeType":"\
+                                      reheardRule35\
+                                      ",
+                                            "ftpaApplicantType":"\
+                                      respondent\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "reviewAppealSetAsideUnderRule35",
@@ -2926,14 +3851,24 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "decideFtpaApplication",
                 null,
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"ftpaRespondentRjDecisionOutcomeType\":\"" + "reheardRule35" + "\",\n"
-                                      + "      \"ftpaApplicantType\":\"" + "respondent" + "\",\n"
-                                      + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "ftpaRespondentRjDecisionOutcomeType":"\
+                                      reheardRule35\
+                                      ",
+                                            "ftpaApplicantType":"\
+                                      respondent\
+                                      ",
+                                            "appellantInDetention":"\
+                                      true\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "detainedReviewAppealSetAsideUnderRule35",
@@ -2946,12 +3881,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "updateTribunalDecision",
                 null,
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"updateTribunalDecisionList\":\"" + "underRule32" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "updateTribunalDecisionList":"\
+                                      underRule32\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "reviewAppealSetAsideUnderRule32",
@@ -2964,13 +3905,21 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "updateTribunalDecision",
                 null,
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"updateTribunalDecisionList\":\"" + "underRule32" + "\",\n"
-                                      + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "updateTribunalDecisionList":"\
+                                      underRule32\
+                                      ",
+                                            "appellantInDetention":"\
+                                      true\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "detainedReviewAppealSetAsideUnderRule32",
@@ -2983,11 +3932,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "handleHearingException",
                 null,
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "hearingException",
@@ -3000,12 +3953,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "handleHearingException",
                 null,
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "appellantInDetention":"\
+                                      true\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "detainedHearingException",
@@ -3018,11 +3977,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "cmrReListing",
                 null,
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "cmrUpdated",
@@ -3035,12 +3998,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "cmrReListing",
                 null,
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "appellantInDetention":"\
+                                      true\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "detainedCmrUpdated",
@@ -3054,12 +4023,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "cmrListing",
                 null,
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "appellantInDetention":"\
+                                      true\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "detainedCmrListed",
@@ -3072,12 +4047,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "restoreStateFromAdjourn",
                 null,
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"isIntegrated\":\"" + "true" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "isIntegrated":"\
+                                      true\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "relistCase",
@@ -3151,11 +4132,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "cmrListing",
                 null,
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "cmrListed",
@@ -3168,12 +4153,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "cmrListing",
                 null,
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "appellantInDetention":"\
+                                      true\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "detainedCmrListed",
@@ -3186,11 +4177,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "cmrListing",
                 null,
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "cmrListed",
@@ -3248,11 +4243,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "triggerReviewInterpreterBookingTask",
                 null,
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "reviewInterpreters",
@@ -3265,12 +4264,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "triggerReviewInterpreterBookingTask",
                 null,
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "appellantInDetention":"\
+                                      true\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "detainedReviewInterpreters",
@@ -3283,11 +4288,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "hearingCancelled",
                 null,
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "reviewInterpreters",
@@ -3300,12 +4309,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "hearingCancelled",
                 null,
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "appellantInDetention":"\
+                                      true\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "detainedReviewInterpreters",
@@ -3353,13 +4368,21 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "manageFeeUpdate",
                 null,
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"feeUpdateTribunalAction\":\"" + "refund" + "\",\n"
-                                      + "      \"appellantInDetention\":\"" + "false" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "feeUpdateTribunalAction":"\
+                                      refund\
+                                      ",
+                                            "appellantInDetention":"\
+                                      false\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "processFeeRefund",
@@ -3372,13 +4395,21 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "manageFeeUpdate",
                 null,
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"feeUpdateTribunalAction\":\"" + "refund" + "\",\n"
-                                      + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "feeUpdateTribunalAction":"\
+                                      refund\
+                                      ",
+                                            "appellantInDetention":"\
+                                      true\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "detainedProcessFeeRefund",
@@ -3391,13 +4422,21 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "manageFeeUpdate",
                 null,
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"feeUpdateTribunalAction\":\"" + "refund" + "\",\n"
-                                      + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "feeUpdateTribunalAction":"\
+                                      refund\
+                                      ",
+                                            "appellantInDetention":"\
+                                      true\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "detainedProcessFeeRefund",
@@ -3410,11 +4449,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "ariaCreateCase",
                 "migrated",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "reviewMigratedCase",
@@ -3427,12 +4470,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "ariaCreateCase",
                 "migrated",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "appellantInDetention":"\
+                                      true\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "detainedReviewMigratedCase",
@@ -3445,11 +4494,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "ariaCreateCase",
                 "migrated",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 List.of(
                     Map.of(
                         "taskId", "reviewMigratedCase",
@@ -3462,12 +4515,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "ariaCreateCase",
                 "migrated",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "appellantInDetention":"\
+                                      true\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 List.of(
                     Map.of(
                         "taskId", "detainedReviewMigratedCase",
@@ -3480,11 +4539,15 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "startAppeal",
                 "appealStartedByAdmin",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "reviewDraftAppeal",
@@ -3497,12 +4560,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "startAppeal",
                 "appealStartedByAdmin",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "appellantInDetention":"\
+                                      true\
+                                      ",
+                                            "isNotificationTurnedOff":"\
+                                      false\
+                                      "
+                                         }\
+                                      }\
+                                      """),
                 singletonList(
                     Map.of(
                         "taskId", "DetainedReviewDraftAppeal",
@@ -4383,11 +5452,13 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "completeCaseReview",
                 "appealSubmitted",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"stf24wCurrentStatusAutoGenerated\":true\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "stf24wCurrentStatusAutoGenerated":true
+                                         }\
+                                      }\
+                                      """),
                 List.of(
                     Map.of(
                         "taskId", "listTheCase",
@@ -4399,11 +5470,13 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "completeCaseReview",
                 "listing",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"stf24wCurrentStatusAutoGenerated\":true\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "stf24wCurrentStatusAutoGenerated":true
+                                         }\
+                                      }\
+                                      """),
                 List.of(
                     Map.of(
                         "taskId", "listTheCase",
@@ -4415,11 +5488,13 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "sendToAdminForListing",
                 "prepareForHearing",
-                mapAdditionalData("{\n"
-                                      + "   \"Data\":{\n"
-                                      + "      \"stf24wCurrentStatusAutoGenerated\":true\n"
-                                      + "   }"
-                                      + "}"),
+                mapAdditionalData("""
+                                      {
+                                         "Data":{
+                                            "stf24wCurrentStatusAutoGenerated":true
+                                         }\
+                                      }\
+                                      """),
                 List.of(
                     Map.of(
                         "taskId", "listTheCase",
@@ -4565,7 +5640,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         inputVariables.putAll(additionalData);
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
-        assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
+        assertEquals(expectation, dmnDecisionTableResult.getResultList());
     }
 
 
@@ -4574,16 +5649,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             Arguments.of(
                 "makeAnApplication",
                 null,
-                mapAdditionalData(" {\n"
-                                      + "        \"Data\" : {\n"
-                                      + "          \"lastModifiedApplication\" : {\n"
-                                      + "            \"type\" : \"\",\n"
-                                      + "            \"decision\" : \"\",\n"
-                                      + "            \"applicant\" : \"\",\n"
-                                      + "            \"appellantInDetention\" : \"\"\n"
-                                      + "          }\n"
-                                      + "        }\n"
-                                      + "      }"),
+                mapAdditionalData("""
+                                       {
+                                              "Data" : {
+                                                "lastModifiedApplication" : {
+                                                  "type" : "",
+                                                  "decision" : "",
+                                                  "applicant" : "",
+                                                  "appellantInDetention" : ""
+                                                }
+                                              }
+                                            }\
+                                      """),
                 emptyList()
             ),
             getArgumentOf("Adjourn",
@@ -4763,7 +5840,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
-        assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
+        assertEquals(dmnDecisionTableResult.getResultList(), expectation);
     }
 
     public static Stream<Arguments> decideAnApplicationScenarioProvider() {
@@ -4890,17 +5967,21 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
-        assertThat(dmnDecisionTableResult.getResultList().size() == 0
-                       ? singletonList(emptyMap()) : dmnDecisionTableResult.getResultList(), is(expectation));
+        if (dmnDecisionTableResult.getResultList().isEmpty()) {
+            assertEquals(singletonList(emptyMap()), expectation);
+        } else {
+            assertEquals(expectation.size(), dmnDecisionTableResult.getResultList().size());
+            assertEquals(expectation, dmnDecisionTableResult.getResultList());
+        }
     }
 
     @Test
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getInputs().size(), is(33));
-        assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(203));
+        assertEquals(logic.getInputs().size(), 33);
+        assertEquals(logic.getOutputs().size(), 4);
+        assertEquals(logic.getRules().size(), 203);
     }
 
     public static Stream<Arguments> addendumScenarioProvider() {
@@ -5016,7 +6097,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
-        assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
+        assertEquals(dmnDecisionTableResult.getResultList(), expectation);
     }
 
 

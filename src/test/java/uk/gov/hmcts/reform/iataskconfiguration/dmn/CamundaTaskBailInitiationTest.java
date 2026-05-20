@@ -20,8 +20,7 @@ import java.util.Map;
 import java.util.stream.Stream;
 
 import static java.util.Collections.emptyList;
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static uk.gov.hmcts.reform.iataskconfiguration.DmnDecisionTable.WA_TASK_INITIATION_IA_BAIL;
 
 class CamundaTaskBailInitiationTest extends DmnDecisionTableBaseUnitTest {
@@ -76,16 +75,16 @@ class CamundaTaskBailInitiationTest extends DmnDecisionTableBaseUnitTest {
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
-        assertThat(dmnDecisionTableResult.getResultList(), is(scenario.getExpectation()));
+        assertEquals(scenario.getExpectation(), dmnDecisionTableResult.getResultList());
     }
 
     @Test
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getInputs().size(), is(7));
-        assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(10));
+        assertEquals(7, logic.getInputs().size());
+        assertEquals(4, logic.getOutputs().size());
+        assertEquals(10, logic.getRules().size());
     }
 
     private static Stream<Scenario> scenarioProvider() {

@@ -27,8 +27,6 @@ import java.util.UUID;
 import java.util.stream.Stream;
 
 import static java.util.Collections.emptyMap;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.is;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static uk.gov.hmcts.reform.iataskconfiguration.DmnDecisionTable.WA_TASK_CONFIGURATION_IA_ASYLUM;
@@ -66,14 +64,14 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             "name", "workType",
             "value", "access_requests",
             "canReconfigure", true
-        ), workTypeResultList.get(0));
+        ), workTypeResultList.getFirst());
     }
 
     @Test
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(36));
+        assertEquals(36, logic.getRules().size());
     }
 
     @SuppressWarnings("checkstyle:indentation")
@@ -420,7 +418,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             "name", "workType",
             "value", "access_requests",
             "canReconfigure", true
-        ), workTypeResultList.get(0));
+        ), workTypeResultList.getFirst());
     }
 
     @ParameterizedTest
@@ -442,7 +440,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             .filter((r) -> r.containsValue("additionalProperties_roleAssignmentId"))
             .toList();
 
-        assertThat(dmnResults.size(), is(1));
+        assertEquals(1, dmnResults.size());
 
         assertTrue(dmnResults.contains(Map.of(
             "name", "additionalProperties_roleAssignmentId",
@@ -501,7 +499,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             "name", "roleCategory",
             "value", "JUDICIAL",
             "canReconfigure", false
-        ), workTypeResultList.get(0));
+        ), workTypeResultList.getFirst());
     }
 
     @ParameterizedTest
@@ -550,7 +548,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             "name", "roleCategory",
             "value", "ADMIN",
             "canReconfigure", false
-        ), workTypeResultList.get(0));
+        ), workTypeResultList.getFirst());
     }
 
     @ParameterizedTest
@@ -585,7 +583,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             "name", "roleCategory",
             "value", "CTSC",
             "canReconfigure", false
-        ), workTypeResultList.get(0));
+        ), workTypeResultList.getFirst());
     }
 
     @ParameterizedTest
@@ -644,7 +642,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             "name", "roleCategory",
             "value", "LEGAL_OPERATIONS",
             "canReconfigure", false
-        ), workTypeResultList.get(0));
+        ), workTypeResultList.getFirst());
     }
 
     @ParameterizedTest
@@ -669,7 +667,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             "name", "roleCategory",
             "value", "LEGAL_OPERATIONS",
             "canReconfigure", true
-        ), workTypeResultList.get(0));
+        ), workTypeResultList.getFirst());
     }
 
     @ParameterizedTest
@@ -683,7 +681,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
-        assertThat(dmnDecisionTableResult.getResultList().size(), is(expected.size()));
+        assertEquals(expected.size(), dmnDecisionTableResult.getResultList().size());
         for (int index = 0; index < expected.size(); index++) {
             if ("dueDateOrigin".equals(expected.get(index).get("name"))) {
                 assertTrue(validNow(
@@ -691,7 +689,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                     parseCamundaTimestamp(dmnDecisionTableResult.getResultList().get(index).get("value").toString())
                 ));
             } else {
-                assertThat(dmnDecisionTableResult.getResultList().get(index), is(expected.get(index)));
+                assertEquals(expected.get(index), dmnDecisionTableResult.getResultList().get(index));
             }
         }
     }
@@ -1639,7 +1637,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             "value", expectedDescription
                 .replace("${[roleAssignmentId]}", roleAssignmentId).replace("${[taskId]}", taskId),
             "canReconfigure", false
-        ), descriptionList.get(0));
+        ), descriptionList.getFirst());
 
     }
 
@@ -1665,7 +1663,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         assertEquals(1, descriptionList.size());
         assertEquals(
             "[List the case](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/listCase)",
-            descriptionList.get(0).get("value")
+            descriptionList.getFirst().get("value")
         );
     }
 
@@ -1930,7 +1928,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             "name", "dueDateSkipNonWorkingDays",
             "value", "false",
             "canReconfigure", false
-        ), dueDateSkipNonWorkingDaysResultList.get(0));
+        ), dueDateSkipNonWorkingDaysResultList.getFirst());
     }
 
     @ParameterizedTest
