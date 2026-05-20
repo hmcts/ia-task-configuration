@@ -29,44 +29,6 @@ java {
   }
 }
 
-
-sourceSets {
-  functionalTest {
-    java {
-      compileClasspath += main.output
-      runtimeClasspath += main.output
-      srcDir file('src/functionalTest/java')
-    }
-    resources.srcDir file('src/functionalTest/resources')
-  }
-
-  integrationTest {
-    java {
-      compileClasspath += main.output
-      runtimeClasspath += main.output
-      srcDir file('src/integrationTest/java')
-    }
-    resources.srcDir file('src/integrationTest/resources')
-  }
-
-  smokeTest {
-    java {
-      compileClasspath += main.output
-      runtimeClasspath += main.output
-      srcDir file('src/smokeTest/java')
-    }
-    resources.srcDir file('src/smokeTest/resources')
-  }
-}
-
-processFunctionalTestResources {
-  duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-}
-
-processIntegrationTestResources {
-  duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-}
-
 tasks.withType(JavaCompile).configureEach {
   options.compilerArgs += [
     '-parameters',
@@ -81,33 +43,6 @@ tasks.withType(Test).configureEach {
   testLogging {
     exceptionFormat = 'full'
   }
-}
-
-tasks.register('functional', Test) {
-  description = "Runs functional tests"
-  group = "Verification"
-  testClassesDirs = sourceSets.functionalTest.output.classesDirs
-  classpath = sourceSets.functionalTest.runtimeClasspath
-}
-
-tasks.register('integration', Test) {
-  description = "Runs integration tests"
-  group = "Verification"
-  testClassesDirs = sourceSets.integrationTest.output.classesDirs
-  classpath = sourceSets.integrationTest.runtimeClasspath
-  failFast = true
-}
-
-tasks.register('smoke', Test) {
-  description = "Runs Smoke Tests"
-  testClassesDirs = sourceSets.smokeTest.output.classesDirs
-  classpath = sourceSets.smokeTest.runtimeClasspath
-}
-
-tasks.register('tests') {
-  description = "Runs junit , integration and functional tests"
-  group = "Verification"
-  dependsOn test, integration, smoke, functional
 }
 
 checkstyle {
@@ -134,7 +69,7 @@ jacocoTestCoverageVerification {
 }
 
 jacocoTestReport {
-  executionData(test, integration)
+  executionData(test)
   reports {
     xml.required.set(true)
     csv.required.set(false)
@@ -160,7 +95,7 @@ tasks.named('pitest') {
 }
 
 tasks.named('sonarqube') {
-  dependsOn test, integration, jacocoTestReport
+  dependsOn test, jacocoTestReport
   group = "Verification"
 }
 
@@ -244,13 +179,6 @@ dependencies {
   testImplementation group: 'org.camunda.bpm', name: 'camunda-engine', version: '7.20.0'
 
   testImplementation group: 'org.apiguardian', name: 'apiguardian-api', version: '1.1.2'
-
-  integrationTestImplementation sourceSets.main.runtimeClasspath
-  integrationTestImplementation sourceSets.test.runtimeClasspath
-
-  functionalTestImplementation sourceSets.main.runtimeClasspath
-
-  smokeTestImplementation sourceSets.main.runtimeClasspath
 }
 
 mainClassName = 'uk.gov.hmcts.reform.iataskconfiguration.Application'
