@@ -17,8 +17,7 @@ import java.util.stream.Stream;
 
 import static java.util.Collections.emptyList;
 import static java.util.Collections.singletonList;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.is;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static uk.gov.hmcts.reform.iataskconfiguration.DmnDecisionTable.WA_TASK_ALLOWED_DAYS_IA_ASYLUM;
 
 class CamundaTaskAllowedDaysTest extends DmnDecisionTableBaseUnitTest {
@@ -116,7 +115,7 @@ class CamundaTaskAllowedDaysTest extends DmnDecisionTableBaseUnitTest {
         inputVariables.putValue("taskId", eventId);
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
-        assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
+        assertEquals(expectation, dmnDecisionTableResult.getResultList());
     }
 
     @Test
@@ -124,7 +123,7 @@ class CamundaTaskAllowedDaysTest extends DmnDecisionTableBaseUnitTest {
 
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(7));
+        assertEquals(7, logic.getRules().size());
 
     }
 }

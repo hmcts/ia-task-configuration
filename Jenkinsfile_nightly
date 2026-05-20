@@ -29,22 +29,6 @@ withNightlyPipeline(type, product, component) {
         ]
       }
     }
-    stage('Integration Tests') {
-      try {
-        builder.gradle('integration')
-      } catch (Error) {
-        unstable(message: "${STAGE_NAME} is unstable")
-      } finally {
-        publishHTML target: [
-          allowMissing         : true,
-          alwaysLinkToLastBuild: true,
-          keepAll              : true,
-          reportDir            : "build/reports/tests/integration",
-          reportFiles          : "index.html",
-          reportName           : "Integration Test Report"
-        ]
-      }
-    }
   }
 
   afterAlways('DependencyCheckNightly') {

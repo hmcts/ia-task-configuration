@@ -61,7 +61,6 @@ perl -i -pe "s/reform.demo/reform.$package/g" build.gradle
 git mv charts/rpe-spring-boot-template charts/${slug}
 
 # Rename directory to provided package name
-git mv src/integrationTest/java/uk/gov/hmcts/reform/demo/ src/integrationTest/java/uk/gov/hmcts/reform/${package}
 git mv src/main/java/uk/gov/hmcts/reform/demo/ src/main/java/uk/gov/hmcts/reform/${package}
 
 # Rename CNP file

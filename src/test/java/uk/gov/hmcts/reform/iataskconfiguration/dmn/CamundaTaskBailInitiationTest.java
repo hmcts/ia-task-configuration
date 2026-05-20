@@ -1,7 +1,6 @@
 package uk.gov.hmcts.reform.iataskconfiguration.dmn;
 
 import lombok.Builder;
-import lombok.Value;
 import org.camunda.bpm.dmn.engine.DmnDecisionTableResult;
 import org.camunda.bpm.dmn.engine.impl.DmnDecisionTableImpl;
 import org.camunda.bpm.engine.variable.VariableMap;
@@ -20,29 +19,33 @@ import java.util.Map;
 import java.util.stream.Stream;
 
 import static java.util.Collections.emptyList;
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static uk.gov.hmcts.reform.iataskconfiguration.DmnDecisionTable.WA_TASK_INITIATION_IA_BAIL;
 
 class CamundaTaskBailInitiationTest extends DmnDecisionTableBaseUnitTest {
 
-    @Builder
-    @Value
-    static class Scenario {
-        String description;
-        String eventId;
-        String postEventState;
-        String applicationSubmittedBy;
-        boolean hasActiveInterpreterFlag;
-        String lastFileUploadedBy;
-        String listingEvent;
-        String recordDecisionType;
-        List<Map<String, Object>> expectation;
+    @ParameterizedTest(name = "Scenario: {0}")
+    @MethodSource("scenarioProvider")
+    void given_submit_application_should_evaluate_dmn(Scenario scenario) {
+        Map<String, Object> data = new HashMap<>();
+        data.put("applicationSubmittedBy", scenario.applicationSubmittedBy());
+        data.put("hasActiveInterpreterFlag", scenario.hasActiveInterpreterFlag());
+        data.put("lastFileUploadedBy", scenario.lastFileUploadedBy());
+        data.put("listingEvent", scenario.listingEvent());
+        data.put("recordDecisionType", scenario.recordDecisionType());
+        data.put("listingHearingDate", listingHearingDate);
+        data.put("bailSummaryDueDate", bailSummaryDueDate);
+        Map<String, Object> additionalData = new HashMap<>();
+        additionalData.put("Data", data);
+        VariableMap inputVariables = new VariableMapImpl();
+        inputVariables.putValue("additionalData", additionalData);
 
-        @Override
-        public String toString() {
-            return description;
-        }
+        inputVariables.putValue("eventId", scenario.eventId());
+        inputVariables.putValue("postEventState", scenario.postEventState());
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        assertEquals(scenario.expectation(), dmnDecisionTableResult.getResultList());
     }
 
     @BeforeAll
@@ -55,37 +58,23 @@ class CamundaTaskBailInitiationTest extends DmnDecisionTableBaseUnitTest {
     private static final String bailSummaryDueDate = LocalDateTime.now().plusDays(3)
         .format(DateTimeFormatter.ISO_LOCAL_DATE_TIME);
 
-    @ParameterizedTest(name = "Scenario: {0}")
-    @MethodSource("scenarioProvider")
-    void given_submit_application_should_evaluate_dmn(Scenario scenario) {
-        Map<String, Object> data = new HashMap<>();
-        data.put("applicationSubmittedBy", scenario.getApplicationSubmittedBy());
-        data.put("hasActiveInterpreterFlag", scenario.isHasActiveInterpreterFlag());
-        data.put("lastFileUploadedBy", scenario.getLastFileUploadedBy());
-        data.put("listingEvent", scenario.getListingEvent());
-        data.put("recordDecisionType", scenario.getRecordDecisionType());
-        data.put("listingHearingDate", listingHearingDate);
-        data.put("bailSummaryDueDate", bailSummaryDueDate);
-        Map<String, Object> additionalData = new HashMap<>();
-        additionalData.put("Data", data);
-        VariableMap inputVariables = new VariableMapImpl();
-        inputVariables.putValue("additionalData", additionalData);
-
-        inputVariables.putValue("eventId", scenario.getEventId());
-        inputVariables.putValue("postEventState", scenario.getPostEventState());
-
-        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
-
-        assertThat(dmnDecisionTableResult.getResultList(), is(scenario.getExpectation()));
+    @Builder
+    record Scenario(String description, String eventId, String postEventState, String applicationSubmittedBy,
+                    boolean hasActiveInterpreterFlag, String lastFileUploadedBy, String listingEvent,
+                    String recordDecisionType, List<Map<String, Object>> expectation) {
+        @Override
+        public String toString() {
+            return description;
+        }
     }
 
     @Test
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getInputs().size(), is(7));
-        assertThat(logic.getOutputs().size(), is(4));
-        assertThat(logic.getRules().size(), is(10));
+        assertEquals(7, logic.getInputs().size());
+        assertEquals(4, logic.getOutputs().size());
+        assertEquals(10, logic.getRules().size());
     }
 
     private static Stream<Scenario> scenarioProvider() {
