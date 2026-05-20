@@ -13,8 +13,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.IntStream;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public abstract class DmnDecisionTableBaseUnitTest {
 
@@ -42,12 +41,12 @@ public abstract class DmnDecisionTableBaseUnitTest {
     protected void assertThatInputContainInOrder(List<String> inputColumnIds,
                                                  List<DmnDecisionTableInputImpl> inputs) {
         IntStream.range(0, inputs.size())
-            .forEach(i -> assertThat(inputs.get(i).getInputVariable(), is(inputColumnIds.get(i))));
+            .forEach(i -> assertEquals(inputColumnIds.get(i), inputs.get(i).getInputVariable()));
     }
 
     protected void assertThatOutputContainInOrder(List<String> outputColumnIds,
                                                   List<DmnDecisionTableOutputImpl> output) {
         IntStream.range(0, output.size())
-            .forEach(i -> assertThat(output.get(i).getOutputName(), is(outputColumnIds.get(i))));
+            .forEach(i -> assertEquals(outputColumnIds.get(i), output.get(i).getOutputName()));
     }
 }

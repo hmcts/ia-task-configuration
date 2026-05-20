@@ -1,7 +1,9 @@
 package uk.gov.hmcts.reform.iataskconfiguration;
 
 import com.fasterxml.jackson.annotation.JsonValue;
+import lombok.Getter;
 
+@Getter
 public enum DmnDecisionTable {
     WA_TASK_ALLOWED_DAYS_IA_ASYLUM("wa-task-allowed-days-ia-asylum", "wa-task-allowed-days-ia-asylum.dmn"),
     WA_TASK_CANCELLATION_IA_ASYLUM("wa-task-cancellation-ia-asylum", "wa-task-cancellation-ia-asylum.dmn"),
@@ -26,11 +28,4 @@ public enum DmnDecisionTable {
         this.fileName = fileName;
     }
 
-    public String getKey() {
-        return key;
-    }
-
-    public String getFileName() {
-        return fileName;
-    }
 }

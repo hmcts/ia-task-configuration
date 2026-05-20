@@ -1,7 +1,6 @@
 package uk.gov.hmcts.reform.iataskconfiguration.dmn;
 
 import lombok.Builder;
-import lombok.Value;
 import org.camunda.bpm.dmn.engine.DmnDecisionTableResult;
 import org.camunda.bpm.dmn.engine.impl.DmnDecisionTableImpl;
 import org.camunda.bpm.engine.variable.VariableMap;
@@ -27,8 +26,6 @@ import java.util.UUID;
 import java.util.stream.Stream;
 
 import static java.util.Collections.emptyMap;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.is;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static uk.gov.hmcts.reform.iataskconfiguration.DmnDecisionTable.WA_TASK_CONFIGURATION_IA_ASYLUM;
@@ -43,657 +40,6 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     @BeforeAll
     public static void initialization() {
         CURRENT_DMN_DECISION_TABLE = WA_TASK_CONFIGURATION_IA_ASYLUM;
-    }
-
-    @ParameterizedTest
-    @CsvSource({
-        "followUpNoticeOfChange","detainedFollowUpNoticeOfChange"
-    })
-    void when_taskId_then_return_Access_Requests(String taskType) {
-        VariableMap inputVariables = new VariableMapImpl();
-
-        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
-
-        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
-
-        List<Map<String, Object>> workTypeResultList = dmnDecisionTableResult.getResultList().stream()
-            .filter((r) -> r.containsValue("workType"))
-            .toList();
-
-        assertEquals(1, workTypeResultList.size());
-
-        assertEquals(Map.of(
-            "name", "workType",
-            "value", "access_requests",
-            "canReconfigure", true
-        ), workTypeResultList.get(0));
-    }
-
-    @Test
-    void if_this_test_fails_needs_updating_with_your_changes() {
-        //The purpose of this test is to prevent adding new rows without being tested
-        DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertThat(logic.getRules().size(), is(37));
-    }
-
-    @SuppressWarnings("checkstyle:indentation")
-    @ParameterizedTest
-    @CsvSource(value = {
-        "refusalOfHumanRights, Human rights",
-        "refusalOfEu, EEA",
-        "deprivation, DoC",
-        "protection, Protection",
-        "revocationOfProtection, Revocation",
-        "NULL_VALUE, ''",
-        "'', ''"
-    }, nullValues = "NULL_VALUE")
-    void when_caseData_then_return_expected_appealType(String appealType, String expectedAppealType) {
-        VariableMap inputVariables = new VariableMapImpl();
-        Map<String, Object> caseData = new HashMap<>(); // allow null values
-        caseData.put("appealType", appealType);
-        inputVariables.putValue("caseData", caseData);
-
-        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
-
-        assertTrue(dmnDecisionTableResult.getResultList().contains(Map.of(
-            "name", "appealType",
-            "value", expectedAppealType,
-            "canReconfigure", false
-        )));
-
-        assertTrue(dmnDecisionTableResult.getResultList().contains(Map.of(
-            "name", "caseManagementCategory",
-            "value", expectedAppealType,
-            "canReconfigure", false
-        )));
-    }
-
-    @Test
-    void when_caseData_then_return_expected_case_management_category() {
-        String refusalOfEuLabel = "Refusal of application under the EEA regulations";
-        String revocationLabel = "Revocation of a protection status";
-        List<Map<String, Object>> caseManagementCategories = List.of(
-            Map.of(
-                "value",
-                Map.of("code", "refusalOfHumanRights", "label", "Refusal of a human rights claim"),
-                "list_items",
-                List.of(Map.of("code", "refusalOfHumanRights", "label", "Refusal of a human rights claim"))
-            ),
-            Map.of(
-                "value", Map.of("code", "refusalOfEu", "label", "Refusal of application under the EEA regulations"),
-                "list_items", List.of(Map.of("code", "refusalOfEu", "label", refusalOfEuLabel))
-            ),
-            Map.of(
-                "value", Map.of("code", "deprivation", "label", "Deprivation of citizenship"),
-                "list_items", List.of(Map.of("code", "deprivation", "label", "Deprivation of citizenship"))
-            ),
-            Map.of(
-                "value", Map.of("code", "protection", "label", "Refusal of protection claim"),
-                "list_items", List.of(Map.of("code", "protection", "label", "Refusal of protection claim"))
-            ),
-            Map.of(
-                "value", Map.of("code", "revocationOfProtection", "label", "Revocation of a protection status"),
-                "list_items", List.of(Map.of("code", "revocationOfProtection", "label", revocationLabel))
-            )
-        );
-
-        List<String> expectedCaseManagementCategories = List.of(
-            "Human rights",
-            "EEA",
-            "DoC",
-            "Protection",
-            "Revocation"
-        );
-
-        for (int i = 0; i < caseManagementCategories.size(); i++) {
-            Map<String, Object> caseManagementCategory = caseManagementCategories.get(i);
-            VariableMap inputVariables = new VariableMapImpl();
-            Map<String, Object> caseData = new HashMap<>(); // allow null values
-            caseData.put("caseManagementCategory", caseManagementCategory);
-            inputVariables.putValue("caseData", caseData);
-
-            DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
-
-            assertTrue(dmnDecisionTableResult.getResultList().contains(Map.of(
-                "name", "caseManagementCategory",
-                "value", expectedCaseManagementCategories.get(i),
-                "canReconfigure", false
-            )));
-        }
-    }
-
-    @ParameterizedTest
-    @CsvSource(value = {
-        "false, false, false, false",
-        "true, true, false, false",
-        "true, true, true, true"
-    })
-    void nextHearingId_and_nextHearingDate_should_be_set_correctly(
-        boolean caseDataSet, boolean nextHearingDetailsSet, boolean nextHearingIdAndDateSet, boolean expected) {
-        VariableMap inputVariables = new VariableMapImpl();
-        Map<String, Object> caseData = caseDataSet ? new HashMap<>() : null;
-        Map<String, Object> nextHearingDetails = nextHearingDetailsSet ? new HashMap<>() : null;
-        if (nextHearingIdAndDateSet && nextHearingDetailsSet) {
-            nextHearingDetails.put("hearingID", "123Id");
-            nextHearingDetails.put("hearingDateTime", CURRENT_DATE_TIME);
-        }
-        if (caseDataSet && nextHearingDetailsSet) {
-            caseData.put("nextHearingDetails", nextHearingDetails);
-        }
-        if (caseDataSet) {
-            inputVariables.putValue("caseData", caseData);
-        }
-
-        String nextHearingDate = expected ? CURRENT_DATE_TIME : "";
-        String nextHearingId = expected ? "123Id" : "";
-
-        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
-
-        assertTrue(dmnDecisionTableResult.getResultList().contains(Map.of(
-            "name", "nextHearingId",
-            "value", nextHearingId,
-            "canReconfigure", true
-        )));
-
-        assertTrue(dmnDecisionTableResult.getResultList().contains(Map.of(
-            "name", "nextHearingDate",
-            "value", nextHearingDate,
-            "canReconfigure", true
-        )));
-    }
-
-    public static Stream<Arguments> workTypeScenarioProvider() {
-        List<Map<String, Object>> routineWork = List.of(Map.of(
-            "name", "workType",
-            "value", "routine_work",
-            "canReconfigure", true
-        ));
-        List<Map<String, Object>> decisionMakingWork = List.of(Map.of(
-            "name", "workType",
-            "value", "decision_making_work",
-            "canReconfigure", true
-        ));
-        List<Map<String, Object>> hearingWork = List.of(Map.of(
-            "name", "workType",
-            "value", "hearing_work",
-            "canReconfigure", true
-        ));
-        List<Map<String, Object>> applications = List.of(Map.of(
-            "name", "workType",
-            "value", "applications",
-            "canReconfigure", true
-        ));
-        List<Map<String, Object>> upperTribunal = List.of(Map.of(
-            "name", "workType",
-            "value", "upper_tribunal",
-            "canReconfigure", true
-        ));
-        List<Map<String, Object>> reviewCase = List.of(Map.of(
-            "name", "workType",
-            "value", "review_case",
-            "canReconfigure", true
-        ));
-
-        return Stream.of(
-            Arguments.of("arrangeOfflinePayment", routineWork),
-            Arguments.of("markCaseAsPaid", routineWork),
-            Arguments.of("attendCma", routineWork),
-            Arguments.of("caseSummaryHearingBundleStartDecision", routineWork),
-            Arguments.of("detainedCaseSummaryHearingBundleStartDecision", routineWork),
-            Arguments.of("followUpExtendedDirection", routineWork),
-            Arguments.of("detainedFollowUpExtendedDirection", routineWork),
-            Arguments.of("followUpNonStandardDirection", routineWork),
-            Arguments.of("detainedFollowUpNonStandardDirection", routineWork),
-            Arguments.of("reviewClarifyingQuestionsAnswers", routineWork),
-            Arguments.of("reviewRemissionApplication", routineWork),
-            Arguments.of("reviewASRemission", routineWork),
-            Arguments.of("reviewLARemission", routineWork),
-            Arguments.of("reviewHOWaiverRemission", routineWork),
-            Arguments.of("reviewAuthorityRemission", routineWork),
-            Arguments.of("reviewHWFRemission", routineWork),
-            Arguments.of("reviewECRRemission", routineWork),
-            Arguments.of("detainedReviewASRemission", routineWork),
-            Arguments.of("detainedReviewLARemission", routineWork),
-            Arguments.of("detainedReviewHOWaiverRemission", routineWork),
-            Arguments.of("detainedReviewAuthorityRemission", routineWork),
-            Arguments.of("detainedReviewHWFRemission", routineWork),
-            Arguments.of("detainedReviewECRRemission", routineWork),
-            Arguments.of("assignAFTPAJudge", routineWork),
-            Arguments.of("detainedAssignAFTPAJudge", routineWork),
-            Arguments.of("reviewAppealSetAsideUnderRule35", routineWork),
-            Arguments.of("detainedReviewAppealSetAsideUnderRule35", routineWork),
-            Arguments.of("reviewAppealSetAsideUnderRule32", routineWork),
-            Arguments.of("detainedReviewAppealSetAsideUnderRule32", routineWork),
-            Arguments.of("sendPaymentRequest", routineWork),
-            Arguments.of("markAsPaid", routineWork),
-            Arguments.of("reviewRemittedAppeal", routineWork),
-            Arguments.of("detainedReviewRemittedAppeal", routineWork),
-            Arguments.of("reviewAriaRemissionApplication", routineWork),
-            Arguments.of("reviewDraftAppeal", routineWork),
-            Arguments.of("detainedReviewDraftAppeal", routineWork),
-            Arguments.of("printAndSendHoBundle", routineWork),
-            Arguments.of("detainedPrintAndSendHoBundle", routineWork),
-            Arguments.of("printAndSendHoResponse", routineWork),
-            Arguments.of("printAndSendHearingRequirements", routineWork),
-            Arguments.of("detainedPrintAndSendHearingRequirements", routineWork),
-            Arguments.of("printAndSendHearingBundle", routineWork),
-            Arguments.of("detainedPrintAndSendHearingBundle", routineWork),
-            Arguments.of("printAndSendDecisionCorrectedRule31", routineWork),
-            Arguments.of("detainedPrintAndSendDecisionCorrectedRule31", routineWork),
-            Arguments.of("printAndSendDecisionCorrectedRule32", routineWork),
-            Arguments.of("detainedPrintAndSendDecisionCorrectedRule32", routineWork),
-            Arguments.of("printAndSendHoApplication", routineWork),
-            Arguments.of("detainedPrintAndSendHoApplication", routineWork),
-            Arguments.of("printAndSendHoEvidence", routineWork),
-            Arguments.of("detainedPrintAndSendHoEvidence", routineWork),
-            Arguments.of("printAndSendAppealDecision", routineWork),
-            Arguments.of("detainedPrintAndSendAppealDecision", routineWork),
-            Arguments.of("printAndSendFTPADecision", routineWork),
-            Arguments.of("detainedPrintAndSendFTPADecision", routineWork),
-            Arguments.of("printAndSendReheardHearingRequirements", routineWork),
-            Arguments.of("detainedPrintAndSendReheardHearingRequirements", routineWork),
-            Arguments.of("processFeeRefund", routineWork),
-            Arguments.of("detainedProcessFeeRefund", routineWork),
-            Arguments.of("reviewAdditionalEvidence", decisionMakingWork),
-            Arguments.of("detainedReviewAdditionalEvidence", decisionMakingWork),
-            Arguments.of("reviewTheAppeal", decisionMakingWork),
-            Arguments.of("detainedReviewTheAppeal", decisionMakingWork),
-            Arguments.of("followUpOverdueRespondentEvidence", decisionMakingWork),
-            Arguments.of("detainedFollowUpOverdueRespondentEvidence", decisionMakingWork),
-            Arguments.of("reviewRespondentEvidence", decisionMakingWork),
-            Arguments.of("detainedReviewRespondentEvidence", decisionMakingWork),
-            Arguments.of("followUpOverdueCaseBuilding", decisionMakingWork),
-            Arguments.of("detainedFollowUpOverdueCaseBuilding", decisionMakingWork),
-            Arguments.of("reviewAppealSkeletonArgument", decisionMakingWork),
-            Arguments.of("detainedReviewAppealSkeletonArgument", decisionMakingWork),
-            Arguments.of("followUpOverdueReasonsForAppeal", decisionMakingWork),
-            Arguments.of("reviewReasonsForAppeal", decisionMakingWork),
-            Arguments.of("followUpOverdueClarifyingAnswers", decisionMakingWork),
-            Arguments.of("reviewClarifyingAnswers", decisionMakingWork),
-            Arguments.of("followUpOverdueRespondentReview", decisionMakingWork),
-            Arguments.of("detainedFollowUpOverdueRespondentReview", decisionMakingWork),
-            Arguments.of("reviewRespondentResponse", decisionMakingWork),
-            Arguments.of("detainedReviewRespondentResponse", decisionMakingWork),
-            Arguments.of("followUpOverdueCMARequirements", decisionMakingWork),
-            Arguments.of("reviewCmaRequirements", decisionMakingWork),
-            Arguments.of("reviewAdditionalHomeOfficeEvidence", decisionMakingWork),
-            Arguments.of("detainedReviewAdditionalHomeOfficeEvidence", decisionMakingWork),
-            Arguments.of("reviewAddendumHomeOfficeEvidence", decisionMakingWork),
-            Arguments.of("reviewAddendumEvidence", decisionMakingWork),
-            Arguments.of("detainedReviewAddendumEvidence", decisionMakingWork),
-            Arguments.of("decideOnTimeExtension", decisionMakingWork),
-            Arguments.of("sendDecisionsAndReasons", decisionMakingWork),
-            Arguments.of("detainedSendDecisionsAndReasons", decisionMakingWork),
-            Arguments.of("generateDraftDecisionAndReasons", hearingWork),
-            Arguments.of("uploadDecision", hearingWork),
-            Arguments.of("uploadHearingRecording", hearingWork),
-            Arguments.of("postHearingAttendeesDurationAndRecording", hearingWork),
-            Arguments.of("detainedPostHearingAttendeesDurationAndRecording", hearingWork),
-            Arguments.of("editListing", hearingWork),
-            Arguments.of("detainedEditListing", hearingWork),
-            Arguments.of("followUpOverdueHearingRequirements", hearingWork),
-            Arguments.of("detainedFollowUpOverdueHearingRequirements", hearingWork),
-            Arguments.of("reviewHearingRequirements", hearingWork),
-            Arguments.of("detainedReviewHearingRequirements", hearingWork),
-            Arguments.of("allocateHearingJudge", hearingWork),
-            Arguments.of("detainedAllocateHearingJudge", hearingWork),
-            Arguments.of("prepareDecisionsAndReasons", hearingWork),
-            Arguments.of("startDecisionsAndReasonsDocument", hearingWork),
-            Arguments.of("createHearingBundle", hearingWork),
-            Arguments.of("createCaseSummary", hearingWork),
-            Arguments.of("listTheCase", hearingWork),
-            Arguments.of("detainedListTheCase", hearingWork),
-            Arguments.of("hearingException", hearingWork),
-            Arguments.of("detainedHearingException", hearingWork),
-            Arguments.of("cmrListed", hearingWork),
-            Arguments.of("detainedCmrListed", hearingWork),
-            Arguments.of("cmrUpdated", hearingWork),
-            Arguments.of("detainedCmrUpdated", hearingWork),
-            Arguments.of("relistCase", hearingWork),
-            Arguments.of("detainedRelistCase", hearingWork),
-            Arguments.of("reviewInterpreters", hearingWork),
-            Arguments.of("detainedReviewInterpreters", hearingWork),
-            Arguments.of("processApplicationAdjourn", applications),
-            Arguments.of("detainedProcessApplicationAdjourn", applications),
-            Arguments.of("processApplicationExpedite", applications),
-            Arguments.of("detainedProcessApplicationExpedite", applications),
-            Arguments.of("processApplicationTimeExtension", applications),
-            Arguments.of("detainedProcessApplicationTimeExtension", applications),
-            Arguments.of("processApplicationTransfer", applications),
-            Arguments.of("processApplicationWithdraw", applications),
-            Arguments.of("detainedProcessApplicationWithdraw", applications),
-            Arguments.of("processApplicationUpdateHearingRequirements", applications),
-            Arguments.of("detainedProcessApplicationUpdateHearingRequirements", applications),
-            Arguments.of("processApplicationUpdateAppealDetails", applications),
-            Arguments.of("detainedProcessApplicationUpdateAppealDetails", applications),
-            Arguments.of("processApplicationReinstateAnEndedAppeal", applications),
-            Arguments.of("detainedProcessApplicationReinstateAnEndedAppeal", applications),
-            Arguments.of("processApplicationOther", applications),
-            Arguments.of("detainedProcessApplicationOther", applications),
-            Arguments.of("processApplicationLink/UnlinkAppeals", applications),
-            Arguments.of("detainedProcessApplicationLink/UnlinkAppeals", applications),
-            Arguments.of("processHearingRequirementsApplication", applications),
-            Arguments.of("processHearingCentreApplication", applications),
-            Arguments.of("processApplicationExpedite", applications),
-            Arguments.of("detainedProcessApplicationExpedite", applications),
-            Arguments.of("processApplicationTransfer", applications),
-            Arguments.of("detainedProcessApplicationTransfer", applications),
-            Arguments.of("processApplicationForTimeExtension", applications),
-            Arguments.of("processAppealDetailsApplication", applications),
-            Arguments.of("processReinstatementApplication", applications),
-            Arguments.of("processApplicationToReviewDecision", applications),
-            Arguments.of("detainedProcessApplicationToReviewDecision", applications),
-            Arguments.of("reviewSetAsideDecisionApplication", applications),
-            Arguments.of("detainedReviewSetAsideDecisionApplication", applications),
-            Arguments.of("followUpSetAsideDecision", applications),
-            Arguments.of("detainedFollowUpSetAsideDecision", applications),
-            Arguments.of("decideAnFTPA", upperTribunal),
-            Arguments.of("processApplicationChangeHearingType", applications),
-            Arguments.of("detainedProcessApplicationChangeHearingType", applications),
-            Arguments.of("reviewMigratedCase", reviewCase),
-            Arguments.of("detainedListCmr", hearingWork)
-
-        );
-    }
-
-    @ParameterizedTest
-    @CsvSource({
-        "reviewSpecificAccessRequestJudiciary", "reviewSpecificAccessRequestLegalOps",
-        "reviewSpecificAccessRequestAdmin","reviewSpecificAccessRequestCTSC"
-    })
-    void when_taskId_then_return_Access_requests(String taskType) {
-        VariableMap inputVariables = new VariableMapImpl();
-
-        String roleAssignmentId = UUID.randomUUID().toString();
-        Map<String, String> taskAttributes = Map.of("taskType", taskType, "roleAssignmentId", roleAssignmentId);
-        inputVariables.putValue("taskAttributes", taskAttributes);
-
-        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
-
-        List<Map<String, Object>> workTypeResultList = dmnDecisionTableResult.getResultList().stream()
-            .filter((r) -> r.containsValue("workType"))
-            .toList();
-
-        assertEquals(1, workTypeResultList.size());
-
-        assertEquals(Map.of(
-            "name", "workType",
-            "value", "access_requests",
-            "canReconfigure", true
-        ), workTypeResultList.get(0));
-    }
-
-    @ParameterizedTest
-    @CsvSource({
-        "reviewSpecificAccessRequestJudiciary", "reviewSpecificAccessRequestLegalOps",
-        "reviewSpecificAccessRequestAdmin","reviewSpecificAccessRequestCTSC"
-    })
-    void should_return_request_value_when_role_assignment_id_exists_in_task_attributes(String taskType) {
-        VariableMap inputVariables = new VariableMapImpl();
-
-        String roleAssignmentId = UUID.randomUUID().toString();
-
-        Map<String, String> taskAttributes = Map.of("taskType", taskType, "roleAssignmentId", roleAssignmentId);
-        inputVariables.putValue("taskAttributes", taskAttributes);
-
-        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
-
-        List<Map<String, Object>> dmnResults = dmnDecisionTableResult.getResultList().stream()
-            .filter((r) -> r.containsValue("additionalProperties_roleAssignmentId"))
-            .toList();
-
-        assertThat(dmnResults.size(), is(1));
-
-        assertTrue(dmnResults.contains(Map.of(
-            "name", "additionalProperties_roleAssignmentId",
-            "value", roleAssignmentId,
-            "canReconfigure", false
-        )));
-
-    }
-
-    @ParameterizedTest
-    @MethodSource("workTypeScenarioProvider")
-    void when_taskId_then_return_workType(String taskType, List<Map<String, String>> expected) {
-        VariableMap inputVariables = new VariableMapImpl();
-
-        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
-        if (taskType.equals("reviewMigratedCase") || taskType.equals("detainedReviewMigratedCase")) {
-            inputVariables.putValue("caseData", Map.of("ariaMigrationTaskDueDays", "10"));
-        }
-
-        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
-
-        List<Map<String, Object>> workTypeResultList = dmnDecisionTableResult.getResultList().stream()
-            .filter((r) -> r.containsValue("workType"))
-            .toList();
-
-        assertEquals(expected, workTypeResultList);
-    }
-
-    @ParameterizedTest
-    @CsvSource({
-        "generateDraftDecisionAndReasons", "uploadDecision", "reviewAddendumHomeOfficeEvidence",
-        "reviewAddendumAppellantEvidence", "reviewSpecificAccessRequestJudiciary",
-        "reviewSpecificAccessRequestLegalOps", "reviewSpecificAccessRequestAdmin","reviewSpecificAccessRequestCTSC",
-        "processApplicationToReviewDecision", "detainedProcessApplicationToReviewDecision",
-        "sendDecisionsAndReasons","detainedSendDecisionsAndReasons", "prepareDecisionsAndReasons", "decideAnFTPA",
-        "reviewSetAsideDecisionApplication", "detainedReviewSetAsideDecisionApplication"
-    })
-    void when_taskId_then_return_judicial_role_category(String taskType) {
-        VariableMap inputVariables = new VariableMapImpl();
-
-        String roleAssignmentId = UUID.randomUUID().toString();
-        inputVariables.putValue("taskAttributes", Map.of(
-            "taskType", taskType,
-            "additionalProperties", Map.of("roleAssignmentId", roleAssignmentId)
-        ));
-
-        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
-
-        List<Map<String, Object>> workTypeResultList = dmnDecisionTableResult.getResultList().stream()
-            .filter(r -> "roleCategory".equals(r.get("name")))
-            .toList();
-
-        assertEquals(1, workTypeResultList.size());
-
-        assertEquals(Map.of(
-            "name", "roleCategory",
-            "value", "JUDICIAL",
-            "canReconfigure", false
-        ), workTypeResultList.get(0));
-    }
-
-    @ParameterizedTest
-    @CsvSource({
-        "arrangeOfflinePayment", "markCaseAsPaid", "allocateHearingJudge", "detainedAllocateHearingJudge",
-        "uploadHearingRecording", "postHearingAttendeesDurationAndRecording",
-        "detainedPostHearingAttendeesDurationAndRecording",
-        "editListing", "detainedEditListing", "followUpSetAsideDecision", "detainedFollowUpSetAsideDecision",
-        "hearingException", "detainedHearingException",
-        "cmrListed", "cmrUpdated", "detainedCmrListed", "detainedCmrUpdated",
-        "relistCase", "detainedRelistCase",
-        "reviewInterpreters", "detainedReviewInterpreters",
-        "reviewMigratedCase", "detainedReviewMigratedCase",
-        "reviewAriaRemissionApplication",
-        "printAndSendHoBundle", "detainedPrintAndSendHoBundle",
-        "printAndSendHoResponse",
-        "printAndSendHearingRequirements", "detainedPrintAndSendHearingRequirements",
-        "printAndSendHearingBundle", "detainedPrintAndSendHearingBundle",
-        "printAndSendDecisionCorrectedRule31", "detainedPrintAndSendDecisionCorrectedRule31",
-        "printAndSendDecisionCorrectedRule32", "detainedPrintAndSendDecisionCorrectedRule32",
-        "printAndSendHoApplication", "detainedPrintAndSendHoApplication",
-        "printAndSendHoEvidence", "detainedPrintAndSendHoEvidence",
-        "printAndSendAppealDecision", "detainedPrintAndSendAppealDecision",
-        "printAndSendFTPADecision", "detainedPrintAndSendFTPADecision",
-        "printAndSendReheardHearingRequirements", "detainedPrintAndSendReheardHearingRequirements",
-        "detainedListCmr"
-
-    })
-    void when_taskId_then_return_Admin_role_category(String taskType) {
-        VariableMap inputVariables = new VariableMapImpl();
-
-        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
-        if (taskType.equals("reviewMigratedCase") || taskType.equals("detainedReviewMigratedCase")) {
-            inputVariables.putValue("caseData", Map.of("ariaMigrationTaskDueDays", "10"));
-        }
-
-        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
-
-        List<Map<String, Object>> workTypeResultList = dmnDecisionTableResult.getResultList().stream()
-            .filter((r) -> r.containsValue("roleCategory"))
-            .toList();
-
-        assertEquals(1, workTypeResultList.size());
-
-        assertEquals(Map.of(
-            "name", "roleCategory",
-            "value", "ADMIN",
-            "canReconfigure", false
-        ), workTypeResultList.get(0));
-    }
-
-    @ParameterizedTest
-    @CsvSource({
-        "reviewRemissionApplication","reviewASRemission",
-        "reviewLARemission", "reviewHOWaiverRemission",
-        "reviewAuthorityRemission", "reviewHWFRemission",
-        "reviewECRRemission", "detainedReviewASRemission",
-        "detainedReviewLARemission", "detainedReviewHOWaiverRemission",
-        "detainedReviewAuthorityRemission", "detainedReviewHWFRemission",
-        "detainedReviewECRRemission",
-        "assignAFTPAJudge","detainedAssignAFTPAJudge",
-        "listTheCase","detainedListTheCase",
-        "sendPaymentRequest","markAsPaid",
-        "processFeeRefund","detainedProcessFeeRefund",
-        "reviewDraftAppeal","detainedReviewDraftAppeal"
-    })
-    void when_taskId_then_return_Ctsc_role_category(String taskType) {
-        VariableMap inputVariables = new VariableMapImpl();
-
-        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
-
-        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
-
-        List<Map<String, Object>> workTypeResultList = dmnDecisionTableResult.getResultList().stream()
-            .filter((r) -> r.containsValue("roleCategory"))
-            .toList();
-
-        assertEquals(1, workTypeResultList.size());
-
-        assertEquals(Map.of(
-            "name", "roleCategory",
-            "value", "CTSC",
-            "canReconfigure", false
-        ), workTypeResultList.get(0));
-    }
-
-    @ParameterizedTest
-    @CsvSource({
-        "processApplicationAdjourn", "detainedProcessApplicationAdjourn", "processApplicationExpedite",
-        "detainedProcessApplicationExpedite","processApplicationTimeExtension",
-        "detainedProcessApplicationTimeExtension",
-        "processApplicationTransfer", "detainedProcessApplicationTransfer", "processApplicationWithdraw",
-        "detainedProcessApplicationWithdraw", "processApplicationUpdateHearingRequirements",
-        "detainedProcessApplicationUpdateHearingRequirements",
-        "processApplicationUpdateAppealDetails", "detainedProcessApplicationUpdateAppealDetails",
-        "processApplicationReinstateAnEndedAppeal", "detainedProcessApplicationReinstateAnEndedAppeal",
-        "processApplicationOther",
-        "detainedProcessApplicationOther",
-        "processApplicationLink/UnlinkAppeals", "detainedProcessApplicationLink/UnlinkAppeals",
-        "processApplicationChangeHearingType", "detainedProcessApplicationChangeHearingType", "reviewTheAppeal",
-        "detainedReviewTheAppeal",
-        "decideOnTimeExtension", "reviewRespondentEvidence",
-        "detainedReviewRespondentEvidence,"
-            + "[Request reasons for appeal](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestReasonsForAppeal)<br />"
-            + "[Send non-standard direction](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDirection),"
-            + "aip,,",
-        "reviewAppealSkeletonArgument","detainedReviewAppealSkeletonArgument", "reviewReasonsForAppeal",
-        "reviewClarifyingQuestionsAnswers", "reviewAdditionalHomeOfficeEvidence",
-        "reviewCmaRequirements", "attendCma", "reviewRespondentResponse","detainedReviewRespondentResponse",
-        "caseSummaryHearingBundleStartDecision",
-        "detainedCaseSummaryHearingBundleStartDecision",
-        "reviewHearingRequirements","detainedReviewHearingRequirements", "followUpOverdueRespondentEvidence",
-        "detainedFollowUpOverdueRespondentEvidence",
-        "followUpOverdueCaseBuilding","detainedFollowUpOverdueCaseBuilding", "followUpOverdueReasonsForAppeal",
-        "followUpOverdueClarifyingAnswers",
-        "followUpOverdueCmaRequirements", "followUpOverdueRespondentReview","detainedFollowUpOverdueRespondentReview",
-        "followUpOverdueHearingRequirements","detainedFollowUpOverdueHearingRequirements",
-        "followUpNonStandardDirection","detainedFollowUpNonStandardDirection", "followUpNoticeOfChange",
-        "detainedFollowUpNoticeOfChange",
-        "reviewAdditionalEvidence", "detainedReviewAdditionalEvidence","reviewAdditionalHomeOfficeEvidence",
-        "detainedReviewAdditionalHomeOfficeEvidence",
-        "reviewRemittedAppeal","detainedReviewRemittedAppeal",
-        "reviewAppealSetAsideUnderRule35","detainedReviewAppealSetAsideUnderRule35",
-        "reviewAppealSetAsideUnderRule32","detainedReviewAppealSetAsideUnderRule32"
-    })
-    void when_taskId_then_return_legal_operations_role_category(String taskType) {
-        VariableMap inputVariables = new VariableMapImpl();
-
-        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
-
-        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
-
-        List<Map<String, Object>> workTypeResultList = dmnDecisionTableResult.getResultList().stream()
-            .filter((r) -> r.containsValue("roleCategory"))
-            .toList();
-
-        assertEquals(1, workTypeResultList.size());
-
-        assertEquals(Map.of(
-            "name", "roleCategory",
-            "value", "LEGAL_OPERATIONS",
-            "canReconfigure", false
-        ), workTypeResultList.get(0));
-    }
-
-    @ParameterizedTest
-    @CsvSource({
-        "followUpExtendedDirection","detainedFollowUpExtendedDirection",
-        "createHearingBundle", "createCaseSummary", "reviewAddendumEvidence", "detainedReviewAddendumEvidence"
-    })
-    void when_taskId_then_return_legal_operations_role_category_can_reconfigure(String taskType) {
-        VariableMap inputVariables = new VariableMapImpl();
-
-        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
-
-        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
-
-        List<Map<String, Object>> workTypeResultList = dmnDecisionTableResult.getResultList().stream()
-            .filter((r) -> r.containsValue("roleCategory"))
-            .toList();
-
-        assertEquals(1, workTypeResultList.size());
-
-        assertEquals(Map.of(
-            "name", "roleCategory",
-            "value", "LEGAL_OPERATIONS",
-            "canReconfigure", true
-        ), workTypeResultList.get(0));
-    }
-
-    @ParameterizedTest
-    @MethodSource("nameAndValueScenarioProvider")
-    void when_caseData_and_taskType_then_return_expected_name_and_value_rows(Scenario scenario) {
-        VariableMap inputVariables = new VariableMapImpl();
-        inputVariables.putValue("caseData", scenario.caseData);
-        inputVariables.putValue("taskAttributes", scenario.getTaskAttributes());
-
-        List<Map<String, Object>> expected = getExpectedValues(scenario);
-
-        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
-
-        assertThat(dmnDecisionTableResult.getResultList().size(), is(expected.size()));
-        for (int index = 0; index < expected.size(); index++) {
-            if ("dueDateOrigin".equals(expected.get(index).get("name"))) {
-                assertTrue(validNow(
-                    ZonedDateTime.parse(expected.get(index).get("value").toString()),
-                    parseCamundaTimestamp(dmnDecisionTableResult.getResultList().get(index).get("value").toString())
-                ));
-            } else {
-                assertThat(dmnDecisionTableResult.getResultList().get(index), is(expected.get(index)));
-            }
-        }
     }
 
     private static Stream<Scenario> nameAndValueScenarioProvider() {
@@ -1237,7 +583,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
                 .expectedReconfigureValue("true")
                 .expectedRoleCategory("LEGAL_OPERATIONS")
                 .expectedDescriptionValue("[Decide an application]"
-                                          + "(/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)")
+                                              + "(/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)")
                 .expectedDueDateOrigin(dateOrigin)
                 .expectedDueDateIntervalDays("5")
                 .build();
@@ -1292,26 +638,671 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         );
     }
 
-    @Value
-    @Builder
-    private static class Scenario {
-        Map<String, Object> caseData;
-        Map<String, Object> taskAttributes;
-        String expectedCaseNameValue;
-        String expectedAppealTypeValue;
-        String expectedRegionValue;
-        String expectedLocationValue;
-        String expectedLocationNameValue;
-        String expectedCaseManagementCategoryValue;
-        String expectedWorkType;
-        String expectedRoleCategory;
-        String expectedDescriptionValue;
-        String expectedReconfigureValue;
-        String expectedDueDateOrigin;
-        String expectedDueDateIntervalDays;
-        String expectedHearingId;
-        String expectedHearingDate;
-        Boolean expectedIsDetainedAppellant;
+    @Test
+    void if_this_test_fails_needs_updating_with_your_changes() {
+        //The purpose of this test is to prevent adding new rows without being tested
+        DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
+        assertEquals(37, logic.getRules().size());
+    }
+
+    @SuppressWarnings("checkstyle:indentation")
+    @ParameterizedTest
+    @CsvSource(value = {
+        "refusalOfHumanRights, Human rights",
+        "refusalOfEu, EEA",
+        "deprivation, DoC",
+        "protection, Protection",
+        "revocationOfProtection, Revocation",
+        "NULL_VALUE, ''",
+        "'', ''"
+    }, nullValues = "NULL_VALUE")
+    void when_caseData_then_return_expected_appealType(String appealType, String expectedAppealType) {
+        VariableMap inputVariables = new VariableMapImpl();
+        Map<String, Object> caseData = new HashMap<>(); // allow null values
+        caseData.put("appealType", appealType);
+        inputVariables.putValue("caseData", caseData);
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        assertTrue(dmnDecisionTableResult.getResultList().contains(Map.of(
+            "name", "appealType",
+            "value", expectedAppealType,
+            "canReconfigure", false
+        )));
+
+        assertTrue(dmnDecisionTableResult.getResultList().contains(Map.of(
+            "name", "caseManagementCategory",
+            "value", expectedAppealType,
+            "canReconfigure", false
+        )));
+    }
+
+    @Test
+    void when_caseData_then_return_expected_case_management_category() {
+        String refusalOfEuLabel = "Refusal of application under the EEA regulations";
+        String revocationLabel = "Revocation of a protection status";
+        List<Map<String, Object>> caseManagementCategories = List.of(
+            Map.of(
+                "value",
+                Map.of("code", "refusalOfHumanRights", "label", "Refusal of a human rights claim"),
+                "list_items",
+                List.of(Map.of("code", "refusalOfHumanRights", "label", "Refusal of a human rights claim"))
+            ),
+            Map.of(
+                "value", Map.of("code", "refusalOfEu", "label", "Refusal of application under the EEA regulations"),
+                "list_items", List.of(Map.of("code", "refusalOfEu", "label", refusalOfEuLabel))
+            ),
+            Map.of(
+                "value", Map.of("code", "deprivation", "label", "Deprivation of citizenship"),
+                "list_items", List.of(Map.of("code", "deprivation", "label", "Deprivation of citizenship"))
+            ),
+            Map.of(
+                "value", Map.of("code", "protection", "label", "Refusal of protection claim"),
+                "list_items", List.of(Map.of("code", "protection", "label", "Refusal of protection claim"))
+            ),
+            Map.of(
+                "value", Map.of("code", "revocationOfProtection", "label", "Revocation of a protection status"),
+                "list_items", List.of(Map.of("code", "revocationOfProtection", "label", revocationLabel))
+            )
+        );
+
+        List<String> expectedCaseManagementCategories = List.of(
+            "Human rights",
+            "EEA",
+            "DoC",
+            "Protection",
+            "Revocation"
+        );
+
+        for (int i = 0; i < caseManagementCategories.size(); i++) {
+            Map<String, Object> caseManagementCategory = caseManagementCategories.get(i);
+            VariableMap inputVariables = new VariableMapImpl();
+            Map<String, Object> caseData = new HashMap<>(); // allow null values
+            caseData.put("caseManagementCategory", caseManagementCategory);
+            inputVariables.putValue("caseData", caseData);
+
+            DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+            assertTrue(dmnDecisionTableResult.getResultList().contains(Map.of(
+                "name", "caseManagementCategory",
+                "value", expectedCaseManagementCategories.get(i),
+                "canReconfigure", false
+            )));
+        }
+    }
+
+    @ParameterizedTest
+    @CsvSource(value = {
+        "false, false, false, false",
+        "true, true, false, false",
+        "true, true, true, true"
+    })
+    void nextHearingId_and_nextHearingDate_should_be_set_correctly(
+        boolean caseDataSet, boolean nextHearingDetailsSet, boolean nextHearingIdAndDateSet, boolean expected) {
+        VariableMap inputVariables = new VariableMapImpl();
+        Map<String, Object> caseData = caseDataSet ? new HashMap<>() : null;
+        Map<String, Object> nextHearingDetails = nextHearingDetailsSet ? new HashMap<>() : null;
+        if (nextHearingIdAndDateSet && nextHearingDetailsSet) {
+            nextHearingDetails.put("hearingID", "123Id");
+            nextHearingDetails.put("hearingDateTime", CURRENT_DATE_TIME);
+        }
+        if (caseDataSet && nextHearingDetailsSet) {
+            caseData.put("nextHearingDetails", nextHearingDetails);
+        }
+        if (caseDataSet) {
+            inputVariables.putValue("caseData", caseData);
+        }
+
+        String nextHearingDate = expected ? CURRENT_DATE_TIME : "";
+        String nextHearingId = expected ? "123Id" : "";
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        assertTrue(dmnDecisionTableResult.getResultList().contains(Map.of(
+            "name", "nextHearingId",
+            "value", nextHearingId,
+            "canReconfigure", true
+        )));
+
+        assertTrue(dmnDecisionTableResult.getResultList().contains(Map.of(
+            "name", "nextHearingDate",
+            "value", nextHearingDate,
+            "canReconfigure", true
+        )));
+    }
+
+    public static Stream<Arguments> workTypeScenarioProvider() {
+        List<Map<String, Object>> routineWork = List.of(Map.of(
+            "name", "workType",
+            "value", "routine_work",
+            "canReconfigure", true
+        ));
+        List<Map<String, Object>> decisionMakingWork = List.of(Map.of(
+            "name", "workType",
+            "value", "decision_making_work",
+            "canReconfigure", true
+        ));
+        List<Map<String, Object>> hearingWork = List.of(Map.of(
+            "name", "workType",
+            "value", "hearing_work",
+            "canReconfigure", true
+        ));
+        List<Map<String, Object>> applications = List.of(Map.of(
+            "name", "workType",
+            "value", "applications",
+            "canReconfigure", true
+        ));
+        List<Map<String, Object>> upperTribunal = List.of(Map.of(
+            "name", "workType",
+            "value", "upper_tribunal",
+            "canReconfigure", true
+        ));
+        List<Map<String, Object>> reviewCase = List.of(Map.of(
+            "name", "workType",
+            "value", "review_case",
+            "canReconfigure", true
+        ));
+
+        return Stream.of(
+            Arguments.of("arrangeOfflinePayment", routineWork),
+            Arguments.of("markCaseAsPaid", routineWork),
+            Arguments.of("attendCma", routineWork),
+            Arguments.of("caseSummaryHearingBundleStartDecision", routineWork),
+            Arguments.of("detainedCaseSummaryHearingBundleStartDecision", routineWork),
+            Arguments.of("followUpExtendedDirection", routineWork),
+            Arguments.of("detainedFollowUpExtendedDirection", routineWork),
+            Arguments.of("followUpNonStandardDirection", routineWork),
+            Arguments.of("detainedFollowUpNonStandardDirection", routineWork),
+            Arguments.of("reviewClarifyingQuestionsAnswers", routineWork),
+            Arguments.of("reviewRemissionApplication", routineWork),
+            Arguments.of("reviewASRemission", routineWork),
+            Arguments.of("reviewLARemission", routineWork),
+            Arguments.of("reviewHOWaiverRemission", routineWork),
+            Arguments.of("reviewAuthorityRemission", routineWork),
+            Arguments.of("reviewHWFRemission", routineWork),
+            Arguments.of("reviewECRRemission", routineWork),
+            Arguments.of("detainedReviewASRemission", routineWork),
+            Arguments.of("detainedReviewLARemission", routineWork),
+            Arguments.of("detainedReviewHOWaiverRemission", routineWork),
+            Arguments.of("detainedReviewAuthorityRemission", routineWork),
+            Arguments.of("detainedReviewHWFRemission", routineWork),
+            Arguments.of("detainedReviewECRRemission", routineWork),
+            Arguments.of("assignAFTPAJudge", routineWork),
+            Arguments.of("detainedAssignAFTPAJudge", routineWork),
+            Arguments.of("reviewAppealSetAsideUnderRule35", routineWork),
+            Arguments.of("detainedReviewAppealSetAsideUnderRule35", routineWork),
+            Arguments.of("reviewAppealSetAsideUnderRule32", routineWork),
+            Arguments.of("detainedReviewAppealSetAsideUnderRule32", routineWork),
+            Arguments.of("sendPaymentRequest", routineWork),
+            Arguments.of("markAsPaid", routineWork),
+            Arguments.of("reviewRemittedAppeal", routineWork),
+            Arguments.of("detainedReviewRemittedAppeal", routineWork),
+            Arguments.of("reviewAriaRemissionApplication", routineWork),
+            Arguments.of("reviewDraftAppeal", routineWork),
+            Arguments.of("detainedReviewDraftAppeal", routineWork),
+            Arguments.of("printAndSendHoBundle", routineWork),
+            Arguments.of("detainedPrintAndSendHoBundle", routineWork),
+            Arguments.of("printAndSendHoResponse", routineWork),
+            Arguments.of("printAndSendHearingRequirements", routineWork),
+            Arguments.of("detainedPrintAndSendHearingRequirements", routineWork),
+            Arguments.of("printAndSendHearingBundle", routineWork),
+            Arguments.of("detainedPrintAndSendHearingBundle", routineWork),
+            Arguments.of("printAndSendDecisionCorrectedRule31", routineWork),
+            Arguments.of("detainedPrintAndSendDecisionCorrectedRule31", routineWork),
+            Arguments.of("printAndSendDecisionCorrectedRule32", routineWork),
+            Arguments.of("detainedPrintAndSendDecisionCorrectedRule32", routineWork),
+            Arguments.of("printAndSendHoApplication", routineWork),
+            Arguments.of("detainedPrintAndSendHoApplication", routineWork),
+            Arguments.of("printAndSendHoEvidence", routineWork),
+            Arguments.of("detainedPrintAndSendHoEvidence", routineWork),
+            Arguments.of("printAndSendAppealDecision", routineWork),
+            Arguments.of("detainedPrintAndSendAppealDecision", routineWork),
+            Arguments.of("printAndSendFTPADecision", routineWork),
+            Arguments.of("detainedPrintAndSendFTPADecision", routineWork),
+            Arguments.of("printAndSendReheardHearingRequirements", routineWork),
+            Arguments.of("detainedPrintAndSendReheardHearingRequirements", routineWork),
+            Arguments.of("processFeeRefund", routineWork),
+            Arguments.of("detainedProcessFeeRefund", routineWork),
+            Arguments.of("reviewAdditionalEvidence", decisionMakingWork),
+            Arguments.of("detainedReviewAdditionalEvidence", decisionMakingWork),
+            Arguments.of("reviewTheAppeal", decisionMakingWork),
+            Arguments.of("detainedReviewTheAppeal", decisionMakingWork),
+            Arguments.of("followUpOverdueRespondentEvidence", decisionMakingWork),
+            Arguments.of("detainedFollowUpOverdueRespondentEvidence", decisionMakingWork),
+            Arguments.of("reviewRespondentEvidence", decisionMakingWork),
+            Arguments.of("detainedReviewRespondentEvidence", decisionMakingWork),
+            Arguments.of("followUpOverdueCaseBuilding", decisionMakingWork),
+            Arguments.of("detainedFollowUpOverdueCaseBuilding", decisionMakingWork),
+            Arguments.of("reviewAppealSkeletonArgument", decisionMakingWork),
+            Arguments.of("detainedReviewAppealSkeletonArgument", decisionMakingWork),
+            Arguments.of("followUpOverdueReasonsForAppeal", decisionMakingWork),
+            Arguments.of("reviewReasonsForAppeal", decisionMakingWork),
+            Arguments.of("followUpOverdueClarifyingAnswers", decisionMakingWork),
+            Arguments.of("reviewClarifyingAnswers", decisionMakingWork),
+            Arguments.of("followUpOverdueRespondentReview", decisionMakingWork),
+            Arguments.of("detainedFollowUpOverdueRespondentReview", decisionMakingWork),
+            Arguments.of("reviewRespondentResponse", decisionMakingWork),
+            Arguments.of("detainedReviewRespondentResponse", decisionMakingWork),
+            Arguments.of("followUpOverdueCMARequirements", decisionMakingWork),
+            Arguments.of("reviewCmaRequirements", decisionMakingWork),
+            Arguments.of("reviewAdditionalHomeOfficeEvidence", decisionMakingWork),
+            Arguments.of("detainedReviewAdditionalHomeOfficeEvidence", decisionMakingWork),
+            Arguments.of("reviewAddendumHomeOfficeEvidence", decisionMakingWork),
+            Arguments.of("reviewAddendumEvidence", decisionMakingWork),
+            Arguments.of("detainedReviewAddendumEvidence", decisionMakingWork),
+            Arguments.of("decideOnTimeExtension", decisionMakingWork),
+            Arguments.of("sendDecisionsAndReasons", decisionMakingWork),
+            Arguments.of("detainedSendDecisionsAndReasons", decisionMakingWork),
+            Arguments.of("generateDraftDecisionAndReasons", hearingWork),
+            Arguments.of("uploadDecision", hearingWork),
+            Arguments.of("uploadHearingRecording", hearingWork),
+            Arguments.of("postHearingAttendeesDurationAndRecording", hearingWork),
+            Arguments.of("detainedPostHearingAttendeesDurationAndRecording", hearingWork),
+            Arguments.of("editListing", hearingWork),
+            Arguments.of("detainedEditListing", hearingWork),
+            Arguments.of("followUpOverdueHearingRequirements", hearingWork),
+            Arguments.of("detainedFollowUpOverdueHearingRequirements", hearingWork),
+            Arguments.of("reviewHearingRequirements", hearingWork),
+            Arguments.of("detainedReviewHearingRequirements", hearingWork),
+            Arguments.of("allocateHearingJudge", hearingWork),
+            Arguments.of("detainedAllocateHearingJudge", hearingWork),
+            Arguments.of("prepareDecisionsAndReasons", hearingWork),
+            Arguments.of("startDecisionsAndReasonsDocument", hearingWork),
+            Arguments.of("createHearingBundle", hearingWork),
+            Arguments.of("createCaseSummary", hearingWork),
+            Arguments.of("listTheCase", hearingWork),
+            Arguments.of("detainedListTheCase", hearingWork),
+            Arguments.of("hearingException", hearingWork),
+            Arguments.of("detainedHearingException", hearingWork),
+            Arguments.of("cmrListed", hearingWork),
+            Arguments.of("detainedCmrListed", hearingWork),
+            Arguments.of("cmrUpdated", hearingWork),
+            Arguments.of("detainedCmrUpdated", hearingWork),
+            Arguments.of("relistCase", hearingWork),
+            Arguments.of("detainedRelistCase", hearingWork),
+            Arguments.of("reviewInterpreters", hearingWork),
+            Arguments.of("detainedReviewInterpreters", hearingWork),
+            Arguments.of("processApplicationAdjourn", applications),
+            Arguments.of("detainedProcessApplicationAdjourn", applications),
+            Arguments.of("processApplicationExpedite", applications),
+            Arguments.of("detainedProcessApplicationExpedite", applications),
+            Arguments.of("processApplicationTimeExtension", applications),
+            Arguments.of("detainedProcessApplicationTimeExtension", applications),
+            Arguments.of("processApplicationTransfer", applications),
+            Arguments.of("processApplicationWithdraw", applications),
+            Arguments.of("detainedProcessApplicationWithdraw", applications),
+            Arguments.of("processApplicationUpdateHearingRequirements", applications),
+            Arguments.of("detainedProcessApplicationUpdateHearingRequirements", applications),
+            Arguments.of("processApplicationUpdateAppealDetails", applications),
+            Arguments.of("detainedProcessApplicationUpdateAppealDetails", applications),
+            Arguments.of("processApplicationReinstateAnEndedAppeal", applications),
+            Arguments.of("detainedProcessApplicationReinstateAnEndedAppeal", applications),
+            Arguments.of("processApplicationOther", applications),
+            Arguments.of("detainedProcessApplicationOther", applications),
+            Arguments.of("processApplicationLink/UnlinkAppeals", applications),
+            Arguments.of("detainedProcessApplicationLink/UnlinkAppeals", applications),
+            Arguments.of("processHearingRequirementsApplication", applications),
+            Arguments.of("processHearingCentreApplication", applications),
+            Arguments.of("processApplicationExpedite", applications),
+            Arguments.of("detainedProcessApplicationExpedite", applications),
+            Arguments.of("processApplicationTransfer", applications),
+            Arguments.of("detainedProcessApplicationTransfer", applications),
+            Arguments.of("processApplicationForTimeExtension", applications),
+            Arguments.of("processAppealDetailsApplication", applications),
+            Arguments.of("processReinstatementApplication", applications),
+            Arguments.of("processApplicationToReviewDecision", applications),
+            Arguments.of("detainedProcessApplicationToReviewDecision", applications),
+            Arguments.of("reviewSetAsideDecisionApplication", applications),
+            Arguments.of("detainedReviewSetAsideDecisionApplication", applications),
+            Arguments.of("followUpSetAsideDecision", applications),
+            Arguments.of("detainedFollowUpSetAsideDecision", applications),
+            Arguments.of("decideAnFTPA", upperTribunal),
+            Arguments.of("processApplicationChangeHearingType", applications),
+            Arguments.of("detainedProcessApplicationChangeHearingType", applications),
+            Arguments.of("reviewMigratedCase", reviewCase),
+            Arguments.of("detainedListCmr", hearingWork)
+
+        );
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+        "followUpNoticeOfChange", "detainedFollowUpNoticeOfChange"
+    })
+    void when_taskId_then_return_Access_Requests(String taskType) {
+        VariableMap inputVariables = new VariableMapImpl();
+
+        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        List<Map<String, Object>> workTypeResultList = dmnDecisionTableResult.getResultList().stream()
+            .filter((r) -> r.containsValue("workType"))
+            .toList();
+
+        assertEquals(1, workTypeResultList.size());
+
+        assertEquals(
+            Map.of(
+                "name", "workType",
+                "value", "access_requests",
+                "canReconfigure", true
+            ), workTypeResultList.getFirst()
+        );
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+        "reviewSpecificAccessRequestJudiciary", "reviewSpecificAccessRequestLegalOps",
+        "reviewSpecificAccessRequestAdmin", "reviewSpecificAccessRequestCTSC"
+    })
+    void when_taskId_then_return_Access_requests(String taskType) {
+        VariableMap inputVariables = new VariableMapImpl();
+
+        String roleAssignmentId = UUID.randomUUID().toString();
+        Map<String, String> taskAttributes = Map.of("taskType", taskType, "roleAssignmentId", roleAssignmentId);
+        inputVariables.putValue("taskAttributes", taskAttributes);
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        List<Map<String, Object>> workTypeResultList = dmnDecisionTableResult.getResultList().stream()
+            .filter((r) -> r.containsValue("workType"))
+            .toList();
+
+        assertEquals(1, workTypeResultList.size());
+
+        assertEquals(
+            Map.of(
+                "name", "workType",
+                "value", "access_requests",
+                "canReconfigure", true
+            ), workTypeResultList.getFirst()
+        );
+    }
+
+    @ParameterizedTest
+    @MethodSource("workTypeScenarioProvider")
+    void when_taskId_then_return_workType(String taskType, List<Map<String, String>> expected) {
+        VariableMap inputVariables = new VariableMapImpl();
+
+        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
+        if (taskType.equals("reviewMigratedCase") || taskType.equals("detainedReviewMigratedCase")) {
+            inputVariables.putValue("caseData", Map.of("ariaMigrationTaskDueDays", "10"));
+        }
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        List<Map<String, Object>> workTypeResultList = dmnDecisionTableResult.getResultList().stream()
+            .filter((r) -> r.containsValue("workType"))
+            .toList();
+
+        assertEquals(expected, workTypeResultList);
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+        "reviewSpecificAccessRequestJudiciary", "reviewSpecificAccessRequestLegalOps",
+        "reviewSpecificAccessRequestAdmin", "reviewSpecificAccessRequestCTSC"
+    })
+    void should_return_request_value_when_role_assignment_id_exists_in_task_attributes(String taskType) {
+        VariableMap inputVariables = new VariableMapImpl();
+
+        String roleAssignmentId = UUID.randomUUID().toString();
+
+        Map<String, String> taskAttributes = Map.of("taskType", taskType, "roleAssignmentId", roleAssignmentId);
+        inputVariables.putValue("taskAttributes", taskAttributes);
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        List<Map<String, Object>> dmnResults = dmnDecisionTableResult.getResultList().stream()
+            .filter((r) -> r.containsValue("additionalProperties_roleAssignmentId"))
+            .toList();
+
+        assertEquals(1, dmnResults.size());
+
+        assertTrue(dmnResults.contains(Map.of(
+            "name", "additionalProperties_roleAssignmentId",
+            "value", roleAssignmentId,
+            "canReconfigure", false
+        )));
+
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+        "generateDraftDecisionAndReasons", "uploadDecision", "reviewAddendumHomeOfficeEvidence",
+        "reviewAddendumAppellantEvidence", "reviewSpecificAccessRequestJudiciary",
+        "reviewSpecificAccessRequestLegalOps", "reviewSpecificAccessRequestAdmin", "reviewSpecificAccessRequestCTSC",
+        "processApplicationToReviewDecision", "detainedProcessApplicationToReviewDecision",
+        "sendDecisionsAndReasons", "detainedSendDecisionsAndReasons", "prepareDecisionsAndReasons", "decideAnFTPA",
+        "reviewSetAsideDecisionApplication", "detainedReviewSetAsideDecisionApplication"
+    })
+    void when_taskId_then_return_judicial_role_category(String taskType) {
+        VariableMap inputVariables = new VariableMapImpl();
+
+        String roleAssignmentId = UUID.randomUUID().toString();
+        inputVariables.putValue(
+            "taskAttributes", Map.of(
+                "taskType", taskType,
+                "additionalProperties", Map.of("roleAssignmentId", roleAssignmentId)
+            )
+        );
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        List<Map<String, Object>> workTypeResultList = dmnDecisionTableResult.getResultList().stream()
+            .filter(r -> "roleCategory".equals(r.get("name")))
+            .toList();
+
+        assertEquals(1, workTypeResultList.size());
+
+        assertEquals(
+            Map.of(
+                "name", "roleCategory",
+                "value", "JUDICIAL",
+                "canReconfigure", false
+            ), workTypeResultList.getFirst()
+        );
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+        "arrangeOfflinePayment", "markCaseAsPaid", "allocateHearingJudge", "detainedAllocateHearingJudge",
+        "uploadHearingRecording", "postHearingAttendeesDurationAndRecording",
+        "detainedPostHearingAttendeesDurationAndRecording",
+        "editListing", "detainedEditListing", "followUpSetAsideDecision", "detainedFollowUpSetAsideDecision",
+        "hearingException", "detainedHearingException",
+        "cmrListed", "cmrUpdated", "detainedCmrListed", "detainedCmrUpdated",
+        "relistCase", "detainedRelistCase",
+        "reviewInterpreters", "detainedReviewInterpreters",
+        "reviewMigratedCase", "detainedReviewMigratedCase",
+        "reviewAriaRemissionApplication",
+        "printAndSendHoBundle", "detainedPrintAndSendHoBundle",
+        "printAndSendHoResponse",
+        "printAndSendHearingRequirements", "detainedPrintAndSendHearingRequirements",
+        "printAndSendHearingBundle", "detainedPrintAndSendHearingBundle",
+        "printAndSendDecisionCorrectedRule31", "detainedPrintAndSendDecisionCorrectedRule31",
+        "printAndSendDecisionCorrectedRule32", "detainedPrintAndSendDecisionCorrectedRule32",
+        "printAndSendHoApplication", "detainedPrintAndSendHoApplication",
+        "printAndSendHoEvidence", "detainedPrintAndSendHoEvidence",
+        "printAndSendAppealDecision", "detainedPrintAndSendAppealDecision",
+        "printAndSendFTPADecision", "detainedPrintAndSendFTPADecision",
+        "printAndSendReheardHearingRequirements", "detainedPrintAndSendReheardHearingRequirements",
+        "detainedListCmr"
+
+    })
+    void when_taskId_then_return_Admin_role_category(String taskType) {
+        VariableMap inputVariables = new VariableMapImpl();
+
+        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
+        if (taskType.equals("reviewMigratedCase") || taskType.equals("detainedReviewMigratedCase")) {
+            inputVariables.putValue("caseData", Map.of("ariaMigrationTaskDueDays", "10"));
+        }
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        List<Map<String, Object>> workTypeResultList = dmnDecisionTableResult.getResultList().stream()
+            .filter((r) -> r.containsValue("roleCategory"))
+            .toList();
+
+        assertEquals(1, workTypeResultList.size());
+
+        assertEquals(
+            Map.of(
+                "name", "roleCategory",
+                "value", "ADMIN",
+                "canReconfigure", false
+            ), workTypeResultList.getFirst()
+        );
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+        "reviewRemissionApplication", "reviewASRemission",
+        "reviewLARemission", "reviewHOWaiverRemission",
+        "reviewAuthorityRemission", "reviewHWFRemission",
+        "reviewECRRemission", "detainedReviewASRemission",
+        "detainedReviewLARemission", "detainedReviewHOWaiverRemission",
+        "detainedReviewAuthorityRemission", "detainedReviewHWFRemission",
+        "detainedReviewECRRemission",
+        "assignAFTPAJudge", "detainedAssignAFTPAJudge",
+        "listTheCase", "detainedListTheCase",
+        "sendPaymentRequest", "markAsPaid",
+        "processFeeRefund", "detainedProcessFeeRefund",
+        "reviewDraftAppeal", "detainedReviewDraftAppeal"
+    })
+    void when_taskId_then_return_Ctsc_role_category(String taskType) {
+        VariableMap inputVariables = new VariableMapImpl();
+
+        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        List<Map<String, Object>> workTypeResultList = dmnDecisionTableResult.getResultList().stream()
+            .filter((r) -> r.containsValue("roleCategory"))
+            .toList();
+
+        assertEquals(1, workTypeResultList.size());
+
+        assertEquals(
+            Map.of(
+                "name", "roleCategory",
+                "value", "CTSC",
+                "canReconfigure", false
+            ), workTypeResultList.getFirst()
+        );
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+        "processApplicationAdjourn", "detainedProcessApplicationAdjourn", "processApplicationExpedite",
+        "detainedProcessApplicationExpedite", "processApplicationTimeExtension",
+        "detainedProcessApplicationTimeExtension",
+        "processApplicationTransfer", "detainedProcessApplicationTransfer", "processApplicationWithdraw",
+        "detainedProcessApplicationWithdraw", "processApplicationUpdateHearingRequirements",
+        "detainedProcessApplicationUpdateHearingRequirements",
+        "processApplicationUpdateAppealDetails", "detainedProcessApplicationUpdateAppealDetails",
+        "processApplicationReinstateAnEndedAppeal", "detainedProcessApplicationReinstateAnEndedAppeal",
+        "processApplicationOther",
+        "detainedProcessApplicationOther",
+        "processApplicationLink/UnlinkAppeals", "detainedProcessApplicationLink/UnlinkAppeals",
+        "processApplicationChangeHearingType", "detainedProcessApplicationChangeHearingType", "reviewTheAppeal",
+        "detainedReviewTheAppeal",
+        "decideOnTimeExtension", "reviewRespondentEvidence",
+        "detainedReviewRespondentEvidence,"
+            + "[Request reasons for appeal](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestReasonsForAppeal)<br />"
+            + "[Send non-standard direction](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/sendDirection),"
+            + "aip,,",
+        "reviewAppealSkeletonArgument", "detainedReviewAppealSkeletonArgument", "reviewReasonsForAppeal",
+        "reviewClarifyingQuestionsAnswers", "reviewAdditionalHomeOfficeEvidence",
+        "reviewCmaRequirements", "attendCma", "reviewRespondentResponse", "detainedReviewRespondentResponse",
+        "caseSummaryHearingBundleStartDecision",
+        "detainedCaseSummaryHearingBundleStartDecision",
+        "reviewHearingRequirements", "detainedReviewHearingRequirements", "followUpOverdueRespondentEvidence",
+        "detainedFollowUpOverdueRespondentEvidence",
+        "followUpOverdueCaseBuilding", "detainedFollowUpOverdueCaseBuilding", "followUpOverdueReasonsForAppeal",
+        "followUpOverdueClarifyingAnswers",
+        "followUpOverdueCmaRequirements", "followUpOverdueRespondentReview", "detainedFollowUpOverdueRespondentReview",
+        "followUpOverdueHearingRequirements", "detainedFollowUpOverdueHearingRequirements",
+        "followUpNonStandardDirection", "detainedFollowUpNonStandardDirection", "followUpNoticeOfChange",
+        "detainedFollowUpNoticeOfChange",
+        "reviewAdditionalEvidence", "detainedReviewAdditionalEvidence", "reviewAdditionalHomeOfficeEvidence",
+        "detainedReviewAdditionalHomeOfficeEvidence",
+        "reviewRemittedAppeal", "detainedReviewRemittedAppeal",
+        "reviewAppealSetAsideUnderRule35", "detainedReviewAppealSetAsideUnderRule35",
+        "reviewAppealSetAsideUnderRule32", "detainedReviewAppealSetAsideUnderRule32"
+    })
+    void when_taskId_then_return_legal_operations_role_category(String taskType) {
+        VariableMap inputVariables = new VariableMapImpl();
+
+        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        List<Map<String, Object>> workTypeResultList = dmnDecisionTableResult.getResultList().stream()
+            .filter((r) -> r.containsValue("roleCategory"))
+            .toList();
+
+        assertEquals(1, workTypeResultList.size());
+
+        assertEquals(
+            Map.of(
+                "name", "roleCategory",
+                "value", "LEGAL_OPERATIONS",
+                "canReconfigure", false
+            ), workTypeResultList.getFirst()
+        );
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+        "followUpExtendedDirection", "detainedFollowUpExtendedDirection",
+        "createHearingBundle", "createCaseSummary", "reviewAddendumEvidence", "detainedReviewAddendumEvidence"
+    })
+    void when_taskId_then_return_legal_operations_role_category_can_reconfigure(String taskType) {
+        VariableMap inputVariables = new VariableMapImpl();
+
+        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        List<Map<String, Object>> workTypeResultList = dmnDecisionTableResult.getResultList().stream()
+            .filter((r) -> r.containsValue("roleCategory"))
+            .toList();
+
+        assertEquals(1, workTypeResultList.size());
+
+        assertEquals(
+            Map.of(
+                "name", "roleCategory",
+                "value", "LEGAL_OPERATIONS",
+                "canReconfigure", true
+            ), workTypeResultList.getFirst()
+        );
+    }
+
+    @ParameterizedTest
+    @MethodSource("nameAndValueScenarioProvider")
+    void when_caseData_and_taskType_then_return_expected_name_and_value_rows(Scenario scenario) {
+        VariableMap inputVariables = new VariableMapImpl();
+        inputVariables.putValue("caseData", scenario.caseData);
+        inputVariables.putValue("taskAttributes", scenario.taskAttributes());
+
+        List<Map<String, Object>> expected = getExpectedValues(scenario);
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        assertEquals(expected.size(), dmnDecisionTableResult.getResultList().size());
+        for (int index = 0; index < expected.size(); index++) {
+            if ("dueDateOrigin".equals(expected.get(index).get("name"))) {
+                assertTrue(validNow(
+                    ZonedDateTime.parse(expected.get(index).get("value").toString()),
+                    parseCamundaTimestamp(dmnDecisionTableResult.getResultList().get(index).get("value").toString())
+                ));
+            } else {
+                assertEquals(expected.get(index), dmnDecisionTableResult.getResultList().get(index));
+            }
+        }
     }
 
     private List<Map<String, Object>> getExpectedValues(Scenario scenario) {
@@ -1320,35 +1311,35 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         getExpectedValueWithReconfigure(
             rules,
             "caseName",
-            scenario.getExpectedCaseNameValue(),
-            scenario.getExpectedReconfigureValue()
+            scenario.expectedCaseNameValue(),
+            scenario.expectedReconfigureValue()
         );
-        getExpectedValue(rules, "appealType", scenario.getExpectedAppealTypeValue());
-        getExpectedValue(rules, "region", scenario.getExpectedRegionValue());
+        getExpectedValue(rules, "appealType", scenario.expectedAppealTypeValue());
+        getExpectedValue(rules, "region", scenario.expectedRegionValue());
         getExpectedValueWithReconfigure(
             rules,
             "location",
-            scenario.getExpectedLocationValue(),
-            scenario.getExpectedReconfigureValue()
+            scenario.expectedLocationValue(),
+            scenario.expectedReconfigureValue()
         );
         getExpectedValueWithReconfigure(
             rules,
             "locationName",
-            scenario.getExpectedLocationNameValue(),
-            scenario.getExpectedReconfigureValue()
+            scenario.expectedLocationNameValue(),
+            scenario.expectedReconfigureValue()
         );
-        getExpectedValue(rules, "caseManagementCategory", scenario.getExpectedCaseManagementCategoryValue());
-        if (!Objects.isNull(scenario.getTaskAttributes())
+        getExpectedValue(rules, "caseManagementCategory", scenario.expectedCaseManagementCategoryValue());
+        if (!Objects.isNull(scenario.taskAttributes())
             && StringUtils.isNotBlank(scenario.taskAttributes.get("taskType").toString())) {
-            getExpectedValueWithReconfigure(rules, "workType", scenario.getExpectedWorkType(), "true");
-            getExpectedValue(rules, "roleCategory", scenario.getExpectedRoleCategory());
+            getExpectedValueWithReconfigure(rules, "workType", scenario.expectedWorkType(), "true");
+            getExpectedValue(rules, "roleCategory", scenario.expectedRoleCategory());
         }
 
-        getExpectedValue(rules, "description", scenario.getExpectedDescriptionValue());
-        getExpectedValue(rules, "dueDateOrigin", scenario.getExpectedDueDateOrigin());
+        getExpectedValue(rules, "description", scenario.expectedDescriptionValue());
+        getExpectedValue(rules, "dueDateOrigin", scenario.expectedDueDateOrigin());
         getExpectedValue(rules, "dueDateNonWorkingCalendar", DEFAULT_CALENDAR + ", " + EXTRA_TEST_CALENDAR);
-        if (!Objects.isNull(scenario.getExpectedDueDateIntervalDays())) {
-            getExpectedValue(rules, "dueDateIntervalDays", scenario.getExpectedDueDateIntervalDays());
+        if (!Objects.isNull(scenario.expectedDueDateIntervalDays())) {
+            getExpectedValue(rules, "dueDateIntervalDays", scenario.expectedDueDateIntervalDays());
         }
         getExpectedValueWithReconfigure(rules, "majorPriority", String.valueOf(5000), "true");
         getExpectedValue(rules, "minorPriority", String.valueOf(500));
@@ -1368,36 +1359,6 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             "true"
         );
         return rules;
-    }
-
-    private void getExpectedValue(List<Map<String, Object>> rules, String name, String value) {
-        Map<String, Object> rule = new HashMap<>();
-        rule.put("name", name);
-        rule.put("value", value);
-        rule.put("canReconfigure", false);
-        rules.add(rule);
-    }
-
-    private void getExpectedValueWithReconfigure(List<Map<String, Object>> rules, String name, String value,
-                                                 String reconfigure) {
-        Map<String, Object> rule = new HashMap<>();
-        rule.put("name", name);
-        rule.put("value", value);
-        rule.put("canReconfigure", Boolean.valueOf(reconfigure));
-        rules.add(rule);
-    }
-
-    private ZonedDateTime parseCamundaTimestamp(String datetime) {
-        String[] parts = datetime.split("[Z+]");
-        String zone = datetime.substring(datetime.indexOf("[") + 1, datetime.lastIndexOf("]"));
-        return ZonedDateTime.of(LocalDateTime.parse(parts[0]), ZoneId.of(zone));
-    }
-
-    private boolean validNow(ZonedDateTime expected, ZonedDateTime actual) {
-        ZonedDateTime now = ZonedDateTime.now(ZoneId.of("UTC"));
-        return actual != null
-            && (expected.isEqual(actual) || expected.isBefore(actual))
-            && (now.isEqual(actual) || now.isAfter(actual));
     }
 
     @ParameterizedTest
@@ -1546,38 +1507,38 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             + "(/cases/case-details/${[CASE_REFERENCE]}/trigger/"
             + "recordRemissionDecision/recordRemissionDecisionremissionDecision),,,",
         "reviewLARemission,[Record remission decision]"
-                + "(/cases/case-details/${[CASE_REFERENCE]}/trigger/"
-                + "recordRemissionDecision/recordRemissionDecisionremissionDecision),,,",
+            + "(/cases/case-details/${[CASE_REFERENCE]}/trigger/"
+            + "recordRemissionDecision/recordRemissionDecisionremissionDecision),,,",
         "reviewHOWaiverRemission,[Record remission decision]"
-                + "(/cases/case-details/${[CASE_REFERENCE]}/trigger/"
-                + "recordRemissionDecision/recordRemissionDecisionremissionDecision),,,",
+            + "(/cases/case-details/${[CASE_REFERENCE]}/trigger/"
+            + "recordRemissionDecision/recordRemissionDecisionremissionDecision),,,",
         "reviewAuthorityRemission,[Record remission decision]"
-                + "(/cases/case-details/${[CASE_REFERENCE]}/trigger/"
-                + "recordRemissionDecision/recordRemissionDecisionremissionDecision),,,",
+            + "(/cases/case-details/${[CASE_REFERENCE]}/trigger/"
+            + "recordRemissionDecision/recordRemissionDecisionremissionDecision),,,",
         "reviewHWFRemission,[Record remission decision]"
-                + "(/cases/case-details/${[CASE_REFERENCE]}/trigger/"
-                + "recordRemissionDecision/recordRemissionDecisionremissionDecision),,,",
+            + "(/cases/case-details/${[CASE_REFERENCE]}/trigger/"
+            + "recordRemissionDecision/recordRemissionDecisionremissionDecision),,,",
         "reviewECRRemission,[Record remission decision]"
-                + "(/cases/case-details/${[CASE_REFERENCE]}/trigger/"
-                + "recordRemissionDecision/recordRemissionDecisionremissionDecision),,,",
+            + "(/cases/case-details/${[CASE_REFERENCE]}/trigger/"
+            + "recordRemissionDecision/recordRemissionDecisionremissionDecision),,,",
         "detainedReviewASRemission,[Record remission decision]"
-                + "(/cases/case-details/${[CASE_REFERENCE]}/trigger/"
-                + "recordRemissionDecision/recordRemissionDecisionremissionDecision),,,",
+            + "(/cases/case-details/${[CASE_REFERENCE]}/trigger/"
+            + "recordRemissionDecision/recordRemissionDecisionremissionDecision),,,",
         "detainedReviewLARemission,[Record remission decision]"
-                + "(/cases/case-details/${[CASE_REFERENCE]}/trigger/"
-                + "recordRemissionDecision/recordRemissionDecisionremissionDecision),,,",
+            + "(/cases/case-details/${[CASE_REFERENCE]}/trigger/"
+            + "recordRemissionDecision/recordRemissionDecisionremissionDecision),,,",
         "detainedReviewHOWaiverRemission,[Record remission decision]"
-                + "(/cases/case-details/${[CASE_REFERENCE]}/trigger/"
-                + "recordRemissionDecision/recordRemissionDecisionremissionDecision),,,",
+            + "(/cases/case-details/${[CASE_REFERENCE]}/trigger/"
+            + "recordRemissionDecision/recordRemissionDecisionremissionDecision),,,",
         "detainedReviewAuthorityRemission,[Record remission decision]"
-                + "(/cases/case-details/${[CASE_REFERENCE]}/trigger/"
-                + "recordRemissionDecision/recordRemissionDecisionremissionDecision),,,",
+            + "(/cases/case-details/${[CASE_REFERENCE]}/trigger/"
+            + "recordRemissionDecision/recordRemissionDecisionremissionDecision),,,",
         "detainedReviewHWFRemission,[Record remission decision]"
-                + "(/cases/case-details/${[CASE_REFERENCE]}/trigger/"
-                + "recordRemissionDecision/recordRemissionDecisionremissionDecision),,,",
+            + "(/cases/case-details/${[CASE_REFERENCE]}/trigger/"
+            + "recordRemissionDecision/recordRemissionDecisionremissionDecision),,,",
         "detainedReviewECRRemission,[Record remission decision]"
-                + "(/cases/case-details/${[CASE_REFERENCE]}/trigger/"
-                + "recordRemissionDecision/recordRemissionDecisionremissionDecision),,,",
+            + "(/cases/case-details/${[CASE_REFERENCE]}/trigger/"
+            + "recordRemissionDecision/recordRemissionDecisionremissionDecision),,,",
         "assignAFTPAJudge,[Record allocated Judge](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
             + "recordAllocatedJudge),,,",
         "detainedAssignAFTPAJudge,[Record allocated Judge](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
@@ -1612,9 +1573,11 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
         String roleAssignmentId = UUID.randomUUID().toString();
         String taskId = UUID.randomUUID().toString();
-        Map<String, String> taskAttributes = Map.of("taskType", taskType,
-                                                    "roleAssignmentId", roleAssignmentId,
-                                                    "taskId", taskId);
+        Map<String, String> taskAttributes = Map.of(
+            "taskType", taskType,
+            "roleAssignmentId", roleAssignmentId,
+            "taskId", taskId
+        );
         inputVariables.putValue("taskAttributes", taskAttributes);
         if (journeyType != null) {
             inputVariables.putValue("caseData", Map.of("journeyType", journeyType));
@@ -1634,13 +1597,45 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
         assertEquals(1, descriptionList.size());
 
-        assertEquals(Map.of(
-            "name", "description",
-            "value", expectedDescription
-                .replace("${[roleAssignmentId]}", roleAssignmentId).replace("${[taskId]}", taskId),
-            "canReconfigure", false
-        ), descriptionList.get(0));
+        assertEquals(
+            Map.of(
+                "name", "description",
+                "value", expectedDescription
+                    .replace("${[roleAssignmentId]}", roleAssignmentId).replace("${[taskId]}", taskId),
+                "canReconfigure", false
+            ), descriptionList.getFirst()
+        );
 
+    }
+
+    private void getExpectedValue(List<Map<String, Object>> rules, String name, String value) {
+        Map<String, Object> rule = new HashMap<>();
+        rule.put("name", name);
+        rule.put("value", value);
+        rule.put("canReconfigure", false);
+        rules.add(rule);
+    }
+
+    private void getExpectedValueWithReconfigure(List<Map<String, Object>> rules, String name, String value,
+                                                 String reconfigure) {
+        Map<String, Object> rule = new HashMap<>();
+        rule.put("name", name);
+        rule.put("value", value);
+        rule.put("canReconfigure", Boolean.valueOf(reconfigure));
+        rules.add(rule);
+    }
+
+    private ZonedDateTime parseCamundaTimestamp(String datetime) {
+        String[] parts = datetime.split("[Z+]");
+        String zone = datetime.substring(datetime.indexOf("[") + 1, datetime.lastIndexOf("]"));
+        return ZonedDateTime.of(LocalDateTime.parse(parts[0]), ZoneId.of(zone));
+    }
+
+    private boolean validNow(ZonedDateTime expected, ZonedDateTime actual) {
+        ZonedDateTime now = ZonedDateTime.now(ZoneId.of("UTC"));
+        return actual != null
+            && (expected.isEqual(actual) || expected.isBefore(actual))
+            && (now.isEqual(actual) || now.isAfter(actual));
     }
 
     @Test
@@ -1648,13 +1643,19 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         String roleAssignmentId = UUID.randomUUID().toString();
         String taskId = UUID.randomUUID().toString();
         VariableMap inputVariables = new VariableMapImpl();
-        inputVariables.putValue("taskAttributes", Map.of("taskType", "listTheCase",
-                                                         "roleAssignmentId", roleAssignmentId,
-                                                         "taskId", taskId));
-        inputVariables.putValue("caseData", Map.of(
-            "stf24wCurrentStatusAutoGenerated", true,
-            "isIntegrated", "Yes"
-        ));
+        inputVariables.putValue(
+            "taskAttributes", Map.of(
+                "taskType", "listTheCase",
+                "roleAssignmentId", roleAssignmentId,
+                "taskId", taskId
+            )
+        );
+        inputVariables.putValue(
+            "caseData", Map.of(
+                "stf24wCurrentStatusAutoGenerated", true,
+                "isIntegrated", "Yes"
+            )
+        );
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
@@ -1665,7 +1666,33 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         assertEquals(1, descriptionList.size());
         assertEquals(
             "[List the case](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/listCase)",
-            descriptionList.get(0).get("value")
+            descriptionList.getFirst().get("value")
+        );
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+        "markAsPaid"
+    })
+    void when_taskId_then_return_due_date_skip_non_working_days_false(String taskType) {
+        VariableMap inputVariables = new VariableMapImpl();
+
+        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
+
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        List<Map<String, Object>> dueDateSkipNonWorkingDaysResultList = dmnDecisionTableResult.getResultList().stream()
+            .filter((r) -> r.containsValue("dueDateSkipNonWorkingDays"))
+            .toList();
+
+        assertEquals(1, dueDateSkipNonWorkingDaysResultList.size());
+
+        assertEquals(
+            Map.of(
+                "name", "dueDateSkipNonWorkingDays",
+                "value", "false",
+                "canReconfigure", false
+            ), dueDateSkipNonWorkingDaysResultList.getFirst()
         );
     }
 
@@ -1909,28 +1936,15 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         )));
     }
 
-    @ParameterizedTest
-    @CsvSource({
-        "markAsPaid"
-    })
-    void when_taskId_then_return_due_date_skip_non_working_days_false(String taskType) {
-        VariableMap inputVariables = new VariableMapImpl();
-
-        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
-
-        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
-
-        List<Map<String, Object>> dueDateSkipNonWorkingDaysResultList = dmnDecisionTableResult.getResultList().stream()
-            .filter((r) -> r.containsValue("dueDateSkipNonWorkingDays"))
-            .toList();
-
-        assertEquals(1, dueDateSkipNonWorkingDaysResultList.size());
-
-        assertEquals(Map.of(
-            "name", "dueDateSkipNonWorkingDays",
-            "value", "false",
-            "canReconfigure", false
-        ), dueDateSkipNonWorkingDaysResultList.get(0));
+    @Builder
+    private record Scenario(Map<String, Object> caseData, Map<String, Object> taskAttributes,
+                            String expectedCaseNameValue, String expectedAppealTypeValue, String expectedRegionValue,
+                            String expectedLocationValue, String expectedLocationNameValue,
+                            String expectedCaseManagementCategoryValue, String expectedWorkType,
+                            String expectedRoleCategory, String expectedDescriptionValue,
+                            String expectedReconfigureValue, String expectedDueDateOrigin,
+                            String expectedDueDateIntervalDays, String expectedHearingId, String expectedHearingDate,
+                            Boolean expectedIsDetainedAppellant) {
     }
 
     @ParameterizedTest

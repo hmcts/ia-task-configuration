@@ -175,12 +175,6 @@ To add new tasks or modify existing ones:
 - Tests validate rule logic using input/output mocks
 - Tests are maintained and should be updated with rule changes
 
-### Functional Tests
-
-- **Current status**: Outdated and failing
-- **Recommendation**: Write new isolated tests for current work
-- **Strategy**: Avoid dependency on legacy test suite
-
 ### Manual Testing
 
 - **Preview Environment**: Primary platform for testing changes
@@ -326,7 +320,6 @@ LIMIT 100;
 
 - **DMN file conflicts**: Cannot merge parallel changes due to unique ID regeneration
 - **Limited UI customization**: Filters and columns are predefined in XUI
-- **Testing complexity**: Functional tests currently unreliable
 
 ### Technical Challenges
 
