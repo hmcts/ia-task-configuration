@@ -1,7 +1,5 @@
 package uk.gov.hmcts.reform.iataskconfiguration;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import org.camunda.bpm.dmn.engine.DmnDecision;
 import org.camunda.bpm.dmn.engine.DmnDecisionTableResult;
 import org.camunda.bpm.dmn.engine.DmnEngine;
@@ -14,6 +12,8 @@ import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.IntStream;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public abstract class DmnDecisionTableBaseUnitTest {
 
