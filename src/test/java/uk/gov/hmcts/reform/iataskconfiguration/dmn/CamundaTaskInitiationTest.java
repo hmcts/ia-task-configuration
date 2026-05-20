@@ -5938,7 +5938,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                                                Map<String,Object> delayUntil,
                                                                boolean isIntegrated) {
         Map<String, Object> map = new HashMap<>();
-        if (isIntegrated) {
+        if (!isIntegrated) {
             map.put("taskId", taskId);
             map.put("name", name);
             map.put("processCategories", processCategories);
@@ -5973,7 +5973,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                                                boolean appellantInDetention,
                                                                boolean isNotificationTurnedOff) {
         Map<String, Object> map = new HashMap<>();
-        if (isIntegrated) {
+        if (!isIntegrated) {
             map.put("taskId", taskId);
             map.put("name", name);
             map.put("processCategories", processCategories);
