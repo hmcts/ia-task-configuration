@@ -136,8 +136,6 @@ dependencyCheck {
   }
 }
 
-ext["tomcat.version"] = "10.1.55"
-
 dependencyManagement {
   imports {
     mavenBom 'com.fasterxml.jackson:jackson-bom:2.21.2'
