@@ -642,7 +642,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertEquals(37, logic.getRules().size());
+        assertEquals(36, logic.getRules().size());
     }
 
     @SuppressWarnings("checkstyle:indentation")
@@ -1157,30 +1157,6 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     }
 
     @ParameterizedTest
-    @CsvSource({"listTheCase"})
-    void when_taskId_then_return_Ctsc_role_category_reconfigure(String taskType) {
-        VariableMap inputVariables = new VariableMapImpl();
-
-        inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
-
-        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
-
-        List<Map<String, Object>> workTypeResultList = dmnDecisionTableResult.getResultList().stream()
-            .filter((r) -> r.containsValue("roleCategory"))
-            .toList();
-
-        assertEquals(1, workTypeResultList.size());
-
-        assertEquals(
-            Map.of(
-                "name", "roleCategory",
-                "value", "CTSC",
-                "canReconfigure", true
-            ), workTypeResultList.getFirst()
-        );
-    }
-
-    @ParameterizedTest
     @CsvSource({
         "reviewRemissionApplication", "reviewASRemission",
         "reviewLARemission", "reviewHOWaiverRemission",
@@ -1190,7 +1166,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "detainedReviewAuthorityRemission", "detainedReviewHWFRemission",
         "detainedReviewECRRemission",
         "assignAFTPAJudge", "detainedAssignAFTPAJudge",
-        "detainedListTheCase",
+        "listTheCase", "detainedListTheCase",
         "sendPaymentRequest", "markAsPaid",
         "processFeeRefund", "detainedProcessFeeRefund",
         "reviewDraftAppeal", "detainedReviewDraftAppeal"
