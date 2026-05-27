@@ -10125,7 +10125,7 @@
           <text>false</text>
         </inputEntry>
         <inputEntry id="UnaryTests_stf24w_0086">
-          <text>not("Yes")</text>
+          <text>false</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_17sbxmn">
           <text>"listTheCase"</text>
