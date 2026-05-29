@@ -538,7 +538,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_0xh5are">
-          <text>"reviewRemissionApplication","reviewASRemission", "reviewLARemission", "reviewHOWaiverRemission", "reviewAuthorityRemission", "reviewHWFRemission", "reviewECRRemission", "detainedReviewASRemission", "detainedReviewLARemission", "detainedReviewHOWaiverRemission", "detainedReviewAuthorityRemission", "detainedReviewHWFRemission", "detainedReviewECRRemission","assignAFTPAJudge","detainedAssignAFTPAJudge","detainedListTheCase","sendPaymentRequest","markAsPaid","processFeeRefund","detainedProcessFeeRefund","reviewDraftAppeal","detainedReviewDraftAppeal"</text>
+          <text>"reviewRemissionApplication","reviewASRemission", "reviewLARemission", "reviewHOWaiverRemission", "reviewAuthorityRemission", "reviewHWFRemission", "reviewECRRemission", "detainedReviewASRemission", "detainedReviewLARemission", "detainedReviewHOWaiverRemission", "detainedReviewAuthorityRemission", "detainedReviewHWFRemission", "detainedReviewECRRemission","assignAFTPAJudge","detainedAssignAFTPAJudge","detainedListTheCase","sendPaymentRequest","markAsPaid","processFeeRefund","detainedProcessFeeRefund","reviewDraftAppeal","detainedReviewDraftAppeal","listTheCase"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0vqliz7">
           <text>"roleCategory"</text>
@@ -548,23 +548,6 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_0mrh555">
           <text>false</text>
-        </outputEntry>
-      </rule>
-      <rule id="DecisionRule_0gre45x">
-        <inputEntry id="UnaryTests_0xmskzo">
-          <text></text>
-        </inputEntry>
-        <inputEntry id="UnaryTests_0ym6k1f">
-          <text>"listTheCase"</text>
-        </inputEntry>
-        <outputEntry id="LiteralExpression_00libv0">
-          <text>"roleCategory"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_0gu8kl0">
-          <text>"CTSC"</text>
-        </outputEntry>
-        <outputEntry id="LiteralExpression_1k9pboy">
-          <text>true</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1lny4x5">
