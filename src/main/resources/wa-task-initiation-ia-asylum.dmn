@@ -10250,7 +10250,7 @@
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1c8hk7r">
-          <text>"listTheCaseTask"</text>
+          <text>"caseProgression"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_completeCaseReview_listTheCase">
