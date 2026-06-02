@@ -28,3 +28,4 @@ lombok.config
 bin/integrationTest/
 bin/main/
 bin/test/
+/reports/pmd/*
