@@ -1166,7 +1166,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "detainedReviewAuthorityRemission", "detainedReviewHWFRemission",
         "detainedReviewECRRemission",
         "assignAFTPAJudge", "detainedAssignAFTPAJudge",
-        "listTheCase", "detainedListTheCase",
+        "detainedListTheCase","listTheCase",
         "sendPaymentRequest", "markAsPaid",
         "processFeeRefund", "detainedProcessFeeRefund",
         "reviewDraftAppeal", "detainedReviewDraftAppeal"
