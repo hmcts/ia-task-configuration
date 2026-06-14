@@ -4,11 +4,11 @@ plugins {
   id 'pmd'
   id 'jacoco'
   id 'io.spring.dependency-management' version '1.1.7'
-  id 'org.springframework.boot' version '3.5.14'
+  id 'org.springframework.boot' version '3.5.15'
   id 'com.github.ben-manes.versions' version '0.54.0'
-  id 'org.owasp.dependencycheck' version '12.2.0'
+  id 'org.owasp.dependencycheck' version '12.2.2'
   id 'uk.gov.hmcts.java' version '0.12.70'
-  id 'org.sonarqube' version '7.3.0.8198'
+  id 'org.sonarqube' version '7.3.1.8318'
   id 'info.solidsoft.pitest' version '1.19.0'
   id 'io.freefair.lombok' version '9.5.0'
 }
@@ -139,7 +139,7 @@ dependencyCheck {
 
 dependencyManagement {
   imports {
-    mavenBom 'com.fasterxml.jackson:jackson-bom:2.21.3'
+    mavenBom 'com.fasterxml.jackson:jackson-bom:2.22.0'
   }
   dependencies {
     dependencySet(group: 'org.junit.jupiter', version: '5.14.4') {
@@ -170,7 +170,7 @@ dependencies {
   testImplementation "com.fasterxml.jackson.core:jackson-core"
   testImplementation "com.fasterxml.jackson.core:jackson-annotations"
 
-  testImplementation group: 'org.pitest', name: 'pitest', version: '1.25.1'
+  testImplementation group: 'org.pitest', name: 'pitest', version: '1.25.4'
   testImplementation group: 'info.solidsoft.gradle.pitest', name: 'gradle-pitest-plugin', version: '1.15.0'
 
   testImplementation group: 'org.camunda.bpm.dmn', name: 'camunda-engine-dmn', version: '7.24.0'
