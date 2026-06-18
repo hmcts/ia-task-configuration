@@ -7,7 +7,7 @@
     "dependencies"
   ],
   "ignoreDeps": [
-    "checkstyle"
+    "org.owasp.dependencycheck"
   ],
   "packageRules": [
     {
@@ -15,22 +15,16 @@
         "*"
       ],
       "matchUpdateTypes": [
-        "minor",
         "patch"
       ],
-      "groupName": "all non-major dependencies",
-      "groupSlug": "all-minor-patch",
-      "automerge": false
-    },
-    {
-      "matchPackageNames": [
-        "org.owasp.dependencycheck"
-      ],
-      "enabled": false
+      "groupName": "all patches",
+      "groupSlug": "all-patch",
+      "automerge": true
     },
     {
       "matchUpdateTypes": [
-        "major"
+        "major",
+        "minor"
       ],
       "enabled": false
     }
