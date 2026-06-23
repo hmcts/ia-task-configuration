@@ -167,7 +167,7 @@
             "createCaseSummary",
             "reviewRemittedAppeal","detainedReviewRemittedAppeal",
             "reviewAppealSetAsideUnderRule35","detainedReviewAppealSetAsideUnderRule35",
-            "reviewAppealSetAsideUnderRule32","detainedReviewAppealSetAsideUnderRule32"</text>
+            "reviewAppealSetAsideUnderRule32","detainedReviewAppealSetAsideUnderRule32", "detainedListTheCase"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_10s330p">
           <text></text>
