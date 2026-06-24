@@ -4,7 +4,6 @@ import org.camunda.bpm.dmn.engine.DmnDecisionTableResult;
 import org.camunda.bpm.dmn.engine.impl.DmnDecisionTableImpl;
 import org.camunda.bpm.engine.variable.VariableMap;
 import org.camunda.bpm.engine.variable.impl.VariableMapImpl;
-import org.hamcrest.MatcherAssert;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -19,9 +18,8 @@ import java.util.Map;
 import java.util.stream.Stream;
 
 import static java.util.Arrays.asList;
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.containsInAnyOrder;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static uk.gov.hmcts.reform.iataskconfiguration.DmnDecisionTable.WA_TASK_PERMISSIONS_IA_ASYLUM;
 
 class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
@@ -785,14 +783,15 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
     @MethodSource("genericScenarioProvider")
     void given_taskType_and_CaseData_when_evaluate_then_returns_expected_rules(
         String taskType,
-        List<Map<String, Serializable>> expectedRules) {
+        List<Map<String, Object>> expectedRules) {
 
         VariableMap inputVariables = new VariableMapImpl();
         inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
-        assertThat(dmnDecisionTableResult.getResultList(), containsInAnyOrder(expectedRules.toArray()));
+        assertTrue(dmnDecisionTableResult.getResultList()
+                       .containsAll(expectedRules.stream().toList()));
     }
 
     static Stream<Arguments> scenarioProvider() {
@@ -855,7 +854,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
-        MatcherAssert.assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
+        assertEquals(expectation, dmnDecisionTableResult.getResultList());
     }
 
     @SuppressWarnings("checkstyle:indentation")
@@ -885,7 +884,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
-        MatcherAssert.assertThat(dmnDecisionTableResult.getResultList(), is(List.of(
+        List<Map<String, Object>> expectation = List.of(
             Map.of(
                 "name", "task-supervisor",
                 "value", "Read,Execute,Claim,Manage,Unassign,Assign,Complete,Cancel",
@@ -910,7 +909,8 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "assignmentPriority", 1,
                 "autoAssignable", false
             )
-        )));
+        );
+        assertEquals(expectation, dmnDecisionTableResult.getResultList());
     }
 
     @SuppressWarnings("checkstyle:indentation")
@@ -944,7 +944,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
-        MatcherAssert.assertThat(dmnDecisionTableResult.getResultList(), is(List.of(
+        List<Map<String, Object>> expectation = List.of(
             Map.of(
                 "name", "task-supervisor",
                 "value", "Read,Execute,Claim,Manage,Unassign,Assign,Complete,Cancel",
@@ -984,7 +984,8 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "assignmentPriority", 2,
                 "autoAssignable", false
             )
-        )));
+        );
+        assertEquals(expectation, dmnDecisionTableResult.getResultList());
     }
 
     @SuppressWarnings("checkstyle:indentation")
@@ -999,7 +1000,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
-        MatcherAssert.assertThat(dmnDecisionTableResult.getResultList(), is(List.of(
+        List<Map<String, Object>> expectation = List.of(
             Map.of(
                 "name", "task-supervisor",
                 "value", "Read,Execute,Claim,Manage,Unassign,Assign,Complete,Cancel",
@@ -1024,7 +1025,8 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "assignmentPriority", 1,
                 "autoAssignable", false
             )
-        )));
+        );
+        assertEquals(expectation, dmnDecisionTableResult.getResultList());
     }
 
     @SuppressWarnings("checkstyle:indentation")
@@ -1038,7 +1040,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
-        MatcherAssert.assertThat(dmnDecisionTableResult.getResultList(), is(List.of(
+        List<Map<String, Object>> expectation = List.of(
             Map.of(
                 "name", "task-supervisor",
                 "value", "Read,Execute,Claim,Manage,Unassign,Assign,Complete,Cancel",
@@ -1058,7 +1060,8 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "assignmentPriority", 2,
                 "autoAssignable", false
             )
-        )));
+        );
+        assertEquals(expectation, dmnDecisionTableResult.getResultList());
     }
 
     @SuppressWarnings("checkstyle:indentation")
@@ -1072,7 +1075,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
-        MatcherAssert.assertThat(dmnDecisionTableResult.getResultList(), is(List.of(
+        List<Map<String, Object>> expectation = List.of(
             Map.of(
                 "name", "task-supervisor",
                 "value", "Read,Execute,Claim,Manage,Unassign,Assign,Complete,Cancel",
@@ -1099,7 +1102,8 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "assignmentPriority", 2,
                 "autoAssignable", false
             )
-        )));
+        );
+        assertEquals(expectation, dmnDecisionTableResult.getResultList());
     }
 
     @SuppressWarnings("checkstyle:indentation")
@@ -1113,7 +1117,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
-        MatcherAssert.assertThat(dmnDecisionTableResult.getResultList(), is(List.of(
+        List<Map<String, Object>> expectation = List.of(
             Map.of(
                 "name", "task-supervisor",
                 "value", "Read,Execute,Claim,Manage,Unassign,Assign,Complete,Cancel",
@@ -1134,7 +1138,8 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "roleCategory", "JUDICIAL",
                 "value", "Read,Own,Claim,Manage,Unassign,Assign,Complete,Cancel"
             )
-        )));
+        );
+        assertEquals(expectation, dmnDecisionTableResult.getResultList());
     }
 
     @SuppressWarnings("checkstyle:indentation")
@@ -1144,7 +1149,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
-        MatcherAssert.assertThat(dmnDecisionTableResult.getResultList(), is(List.of(
+        List<Map<String, Object>> expectation = List.of(
             Map.of(
                 "name", "task-supervisor",
                 "value", "Read,Execute,Claim,Manage,Unassign,Assign,Complete,Cancel",
@@ -1163,7 +1168,8 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "assignmentPriority",1,
                 "autoAssignable", false
             )
-        )));
+        );
+        assertEquals(expectation, dmnDecisionTableResult.getResultList());
     }
 
     @Test
@@ -1173,7 +1179,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
-        MatcherAssert.assertThat(dmnDecisionTableResult.getResultList(), is(List.of(
+        List<Map<String, Object>> expectation = List.of(
             Map.of(
                 "name", "task-supervisor",
                 "value", "Read,Execute,Claim,Manage,Unassign,Assign,Complete,Cancel",
@@ -1214,7 +1220,8 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "assignmentPriority", 2,
                 "autoAssignable", false
             )
-        )));
+        );
+        assertEquals(expectation, dmnDecisionTableResult.getResultList());
     }
 
     @Test
@@ -1223,8 +1230,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         inputVariables.putValue("taskAttributes", Map.of("taskType", "detainedProcessApplicationChangeHearingType"));
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
-
-        MatcherAssert.assertThat(dmnDecisionTableResult.getResultList(), is(List.of(
+        List<Map<String, Object>> expectation = List.of(
             Map.of(
                 "name", "task-supervisor",
                 "value", "Read,Execute,Claim,Manage,Unassign,Assign,Complete,Cancel",
@@ -1265,7 +1271,8 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                 "assignmentPriority", 2,
                 "autoAssignable", false
             )
-        )));
+        );
+        assertEquals(expectation, dmnDecisionTableResult.getResultList());
     }
 
     @Test
@@ -1276,7 +1283,7 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
 
         List<String> inputColumnIds = asList("taskType", "case");
         //Inputs
-        assertThat(logic.getInputs().size(), is(2));
+        assertEquals(2, logic.getInputs().size());
         assertThatInputContainInOrder(inputColumnIds, logic.getInputs());
         //Outputs
         List<String> outputColumnIds = asList(
@@ -1289,9 +1296,9 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
             "autoAssignable"
         );
 
-        assertThat(logic.getOutputs().size(), is(7));
+        assertEquals(7, logic.getOutputs().size());
         assertThatOutputContainInOrder(outputColumnIds, logic.getOutputs());
         //Rules
-        assertThat(logic.getRules().size(), is(18));
+        assertEquals(18, logic.getRules().size());
     }
 }

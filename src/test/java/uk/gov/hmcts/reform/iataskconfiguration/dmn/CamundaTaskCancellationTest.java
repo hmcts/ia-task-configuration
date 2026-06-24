@@ -4,7 +4,6 @@ import org.camunda.bpm.dmn.engine.DmnDecisionTableResult;
 import org.camunda.bpm.dmn.engine.impl.DmnDecisionTableImpl;
 import org.camunda.bpm.engine.variable.VariableMap;
 import org.camunda.bpm.engine.variable.impl.VariableMapImpl;
-import org.hamcrest.MatcherAssert;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -19,8 +18,7 @@ import java.util.stream.Stream;
 import static java.util.Arrays.asList;
 import static java.util.Collections.emptyList;
 import static java.util.Collections.singletonList;
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static uk.gov.hmcts.reform.iataskconfiguration.DmnDecisionTable.WA_TASK_CANCELLATION_IA_ASYLUM;
 
 class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
@@ -301,9 +299,13 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
                 null,
                 "listCase",
                 null,
-                singletonList(
+                List.of(
                     Map.of(
                         "action", "Reconfigure"
+                    ),
+                    Map.of(
+                        "action", "Cancel",
+                        "processCategories", "listTheCaseTask"
                     )
                 )
             ),
@@ -352,7 +354,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
         inputVariables.putValue("event", eventId);
         inputVariables.putValue("state", state);
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
-        MatcherAssert.assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
+        assertEquals(expectation, dmnDecisionTableResult.getResultList());
     }
 
     @Test

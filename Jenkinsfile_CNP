@@ -13,7 +13,6 @@ withCamundaOnlyPipeline(type, product, component, s2sServiceName, tenantId) {
 
   afterSuccess('test') {
     steps.archiveArtifacts allowEmptyArchive: true, artifacts: '**/reports/tests/**/*'
-    steps.archiveArtifacts allowEmptyArchive: true, artifacts: '**/reports/tests/integration/**/*'
   }
 
 

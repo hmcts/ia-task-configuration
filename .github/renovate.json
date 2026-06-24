@@ -1,13 +1,13 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["local>hmcts/.github:renovate-config"],
-  "labels": ["dependencies"],
+  "extends": [
+    "local>hmcts/.github:renovate-config"
+  ],
+  "labels": [
+    "dependencies"
+  ],
   "ignoreDeps": [
-    "ch.qos.logback:logback-core",
-    "ch.qos.logback:logback-classic",
-    "org.apache.logging.log4j:log4j-to-slf4j",
-    "org.apache.logging.log4j:log4j-api",
-    "checkstyle"
+    "org.owasp.dependencycheck"
   ],
   "packageRules": [
     {
@@ -15,15 +15,17 @@
         "*"
       ],
       "matchUpdateTypes": [
-        "minor",
         "patch"
       ],
-      "groupName": "all non-major dependencies",
-      "groupSlug": "all-minor-patch",
-      "automerge": false
+      "groupName": "all patches",
+      "groupSlug": "all-patch",
+      "automerge": true
     },
     {
-      "matchUpdateTypes": ["major"],
+      "matchUpdateTypes": [
+        "major",
+        "minor"
+      ],
       "enabled": false
     }
   ],

@@ -4,8 +4,6 @@ import org.camunda.bpm.dmn.engine.DmnDecisionTableResult;
 import org.camunda.bpm.dmn.engine.impl.DmnDecisionTableImpl;
 import org.camunda.bpm.engine.variable.VariableMap;
 import org.camunda.bpm.engine.variable.impl.VariableMapImpl;
-import org.hamcrest.MatcherAssert;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -21,8 +19,7 @@ import java.util.UUID;
 import java.util.stream.Stream;
 
 import static java.util.Arrays.asList;
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static uk.gov.hmcts.reform.iataskconfiguration.DmnDecisionTable.WA_TASK_PERMISSIONS_IA_BAIL;
 
 class CamundaTaskBailPermissionTest extends DmnDecisionTableBaseUnitTest {
@@ -114,7 +111,7 @@ class CamundaTaskBailPermissionTest extends DmnDecisionTableBaseUnitTest {
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
-        Assertions.assertEquals(expectedRules, dmnDecisionTableResult.getResultList());
+        assertEquals(expectedRules, dmnDecisionTableResult.getResultList());
     }
 
     static Stream<Arguments> scenarioProvider() {
@@ -177,7 +174,7 @@ class CamundaTaskBailPermissionTest extends DmnDecisionTableBaseUnitTest {
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
-        MatcherAssert.assertThat(dmnDecisionTableResult.getResultList(), is(expectation));
+        assertEquals(expectation, dmnDecisionTableResult.getResultList());
     }
 
     @ParameterizedTest
@@ -189,23 +186,21 @@ class CamundaTaskBailPermissionTest extends DmnDecisionTableBaseUnitTest {
         inputVariables.putValue("taskAttributes", Map.of("taskType", taskType));
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
-
-        MatcherAssert.assertThat(
-            dmnDecisionTableResult.getResultList(), is(List.of(
-                Map.of(
-                    "name", "task-supervisor",
-                    "value", "Read,Execute,Claim,Manage,Unassign,Assign,Complete,Cancel",
-                    "autoAssignable", false
-                ),
-                Map.of(
-                    "name", "hearing-centre-admin",
-                    "value", "Read,Own,Claim,Manage,Unassign,Assign,Complete,Cancel",
-                    "roleCategory", "ADMIN",
-                    "assignmentPriority", 1,
-                    "autoAssignable", false
-                )
-            ))
+        List<Map<String, Object>> expectation = List.of(
+            Map.of(
+                "name", "task-supervisor",
+                "value", "Read,Execute,Claim,Manage,Unassign,Assign,Complete,Cancel",
+                "autoAssignable", false
+            ),
+            Map.of(
+                "name", "hearing-centre-admin",
+                "value", "Read,Own,Claim,Manage,Unassign,Assign,Complete,Cancel",
+                "roleCategory", "ADMIN",
+                "assignmentPriority", 1,
+                "autoAssignable", false
+            )
         );
+        assertEquals(expectation, dmnDecisionTableResult.getResultList());
     }
 
     @Test
@@ -215,16 +210,14 @@ class CamundaTaskBailPermissionTest extends DmnDecisionTableBaseUnitTest {
         inputVariables.putValue("taskAttributes", Map.of("taskType", randomString));
 
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
-
-        MatcherAssert.assertThat(
-            dmnDecisionTableResult.getResultList(), is(List.of(
-                Map.of(
-                    "name", "task-supervisor",
-                    "value", "Read,Execute,Claim,Manage,Unassign,Assign,Complete,Cancel",
-                    "autoAssignable", false
-                )
-            ))
+        List<Map<String, Object>> expectation = List.of(
+            Map.of(
+                "name", "task-supervisor",
+                "value", "Read,Execute,Claim,Manage,Unassign,Assign,Complete,Cancel",
+                "autoAssignable", false
+            )
         );
+        assertEquals(expectation, dmnDecisionTableResult.getResultList());
     }
 
     @Test
@@ -235,7 +228,7 @@ class CamundaTaskBailPermissionTest extends DmnDecisionTableBaseUnitTest {
 
         List<String> inputColumnIds = asList("taskType", "case");
         //Inputs
-        assertThat(logic.getInputs().size(), is(2));
+        assertEquals(2, logic.getInputs().size());
         assertThatInputContainInOrder(inputColumnIds, logic.getInputs());
         //Outputs
         List<String> outputColumnIds = asList(
@@ -247,9 +240,9 @@ class CamundaTaskBailPermissionTest extends DmnDecisionTableBaseUnitTest {
             "assignmentPriority",
             "autoAssignable"
         );
-        assertThat(logic.getOutputs().size(), is(7));
+        assertEquals(7, logic.getOutputs().size());
         assertThatOutputContainInOrder(outputColumnIds, logic.getOutputs());
         //Rules
-        assertThat(logic.getRules().size(), is(2));
+        assertEquals(2, logic.getRules().size());
     }
 }

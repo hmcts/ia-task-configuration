@@ -3,14 +3,16 @@ plugins {
   id 'checkstyle'
   id 'pmd'
   id 'jacoco'
-  id 'io.spring.dependency-management' version '1.1.4'
-  id 'org.springframework.boot' version '2.7.18'
-  id 'com.github.ben-manes.versions' version '0.50.0'
-  id 'org.owasp.dependencycheck' version '10.0.3'
-  id 'org.sonarqube' version '4.3.0.3225'
-  id 'info.solidsoft.pitest' version '1.9.11'
-  id 'io.freefair.lombok' version '6.6.3'
+  id 'io.spring.dependency-management' version '1.1.7'
+  id 'org.springframework.boot' version '3.5.15'
+  id 'com.github.ben-manes.versions' version '0.54.0'
+  id 'org.owasp.dependencycheck' version '12.2.0'
+  id 'uk.gov.hmcts.java' version '0.12.70'
+  id 'org.sonarqube' version '7.3.1.8318'
+  id 'info.solidsoft.pitest' version '1.19.0'
+  id 'io.freefair.lombok' version '9.5.0'
 }
+
 repositories {
   mavenLocal()
   mavenCentral()
@@ -19,58 +21,24 @@ repositories {
     url = uri("https://pkgs.dev.azure.com/hmcts/Artifacts/_packaging/hmcts-lib/maven/v1")
   }
 }
-  group = 'uk.gov.hmcts.reform'
+group = 'uk.gov.hmcts.reform'
 version = '0.0.1'
 
 java {
   toolchain {
-    languageVersion = JavaLanguageVersion.of(17)
+    languageVersion = JavaLanguageVersion.of(21)
   }
 }
 
-
-sourceSets {
-  functionalTest {
-    java {
-      compileClasspath += main.output
-      runtimeClasspath += main.output
-      srcDir file('src/functionalTest/java')
-    }
-    resources.srcDir file('src/functionalTest/resources')
-  }
-
-  integrationTest {
-    java {
-      compileClasspath += main.output
-      runtimeClasspath += main.output
-      srcDir file('src/integrationTest/java')
-    }
-    resources.srcDir file('src/integrationTest/resources')
-  }
-
-  smokeTest {
-    java {
-      compileClasspath += main.output
-      runtimeClasspath += main.output
-      srcDir file('src/smokeTest/java')
-    }
-    resources.srcDir file('src/smokeTest/resources')
-  }
+tasks.withType(JavaCompile).configureEach {
+  options.compilerArgs += [
+    '-parameters',
+    '-Xlint:unchecked',
+    '-Werror'
+  ]
 }
 
-processFunctionalTestResources {
-  duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-}
-
-processIntegrationTestResources {
-  duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-}
-
-tasks.withType(JavaCompile) {
-  options.compilerArgs << "-Xlint:unchecked" << "-Werror"
-}
-
-tasks.withType(Test) {
+tasks.withType(Test).configureEach {
   useJUnitPlatform()
 
   testLogging {
@@ -78,47 +46,16 @@ tasks.withType(Test) {
   }
 }
 
-test {
-  failFast = true
-}
-
-task functional(type: Test) {
-  description = "Runs functional tests"
-  group = "Verification"
-  testClassesDirs = sourceSets.functionalTest.output.classesDirs
-  classpath = sourceSets.functionalTest.runtimeClasspath
-}
-
-task integration(type: Test) {
-  description = "Runs integration tests"
-  group = "Verification"
-  testClassesDirs = sourceSets.integrationTest.output.classesDirs
-  classpath = sourceSets.integrationTest.runtimeClasspath
-  failFast = true
-}
-
-task smoke(type: Test) {
-  description = "Runs Smoke Tests"
-  testClassesDirs = sourceSets.smokeTest.output.classesDirs
-  classpath = sourceSets.smokeTest.runtimeClasspath
-}
-
-task tests {
-  description = "Runs junit , integration and functional tests"
-  group = "Verification"
-  dependsOn test, integration, smoke, functional
-}
-
 checkstyle {
   maxWarnings = 0
-  toolVersion = '10.12.0'
+  toolVersion = '13.4.2'
   getConfigDirectory().set(new File(rootDir, 'config/checkstyle'))
 }
 
 pmd {
-  toolVersion = "6.55.0"
+  toolVersion = '7.25.0'
   sourceSets = [sourceSets.main]
-  reportsDir = file("$project.buildDir/reports/pmd")
+  reportsDir = file("./reports/pmd")
   // https://github.com/pmd/pmd/issues/876
   ruleSets = []
   ruleSetFiles = files("config/pmd/ruleset.xml")
@@ -133,7 +70,7 @@ jacocoTestCoverageVerification {
 }
 
 jacocoTestReport {
-  executionData(test, integration)
+  executionData(test)
   reports {
     xml.required.set(true)
     csv.required.set(false)
@@ -154,9 +91,14 @@ pitest {
   mutationThreshold = 80
 }
 
-project.tasks['pitest'].group = "Verification"
+tasks.named('pitest') {
+  group = "Verification"
+}
 
-project.tasks['sonarqube'].dependsOn test, integration, jacocoTestReport
+tasks.named('sonarqube') {
+  dependsOn test, jacocoTestReport
+  group = "Verification"
+}
 
 sonarqube {
   properties {
@@ -166,7 +108,7 @@ sonarqube {
     property "sonar.pitest.mode", "reuseReport"
     property "sonar.pitest.reportsDirectory", "build/reports/pitest"
     property "sonar.exclusions", "src/main/java/uk/gov/hmcts/reform/iataskconfiguration/config/**," +
-                                 "src/main/java/uk/gov/hmcts/reform/iataskconfiguration/Application.java"
+      "src/main/java/uk/gov/hmcts/reform/iataskconfiguration/Application.java"
   }
 }
 
@@ -187,7 +129,7 @@ dependencyCheck {
   // Specifies if the build should be failed if a CVSS score above a specified level is identified.
   // range of 0-10 fails the build, anything greater and it doesn't fail the build
   failBuildOnCVSS = System.getProperty('dependencyCheck.failBuild') == 'true' ? 0 : 11
-  suppressionFile = 'https://raw.githubusercontent.com/hmcts/ia-owasp-suppressions/refs/heads/master/ia-task-configuration/suppressions.xml'
+  suppressionFile = 'config/owasp/suppressions.xml'
 
   analyzers {
     // Disable scanning of .NET related binaries
@@ -196,41 +138,21 @@ dependencyCheck {
 }
 
 dependencyManagement {
+  imports {
+    mavenBom 'com.fasterxml.jackson:jackson-bom:2.21.3'
+  }
   dependencies {
-    dependency group: 'org.bouncycastle', name: 'bcpkix-jdk15on', version: '1.70'
-
-    dependencySet(group: 'com.google.guava', version: '32.1.2-jre') {
-      entry 'guava'
+    dependencySet(group: 'org.junit.jupiter', version: '5.14.4') {
+      entry 'junit-jupiter'
+      entry 'junit-jupiter-api'
+      entry 'junit-jupiter-engine'
+      entry 'junit-jupiter-params'
     }
 
-    dependencySet(group: 'org.yaml', version: '2.2') {
-      entry 'snakeyaml'
-    }
-
-    //CVE-2021-28170
-    dependency group: 'org.glassfish', name: 'jakarta.el', version: '4.0.2'
-
-    //CVE-2021-29425
-    dependency group: 'commons-io', name: 'commons-io', version: '2.15.1'
-
-    dependencySet(group: 'com.fasterxml.jackson.core', version: '2.16.0') {
-      entry 'jackson-databind'
-      entry 'jackson-core'
-      entry 'jackson-annotations'
-    }
-
-    dependencySet(group: 'com.fasterxml.jackson.dataformat', version: '2.16.0') {
-      entry 'jackson-dataformat-csv'
-      entry 'jackson-dataformat-yaml'
-    }
-
-    dependencySet(group: 'com.fasterxml.jackson.datatype', version: '2.16.0') {
-      entry 'jackson-datatype-jsr310'
-      entry 'jackson-datatype-jdk8'
-    }
-
-    dependencySet(group: 'com.fasterxml.jackson.module', version: '2.16.0') {
-      entry 'jackson-module-parameter-names'
+    dependencySet(group: 'org.junit.platform', version: '1.14.4') {
+      entry 'junit-platform-commons'
+      entry 'junit-platform-engine'
+      entry 'junit-platform-launcher'
     }
   }
 }
@@ -241,64 +163,19 @@ repositories {
   mavenCentral()
 }
 
-def versions = [
-  reformLogging   : '6.1.9',
-  springfoxSwagger: '3.0.0',
-  camunda         : '7.20.0',
-  pitest          : '1.9.11',
-  sonarPitest     : '0.5',
-  log4j           : '2.25.3'
-]
-
 dependencies {
+  testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
-  configurations.all {
-    resolutionStrategy {
-      force 'org.hamcrest:hamcrest:2.2'
-    }
-  }
+  testImplementation "com.fasterxml.jackson.core:jackson-databind"
+  testImplementation "com.fasterxml.jackson.core:jackson-core"
+  testImplementation "com.fasterxml.jackson.core:jackson-annotations"
 
-  testImplementation 'org.hamcrest:hamcrest:2.2'
-  testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.0'
-  implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web'
-  implementation group: 'org.springframework.boot', name: 'spring-boot-starter-actuator'
-  implementation group: 'org.springframework.boot', name: 'spring-boot-starter-aop'
-  implementation group: 'org.springframework.boot', name: 'spring-boot-starter-json'
+  testImplementation group: 'org.pitest', name: 'pitest', version: '1.25.5'
+  testImplementation group: 'info.solidsoft.gradle.pitest', name: 'gradle-pitest-plugin', version: '1.15.0'
 
-  implementation group: 'io.springfox', name: 'springfox-boot-starter', version: versions.springfoxSwagger
-
-  implementation group: 'com.github.hmcts.java-logging', name: 'logging', version: versions.reformLogging
-  implementation group: 'com.github.hmcts.java-logging', name: 'logging-appinsights', version: versions.reformLogging
-  implementation group: 'com.github.hmcts.java-logging', name: 'logging-spring', version: '5.1.7'
-
-  implementation group: 'org.apache.logging.log4j', name: 'log4j-api', version: versions.log4j
-  implementation group: 'org.apache.logging.log4j', name: 'log4j-to-slf4j', version: versions.log4j
-
-  // Adding for CVE errors
-  implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-core', version: '9.0.115'
-  implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-websocket', version: '9.0.115'
-
-  implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.13'
-  implementation group: 'ch.qos.logback', name: 'logback-core', version: '1.2.13'
-
-  testImplementation group: 'org.pitest', name: 'pitest', version: versions.pitest
-  testImplementation group: 'info.solidsoft.gradle.pitest', name:'gradle-pitest-plugin', version: versions.pitest
-
-  testImplementation group: 'org.codehaus.sonar-plugins', name: 'sonar-pitest-plugin', version: versions.sonarPitest
-  testImplementation group: 'org.springframework.boot', name: 'spring-boot-starter-test'
-
-  testImplementation group: 'org.camunda.bpm.dmn', name: 'camunda-engine-dmn', version: versions.camunda
+  testImplementation group: 'org.camunda.bpm.dmn', name: 'camunda-engine-dmn', version: '7.24.0'
   testImplementation group: 'org.camunda.bpm.assert', name: 'camunda-bpm-assert', version: '8.0.0'
-  testImplementation group: 'org.camunda.bpm', name: 'camunda-engine', version: versions.camunda
-
-  testImplementation group: 'org.apiguardian', name: 'apiguardian-api', version: '1.1.2'
-
-  integrationTestImplementation sourceSets.main.runtimeClasspath
-  integrationTestImplementation sourceSets.test.runtimeClasspath
-
-  functionalTestImplementation sourceSets.main.runtimeClasspath
-
-  smokeTestImplementation sourceSets.main.runtimeClasspath
+  testImplementation group: 'org.camunda.bpm', name: 'camunda-engine', version: '7.24.0'
 }
 
 mainClassName = 'uk.gov.hmcts.reform.iataskconfiguration.Application'
