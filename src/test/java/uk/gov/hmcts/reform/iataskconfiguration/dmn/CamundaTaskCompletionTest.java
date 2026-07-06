@@ -46,7 +46,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "requestRespondentEvidence",
+                "completeCaseReview",
                 asList(
                     Map.of(
                         "taskType", "reviewTheAppeal",
