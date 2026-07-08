@@ -219,7 +219,7 @@
                         "printAndSendAppealDecision","detainedPrintAndSendAppealDecision",
                         "printAndSendFTPADecision","detainedPrintAndSendFTPADecision",
                         "printAndSendReheardHearingRequirements","detainedPrintAndSendReheardHearingRequirements",
-                        "processFeeRefund","detainedProcessFeeRefund","reviewASRemission","reviewLARemission", "reviewHOWaiverRemission", "reviewAuthorityRemission", "reviewHWFRemission", "reviewECRRemission","detainedReviewASRemission", "detainedReviewLARemission", "detainedReviewHOWaiverRemission", "detainedReviewAuthorityRemission", "detainedReviewHWFRemission", "detainedReviewECRRemission"                      </text>
+                        "processFeeRefund","detainedProcessFeeRefund","reviewASRemission","reviewLARemission", "reviewHOWaiverRemission", "reviewAuthorityRemission", "reviewHWFRemission", "reviewECRRemission","detainedReviewASRemission", "detainedReviewLARemission", "detainedReviewHOWaiverRemission", "detainedReviewAuthorityRemission", "detainedReviewHWFRemission", "detainedReviewECRRemission","reviewAddStf24wFlag","reviewRemoveStf24wFlag"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0rvgay2">
           <text>"workType"</text>
@@ -464,7 +464,7 @@
                         "startDecisionsAndReasonsDocument",
 "reviewRemittedAppeal","detainedReviewRemittedAppeal",
 "reviewAppealSetAsideUnderRule35","detainedReviewAppealSetAsideUnderRule35",
-"reviewAppealSetAsideUnderRule32","detainedReviewAppealSetAsideUnderRule32"</text>
+"reviewAppealSetAsideUnderRule32","detainedReviewAppealSetAsideUnderRule32","reviewAddStf24wFlag","reviewRemoveStf24wFlag"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_05l5bvs">
           <text>"roleCategory"</text>
@@ -682,6 +682,8 @@
                   else if ((taskAttributes != null and taskAttributes.taskType != null and (taskAttributes.taskType = "processApplicationChangeHearingType" or taskAttributes.taskType = "detainedProcessApplicationChangeHearingType")) or (taskType != null and (taskType = "processApplicationChangeHearingType" or taskType = "detainedProcessApplicationChangeHearingType")))
                   then "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication)"
                   else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "editListing" or taskType != null and taskType = "editListing") then "[Edit case listing](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/editCaseListing)"
+                  else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewAddStf24wFlag" or taskType != null and taskType = "reviewAddStf24wFlag") then "Stf 24 flag has been added to the case. Please review the appeal"
+                  else if (taskAttributes != null and taskAttributes.taskType != null and taskAttributes.taskType = "reviewRemoveStf24wFlag" or taskType != null and taskType = "reviewRemoveStf24wFlag") then "Stf 24 flag has been removed from the case. Please review the appeal"
                   else "" </text>
         </outputEntry>
         <outputEntry id="LiteralExpression_184xf0n">
@@ -798,7 +800,7 @@
 "cmrListed",
 "cmrUpdated","detainedCmrListed",
 "detainedCmrUpdated",
-"reviewAriaRemissionApplication","reviewASRemission", "reviewLARemission", "reviewHOWaiverRemission", "reviewAuthorityRemission", "reviewHWFRemission", "reviewECRRemission", "detainedReviewASRemission", "detainedReviewLARemission", "detainedReviewHOWaiverRemission", "detainedReviewAuthorityRemission", "detainedReviewHWFRemission", "detainedReviewECRRemission"</text>
+"reviewAriaRemissionApplication","reviewASRemission", "reviewLARemission", "reviewHOWaiverRemission", "reviewAuthorityRemission", "reviewHWFRemission", "reviewECRRemission", "detainedReviewASRemission", "detainedReviewLARemission", "detainedReviewHOWaiverRemission", "detainedReviewAuthorityRemission", "detainedReviewHWFRemission", "detainedReviewECRRemission","reviewAddStf24wFlag","reviewRemoveStf24wFlag"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1kbin0j">
           <text>"dueDateIntervalDays"</text>

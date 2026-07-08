@@ -23410,6 +23410,232 @@
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_01isdd1">
+        <inputEntry id="UnaryTests_0yvimtc">
+          <text>"addStatutoryTimeframe24Weeks"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1loe9bp">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xiwd10">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ab98yc">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1gxgcs9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0inms5d">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19ykksq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0sv8wh6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07jsq7b">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ahe2hc">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03awbwg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0dyoqtq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0oq5oqf">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ej2n0j">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1p49wgd">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jzyvef">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0fanfwd">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qepnay">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_11bih2i">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ipmpsa">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1apqxe1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0r15261">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0adplwn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0a1b0s6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1arw240">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1scs9b3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1tt7r2o">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vikybs">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1svbjc4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wcz652">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_00slrcr">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_11nt5t2">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ynuy5a">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1munck4">
+          <text>"reviewAddStf24wFlag"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0eh87t6">
+          <text>"Review appeal - 24 week STF added"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_02os7sv">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0jjd7up">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0t7nr7r">
+        <inputEntry id="UnaryTests_18zyv7c">
+          <text>"removeStatutoryTimeframe24Weeks"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_170l6ib">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1sd638y">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0i42vvi">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1avd9ji">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1w8mkz3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0feylp1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rmal7j">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1htnj05">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12jk555">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0k0hai7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1kcgzdm">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jpjhxk">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0bzp3n7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zvmzeo">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0swiawd">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10or1iv">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fe7y3j">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1msg1wp">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1gbkn7b">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fujcr4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1uuvnjv">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04083s4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09wztql">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1lk0r0k">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1nn7rj3">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ex4ryz">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16gb7hg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10qorxd">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_13bdoil">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1mt4n1h">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14efzq4">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04ta76r">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1c1qien">
+          <text>"reviewRemoveStf24wFlag"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_17vajne">
+          <text>"Review appeal - 24 week STF removed"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_07wmen6">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1el7c7a">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>

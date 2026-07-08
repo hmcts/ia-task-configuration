@@ -793,6 +793,22 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
                     ctscAdminPriorityOne,
                     ctscTeamLeaderPriorityOne
                 )
+            ),
+            Arguments.of(
+                "reviewAddStf24wFlag",
+                List.of(
+                    caseManager,
+                    tribunalCaseWorkerPriorityOne,
+                    seniorCaseWorkerPriorityOne
+                )
+            ),
+            Arguments.of(
+                "reviewRemoveStf24wFlag",
+                List.of(
+                    caseManager,
+                    tribunalCaseWorkerPriorityOne,
+                    seniorCaseWorkerPriorityOne
+                )
             )
         );
     }
