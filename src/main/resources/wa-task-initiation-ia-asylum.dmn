@@ -310,7 +310,7 @@ then additionalData.Data.appealReviewOutcome
 else null</text>
         </inputExpression>
         <inputValues id="UnaryTests_1mxva1t">
-          <text>"decisionMaintained","decisionWithdrawn"</text>
+          <text></text>
         </inputValues>
       </input>
       <output id="Output_1" label="Task Id" name="taskId" typeRef="string" biodi:width="368" />
