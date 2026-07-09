@@ -2608,20 +2608,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         );
     }
 
-
-    private static Arguments getWithLocalDateTimeMapArgumentOf(String eventId,
-                                                               String postEventState,
-                                                               Map<String, LocalDateTime> localDateTimeMap,
-                                                               Map<String, Object> additionalData,
-                                                               Map<String, Object> expectation) {
-        return Arguments.of(
-            eventId,
-            postEventState,
-            additionalData != null ? merge(localDateTimeMap, mapAdditionalData(additionalData)) : localDateTimeMap,
-            expectation != null ? List.of(expectation) : emptyList()
-        );
-    }
-
     private static Arguments getArgumentOf(String eventId,
                                            String postEventState,
                                            Map<String, Object> additionalData,
@@ -2635,6 +2621,18 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         );
     }
 
+    private static Arguments getWithLocalDateTimeMapArgumentOf(String eventId,
+                                                               String postEventState,
+                                                               Map<String, LocalDateTime> localDateTimeMap,
+                                                               Map<String, Object> additionalData,
+                                                               Map<String, Object> expectation) {
+        return Arguments.of(
+            eventId,
+            postEventState,
+            additionalData != null ? merge(localDateTimeMap, mapAdditionalData(additionalData)) : localDateTimeMap,
+            expectation != null ? List.of(expectation) : emptyList()
+        );
+    }
 
     @ParameterizedTest(name = "event id: {0} post event state: {1} additional data: {2}")
     @MethodSource("scenarioProvider")

@@ -785,7 +785,9 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         return inputVariables;
     }
 
-    private static Arguments argumentsCreator(String taskType, List<Map<String, Object>> expectedResult, boolean is24w) {
+    private static Arguments argumentsCreator(String taskType,
+                                              List<Map<String, Object>> expectedResult,
+                                              boolean is24w) {
         return Arguments.of(taskType, expectedResult, getInputVariables(taskType, is24w));
     }
 
@@ -1049,7 +1051,9 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
 
     @ParameterizedTest
     @MethodSource({"workTypeScenarioProvider", "workType24wScenarioProvider"})
-    void when_taskId_then_return_workType(String taskType, List<Map<String, String>> expected, VariableMap inputVariables) {
+    void when_taskId_then_return_workType(String taskType,
+                                          List<Map<String, String>> expected,
+                                          VariableMap inputVariables) {
         DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
 
         List<Map<String, Object>> workTypeResultList = dmnDecisionTableResult.getResultList().stream()
