@@ -1360,7 +1360,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             getExpectedValue(rules, "roleCategory", scenario.expectedRoleCategory());
         }
 
-        getExpectedValue(rules, "description", scenario.expectedDescriptionValue());
+        getExpectedValueWithReconfigure(rules, "description", scenario.expectedDescriptionValue(), "true");
         getExpectedValue(rules, "dueDateOrigin", scenario.expectedDueDateOrigin());
         getExpectedValue(rules, "dueDateNonWorkingCalendar", DEFAULT_CALENDAR + ", " + EXTRA_TEST_CALENDAR);
         if (!Objects.isNull(scenario.expectedDueDateIntervalDays())) {
