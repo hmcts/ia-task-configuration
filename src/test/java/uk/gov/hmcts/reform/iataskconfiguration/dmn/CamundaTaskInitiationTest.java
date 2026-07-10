@@ -1748,6 +1748,32 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 getTaskMap("detainedHearingException", "Detained - Hearing Exception", "caseProgression")
             ),
             getArgumentOf(
+                "cmrReListing",
+                null,
+                Map.of(
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("cmrUpdated", "Update CMR notification", "caseProgression")
+            ),
+            getArgumentOf(
+                "cmrReListing",
+                null,
+                Map.of(
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("detainedCmrUpdated", "Detained - Update CMR notification", "caseProgression")
+            ),
+            getArgumentOf(
+                "cmrListing",
+                null,
+                Map.of(
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("detainedCmrListed", "Detained - Send CMR notification", "caseProgression")
+            ),
+            getArgumentOf(
                 "restoreStateFromAdjourn",
                 null,
                 Map.of(
@@ -1793,6 +1819,31 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     "isNotificationTurnedOff", "false"
                 ),
                 getTaskMap("detainedListTheCase", "Detained - List the case", "caseProgression")
+            ),
+            getArgumentOf(
+                "cmrListing",
+                null,
+                Map.of(
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("cmrListed", "Send CMR notification", "caseProgression")
+            ),
+            getArgumentOf(
+                "cmrListing",
+                null,
+                Map.of(
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("detainedCmrListed", "Detained - Send CMR notification", "caseProgression")
+            ),
+            getArgumentOf(
+                "cmrListing",
+                null,
+                Map.of(
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("cmrListed", "Send CMR notification", "caseProgression")
             ),
             getArgumentOf(
                 "decisionAndReasonsStarted",
@@ -3230,7 +3281,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertEquals(33, logic.getInputs().size());
         assertEquals(4, logic.getOutputs().size());
-        assertEquals(199, logic.getRules().size());
+        assertEquals(203, logic.getRules().size());
     }
 
     @ParameterizedTest
