@@ -170,7 +170,7 @@ dependencies {
   testImplementation "com.fasterxml.jackson.core:jackson-core"
   testImplementation "com.fasterxml.jackson.core:jackson-annotations"
 
-  testImplementation group: 'org.pitest', name: 'pitest', version: '1.25.5'
+  testImplementation group: 'org.pitest', name: 'pitest', version: '1.25.7'
   testImplementation group: 'info.solidsoft.gradle.pitest', name: 'gradle-pitest-plugin', version: '1.15.0'
 
   testImplementation group: 'org.camunda.bpm.dmn', name: 'camunda-engine-dmn', version: '7.24.0'
