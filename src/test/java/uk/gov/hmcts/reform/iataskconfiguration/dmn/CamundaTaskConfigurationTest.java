@@ -1428,10 +1428,10 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),,,",
         "processApplicationChangeHearingType,"
             + "[Decide an application](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/decideAnApplication),,,",
-        "reviewTheAppeal,[Request respondent evidence]"
-            + "(/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentEvidence),,,",
-        "detainedReviewTheAppeal,[Request respondent evidence]"
-            + "(/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestRespondentEvidence),,,",
+        "reviewTheAppeal,[Complete case review]"
+            + "(/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/completeCaseReview),,,",
+        "detainedReviewTheAppeal,[Complete case review]"
+            + "(/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/completeCaseReview),,,",
         "decideOnTimeExtension,"
             + "[Change the direction due date](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/changeDirectionDueDate),,,",
         "reviewRespondentEvidence,"
