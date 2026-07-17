@@ -2,8 +2,6 @@ package uk.gov.hmcts.reform.iataskconfiguration.dmn;
 
 import org.camunda.bpm.dmn.engine.DmnDecisionTableResult;
 import org.camunda.bpm.dmn.engine.impl.DmnDecisionTableImpl;
-import org.camunda.bpm.engine.variable.VariableMap;
-import org.camunda.bpm.engine.variable.impl.VariableMapImpl;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Named;
 import org.junit.jupiter.api.Test;
@@ -12,6 +10,7 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import uk.gov.hmcts.reform.iataskconfiguration.DmnDecisionTableBaseUnitTest;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
@@ -28,870 +27,591 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
     }
 
     static Stream<Arguments> scenarioProvider() {
-        List<Map<String, String>> taskTypes = List.<Map<String, String>>of(
-            Map.of(
-                "taskTypeId",
+        List<Map<String, String>> taskTypes = List.of(
+            getMap(
                 "processApplicationAdjourn",
-                "taskTypeName",
                 "Process Adjourn Application"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedProcessApplicationAdjourn",
-                "taskTypeName",
                 "Detained - Process Adjourn Application"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "processApplicationExpedite",
-                "taskTypeName",
                 "Process Expedite Application"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedProcessApplicationExpedite",
-                "taskTypeName",
                 "Detained - Process Expedite Application"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "processApplicationTimeExtension",
-                "taskTypeName",
                 "Process Time Extension Application"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedProcessApplicationTimeExtension",
-                "taskTypeName",
                 "Detained - Process Time Extension Application"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "processApplicationTransfer",
-                "taskTypeName",
                 "Process Transfer Application"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedProcessApplicationTransfer",
-                "taskTypeName",
                 "Detained - Process Transfer Application"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "processApplicationWithdraw",
-                "taskTypeName",
                 "Process Withdraw Application"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedProcessApplicationWithdraw",
-                "taskTypeName",
                 "Detained - Process Withdraw Application"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "processApplicationUpdateHearingRequirements",
-                "taskTypeName",
                 "Process Update Hearing Requirements Application"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedProcessApplicationUpdateHearingRequirements",
-                "taskTypeName",
                 "Detained - Process Update Hearing Requirements Application"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "processApplicationUpdateAppealDetails",
-                "taskTypeName",
                 "Process Update Appeal Details Application"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedProcessApplicationUpdateAppealDetails",
-                "taskTypeName",
                 "Detained - Process Update Appeal Details Application"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "processApplicationReinstateAnEndedAppeal",
-                "taskTypeName",
                 "Process Reinstate An Ended Appeal Application"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedFollowUpNoticeOfChange",
-                "taskTypeName",
                 "Detained - Follow-up Notice of Change"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedFollowUpNonStandardDirection",
-                "taskTypeName",
                 "Detained - Follow-up non-standard direction"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedFollowUpOverdueRespondentReview",
-                "taskTypeName",
                 "Detained - Follow-up overdue respondent review"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedFollowUpOverdueCaseBuilding",
-                "taskTypeName",
                 "Detained - Follow-up overdue case building"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedFollowUpExtendedDirection",
-                "taskTypeName",
                 "Detained - Follow-up extended direction"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedFollowUpOverdueRespondentEvidence",
-                "taskTypeName",
                 "Detained - Follow-up overdue respondent evidence"
             ),
 
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedProcessApplicationReinstateAnEndedAppeal",
-                "taskTypeName",
                 "Detained - Process Reinstate An Ended Appeal Application"
 
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "processApplicationOther",
-                "taskTypeName",
                 "Process Other Application"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedProcessApplicationOther",
-                "taskTypeName",
                 "Detained - Process Other Application"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "processApplicationLink/UnlinkAppeals",
-                "taskTypeName",
                 "Process Link/Unlink Appeals Application"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedProcessApplicationLink/UnlinkAppeals",
-                "taskTypeName",
                 "Detained - Process Link/Unlink Appeals Application"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "processApplicationToReviewDecision",
-                "taskTypeName",
                 "Process Application to Review Decision"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedProcessApplicationToReviewDecision",
-                "taskTypeName",
                 "Detained - Process Application to Review Decision"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "editListing",
-                "taskTypeName",
                 "Edit Listing"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedEditListing",
-                "taskTypeName",
                 "Detained - Edit Listing"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "reviewTheAppeal",
-                "taskTypeName",
                 "Review the appeal"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "reviewRespondentEvidence",
-                "taskTypeName",
                 "Review Respondent Evidence"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "reviewAdditionalEvidence",
-                "taskTypeName",
                 "Review additional evidence"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "reviewAdditionalHomeOfficeEvidence",
-                "taskTypeName",
                 "Review additional Home Office evidence"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "reviewAppealSkeletonArgument",
-                "taskTypeName",
                 "Review Appeal Skeleton Argument"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedReviewAppealSkeletonArgument",
-                "taskTypeName",
                 "Detained - Review Appeal Skeleton Argument"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "reviewReasonsForAppeal",
-                "taskTypeName",
                 "Review Reasons For Appeal"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "reviewClarifyingQuestionsAnswers",
-                "taskTypeName",
                 "Review Clarifying Questions Answers"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "reviewRespondentResponse",
-                "taskTypeName",
                 "Review Respondent Response"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedReviewRespondentResponse",
-                "taskTypeName",
                 "Detained - Review Respondent Response"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "caseSummaryHearingBundleStartDecision",
-                "taskTypeName",
                 "Create Hearing Bundle"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "reviewHearingRequirements",
-                "taskTypeName",
                 "Review hearing requirements"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "followUpOverdueRespondentEvidence",
-                "taskTypeName",
                 "Follow-up overdue respondent evidence"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "followUpExtendedDirection",
-                "taskTypeName",
                 "Follow-up extended direction"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "followUpOverdueCaseBuilding",
-                "taskTypeName",
                 "Follow-up overdue case building"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "followUpOverdueReasonsForAppeal",
-                "taskTypeName",
                 "Follow-up overdue reasons for appeal"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "followUpOverdueClarifyingAnswers",
-                "taskTypeName",
                 "Follow-up overdue clarifying answers"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "followUpOverdueRespondentReview",
-                "taskTypeName",
                 "Follow-up overdue respondent review"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "followUpOverdueHearingRequirements",
-                "taskTypeName",
                 "Follow-up overdue hearing requirements"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedFollowUpOverdueHearingRequirements",
-                "taskTypeName",
                 "Detained - Follow-up overdue hearing requirements"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "followUpNonStandardDirection",
-                "taskTypeName",
                 "Follow-up non-standard direction"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "followUpNoticeOfChange",
-                "taskTypeName",
                 "Follow-up Notice of Change"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "reviewAddendumEvidence",
-                "taskTypeName",
                 "Review Addendum Evidence"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedReviewAddendumEvidence",
-                "taskTypeName",
                 "Detained - Review Addendum Evidence"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "sendDecisionsAndReasons",
-                "taskTypeName",
                 "Send decisions and reasons"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedSendDecisionsAndReasons",
-                "taskTypeName",
                 "Detained - Send decisions and reasons"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "prepareDecisionsAndReasons",
-                "taskTypeName",
                 "Prepare decisions and reasons"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "uploadHearingRecording",
-                "taskTypeName",
                 "Upload hearing recording"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "postHearingAttendeesDurationAndRecording",
-                "taskTypeName",
                 "Post hearing – attendees, duration and recording"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedPostHearingAttendeesDurationAndRecording",
-                "taskTypeName",
                 "Detained - Post hearing – attendees, duration and recording"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "decideAnFTPA",
-                "taskTypeName",
                 "Decide an FTPA"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedDecideAnFTPA",
-                "taskTypeName",
                 "Detained - Decide an FTPA"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "allocateHearingJudge",
-                "taskTypeName",
                 "Allocate Hearing Judge"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedAllocateHearingJudge",
-                "taskTypeName",
                 "Detained - Allocate Hearing Judge"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "reviewRemissionApplication",
-                "taskTypeName",
                 "Review Remission Application"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedReviewRemissionApplication",
-                "taskTypeName",
                 "Detained - Review Remission Application"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "assignAFTPAJudge",
-                "taskTypeName",
                 "Assign a FTPA Judge"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedAssignAFTPAJudge",
-                "taskTypeName",
                 "Detained - Assign a FTPA Judge"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "listTheCase",
-                "taskTypeName",
                 "List the case"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedListTheCase",
-                "taskTypeName",
                 "Detained - List the case"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "sendPaymentRequest",
-                "taskTypeName",
                 "Send Payment Request"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "markAsPaid",
-                "taskTypeName",
                 "Mark as Paid"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "reviewRemittedAppeal",
-                "taskTypeName",
                 "Review remitted appeal"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedReviewRemittedAppeal",
-                "taskTypeName",
                 "Detained - Review remitted appeal"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "reviewSetAsideDecisionApplication",
-                "taskTypeName",
                 "Review set aside decision application"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "followUpSetAsideDecision",
-                "taskTypeName",
                 "Follow up set aside decision"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedFollowUpSetAsideDecision",
-                "taskTypeName",
                 "Detained - Follow Up Set Aside Decision"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "reviewAppealSetAsideUnderRule35",
-                "taskTypeName",
                 "Review appeal set aside under rule 35"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedReviewAppealSetAsideUnderRule35",
-                "taskTypeName",
                 "Detained - Review appeal set aside under rule 35"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "reviewAppealSetAsideUnderRule32",
-                "taskTypeName",
                 "Review appeal set aside under rule 32"
-            ), Map.of(
-                "taskTypeId",
+            ), getMap(
                 "detainedReviewAppealSetAsideUnderRule32",
-                "taskTypeName",
                 "Detained - Review appeal set aside under rule 32"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "hearingException",
-                "taskTypeName",
                 "Hearing exception"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedHearingException",
-                "taskTypeName",
                 "Detained - Hearing exception"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "cmrListed",
-                "taskTypeName",
                 "Send CMR notification"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedCmrListed",
-                "taskTypeName",
                 "Detained - Send CMR notification"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "cmrUpdated",
-                "taskTypeName",
                 "Update CMR notification"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedCmrUpdated",
-                "taskTypeName",
                 "Detained - Update CMR notification"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "reviewInterpreters",
-                "taskTypeName",
                 "Review interpreter booking"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedReviewInterpreters",
-                "taskTypeName",
                 "Detained - Review interpreter booking"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "relistCase",
-                "taskTypeName",
                 "Relist The Case"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedRelistCase",
-                "taskTypeName",
                 "Detained - Relist The Case"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "processApplicationChangeHearingType",
-                "taskTypeName",
                 "Process Change Hearing Type Application"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "processFeeRefund",
-                "taskTypeName",
                 "Process fee refund"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedProcessFeeRefund",
-                "taskTypeName",
                 "Detained - Process Fee Refund"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "reviewMigratedCase",
-                "taskTypeName",
                 "Review migrated case"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedReviewMigratedCase",
-                "taskTypeName",
                 "Detained - Review migrated case"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "reviewAriaRemissionApplication",
-                "taskTypeName",
                 "Review Remission Application"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "reviewDraftAppeal",
-                "taskTypeName",
                 "Review draft appeal"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "DetainedReviewDraftAppeal",
-                "taskTypeName",
                 "Detained - Review Draft Appeal"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "printAndSendHoBundle",
-                "taskTypeName",
                 "Print and send HO bundle and appeal reasons form"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedPrintAndSendHoBundle",
-                "taskTypeName",
                 "Detained - Print and send HO bundle and appeal reasons form"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "printAndSendHoResponse",
-                "taskTypeName",
                 "Print and send HO response"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "printAndSendHearingRequirements",
-                "taskTypeName",
                 "Print and send hearing requirements form"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedPrintAndSendHearingRequirements",
-                "taskTypeName",
                 "Detained - Print and send hearing requirements form"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "printAndSendHearingBundle",
-                "taskTypeName",
                 "Print and send hearing bundle"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedPrintAndSendHearingBundle",
-                "taskTypeName",
                 "Detained - Print and send hearing bundle"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "printAndSendDecisionCorrectedRule31",
-                "taskTypeName",
                 "Print and send decision corrected under rule 31"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedPrintAndSendDecisionCorrectedRule31",
-                "taskTypeName",
                 "Detained - Print and send decision corrected under rule 31"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "printAndSendDecisionCorrectedRule32",
-                "taskTypeName",
                 "Print and send decision corrected under rule 32"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedPrintAndSendDecisionCorrectedRule32",
-                "taskTypeName",
                 "Detained - Print and send decision corrected under rule 32"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "printAndSendHoApplication",
-                "taskTypeName",
                 "Print and send HO application"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedPrintAndSendHoApplication",
-                "taskTypeName",
                 "Detained - Print and send HO application"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "printAndSendHoEvidence",
-                "taskTypeName",
                 "Print and send new HO evidence"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedPrintAndSendHoEvidence",
-                "taskTypeName",
                 "Detained - Print and send new HO evidence"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "printAndSendAppealDecision",
-                "taskTypeName",
                 "Print and send appeal decision and FTPA form"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedPrintAndSendAppealDecision",
-                "taskTypeName",
                 "Detained - Print and send appeal decision and FTPA form"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "printAndSendFTPADecision",
-                "taskTypeName",
                 "Print and send FTPA decision"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedPrintAndSendFTPADecision",
-                "taskTypeName",
                 "Detained - Print and send FTPA decision"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "printAndSendReheardHearingRequirements",
-                "taskTypeName",
                 "Print and send reheard appeal hearing requirements form"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedPrintAndSendReheardHearingRequirements",
-                "taskTypeName",
                 "Detained - Print and send reheard appeal hearing requirements form"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedListCmr",
-                "taskTypeName",
                 "Detained - List CMR"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "postHearingAttendeesDurationAndRecording",
-                "taskTypeName",
                 "Post hearing – attendees, duration and recording"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedPostHearingAttendeesDurationAndRecording",
-                "taskTypeName",
                 "Detained - Post hearing – attendees, duration and recording"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedReviewHearingRequirements",
-                "taskTypeName",
                 "Detained - Review hearing requirements"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedProcessApplicationChangeHearingType",
-                "taskTypeName",
                 "Detained - Process Change Hearing Type Application"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "reviewASRemission",
-                "taskTypeName",
                 "Review AS remission"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "reviewLARemission",
-                "taskTypeName",
                 "Review LA remission"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "reviewHOWaiverRemission",
-                "taskTypeName",
                 "Review HO Waiver remission"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "reviewAuthorityRemission",
-                "taskTypeName",
                 "Review Authority remission"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "reviewHWFRemission",
-                "taskTypeName",
                 "Review HWF remission"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "reviewECRRemission",
-                "taskTypeName",
                 "Review ECR remission"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedReviewASRemission",
-                "taskTypeName",
                 "Detained - Review AS remission"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedReviewLARemission",
-                "taskTypeName",
                 "Detained - Review LA remission"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedReviewHOWaiverRemission",
-                "taskTypeName",
                 "Detained - Review HO Waiver remission"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedReviewAuthorityRemission",
-                "taskTypeName",
                 "Detained - Review Authority remission"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedReviewHWFRemission",
-                "taskTypeName",
                 "Detained - Review HWF remission"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedReviewECRRemission",
-                "taskTypeName",
                 "Detained - Review ECR remission"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedReviewTheAppeal",
-                "taskTypeName",
                 "Detained - Review the appeal"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedReviewRespondentEvidence",
-                "taskTypeName",
                 "Detained - Review Respondent Evidence"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedReviewAdditionalEvidence",
-                "taskTypeName",
                 "Detained - Review additional evidence"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedReviewAdditionalHomeOfficeEvidence",
-                "taskTypeName",
                 "Detained - Review additional Home Office evidence"
             ),
-            Map.of(
-                "taskTypeId",
+            getMap(
                 "detainedHearingException",
-                "taskTypeName",
                 "Detained - Hearing exception"
             )
         );
         return taskTypes.stream().map(taskType -> Arguments.of(Named.of(taskType.get("taskTypeId"), taskType)));
     }
 
+    private static Map<String, String> getMap(String taskTypeId, String taskTypeName) {
+        return Map.of(
+            "taskTypeId", taskTypeId,
+            "taskTypeName", taskTypeName
+        );
+    }
+
     @ParameterizedTest
     @MethodSource("scenarioProvider")
     void should_evaluate_dmn_return_all_task_type_fields(Map<String, Object> expectedTaskType) {
-
-        VariableMap inputVariables = new VariableMapImpl();
-        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(Collections.emptyMap());
         List<Map<String, Object>> resultList = dmnDecisionTableResult.getResultList();
         assertTrue(resultList.contains(expectedTaskType));
     }

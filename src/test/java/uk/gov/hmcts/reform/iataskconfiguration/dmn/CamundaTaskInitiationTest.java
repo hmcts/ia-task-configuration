@@ -47,5520 +47,2611 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             "delayUntilIntervalDays", "0",
             "delayUntil", directionDueDate
         );
-        Map<String,Object> delayForDaysExcludingBankHolidays = Map.of(
+        Map<String, Object> delayForDaysExcludingBankHolidays = Map.of(
             "delayUntilIntervalDays", "14",
             "delayUntilNonWorkingCalendar", "https://www.gov.uk/bank-holidays/england-and-wales.json",
             "delayUntilOrigin", LocalDate.now(),
             "delayUntilNonWorkingDaysOfWeek", "SATURDAY,SUNDAY"
         );
 
-        Map<String,Object> delayFor12Days = Map.of(
+        Map<String, Object> delayFor12Days = Map.of(
             "delayUntilIntervalDays", "12",
             "delayUntilOrigin", LocalDate.now()
         );
 
-        Map<String,Object> delayForDays = Map.of(
+        Map<String, Object> delayForDays = Map.of(
             "delayUntilIntervalDays", "14",
             "delayUntilOrigin", LocalDate.now()
         );
 
+        Map<String, Object> delayUntilHearing = Map.of(
+            "delayUntil", hearingDate,
+            "delayUntilIntervalDays", "0"
+        );
+
         return Stream.of(
-            Arguments.of(
+            getArgumentOf(
                 "applyForFTPAAppellant",
                 null,
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isNotificationTurnedOff": false
-                                         }
-                                      }\
-                                      """),
-                List.of(
-                    Map.of(
-                        "taskId", "decideAnFTPA",
-                        "name", "Decide an FTPA",
-
-                        "processCategories", "caseProgression"
-                    ),
-                    Map.of(
-                        "taskId", "assignAFTPAJudge",
-                        "name", "Assign a FTPA Judge",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-                Arguments.of(
-                        "applyForFTPAAppellant",
-                        null,
-                        mapAdditionalData("""
-                                              {
-                                                 "Data":{
-                                                    "appellantInDetention":"\
-                                              true\
-                                              ",
-                                                    "isNotificationTurnedOff": false
-                                                 }
-                                              }\
-                                              """),
-                        List.of(
-                                Map.of(
-                                        "taskId", "detainedDecideAnFTPA",
-                                        "name", "Detained - Decide an FTPA",
-
-                                        "processCategories", "caseProgression"
-                                ),
-                                Map.of(
-                                        "taskId", "detainedAssignAFTPAJudge",
-                                        "name", "Detained - Assign a FTPA Judge",
-
-                                        "processCategories", "caseProgression"
-                                )
-                        )
+                Map.of(
+                    "isNotificationTurnedOff", false
                 ),
-            Arguments.of(
+                getTaskMap("decideAnFTPA", "Decide an FTPA", "caseProgression"),
+                getTaskMap("assignAFTPAJudge", "Assign a FTPA Judge", "caseProgression")
+            ),
+            getArgumentOf(
                 "applyForFTPAAppellant",
                 null,
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "appellantInDetention":"\
-                                      true\
-                                      ",
-                                            "isNotificationTurnedOff": false
-                                         }
-                                      }\
-                                      """),
-                List.of(
-                    Map.of(
-                        "taskId", "detainedDecideAnFTPA",
-                        "name", "Detained - Decide an FTPA",
-
-                        "processCategories", "caseProgression"
-                    ),
-                    Map.of(
-                        "taskId", "detainedAssignAFTPAJudge",
-                        "name", "Detained - Assign a FTPA Judge",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", false
+                ),
+                getTaskMap("detainedDecideAnFTPA", "Detained - Decide an FTPA", "caseProgression"),
+                getTaskMap("detainedAssignAFTPAJudge", "Detained - Assign a FTPA Judge", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
+                "applyForFTPAAppellant",
+                null,
+                Map.of(
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", false
+                ),
+                getTaskMap("detainedDecideAnFTPA", "Detained - Decide an FTPA", "caseProgression"),
+                getTaskMap("detainedAssignAFTPAJudge", "Detained - Assign a FTPA Judge", "caseProgression")
+            ),
+            getArgumentOf(
                 "applyForFTPARespondent",
                 null,
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isNotificationTurnedOff": false
-                                         }
-                                      }\
-                                      """),
-                List.of(
-                    Map.of(
-                        "taskId", "decideAnFTPA",
-                        "name", "Decide an FTPA",
-
-                        "processCategories", "caseProgression"
-                    ),
-                    Map.of(
-                        "taskId", "assignAFTPAJudge",
-                        "name", "Assign a FTPA Judge",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-                Arguments.of(
-                        "applyForFTPARespondent",
-                        null,
-                        mapAdditionalData("""
-                                              {
-                                                 "Data":{
-                                                    "appellantInDetention":"\
-                                              true\
-                                              ",
-                                                    "isNotificationTurnedOff": false
-                                                 }
-                                              }\
-                                              """),
-                        List.of(
-                                Map.of(
-                                        "taskId", "detainedDecideAnFTPA",
-                                        "name", "Detained - Decide an FTPA",
-
-                                        "processCategories", "caseProgression"
-                                ),
-                                Map.of(
-                                        "taskId", "detainedAssignAFTPAJudge",
-                                        "name", "Detained - Assign a FTPA Judge",
-
-                                        "processCategories", "caseProgression"
-                                )
-                        )
+                Map.of(
+                    "isNotificationTurnedOff", false
                 ),
-            Arguments.of(
+                getTaskMap("decideAnFTPA", "Decide an FTPA", "caseProgression"),
+                getTaskMap("assignAFTPAJudge", "Assign a FTPA Judge", "caseProgression")
+            ),
+            getArgumentOf(
                 "applyForFTPARespondent",
                 null,
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "appellantInDetention":"\
-                                      true\
-                                      ",
-                                            "isNotificationTurnedOff": false
-                                         }
-                                      }\
-                                      """),
-                List.of(
-                    Map.of(
-                        "taskId", "detainedDecideAnFTPA",
-                        "name", "Detained - Decide an FTPA",
-
-                        "processCategories", "caseProgression"
-                    ),
-                    Map.of(
-                        "taskId", "detainedAssignAFTPAJudge",
-                        "name", "Detained - Assign a FTPA Judge",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", false
+                ),
+                getTaskMap("detainedDecideAnFTPA", "Detained - Decide an FTPA", "caseProgression"),
+                getTaskMap("detainedAssignAFTPAJudge", "Detained - Assign a FTPA Judge", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
+                "applyForFTPARespondent",
+                null,
+                Map.of(
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", false
+                ),
+                getTaskMap("detainedDecideAnFTPA", "Detained - Decide an FTPA", "caseProgression"),
+                getTaskMap("detainedAssignAFTPAJudge", "Detained - Assign a FTPA Judge", "caseProgression")
+            ),
+            getArgumentOf(
                 "submitAppeal",
                 "appealSubmitted",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "appealType":"\
-                                      revocationOfProtection\
-                                      ",
-                                            "isNotificationTurnedOff": false
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewTheAppeal",
-                        "name", "Review the appeal",
-
-
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "appealType", "revocationOfProtection",
+                    "isNotificationTurnedOff", false
+                ),
+                getTaskMap("reviewTheAppeal", "Review the appeal", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "submitAppeal",
                 "appealSubmitted",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "appealType":"\
-                                      deprivation\
-                                      ",
-                                            "isNotificationTurnedOff": false
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewTheAppeal",
-                        "name", "Review the appeal",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "appealType", "deprivation",
+                    "isNotificationTurnedOff", false
+                ),
+                getTaskMap("reviewTheAppeal", "Review the appeal", "caseProgression")
             ),
-            Arguments.of(
-                    "submitAppeal",
-                    "pendingPayment",
-                    mapAdditionalData("""
-                            {
-                               "Data":{
-                                  "appealType":"\
-                            euSettlementScheme\
-                            ",
-                                  "remissionClaim":"\
-                            asylumSupport\
-                            ",
-                                  "appellantInDetention":"\
-                            false\
-                            ",
-                                  "isNotificationTurnedOff": false
-                               }\
-                            }\
-                            """),
-                    singletonList(
-                            Map.of(
-                                    "taskId", "reviewASRemission",
-                                    "name", "Review AS remission",
-
-                                    "processCategories", "caseProgression"
-                            )
-                    )
-            ),
-            Arguments.of(
+            getArgumentOf(
                 "submitAppeal",
                 "pendingPayment",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "journeyType":"\
-                                      aip\
-                                      ",
-                                            "appealType":"\
-                                      euSettlementScheme\
-                                      ",
-                                            "remissionOption":"\
-                                      asylumSupportFromHo\
-                                      ",
-                                            "appellantInDetention":"\
-                                      false\
-                                      ",
-                                            "isNotificationTurnedOff": false
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewASRemission",
-                        "name", "Review AS remission",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-                Arguments.of(
-                        "submitAppeal",
-                        "pendingPayment",
-                        mapAdditionalData("""
-                                {
-                                   "Data":{
-                                      "appealType":"\
-                                euSettlementScheme\
-                                ",
-                                      "remissionClaim":"\
-                                asylumSupport\
-                                ",
-                                      "appellantInDetention":"\
-                                true\
-                                ",
-                                      "isNotificationTurnedOff": false
-                                   }\
-                                }\
-                                """),
-                        singletonList(
-                                Map.of(
-                                        "taskId", "detainedReviewASRemission",
-                                        "name", "Detained - Review AS remission",
-
-                                        "processCategories", "caseProgression"
-                                )
-                        )
+                Map.of(
+                    "appealType", "euSettlementScheme",
+                    "remissionClaim", "asylumSupport",
+                    "appellantInDetention", "false",
+                    "isNotificationTurnedOff", false
                 ),
-                Arguments.of(
-                        "submitAppeal",
-                        "pendingPayment",
-                        mapAdditionalData("""
-                                {
-                                   "Data":{
-                                      "journeyType":"\
-                                aip\
-                                ",
-                                      "appealType":"\
-                                euSettlementScheme\
-                                ",
-                                      "remissionOption":"\
-                                asylumSupportFromHo\
-                                ",
-                                      "appellantInDetention":"\
-                                true\
-                                ",
-                                      "isNotificationTurnedOff": false
-                                   }\
-                                }\
-                                """),
-                        singletonList(
-                                Map.of(
-                                        "taskId", "detainedReviewASRemission",
-                                        "name", "Detained - Review AS remission",
-
-                                        "processCategories", "caseProgression"
-                                )
-                        )
-                ),
-            Arguments.of(
-                    "submitAppeal",
-                    "pendingPayment",
-                    mapAdditionalData("""
-                            {
-                               "Data":{
-                                  "appealType":"\
-                            euSettlementScheme\
-                            ",
-                                  "remissionClaim":"\
-                            homeOfficeWaiver\
-                            ",
-                                  "appellantInDetention":"\
-                            false\
-                            ",
-                                  "isNotificationTurnedOff": false
-                               }\
-                            }\
-                            """),
-                    singletonList(
-                            Map.of(
-                                    "taskId", "reviewHOWaiverRemission",
-                                    "name", "Review HO Waiver remission",
-
-                                    "processCategories", "caseProgression"
-                            )
-                    )
+                getTaskMap("reviewASRemission", "Review AS remission", "caseProgression")
             ),
-                Arguments.of(
-                        "submitAppeal",
-                        "pendingPayment",
-                        mapAdditionalData("""
-                                {
-                                   "Data":{
-                                      "appealType":"\
-                                euSettlementScheme\
-                                ",
-                                      "remissionClaim":"\
-                                homeOfficeWaiver\
-                                ",
-                                      "appellantInDetention":"\
-                                true\
-                                ",
-                                      "isNotificationTurnedOff": false
-                                   }\
-                                }\
-                                """),
-                        singletonList(
-                                Map.of(
-                                        "taskId", "detainedReviewHOWaiverRemission",
-                                        "name", "Detained - Review HO Waiver remission",
-
-                                        "processCategories", "caseProgression"
-                                )
-                        )
-                ),
-            Arguments.of(
-                    "submitAppeal",
-                    "pendingPayment",
-                    mapAdditionalData("""
-                            {
-                               "Data":{
-                                  "appealType":"\
-                            euSettlementScheme\
-                            ",
-                                  "remissionType":"\
-                            exceptionalCircumstancesRemission\
-                            ",
-                                  "appellantInDetention":"\
-                            false\
-                            ",
-                                  "isNotificationTurnedOff": false
-                               }\
-                            }\
-                            """),
-                    singletonList(
-                            Map.of(
-                                    "taskId", "reviewECRRemission",
-                                    "name", "Review ECR remission",
-
-                                    "processCategories", "caseProgression"
-                            )
-                    )
-            ),
-                Arguments.of(
-                        "submitAppeal",
-                        "pendingPayment",
-                        mapAdditionalData("""
-                                {
-                                   "Data":{
-                                      "appealType":"\
-                                euSettlementScheme\
-                                ",
-                                      "remissionType":"\
-                                exceptionalCircumstancesRemission\
-                                ",
-                                      "appellantInDetention":"\
-                                true\
-                                ",
-                                      "isNotificationTurnedOff":"\
-                                false\
-                                "
-                                   }\
-                                }\
-                                """),
-                        singletonList(
-                                Map.of(
-                                        "taskId", "detainedReviewECRRemission",
-                                        "name", "Detained - Review ECR remission",
-
-                                        "processCategories", "caseProgression"
-                                )
-                        )
-                ),
-            Arguments.of(
-                    "submitAppeal",
-                    "pendingPayment",
-                    mapAdditionalData("""
-                            {
-                               "Data":{
-                                  "appealType":"\
-                            euSettlementScheme\
-                            ",
-                                  "remissionType":"\
-                            helpWithFees\
-                            ",
-                                  "appellantInDetention":"\
-                            false\
-                            ",
-                                  "isNotificationTurnedOff":"\
-                            false\
-                            "
-                               }\
-                            }\
-                            """),
-                    singletonList(
-                            Map.of(
-                                    "taskId", "reviewHWFRemission",
-                                    "name", "Review HWF remission",
-
-                                    "processCategories", "caseProgression"
-                            )
-                    )
-            ),
-            Arguments.of(
+            getArgumentOf(
                 "submitAppeal",
                 "pendingPayment",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "journeyType":"\
-                                      aip\
-                                      ",
-                                            "appealType":"\
-                                      protection\
-                                      ",
-                                            "remissionOption":"\
-                                      feeWaiverFromHo\
-                                      ",
-                                            "isNotificationTurnedOff": false
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewHOWaiverRemission",
-                        "name", "Review HO Waiver remission",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-                Arguments.of(
-                        "submitAppeal",
-                        "pendingPayment",
-                        mapAdditionalData("""
-                                {
-                                   "Data":{
-                                      "journeyType":"\
-                                aip\
-                                ",
-                                      "appealType":"\
-                                protection\
-                                ",
-                                      "remissionOption":"\
-                                feeWaiverFromHo\
-                                ",
-                                      "appellantInDetention":"\
-                                true\
-                                ",
-                                      "isNotificationTurnedOff": false
-                                   }\
-                                }\
-                                """),
-                        singletonList(
-                                Map.of(
-                                        "taskId", "detainedReviewHOWaiverRemission",
-                                        "name", "Detained - Review HO Waiver remission",
-
-                                        "processCategories", "caseProgression"
-                                )
-                        )
+                Map.of(
+                    "journeyType", "aip",
+                    "appealType", "euSettlementScheme",
+                    "remissionOption", "asylumSupportFromHo",
+                    "appellantInDetention", "false",
+                    "isNotificationTurnedOff", false
                 ),
-            Arguments.of(
+                getTaskMap("reviewASRemission", "Review AS remission", "caseProgression")
+            ),
+            getArgumentOf(
                 "submitAppeal",
                 "pendingPayment",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "journeyType":"\
-                                      aip\
-                                      ",
-                                            "appealType":"\
-                                      refusalOfHumanRights\
-                                      ",
-                                            "remissionOption":"\
-                                      under18GetSupportFromLocalAuthority\
-                                      ",
-                                            "isNotificationTurnedOff": false
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewAuthorityRemission",
-                        "name", "Review Authority remission",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
-            ),
-                Arguments.of(
-                        "submitAppeal",
-                        "pendingPayment",
-                        mapAdditionalData("""
-                                {
-                                   "Data":{
-                                      "journeyType":"\
-                                aip\
-                                ",
-                                      "appealType":"\
-                                refusalOfHumanRights\
-                                ",
-                                      "remissionOption":"\
-                                under18GetSupportFromLocalAuthority\
-                                ",
-                                      "appellantInDetention":"\
-                                true\
-                                ",
-                                      "isNotificationTurnedOff": false
-                                   }\
-                                }\
-                                """),
-                        singletonList(
-                                Map.of(
-                                        "taskId", "detainedReviewAuthorityRemission",
-                                        "name", "Detained - Review Authority remission",
-
-                                        "processCategories", "caseProgression"
-                                )
-                        )
+                Map.of(
+                    "appealType", "euSettlementScheme",
+                    "remissionClaim", "asylumSupport",
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", false
                 ),
-            Arguments.of(
-                    "submitAppeal",
-                    "pendingPayment",
-                    mapAdditionalData("""
-                            {
-                               "Data":{
-                                  "journeyType":"\
-                            aip\
-                            ",
-                                  "appealType":"\
-                            refusalOfHumanRights\
-                            ",
-                                  "remissionOption":"\
-                            iWantToGetHelpWithFees\
-                            ",
-                                  "isNotificationTurnedOff": false
-                               }\
-                            }\
-                            """),
-                    singletonList(
-                            Map.of(
-                                    "taskId", "reviewHWFRemission",
-                                    "name", "Review HWF remission",
-
-                                    "processCategories", "caseProgression"
-                            )
-                    )
+                getTaskMap("detainedReviewASRemission", "Detained - Review AS remission", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "submitAppeal",
                 "pendingPayment",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "journeyType":"\
-                                      aip\
-                                      ",
-                                            "appealType":"\
-                                      refusalOfHumanRights\
-                                      ",
-                                            "remissionOption":"\
-                                      noneOfTheseStatements\
-                                      ",
-                                            "helpWithFeesOption":"\
-                                      alreadyApplied\
-                                      ",
-                                            "appellantInDetention":"\
-                                      false\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewHWFRemission",
-                        "name", "Review HWF remission",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "journeyType", "aip",
+                    "appealType", "euSettlementScheme",
+                    "remissionOption", "asylumSupportFromHo",
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", false
+                ),
+                getTaskMap("detainedReviewASRemission", "Detained - Review AS remission", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "submitAppeal",
                 "pendingPayment",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "journeyType":"\
-                                      aip\
-                                      ",
-                                            "appealType":"\
-                                      refusalOfHumanRights\
-                                      ",
-                                            "remissionOption":"\
-                                      noneOfTheseStatements\
-                                      ",
-                                            "helpWithFeesOption":"\
-                                      wantToApply\
-                                      ",
-                                            "appellantInDetention":"\
-                                      true\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "detainedReviewHWFRemission",
-                        "name", "Detained - Review HWF remission",
-
-                        "processCategories", "caseProgression"
-                    )
+                Map.of(
+                    "appealType", "euSettlementScheme",
+                    "remissionClaim", "homeOfficeWaiver",
+                    "appellantInDetention", "false",
+                    "isNotificationTurnedOff", false
+                ),
+                getTaskMap("reviewHOWaiverRemission", "Review HO Waiver remission", "caseProgression")
+            ),
+            getArgumentOf(
+                "submitAppeal",
+                "pendingPayment",
+                Map.of(
+                    "appealType", "euSettlementScheme",
+                    "remissionClaim", "homeOfficeWaiver",
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", false
+                ),
+                getTaskMap(
+                    "detainedReviewHOWaiverRemission",
+                    "Detained - Review HO Waiver remission",
+                    "caseProgression"
                 )
             ),
-                Arguments.of(
-                        "submitAppeal",
-                        "pendingPayment",
-                        mapAdditionalData("""
-                                {
-                                   "Data":{
-                                      "appealType":"\
-                                refusalOfHumanRights\
-                                ",
-                                      "remissionClaim":"\
-                                legalAid\
-                                ",
-                                      "isNotificationTurnedOff":"\
-                                false\
-                                "
-                                   }\
-                                }\
-                                """),
-                        singletonList(
-                                Map.of(
-                                        "taskId", "reviewLARemission",
-                                        "name", "Review LA remission",
-
-                                        "processCategories", "caseProgression"
-                                )
-                        )
+            getArgumentOf(
+                "submitAppeal",
+                "pendingPayment",
+                Map.of(
+                    "appealType", "euSettlementScheme",
+                    "remissionType", "exceptionalCircumstancesRemission",
+                    "appellantInDetention", "false",
+                    "isNotificationTurnedOff", false
                 ),
-                Arguments.of(
-                        "submitAppeal",
-                        "pendingPayment",
-                        mapAdditionalData("""
-                                {
-                                   "Data":{
-                                      "appealType":"\
-                                refusalOfHumanRights\
-                                ",
-                                      "remissionClaim":"\
-                                legalAid\
-                                ",
-                                      "appellantInDetention":"\
-                                true\
-                                ",
-                                      "isNotificationTurnedOff":"\
-                                false\
-                                "
-                                   }\
-                                }\
-                                """),
-                        singletonList(
-                                Map.of(
-                                        "taskId", "detainedReviewLARemission",
-                                        "name", "Detained - Review LA remission",
-
-                                        "processCategories", "caseProgression"
-                                )
-                        )
-                ),
-            Arguments.of(
-                    "submitAppeal",
-                    "pendingPayment",
-                    mapAdditionalData("""
-                            {
-                               "Data":{
-                                  "appealType":"\
-                            refusalOfHumanRights\
-                            ",
-                                  "remissionClaim":"\
-                            section17\
-                            ",
-                                  "isNotificationTurnedOff":"\
-                            false\
-                            "
-                               }\
-                            }\
-                            """),
-                    singletonList(
-                            Map.of(
-                                    "taskId", "reviewAuthorityRemission",
-                                    "name", "Review Authority remission",
-
-                                    "processCategories", "caseProgression"
-                            )
-                    )
+                getTaskMap("reviewECRRemission", "Review ECR remission", "caseProgression")
             ),
-                Arguments.of(
-                        "submitAppeal",
-                        "pendingPayment",
-                        mapAdditionalData("""
-                                {
-                                   "Data":{
-                                      "appealType":"\
-                                refusalOfHumanRights\
-                                ",
-                                      "remissionClaim":"\
-                                section17\
-                                ",
-                                      "appellantInDetention":"\
-                                true\
-                                ",
-                                      "isNotificationTurnedOff":"\
-                                false\
-                                "
-                                   }\
-                                }\
-                                """),
-                        singletonList(
-                                Map.of(
-                                        "taskId", "detainedReviewAuthorityRemission",
-                                        "name", "Detained - Review Authority remission",
-
-                                        "processCategories", "caseProgression"
-                                )
-                        )
+            getArgumentOf(
+                "submitAppeal",
+                "pendingPayment",
+                Map.of(
+                    "appealType", "euSettlementScheme",
+                    "remissionType", "exceptionalCircumstancesRemission",
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
                 ),
-            Arguments.of(
+                getTaskMap("detainedReviewECRRemission", "Detained - Review ECR remission", "caseProgression")
+            ),
+            getArgumentOf(
+                "submitAppeal",
+                "pendingPayment",
+                Map.of(
+                    "appealType", "euSettlementScheme",
+                    "remissionType", "helpWithFees",
+                    "appellantInDetention", "false",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewHWFRemission", "Review HWF remission", "caseProgression")
+            ),
+            getArgumentOf(
+                "submitAppeal",
+                "pendingPayment",
+                Map.of(
+                    "journeyType", "aip",
+                    "appealType", "protection",
+                    "remissionOption", "feeWaiverFromHo",
+                    "isNotificationTurnedOff", false
+                ),
+                getTaskMap("reviewHOWaiverRemission", "Review HO Waiver remission", "caseProgression")
+            ),
+            getArgumentOf(
+                "submitAppeal",
+                "pendingPayment",
+                Map.of(
+                    "journeyType", "aip",
+                    "appealType", "protection",
+                    "remissionOption", "feeWaiverFromHo",
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", false
+                ),
+                getTaskMap(
+                    "detainedReviewHOWaiverRemission",
+                    "Detained - Review HO Waiver remission",
+                    "caseProgression"
+                )
+            ),
+            getArgumentOf(
+                "submitAppeal",
+                "pendingPayment",
+                Map.of(
+                    "journeyType", "aip",
+                    "appealType", "refusalOfHumanRights",
+                    "remissionOption", "under18GetSupportFromLocalAuthority",
+                    "isNotificationTurnedOff", false
+                ),
+                getTaskMap("reviewAuthorityRemission", "Review Authority remission", "caseProgression")
+            ),
+            getArgumentOf(
+                "submitAppeal",
+                "pendingPayment",
+                Map.of(
+                    "journeyType", "aip",
+                    "appealType", "refusalOfHumanRights",
+                    "remissionOption", "under18GetSupportFromLocalAuthority",
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", false
+                ),
+                getTaskMap(
+                    "detainedReviewAuthorityRemission",
+                    "Detained - Review Authority remission",
+                    "caseProgression"
+                )
+            ),
+            getArgumentOf(
+                "submitAppeal",
+                "pendingPayment",
+                Map.of(
+                    "journeyType", "aip",
+                    "appealType", "refusalOfHumanRights",
+                    "remissionOption", "iWantToGetHelpWithFees",
+                    "isNotificationTurnedOff", false
+                ),
+                getTaskMap("reviewHWFRemission", "Review HWF remission", "caseProgression")
+            ),
+            getArgumentOf(
+                "submitAppeal",
+                "pendingPayment",
+                Map.of(
+                    "journeyType", "aip",
+                    "appealType", "refusalOfHumanRights",
+                    "remissionOption", "noneOfTheseStatements",
+                    "helpWithFeesOption",
+                    "alreadyApplied",
+                    "appellantInDetention", "false",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewHWFRemission", "Review HWF remission", "caseProgression")
+            ),
+            getArgumentOf(
+                "submitAppeal",
+                "pendingPayment",
+                Map.of(
+                    "journeyType", "aip",
+                    "appealType", "refusalOfHumanRights",
+                    "remissionOption", "noneOfTheseStatements",
+                    "helpWithFeesOption",
+                    "wantToApply",
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("detainedReviewHWFRemission", "Detained - Review HWF remission", "caseProgression")
+            ),
+            getArgumentOf(
+                "submitAppeal",
+                "pendingPayment",
+                Map.of(
+                    "appealType", "refusalOfHumanRights",
+                    "remissionClaim", "legalAid",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewLARemission", "Review LA remission", "caseProgression")
+            ),
+            getArgumentOf(
+                "submitAppeal",
+                "pendingPayment",
+                Map.of(
+                    "appealType", "refusalOfHumanRights",
+                    "remissionClaim", "legalAid",
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("detainedReviewLARemission", "Detained - Review LA remission", "caseProgression")
+            ),
+            getArgumentOf(
+                "submitAppeal",
+                "pendingPayment",
+                Map.of(
+                    "appealType", "refusalOfHumanRights",
+                    "remissionClaim", "section17",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewAuthorityRemission", "Review Authority remission", "caseProgression")
+            ),
+            getArgumentOf(
+                "submitAppeal",
+                "pendingPayment",
+                Map.of(
+                    "appealType", "refusalOfHumanRights",
+                    "remissionClaim", "section17",
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap(
+                    "detainedReviewAuthorityRemission",
+                    "Detained - Review Authority remission",
+                    "caseProgression"
+                )
+            ),
+            getArgumentOf(
                 "paymentAppeal",
                 "appealSubmitted",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "appealType":"\
-                                      refusalOfHumanRights\
-                                      ",
-                                            "journeyType":"\
-                                      aip\
-                                      ",
-                                            "paymentStatus":"\
-                                      Paid\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewTheAppeal",
-                        "name", "Review the appeal",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "appealType", "refusalOfHumanRights",
+                    "journeyType", "aip",
+                    "paymentStatus",
+                    "Paid",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewTheAppeal", "Review the appeal", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "paymentAppeal",
                 "appealSubmitted",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "appealType":"\
-                                      refusalOfEu\
-                                      ",
-                                            "journeyType":"\
-                                      aip\
-                                      ",
-                                            "paymentStatus":"\
-                                      Paid\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewTheAppeal",
-                        "name", "Review the appeal",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "appealType", "refusalOfEu",
+                    "journeyType", "aip",
+                    "paymentStatus",
+                    "Paid",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewTheAppeal", "Review the appeal", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "paymentAppeal",
                 "appealSubmitted",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "appealType":"\
-                                      euSettlementScheme\
-                                      ",
-                                            "journeyType":"\
-                                      aip\
-                                      ",
-                                            "paymentStatus":"\
-                                      Paid\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewTheAppeal",
-                        "name", "Review the appeal",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "appealType", "euSettlementScheme",
+                    "journeyType", "aip",
+                    "paymentStatus",
+                    "Paid",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewTheAppeal", "Review the appeal", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "payAndSubmitAppeal",
                 "appealSubmitted",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "appealType":"\
-                                      protection\
-                                      ",
-                                            "journeyType":"\
-                                      aip\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewTheAppeal",
-                        "name", "Review the appeal",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "appealType", "protection",
+                    "journeyType", "aip",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewTheAppeal", "Review the appeal", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "payAndSubmitAppeal",
                 "appealSubmitted",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "appealType":"\
-                                      protection\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewTheAppeal",
-                        "name", "Review the appeal",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "appealType", "protection",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewTheAppeal", "Review the appeal", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "payAndSubmitAppeal",
                 "appealSubmitted",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "appealType":"\
-                                      refusalOfHumanRights\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewTheAppeal",
-                        "name", "Review the appeal",
-
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "appealType", "refusalOfHumanRights",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewTheAppeal", "Review the appeal", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "payAndSubmitAppeal",
                 "appealSubmitted",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "appealType":"\
-                                      refusalOfEu\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewTheAppeal",
-                        "name", "Review the appeal",
-
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "appealType", "refusalOfEu",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewTheAppeal", "Review the appeal", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "markAppealPaid",
                 "appealSubmitted",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "appealType":"\
-                                      refusalOfHumanRights\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewTheAppeal",
-                        "name", "Review the appeal",
-
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "appealType", "refusalOfHumanRights",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewTheAppeal", "Review the appeal", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "markAppealPaid",
                 "appealSubmitted",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "appealType":"\
-                                      refusalOfEu\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewTheAppeal",
-                        "name", "Review the appeal",
-
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "appealType", "refusalOfEu",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewTheAppeal", "Review the appeal", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "moveToSubmitted",
                 "appealSubmitted",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "appealType":"\
-                                      refusalOfHumanRights\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewTheAppeal",
-                        "name", "Review the appeal",
-
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "appealType", "refusalOfHumanRights",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewTheAppeal", "Review the appeal", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "moveToSubmitted",
                 "appealSubmitted",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "appealType":"\
-                                      refusalOfEu\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewTheAppeal",
-                        "name", "Review the appeal",
-
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "appealType", "refusalOfEu",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewTheAppeal", "Review the appeal", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "payForAppeal",
                 "appealSubmitted",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "appealType":"\
-                                      refusalOfHumanRights\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewTheAppeal",
-                        "name", "Review the appeal",
-
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "appealType", "refusalOfHumanRights",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewTheAppeal", "Review the appeal", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "payForAppeal",
                 "appealSubmitted",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "appealType":"\
-                                      refusalOfEu\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewTheAppeal",
-                        "name", "Review the appeal",
-
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "appealType", "refusalOfEu",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewTheAppeal", "Review the appeal", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "recordRemissionDecision",
                 "appealSubmitted",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "appealType":"\
-                                      refusalOfHumanRights\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewTheAppeal",
-                        "name", "Review the appeal",
-
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "appealType", "refusalOfHumanRights",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewTheAppeal", "Review the appeal", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "recordRemissionDecision",
                 "appealSubmitted",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "appealType":"\
-                                      refusalOfEu\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewTheAppeal",
-                        "name", "Review the appeal",
-
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "appealType", "refusalOfEu",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewTheAppeal", "Review the appeal", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "updatePaymentStatus",
                 "appealSubmitted",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "appealType":"\
-                                      refusalOfEu\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewTheAppeal",
-                        "name", "Review the appeal",
-
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "appealType", "refusalOfEu",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewTheAppeal", "Review the appeal", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "updatePaymentStatus",
                 "appealSubmitted",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "appealType":"\
-                                      refusalOfHumanRights\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewTheAppeal",
-                        "name", "Review the appeal",
-
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "appealType", "refusalOfHumanRights",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewTheAppeal", "Review the appeal", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "submitTimeExtension",
                 "null",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "decideOnTimeExtension",
-                        "name", "Decide On Time Extension",
-
-
-                        "processCategories", "timeExtension"
-                    )
-                )
+                Map.of(
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("decideOnTimeExtension", "Decide On Time Extension", "timeExtension")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "uploadHomeOfficeBundle",
                 "awaitingRespondentEvidence",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewRespondentEvidence",
-                        "name", "Review Respondent Evidence",
-
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewRespondentEvidence", "Review Respondent Evidence", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "uploadAdditionalEvidence",
                 "caseUnderReview",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                List.of(
-                    Map.of(
-                        "taskId", "reviewAdditionalEvidence",
-                        "name", "Review additional evidence",
-
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewAdditionalEvidence", "Review additional evidence", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "uploadAdditionalEvidence",
                 "respondentReview",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                List.of(
-                    Map.of(
-                        "taskId", "reviewAdditionalEvidence",
-                        "name", "Review additional evidence",
-
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewAdditionalEvidence", "Review additional evidence", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "uploadAdditionalEvidence",
                 "submitHearingRequirements",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                List.of(
-                    Map.of(
-                        "taskId", "reviewAdditionalEvidence",
-                        "name", "Review additional evidence",
-
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewAdditionalEvidence", "Review additional evidence", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "uploadAdditionalEvidence",
                 "listing",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                List.of(
-                    Map.of(
-                        "taskId", "reviewAdditionalEvidence",
-                        "name", "Review additional evidence",
-
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewAdditionalEvidence", "Review additional evidence", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "uploadAdditionalEvidence",
                 "prepareForHearing",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewAdditionalEvidence",
-                        "name", "Review additional evidence",
-
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewAdditionalEvidence", "Review additional evidence", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "uploadAdditionalEvidenceHomeOffice",
                 "caseBuilding",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewAdditionalHomeOfficeEvidence",
-                        "name", "Review additional Home Office evidence",
-
-                        "processCategories", "caseProgression"
-                    )
+                Map.of(
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap(
+                    "reviewAdditionalHomeOfficeEvidence",
+                    "Review additional Home Office evidence",
+                    "caseProgression"
                 )
             ),
-            Arguments.of(
+            getArgumentOf(
                 "uploadAdditionalEvidenceHomeOffice",
                 "caseBuilding",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewAdditionalHomeOfficeEvidence",
-                        "name", "Review additional Home Office evidence",
-
-                        "processCategories", "caseProgression"
-                    )
+                Map.of(
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap(
+                    "reviewAdditionalHomeOfficeEvidence",
+                    "Review additional Home Office evidence",
+                    "caseProgression"
                 )
             ),
-            Arguments.of(
+            getArgumentOf(
                 "uploadAdditionalEvidenceHomeOffice",
                 "caseUnderReview",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewAdditionalHomeOfficeEvidence",
-                        "name", "Review additional Home Office evidence",
-
-                        "processCategories", "caseProgression"
-                    )
+                Map.of(
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap(
+                    "reviewAdditionalHomeOfficeEvidence",
+                    "Review additional Home Office evidence",
+                    "caseProgression"
                 )
             ),
-            Arguments.of(
+            getArgumentOf(
                 "uploadAdditionalEvidenceHomeOffice",
                 "respondentReview",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewAdditionalHomeOfficeEvidence",
-                        "name", "Review additional Home Office evidence",
-
-
-                        "processCategories", "caseProgression"
-                    )
+                Map.of(
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap(
+                    "reviewAdditionalHomeOfficeEvidence",
+                    "Review additional Home Office evidence",
+                    "caseProgression"
                 )
             ),
-            Arguments.of(
+            getArgumentOf(
                 "uploadAdditionalEvidenceHomeOffice",
                 "submitHearingRequirements",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewAdditionalHomeOfficeEvidence",
-                        "name", "Review additional Home Office evidence",
-
-
-                        "processCategories", "caseProgression"
-                    )
+                Map.of(
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap(
+                    "reviewAdditionalHomeOfficeEvidence",
+                    "Review additional Home Office evidence",
+                    "caseProgression"
                 )
             ),
-            Arguments.of(
+            getArgumentOf(
                 "uploadAdditionalEvidenceHomeOffice",
                 "listing",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewAdditionalHomeOfficeEvidence",
-                        "name", "Review additional Home Office evidence",
-
-
-                        "processCategories", "caseProgression"
-                    )
+                Map.of(
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap(
+                    "reviewAdditionalHomeOfficeEvidence",
+                    "Review additional Home Office evidence",
+                    "caseProgression"
                 )
             ),
-            Arguments.of(
+            getArgumentOf(
                 "submitCase",
                 "caseUnderReview",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewAppealSkeletonArgument",
-                        "name", "Review Appeal Skeleton Argument",
-
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewAppealSkeletonArgument", "Review Appeal Skeleton Argument", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "submitCase",
                 "caseUnderReview",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "appellantInDetention":"\
-                                      true\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "detainedReviewAppealSkeletonArgument",
-                        "name", "Detained - Review Appeal Skeleton Argument",
-
-
-                        "processCategories", "caseProgression"
-                    )
+                Map.of(
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap(
+                    "detainedReviewAppealSkeletonArgument",
+                    "Detained - Review Appeal Skeleton Argument",
+                    "caseProgression"
                 )
             ),
-            Arguments.of(
+            getArgumentOf(
                 "buildCase",
                 "caseUnderReview",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewAppealSkeletonArgument",
-                        "name", "Review Appeal Skeleton Argument",
-
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewAppealSkeletonArgument", "Review Appeal Skeleton Argument", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "buildCase",
                 "caseUnderReview",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "appellantInDetention":"\
-                                      true\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "detainedReviewAppealSkeletonArgument",
-                        "name", "Detained - Review Appeal Skeleton Argument",
-
-
-                        "processCategories", "caseProgression"
-                    )
+                Map.of(
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap(
+                    "detainedReviewAppealSkeletonArgument",
+                    "Detained - Review Appeal Skeleton Argument",
+                    "caseProgression"
                 )
             ),
-            Arguments.of(
+            getArgumentOf(
                 "submitReasonsForAppeal",
                 "reasonsForAppealSubmitted",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewReasonsForAppeal",
-                        "name", "Review Reasons For Appeal",
-
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewReasonsForAppeal", "Review Reasons For Appeal", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "submitClarifyingQuestionAnswers",
                 "clarifyingQuestionsAnswersSubmitted",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewClarifyingQuestionsAnswers",
-                        "name", "Review Clarifying Questions Answers",
-
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewClarifyingQuestionsAnswers", "Review Clarifying Questions Answers", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "submitCmaRequirements",
                 "cmaRequirementsSubmitted",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewCmaRequirements",
-                        "name", "Review Cma Requirements",
-
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewCmaRequirements", "Review Cma Requirements", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "listCma",
                 "cmaListed",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "attendCma",
-                        "name", "Attend Cma",
-
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("attendCma", "Attend Cma", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "uploadHomeOfficeAppealResponse",
                 "respondentReview",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewRespondentResponse",
-                        "name", "Review Respondent Response",
-
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewRespondentResponse", "Review Respondent Response", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "uploadHomeOfficeAppealResponse",
                 "respondentReview",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "appellantInDetention":"\
-                                      true\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "detainedReviewRespondentResponse",
-                        "name", "Detained - Review Respondent Response",
-
-
-                        "processCategories", "caseProgression"
-                    )
+                Map.of(
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap(
+                    "detainedReviewRespondentResponse",
+                    "Detained - Review Respondent Response",
+                    "caseProgression"
                 )
             ),
-            Arguments.of(
+            getArgumentOf(
                 "listCase",
                 "prepareForHearing",
-                mapAdditionalData(" {\n"
-                                      + "        \"Data\" : {\n"
-                                      + "         \"listCaseHearingDate\" : \"" + hearingDate + "\","
-                                      + "      \"appellantInDetention\":\"" + "false" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "        }\n"
-                                      + "      }"),
-                List.of(
-                    Map.of(
-                        "taskId", "caseSummaryHearingBundleStartDecision",
-                        "name", "Create Hearing Bundle",
-                        "processCategories", "caseProgression"
-                    ),
-                    Map.of(
-                        "taskId", "postHearingAttendeesDurationAndRecording",
-                        "name", "Post hearing – attendees, duration and recording",
-                        "processCategories", "caseProgression",
-                        "delayUntil", Map.of(
-                            "delayUntil", hearingDate,
-                            "delayUntilIntervalDays","0"
-                        )
-                    )
+                Map.of(
+                    "listCaseHearingDate",
+                    hearingDate,
+                    "appellantInDetention", "false",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("caseSummaryHearingBundleStartDecision", "Create Hearing Bundle", "caseProgression"),
+                getTaskMap(
+                    "postHearingAttendeesDurationAndRecording",
+                    "Post hearing – attendees, duration and recording",
+                    "caseProgression",
+                    delayUntilHearing
                 )
             ),
-            Arguments.of(
+            getArgumentOf(
                 "listCase",
                 "prepareForHearing",
-                mapAdditionalData(" {\n"
-                                      + "        \"Data\" : {\n"
-                                      + "         \"listCaseHearingDate\" : \"" + hearingDate + "\","
-                                      + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "        }\n"
-                                      + "      }"),
-                List.of(
-                    Map.of(
-                        "taskId", "detainedCaseSummaryHearingBundleStartDecision",
-                        "name", "Detained - Create Hearing Bundle",
-                        "processCategories", "caseProgression"
-                    ),
-                    Map.of(
-                        "taskId", "detainedPostHearingAttendeesDurationAndRecording",
-                        "name", "Detained - Post hearing – attendees, duration and recording",
-                        "processCategories", "caseProgression",
-                        "delayUntil", Map.of(
-                            "delayUntil", hearingDate,
-                            "delayUntilIntervalDays","0"
-                        )
-                    )
+                Map.of(
+                    "listCaseHearingDate",
+                    hearingDate,
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap(
+                    "detainedCaseSummaryHearingBundleStartDecision",
+                    "Detained - Create Hearing Bundle",
+                    "caseProgression"
+                ),
+                getTaskMap(
+                    "detainedPostHearingAttendeesDurationAndRecording",
+                    "Detained - Post hearing – attendees, duration and recording",
+                    "caseProgression",
+                    delayUntilHearing
                 )
             ),
-            Arguments.of(
+            getArgumentOf(
                 "listCase",
                 "prepareForHearing",
-                mapAdditionalData(" {\n"
-                                      + "        \"Data\" : {\n"
-                                      + "         \"listCaseHearingDate\" : \"" + hearingDate + "\","
-                                      + "      \"appellantInDetention\":\"" + "true" + "\",\n"
-                                      + "      \"isNotificationTurnedOff\":\"" + "false" + "\"\n"
-                                      + "        }\n"
-                                      + "      }"),
-                List.of(
-                    Map.of(
-                        "taskId", "detainedCaseSummaryHearingBundleStartDecision",
-                        "name", "Detained - Create Hearing Bundle",
-                        "processCategories", "caseProgression"
-                    ),
-                    Map.of(
-                        "taskId", "detainedPostHearingAttendeesDurationAndRecording",
-                        "name", "Detained - Post hearing – attendees, duration and recording",
-                        "processCategories", "caseProgression",
-                        "delayUntil", Map.of(
-                            "delayUntil", hearingDate,
-                            "delayUntilIntervalDays","0"
-                        )
-                    )
+                Map.of(
+                    "listCaseHearingDate",
+                    hearingDate,
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap(
+                    "detainedCaseSummaryHearingBundleStartDecision",
+                    "Detained - Create Hearing Bundle",
+                    "caseProgression"
+                ),
+                getTaskMap(
+                    "detainedPostHearingAttendeesDurationAndRecording",
+                    "Detained - Post hearing – attendees, duration and recording",
+                    "caseProgression",
+                    delayUntilHearing
                 )
             ),
-            Arguments.of(
+            getArgumentOf(
                 "draftHearingRequirements",
                 "listing",
-                mapAdditionalData("""
-                                       {
-                                              "Data" : {
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                              }
-                                            }\
-                                      """),
-                List.of(
-                    Map.of(
-                        "taskId", "reviewHearingRequirements",
-                        "name", "Review hearing requirements",
-
-
-                        "processCategories", "caseProgression"
-                    )
+                Map.of(
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewHearingRequirements", "Review hearing requirements", "caseProgression")
+            ),
+            getArgumentOf(
+                "draftHearingRequirements",
+                "listing",
+                Map.of(
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap(
+                    "detainedReviewHearingRequirements",
+                    "Detained - Review hearing requirements",
+                    "caseProgression"
                 )
             ),
-            Arguments.of(
-                    "draftHearingRequirements",
-                    "listing",
-                    mapAdditionalData("""
-                                           {
-                                                  "Data" : {
-                                                "appellantInDetention":"\
-                                          true\
-                                          ",
-                                                "isNotificationTurnedOff":"\
-                                          false\
-                                          "
-                                                  }
-                                                }\
-                                          """),
-                    List.of(
-                            Map.of(
-                                    "taskId", "detainedReviewHearingRequirements",
-                                    "name", "Detained - Review hearing requirements",
-
-
-                                    "processCategories", "caseProgression"
-                            )
-                    )
-                ),
-            Arguments.of(
+            getWithLocalDateTimeMapArgumentOf(
                 "requestRespondentEvidence",
                 "awaitingRespondentEvidence",
-                merge(
-                    variablesDirectionDueDate,
-                    mapAdditionalData("""
-                                           {
-                                                  "Data" : {
-                                                "appellantInDetention":"\
-                                          true\
-                                          ",
-                                                "isNotificationTurnedOff":"\
-                                          false\
-                                          "
-                                                  }
-                                                }\
-                                          """)
+                variablesDirectionDueDate,
+                Map.of(
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
                 ),
-                singletonList(
-                    Map.of(
-                        "taskId", "detainedFollowUpOverdueRespondentEvidence",
-                        "name", "Detained - Follow-up overdue respondent evidence",
-                        "processCategories", "followUpOverdue",
-                        "delayUntil", delayUntilDirectionDue
-                    )
+                getTaskMap(
+                    "detainedFollowUpOverdueRespondentEvidence",
+                    "Detained - Follow-up overdue respondent evidence",
+                    "followUpOverdue",
+                    delayUntilDirectionDue
                 )
             ),
-            Arguments.of(
+            getWithLocalDateTimeMapArgumentOf(
                 "requestRespondentEvidence",
                 "awaitingRespondentEvidence",
-                merge(
-                    variablesDirectionDueDate,
-                    mapAdditionalData("""
-                                           {
-                                                  "Data" : {
-                                                "isNotificationTurnedOff":"\
-                                          false\
-                                          "
-                                                  }
-                                                }\
-                                          """)
+                variablesDirectionDueDate,
+                Map.of(
+                    "isNotificationTurnedOff", "false"
                 ),
-                singletonList(
-                    Map.of(
-                        "taskId", "followUpOverdueRespondentEvidence",
-                        "name", "Follow-up overdue respondent evidence",
-                        "processCategories", "followUpOverdue",
-                        "delayUntil", delayUntilDirectionDue
-                    )
+                getTaskMap(
+                    "followUpOverdueRespondentEvidence",
+                    "Follow-up overdue respondent evidence",
+                    "followUpOverdue",
+                    delayUntilDirectionDue
                 )
             ),
-            Arguments.of(
+            getWithLocalDateTimeMapArgumentOf(
                 "changeDirectionDueDate",
                 null,
-                merge(
-                    variablesDirectionDueDate,
-                    mapAdditionalData("""
-                                           {
-                                                  "Data" : {
-                                                "isNotificationTurnedOff":"\
-                                          false\
-                                          "
-                                                  }
-                                                }\
-                                          """)
+                variablesDirectionDueDate,
+                Map.of(
+                    "isNotificationTurnedOff", "false"
                 ),
-                singletonList(
-                    Map.of(
-                        "taskId", "followUpExtendedDirection",
-                        "name", "Follow-up extended direction",
-                        "processCategories", "caseProgression",
-                        "delayUntil", delayUntilDirectionDue
-                    )
+                getTaskMap(
+                    "followUpExtendedDirection",
+                    "Follow-up extended direction",
+                    "caseProgression",
+                    delayUntilDirectionDue
                 )
             ),
-            Arguments.of(
+            getWithLocalDateTimeMapArgumentOf(
                 "changeDirectionDueDate",
                 null,
-                merge(
-                    variablesDirectionDueDate,
-                    mapAdditionalData("""
-                                           {
-                                                  "Data" : {
-                                                "appellantInDetention":"\
-                                          true\
-                                          ",
-                                                "isNotificationTurnedOff":"\
-                                          false\
-                                          "
-                                                  }
-                                                }\
-                                          """)
+                variablesDirectionDueDate,
+                Map.of(
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
                 ),
-                singletonList(
-                    Map.of(
-                        "taskId", "detainedFollowUpExtendedDirection",
-                        "name", "Detained - Follow-up extended direction",
-                        "processCategories", "caseProgression",
-                        "delayUntil", delayUntilDirectionDue
-                    )
+                getTaskMap(
+                    "detainedFollowUpExtendedDirection",
+                    "Detained - Follow-up extended direction",
+                    "caseProgression",
+                    delayUntilDirectionDue
                 )
             ),
-            Arguments.of(
+            getWithLocalDateTimeMapArgumentOf(
                 "requestCaseBuilding",
                 "caseBuilding",
-                merge(
-                    variablesDirectionDueDate,
-                    mapAdditionalData("""
-                                           {
-                                                  "Data" : {
-                                                "isNotificationTurnedOff":"\
-                                          false\
-                                          "
-                                                  }
-                                                }\
-                                          """)
+                variablesDirectionDueDate,
+                Map.of(
+                    "isNotificationTurnedOff", "false"
                 ),
-                singletonList(
-                    Map.of(
-                        "taskId", "followUpOverdueCaseBuilding",
-                        "name", "Follow-up overdue case building",
-                        "processCategories", "followUpOverdue",
-                        "delayUntil", delayUntilDirectionDue
-                    )
+                getTaskMap(
+                    "followUpOverdueCaseBuilding",
+                    "Follow-up overdue case building",
+                    "followUpOverdue",
+                    delayUntilDirectionDue
                 )
             ),
-            Arguments.of(
+            getWithLocalDateTimeMapArgumentOf(
                 "requestCaseBuilding",
                 "caseBuilding",
-                merge(
-                    variablesDirectionDueDate,
-                    mapAdditionalData("""
-                                           {
-                                                  "Data" : {
-                                                "appellantInDetention":"\
-                                          true\
-                                          ",
-                                                "isNotificationTurnedOff":"\
-                                          false\
-                                          "
-                                                  }
-                                                }\
-                                          """)
+                variablesDirectionDueDate,
+                Map.of(
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
                 ),
-                singletonList(
-                    Map.of(
-                        "taskId", "detainedFollowUpOverdueCaseBuilding",
-                        "name", "Detained - Follow-up overdue case building",
-                        "processCategories", "followUpOverdue",
-                        "delayUntil", delayUntilDirectionDue
-                    )
+                getTaskMap(
+                    "detainedFollowUpOverdueCaseBuilding",
+                    "Detained - Follow-up overdue case building",
+                    "followUpOverdue",
+                    delayUntilDirectionDue
                 )
             ),
-            Arguments.of(
+            getWithLocalDateTimeMapArgumentOf(
                 "requestReasonsForAppeal",
                 "awaitingReasonsForAppeal",
-                merge(
-                    variablesDirectionDueDate,
-                    mapAdditionalData("""
-                                           {
-                                                  "Data" : {
-                                                "isNotificationTurnedOff":"\
-                                          false\
-                                          "
-                                                  }
-                                                }\
-                                          """)
+                variablesDirectionDueDate,
+                Map.of(
+                    "isNotificationTurnedOff", "false"
                 ),
-                singletonList(
-                    Map.of(
-                        "taskId", "followUpOverdueReasonsForAppeal",
-                        "name", "Follow-up overdue reasons for appeal",
-                        "processCategories", "followUpOverdue",
-                        "delayUntil", delayUntilDirectionDue
-                    )
+                getTaskMap(
+                    "followUpOverdueReasonsForAppeal",
+                    "Follow-up overdue reasons for appeal",
+                    "followUpOverdue",
+                    delayUntilDirectionDue
                 )
             ),
-            Arguments.of(
+            getWithLocalDateTimeMapArgumentOf(
                 "sendDirectionWithQuestions",
                 "awaitingClarifyingQuestionsAnswers",
-                merge(
-                    variablesDirectionDueDate,
-                    mapAdditionalData("""
-                                           {
-                                                  "Data" : {
-                                                "isNotificationTurnedOff":"\
-                                          false\
-                                          "
-                                                  }
-                                                }\
-                                          """)
+                variablesDirectionDueDate,
+                Map.of(
+                    "isNotificationTurnedOff", "false"
                 ),
-                singletonList(
-                    Map.of(
-                        "taskId", "followUpOverdueClarifyingAnswers",
-                        "name", "Follow-up overdue clarifying answers",
-                        "processCategories", "followUpOverdue",
-                        "delayUntil", delayUntilDirectionDue
-                    )
+                getTaskMap(
+                    "followUpOverdueClarifyingAnswers",
+                    "Follow-up overdue clarifying answers",
+                    "followUpOverdue",
+                    delayUntilDirectionDue
                 )
             ),
-            Arguments.of(
+            getWithLocalDateTimeMapArgumentOf(
                 "requestCmaRequirements",
                 "awaitingCmaRequirements",
-                merge(
-                    variablesDirectionDueDate,
-                    mapAdditionalData("""
-                                           {
-                                                  "Data" : {
-                                                "isNotificationTurnedOff":"\
-                                          false\
-                                          "
-                                                  }
-                                                }\
-                                          """)
+                variablesDirectionDueDate,
+                Map.of(
+                    "isNotificationTurnedOff", "false"
                 ),
-                singletonList(
-                    Map.of(
-                        "taskId", "followUpOverdueCmaRequirements",
-                        "name", "Follow-up overdue CMA requirements",
-                        "processCategories", "followUpOverdue",
-                        "delayUntil", delayUntilDirectionDue
-                    )
+                getTaskMap(
+                    "followUpOverdueCmaRequirements",
+                    "Follow-up overdue CMA requirements",
+                    "followUpOverdue",
+                    delayUntilDirectionDue
                 )
             ),
-            Arguments.of(
+            getWithLocalDateTimeMapArgumentOf(
                 "requestRespondentReview",
                 "respondentReview",
-                merge(
-                    variablesDirectionDueDate,
-                    mapAdditionalData("""
-                                           {
-                                                  "Data" : {
-                                                "isNotificationTurnedOff":"\
-                                          false\
-                                          "
-                                                  }
-                                                }\
-                                          """)
+                variablesDirectionDueDate,
+                Map.of(
+                    "isNotificationTurnedOff", "false"
                 ),
-                singletonList(
-                    Map.of(
-                        "taskId", "followUpOverdueRespondentReview",
-                        "name", "Follow-up overdue respondent review",
-                        "processCategories", "followUpOverdue",
-                        "delayUntil", delayUntilDirectionDue
-                    )
+                getTaskMap(
+                    "followUpOverdueRespondentReview",
+                    "Follow-up overdue respondent review",
+                    "followUpOverdue",
+                    delayUntilDirectionDue
                 )
             ),
-            Arguments.of(
+            getWithLocalDateTimeMapArgumentOf(
                 "requestRespondentReview",
                 "respondentReview",
-                merge(
-                    variablesDirectionDueDate,
-                    mapAdditionalData("""
-                                           {
-                                                  "Data" : {
-                                                "appellantInDetention":"\
-                                          true\
-                                          ",
-                                                "isNotificationTurnedOff":"\
-                                          false\
-                                          "
-                                                  }
-                                                }\
-                                          """)
+                variablesDirectionDueDate,
+                Map.of(
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
                 ),
-                singletonList(
-                    Map.of(
-                        "taskId", "detainedFollowUpOverdueRespondentReview",
-                        "name", "Detained - Follow-up overdue respondent review",
-                        "processCategories", "followUpOverdue",
-                        "delayUntil", delayUntilDirectionDue
-                    )
+                getTaskMap(
+                    "detainedFollowUpOverdueRespondentReview",
+                    "Detained - Follow-up overdue respondent review",
+                    "followUpOverdue",
+                    delayUntilDirectionDue
                 )
             ),
-            Arguments.of(
+            getWithLocalDateTimeMapArgumentOf(
                 "requestHearingRequirementsFeature",
                 "submitHearingRequirements",
-                merge(
-                    variablesDirectionDueDate,
-                    mapAdditionalData("""
-                                           {
-                                                  "Data" : {
-                                                "isNotificationTurnedOff":"\
-                                          false\
-                                          "
-                                                  }
-                                                }\
-                                          """)
+                variablesDirectionDueDate,
+                Map.of(
+                    "isNotificationTurnedOff", "false"
                 ),
-                singletonList(
-                    Map.of(
-                        "taskId", "followUpOverdueHearingRequirements",
-                        "name", "Follow-up overdue hearing requirements",
-                        "processCategories", "followUpOverdue",
-                        "delayUntil", delayUntilDirectionDue
-                    )
+                getTaskMap(
+                    "followUpOverdueHearingRequirements",
+                    "Follow-up overdue hearing requirements",
+                    "followUpOverdue",
+                    delayUntilDirectionDue
                 )
             ),
-            Arguments.of(
+            getWithLocalDateTimeMapArgumentOf(
                 "sendDirection",
                 null,
-                merge(
-                    variablesDirectionDueDate,
-                    mapAdditionalData("""
-                                           {
-                                                  "Data" : {
-                                                "isNotificationTurnedOff":"\
-                                          false\
-                                          "
-                                                  }
-                                                }\
-                                          """)
+                variablesDirectionDueDate,
+                Map.of(
+                    "isNotificationTurnedOff", "false"
                 ),
-                singletonList(
-                    Map.of(
-                        "taskId", "followUpNonStandardDirection",
-                        "name", "Follow-up non-standard direction",
-                        "processCategories", "caseProgression",
-                        "delayUntil", delayUntilDirectionDue
-                    )
+                getTaskMap(
+                    "followUpNonStandardDirection",
+                    "Follow-up non-standard direction",
+                    "caseProgression",
+                    delayUntilDirectionDue
                 )
             ),
-            Arguments.of(
+            getWithLocalDateTimeMapArgumentOf(
                 "sendDirection",
                 null,
-                merge(
-                    variablesDirectionDueDate,
-                    mapAdditionalData("""
-                                           {
-                                                  "Data" : {
-                                                "appellantInDetention":"\
-                                          true\
-                                          ",
-                                                "isNotificationTurnedOff":"\
-                                          false\
-                                          "
-                                                  }
-                                                }\
-                                          """)
+                variablesDirectionDueDate,
+                Map.of(
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
                 ),
-                singletonList(
-                    Map.of(
-                        "taskId", "detainedFollowUpNonStandardDirection",
-                        "name", "Detained - Follow-up non-standard direction",
-                        "processCategories", "caseProgression",
-                        "delayUntil", delayUntilDirectionDue
-                    )
+                getTaskMap(
+                    "detainedFollowUpNonStandardDirection",
+                    "Detained - Follow-up non-standard direction",
+                    "caseProgression",
+                    delayUntilDirectionDue
                 )
             ),
-            Arguments.of(
+            getArgumentOf(
                 "removeRepresentation",
                 null,
-                mapAdditionalData("""
-                                       {
-                                              "Data" : {
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                              }
-                                            }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "followUpNoticeOfChange",
-                        "name", "Follow-up Notice of Change",
-                        "processCategories", "followUpOverdue",
-                        "delayUntil", delayForDaysExcludingBankHolidays
-                    )
+                Map.of(
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap(
+                    "followUpNoticeOfChange",
+                    "Follow-up Notice of Change",
+                    "followUpOverdue",
+                    delayForDaysExcludingBankHolidays
                 )
             ),
-            Arguments.of(
+            getArgumentOf(
                 "removeRepresentation",
                 null,
-                mapAdditionalData("""
-                                       {
-                                              "Data" : {
-                                            "appellantInDetention":"\
-                                      true\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                              }
-                                            }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "detainedFollowUpNoticeOfChange",
-                        "name", "Detained - Follow-up Notice of Change",
-                        "processCategories", "followUpOverdue",
-                        "delayUntil", delayForDaysExcludingBankHolidays
-                    )
+                Map.of(
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap(
+                    "detainedFollowUpNoticeOfChange",
+                    "Detained - Follow-up Notice of Change",
+                    "followUpOverdue",
+                    delayForDaysExcludingBankHolidays
                 )
             ),
-            Arguments.of(
+            getArgumentOf(
                 "removeLegalRepresentative",
                 null,
-                mapAdditionalData("""
-                                       {
-                                              "Data" : {
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                              }
-                                            }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "followUpNoticeOfChange",
-                        "name", "Follow-up Notice of Change",
-
-
-                        "processCategories", "followUpOverdue",
-                        "delayUntil", delayForDaysExcludingBankHolidays
-                    )
+                Map.of(
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap(
+                    "followUpNoticeOfChange",
+                    "Follow-up Notice of Change",
+                    "followUpOverdue",
+                    delayForDaysExcludingBankHolidays
                 )
             ),
-            Arguments.of(
+            getArgumentOf(
                 "changeHearingCentre",
                 "prepareForHearing",
-                mapAdditionalData("""
-                                       {
-                                              "Data" : {
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                              }
-                                            }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "editListing",
-                        "name", "Edit listing",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("editListing", "Edit listing", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "changeHearingCentre",
                 "prepareForHearing",
-                mapAdditionalData("""
-                                       {
-                                              "Data" : {
-                                            "appellantInDetention":"\
-                                      true\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                              }
-                                            }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "detainedEditListing",
-                        "name", "Detained - Edit listing",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("detainedEditListing", "Detained - Edit listing", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "changeHearingCentre",
                 "finalBundling",
-                mapAdditionalData("""
-                                       {
-                                              "Data" : {
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                              }
-                                            }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "editListing",
-                        "name", "Edit listing",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("editListing", "Edit listing", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "changeHearingCentre",
                 "prepareForHearing",
-                mapAdditionalData("""
-                                       {
-                                              "Data" : {
-                                            "appellantInDetention":"\
-                                      true\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                              }
-                                            }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "detainedEditListing",
-                        "name", "Detained - Edit listing",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("detainedEditListing", "Detained - Edit listing", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "changeHearingCentre",
                 "preHearing",
-                mapAdditionalData("""
-                                       {
-                                              "Data" : {
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                              }
-                                            }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "editListing",
-                        "name", "Edit listing",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("editListing", "Edit listing", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "changeHearingCentre",
                 "preHearing",
-                mapAdditionalData("""
-                                       {
-                                              "Data" : {
-                                            "appellantInDetention":"\
-                                      true\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                              }
-                                            }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "detainedEditListing",
-                        "name", "Detained - Edit listing",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("detainedEditListing", "Detained - Edit listing", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "changeHearingCentre",
                 "decision",
-                mapAdditionalData("""
-                                       {
-                                              "Data" : {
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                              }
-                                            }\
-                                      """),
-                List.of(
-                    Map.of(
-                        "taskId", "editListing",
-                        "name", "Edit listing",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("editListing", "Edit listing", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "changeHearingCentre",
                 "decision",
-                mapAdditionalData("""
-                                       {
-                                              "Data" : {
-                                            "appellantInDetention":"\
-                                      true\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                              }
-                                            }\
-                                      """),
-                List.of(
-                    Map.of(
-                        "taskId", "detainedEditListing",
-                        "name", "Detained - Edit listing",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("detainedEditListing", "Detained - Edit listing", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "generateHearingBundle",
                 "finalBundling",
-                mapAdditionalData("""
-                                       {
-                                              "Data" : {
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                              }
-                                            }\
-                                      """),
-                List.of(
-                    Map.of(
-                        "taskId", "allocateHearingJudge",
-                        "name", "Allocate Hearing Judge",
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("allocateHearingJudge", "Allocate Hearing Judge", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "generateHearingBundle",
                 "finalBundling",
-                mapAdditionalData("""
-                                       {
-                                              "Data" : {
-                                            "appellantInDetention":"\
-                                      true\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                              }
-                                            }\
-                                      """),
-                List.of(
-                    Map.of(
-                        "taskId", "detainedAllocateHearingJudge",
-                        "name", "Detained - Allocate Hearing Judge",
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("detainedAllocateHearingJudge", "Detained - Allocate Hearing Judge", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "customiseHearingBundle",
                 "finalBundling",
-                mapAdditionalData("""
-                                       {
-                                              "Data" : {
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                              }
-                                            }\
-                                      """),
-                List.of(
-                    Map.of(
-                        "taskId", "allocateHearingJudge",
-                        "name", "Allocate Hearing Judge",
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("allocateHearingJudge", "Allocate Hearing Judge", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "customiseHearingBundle",
                 "finalBundling",
-                mapAdditionalData("""
-                                       {
-                                              "Data" : {
-                                            "appellantInDetention":"\
-                                      true\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                              }
-                                            }\
-                                      """),
-                List.of(
-                    Map.of(
-                        "taskId", "detainedAllocateHearingJudge",
-                        "name", "Detained - Allocate Hearing Judge",
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("detainedAllocateHearingJudge", "Detained - Allocate Hearing Judge", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "sendToPreHearing",
                 "preHearing",
-                mapAdditionalData("""
-                                       {
-                                              "Data" : {
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                              }
-                                            }\
-                                      """),
-                List.of(
-                    Map.of(
-                        "taskId", "allocateHearingJudge",
-                        "name", "Allocate Hearing Judge",
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("allocateHearingJudge", "Allocate Hearing Judge", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "sendToPreHearing",
                 "preHearing",
-                mapAdditionalData("""
-                                       {
-                                              "Data" : {
-                                            "appellantInDetention":"\
-                                      true\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                              }
-                                            }\
-                                      """),
-                List.of(
-                    Map.of(
-                        "taskId", "detainedAllocateHearingJudge",
-                        "name", "Detained - Allocate Hearing Judge",
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("detainedAllocateHearingJudge", "Detained - Allocate Hearing Judge", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "submitAppeal",
                 "appealSubmitted",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "appealType":"\
-                                      protection\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                List.of(
-                    Map.of(
-                        "taskId", "reviewTheAppeal",
-                        "name", "Review the appeal",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "appealType", "protection",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewTheAppeal", "Review the appeal", "caseProgression")
             ),
-            Arguments.of(
-                    "submitAppeal",
-                    "appealSubmitted",
-                    mapAdditionalData("""
-                           {
-                              "Data":{
-                                 "appealType":"\
-                           protection\
-                           ",
-                                 "appellantInDetention":"\
-                           true\
-                           ",
-                                 "isNotificationTurnedOff":"\
-                           false\
-                           "
-                              }\
-                           }\
-                           """),
-                    List.of(
-                            Map.of(
-                                    "taskId", "detainedReviewTheAppeal",
-                                    "name", "Detained - Review the appeal",
-
-                                    "processCategories", "caseProgression"
-                            )
-                    )
-            ),
-            Arguments.of(
+            getArgumentOf(
                 "submitAppeal",
                 "appealSubmitted",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "appealType":"\
-                                      protection\
-                                      ",
-                                            "remissionType":"\
-                                      exceptionalCircumstancesRemission\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                List.of(
-                    Map.of(
-                        "taskId", "reviewTheAppeal",
-                        "name", "Review the appeal",
-
-                        "processCategories", "caseProgression"
-                    ),
-                    Map.of(
-                        "taskId", "reviewECRRemission",
-                        "name", "Review ECR remission",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "appealType", "protection",
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("detainedReviewTheAppeal", "Detained - Review the appeal", "caseProgression")
             ),
-            Arguments.of(
-                    "submitAppeal",
-                    "appealSubmitted",
-                    mapAdditionalData("""
-                            {
-                               "Data":{
-                                  "appealType":"\
-                            protection\
-                            ",
-                                  "remissionType":"\
-                            exceptionalCircumstancesRemission\
-                            ",
-                                  "appellantInDetention":"\
-                            true\
-                            ",
-                                  "isNotificationTurnedOff":"\
-                            false\
-                            "
-                               }\
-                            }\
-                            """),
-                    List.of(
-                            Map.of(
-                                    "taskId", "detainedReviewTheAppeal",
-                                    "name", "Detained - Review the appeal",
-
-                                    "processCategories", "caseProgression"
-                            ),
-                            Map.of(
-                                    "taskId", "detainedReviewECRRemission",
-                                    "name", "Detained - Review ECR remission",
-
-                                    "processCategories", "caseProgression"
-                            )
-                    )
-            ),
-            Arguments.of(
+            getArgumentOf(
                 "submitAppeal",
                 "appealSubmitted",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "appealType":"\
-                                      protection\
-                                      ",
-                                            "remissionType":"\
-                                      helpWithFees\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                List.of(
-                    Map.of(
-                        "taskId", "reviewTheAppeal",
-                        "name", "Review the appeal",
-
-                        "processCategories", "caseProgression"
-                    ),
-                    Map.of(
-                        "taskId", "reviewHWFRemission",
-                        "name", "Review HWF remission",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "appealType", "protection",
+                    "remissionType", "exceptionalCircumstancesRemission",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewTheAppeal", "Review the appeal", "caseProgression"),
+                getTaskMap("reviewECRRemission", "Review ECR remission", "caseProgression")
             ),
-            Arguments.of(
-                    "submitAppeal",
-                    "appealSubmitted",
-                    mapAdditionalData("""
-                            {
-                               "Data":{
-                                  "appealType":"\
-                            protection\
-                            ",
-                                  "remissionType":"\
-                            helpWithFees\
-                            ",
-                                  "appellantInDetention":"\
-                            true\
-                            ",
-                                  "isNotificationTurnedOff":"\
-                            false\
-                            "
-                               }\
-                            }\
-                            """),
-                    List.of(
-                            Map.of(
-                                    "taskId", "detainedReviewTheAppeal",
-                                    "name", "Detained - Review the appeal",
-
-                                    "processCategories", "caseProgression"
-                            ),
-                            Map.of(
-                                    "taskId", "detainedReviewHWFRemission",
-                                    "name", "Detained - Review HWF remission",
-
-                                    "processCategories", "caseProgression"
-                            )
-                    )
-            ),
-            Arguments.of(
+            getArgumentOf(
                 "submitAppeal",
                 "appealSubmitted",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "appealType":"\
-                                      euSettlementScheme\
-                                      ",
-                                            "remissionType":"\
-                                      exceptionalCircumstancesRemission\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                List.of(
-                    Map.of(
-                        "taskId", "reviewECRRemission",
-                        "name", "Review ECR remission",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "appealType", "protection",
+                    "remissionType", "exceptionalCircumstancesRemission",
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("detainedReviewTheAppeal", "Detained - Review the appeal", "caseProgression"),
+                getTaskMap("detainedReviewECRRemission", "Detained - Review ECR remission", "caseProgression")
             ),
-            Arguments.of(
-                    "submitAppeal",
-                    "appealSubmitted",
-                    mapAdditionalData("""
-                            {
-                               "Data":{
-                                  "appealType":"\
-                            euSettlementScheme\
-                            ",
-                                  "remissionType":"\
-                            exceptionalCircumstancesRemission\
-                            ",
-                                  "appellantInDetention":"\
-                            true\
-                            ",
-                                  "isNotificationTurnedOff":"\
-                            false\
-                            "
-                               }\
-                            }\
-                            """),
-                    List.of(
-                            Map.of(
-                                    "taskId", "detainedReviewECRRemission",
-                                    "name", "Detained - Review ECR remission",
-
-                                    "processCategories", "caseProgression"
-                            )
-                    )
-            ),
-            Arguments.of(
+            getArgumentOf(
                 "submitAppeal",
                 "appealSubmitted",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "appealType":"\
-                                      euSettlementScheme\
-                                      ",
-                                            "remissionType":"\
-                                      helpWithFees\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                List.of(
-                    Map.of(
-                        "taskId", "reviewHWFRemission",
-                        "name", "Review HWF remission",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "appealType", "protection",
+                    "remissionType", "helpWithFees",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewTheAppeal", "Review the appeal", "caseProgression"),
+                getTaskMap("reviewHWFRemission", "Review HWF remission", "caseProgression")
             ),
-            Arguments.of(
-                    "submitAppeal",
-                    "appealSubmitted",
-                    mapAdditionalData("""
-                            {
-                               "Data":{
-                                  "appealType":"\
-                            euSettlementScheme\
-                            ",
-                                  "remissionType":"\
-                            helpWithFees\
-                            ",
-                                  "appellantInDetention":"\
-                            true\
-                            ",
-                                  "isNotificationTurnedOff":"\
-                            false\
-                            "
-                               }\
-                            }\
-                            """),
-                    List.of(
-                            Map.of(
-                                    "taskId", "detainedReviewHWFRemission",
-                                    "name", "Detained - Review HWF remission",
-
-                                    "processCategories", "caseProgression"
-                            )
-                    )
+            getArgumentOf(
+                "submitAppeal",
+                "appealSubmitted",
+                Map.of(
+                    "appealType", "protection",
+                    "remissionType", "helpWithFees",
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("detainedReviewTheAppeal", "Detained - Review the appeal", "caseProgression"),
+                getTaskMap("detainedReviewHWFRemission", "Detained - Review HWF remission", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
+                "submitAppeal",
+                "appealSubmitted",
+                Map.of(
+                    "appealType", "euSettlementScheme",
+                    "remissionType", "exceptionalCircumstancesRemission",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewECRRemission", "Review ECR remission", "caseProgression")
+            ),
+            getArgumentOf(
+                "submitAppeal",
+                "appealSubmitted",
+                Map.of(
+                    "appealType", "euSettlementScheme",
+                    "remissionType", "exceptionalCircumstancesRemission",
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("detainedReviewECRRemission", "Detained - Review ECR remission", "caseProgression")
+            ),
+            getArgumentOf(
+                "submitAppeal",
+                "appealSubmitted",
+                Map.of(
+                    "appealType", "euSettlementScheme",
+                    "remissionType", "helpWithFees",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewHWFRemission", "Review HWF remission", "caseProgression")
+            ),
+            getArgumentOf(
+                "submitAppeal",
+                "appealSubmitted",
+                Map.of(
+                    "appealType", "euSettlementScheme",
+                    "remissionType", "helpWithFees",
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("detainedReviewHWFRemission", "Detained - Review HWF remission", "caseProgression")
+            ),
+            getArgumentOf(
                 "requestFeeRemission",
                 null,
-                mapAdditionalData("""
-                        {
-                           "Data":{
-                              "lateRemissionType":"\
-                        helpWithFees\
-                        ",
-                              "isNotificationTurnedOff":"\
-                        false\
-                        "
-                           }\
-                        }\
-                        """),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewHWFRemission",
-                        "name", "Review HWF remission",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "lateRemissionType", "helpWithFees",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewHWFRemission", "Review HWF remission", "caseProgression")
             ),
-            Arguments.of(
-                    "requestFeeRemission",
-                    null,
-                    mapAdditionalData("""
-                            {
-                               "Data":{
-                                  "lateRemissionType":"\
-                            helpWithFees\
-                            ",
-                                  "appellantInDetention":"\
-                            true\
-                            ",
-                                  "isNotificationTurnedOff":"\
-                            false\
-                            "
-                               }\
-                            }\
-                            """),
-                    singletonList(
-                            Map.of(
-                                    "taskId", "detainedReviewHWFRemission",
-                                    "name", "Detained - Review HWF remission",
-
-                                    "processCategories", "caseProgression"
-                            )
-                    )
-            ),
-            Arguments.of(
+            getArgumentOf(
                 "requestFeeRemission",
                 null,
-                mapAdditionalData("""
-                        {
-                           "Data":{
-                           "journeyType":"\
-                        aip\
-                        ",
-                              "remissionOption":"\
-                        asylumSupportFromHo\
-                        ",
-                              "isNotificationTurnedOff":"\
-                        false\
-                        "
-                           }\
-                        }\
-                        """),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewASRemission",
-                        "name", "Review AS remission",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "lateRemissionType", "helpWithFees",
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("detainedReviewHWFRemission", "Detained - Review HWF remission", "caseProgression")
             ),
-            Arguments.of(
-                    "requestFeeRemission",
-                    null,
-                    mapAdditionalData("""
-                            {
-                               "Data":{
-                               "journeyType":"\
-                            aip\
-                            ",
-                                  "remissionOption":"\
-                            asylumSupportFromHo\
-                            ",
-                                  "appellantInDetention":"\
-                            true\
-                            ",
-                                  "isNotificationTurnedOff":"\
-                            false\
-                            "
-                               }\
-                            }\
-                            """),
-                    singletonList(
-                            Map.of(
-                                    "taskId", "detainedReviewASRemission",
-                                    "name", "Detained - Review AS remission",
-
-                                    "processCategories", "caseProgression"
-                            )
-                    )
-            ),
-            Arguments.of(
-                    "requestFeeRemission",
-                    null,
-                    mapAdditionalData("""
-                            {
-                               "Data":{
-                                  "remissionClaim":"\
-                            asylumSupport\
-                            ",
-                                  "isNotificationTurnedOff":"\
-                            false\
-                            "
-                               }\
-                            }\
-                            """),
-                    singletonList(
-                            Map.of(
-                                    "taskId", "reviewASRemission",
-                                    "name", "Review AS remission",
-
-                                    "processCategories", "caseProgression"
-                            )
-                    )
-            ),
-            Arguments.of(
-                    "requestFeeRemission",
-                    null,
-                    mapAdditionalData("""
-                            {
-                               "Data":{
-                                  "remissionClaim":"\
-                            asylumSupport\
-                            ",
-                                  "appellantInDetention":"\
-                            true\
-                            ",
-                                  "isNotificationTurnedOff":"\
-                            false\
-                            "
-                               }\
-                            }\
-                            """),
-                    singletonList(
-                            Map.of(
-                                    "taskId", "detainedReviewASRemission",
-                                    "name", "Detained - Review AS remission",
-
-                                    "processCategories", "caseProgression"
-                            )
-                    )
-            ),
-            Arguments.of(
-                    "requestFeeRemission",
-                    null,
-                    mapAdditionalData("""
-                            {
-                               "Data":{
-                                  "remissionClaim":"\
-                            homeOfficeWaiver\
-                            ",
-                                  "isNotificationTurnedOff":"\
-                            false\
-                            "
-                               }\
-                            }\
-                            """),
-                    singletonList(
-                            Map.of(
-                                    "taskId", "reviewHOWaiverRemission",
-                                    "name", "Review HO Waiver remission",
-
-                                    "processCategories", "caseProgression"
-                            )
-                    )
-            ),
-            Arguments.of(
-                    "requestFeeRemission",
-                    null,
-                    mapAdditionalData("""
-                            {
-                               "Data":{
-                                  "remissionClaim":"\
-                            homeOfficeWaiver\
-                            ",
-                                  "appellantInDetention":"\
-                            true\
-                            ",
-                                  "isNotificationTurnedOff":"\
-                            false\
-                            "
-                               }\
-                            }\
-                            """),
-                    singletonList(
-                            Map.of(
-                                    "taskId", "detainedReviewHOWaiverRemission",
-                                    "name", "Detained - Review HO Waiver remission",
-
-                                    "processCategories", "caseProgression"
-                            )
-                    )
-            ),
-            Arguments.of(
-                    "requestFeeRemission",
-                    null,
-                    mapAdditionalData("""
-                            {
-                               "Data":{
-                                  "lateRemissionType":"\
-                            exceptionalCircumstancesRemission\
-                            ",
-                                  "isNotificationTurnedOff":"\
-                            false\
-                            "
-                               }\
-                            }\
-                            """),
-                    singletonList(
-                            Map.of(
-                                    "taskId", "reviewECRRemission",
-                                    "name", "Review ECR remission",
-
-                                    "processCategories", "caseProgression"
-                            )
-                    )
-            ),
-            Arguments.of(
-                    "requestFeeRemission",
-                    null,
-                    mapAdditionalData("""
-                            {
-                               "Data":{
-                                  "lateRemissionType":"\
-                            exceptionalCircumstancesRemission\
-                            ",
-                                  "appellantInDetention":"\
-                            true\
-                            ",
-                                  "isNotificationTurnedOff":"\
-                            false\
-                            "
-                               }\
-                            }\
-                            """),
-                    singletonList(
-                            Map.of(
-                                    "taskId", "detainedReviewECRRemission",
-                                    "name", "Detained - Review ECR remission",
-
-                                    "processCategories", "caseProgression"
-                            )
-                    )
-            ),
-            Arguments.of(
-                    "requestFeeRemission",
-                    null,
-                    mapAdditionalData("""
-                            {
-                               "Data":{
-                               "journeyType":"\
-                            aip\
-                            ",
-                                  "remissionOption":"\
-                            feeWaiverFromHo\
-                            ",
-                                  "isNotificationTurnedOff":"\
-                            false\
-                            "
-                               }\
-                            }\
-                            """),
-                    singletonList(
-                            Map.of(
-                                    "taskId", "reviewHOWaiverRemission",
-                                    "name", "Review HO Waiver remission",
-
-                                    "processCategories", "caseProgression"
-                            )
-                    )
-            ),
-            Arguments.of(
-                    "requestFeeRemission",
-                    null,
-                    mapAdditionalData("""
-                            {
-                               "Data":{
-                               "journeyType":"\
-                            aip\
-                            ",
-                                  "remissionOption":"\
-                            feeWaiverFromHo\
-                            ",
-                                  "appellantInDetention":"\
-                            true\
-                            ",
-                                  "isNotificationTurnedOff":"\
-                            false\
-                            "
-                               }\
-                            }\
-                            """),
-                    singletonList(
-                            Map.of(
-                                    "taskId", "detainedReviewHOWaiverRemission",
-                                    "name", "Detained - Review HO Waiver remission",
-
-                                    "processCategories", "caseProgression"
-                            )
-                    )
-            ),
-            Arguments.of(
-                    "requestFeeRemission",
-                    null,
-                    mapAdditionalData("""
-                            {
-                               "Data":{
-                               "journeyType":"\
-                            aip\
-                            ",
-                                  "remissionOption":"\
-                            parentGetSupportFromLocalAuthority\
-                            ",
-                                  "isNotificationTurnedOff":"\
-                            false\
-                            "
-                               }\
-                            }\
-                            """),
-                    singletonList(
-                            Map.of(
-                                    "taskId", "reviewAuthorityRemission",
-                                    "name", "Review Authority remission",
-
-                                    "processCategories", "caseProgression"
-                            )
-                    )
-            ),
-            Arguments.of(
-                    "requestFeeRemission",
-                    null,
-                    mapAdditionalData("""
-                            {
-                               "Data":{
-                               "journeyType":"\
-                            aip\
-                            ",
-                                  "remissionOption":"\
-                            parentGetSupportFromLocalAuthority\
-                            ",
-                                  "appellantInDetention":"\
-                            true\
-                            ",
-                                  "isNotificationTurnedOff":"\
-                            false\
-                            "
-                               }\
-                            }\
-                            """),
-                    singletonList(
-                            Map.of(
-                                    "taskId", "detainedReviewAuthorityRemission",
-                                    "name", "Detained - Review Authority remission",
-
-                                    "processCategories", "caseProgression"
-                            )
-                    )
-            ),
-            Arguments.of(
-                    "requestFeeRemission",
-                    null,
-                    mapAdditionalData("""
-                            {
-                               "Data":{
-                               "journeyType":"\
-                            aip\
-                            ",
-                                  "remissionOption":"\
-                            iWantToGetHelpWithFees\
-                            ",
-                                  "isNotificationTurnedOff":"\
-                            false\
-                            "
-                               }\
-                            }\
-                            """),
-                    singletonList(
-                            Map.of(
-                                    "taskId", "reviewHWFRemission",
-                                    "name", "Review HWF remission",
-
-                                    "processCategories", "caseProgression"
-                            )
-                    )
-            ),
-            Arguments.of(
+            getArgumentOf(
                 "requestFeeRemission",
                 null,
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                         "journeyType":"\
-                                      aip\
-                                      ",
-                                            "remissionOption":"\
-                                      noneOfTheseStatements\
-                                      ",
-                                            "helpWithFeesOption":"\
-                                      wantToApply\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewHWFRemission",
-                        "name", "Review HWF remission",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "journeyType", "aip",
+                    "remissionOption", "asylumSupportFromHo",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewASRemission", "Review AS remission", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "requestFeeRemission",
                 null,
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                         "journeyType":"\
-                                      aip\
-                                      ",
-                                            "remissionOption":"\
-                                      noneOfTheseStatements\
-                                      ",
-                                            "helpWithFeesOption":"\
-                                      alreadyApplied\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewHWFRemission",
-                        "name", "Review HWF remission",
-
-                        "processCategories", "caseProgression"
-                    )
+                Map.of(
+                    "journeyType", "aip",
+                    "remissionOption", "asylumSupportFromHo",
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("detainedReviewASRemission", "Detained - Review AS remission", "caseProgression")
+            ),
+            getArgumentOf(
+                "requestFeeRemission",
+                null,
+                Map.of(
+                    "remissionClaim", "asylumSupport",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewASRemission", "Review AS remission", "caseProgression")
+            ),
+            getArgumentOf(
+                "requestFeeRemission",
+                null,
+                Map.of(
+                    "remissionClaim", "asylumSupport",
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("detainedReviewASRemission", "Detained - Review AS remission", "caseProgression")
+            ),
+            getArgumentOf(
+                "requestFeeRemission",
+                null,
+                Map.of(
+                    "remissionClaim", "homeOfficeWaiver",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewHOWaiverRemission", "Review HO Waiver remission", "caseProgression")
+            ),
+            getArgumentOf(
+                "requestFeeRemission",
+                null,
+                Map.of(
+                    "remissionClaim", "homeOfficeWaiver",
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap(
+                    "detainedReviewHOWaiverRemission",
+                    "Detained - Review HO Waiver remission",
+                    "caseProgression"
                 )
             ),
-            Arguments.of(
-                    "requestFeeRemission",
-                    null,
-                    mapAdditionalData("""
-                            {
-                               "Data":{
-                               "journeyType":"\
-                            aip\
-                            ",
-                                  "remissionOption":"\
-                            iWantToGetHelpWithFees\
-                            ",
-                                  "appellantInDetention":"\
-                            true\
-                            ",
-                                  "isNotificationTurnedOff":"\
-                            false\
-                            "
-                               }\
-                            }\
-                            """),
-                    singletonList(
-                            Map.of(
-                                    "taskId", "detainedReviewHWFRemission",
-                                    "name", "Detained - Review HWF remission",
-
-                                    "processCategories", "caseProgression"
-                            )
-                    )
+            getArgumentOf(
+                "requestFeeRemission",
+                null,
+                Map.of(
+                    "lateRemissionType", "exceptionalCircumstancesRemission",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewECRRemission", "Review ECR remission", "caseProgression")
             ),
-            Arguments.of(
-                    "requestFeeRemission",
-                    null,
-                    mapAdditionalData("""
-                            {
-                               "Data":{
-                                  "remissionClaim":"\
-                            legalAid\
-                            ",
-                                  "isNotificationTurnedOff":"\
-                            false\
-                            "
-                               }\
-                            }\
-                            """),
-                    singletonList(
-                            Map.of(
-                                    "taskId", "reviewLARemission",
-                                    "name", "Review LA remission",
-
-                                    "processCategories", "caseProgression"
-                            )
-                    )
+            getArgumentOf(
+                "requestFeeRemission",
+                null,
+                Map.of(
+                    "lateRemissionType", "exceptionalCircumstancesRemission",
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("detainedReviewECRRemission", "Detained - Review ECR remission", "caseProgression")
             ),
-            Arguments.of(
-                    "requestFeeRemission",
-                    null,
-                    mapAdditionalData("""
-                            {
-                               "Data":{
-                                  "remissionClaim":"\
-                            legalAid\
-                            ",
-                                  "appellantInDetention":"\
-                            true\
-                            ",
-                                  "isNotificationTurnedOff":"\
-                            false\
-                            "
-                               }\
-                            }\
-                            """),
-                    singletonList(
-                            Map.of(
-                                    "taskId", "detainedReviewLARemission",
-                                    "name", "Detained - Review LA remission",
-
-                                    "processCategories", "caseProgression"
-                            )
-                    )
+            getArgumentOf(
+                "requestFeeRemission",
+                null,
+                Map.of(
+                    "journeyType", "aip",
+                    "remissionOption", "feeWaiverFromHo",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewHOWaiverRemission", "Review HO Waiver remission", "caseProgression")
             ),
-            Arguments.of(
-                    "requestFeeRemission",
-                    null,
-                    mapAdditionalData("""
-                            {
-                               "Data":{
-                                  "remissionClaim":"\
-                            section20\
-                            ",
-                                  "isNotificationTurnedOff":"\
-                            false\
-                            "
-                               }\
-                            }\
-                            """),
-                    singletonList(
-                            Map.of(
-                                    "taskId", "reviewAuthorityRemission",
-                                    "name", "Review Authority remission",
-
-                                    "processCategories", "caseProgression"
-                            )
-                    )
+            getArgumentOf(
+                "requestFeeRemission",
+                null,
+                Map.of(
+                    "journeyType", "aip",
+                    "remissionOption", "feeWaiverFromHo",
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap(
+                    "detainedReviewHOWaiverRemission",
+                    "Detained - Review HO Waiver remission",
+                    "caseProgression"
+                )
             ),
-            Arguments.of(
-                    "requestFeeRemission",
-                    null,
-                    mapAdditionalData("""
-                            {
-                               "Data":{
-                                  "remissionClaim":"\
-                            section20\
-                            ",
-                                  "appellantInDetention":"\
-                            true\
-                            ",
-                                  "isNotificationTurnedOff":"\
-                            false\
-                            "
-                               }\
-                            }\
-                            """),
-                    singletonList(
-                            Map.of(
-                                    "taskId", "detainedReviewAuthorityRemission",
-                                    "name", "Detained - Review Authority remission",
-
-                                    "processCategories", "caseProgression"
-                            )
-                    )
+            getArgumentOf(
+                "requestFeeRemission",
+                null,
+                Map.of(
+                    "journeyType", "aip",
+                    "remissionOption", "parentGetSupportFromLocalAuthority",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewAuthorityRemission", "Review Authority remission", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
+                "requestFeeRemission",
+                null,
+                Map.of(
+                    "journeyType", "aip",
+                    "remissionOption", "parentGetSupportFromLocalAuthority",
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap(
+                    "detainedReviewAuthorityRemission",
+                    "Detained - Review Authority remission",
+                    "caseProgression"
+                )
+            ),
+            getArgumentOf(
+                "requestFeeRemission",
+                null,
+                Map.of(
+                    "journeyType", "aip",
+                    "remissionOption", "iWantToGetHelpWithFees",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewHWFRemission", "Review HWF remission", "caseProgression")
+            ),
+            getArgumentOf(
+                "requestFeeRemission",
+                null,
+                Map.of(
+                    "journeyType", "aip",
+                    "remissionOption", "noneOfTheseStatements",
+                    "helpWithFeesOption",
+                    "wantToApply",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewHWFRemission", "Review HWF remission", "caseProgression")
+            ),
+            getArgumentOf(
+                "requestFeeRemission",
+                null,
+                Map.of(
+                    "journeyType", "aip",
+                    "remissionOption", "noneOfTheseStatements",
+                    "helpWithFeesOption",
+                    "alreadyApplied",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewHWFRemission", "Review HWF remission", "caseProgression")
+            ),
+            getArgumentOf(
+                "requestFeeRemission",
+                null,
+                Map.of(
+                    "journeyType", "aip",
+                    "remissionOption", "iWantToGetHelpWithFees",
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("detainedReviewHWFRemission", "Detained - Review HWF remission", "caseProgression")
+            ),
+            getArgumentOf(
+                "requestFeeRemission",
+                null,
+                Map.of(
+                    "remissionClaim", "legalAid",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewLARemission", "Review LA remission", "caseProgression")
+            ),
+            getArgumentOf(
+                "requestFeeRemission",
+                null,
+                Map.of(
+                    "remissionClaim", "legalAid",
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("detainedReviewLARemission", "Detained - Review LA remission", "caseProgression")
+            ),
+            getArgumentOf(
+                "requestFeeRemission",
+                null,
+                Map.of(
+                    "remissionClaim", "section20",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewAuthorityRemission", "Review Authority remission", "caseProgression")
+            ),
+            getArgumentOf(
+                "requestFeeRemission",
+                null,
+                Map.of(
+                    "remissionClaim", "section20",
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap(
+                    "detainedReviewAuthorityRemission",
+                    "Detained - Review Authority remission",
+                    "caseProgression"
+                )
+            ),
+            getArgumentOf(
                 "reviewHearingRequirements",
                 "listing",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "appellantInDetention":"\
-                                      false\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "listTheCase",
-                        "name", "List the case",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "appellantInDetention", "false",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("listTheCase", "List the case", "caseProgression")
             ),
-            Arguments.of(
-                    "reviewHearingRequirements",
-                    "listing",
-                    mapAdditionalData("""
-                            {
-                               "Data":{
-                                  "appellantInDetention":"\
-                            true\
-                            ",
-                                  "isNotificationTurnedOff":"\
-                            false\
-                            "
-                               }\
-                            }\
-                            """),
-                    singletonList(
-                            Map.of(
-                                    "taskId", "detainedListTheCase",
-                                    "name", "Detained - List the case",
-
-                                    "processCategories", "caseProgression"
-                            )
-                    )
+            getArgumentOf(
+                "reviewHearingRequirements",
+                "listing",
+                Map.of(
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("detainedListTheCase", "Detained - List the case", "caseProgression")
             ),
-            Arguments.of(
-                    "listCaseWithoutHearingRequirements",
-                    "listing",
-                    mapAdditionalData("""
-                            {
-                               "Data":{
-                                  "appellantInDetention":"\
-                            false\
-                            ",
-                                  "isNotificationTurnedOff":"\
-                            false\
-                            "
-                               }\
-                            }\
-                            """),
-                    singletonList(
-                            Map.of(
-                                    "taskId", "listTheCase",
-                                    "name", "List the case",
-
-                                    "processCategories", "caseProgression"
-                            )
-                    )
+            getArgumentOf(
+                "listCaseWithoutHearingRequirements",
+                "listing",
+                Map.of(
+                    "appellantInDetention", "false",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("listTheCase", "List the case", "caseProgression")
             ),
-            Arguments.of(
-                    "listCaseWithoutHearingRequirements",
-                    "listing",
-                    mapAdditionalData("""
-                            {
-                               "Data":{
-                                  "appellantInDetention":"\
-                            true\
-                            ",
-                                  "isNotificationTurnedOff":"\
-                            false\
-                            "
-                               }\
-                            }\
-                            """),
-                    singletonList(
-                            Map.of(
-                                    "taskId", "detainedListTheCase",
-                                    "name", "Detained - List the case",
-
-                                    "processCategories", "caseProgression"
-                            )
-                    )
+            getArgumentOf(
+                "listCaseWithoutHearingRequirements",
+                "listing",
+                Map.of(
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("detainedListTheCase", "Detained - List the case", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "recordRemissionDecision",
                 null,
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "remissionDecision":"\
-                                      partiallyApproved\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                List.of(
-                    Map.of(
-                        "taskId", "sendPaymentRequest",
-                        "name", "Send Payment Request",
-
-                        "processCategories", "caseProgression"
-                    ),
-                    Map.of(
-                        "taskId", "markAsPaid",
-                        "name", "Mark as Paid",
-                        "delayUntil", delayFor12Days,
-
-                        "processCategories", "followUpOverdue"
-                    )
-                )
+                Map.of(
+                    "remissionDecision", "partiallyApproved",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("sendPaymentRequest", "Send Payment Request", "caseProgression"),
+                getTaskMap("markAsPaid", "Mark as Paid", "followUpOverdue", delayFor12Days)
             ),
-            Arguments.of(
+            getArgumentOf(
                 "recordRemissionDecision",
                 null,
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "remissionDecision":"\
-                                      partiallyApproved\
-                                      ",
-                                            "paymentStatus":"\
-                                      Paid\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                emptyList()
+                Map.of(
+                    "remissionDecision",
+                    "partiallyApproved",
+                    "paymentStatus",
+                    "Paid",
+                    "isNotificationTurnedOff", "false"
+                ),
+                null
             ),
-            Arguments.of(
+            getArgumentOf(
                 "markAppealAsRemitted",
                 "remitted",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewRemittedAppeal",
-                        "name", "Review remitted appeal",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewRemittedAppeal", "Review remitted appeal", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "markAppealAsRemitted",
                 "remitted",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "appellantInDetention":"\
-                                      true\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "detainedReviewRemittedAppeal",
-                        "name", "Detained - Review remitted appeal",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("detainedReviewRemittedAppeal", "Detained - Review remitted appeal", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "decideFtpaApplication",
                 null,
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "ftpaAppellantRjDecisionOutcomeType":"\
-                                      reheardRule35\
-                                      ",
-                                            "ftpaApplicantType":"\
-                                      appellant\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewAppealSetAsideUnderRule35",
-                        "name", "Review appeal set aside under rule 35",
-
-                        "processCategories", "caseProgression"
-                    )
+                Map.of(
+                    "ftpaAppellantRjDecisionOutcomeType",
+                    "reheardRule35",
+                    "ftpaApplicantType",
+                    "appellant",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap(
+                    "reviewAppealSetAsideUnderRule35",
+                    "Review appeal set aside under rule 35",
+                    "caseProgression"
                 )
             ),
-            Arguments.of(
+            getArgumentOf(
                 "decideFtpaApplication",
                 null,
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "ftpaAppellantRjDecisionOutcomeType":"\
-                                      reheardRule35\
-                                      ",
-                                            "ftpaApplicantType":"\
-                                      appellant\
-                                      ",
-                                            "appellantInDetention":"\
-                                      true\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "detainedReviewAppealSetAsideUnderRule35",
-                        "name", "Detained - Review appeal set aside under rule 35",
-
-                        "processCategories", "caseProgression"
-                    )
+                Map.of(
+                    "ftpaAppellantRjDecisionOutcomeType",
+                    "reheardRule35",
+                    "ftpaApplicantType",
+                    "appellant",
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap(
+                    "detainedReviewAppealSetAsideUnderRule35",
+                    "Detained - Review appeal set aside under rule 35",
+                    "caseProgression"
                 )
             ),
-            Arguments.of(
+            getArgumentOf(
                 "decideFtpaApplication",
                 null,
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "ftpaRespondentRjDecisionOutcomeType":"\
-                                      reheardRule35\
-                                      ",
-                                            "ftpaApplicantType":"\
-                                      respondent\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewAppealSetAsideUnderRule35",
-                        "name", "Review appeal set aside under rule 35",
-
-                        "processCategories", "caseProgression"
-                    )
+                Map.of(
+                    "ftpaRespondentRjDecisionOutcomeType",
+                    "reheardRule35",
+                    "ftpaApplicantType",
+                    "respondent",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap(
+                    "reviewAppealSetAsideUnderRule35",
+                    "Review appeal set aside under rule 35",
+                    "caseProgression"
                 )
             ),
-            Arguments.of(
+            getArgumentOf(
                 "decideFtpaApplication",
                 null,
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "ftpaRespondentRjDecisionOutcomeType":"\
-                                      reheardRule35\
-                                      ",
-                                            "ftpaApplicantType":"\
-                                      respondent\
-                                      ",
-                                            "appellantInDetention":"\
-                                      true\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "detainedReviewAppealSetAsideUnderRule35",
-                        "name", "Detained - Review appeal set aside under rule 35",
-
-                        "processCategories", "caseProgression"
-                    )
+                Map.of(
+                    "ftpaRespondentRjDecisionOutcomeType",
+                    "reheardRule35",
+                    "ftpaApplicantType",
+                    "respondent",
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap(
+                    "detainedReviewAppealSetAsideUnderRule35",
+                    "Detained - Review appeal set aside under rule 35",
+                    "caseProgression"
                 )
             ),
-            Arguments.of(
+            getArgumentOf(
                 "updateTribunalDecision",
                 null,
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "updateTribunalDecisionList":"\
-                                      underRule32\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewAppealSetAsideUnderRule32",
-                        "name", "Review appeal set aside under rule 32",
-
-                        "processCategories", "caseProgression"
-                    )
+                Map.of(
+                    "updateTribunalDecisionList", "underRule32",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap(
+                    "reviewAppealSetAsideUnderRule32",
+                    "Review appeal set aside under rule 32",
+                    "caseProgression"
                 )
             ),
-            Arguments.of(
+            getArgumentOf(
                 "updateTribunalDecision",
                 null,
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "updateTribunalDecisionList":"\
-                                      underRule32\
-                                      ",
-                                            "appellantInDetention":"\
-                                      true\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "detainedReviewAppealSetAsideUnderRule32",
-                        "name", "Detained - Review appeal set aside under rule 32",
-
-                        "processCategories", "caseProgression"
-                    )
+                Map.of(
+                    "updateTribunalDecisionList",
+                    "underRule32",
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap(
+                    "detainedReviewAppealSetAsideUnderRule32",
+                    "Detained - Review appeal set aside under rule 32",
+                    "caseProgression"
                 )
             ),
-            Arguments.of(
+            getArgumentOf(
                 "handleHearingException",
                 null,
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "hearingException",
-                        "name", "Hearing Exception",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("hearingException", "Hearing Exception", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "handleHearingException",
                 null,
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "appellantInDetention":"\
-                                      true\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "detainedHearingException",
-                        "name", "Detained - Hearing Exception",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("detainedHearingException", "Detained - Hearing Exception", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "cmrReListing",
                 null,
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "cmrUpdated",
-                        "name", "Update CMR notification",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("cmrUpdated", "Update CMR notification", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "cmrReListing",
                 null,
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "appellantInDetention":"\
-                                      true\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "detainedCmrUpdated",
-                        "name", "Detained - Update CMR notification",
-
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("detainedCmrUpdated", "Detained - Update CMR notification", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "cmrListing",
                 null,
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "appellantInDetention":"\
-                                      true\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "detainedCmrListed",
-                        "name", "Detained - Send CMR notification",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("detainedCmrListed", "Detained - Send CMR notification", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "restoreStateFromAdjourn",
                 null,
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isIntegrated":"\
-                                      true\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "relistCase",
-                        "name", "Relist The Case",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "isIntegrated", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("relistCase", "Relist The Case", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "restoreStateFromAdjourn",
                 null,
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                                "isIntegrated" : true,
-                                            "appellantInDetention":"true",
-                                            "isNotificationTurnedOff":"false"
-                                         }\
-                                      }"""),
-                singletonList(
-                    Map.of(
-                        "taskId", "detainedRelistCase",
-                        "name", "Detained - Relist The Case",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "isIntegrated", true, "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("detainedRelistCase", "Detained - Relist The Case", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "recordAdjournmentDetails",
                 null,
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "hearingAdjournmentWhen":"onHearingDate",
-                                            "relistCaseImmediately":true,
-                                            "autoHearingRequestEnabled" : false,
-                                            "isNotificationTurnedOff":"false"
-                                         }\
-                                      }"""),
-                singletonList(
-                    Map.of(
-                        "taskId", "listTheCase",
-                        "name", "List the case",
-
-
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "hearingAdjournmentWhen",
+                    "onHearingDate",
+                    "relistCaseImmediately",
+                    true,
+                    "autoHearingRequestEnabled",
+                    false,
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("listTheCase", "List the case", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "recordAdjournmentDetails",
                 null,
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "hearingAdjournmentWhen":"onHearingDate",
-                                            "relistCaseImmediately":true,
-                                            "autoHearingRequestEnabled" : false,
-                                            "appellantInDetention":"true",
-                                            "isNotificationTurnedOff":"false"
-                                         }\
-                                      }"""),
-                singletonList(
-                    Map.of(
-                        "taskId", "detainedListTheCase",
-                        "name", "Detained - List the case",
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "hearingAdjournmentWhen",
+                    "onHearingDate",
+                    "relistCaseImmediately",
+                    true,
+                    "autoHearingRequestEnabled",
+                    false,
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("detainedListTheCase", "Detained - List the case", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "cmrListing",
                 null,
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "cmrListed",
-                        "name", "Send CMR notification",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("cmrListed", "Send CMR notification", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "cmrListing",
                 null,
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "appellantInDetention":"\
-                                      true\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "detainedCmrListed",
-                        "name", "Detained - Send CMR notification",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("detainedCmrListed", "Detained - Send CMR notification", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "cmrListing",
                 null,
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "cmrListed",
-                        "name", "Send CMR notification",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("cmrListed", "Send CMR notification", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "decisionAndReasonsStarted",
                 "decision",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                                "isIntegrated" : true,
-                                            "isDecisionWithoutHearing" : true,
-                                            "autoHearingRequestEnabled" : false,
-                                            "isNotificationTurnedOff":"false"
-                                         }\
-                                      }"""),
-                singletonList(
-                    Map.of(
-                        "taskId", "listTheCase",
-                        "name", "List the case",
-
-
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "isIntegrated",
+                    true,
+                    "isDecisionWithoutHearing",
+                    true,
+                    "autoHearingRequestEnabled",
+                    false,
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("listTheCase", "List the case", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "decisionAndReasonsStarted",
                 "decision",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                                "isIntegrated" : true,
-                                            "autoHearingRequestEnabled" : false,
-                                            "isDecisionWithoutHearing" : true,
-                                            "appellantInDetention":"true",
-                                            "isNotificationTurnedOff":"false"
-                                         }\
-                                      }"""),
-                singletonList(
-                    Map.of(
-                        "taskId", "detainedListTheCase",
-                        "name", "Detained - List the case",
-
-
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "isIntegrated",
+                    true,
+                    "autoHearingRequestEnabled",
+                    false,
+                    "isDecisionWithoutHearing",
+                    true,
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("detainedListTheCase", "Detained - List the case", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "triggerReviewInterpreterBookingTask",
                 null,
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewInterpreters",
-                        "name", "Review interpreter booking",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewInterpreters", "Review interpreter booking", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "triggerReviewInterpreterBookingTask",
                 null,
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "appellantInDetention":"\
-                                      true\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "detainedReviewInterpreters",
-                        "name", "Detained - Review interpreter booking",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("detainedReviewInterpreters", "Detained - Review interpreter booking", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "hearingCancelled",
                 null,
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewInterpreters",
-                        "name", "Review interpreter booking",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewInterpreters", "Review interpreter booking", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "hearingCancelled",
                 null,
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "appellantInDetention":"\
-                                      true\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "detainedReviewInterpreters",
-                        "name", "Detained - Review interpreter booking",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("detainedReviewInterpreters", "Detained - Review interpreter booking", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "editCaseListing",
                 null,
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "shouldTriggerReviewInterpreterTask" : "true",
-                                            "isNotificationTurnedOff":"false"
-                                         }\
-                                      }"""),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewInterpreters",
-                        "name", "Review interpreter booking",
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "shouldTriggerReviewInterpreterTask", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewInterpreters", "Review interpreter booking", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "editCaseListing",
                 null,
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "shouldTriggerReviewInterpreterTask" : "true",
-                                            "appellantInDetention":"true",
-                                            "isNotificationTurnedOff":"false"
-                                         }\
-                                      }"""),
-                singletonList(
-                    Map.of(
-                        "taskId", "detainedReviewInterpreters",
-                        "name", "Detained - Review interpreter booking",
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "shouldTriggerReviewInterpreterTask",
+                    "true",
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("detainedReviewInterpreters", "Detained - Review interpreter booking", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "manageFeeUpdate",
                 null,
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "feeUpdateTribunalAction":"\
-                                      refund\
-                                      ",
-                                            "appellantInDetention":"\
-                                      false\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "processFeeRefund",
-                        "name", "Process fee refund",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "feeUpdateTribunalAction",
+                    "refund",
+                    "appellantInDetention", "false",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("processFeeRefund", "Process fee refund", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "manageFeeUpdate",
                 null,
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "feeUpdateTribunalAction":"\
-                                      refund\
-                                      ",
-                                            "appellantInDetention":"\
-                                      true\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "detainedProcessFeeRefund",
-                        "name", "Detained - Process Fee Refund",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "feeUpdateTribunalAction",
+                    "refund",
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("detainedProcessFeeRefund", "Detained - Process Fee Refund", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "manageFeeUpdate",
                 null,
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "feeUpdateTribunalAction":"\
-                                      refund\
-                                      ",
-                                            "appellantInDetention":"\
-                                      true\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "detainedProcessFeeRefund",
-                        "name", "Detained - Process Fee Refund",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "feeUpdateTribunalAction",
+                    "refund",
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("detainedProcessFeeRefund", "Detained - Process Fee Refund", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "ariaCreateCase",
                 "migrated",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewMigratedCase",
-                        "name", "Review migrated case",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewMigratedCase", "Review migrated case", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "ariaCreateCase",
                 "migrated",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "appellantInDetention":"\
-                                      true\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "detainedReviewMigratedCase",
-                        "name", "Detained - Review migrated case",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("detainedReviewMigratedCase", "Detained - Review migrated case", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "ariaCreateCase",
                 "migrated",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                List.of(
-                    Map.of(
-                        "taskId", "reviewMigratedCase",
-                        "name", "Review migrated case",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewMigratedCase", "Review migrated case", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "ariaCreateCase",
                 "migrated",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "appellantInDetention":"\
-                                      true\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                List.of(
-                    Map.of(
-                        "taskId", "detainedReviewMigratedCase",
-                        "name", "Detained - Review migrated case",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("detainedReviewMigratedCase", "Detained - Review migrated case", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "startAppeal",
                 "appealStartedByAdmin",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewDraftAppeal",
-                        "name", "Review draft appeal",
-                        "delayUntil", delayForDays,
-                        "processCategories", "followUpOverdue"
-                    )
-                )
+                Map.of(
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewDraftAppeal", "Review draft appeal", "followUpOverdue", delayForDays)
             ),
-            Arguments.of(
+            getArgumentOf(
                 "startAppeal",
                 "appealStartedByAdmin",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "appellantInDetention":"\
-                                      true\
-                                      ",
-                                            "isNotificationTurnedOff":"\
-                                      false\
-                                      "
-                                         }\
-                                      }\
-                                      """),
-                singletonList(
-                    Map.of(
-                        "taskId", "DetainedReviewDraftAppeal",
-                        "name", "Detained - Review Draft Appeal",
-                        "delayUntil", delayForDays,
-                        "processCategories", "followUpOverdue"
-                    )
+                Map.of(
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap(
+                    "DetainedReviewDraftAppeal",
+                    "Detained - Review Draft Appeal",
+                    "followUpOverdue",
+                    delayForDays
                 )
             ),
-            Arguments.of(
+            getArgumentOf(
                 "requestResponseReview",
                 "respondentReview",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isAdmin":"true",
-                                            "isNotificationTurnedOff":"false"
-                                         }\
-                                      }"""),
-                singletonList(
-                    Map.of(
-                        "taskId", "printAndSendHoResponse",
-                        "name", "Print and send HO response",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "isAdmin", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("printAndSendHoResponse", "Print and send HO response", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "asyncStitchingComplete",
                 "preHearing",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isAdmin":"true",
-                                            "isNotificationTurnedOff":"false"
-                                         }\
-                                      }"""),
-                singletonList(
-                    Map.of(
-                        "taskId", "printAndSendHearingBundle",
-                        "name", "Print and send hearing bundle",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "isAdmin", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("printAndSendHearingBundle", "Print and send hearing bundle", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "asyncStitchingComplete",
                 "preHearing",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isAdmin":"true",
-                                            "appellantInDetention":"true",
-                                            "isNotificationTurnedOff":"false"
-                                         }\
-                                      }"""),
-                singletonList(
-                    Map.of(
-                        "taskId", "detainedPrintAndSendHearingBundle",
-                        "name", "Detained - Print and send hearing bundle",
-
-                        "processCategories", "caseProgression"
-                    )
+                Map.of(
+                    "isAdmin", "true",
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap(
+                    "detainedPrintAndSendHearingBundle",
+                    "Detained - Print and send hearing bundle",
+                    "caseProgression"
                 )
             ),
-            Arguments.of(
+            getArgumentOf(
                 "updateTribunalDecision",
                 null,
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isAdmin":"true",
-                                            "isDecisionRule31Changed":"true",
-                                            "updateTribunalDecisionList":"underRule31",
-                                            "isNotificationTurnedOff":"false"
-                                         }\
-                                      }"""),
-                singletonList(
-                    Map.of(
-                        "taskId", "printAndSendDecisionCorrectedRule31",
-                        "name", "Print and send decision corrected under rule 31",
-
-                        "processCategories", "caseProgression"
-                    )
+                Map.of(
+                    "isAdmin",
+                    "true",
+                    "isDecisionRule31Changed",
+                    "true",
+                    "updateTribunalDecisionList",
+                    "underRule31",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap(
+                    "printAndSendDecisionCorrectedRule31",
+                    "Print and send decision corrected under rule 31",
+                    "caseProgression"
                 )
             ),
-            Arguments.of(
+            getArgumentOf(
                 "updateTribunalDecision",
                 null,
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isAdmin":"true",
-                                            "isDecisionRule31Changed":"true",
-                                            "updateTribunalDecisionList":"underRule31",
-                                            "appellantInDetention":"true",
-                                            "isNotificationTurnedOff":"false"
-                                         }\
-                                      }"""),
-                singletonList(
-                    Map.of(
-                        "taskId", "detainedPrintAndSendDecisionCorrectedRule31",
-                        "name", "Detained - Print and send decision corrected under rule 31",
-
-                        "processCategories", "caseProgression"
-                    )
+                Map.of(
+                    "isAdmin",
+                    "true",
+                    "isDecisionRule31Changed",
+                    "true",
+                    "updateTribunalDecisionList",
+                    "underRule31",
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap(
+                    "detainedPrintAndSendDecisionCorrectedRule31",
+                    "Detained - Print and send decision corrected under rule 31",
+                    "caseProgression"
                 )
             ),
-            Arguments.of(
+            getArgumentOf(
                 "updateTribunalDecision",
                 null,
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isAdmin":"true",
-                                            "updateTribunalDecisionList":"underRule32",
-                                            "appellantInDetention":"false",
-                                            "isNotificationTurnedOff":"false"
-                                         }\
-                                      }"""),
-                List.of(
-                    Map.of(
-                        "taskId", "reviewAppealSetAsideUnderRule32",
-                        "name", "Review appeal set aside under rule 32",
-
-                        "processCategories", "caseProgression"
-                    ),
-                    Map.of(
-                        "taskId", "printAndSendDecisionCorrectedRule32",
-                        "name", "Print and send decision corrected under rule 32",
-
-                        "processCategories", "caseProgression"
-                    )
+                Map.of(
+                    "isAdmin",
+                    "true",
+                    "updateTribunalDecisionList",
+                    "underRule32",
+                    "appellantInDetention", "false",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap(
+                    "reviewAppealSetAsideUnderRule32",
+                    "Review appeal set aside under rule 32",
+                    "caseProgression"
+                ),
+                getTaskMap(
+                    "printAndSendDecisionCorrectedRule32",
+                    "Print and send decision corrected under rule 32",
+                    "caseProgression"
                 )
             ),
-            Arguments.of(
+            getArgumentOf(
                 "updateTribunalDecision",
                 null,
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isAdmin":"true",
-                                            "updateTribunalDecisionList":"underRule32",
-                                            "appellantInDetention":"true",
-                                            "isNotificationTurnedOff":"false"
-                                         }\
-                                      }"""),
-                List.of(
-                    Map.of(
-                        "taskId", "detainedReviewAppealSetAsideUnderRule32",
-                        "name", "Detained - Review appeal set aside under rule 32",
-
-                        "processCategories", "caseProgression"
-                    ),
-                    Map.of(
-                        "taskId", "detainedPrintAndSendDecisionCorrectedRule32",
-                        "name", "Detained - Print and send decision corrected under rule 32",
-
-                        "processCategories", "caseProgression"
-                    )
+                Map.of(
+                    "isAdmin",
+                    "true",
+                    "updateTribunalDecisionList",
+                    "underRule32",
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap(
+                    "detainedReviewAppealSetAsideUnderRule32",
+                    "Detained - Review appeal set aside under rule 32",
+                    "caseProgression"
+                ),
+                getTaskMap(
+                    "detainedPrintAndSendDecisionCorrectedRule32",
+                    "Detained - Print and send decision corrected under rule 32",
+                    "caseProgression"
                 )
             ),
-            Arguments.of(
+            getArgumentOf(
                 "makeAnApplication",
                 null,
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isAdmin":"true",
-                                            "appellantInDetention":"false",
-                                            "isNotificationTurnedOff":"false",
-                                            "lastModifiedApplication" : {
-                                                  "type" : "Judge's review of application decision",
-                                                  "decision" : "",
-                                                  "applicant":"Respondent"
-                                                }
-                                         }\
-                                      }"""),
-                List.of(
+                Map.of(
+                    "isAdmin",
+                    "true",
+                    "appellantInDetention", "false",
+                    "isNotificationTurnedOff", "false",
+                    "lastModifiedApplication",
                     Map.of(
-                        "taskId", "processApplicationToReviewDecision",
-                        "name", "Process Application to Review Decision",
-
-                        "processCategories", "application"
-                    ),
-                    Map.of(
-                        "taskId", "printAndSendHoApplication",
-                        "name", "Print and send HO application",
-
-                        "processCategories", "caseProgression"
+                        "type",
+                        "Judge's review of application decision",
+                        "decision",
+                        "",
+                        "applicant",
+                        "Respondent"
                     )
-                )
+                ),
+                getTaskMap(
+                    "processApplicationToReviewDecision",
+                    "Process Application to Review Decision",
+                    "application"
+                ),
+                getTaskMap("printAndSendHoApplication", "Print and send HO application", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "makeAnApplication",
                 null,
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isAdmin":"true",
-                                            "appellantInDetention":"true",
-                                            "isNotificationTurnedOff":"false",
-                                            "lastModifiedApplication" : {
-                                                  "type" : "Judge's review of application decision",
-                                                  "decision" : "",
-                                                  "applicant":"Respondent"
-                                                }
-                                         }\
-                                      }"""),
-                List.of(
+                Map.of(
+                    "isAdmin",
+                    "true",
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false",
+                    "lastModifiedApplication",
                     Map.of(
-                        "taskId", "detainedProcessApplicationToReviewDecision",
-                        "name", "Detained - Process Application to Review Decision",
-
-                        "processCategories", "application"
-                    ),
-                    Map.of(
-                        "taskId", "detainedPrintAndSendHoApplication",
-                        "name", "Detained - Print and send HO application",
-
-                        "processCategories", "caseProgression"
+                        "type",
+                        "Judge's review of application decision",
+                        "decision",
+                        "",
+                        "applicant",
+                        "Respondent"
                     )
+                ),
+                getTaskMap(
+                    "detainedProcessApplicationToReviewDecision",
+                    "Detained - Process Application to Review Decision",
+                    "application"
+                ),
+                getTaskMap(
+                    "detainedPrintAndSendHoApplication",
+                    "Detained - Print and send HO application",
+                    "caseProgression"
                 )
             ),
-            Arguments.of(
+            getArgumentOf(
                 "uploadAdditionalEvidenceHomeOffice",
                 null,
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isNotificationTurnedOff":"false",
-                                            "isAdmin":"true"
-                                         }\
-                                      }"""),
-                singletonList(
-                    Map.of(
-                        "taskId", "printAndSendHoEvidence",
-                        "name", "Print and send new HO evidence",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "isNotificationTurnedOff", "false",
+                    "isAdmin", "true"
+                ),
+                getTaskMap("printAndSendHoEvidence", "Print and send new HO evidence", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "uploadAdditionalEvidenceHomeOffice",
                 null,
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isAdmin":"true",
-                                            "isNotificationTurnedOff":"false",
-                                            "appellantInDetention":"true"
-                                         }\
-                                      }"""),
-                singletonList(
-                    Map.of(
-                        "taskId", "detainedPrintAndSendHoEvidence",
-                        "name", "Detained - Print and send new HO evidence",
-
-                        "processCategories", "caseProgression"
-                    )
+                Map.of(
+                    "isAdmin", "true",
+                    "isNotificationTurnedOff", "false",
+                    "appellantInDetention", "true"
+                ),
+                getTaskMap(
+                    "detainedPrintAndSendHoEvidence",
+                    "Detained - Print and send new HO evidence",
+                    "caseProgression"
                 )
             ),
-            Arguments.of(
+            getArgumentOf(
                 "uploadAddendumEvidenceHomeOffice",
                 null,
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isAdmin":"true",
-                                            "isNotificationTurnedOff":"false",
-                                            "appellantInDetention":"false"
-                                         }\
-                                      }"""),
-                singletonList(
-                    Map.of(
-                        "taskId", "printAndSendHoEvidence",
-                        "name", "Print and send new HO evidence",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "isAdmin", "true",
+                    "isNotificationTurnedOff", "false",
+                    "appellantInDetention", "false"
+                ),
+                getTaskMap("printAndSendHoEvidence", "Print and send new HO evidence", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "uploadAddendumEvidenceHomeOffice",
                 null,
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isAdmin":"true",
-                                            "isNotificationTurnedOff":"false",
-                                            "appellantInDetention":"true"
-                                         }\
-                                      }"""),
-                singletonList(
-                    Map.of(
-                        "taskId", "detainedPrintAndSendHoEvidence",
-                        "name", "Detained - Print and send new HO evidence",
-
-                        "processCategories", "caseProgression"
-                    )
+                Map.of(
+                    "isAdmin", "true",
+                    "isNotificationTurnedOff", "false",
+                    "appellantInDetention", "true"
+                ),
+                getTaskMap(
+                    "detainedPrintAndSendHoEvidence",
+                    "Detained - Print and send new HO evidence",
+                    "caseProgression"
                 )
             ),
-            Arguments.of(
+            getArgumentOf(
                 "decideFtpaApplication",
                 null,
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isNotificationTurnedOff":"false",
-                                            "isAdmin":"true"
-                                         }\
-                                      }"""),
-                singletonList(
-                    Map.of(
-                        "taskId", "printAndSendFTPADecision",
-                        "name", "Print and send FTPA decision",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "isNotificationTurnedOff", "false",
+                    "isAdmin", "true"
+                ),
+                getTaskMap("printAndSendFTPADecision", "Print and send FTPA decision", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "decideFtpaApplication",
                 null,
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isAdmin":"true",
-                                            "isNotificationTurnedOff":"false",
-                                            "appellantInDetention":"true"
-                                         }\
-                                      }"""),
-                singletonList(
-                    Map.of(
-                        "taskId", "detainedPrintAndSendFTPADecision",
-                        "name", "Detained - Print and send FTPA decision",
-
-                        "processCategories", "caseProgression"
-                    )
+                Map.of(
+                    "isAdmin", "true",
+                    "isNotificationTurnedOff", "false",
+                    "appellantInDetention", "true"
+                ),
+                getTaskMap(
+                    "detainedPrintAndSendFTPADecision",
+                    "Detained - Print and send FTPA decision",
+                    "caseProgression"
                 )
             ),
-            Arguments.of(
+            getArgumentOf(
                 "requestNewHearingRequirements",
                 "submitHearingRequirements",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isNotificationTurnedOff":"false",
-                                            "isAdmin":"true"
-                                         }\
-                                      }"""),
-                singletonList(
-                    Map.of(
-                        "taskId", "printAndSendReheardHearingRequirements",
-                        "name", "Print and send reheard appeal hearing requirements form",
-
-                        "processCategories", "caseProgression"
-                    )
+                Map.of(
+                    "isNotificationTurnedOff", "false",
+                    "isAdmin", "true"
+                ),
+                getTaskMap(
+                    "printAndSendReheardHearingRequirements",
+                    "Print and send reheard appeal hearing requirements form",
+                    "caseProgression"
                 )
             ),
-            Arguments.of(
+            getArgumentOf(
                 "requestNewHearingRequirements",
                 "submitHearingRequirements",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isAdmin":"true",
-                                            "isNotificationTurnedOff":"false",
-                                            "appellantInDetention":"true"
-                                         }\
-                                      }"""),
-                singletonList(
-                    Map.of(
-                        "taskId", "detainedPrintAndSendReheardHearingRequirements",
-                        "name", "Detained - Print and send reheard appeal hearing requirements form",
-
-                        "processCategories", "caseProgression"
-                    )
+                Map.of(
+                    "isAdmin", "true",
+                    "isNotificationTurnedOff", "false",
+                    "appellantInDetention", "true"
+                ),
+                getTaskMap(
+                    "detainedPrintAndSendReheardHearingRequirements",
+                    "Detained - Print and send reheard appeal hearing requirements form",
+                    "caseProgression"
                 )
             ),
-            Arguments.of(
+            getArgumentOf(
                 "progressMigratedCase",
                 "appealSubmitted",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isNotificationTurnedOff":"false",
-                                            "appealType":"protection"
-                                         }\
-                                      }"""),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewTheAppeal",
-                        "name", "Review the appeal",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "isNotificationTurnedOff", "false",
+                    "appealType", "protection"
+                ),
+                getTaskMap("reviewTheAppeal", "Review the appeal", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "progressMigratedCase",
                 "appealSubmitted",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isNotificationTurnedOff":"false",
-                                            "appealType":"revocationOfProtection"
-                                         }\
-                                      }"""),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewTheAppeal",
-                        "name", "Review the appeal",
-
-
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "isNotificationTurnedOff", "false",
+                    "appealType", "revocationOfProtection"
+                ),
+                getTaskMap("reviewTheAppeal", "Review the appeal", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "progressMigratedCase",
                 "appealSubmitted",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isNotificationTurnedOff":"false",
-                                            "appealType":"deprivation"
-                                         }\
-                                      }"""),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewTheAppeal",
-                        "name", "Review the appeal",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "isNotificationTurnedOff", "false",
+                    "appealType", "deprivation"
+                ),
+                getTaskMap("reviewTheAppeal", "Review the appeal", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "progressMigratedCase",
                 "appealSubmitted",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isNotificationTurnedOff":"false",
-                                            "appealType":"refusalOfHumanRights"
-                                         }\
-                                      }"""),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewTheAppeal",
-                        "name", "Review the appeal",
-
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "isNotificationTurnedOff", "false",
+                    "appealType", "refusalOfHumanRights"
+                ),
+                getTaskMap("reviewTheAppeal", "Review the appeal", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "progressMigratedCase",
                 "appealSubmitted",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isNotificationTurnedOff":"false",
-                                            "appealType":"refusalOfEu"
-                                         }\
-                                      }"""),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewTheAppeal",
-                        "name", "Review the appeal",
-
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "isNotificationTurnedOff", "false",
+                    "appealType", "refusalOfEu"
+                ),
+                getTaskMap("reviewTheAppeal", "Review the appeal", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "progressMigratedCase",
                 "appealSubmitted",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isNotificationTurnedOff":"false",
-                                            "appealType":"euSettlementScheme"
-                                         }\
-                                      }"""),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewTheAppeal",
-                        "name", "Review the appeal",
-
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "isNotificationTurnedOff", "false",
+                    "appealType", "euSettlementScheme"
+                ),
+                getTaskMap("reviewTheAppeal", "Review the appeal", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "progressMigratedCase",
                 "pendingPayment",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "appealType":"euSettlementScheme",
-                                            "isNotificationTurnedOff":"false",
-                                            "remissionType":"helpWithFees"
-                                         }\
-                                      }"""),
-                List.of(
-                    Map.of(
-                        "taskId", "reviewHWFRemission",
-                        "name", "Review HWF remission",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "appealType", "euSettlementScheme",
+                    "isNotificationTurnedOff", "false",
+                    "remissionType", "helpWithFees"
+                ),
+                getTaskMap("reviewHWFRemission", "Review HWF remission", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "progressMigratedCase",
                 "appealSubmitted",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "appealType":"refusalOfHumanRights",
-                                            "isNotificationTurnedOff":"false",
-                                            "remissionType":"exceptionalCircumstancesRemission"
-                                         }\
-                                      }"""),
-                List.of(
-                    Map.of(
-                        "taskId", "reviewTheAppeal",
-                        "name", "Review the appeal",
-
-                        "processCategories", "caseProgression"
-                    ),
-                    Map.of(
-                        "taskId", "reviewECRRemission",
-                        "name", "Review ECR remission",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "appealType", "refusalOfHumanRights",
+                    "isNotificationTurnedOff", "false",
+                    "remissionType", "exceptionalCircumstancesRemission"
+                ),
+                getTaskMap("reviewTheAppeal", "Review the appeal", "caseProgression"),
+                getTaskMap("reviewECRRemission", "Review ECR remission", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "progressMigratedCase",
                 "appealSubmitted",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "appealType":"refusalOfEu",
-                                            "isNotificationTurnedOff":"false",
-                                            "remissionType":"helpWithFees"
-                                         }\
-                                      }"""),
-                List.of(
-                    Map.of(
-                        "taskId", "reviewTheAppeal",
-                        "name", "Review the appeal",
-
-                        "processCategories", "caseProgression"
-                    ),
-                    Map.of(
-                        "taskId", "reviewHWFRemission",
-                        "name", "Review HWF remission",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "appealType", "refusalOfEu",
+                    "isNotificationTurnedOff", "false",
+                    "remissionType", "helpWithFees"
+                ),
+                getTaskMap("reviewTheAppeal", "Review the appeal", "caseProgression"),
+                getTaskMap("reviewHWFRemission", "Review HWF remission", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "progressMigratedCase",
                 "appealSubmitted",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "appealType":"protection",
-                                            "isNotificationTurnedOff":"false",
-                                            "remissionClaim":"homeOfficeWaiver"
-                                         }\
-                                      }"""),
-                List.of(
-                    Map.of(
-                        "taskId", "reviewTheAppeal",
-                        "name", "Review the appeal",
-
-                        "processCategories", "caseProgression"
-                    ),
-                    Map.of(
-                        "taskId", "reviewHOWaiverRemission",
-                        "name", "Review HO Waiver remission",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "appealType", "protection",
+                    "isNotificationTurnedOff", "false",
+                    "remissionClaim", "homeOfficeWaiver"
+                ),
+                getTaskMap("reviewTheAppeal", "Review the appeal", "caseProgression"),
+                getTaskMap("reviewHOWaiverRemission", "Review HO Waiver remission", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "progressMigratedCase",
                 "appealSubmitted",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "appealType":"euSettlementScheme",
-                                            "isNotificationTurnedOff":"false",
-                                            "remissionType":"exceptionalCircumstancesRemission"
-                                         }\
-                                      }"""),
-                List.of(
-                    Map.of(
-                        "taskId", "reviewTheAppeal",
-                        "name", "Review the appeal",
-
-                        "processCategories", "caseProgression"
-                    ),
-                    Map.of(
-                        "taskId", "reviewECRRemission",
-                        "name", "Review ECR remission",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "appealType", "euSettlementScheme",
+                    "isNotificationTurnedOff", "false",
+                    "remissionType", "exceptionalCircumstancesRemission"
+                ),
+                getTaskMap("reviewTheAppeal", "Review the appeal", "caseProgression"),
+                getTaskMap("reviewECRRemission", "Review ECR remission", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "progressMigratedCase",
                 "caseUnderReview",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isNotificationTurnedOff":"false"
-                                         }\
-                                      }"""),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewAppealSkeletonArgument",
-                        "name", "Review Appeal Skeleton Argument",
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewAppealSkeletonArgument", "Review Appeal Skeleton Argument", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "progressMigratedCase",
                 "caseUnderReview",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isNotificationTurnedOff":"false",
-                                            "appellantInDetention":"true"
-                                         }\
-                                      }"""),
-                singletonList(
-                    Map.of(
-                        "taskId", "detainedReviewAppealSkeletonArgument",
-                        "name", "Detained - Review Appeal Skeleton Argument",
-                        "processCategories", "caseProgression"
-                    )
+                Map.of(
+                    "isNotificationTurnedOff", "false",
+                    "appellantInDetention", "true"
+                ),
+                getTaskMap(
+                    "detainedReviewAppealSkeletonArgument",
+                    "Detained - Review Appeal Skeleton Argument",
+                    "caseProgression"
                 )
             ),
-            Arguments.of(
+            getArgumentOf(
                 "progressMigratedCase",
                 "caseUnderReview",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isNotificationTurnedOff":"false",
-                                            "appellantInDetention":"true"
-                                         }\
-                                      }"""),
-                singletonList(
-                    Map.of(
-                        "taskId", "detainedReviewAppealSkeletonArgument",
-                        "name", "Detained - Review Appeal Skeleton Argument",
-
-
-                        "processCategories", "caseProgression"
-                    )
+                Map.of(
+                    "isNotificationTurnedOff", "false",
+                    "appellantInDetention", "true"
+                ),
+                getTaskMap(
+                    "detainedReviewAppealSkeletonArgument",
+                    "Detained - Review Appeal Skeleton Argument",
+                    "caseProgression"
                 )
             ),
-            Arguments.of(
+            getArgumentOf(
                 "progressMigratedCase",
                 "caseUnderReview",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isNotificationTurnedOff":"false",
-                                            "appellantInDetention":"true"
-                                         }\
-                                      }"""),
-                singletonList(
-                    Map.of(
-                        "taskId", "detainedReviewAppealSkeletonArgument",
-                        "name", "Detained - Review Appeal Skeleton Argument",
-
-
-                        "processCategories", "caseProgression"
-                    )
+                Map.of(
+                    "isNotificationTurnedOff", "false",
+                    "appellantInDetention", "true"
+                ),
+                getTaskMap(
+                    "detainedReviewAppealSkeletonArgument",
+                    "Detained - Review Appeal Skeleton Argument",
+                    "caseProgression"
                 )
             ),
-            Arguments.of(
+            getArgumentOf(
                 "progressMigratedCase",
                 "reasonsForAppealSubmitted",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isNotificationTurnedOff":"false"
-                                         }\
-                                      }"""),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewReasonsForAppeal",
-                        "name", "Review Reasons For Appeal",
-
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewReasonsForAppeal", "Review Reasons For Appeal", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "progressMigratedCase",
                 "prepareForHearing",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isNotificationTurnedOff":"false"
-                                         }\
-                                      }"""),
-                List.of(
-                    Map.of(
-                        "taskId", "caseSummaryHearingBundleStartDecision",
-                        "name", "Create Hearing Bundle",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("caseSummaryHearingBundleStartDecision", "Create Hearing Bundle", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "progressMigratedCase",
                 "remitted",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isNotificationTurnedOff":"false"
-                                         }\
-                                      }"""),
-                singletonList(
-                    Map.of(
-                        "taskId", "reviewRemittedAppeal",
-                        "name", "Review remitted appeal",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("reviewRemittedAppeal", "Review remitted appeal", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "progressMigratedCase",
                 "remitted",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "appellantInDetention":"true",
-                                            "isNotificationTurnedOff":"false"
-                                         }\
-                                      }"""),
-                singletonList(
-                    Map.of(
-                        "taskId", "detainedReviewRemittedAppeal",
-                        "name", "Detained - Review remitted appeal",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("detainedReviewRemittedAppeal", "Detained - Review remitted appeal", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "progressMigratedCase",
                 "ftpaSubmitted",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isNotificationTurnedOff":"false"
-                                         }\
-                                      }"""),
-                List.of(
-                    Map.of(
-                        "taskId", "assignAFTPAJudge",
-                        "name", "Assign a FTPA Judge",
-
-                        "processCategories", "caseProgression"
-                    ),
-                    Map.of(
-                        "taskId", "decideAnFTPA",
-                        "name", "Decide an FTPA",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("assignAFTPAJudge", "Assign a FTPA Judge", "caseProgression"),
+                getTaskMap("decideAnFTPA", "Decide an FTPA", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "progressMigratedCase",
                 "ftpaSubmitted",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isNotificationTurnedOff":"false",
-                                            "appellantInDetention":"true"
-                                         }\
-                                      }"""),
-                List.of(
-                    Map.of(
-                        "taskId", "detainedAssignAFTPAJudge",
-                        "name", "Detained - Assign a FTPA Judge",
-
-                        "processCategories", "caseProgression"
-                    ),
-                    Map.of(
-                        "taskId", "detainedDecideAnFTPA",
-                        "name", "Detained - Decide an FTPA",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "isNotificationTurnedOff", "false",
+                    "appellantInDetention", "true"
+                ),
+                getTaskMap("detainedAssignAFTPAJudge", "Detained - Assign a FTPA Judge", "caseProgression"),
+                getTaskMap("detainedDecideAnFTPA", "Detained - Decide an FTPA", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "progressMigratedCase",
                 "listing",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isNotificationTurnedOff":"false",
-                                            "reviewedHearingRequirements":"false"
-                                         }\
-                                      }"""),
-                List.of(
-                    Map.of(
-                        "taskId", "reviewHearingRequirements",
-                        "name", "Review hearing requirements",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "isNotificationTurnedOff", "false",
+                    "reviewedHearingRequirements", "false"
+                ),
+                getTaskMap("reviewHearingRequirements", "Review hearing requirements", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "progressMigratedCase",
                 "listing",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "reviewedHearingRequirements":"false",
-                                            "isNotificationTurnedOff":"false",
-                                            "appellantInDetention":"true"
-                                         }\
-                                      }"""),
-                List.of(
-                    Map.of(
-                        "taskId", "detainedReviewHearingRequirements",
-                        "name", "Detained - Review hearing requirements",
+                Map.of(
+                    "reviewedHearingRequirements", "false",
+                    "isNotificationTurnedOff", "false",
+                    "appellantInDetention", "true"
 
-                        "processCategories", "caseProgression"
-                    )
+                ),
+                getTaskMap(
+                    "detainedReviewHearingRequirements",
+                    "Detained - Review hearing requirements",
+                    "caseProgression"
                 )
             ),
-            Arguments.of(
+            getArgumentOf(
                 "progressMigratedCase",
                 "listing",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isNotificationTurnedOff":"false",
-                                            "reviewedHearingRequirements":"true"
-                                         }\
-                                      }"""),
-                List.of(
-                    Map.of(
-                        "taskId", "listTheCase",
-                        "name", "List the case",
-
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "isNotificationTurnedOff", "false",
+                    "reviewedHearingRequirements", "true"
+                ),
+                getTaskMap("listTheCase", "List the case", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "progressMigratedCase",
                 "listing",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "reviewedHearingRequirements":"true",
-                                            "isNotificationTurnedOff":"false",
-                                            "appellantInDetention":"true"
-                                         }\
-                                      }"""),
-                List.of(
-                    Map.of(
-                        "taskId", "detainedListTheCase",
-                        "name", "Detained - List the case",
+                Map.of(
+                    "reviewedHearingRequirements", "true",
+                    "isNotificationTurnedOff", "false",
+                    "appellantInDetention", "true"
 
-                        "processCategories", "caseProgression"
-                    )
-                )
+                ),
+                getTaskMap("detainedListTheCase", "Detained - List the case", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "generateListCmrTask",
                 null,
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isNotificationTurnedOff":"false",
-                                            "appellantInDetention":"true"
-                                         }\
-                                      }"""),
-                List.of(
-                    Map.of(
-                        "taskId", "detainedListCmr",
-                        "name", "Detained - List CMR",
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "isNotificationTurnedOff", "false",
+                    "appellantInDetention", "true"
+                ),
+                getTaskMap("detainedListCmr", "Detained - List CMR", "caseProgression")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "completeCaseReview",
                 "appealSubmitted",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "stf24wCurrentStatusAutoGenerated":true
-                                         }\
-                                      }\
-                                      """),
-                List.of(
-                    Map.of(
-                        "taskId", "listTheCase",
-                        "name", "List the case",
-                        "processCategories", "listTheCaseTask"
-                    )
-                )
+                Map.of(
+                    "stf24wPreviousStatusWasYesAutoGenerated", true
+                ),
+                getTaskMap("listTheCase", "List the case", "listTheCaseTask")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "completeCaseReview",
                 "listing",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "stf24wCurrentStatusAutoGenerated":true
-                                         }\
-                                      }\
-                                      """),
-                List.of(
-                    Map.of(
-                        "taskId", "listTheCase",
-                        "name", "List the case",
-                        "processCategories", "listTheCaseTask"
-                    )
-                )
+                Map.of(
+                    "stf24wPreviousStatusWasYesAutoGenerated", true
+                ),
+                getTaskMap("listTheCase", "List the case", "listTheCaseTask")
             ),
-            Arguments.of(
+            getArgumentOf(
                 "sendToAdminForListing",
                 "prepareForHearing",
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "stf24wCurrentStatusAutoGenerated":true
-                                         }\
-                                      }\
-                                      """),
-                List.of(
-                    Map.of(
-                        "taskId", "listTheCase",
-                        "name", "List the case",
-                        "processCategories", "listTheCaseTask"
-                    )
-                )
+                Map.of(
+                    "stf24wPreviousStatusWasYesAutoGenerated", true
+                ),
+                getTaskMap("listTheCase", "List the case", "listTheCaseTask")
             ),
-            Arguments.of(
-                "unknownEvent",
-                null,
-                null,
-                emptyList()
-            )
+            getArgumentOf("unknownEvent", null, null, null)
         );
+
+    }
+
+    private static Map<String, Object> getTaskMap(
+        String taskId,
+        String name,
+        String processCategories
+    ) {
+        return Map.of(
+            "taskId", taskId,
+            "name", name,
+            "processCategories", processCategories
+        );
+    }
+
+    private static Map<String, Object> getTaskMap(
+        String taskId,
+        String name,
+        String processCategories,
+        Map<String, Object> delayUntil
+    ) {
+        return Map.of(
+            "taskId", taskId,
+            "name", name,
+            "processCategories", processCategories,
+            "delayUntil", delayUntil
+        );
+    }
+
+    private static Arguments getArgumentOf(String eventId,
+                                           String postEventState,
+                                           Map<String, Object> additionalData,
+                                           Map<String, Object> expectation) {
+        return Arguments.of(
+            eventId,
+            postEventState,
+            additionalData != null ? mapAdditionalData(additionalData) : null,
+            expectation != null ? List.of(expectation) : emptyList()
+        );
+    }
+
+    private static Arguments getArgumentOf(String eventId,
+                                           String postEventState,
+                                           Map<String, Object> additionalData,
+                                           Map<String, Object> expectationOne,
+                                           Map<String, Object> expectationTwo) {
+        return Arguments.of(
+            eventId,
+            postEventState,
+            additionalData != null ? mapAdditionalData(additionalData) : null,
+            List.of(expectationOne, expectationTwo)
+        );
+    }
+
+    private static Arguments getWithLocalDateTimeMapArgumentOf(String eventId,
+                                                               String postEventState,
+                                                               Map<String, LocalDateTime> localDateTimeMap,
+                                                               Map<String, Object> additionalData,
+                                                               Map<String, Object> expectation) {
+        return Arguments.of(
+            eventId,
+            postEventState,
+            additionalData != null ? merge(localDateTimeMap, mapAdditionalData(additionalData)) : localDateTimeMap,
+            expectation != null ? List.of(expectation) : emptyList()
+        );
+    }
+
+    @ParameterizedTest(name = "event id: {0} post event state: {1} additional data: {2}")
+    @MethodSource("scenarioProvider")
+    void given_multiple_event_ids_should_evaluate_dmn(String eventId,
+                                                      String postEventState,
+                                                      Map<String, Object> map,
+                                                      List<Map<String, Object>> expectation) {
+
+        VariableMap inputVariables = new VariableMapImpl();
+        inputVariables.putValue("eventId", eventId);
+        inputVariables.putValue("postEventState", postEventState);
+        inputVariables.putValue(
+            "now", LocalDateTime.now().minusMinutes(10)
+                .format(DateTimeFormatter.ISO_LOCAL_DATE_TIME)
+        );
+        inputVariables.putAll(map);
+        DmnDecisionTableResult dmnDecisionTableResult = evaluateDmnTable(inputVariables);
+
+        assertEquals(expectation, dmnDecisionTableResult.getResultList());
     }
 
     @SafeVarargs
@@ -5576,7 +2667,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
     public static Stream<Arguments> multipleMapScenarioProvider() {
         LocalDateTime directionDueDate = LocalDateTime.now().plusDays(5);
-        Map<String, LocalDateTime> variablesDirectionDueDate = Map.of(
+        Map<String, Object> variablesDirectionDueDate = Map.of(
             "directionDueDate", directionDueDate
         );
         Map<String, Object> delayUntilDirectionDue = Map.of(
@@ -5585,97 +2676,95 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         );
 
         return Stream.of(
-            Arguments.of(
+            getMultipleMapArgumentOf(
                 "requestCaseBuilding",
                 "caseBuilding",
                 variablesDirectionDueDate,
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isNotificationTurnedOff":"false",
-                                            "isAdmin":"true"
-                                         }\
-                                      }"""),
-                List.of(
-                    Map.of(
-                        "taskId", "followUpOverdueCaseBuilding",
-                        "name", "Follow-up overdue case building",
-                        "processCategories", "followUpOverdue",
-                        "delayUntil", delayUntilDirectionDue
-                    ),
-                    Map.of(
-                        "taskId", "printAndSendHoBundle",
-                        "name", "Print and send HO bundle and appeal reasons form",
-
-                        "processCategories", "caseProgression"
-                    )
+                Map.of(
+                    "isNotificationTurnedOff", "false",
+                    "isAdmin", "true"
+                ),
+                Map.of(
+                    "taskId", "followUpOverdueCaseBuilding",
+                    "name", "Follow-up overdue case building",
+                    "processCategories", "followUpOverdue",
+                    "delayUntil", delayUntilDirectionDue
+                ),
+                Map.of(
+                    "taskId", "printAndSendHoBundle",
+                    "name", "Print and send HO bundle and appeal reasons form",
+                    "processCategories", "caseProgression"
                 )
+
             ),
-            Arguments.of(
+            getMultipleMapArgumentOf(
                 "requestHearingRequirementsFeature",
                 "submitHearingRequirements",
                 variablesDirectionDueDate,
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isNotificationTurnedOff":"false",
-                                            "isAdmin":"true"
-                                         }\
-                                      }"""),
-                List.of(
-                    Map.of(
-                        "taskId", "followUpOverdueHearingRequirements",
-                        "name", "Follow-up overdue hearing requirements",
-                        "processCategories", "followUpOverdue",
-                        "delayUntil", delayUntilDirectionDue
-                    ),
-                    Map.of(
-                        "taskId", "printAndSendHearingRequirements",
-                        "name", "Print and send hearing requirements form",
+                Map.of(
+                    "isNotificationTurnedOff", "false",
+                    "isAdmin", "true"
+                ),
+                Map.of(
+                    "taskId", "followUpOverdueHearingRequirements",
+                    "name", "Follow-up overdue hearing requirements",
+                    "processCategories", "followUpOverdue",
+                    "delayUntil", delayUntilDirectionDue
+                ),
+                Map.of(
+                    "taskId", "printAndSendHearingRequirements",
+                    "name", "Print and send hearing requirements form",
+                    "processCategories", "caseProgression"
+                )
 
-                        "processCategories", "caseProgression"
-                    )
-                )
             ),
-            Arguments.of(
+            getMultipleMapArgumentOf(
                 "progressMigratedCase",
                 "awaitingRespondentEvidence",
                 variablesDirectionDueDate,
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isNotificationTurnedOff":"false",
-                                            "uploadHomeOfficeBundleAvailable":"false"
-                                         }\
-                                      }"""),
-                List.of(
-                    Map.of(
-                        "taskId", "followUpOverdueRespondentEvidence",
-                        "name", "Follow-up overdue respondent evidence",
-                        "processCategories", "followUpOverdue",
-                        "delayUntil", delayUntilDirectionDue
-                    )
-                )
+                Map.of(
+                    "isNotificationTurnedOff", "false",
+                    "uploadHomeOfficeBundleAvailable", "false"
+                ),
+                Map.of(
+                    "taskId", "followUpOverdueRespondentEvidence",
+                    "name", "Follow-up overdue respondent evidence",
+                    "processCategories", "followUpOverdue",
+                    "delayUntil", delayUntilDirectionDue
+                ),
+                null
             ),
-            Arguments.of(
+            getMultipleMapArgumentOf(
                 "progressMigratedCase",
                 "awaitingRespondentEvidence",
                 variablesDirectionDueDate,
-                mapAdditionalData("""
-                                      {
-                                         "Data":{
-                                            "isNotificationTurnedOff":"false",
-                                            "uploadHomeOfficeBundleAvailable":"true"
-                                         }\
-                                      }"""),
-                List.of(
-                    Map.of(
-                        "taskId", "reviewRespondentEvidence",
-                        "name", "Review Respondent Evidence",
-                        "processCategories", "caseProgression"
-                    )
-                )
+                Map.of(
+                    "isNotificationTurnedOff", "false",
+                    "uploadHomeOfficeBundleAvailable", "true"
+                ),
+                Map.of(
+                    "taskId", "reviewRespondentEvidence",
+                    "name", "Review Respondent Evidence",
+                    "processCategories", "caseProgression"
+                ),
+                null
             )
+        );
+    }
+
+
+    private static Arguments getMultipleMapArgumentOf(String eventId,
+                                                      String postEventState,
+                                                      Map<String, Object> additionalMap,
+                                                      Map<String, Object> additionalData,
+                                                      Map<String, Object> expectationOne,
+                                                      Map<String, Object> expectationTwo) {
+        return Arguments.of(
+            eventId,
+            postEventState,
+            additionalMap,
+            mapAdditionalData(additionalData),
+            expectationTwo == null ? List.of(expectationOne) : List.of(expectationOne, expectationTwo)
         );
     }
 
@@ -5717,145 +2806,196 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                       """),
                 emptyList()
             ),
-            getArgumentOf("Adjourn",
-                          "processApplicationAdjourn",
-                          "Process Adjourn Application",
-                          false,
-                                            false),
-
-            getArgumentOf("Adjourn",
-                          "detainedProcessApplicationAdjourn",
-                          "Detained - Process Adjourn Application",
-                          true,
-                          false),
-            getArgumentOf("Expedite",
-                          "processApplicationExpedite",
-                          "Process Expedite Application",
-                          false,
-                          false),
-            getArgumentOf("Expedite",
-                          "detainedProcessApplicationExpedite",
-                          "Detained - Process Expedite Application",
-                          true,
-                          false),
-            getArgumentOf("Time extension",
-                          "processApplicationTimeExtension",
-                          "Process Time Extension Application",
-                          false,
-                          false),
-            getArgumentOf("Time extension",
-                          "detainedProcessApplicationTimeExtension",
-                          "Detained - Process Time Extension Application",
-                          true,
-                          false),
-            getArgumentOf("Transfer",
-                          "processApplicationTransfer",
-                          "Process Transfer Application",
-                          false,
-                          false),
-            getArgumentOf("Transfer",
-                          "detainedProcessApplicationTransfer",
-                          "Detained - Process Transfer Application",
-                          true,
-                          false),
-            getArgumentOf("Withdraw",
-                          "processApplicationWithdraw",
-                          "Process Withdraw Application",
-                          false,
-                          false),
-            getArgumentOf("Withdraw",
-                          "detainedProcessApplicationWithdraw",
-                          "Detained - Process Withdraw Application",
-                          true,
-                          false),
-            getArgumentOf("Update hearing requirements",
-                          "processApplicationUpdateHearingRequirements",
-                          "Process Update Hearing Requirements Application",
-                          false,
-                          false),
-            getArgumentOf("Update hearing requirements",
-                          "detainedProcessApplicationUpdateHearingRequirements",
-                          "Detained - Process Update Hearing Requirements Application",
-                          true,
-                          false),
-            getArgumentOf("Update appeal details",
-                          "processApplicationUpdateAppealDetails",
-                          "Process Update Appeal Details Application",
-                          false,
-                          false),
-            getArgumentOf("Update appeal details",
-                          "detainedProcessApplicationUpdateAppealDetails",
-                          "Detained - Process Update Appeal Details Application",
-                          true,
-                          false),
-            getArgumentOf("Reinstate an ended appeal",
-                          "processApplicationReinstateAnEndedAppeal",
-                          "Process Reinstate An Ended Appeal Application",
-                          false,
-                          false),
-            getArgumentOf("Reinstate an ended appeal",
-                          "detainedProcessApplicationReinstateAnEndedAppeal",
-                          "Detained - Process Reinstate An Ended Appeal Application",
-                          true,
-                          false),
-            getArgumentOf("Other",
-                          "processApplicationOther",
-                          "Process Other Application",
-                          false,
-                          false),
-            getArgumentOf("Other",
-                          "detainedProcessApplicationOther",
-                          "Detained - Process Other Application",
-                          true,
-                          false),
-            getArgumentOf("Link/unlink appeals",
-                          "processApplicationLink/UnlinkAppeals",
-                          "Process Link/Unlink Appeals Application",
-                          false,
-                          false),
-            getArgumentOf("Link/unlink appeals",
-                          "detainedProcessApplicationLink/UnlinkAppeals",
-                          "Detained - Process Link/Unlink Appeals Application",
-                          true,
-                          false),
-            getArgumentOf("Set aside a decision",
-                          "reviewSetAsideDecisionApplication",
-                          "Review set aside decision application",
-                          false,
-                          false),
-            getArgumentOf("Set aside a decision",
-                          "detainedReviewSetAsideDecisionApplication",
-                          "Detained - Review set aside decision application",
-                          true,
-                          false),
-            getArgumentOf("Judge's review of application decision",
-                          "processApplicationToReviewDecision",
-                          "Process Application to Review Decision",
-                          false,
-                          false),
-            getArgumentOf("Judge's review of application decision",
-                          "detainedProcessApplicationToReviewDecision",
-                          "Detained - Process Application to Review Decision",
-                          true,
-                          false),
-            getArgumentOf("Change hearing type",
-                          "processApplicationChangeHearingType",
-                          "Process Change Hearing Type Application",
-                          false,
-                          false),
-            getArgumentOf("Change hearing type",
-                          "detainedProcessApplicationChangeHearingType",
-                          "Detained - Process Change Hearing Type Application",
-                          true,
-                          false)
+            getMakeApplicationArgumentOf(
+                "Adjourn",
+                "processApplicationAdjourn",
+                "Process Adjourn Application",
+                false,
+                false
+            ),
+            getMakeApplicationArgumentOf(
+                "Adjourn",
+                "detainedProcessApplicationAdjourn",
+                "Detained - Process Adjourn Application",
+                true,
+                false
+            ),
+            getMakeApplicationArgumentOf(
+                "Expedite",
+                "processApplicationExpedite",
+                "Process Expedite Application",
+                false,
+                false
+            ),
+            getMakeApplicationArgumentOf(
+                "Expedite",
+                "detainedProcessApplicationExpedite",
+                "Detained - Process Expedite Application",
+                true,
+                false
+            ),
+            getMakeApplicationArgumentOf(
+                "Time extension",
+                "processApplicationTimeExtension",
+                "Process Time Extension Application",
+                false,
+                false
+            ),
+            getMakeApplicationArgumentOf(
+                "Time extension",
+                "detainedProcessApplicationTimeExtension",
+                "Detained - Process Time Extension Application",
+                true,
+                false
+            ),
+            getMakeApplicationArgumentOf(
+                "Transfer",
+                "processApplicationTransfer",
+                "Process Transfer Application",
+                false,
+                false
+            ),
+            getMakeApplicationArgumentOf(
+                "Transfer",
+                "detainedProcessApplicationTransfer",
+                "Detained - Process Transfer Application",
+                true,
+                false
+            ),
+            getMakeApplicationArgumentOf(
+                "Withdraw",
+                "processApplicationWithdraw",
+                "Process Withdraw Application",
+                false,
+                false
+            ),
+            getMakeApplicationArgumentOf(
+                "Withdraw",
+                "detainedProcessApplicationWithdraw",
+                "Detained - Process Withdraw Application",
+                true,
+                false
+            ),
+            getMakeApplicationArgumentOf(
+                "Update hearing requirements",
+                "processApplicationUpdateHearingRequirements",
+                "Process Update Hearing Requirements Application",
+                false,
+                false
+            ),
+            getMakeApplicationArgumentOf(
+                "Update hearing requirements",
+                "detainedProcessApplicationUpdateHearingRequirements",
+                "Detained - Process Update Hearing Requirements Application",
+                true,
+                false
+            ),
+            getMakeApplicationArgumentOf(
+                "Update appeal details",
+                "processApplicationUpdateAppealDetails",
+                "Process Update Appeal Details Application",
+                false,
+                false
+            ),
+            getMakeApplicationArgumentOf(
+                "Update appeal details",
+                "detainedProcessApplicationUpdateAppealDetails",
+                "Detained - Process Update Appeal Details Application",
+                true,
+                false
+            ),
+            getMakeApplicationArgumentOf(
+                "Reinstate an ended appeal",
+                "processApplicationReinstateAnEndedAppeal",
+                "Process Reinstate An Ended Appeal Application",
+                false,
+                false
+            ),
+            getMakeApplicationArgumentOf(
+                "Reinstate an ended appeal",
+                "detainedProcessApplicationReinstateAnEndedAppeal",
+                "Detained - Process Reinstate An Ended Appeal Application",
+                true,
+                false
+            ),
+            getMakeApplicationArgumentOf(
+                "Other",
+                "processApplicationOther",
+                "Process Other Application",
+                false,
+                false
+            ),
+            getMakeApplicationArgumentOf(
+                "Other",
+                "detainedProcessApplicationOther",
+                "Detained - Process Other Application",
+                true,
+                false
+            ),
+            getMakeApplicationArgumentOf(
+                "Link/unlink appeals",
+                "processApplicationLink/UnlinkAppeals",
+                "Process Link/Unlink Appeals Application",
+                false,
+                false
+            ),
+            getMakeApplicationArgumentOf(
+                "Link/unlink appeals",
+                "detainedProcessApplicationLink/UnlinkAppeals",
+                "Detained - Process Link/Unlink Appeals Application",
+                true,
+                false
+            ),
+            getMakeApplicationArgumentOf(
+                "Set aside a decision",
+                "reviewSetAsideDecisionApplication",
+                "Review set aside decision application",
+                false,
+                false
+            ),
+            getMakeApplicationArgumentOf(
+                "Set aside a decision",
+                "detainedReviewSetAsideDecisionApplication",
+                "Detained - Review set aside decision application",
+                true,
+                false
+            ),
+            getMakeApplicationArgumentOf(
+                "Judge's review of application decision",
+                "processApplicationToReviewDecision",
+                "Process Application to Review Decision",
+                false,
+                false
+            ),
+            getMakeApplicationArgumentOf(
+                "Judge's review of application decision",
+                "detainedProcessApplicationToReviewDecision",
+                "Detained - Process Application to Review Decision",
+                true,
+                false
+            ),
+            getMakeApplicationArgumentOf(
+                "Change hearing type",
+                "processApplicationChangeHearingType",
+                "Process Change Hearing Type Application",
+                false,
+                false
+            ),
+            getMakeApplicationArgumentOf(
+                "Change hearing type",
+                "detainedProcessApplicationChangeHearingType",
+                "Detained - Process Change Hearing Type Application",
+                true,
+                false
+            )
         );
     }
 
-    private static Arguments getArgumentOf(String applicationType,
-                                           String taskId,
-                                           String taskName,
-                                           boolean appellantInDetention,
-                                           boolean isNotificationTurnedOff) {
+    private static Arguments getMakeApplicationArgumentOf(String applicationType,
+                                                          String taskId,
+                                                          String taskName,
+                                                          boolean appellantInDetention,
+                                                          boolean isNotificationTurnedOff) {
         return Arguments.of(
             "makeAnApplication",
             null,
@@ -5898,7 +3038,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     }
 
     public static Stream<Arguments> decideAnApplicationScenarioProvider() {
-        Map<String,Object> delayFor5Days = Map.of(
+        Map<String, Object> delayFor5Days = Map.of(
             "delayUntilIntervalDays", "5",
             "delayUntilNonWorkingCalendar", "https://www.gov.uk/bank-holidays/england-and-wales.json",
             "delayUntilOrigin", LocalDate.now(),
@@ -5906,28 +3046,44 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         );
 
         return Stream.of(
-            getDecideAnApplicationArgumentsOf("Adjourn", "editListing",
-                                              "Edit Listing", "application", null, false),
-            getDecideAnApplicationArgumentsOf("Expedite", "editListing",
-                                              "Edit Listing", "application", null, false),
-            getDecideAnApplicationArgumentsOf("Transfer", "editListing",
-                                              "Edit Listing", "application", null, false),
-            getDecideAnApplicationArgumentsOf("Adjourn", "editListing",
-                                              "Edit Listing", "application", null, true),
-            getDecideAnApplicationArgumentsOf("Expedite", "editListing",
-                                              "Edit Listing", "application", null, true),
-            getDecideAnApplicationArgumentsOf("Transfer", "editListing",
-                                              "Edit Listing", "application", null, true),
-            getDecideAnApplicationArgumentsOf("Set aside a decision",
-                                              "followUpSetAsideDecision",
-                                              "Follow up set aside decision",
-                                              "followUpOverdue",
-                                              delayFor5Days, false, false, false),
-            getDecideAnApplicationArgumentsOf("Set aside a decision",
-                                              "detainedFollowUpSetAsideDecision",
-                                              "Detained - Follow Up Set Aside Decision",
-                                              "followUpOverdue",
-                                              delayFor5Days, false, true, false)
+            getDecideAnApplicationArgumentsOf(
+                "Adjourn", "editListing",
+                "Edit Listing", "application", null, false
+            ),
+            getDecideAnApplicationArgumentsOf(
+                "Expedite", "editListing",
+                "Edit Listing", "application", null, false
+            ),
+            getDecideAnApplicationArgumentsOf(
+                "Transfer", "editListing",
+                "Edit Listing", "application", null, false
+            ),
+            getDecideAnApplicationArgumentsOf(
+                "Adjourn", "editListing",
+                "Edit Listing", "application", null, true
+            ),
+            getDecideAnApplicationArgumentsOf(
+                "Expedite", "editListing",
+                "Edit Listing", "application", null, true
+            ),
+            getDecideAnApplicationArgumentsOf(
+                "Transfer", "editListing",
+                "Edit Listing", "application", null, true
+            ),
+            getDecideAnApplicationArgumentsOf(
+                "Set aside a decision",
+                "followUpSetAsideDecision",
+                "Follow up set aside decision",
+                "followUpOverdue",
+                delayFor5Days, false, false, false
+            ),
+            getDecideAnApplicationArgumentsOf(
+                "Set aside a decision",
+                "detainedFollowUpSetAsideDecision",
+                "Detained - Follow Up Set Aside Decision",
+                "followUpOverdue",
+                delayFor5Days, false, true, false
+            )
         );
     }
 
@@ -5935,7 +3091,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                                                String taskId,
                                                                String name,
                                                                String processCategories,
-                                                               Map<String,Object> delayUntil,
+                                                               Map<String, Object> delayUntil,
                                                                boolean isIntegrated) {
         Map<String, Object> map = new HashMap<>();
         if (!isIntegrated) {
@@ -5968,7 +3124,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                                                                String taskId,
                                                                String name,
                                                                String processCategories,
-                                                               Map<String,Object> delayUntil,
+                                                               Map<String, Object> delayUntil,
                                                                boolean isIntegrated,
                                                                boolean appellantInDetention,
                                                                boolean isNotificationTurnedOff) {
@@ -6149,7 +3305,6 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
     }
 
 
-
     private static Map<String, Object> mapAdditionalData(String additionalData) {
         ObjectMapper mapper = new ObjectMapper();
         try {
@@ -6159,6 +3314,11 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         } catch (IOException exp) {
             return null;
         }
+    }
+
+
+    private static Map<String, Object> mapAdditionalData(Map<String, Object> additionalData) {
+        return Map.of("additionalData", Map.of("Data", additionalData));
     }
 
 }
