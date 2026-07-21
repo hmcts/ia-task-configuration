@@ -642,7 +642,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
     void if_this_test_fails_needs_updating_with_your_changes() {
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertEquals(36, logic.getRules().size());
+        assertEquals(37, logic.getRules().size());
     }
 
     @SuppressWarnings("checkstyle:indentation")

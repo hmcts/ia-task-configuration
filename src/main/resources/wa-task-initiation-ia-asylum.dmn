@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.34.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.36.1">
   <decision id="wa-task-initiation-ia-asylum" name="Task initiation DMN" camunda:historyTimeToLive="P90D">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT" biodi:annotationsWidth="400">
       <input id="Input_1" label="Event Id" biodi:width="515" camunda:inputVariable="eventId">
@@ -23408,6 +23408,119 @@
         </outputEntry>
         <outputEntry id="LiteralExpression_1d1vyq3">
           <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0q3i4el">
+        <inputEntry id="UnaryTests_0038587">
+          <text>"queryManagementRaiseQuery"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_009jfzb">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0bgubqe">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0x5s1hk">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1w5ia7j">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14filwa">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ratp59">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_155azmi">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1mtp4j2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_099elx7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16x3pp6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0vaf9kq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jez9ls">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hbgmpz">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1e29zxl">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07r5996">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1nor2x8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0pxl3t5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xms0n1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wdo0zw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ts2uc6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ydvub9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ghjvab">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_18esv4j">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1a2y0d5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_00cep23">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1byqndk">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1kyur50">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0omblo1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ylz9zd">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09jrvc2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05jnfgy">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1oxav24">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1pgjosd">
+          <text>"respondToQuery"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_08jav2o">
+          <text>"Respond to Query"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0wusown">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_00dr4vi">
+          <text>"qmResponseTasks,queryManagement_queryID_" + additionalData.Data.qmLegalRepresentativeQueries.caseMessages.value.id</text>
         </outputEntry>
       </rule>
     </decisionTable>

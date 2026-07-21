@@ -695,7 +695,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
 
         //The purpose of this test is to prevent adding new rows without being tested
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
-        assertEquals(96, logic.getRules().size());
+        assertEquals(97, logic.getRules().size());
     }
 
 

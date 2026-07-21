@@ -679,7 +679,7 @@
 "printAndSendHoEvidence","detainedPrintAndSendHoEvidence",
 "printAndSendAppealDecision","detainedPrintAndSendAppealDecision",
 "printAndSendFTPADecision","detainedPrintAndSendFTPADecision",
-"printAndSendReheardHearingRequirements","detainedPrintAndSendReheardHearingRequirements","reviewASRemission", "reviewLARemission", "reviewHOWaiverRemission", "reviewAuthorityRemission", "reviewHWFRemission", "reviewECRRemission", "detainedReviewASRemission", "detainedReviewLARemission", "detainedReviewHOWaiverRemission", "detainedReviewAuthorityRemission", "detainedReviewHWFRemission", "detainedReviewECRRemission"</text>
+"printAndSendReheardHearingRequirements","detainedPrintAndSendReheardHearingRequirements","reviewASRemission", "reviewLARemission", "reviewHOWaiverRemission", "reviewAuthorityRemission", "reviewHWFRemission", "reviewECRRemission", "detainedReviewASRemission", "detainedReviewLARemission", "detainedReviewHOWaiverRemission", "detainedReviewAuthorityRemission", "detainedReviewHWFRemission", "detainedReviewECRRemission", "respondToQuery"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1p44stw">
           <text></text>
