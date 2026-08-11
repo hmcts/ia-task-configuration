@@ -6607,7 +6607,7 @@ else null</text>
           <text>false</text>
         </inputEntry>
         <inputEntry id="UnaryTests_stf24w_0053">
-          <text></text>
+          <text>false</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0wbkpif">
           <text></text>
@@ -6622,6 +6622,122 @@ else null</text>
           <text></text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0jmdde0">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_16t9p5y">
+        <inputEntry id="UnaryTests_1r6jp9n">
+          <text>"draftHearingRequirements"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zy6ube">
+          <text>"respondentReview"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zp63xt">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1brzrtk">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_195eyda">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0dusw98">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0c8fi0h">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1o0m0w1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0pxntmp">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08day87">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pcu10k">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1p5r6hq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0z0u9sh">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_11f9kmq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1w1xb93">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01u2xk9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1efb78v">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1blnhwm">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1abmic9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0407grc">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09di289">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03tu5nm">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0cgbf4r">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15i2b15">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0g9hxy1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fpfb6k">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19c48x7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fpwvub">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14q37ju">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1txtnsm">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1hnxcrv">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ifusxj">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0svkdzy">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0368o0n">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_09x25eo">
+          <text>"reviewHearingRequirements"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ruvc5r">
+          <text>"Review hearing requirements"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0vqfhfu">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_036ulg3">
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
