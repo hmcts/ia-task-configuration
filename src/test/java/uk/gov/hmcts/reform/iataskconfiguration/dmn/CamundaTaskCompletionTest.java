@@ -46,7 +46,7 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                 )
             ),
             Arguments.of(
-                "requestRespondentEvidence",
+                "completeCaseReview",
                 asList(
                     Map.of(
                         "taskType", "reviewTheAppeal",
@@ -112,11 +112,35 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                         "taskType", "detainedReviewRespondentEvidence",
                         "completionMode", "Auto"
                     ),
+                    Map.of(
+                        "taskType", "reviewRespondentResponse",
+                        "completionMode", "Auto"
+                    ),
                     Collections.emptyMap()
                 )
             ),
             Arguments.of(
                 "requestResponseReview",
+                asList(
+                    Map.of(
+                        "taskType", "reviewRespondentResponse",
+                        "completionMode", "Auto"
+                    ),
+                    Collections.emptyMap()
+                )
+            ),
+            Arguments.of(
+                "decisionWithoutHearing",
+                asList(
+                    Map.of(
+                        "taskType", "reviewRespondentResponse",
+                        "completionMode", "Auto"
+                    ),
+                    Collections.emptyMap()
+                )
+            ),
+            Arguments.of(
+                "forceCaseToPrepareForHearing",
                 asList(
                     Map.of(
                         "taskType", "reviewRespondentResponse",
@@ -166,6 +190,16 @@ class CamundaTaskCompletionTest extends DmnDecisionTableBaseUnitTest {
                     ),
                     Map.of(
                         "taskType", "detainedReviewAppealSkeletonArgument",
+                        "completionMode", "Auto"
+                    ),
+                    Collections.emptyMap()
+                )
+            ),
+            Arguments.of(
+                "requestHearingRequirementsFeature",
+                asList(
+                    Map.of(
+                        "taskType", "reviewAppealSkeletonArgument",
                         "completionMode", "Auto"
                     ),
                     Collections.emptyMap()
