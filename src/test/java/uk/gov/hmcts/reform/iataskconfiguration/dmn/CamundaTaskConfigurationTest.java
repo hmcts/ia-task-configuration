@@ -1765,9 +1765,11 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         boolean isDecisionWithoutHearing = decisionOption.equals("decisionWithoutHearing");
         assertEquals(1, descriptionList.size());
         String desc = descriptionList.getFirst().get("value").toString();
-        assertEquals(!isDecisionWithoutHearing, desc.contains("[Request hearing requirements](/case/IA/Asylum/${[CASE_REFERENCE]}/"
-                                                 + "trigger/requestHearingRequirementsFeature)"));
-        assertEquals(isDecisionWithoutHearing, desc.contains("[Request respondent review](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
+        assertEquals(!isDecisionWithoutHearing,
+                     desc.contains("[Request hearing requirements](/case/IA/Asylum/${[CASE_REFERENCE]}/"
+                                       + "trigger/requestHearingRequirementsFeature)"));
+        assertEquals(isDecisionWithoutHearing,
+                     desc.contains("[Request respondent review](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
                                                   + "requestRespondentReview)"));
         assertTrue(desc.contains("[Request case edit](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/requestCaseEdit)"));
     }
