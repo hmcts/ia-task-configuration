@@ -623,7 +623,7 @@ class CamundaTaskTypesTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertEquals(1, logic.getInputs().size());
         assertEquals(2, logic.getOutputs().size());
-        assertEquals(141, logic.getRules().size());
+        assertEquals(142, logic.getRules().size());
 
     }
 }

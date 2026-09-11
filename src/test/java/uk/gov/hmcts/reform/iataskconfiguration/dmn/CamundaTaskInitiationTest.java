@@ -3312,7 +3312,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertEquals(34, logic.getInputs().size());
         assertEquals(4, logic.getOutputs().size());
-        assertEquals(205, logic.getRules().size());
+        assertEquals(206, logic.getRules().size());
     }
 
     @ParameterizedTest
