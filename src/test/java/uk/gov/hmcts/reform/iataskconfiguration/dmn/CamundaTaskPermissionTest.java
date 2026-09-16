@@ -1319,6 +1319,6 @@ class CamundaTaskPermissionTest extends DmnDecisionTableBaseUnitTest {
         assertEquals(7, logic.getOutputs().size());
         assertThatOutputContainInOrder(outputColumnIds, logic.getOutputs());
         //Rules
-        assertEquals(19, logic.getRules().size());
+        assertEquals(18, logic.getRules().size());
     }
 }
