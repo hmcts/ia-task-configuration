@@ -570,7 +570,7 @@
       <rule id="DecisionRule_04eoe1k">
         <description>Senior Tribunal caseworker task permissions</description>
         <inputEntry id="UnaryTests_0se58ll">
-          <text>"r1"</text>
+          <text>"r1", "detainedListTheCase"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1m2r097">
           <text></text>
@@ -600,7 +600,7 @@
       <rule id="DecisionRule_0ks3xbb">
         <description>Default Senior Tribunal caseworker task permissions</description>
         <inputEntry id="UnaryTests_1k8ldgj">
-          <text>"r1"</text>
+          <text>"r1", "detainedListTheCase"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0yw7wdu">
           <text></text>
@@ -624,6 +624,35 @@
           <text>1</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1r4jwp2">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_06sxtmc">
+        <inputEntry id="UnaryTests_01wlagh">
+          <text>"detainedListTheCase"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0g1g54c">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0u2hshs">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_060775o">
+          <text>"hearing-centre-admin"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_105fmmv">
+          <text>"Read,Own,Claim,Manage,Unassign,Assign,Complete,Cancel"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1t9s20n">
+          <text>"ADMIN"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1gxsds3">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ks6umz">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0mtgtsh">
           <text>false</text>
         </outputEntry>
       </rule>
