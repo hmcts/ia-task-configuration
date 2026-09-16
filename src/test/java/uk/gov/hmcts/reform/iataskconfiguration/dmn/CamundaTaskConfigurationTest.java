@@ -1158,7 +1158,7 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
         "printAndSendAppealDecision", "detainedPrintAndSendAppealDecision",
         "printAndSendFTPADecision", "detainedPrintAndSendFTPADecision",
         "printAndSendReheardHearingRequirements", "detainedPrintAndSendReheardHearingRequirements",
-        "detainedListCmr", "detainedListTheCase"
+        "detainedListCmr"
 
     })
     void when_taskId_then_return_Admin_role_category(String taskType) {
