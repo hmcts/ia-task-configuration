@@ -504,7 +504,7 @@
           <text></text>
         </inputEntry>
         <inputEntry id="UnaryTests_1glizm3">
-          <text>"arrangeOfflinePayment","markCaseAsPaid","allocateHearingJudge","detainedAllocateHearingJudge","uploadHearingRecording","postHearingAttendeesDurationAndRecording","detainedPostHearingAttendeesDurationAndRecording","editListing","detainedEditListing","followUpSetAsideDecision","detainedFollowUpSetAsideDecision","hearingException","detainedHearingException","cmrListed","detainedCmrListed","cmrUpdated","detainedCmrUpdated","relistCase","detainedRelistCase","reviewInterpreters","detainedReviewInterpreters","reviewMigratedCase","detainedReviewMigratedCase","reviewAriaRemissionApplication","printAndSendHoBundle","detainedPrintAndSendHoBundle","printAndSendHoResponse","printAndSendHearingRequirements","detainedPrintAndSendHearingRequirements","printAndSendHearingBundle","detainedPrintAndSendHearingBundle","printAndSendDecisionCorrectedRule31","detainedPrintAndSendDecisionCorrectedRule31","printAndSendDecisionCorrectedRule32","detainedPrintAndSendDecisionCorrectedRule32","printAndSendHoApplication","detainedPrintAndSendHoApplication","printAndSendHoEvidence","detainedPrintAndSendHoEvidence","printAndSendAppealDecision","detainedPrintAndSendAppealDecision","printAndSendFTPADecision","detainedPrintAndSendFTPADecision","printAndSendReheardHearingRequirements","detainedPrintAndSendReheardHearingRequirements","detainedListCmr", "detainedListTheCase"</text>
+          <text>"arrangeOfflinePayment","markCaseAsPaid","allocateHearingJudge","detainedAllocateHearingJudge","uploadHearingRecording","postHearingAttendeesDurationAndRecording","detainedPostHearingAttendeesDurationAndRecording","editListing","detainedEditListing","followUpSetAsideDecision","detainedFollowUpSetAsideDecision","hearingException","detainedHearingException","cmrListed","detainedCmrListed","cmrUpdated","detainedCmrUpdated","relistCase","detainedRelistCase","reviewInterpreters","detainedReviewInterpreters","reviewMigratedCase","detainedReviewMigratedCase","reviewAriaRemissionApplication","printAndSendHoBundle","detainedPrintAndSendHoBundle","printAndSendHoResponse","printAndSendHearingRequirements","detainedPrintAndSendHearingRequirements","printAndSendHearingBundle","detainedPrintAndSendHearingBundle","printAndSendDecisionCorrectedRule31","detainedPrintAndSendDecisionCorrectedRule31","printAndSendDecisionCorrectedRule32","detainedPrintAndSendDecisionCorrectedRule32","printAndSendHoApplication","detainedPrintAndSendHoApplication","printAndSendHoEvidence","detainedPrintAndSendHoEvidence","printAndSendAppealDecision","detainedPrintAndSendAppealDecision","printAndSendFTPADecision","detainedPrintAndSendFTPADecision","printAndSendReheardHearingRequirements","detainedPrintAndSendReheardHearingRequirements","detainedListCmr"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1131kat">
           <text>"roleCategory"</text>
@@ -547,6 +547,23 @@
           <text>"CTSC"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0mrh555">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0x56wek">
+        <inputEntry id="UnaryTests_1nlvchl">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1hlmtf8">
+          <text>"detainedListTheCase"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_04xd2c4">
+          <text>"roleCategory"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_06gk5l0">
+          <text>"HEARING_CENTRE_ADMIN"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0419hxf">
           <text>false</text>
         </outputEntry>
       </rule>
