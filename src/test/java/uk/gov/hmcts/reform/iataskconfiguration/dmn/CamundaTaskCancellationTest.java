@@ -384,7 +384,7 @@ class CamundaTaskCancellationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertEquals(3, logic.getInputs().size());
         assertEquals(4, logic.getOutputs().size());
-        assertEquals(31, logic.getRules().size());
+        assertEquals(32, logic.getRules().size());
 
     }
 }
