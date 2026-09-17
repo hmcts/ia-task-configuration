@@ -4,7 +4,7 @@ properties([
   pipelineTriggers([cron('H 8 * * 1-5')]),
 ])
 
-@Library("Infrastructure")
+@Library("Infrastructure@2.5.1")
 import uk.gov.hmcts.contino.GradleBuilder
 def type = "java"
 def product = "ia"
