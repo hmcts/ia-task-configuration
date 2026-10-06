@@ -1992,7 +1992,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     "isAdmin", "true",
                     "isNotificationTurnedOff", "false"
                 ),
-                getTaskMap("printAndSendHearingBundle", "Print and send hearing bundle", "caseProgression")
+                getTaskMap("printAndSendHearingBundle", "Print and send hearing bundle", "caseProgression", delayForDays)
             ),
             getArgumentOf(
                 "asyncStitchingComplete",
@@ -2005,7 +2005,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 getTaskMap(
                     "detainedPrintAndSendHearingBundle",
                     "Detained - Print and send hearing bundle",
-                    "caseProgression"
+                    "caseProgression",
+                    delayForDays
                 )
             ),
             getArgumentOf(
