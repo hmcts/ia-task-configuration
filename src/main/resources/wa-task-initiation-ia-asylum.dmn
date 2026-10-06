@@ -15410,8 +15410,8 @@ else null</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0vitwij">
           <text>{
-"delayUntilOrigin": today(),
-"delayUntilIntervalDays":"14"
+"delayUntil": additionalData.Data.listCaseHearingDate,
+"delayUntilIntervalDays": "14"
 }</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_025h09j">
@@ -15529,8 +15529,8 @@ else null</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_101zhu7">
           <text>{
-"delayUntilOrigin": today(),
-"delayUntilIntervalDays":"14"
+"delayUntil": additionalData.Data.listCaseHearingDate,
+"delayUntilIntervalDays": "14"
 }</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0uyxc0o">
