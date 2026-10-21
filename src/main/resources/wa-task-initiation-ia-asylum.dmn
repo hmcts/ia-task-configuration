@@ -9242,7 +9242,10 @@ else null</text>
           <text>"Post hearing – attendees, duration and recording"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0ay6ciw">
-          <text></text>
+          <text>{
+"delayUntil": additionalData.Data.listCaseHearingDate,
+"delayUntilIntervalDays": "0"
+}</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0dmehyy">
           <text>"caseProgression"</text>
@@ -9358,7 +9361,10 @@ else null</text>
           <text>"Detained - Post hearing – attendees, duration and recording"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0det1hb31">
-          <text></text>
+          <text>{
+"delayUntil": additionalData.Data.listCaseHearingDate,
+"delayUntilIntervalDays": "0"
+}</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0det1hb32">
           <text>"caseProgression"</text>
