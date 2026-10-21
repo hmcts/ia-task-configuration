@@ -795,7 +795,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     "postHearingAttendeesDurationAndRecording",
                     "Post hearing – attendees, duration and recording",
                     "caseProgression",
-                    delayUntilHearing
+                    delay14DaysUntilHearing
                 )
             ),
             getArgumentOf(
@@ -837,7 +837,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     "detainedPostHearingAttendeesDurationAndRecording",
                     "Detained - Post hearing – attendees, duration and recording",
                     "caseProgression",
-                    delayUntilHearing
+                    delay14DaysUntilHearing
                 )
             ),
             getArgumentOf(
