@@ -167,7 +167,7 @@
             "createCaseSummary",
             "reviewRemittedAppeal","detainedReviewRemittedAppeal",
             "reviewAppealSetAsideUnderRule35","detainedReviewAppealSetAsideUnderRule35",
-            "reviewAppealSetAsideUnderRule32","detainedReviewAppealSetAsideUnderRule32"</text>
+            "reviewAppealSetAsideUnderRule32","detainedReviewAppealSetAsideUnderRule32", "respondToQuery"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_10s330p">
           <text></text>
@@ -243,7 +243,7 @@
             "cmrUpdated","detainedCmrUpdated",
             "relistCase","detainedRelistCase",
             "listTheCase","detainedReviewInterpreters","detainedListTheCase",
-            "reviewInterpreters","detainedListCmr"</text>
+            "reviewInterpreters","detainedListCmr", "respondToQuery"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_18tqbn3">
           <text></text>
@@ -405,8 +405,7 @@
           <text>
             "reviewAddendumEvidence",
             "detainedReviewAddendumEvidence",
-            "editListing","reviewEditListing","detainedEditListing"
-</text>
+            "editListing","reviewEditListing","detainedEditListing"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_190pyoc">
           <text></text>
@@ -438,8 +437,7 @@
           <text>
             "reviewAddendumEvidence",
             "detainedReviewAddendumEvidence",
-            "editListing","detainedEditListing"
-</text>
+            "editListing","detainedEditListing"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_055yime">
           <text></text>
