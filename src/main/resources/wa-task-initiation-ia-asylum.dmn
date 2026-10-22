@@ -6271,7 +6271,10 @@ else null</text>
           <text>"Create Hearing Bundle"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0wetk4k">
-          <text></text>
+          <text>{
+"delayUntil": additionalData.Data.listCaseHearingDate,
+"delayUntilIntervalDays": "14"
+}</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0pumcv9">
           <text>"caseProgression"</text>
@@ -6387,7 +6390,10 @@ else null</text>
           <text>"Detained - Create Hearing Bundle"</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1xrcwav">
-          <text></text>
+          <text>{
+"delayUntil": additionalData.Data.listCaseHearingDate,
+"delayUntilIntervalDays": "14"
+}</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1jzvjz7">
           <text>"caseProgression"</text>

@@ -69,6 +69,11 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             "delayUntilIntervalDays", "0"
         );
 
+        Map<String, Object> delay14DaysUntilHearing = Map.of(
+            "delayUntil", hearingDate,
+            "delayUntilIntervalDays", "14"
+        );
+
         return Stream.of(
             getArgumentOf(
                 "applyForFTPAAppellant",
@@ -785,7 +790,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     "appellantInDetention", "false",
                     "isNotificationTurnedOff", "false"
                 ),
-                getTaskMap("caseSummaryHearingBundleStartDecision", "Create Hearing Bundle", "caseProgression"),
+                getTaskMap("caseSummaryHearingBundleStartDecision", "Create Hearing Bundle",
+                           "caseProgression", delay14DaysUntilHearing),
                 getTaskMap(
                     "postHearingAttendeesDurationAndRecording",
                     "Post hearing – attendees, duration and recording",
@@ -805,7 +811,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 getTaskMap(
                     "detainedCaseSummaryHearingBundleStartDecision",
                     "Detained - Create Hearing Bundle",
-                    "caseProgression"
+                    "caseProgression",
+                    delay14DaysUntilHearing
                 ),
                 getTaskMap(
                     "detainedPostHearingAttendeesDurationAndRecording",
@@ -826,7 +833,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 getTaskMap(
                     "detainedCaseSummaryHearingBundleStartDecision",
                     "Detained - Create Hearing Bundle",
-                    "caseProgression"
+                    "caseProgression",
+                    delay14DaysUntilHearing
                 ),
                 getTaskMap(
                     "detainedPostHearingAttendeesDurationAndRecording",
@@ -1990,9 +1998,11 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "preHearing",
                 Map.of(
                     "isAdmin", "true",
-                    "isNotificationTurnedOff", "false"
+                    "isNotificationTurnedOff", "false",
+                    "listCaseHearingDate", hearingDate
                 ),
-                getTaskMap("printAndSendHearingBundle", "Print and send hearing bundle", "caseProgression")
+                getTaskMap("printAndSendHearingBundle", "Print and send hearing bundle",
+                           "caseProgression")
             ),
             getArgumentOf(
                 "asyncStitchingComplete",
@@ -2000,7 +2010,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 Map.of(
                     "isAdmin", "true",
                     "appellantInDetention", "true",
-                    "isNotificationTurnedOff", "false"
+                    "isNotificationTurnedOff", "false",
+                    "listCaseHearingDate", hearingDate
                 ),
                 getTaskMap(
                     "detainedPrintAndSendHearingBundle",
@@ -2407,9 +2418,11 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "progressMigratedCase",
                 "prepareForHearing",
                 Map.of(
-                    "isNotificationTurnedOff", "false"
+                    "isNotificationTurnedOff", "false",
+                    "listCaseHearingDate", hearingDate
                 ),
-                getTaskMap("caseSummaryHearingBundleStartDecision", "Create Hearing Bundle", "caseProgression")
+                getTaskMap("caseSummaryHearingBundleStartDecision", "Create Hearing Bundle",
+                           "caseProgression", delay14DaysUntilHearing)
             ),
             getArgumentOf(
                 "progressMigratedCase",
