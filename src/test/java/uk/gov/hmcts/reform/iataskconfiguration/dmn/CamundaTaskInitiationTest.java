@@ -790,7 +790,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     "appellantInDetention", "false",
                     "isNotificationTurnedOff", "false"
                 ),
-                getTaskMap("caseSummaryHearingBundleStartDecision", "Create Hearing Bundle", "caseProgression", delay14DaysUntilHearing),
+                getTaskMap("caseSummaryHearingBundleStartDecision", "Create Hearing Bundle",
+                           "caseProgression", delay14DaysUntilHearing),
                 getTaskMap(
                     "postHearingAttendeesDurationAndRecording",
                     "Post hearing – attendees, duration and recording",
@@ -2420,7 +2421,8 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     "isNotificationTurnedOff", "false",
                     "listCaseHearingDate", hearingDate
                 ),
-                getTaskMap("caseSummaryHearingBundleStartDecision", "Create Hearing Bundle", "caseProgression", delay14DaysUntilHearing)
+                getTaskMap("caseSummaryHearingBundleStartDecision", "Create Hearing Bundle",
+                           "caseProgression", delay14DaysUntilHearing)
             ),
             getArgumentOf(
                 "progressMigratedCase",
