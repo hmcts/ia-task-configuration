@@ -66,7 +66,7 @@
       </rule>
       <rule id="DecisionRule_1kb9ygx">
         <inputEntry id="UnaryTests_12tn7ct">
-          <text>"requestRespondentReview","requestCaseEdit"</text>
+          <text>"requestRespondentReview","requestCaseEdit","requestHearingRequirementsFeature"</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0hoi52a">
           <text>"detainedReviewAppealSkeletonArgument"</text>
