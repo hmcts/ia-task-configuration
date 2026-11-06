@@ -6272,7 +6272,7 @@ else null</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0wetk4k">
           <text>{
-"delayUntil": additionalData.Data.listCaseHearingDate,
+"delayUntilOrigin": additionalData.Data.listCaseHearingDate,
 "delayUntilIntervalDays": "-14"
 }</text>
         </outputEntry>
@@ -6391,7 +6391,7 @@ else null</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_1xrcwav">
           <text>{
-"delayUntil": additionalData.Data.listCaseHearingDate,
+"delayUntilOrigin": additionalData.Data.listCaseHearingDate,
 "delayUntilIntervalDays": "-14"
 }</text>
         </outputEntry>
