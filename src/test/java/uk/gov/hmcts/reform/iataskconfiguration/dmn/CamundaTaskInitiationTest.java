@@ -71,7 +71,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
         Map<String, Object> delay14DaysUntilHearing = Map.of(
             "delayUntil", hearingDate,
-            "delayUntilIntervalDays", "14"
+            "delayUntilIntervalDays", "-14"
         );
 
         return Stream.of(
