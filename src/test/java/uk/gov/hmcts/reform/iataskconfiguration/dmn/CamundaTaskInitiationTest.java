@@ -1949,6 +1949,23 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
             ),
             getArgumentOf(
                 "editCaseListing",
+                "decision",
+                Map.of(
+                    "listCaseHearingDate", hearingDate,
+                    "shouldTriggerReviewInterpreterTask", "true",
+                    "appellantInDetention", "false",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap(
+                    "postHearingAttendeesDurationAndRecording",
+                    "Post hearing – attendees, duration and recording – Appeal",
+                    "caseProgression",
+                    delayUntilHearing
+                ),
+                getTaskMap("reviewInterpreters", "Review interpreter booking", "caseProgression")
+            ),
+            getArgumentOf(
+                "editCaseListing",
                 "prepareForHearing",
                 Map.of(
                     "listCaseHearingDate", hearingDate,
