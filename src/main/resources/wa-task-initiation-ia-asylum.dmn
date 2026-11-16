@@ -9475,7 +9475,7 @@ else null</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_ecl_38">
           <text>{
-"delayUntil": additionalData.Data.nextHearingDetails.hearingDateTime,
+"delayUntil": additionalData.Data.listCaseHearingDate,
 "delayUntilIntervalDays": "0"
 }</text>
         </outputEntry>
@@ -9594,7 +9594,7 @@ else null</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_ecldet_38">
           <text>{
-"delayUntil": additionalData.Data.nextHearingDetails.hearingDateTime,
+"delayUntil": additionalData.Data.listCaseHearingDate,
 "delayUntilIntervalDays": "0"
 }</text>
         </outputEntry>

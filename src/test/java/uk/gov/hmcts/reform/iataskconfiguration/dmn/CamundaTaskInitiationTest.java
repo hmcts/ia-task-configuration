@@ -1891,7 +1891,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "editCaseListing",
                 "decision",
                 Map.of(
-                    "nextHearingDetails", Map.of("hearingID", "12345", "hearingDateTime", hearingDate),
+                    "listCaseHearingDate", hearingDate,
                     "appellantInDetention", "false",
                     "isNotificationTurnedOff", "false"
                 ),
@@ -1906,7 +1906,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "editCaseListing",
                 "decision",
                 Map.of(
-                    "nextHearingDetails", Map.of("hearingID", "12345", "hearingDateTime", hearingDate),
+                    "listCaseHearingDate", hearingDate,
                     "appellantInDetention", "true",
                     "isNotificationTurnedOff", "false"
                 ),
@@ -1921,7 +1921,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "editCaseListing",
                 "decided",
                 Map.of(
-                    "nextHearingDetails", Map.of("hearingID", "12345", "hearingDateTime", hearingDate),
+                    "listCaseHearingDate", hearingDate,
                     "appellantInDetention", "false",
                     "isNotificationTurnedOff", "false"
                 ),
@@ -1936,7 +1936,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "editCaseListing",
                 "decided",
                 Map.of(
-                    "nextHearingDetails", Map.of("hearingID", "12345", "hearingDateTime", hearingDate),
+                    "listCaseHearingDate", hearingDate,
                     "appellantInDetention", "true",
                     "isNotificationTurnedOff", "false"
                 ),
@@ -1951,7 +1951,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 "editCaseListing",
                 "prepareForHearing",
                 Map.of(
-                    "nextHearingDetails", Map.of("hearingID", "12345", "hearingDateTime", hearingDate),
+                    "listCaseHearingDate", hearingDate,
                     "isNotificationTurnedOff", "false"
                 ),
                 null
