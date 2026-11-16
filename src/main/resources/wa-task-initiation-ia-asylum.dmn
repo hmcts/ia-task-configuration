@@ -9364,6 +9364,244 @@ else null</text>
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
+      <rule id="DecisionRule_ecl_1">
+        <inputEntry id="UnaryTests_ecl_2">
+          <text>"editCaseListing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecl_3">
+          <text>"decision","decided"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecl_4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecl_5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecl_6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecl_7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecl_8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecl_9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecl_10">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecl_11">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecl_12">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecl_13">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecl_14">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecl_15">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecl_16">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecl_17">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecl_18">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecl_19">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecl_20">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecl_21">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecl_22">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecl_23">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecl_24">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecl_25">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecl_26">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecl_27">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecl_28">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecl_29">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecl_30">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecl_31">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecl_32">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecl_33">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecl_34">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecl_35">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_ecl_36">
+          <text>"postHearingAttendeesDurationAndRecording"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_ecl_37">
+          <text>"Post hearing – attendees, duration and recording – Appeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_ecl_38">
+          <text>{
+"delayUntil": additionalData.Data.nextHearingDetails.hearingDateTime,
+"delayUntilIntervalDays": "0"
+}</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_ecl_39">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_ecldet_1">
+        <inputEntry id="UnaryTests_ecldet_2">
+          <text>"editCaseListing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecldet_3">
+          <text>"decision","decided"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecldet_4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecldet_5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecldet_6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecldet_7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecldet_8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecldet_9">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecldet_10">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecldet_11">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecldet_12">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecldet_13">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecldet_14">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecldet_15">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecldet_16">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecldet_17">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecldet_18">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecldet_19">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecldet_20">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecldet_21">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecldet_22">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecldet_23">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecldet_24">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecldet_25">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecldet_26">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecldet_27">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecldet_28">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecldet_29">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecldet_30">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecldet_31">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecldet_32">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecldet_33">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecldet_34">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_ecldet_35">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_ecldet_36">
+          <text>"detainedPostHearingAttendeesDurationAndRecording"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_ecldet_37">
+          <text>"Detained - Post hearing – attendees, duration and recording – Appeal"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_ecldet_38">
+          <text>{
+"delayUntil": additionalData.Data.nextHearingDetails.hearingDateTime,
+"delayUntilIntervalDays": "0"
+}</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_ecldet_39">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
       <rule id="DecisionRule_1rvt3fp">
         <inputEntry id="UnaryTests_0pwjwlw">
           <text>"applyForFTPAAppellant", "applyForFTPARespondent"</text>

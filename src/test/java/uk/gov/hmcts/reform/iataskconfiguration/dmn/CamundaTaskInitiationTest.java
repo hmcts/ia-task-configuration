@@ -1888,6 +1888,75 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 getTaskMap("detainedReviewInterpreters", "Detained - Review interpreter booking", "caseProgression")
             ),
             getArgumentOf(
+                "editCaseListing",
+                "decision",
+                Map.of(
+                    "nextHearingDetails", Map.of("hearingID", "12345", "hearingDateTime", hearingDate),
+                    "appellantInDetention", "false",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap(
+                    "postHearingAttendeesDurationAndRecording",
+                    "Post hearing – attendees, duration and recording – Appeal",
+                    "caseProgression",
+                    delayUntilHearing
+                )
+            ),
+            getArgumentOf(
+                "editCaseListing",
+                "decision",
+                Map.of(
+                    "nextHearingDetails", Map.of("hearingID", "12345", "hearingDateTime", hearingDate),
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap(
+                    "detainedPostHearingAttendeesDurationAndRecording",
+                    "Detained - Post hearing – attendees, duration and recording – Appeal",
+                    "caseProgression",
+                    delayUntilHearing
+                )
+            ),
+            getArgumentOf(
+                "editCaseListing",
+                "decided",
+                Map.of(
+                    "nextHearingDetails", Map.of("hearingID", "12345", "hearingDateTime", hearingDate),
+                    "appellantInDetention", "false",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap(
+                    "postHearingAttendeesDurationAndRecording",
+                    "Post hearing – attendees, duration and recording – Appeal",
+                    "caseProgression",
+                    delayUntilHearing
+                )
+            ),
+            getArgumentOf(
+                "editCaseListing",
+                "decided",
+                Map.of(
+                    "nextHearingDetails", Map.of("hearingID", "12345", "hearingDateTime", hearingDate),
+                    "appellantInDetention", "true",
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap(
+                    "detainedPostHearingAttendeesDurationAndRecording",
+                    "Detained - Post hearing – attendees, duration and recording – Appeal",
+                    "caseProgression",
+                    delayUntilHearing
+                )
+            ),
+            getArgumentOf(
+                "editCaseListing",
+                "prepareForHearing",
+                Map.of(
+                    "nextHearingDetails", Map.of("hearingID", "12345", "hearingDateTime", hearingDate),
+                    "isNotificationTurnedOff", "false"
+                ),
+                null
+            ),
+            getArgumentOf(
                 "manageFeeUpdate",
                 null,
                 Map.of(
@@ -3261,7 +3330,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertEquals(34, logic.getInputs().size());
         assertEquals(4, logic.getOutputs().size());
-        assertEquals(202, logic.getRules().size());
+        assertEquals(204, logic.getRules().size());
     }
 
     @ParameterizedTest
