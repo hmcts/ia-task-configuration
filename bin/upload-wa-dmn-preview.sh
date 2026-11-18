@@ -143,7 +143,7 @@ for file in ${DMN_FILES}; do
     FILENAME=$(basename "${file}")
     echo "Uploading: ${FILENAME}..."
 
-    UPLOAD_RESPONSE=$(curl --insecure -v --silent -w "\n%{http_code}" --show-error -X POST \
+    UPLOAD_RESPONSE=$(curl --insecure --silent -w "\n%{http_code}" --show-error -X POST \
         "${CAMUNDA_BASE_URL}/engine-rest/deployment/create" \
         -H "Accept: application/json" \
         -H "ServiceAuthorization: Bearer ${SERVICE_TOKEN}" \
@@ -151,7 +151,7 @@ for file in ${DMN_FILES}; do
         -F "deploy-changed-only=true" \
         -F "deployment-source=${PRODUCT}" \
         -F "tenant-id=${TENANT_ID}" \
-        -F "file=@${file}" 2>/dev/null || echo -e "\n500")
+        -F "file=@${file}" 2>&1 || echo -e "\n000")
 
     UPLOAD_HTTP_CODE=$(echo "${UPLOAD_RESPONSE}" | tail -n1)
     UPLOAD_RESPONSE_CONTENT=$(echo "${UPLOAD_RESPONSE}" | sed '$d')
