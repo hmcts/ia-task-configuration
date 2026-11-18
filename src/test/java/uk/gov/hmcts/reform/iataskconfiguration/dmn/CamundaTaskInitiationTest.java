@@ -2545,6 +2545,12 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 ),
                 getTaskMap("reviewRespondentResponse", "Review Respondent Response", "caseProgression")
             ),
+            getArgumentOf(
+                "confirmHOReviewMaintained",
+                null,
+                null,
+                getTaskMap("printAndSendHoResponse", "Print and send HO response", "caseProgression")
+            ),
             getArgumentOf("unknownEvent", null, null, null)
         );
 
@@ -3261,7 +3267,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
         DmnDecisionTableImpl logic = (DmnDecisionTableImpl) decision.getDecisionLogic();
         assertEquals(34, logic.getInputs().size());
         assertEquals(4, logic.getOutputs().size());
-        assertEquals(202, logic.getRules().size());
+        assertEquals(203, logic.getRules().size());
     }
 
     @ParameterizedTest
