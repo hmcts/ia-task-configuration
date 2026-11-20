@@ -1,7 +1,5 @@
 package uk.gov.hmcts.reform.iataskconfiguration.dmn;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.camunda.bpm.dmn.engine.DmnDecisionTableResult;
 import org.camunda.bpm.dmn.engine.impl.DmnDecisionTableImpl;
 import org.camunda.bpm.engine.variable.VariableMap;
@@ -11,9 +9,12 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import tools.jackson.core.JacksonException;
+import tools.jackson.core.type.TypeReference;
+import tools.jackson.databind.ObjectMapper;
+import tools.jackson.databind.json.JsonMapper;
 import uk.gov.hmcts.reform.iataskconfiguration.DmnDecisionTableBaseUnitTest;
 
-import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -3286,12 +3287,12 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
 
 
     private static Map<String, Object> mapAdditionalData(String additionalData) {
-        ObjectMapper mapper = new ObjectMapper();
+        ObjectMapper mapper = new JsonMapper();
         try {
             TypeReference<HashMap<String, Object>> typeRef = new TypeReference<>() {
             };
             return Map.of("additionalData", mapper.readValue(additionalData, typeRef));
-        } catch (IOException exp) {
+        } catch (JacksonException exp) {
             return null;
         }
     }
