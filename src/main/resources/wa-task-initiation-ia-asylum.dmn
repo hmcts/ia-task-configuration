@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.36.1">
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="wa-initiation-definition" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.34.0">
   <decision id="wa-task-initiation-ia-asylum" name="Task initiation DMN" camunda:historyTimeToLive="P90D">
     <decisionTable id="DecisionTable_0jtevuc" hitPolicy="COLLECT" biodi:annotationsWidth="400">
       <input id="Input_1" label="Event Id" biodi:width="515" camunda:inputVariable="eventId">
@@ -9224,7 +9224,7 @@ else null</text>
           <text>false</text>
         </inputEntry>
         <inputEntry id="UnaryTests_stf24w_0074">
-          <text></text>
+          <text>false</text>
         </inputEntry>
         <inputEntry id="UnaryTests_1u802ft">
           <text></text>
@@ -9343,7 +9343,7 @@ else null</text>
           <text>false</text>
         </inputEntry>
         <inputEntry id="UnaryTests_stf24w_0075">
-          <text></text>
+          <text>false</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0rpbrtj">
           <text></text>
@@ -9361,6 +9361,125 @@ else null</text>
 }</text>
         </outputEntry>
         <outputEntry id="LiteralExpression_0det1hb32">
+          <text>"caseProgression"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1rl3r9i">
+        <inputEntry id="UnaryTests_0spzsww">
+          <text>"forceCaseToPrepareForHearing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0yf4fx7">
+          <text>"prepareForHearing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1susgxq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qiny8o">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04hbxjd">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09ya9vh">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19tw26x">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0vq89mn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ne2bjt">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ehzn06">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xcptnw">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1woropm">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ti21s7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_150vzqv">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1x5xnpx">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ncmaqh">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_127f1rm">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1uhsawg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qkmk25">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jj29xz">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0g1m8rm">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1iklxui">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_044synt">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1hgpm9f">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ef7p5l">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1sp56je">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08hpzu6">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_151hwtc">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1t9jr0c">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qxt5ek">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1lfccz1">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05u2xuj">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ve3ri2">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1n88x52">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1wbq7rj">
+          <text>"postHearingAttendeesDurationAndRecording"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0bt51uy">
+          <text>"Post hearing – attendees, duration and recording"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1tng898">
+          <text>{
+"delayUntil": additionalData.Data.listCaseHearingDate,
+"delayUntilIntervalDays": "0"
+}</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0jo1ayf">
           <text>"caseProgression"</text>
         </outputEntry>
       </rule>
