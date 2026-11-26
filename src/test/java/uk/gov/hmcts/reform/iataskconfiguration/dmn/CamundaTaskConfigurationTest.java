@@ -1838,17 +1838,21 @@ class CamundaTaskConfigurationTest extends DmnDecisionTableBaseUnitTest {
             .filter((r) -> r.containsValue("description"))
             .toList();
 
-        boolean isDecisionWithoutHearing = decisionOption.equals("decisionWithoutHearing");
         assertEquals(1, descriptionList.size());
         String desc = descriptionList.getFirst().get("value").toString();
+        assertTrue(desc.contains("[Request hearing requirements](/case/IA/Asylum/${[CASE_REFERENCE]}/"
+                                     + "trigger/requestHearingRequirementsFeature)"));
+
+        assertTrue(desc.contains("[Send direction with questions](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
+                                     + "sendDirectionWithQuestions)"));
+
+        boolean isDecisionWithoutHearing = decisionOption.equals("decisionWithoutHearing");
         assertEquals(!isDecisionWithoutHearing,
-                     desc.contains("[Request hearing requirements](/case/IA/Asylum/${[CASE_REFERENCE]}/"
-                                       + "trigger/requestHearingRequirementsFeature)"));
+                     !desc.contains("[Request respondent review](/case/IA/Asylum/${[CASE_REFERENCE]}/"
+                                        + "trigger/requestRespondentReview)"));
         assertEquals(isDecisionWithoutHearing,
                      desc.contains("[Request respondent review](/case/IA/Asylum/${[CASE_REFERENCE]}/"
                                        + "trigger/requestRespondentReview)"));
-        assertTrue(desc.contains("[Send direction with questions](/case/IA/Asylum/${[CASE_REFERENCE]}/trigger/"
-                                     + "sendDirectionWithQuestions)"));
     }
 
     @ParameterizedTest
