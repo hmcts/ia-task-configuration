@@ -2551,8 +2551,7 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     "appealReviewOutcome", "decisionMaintained",
                     "isNotificationTurnedOff", "false"
                 ),
-                getTaskMap("reviewRespondentResponse", "Review Respondent Response", "caseProgression"),
-                getTaskMap("caseSummaryHearingBundleStartDecision", "Create Hearing Bundle", "caseProgression")
+                getTaskMap("reviewRespondentResponse", "Review Respondent Response", "caseProgression")
             ),
             getArgumentOf(
                 "uploadHomeOfficeAppealResponse",
@@ -2563,6 +2562,23 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                     "isNotificationTurnedOff", "false"
                 ),
                 getTaskMap("reviewRespondentResponse", "Review Respondent Response", "caseProgression")
+            ),
+            // DIAC-2760: Create Hearing Bundle triggered by LO events on 24-week cases
+            getArgumentOf(
+                "forceCaseToPrepareForHearing",
+                "prepareForHearing",
+                Map.of(
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("caseSummaryHearingBundleStartDecision", "Create Hearing Bundle", "caseProgression")
+            ),
+            getArgumentOf(
+                "decisionWithoutHearing",
+                "finalBundling",
+                Map.of(
+                    "isNotificationTurnedOff", "false"
+                ),
+                getTaskMap("caseSummaryHearingBundleStartDecision", "Create Hearing Bundle", "caseProgression")
             ),
             getArgumentOf("unknownEvent", null, null, null)
         );
