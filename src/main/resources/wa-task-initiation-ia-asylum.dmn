@@ -14840,7 +14840,7 @@ else null</text>
       </rule>
       <rule id="DecisionRule_0d8b0g0">
         <inputEntry id="UnaryTests_1b6qic8">
-          <text>"requestCaseBuilding"</text>
+          <text>"requestCaseBuilding", "forceRequestCaseBuilding"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0r2q20n">
           <text>"caseBuilding"</text>
@@ -14956,7 +14956,7 @@ else null</text>
       </rule>
       <rule id="DecisionRule_1mzyx5e">
         <inputEntry id="UnaryTests_1jz2zy9">
-          <text>"requestCaseBuilding"</text>
+          <text>"requestCaseBuilding", "forceRequestCaseBuilding"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0u15m19">
           <text>"caseBuilding"</text>
