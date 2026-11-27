@@ -2564,6 +2564,37 @@ class CamundaTaskInitiationTest extends DmnDecisionTableBaseUnitTest {
                 ),
                 getTaskMap("reviewRespondentResponse", "Review Respondent Response", "caseProgression")
             ),
+            getArgumentOf(
+                "confirmHOReviewMaintained",
+                null,
+                null,
+                getTaskMap("printAndSendHoResponse", "Print and send HO response", "caseProgression")
+            ),
+            getArgumentOf(
+                "forceRequestCaseBuilding",
+                "caseBuilding",
+                Map.of(
+                    "isAdmin", "true"
+                ),
+                getTaskMap(
+                    "printAndSendHoBundle",
+                    "Print and send HO bundle and appeal reasons form",
+                    "caseProgression"
+                )
+            ),
+            getArgumentOf(
+                "forceRequestCaseBuilding",
+                "caseBuilding",
+                Map.of(
+                    "isAdmin", "true",
+                    "appellantInDetention", "true"
+                ),
+                getTaskMap(
+                    "detainedPrintAndSendHoBundle",
+                    "Detained - Print and send HO bundle and appeal reasons form",
+                    "caseProgression"
+                )
+            ),
             getArgumentOf("unknownEvent", null, null, null)
         );
 
